@@ -17,6 +17,8 @@
     "dev": "tsc && node dist/index.js",
     "dev:http": "tsc && node dist/http.js",
     "test:context": "npm run build && node dist/context-harness.test.js",
+    "test:http": "npm run build && node dist/http.integration.test.js",
+    "test": "npm run test:context && node dist/http.integration.test.js",
     "badge:install": "node dist/install-badge-proof.js",
     "prebuild": "npm run clean",
     "clean": "node -e \"require('fs').rmSync('dist',{ recursive: true, force: true })\""
@@ -44,6 +46,7 @@
     "zod": "^4.0.0"
   },
   "devDependencies": {
+    "@modelcontextprotocol/client": "2.0.0",
     "@types/node": "^20.0.0",
     "typescript": "^5.0.0"
   },
