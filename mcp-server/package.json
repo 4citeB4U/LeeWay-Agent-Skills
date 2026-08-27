@@ -16,6 +16,7 @@
     "start:http": "node dist/http.js",
     "dev": "tsc && node dist/index.js",
     "dev:http": "tsc && node dist/http.js",
+    "test:context": "npm run build && node dist/context-harness.test.js",
     "badge:install": "node dist/install-badge-proof.js",
     "prebuild": "npm run clean",
     "clean": "node -e \"require('fs').rmSync('dist',{ recursive: true, force: true })\""
