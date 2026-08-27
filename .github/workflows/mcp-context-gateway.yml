@@ -1,0 +1,68 @@
+# LEEWAY HEADER — DO NOT REMOVE
+# REGION: LEEWAY.SKILLS.MCP.CI
+# TAG: LEEWAY.SKILLS.MCP.CI.CONTEXT_GATEWAY
+# WHAT: CI authority for the LeeWay MCP context gateway
+# WHY: Prove TypeScript build, deterministic routing, real MCP HTTP negotiation, and production container build before merge
+# WHO: Leeway Industries (By Leonard Jerome Lee)
+# WHERE: .github/workflows/mcp-context-gateway.yml
+# WHEN: 2026
+# HOW: GitHub Actions on Node 20 plus Docker build
+# LICENSE: MIT
+
+name: LeeWay MCP Context Gateway
+
+on:
+  push:
+    branches:
+      - main
+      - agentlee/c3-mcp-context-harness
+    paths:
+      - "mcp-server/**"
+      - "skills/agent-orchestration/leeway-context-gateway/**"
+      - "scripts/skills-registry*.json"
+      - ".github/workflows/mcp-context-gateway.yml"
+  pull_request:
+    paths:
+      - "mcp-server/**"
+      - "skills/agent-orchestration/leeway-context-gateway/**"
+      - "scripts/skills-registry*.json"
+      - ".github/workflows/mcp-context-gateway.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+          cache-dependency-path: mcp-server/package-lock.json
+
+      - name: Install MCP dependencies
+        working-directory: mcp-server
+        run: npm install --no-audit --no-fund
+
+      - name: Build and run LeeWay MCP tests
+        working-directory: mcp-server
+        run: npm test
+
+      - name: Build production MCP container
+        run: docker build -f mcp-server/Dockerfile -t leeway-context-gateway:${{ github.sha }} .
+
+      - name: Record verification summary
+        if: always()
+        run: |
+          echo "## LeeWay MCP Context Gateway" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Commit: $GITHUB_SHA" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Gate: C3 supporting subgate — MCP Context Harness" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Verification job status: ${{ job.status }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "- No Veritas receipt is created by CI; LeeWay runtime receipt authority remains external." >> "$GITHUB_STEP_SUMMARY"
