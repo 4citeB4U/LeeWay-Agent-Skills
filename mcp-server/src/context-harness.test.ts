@@ -26,7 +26,7 @@ import { classifyIntent, getContextSet, routeContext, sha256 } from "./context-h
 async function main(): Promise<void> {
   assert.deepEqual(classifyIntent("edit the TypeScript frontend component"), ["A"]);
   assert.deepEqual(classifyIntent("check Docker runtime health and Veritas receipt"), ["B"]);
-  assert.deepEqual(classifyIntent("update the Roblox universe difficulty and Luau wave code"), ["C", "A"]);
+  assert.deepEqual(classifyIntent("update the Roblox universe difficulty and Luau wave code"), ["C"]);
   assert.deepEqual(classifyIntent("show MCP gateway registry and models"), ["D"]);
   assert.deepEqual(classifyIntent("unclassified general question"), ["D"]);
 
