@@ -1,0 +1,24 @@
+{
+  "receipt_type": "LEEWAY_EXPRESSIVE_CORE_UPGRADE",
+  "status": "PASS_REPOSITORY_ADMISSION",
+  "repository": "4citeB4U/LeeWay-Agent-Skills",
+  "branch": "main",
+  "admitted_commit": "bb9e752cb392ac1bad235cd32706d3d0ecf0f822",
+  "changes": [
+    "Context Engineering now stages response intent, audience, stakes, capability set, explanation mode, narrative shape, expressive level, and verification need.",
+    "Autonomous skill-combination selection is mandatory when safely inferable.",
+    "OG Expressive Identity now includes Visual Story Explanation Law.",
+    "Substantial explanations may use scene -> tension -> mechanism -> hinge -> exact meaning -> next direction.",
+    "Root AGENTS.md now makes autonomous capability selection and visual-story explanation part of the runtime contract."
+  ],
+  "rollback_branch": "backup/pre-visual-story-expression-20260905",
+  "evidence": {
+    "context_skill_readback": "VERIFIED",
+    "expressive_skill_readback": "VERIFIED",
+    "root_contract_readback": "VERIFIED",
+    "canonical_formula_execution": "NOT_EXECUTED",
+    "live_mcp_runtime_invocation": "NOT_EXECUTED",
+    "native_chatgpt_global_install": "NOT_EXECUTED"
+  },
+  "claim_boundary": "This receipt proves repository configuration and readback only. It does not claim mathematical Formula execution or native global installation into the current ChatGPT runtime."
+}
