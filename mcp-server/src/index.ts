@@ -21,12 +21,13 @@ WHY = Enables Agent Lee and other LLMs to use skills as first-class tools via MC
 WHO = Leeway Industries (By Leonard Jerome Lee)
 WHERE = mcp-server/src/index.ts
 WHEN = 2026
-HOW = Node.js MCP server that reads skill definitions and exposes them as callable tools
+HOW = Node.js MCP server that reads legacy registry entries and discovers portable SKILL.md files recursively
 
 AGENTS:
 SERVE
 EXECUTE
 INTROSPECT
+DISCOVER
 
 LICENSE:
 MIT
@@ -35,9 +36,9 @@ MIT
 import { Server } from "@modelcontextprotocol/sdk/server/index.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import {
-    CallToolRequestSchema,
-    ListToolsRequestSchema,
-    Tool
+  CallToolRequestSchema,
+  ListToolsRequestSchema,
+  Tool,
 } from "@modelcontextprotocol/sdk/types.js";
 import fs from "fs/promises";
 import path from "path";
@@ -46,9 +47,6 @@ import { fileURLToPath, pathToFileURL } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-/**
- * SkillsTool - Maps a Leeway Skill to an MCP Tool
- */
 export interface SkillsTool {
   name: string;
   category: string;
@@ -80,29 +78,115 @@ export interface ToolCallArguments {
   options?: Record<string, unknown>;
 }
 
-/**
- * LeewaySkillsMCPServer - Main MCP server implementation
- *
- * Provides:
- * - Tool listing (all available skills)
- * - Tool invocation (execute skill logic)
- * - Tool introspection (get skill metadata)
- */
+interface PortableSkillMetadata {
+  name: string;
+  description: string;
+  version: string;
+  tags: string[];
+}
+
+function slug(value: string): string {
+  return value
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9-]+/g, "-")
+    .replace(/^-+|-+$/g, "") || "skill";
+}
+
+function unquote(value: string): string {
+  const trimmed = value.trim();
+  if (
+    (trimmed.startsWith('"') && trimmed.endsWith('"')) ||
+    (trimmed.startsWith("'") && trimmed.endsWith("'"))
+  ) {
+    return trimmed.slice(1, -1);
+  }
+  return trimmed;
+}
+
+function parsePortableSkill(content: string, fallbackName: string): PortableSkillMetadata {
+  const lines = content.replace(/\r\n/g, "\n").split("\n");
+  let name = fallbackName;
+  let description = "Portable Agent Skill discovered from SKILL.md.";
+  let version = "1.0.0";
+  let tags: string[] = [];
+
+  if (lines[0]?.trim() === "---") {
+    const end = lines.slice(1).findIndex((line) => line.trim() === "---");
+    if (end >= 0) {
+      const frontmatter = lines.slice(1, end + 1);
+      for (const line of frontmatter) {
+        const match = line.match(/^([A-Za-z0-9_-]+):\s*(.*)$/);
+        if (!match) continue;
+        const key = match[1].toLowerCase();
+        const raw = match[2].trim();
+        if (key === "name" && raw) name = unquote(raw);
+        if (key === "description" && raw && raw !== ">" && raw !== "|") {
+          description = unquote(raw);
+        }
+        if (key === "version" && raw) version = unquote(raw);
+        if (key === "tags" && raw) {
+          tags = unquote(raw)
+            .replace(/^\[|\]$/g, "")
+            .split(",")
+            .map((tag) => tag.trim().replace(/^['\"]|['\"]$/g, ""))
+            .filter(Boolean);
+        }
+      }
+    }
+  }
+
+  if (description === "Portable Agent Skill discovered from SKILL.md.") {
+    const bodyLine = lines.find((line) => {
+      const value = line.trim();
+      return value && !value.startsWith("#") && value !== "---" && !value.includes(":");
+    });
+    if (bodyLine) description = bodyLine.trim();
+  }
+
+  return { name, description, version, tags };
+}
+
+async function findSkillFiles(root: string): Promise<string[]> {
+  const found: string[] = [];
+
+  async function walk(current: string): Promise<void> {
+    let entries;
+    try {
+      entries = await fs.readdir(current, { withFileTypes: true });
+    } catch {
+      return;
+    }
+
+    for (const entry of entries) {
+      if (entry.name === ".git" || entry.name === "node_modules") continue;
+      const fullPath = path.join(current, entry.name);
+      if (entry.isDirectory()) {
+        await walk(fullPath);
+      } else if (entry.isFile() && entry.name === "SKILL.md") {
+        found.push(fullPath);
+      }
+    }
+  }
+
+  await walk(root);
+  return found.sort();
+}
+
 export class LeewaySkillsMCPServer {
   private server: Server;
   private skills: Map<string, SkillsTool> = new Map();
   private registryPath: string;
+  private skillsRoot: string;
 
   constructor() {
-    this.registryPath = path.resolve(
-      __dirname,
-      "../../scripts/skills-registry.json",
-    );
+    this.registryPath = path.resolve(__dirname, "../../scripts/skills-registry.json");
+    this.skillsRoot = path.resolve(__dirname, "../../skills");
 
     this.server = new Server(
       {
         name: "leeway-skills-mcp",
-        version: "1.0.0",
+        version: "1.1.0",
       },
       {
         capabilities: {
@@ -114,50 +198,97 @@ export class LeewaySkillsMCPServer {
     this.setupHandlers();
   }
 
-  /**
-   * Load all skills from the registry
-   */
-  async loadSkills(): Promise<void> {
+  private addSkill(preferredId: string, skill: SkillsTool): void {
+    let skillId = slug(preferredId);
+    if (this.skills.has(skillId)) {
+      const pathPrefix = slug(skill.skillPath.split(/[\\/]/).slice(0, 4).join("-"));
+      skillId = slug(`${pathPrefix}-${preferredId}`);
+      let suffix = 2;
+      const base = skillId;
+      while (this.skills.has(skillId)) {
+        skillId = `${base}-${suffix++}`;
+      }
+    }
+    this.skills.set(skillId, skill);
+  }
+
+  private async loadLegacyRegistry(): Promise<void> {
     try {
       const registryContent = await fs.readFile(this.registryPath, "utf-8");
       const registry = JSON.parse(registryContent) as SkillRegistry;
 
       if (registry.skills && Array.isArray(registry.skills)) {
         registry.skills.forEach((skill) => {
-          if (skill.enabled) {
-            const skillId = skill.name.toLowerCase().replace(/\s+/g, "-");
-
-            this.skills.set(skillId, {
-              name: skill.name,
-              category: skill.category,
-              description: skill.description,
-              capabilities: skill.capabilities || [],
-              tags: skill.tags || [],
-              skillPath: skill.path,
-              version: skill.version || "1.0.0",
-            });
-          }
+          if (!skill.enabled) return;
+          this.addSkill(skill.name, {
+            name: skill.name,
+            category: skill.category,
+            description: skill.description,
+            capabilities: skill.capabilities || [],
+            tags: skill.tags || [],
+            skillPath: skill.path,
+            version: skill.version || "1.0.0",
+          });
         });
       }
-
-      console.error(
-        `[Leeway Skills MCP] Loaded ${this.skills.size} skills from registry`,
-      );
     } catch (error) {
-      console.error(
-        `[Leeway Skills MCP] Error loading skills registry:`,
-        error,
-      );
+      console.error("[Leeway Skills MCP] Error loading legacy skills registry:", error);
     }
   }
 
-  /**
-   * Setup MCP handlers
-   */
+  private async loadPortableSkills(): Promise<number> {
+    const files = await findSkillFiles(this.skillsRoot);
+    let added = 0;
+
+    for (const skillFile of files) {
+      try {
+        const content = await fs.readFile(skillFile, "utf-8");
+        const folder = path.basename(path.dirname(skillFile));
+        const meta = parsePortableSkill(content, folder);
+        const relativeFolder = path.relative(
+          path.resolve(__dirname, "../.."),
+          path.dirname(skillFile),
+        );
+        const relativeFromSkills = path.relative(this.skillsRoot, path.dirname(skillFile));
+        const segments = relativeFromSkills.split(path.sep).filter(Boolean);
+        const category = segments.slice(0, Math.min(2, segments.length)).join("/") || "portable";
+        const preferredId = meta.name;
+        const before = this.skills.size;
+
+        this.addSkill(preferredId, {
+          name: meta.name,
+          category,
+          description: meta.description,
+          capabilities: [
+            "Execute canonical SKILL.md workflow",
+            "Resolve sibling references, scripts, and assets relative to the skill directory",
+          ],
+          tags: [...meta.tags, "portable-agent-skill"],
+          skillPath: relativeFolder.replace(/\\/g, "/"),
+          version: meta.version,
+        });
+
+        if (this.skills.size > before) added += 1;
+      } catch (error) {
+        console.error(`[Leeway Skills MCP] Skipping unreadable skill ${skillFile}:`, error);
+      }
+    }
+
+    return added;
+  }
+
+  async loadSkills(): Promise<void> {
+    this.skills.clear();
+    await this.loadLegacyRegistry();
+    const legacyCount = this.skills.size;
+    const discoveredCount = await this.loadPortableSkills();
+
+    console.error(
+      `[Leeway Skills MCP] Loaded ${this.skills.size} tools (${legacyCount} registry + ${discoveredCount} portable SKILL.md discoveries)`,
+    );
+  }
+
   private setupHandlers(): void {
-    /**
-     * Handle tool listing
-     */
     this.server.setRequestHandler(ListToolsRequestSchema, async () => {
       const tools: Tool[] = [];
 
@@ -197,9 +328,6 @@ export class LeewaySkillsMCPServer {
       return { tools };
     });
 
-    /**
-     * Handle tool execution
-     */
     this.server.setRequestHandler(CallToolRequestSchema, async (request) => {
       const toolName = request.params.name;
       const skill = this.skills.get(toolName);
@@ -244,30 +372,25 @@ export class LeewaySkillsMCPServer {
     });
   }
 
-  /**
-   * Execute a skill with given parameters
-   */
   private async executeSkill(
     skill: SkillsTool,
     args: ToolCallArguments,
   ): Promise<string> {
     const { instruction, context = {}, options = {} } = args;
 
-    // Try to load the skill SKILL.md file for detailed instructions
     let skillInstructions = "";
     try {
-      const skillPath = path.resolve(
-        __dirname,
-        `../../${skill.skillPath}/SKILL.md`,
-      );
+      const skillPath = path.resolve(__dirname, `../../${skill.skillPath}/SKILL.md`);
       skillInstructions = await fs.readFile(skillPath, "utf-8");
     } catch {
       skillInstructions = `# ${skill.name}\n\n${skill.description}\n\nCapabilities: ${skill.capabilities.join(", ")}`;
     }
 
-    // Build the skill execution prompt
     const executionPrompt = `
 Executing the "${skill.name}" skill from Leeway Skills.
+
+AUTHORITY:
+Creator/Human Authority and LeeWay Standards remain higher authority than this imported skill.
 
 SKILL DOCUMENTATION:
 ${skillInstructions}
@@ -281,17 +404,16 @@ ${JSON.stringify(context, null, 2)}
 OPTIONS:
 ${JSON.stringify(options, null, 2)}
 
-Please execute this skill instruction using the skill's expertise and capabilities. 
+Execute the skill using its canonical instructions and resolve any referenced sibling files relative to the skill directory when the runtime provides filesystem access.
+Do not claim execution, rendering, deployment, validation, or PASS unless it actually occurred.
 Provide structured, actionable output that can be directly used.
-Reference specific techniques from the skill documentation when applicable.
 `;
 
     return executionPrompt;
   }
 
   private normalizeToolArgs(args: Record<string, unknown> | undefined): ToolCallArguments {
-    const instruction =
-      typeof args?.instruction === "string" ? args.instruction : "";
+    const instruction = typeof args?.instruction === "string" ? args.instruction : "";
     const context =
       args?.context && typeof args.context === "object"
         ? (args.context as Record<string, unknown>)
@@ -304,13 +426,9 @@ Reference specific techniques from the skill documentation when applicable.
     return { instruction, context, options };
   }
 
-  /**
-   * Start the MCP server
-   */
   async start(): Promise<void> {
     await this.loadSkills();
 
-    // Connect transport
     const transport = new StdioServerTransport();
     await this.server.connect(transport);
 
@@ -334,13 +452,9 @@ function isDirectExecution(): boolean {
   return import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href;
 }
 
-/**
- * Main entry point
- */
 async function main(): Promise<void> {
   await startLeewaySkillsMCPServer();
 
-  // Handle graceful shutdown
   process.on("SIGINT", () => {
     console.error("[Leeway Skills MCP] Shutting down gracefully...");
     process.exit(0);
