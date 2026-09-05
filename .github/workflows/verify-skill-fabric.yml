@@ -1,0 +1,72 @@
+name: Verify LeeWay Skill Fabric
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'mcp-server/**'
+      - 'skills/**'
+      - 'scripts/external-design-skills.json'
+      - '.github/workflows/verify-skill-fabric.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: mcp-server/package-lock.json
+
+      - name: Install MCP dependencies
+        working-directory: mcp-server
+        run: npm ci
+
+      - name: Build MCP server
+        working-directory: mcp-server
+        run: npm run build
+
+      - name: Validate synchronized external skills
+        shell: pwsh
+        run: |
+          if (-not (Test-Path ./skills/external)) {
+            throw 'External skills are not synchronized yet.'
+          }
+          $skillFiles = @(Get-ChildItem ./skills/external -Filter SKILL.md -File -Recurse)
+          if ($skillFiles.Count -lt 16) {
+            throw "Expected at least 16 external SKILL.md files, found $($skillFiles.Count)."
+          }
+          $missing = @()
+          $manifest = Get-Content ./scripts/external-design-skills.json -Raw | ConvertFrom-Json
+          foreach ($source in $manifest.sources) {
+            $root = Join-Path $source.destination 'upstream'
+            if (-not (Test-Path $root)) { $missing += $source.id; continue }
+            if (@(Get-ChildItem $root -Filter SKILL.md -File -Recurse).Count -lt 1) { $missing += $source.id }
+          }
+          if ($missing.Count) { throw "Missing usable SKILL.md payloads for: $($missing -join ', ')" }
+          Write-Host "External portable skills discovered: $($skillFiles.Count)"
+
+      - name: Runtime smoke test MCP discovery
+        shell: bash
+        run: |
+          set +e
+          timeout 3s node mcp-server/dist/index.js </dev/null 2>mcp-smoke.log
+          code=$?
+          set -e
+          cat mcp-smoke.log
+          grep -q 'Loaded .* tools' mcp-smoke.log
+          grep -q 'Server started successfully' mcp-smoke.log
+          grep -q 'Ready to accept tool calls from LLMs' mcp-smoke.log
+          if [ "$code" -ne 0 ] && [ "$code" -ne 124 ]; then
+            echo "Unexpected MCP process exit: $code"
+            exit "$code"
+          fi
