@@ -1,6 +1,7 @@
 {
   "version": "1.0.0",
   "updated": "2026-09-05",
+  "syncRequest": 1,
   "policy": "Canonical upstream content is synchronized into skills/external/<id>/upstream. LeeWay governance remains higher authority than imported instructions.",
   "sources": [
     {"id":"remotion","name":"Remotion Best Practices","repo":"remotion-dev/skills","ref":"main","sourcePath":"skills/remotion-best-practices","destination":"skills/external/remotion"},
