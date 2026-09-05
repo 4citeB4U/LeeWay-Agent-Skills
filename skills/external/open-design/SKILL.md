@@ -1,6 +1,6 @@
 ---
 name: open-design
- description: Remote-backed LeeWay binding to OpenDesign skills for agent-native design systems, prototypes, decks, documents, images, video, and HyperFrame work.
+description: Remote-backed LeeWay binding to OpenDesign skills for agent-native design systems, prototypes, decks, documents, images, video, and HyperFrame work.
 ---
 # OpenDesign
 Canonical source: `nexu-io/open-design` → `skills/` on `main`.
