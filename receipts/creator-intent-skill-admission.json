@@ -1,0 +1,27 @@
+{
+  "receipt_type": "LEEWAY_SKILL_ADMISSION",
+  "skill": "leeway-creator-intent",
+  "status": "PASS_REPOSITORY_ADMISSION",
+  "admitted_commit": "c9225b921ef08d2b0e267319416b38d423e8e743",
+  "repository": "4citeB4U/LeeWay-Agent-Skills",
+  "branch": "main",
+  "canonical_path": "skills/leeway-creator-intent/SKILL.md",
+  "references": [
+    "skills/leeway-creator-intent/references/creator-language-map.md",
+    "skills/leeway-creator-intent/references/approved-design-language.md",
+    "skills/leeway-creator-intent/references/skill-combination-policy.md"
+  ],
+  "routing_updates": [
+    "AGENTS.md",
+    "skills/design-suite/SKILL.md"
+  ],
+  "rollback_branch": "backup/pre-creator-intent-skill-20260905",
+  "evidence": {
+    "skill_readback": "VERIFIED",
+    "agent_route_readback": "VERIFIED",
+    "combination_policy_readback": "VERIFIED",
+    "mcp_runtime_execution": "NOT_EXECUTED",
+    "openai_native_install": "NOT_EXECUTED"
+  },
+  "claim_boundary": "This receipt proves repository admission and routing configuration only. It does not claim a live MCP runtime invocation or a native ChatGPT skill installation."
+}
