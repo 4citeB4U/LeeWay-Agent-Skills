@@ -1,0 +1,13 @@
+{
+  "version": "1.0.0",
+  "updated": "2026-09-05",
+  "policy": "Reference and execution adapters are locally governed LeeWay skills. They are not represented as synchronized upstream Agent Skills unless the canonical source actually ships a portable SKILL.md.",
+  "resources": [
+    {"id":"skillui","name":"SkillUI","sourceType":"tool-adapter","repo":"amaancoderx/npxskillui","ref":"main","destination":"skills/external/skillui"},
+    {"id":"awesome-design","name":"Awesome Design MD","sourceType":"design-corpus","repo":"VoltAgent/awesome-design-md","ref":"main","sourcePath":"design-md","destination":"skills/external/awesome-design"},
+    {"id":"stitch","name":"Google Stitch","sourceType":"web-service","url":"https://stitch.withgoogle.com/","destination":"skills/external/stitch"},
+    {"id":"21st-dev","name":"21st.dev","sourceType":"web-registry","url":"https://21st.dev/","destination":"skills/external/21st-dev"},
+    {"id":"google-fonts","name":"Google Fonts","sourceType":"web-resource","url":"https://fonts.google.com/","destination":"skills/external/google-fonts"},
+    {"id":"playwright","name":"Microsoft Playwright","sourceType":"execution-tool","repo":"microsoft/playwright","ref":"main","destination":"skills/external/playwright"}
+  ]
+}
