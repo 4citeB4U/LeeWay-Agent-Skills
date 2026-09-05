@@ -1,0 +1,34 @@
+{
+  "version": "1.0.0",
+  "purpose": "Additive skill index overlay. The canonical base registry remains scripts/skills-registry.json.",
+  "skills": [
+    {
+      "name": "LeeWay Context Gateway",
+      "category": "agent-orchestration",
+      "path": "skills/agent-orchestration/leeway-context-gateway",
+      "version": "1.0.0",
+      "tags": [
+        "mcp",
+        "context-routing",
+        "zero-search-debt",
+        "agent-orchestration",
+        "veritas",
+        "telemetry",
+        "governance",
+        "multi-model"
+      ],
+      "description": "Deterministically routes intent to the minimum governed LeeWay context set and exposes evidence-preserving remote MCP resources, prompts, tools, and telemetry.",
+      "capabilities": [
+        "Deterministic Set A/B/C/D context routing",
+        "Fail-closed evidence adapters",
+        "Remote MCP v2 context delivery",
+        "SHA-256 context payload identity",
+        "Privacy-minimal connection telemetry",
+        "Stable endpoint with live source refresh"
+      ],
+      "dependency": null,
+      "enabled": true,
+      "source": "internal"
+    }
+  ]
+}
