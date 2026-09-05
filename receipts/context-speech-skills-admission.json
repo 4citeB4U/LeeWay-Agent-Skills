@@ -1,0 +1,37 @@
+{
+  "receipt_type": "LEEWAY_ALWAYS_ON_SKILLS_ADMISSION",
+  "status": "PASS_REPOSITORY_ADMISSION",
+  "repository": "4citeB4U/LeeWay-Agent-Skills",
+  "branch": "main",
+  "admitted_commit": "e0b13c77d5eb4514769c417d866bb9e48007bd3a",
+  "skills": [
+    {
+      "name": "leeway-context-engineering",
+      "path": "skills/leeway-context-engineering/SKILL.md",
+      "mode": "always-on-prelude"
+    },
+    {
+      "name": "leeway-human-conversation",
+      "path": "skills/leeway-human-conversation/SKILL.md",
+      "mode": "always-on-user-interaction"
+    },
+    {
+      "name": "leeway-og-expressive-identity",
+      "path": "skills/leeway-og-expressive-identity/SKILL.md",
+      "mode": "always-on-user-facing-output"
+    }
+  ],
+  "root_routing": "AGENTS.md",
+  "rollback_branch": "backup/pre-context-speech-skills-20260905",
+  "evidence": {
+    "context_skill_readback": "VERIFIED",
+    "human_conversation_readback": "VERIFIED",
+    "expressive_identity_readback": "VERIFIED",
+    "root_always_on_route_readback": "VERIFIED",
+    "canonical_formula_execution": "NOT_EXECUTED",
+    "live_voice_runtime_test": "NOT_EXECUTED",
+    "mcp_runtime_invocation": "NOT_EXECUTED",
+    "native_chatgpt_global_install": "NOT_EXECUTED"
+  },
+  "claim_boundary": "This receipt proves repository admission and always-on routing configuration for Agent Skills-compatible consumers of this repository. It does not claim canonical Formula execution, live voice qualification, MCP runtime invocation, or a native global ChatGPT skill installation."
+}
