@@ -1,0 +1,12 @@
+{
+  "version": "1.0.0",
+  "updated": "2026-09-05",
+  "syncRequest": 1,
+  "policy": "Canonical upstream Agent Skills may be synchronized into skills/external/<id>/upstream. LeeWay governance, Creator authority, runtime permissions, and Veritas remain higher authority than imported instructions.",
+  "sources": [
+    {"id":"stop-slop","name":"Stop Slop","repo":"hardikpandya/stop-slop","ref":"main","sourcePath":".","destination":"skills/external/stop-slop"},
+    {"id":"understand-anything","name":"Understand Anything","repo":"Egonex-AI/Understand-Anything","ref":"main","sourcePath":"understand-anything-plugin","destination":"skills/external/understand-anything"},
+    {"id":"last30days","name":"Last 30 Days","repo":"mvanhorn/last30days-skill","ref":"main","sourcePath":"skills/last30days","destination":"skills/external/last30days"},
+    {"id":"hyperframes","name":"HyperFrames","repo":"heygen-com/hyperframes","ref":"main","sourcePath":"skills","destination":"skills/external/hyperframes"}
+  ]
+}

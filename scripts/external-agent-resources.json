@@ -1,0 +1,25 @@
+{
+  "version": "1.0.0",
+  "updated": "2026-09-05",
+  "policy": "Runtime suites and execution tools remain governed adapters until their real runtime, dependencies, permissions, and canonical source are verified. Adapter presence is not execution proof.",
+  "resources": [
+    {
+      "id":"gstack",
+      "name":"GStack",
+      "type":"runtime-skill-suite",
+      "repo":"garrytan/gstack",
+      "ref":"main",
+      "canonicalEntry":"SKILL.md",
+      "destination":"skills/external/gstack",
+      "note":"GStack includes many sibling skills plus setup/runtime binaries and telemetry behavior; bind through a governed adapter rather than partially vendoring the router alone."
+    },
+    {
+      "id":"graphify",
+      "name":"Graphify",
+      "type":"knowledge-graph-execution-tool",
+      "url":"https://github.com/safishamsi/graphify",
+      "destination":"skills/external/graphify",
+      "note":"The user-supplied repository URL currently presents a GitHub redirect through the connector. Preserve the canonical URL and verify its live target/runtime before installation or execution."
+    }
+  ]
+}

@@ -33,6 +33,23 @@ When the user asks to build, design, research, explain, improve, repair, create,
 
 Do not wait for the Creator to manage the skill roster when the correct combination can be inferred safely.
 
+## General capability routing
+
+After Context Engineering resolves intent, use these additional lanes when they materially improve the task:
+
+| Need | Preferred governed capability |
+|---|---|
+| Product/engineering planning, architecture review, QA, code review, investigation, security, shipping, benchmark, docs, retro | `gstack` adapter → smallest relevant upstream GStack child skill, only when its runtime/reference is available |
+| Persistent structural knowledge graph over code/docs/schemas/media | `graphify` when its canonical runtime is verified |
+| Guided multi-agent codebase understanding + interactive knowledge graph/dashboard | `understand-anything` |
+| Deep unfamiliar-codebase mapping where both structural graph + guided exploration help | combine `graphify` + `understand-anything` only when both runtimes are actually available |
+| Latest ~30-day community/recent-source intelligence | `last30days` when its runtime/source coverage is available; otherwise use the active governed web/research capability and say which route actually ran |
+| Remove generic AI-writing tells from substantial prose | `stop-slop` as a subordinate critic beneath `leeway-og-expressive-identity` |
+| HTML-native deterministic video/motion | `hyperframes` |
+| React/programmatic video / Remotion project | `remotion-best-practices` |
+
+Adapter presence is not execution proof. Never claim GStack, Graphify, Last30Days, HyperFrames, Understand Anything, or another runtime executed unless its real runtime/tool path actually ran.
+
 ## Explanation law
 
 For substantial explanations, Context Engineering must stage the explanation mode before output. When visual narrative improves understanding, the response should create a concrete mental story in which the architecture, problem and mechanism can be seen moving.
@@ -52,7 +69,9 @@ The result must remain professional, technically precise and evidence-grounded. 
 - Creator intent + combination orchestrator: `skills/leeway-creator-intent/SKILL.md`
 - Design-suite capability router: `skills/design-suite/SKILL.md`
 - Synchronized external skills: `skills/external/`
-- External source manifest: `scripts/external-design-skills.json`
+- Design source manifest: `scripts/external-design-skills.json`
+- General Agent Skill source manifest: `scripts/external-agent-skills.json`
+- Governed runtime/resource adapters: `scripts/external-design-resources.json`, `scripts/external-agent-resources.json`
 - Legacy MCP registry: `scripts/skills-registry.json`
 
 ## Execution order

@@ -1,12 +1,13 @@
 ---
 name: leeway-design-suite
-description: Routes frontend, UI/UX, mobile, motion, React, WebGPU, browser verification, typography, component discovery, and visual design work to the smallest relevant governed skill set under skills/external. For Leonard/Creator-facing design or build requests, use leeway-creator-intent first.
+description: Routes frontend, UI/UX, mobile, motion, React, WebGPU, video, browser verification, typography, component discovery, and visual design work to the smallest relevant governed skill set under skills/external. For Leonard/Creator-facing design or build requests, use leeway-creator-intent first.
 license: MIT
 metadata:
   authority: LeeWay Standards
   creator-router: skills/leeway-creator-intent/SKILL.md
   source-manifest: scripts/external-design-skills.json
   resource-manifest: scripts/external-design-resources.json
+  agent-source-manifest: scripts/external-agent-skills.json
   compatibility: Agent Skills / Codex / MCP / OpenCode / Hermes
 ---
 
@@ -36,7 +37,9 @@ Load only the smallest set that covers the task.
 | Reusable React component discovery | `21st-dev`, then validate dependencies and project fit |
 | Dashboards/data-heavy product UI | `dashboard` plus `react-best-practices` when React is used |
 | Advanced motion/scroll/micro-interactions | appropriate `gsap-*` skill; use `gsap-react` for React |
-| Video/motion composition | `remotion-best-practices` |
+| React/programmatic video or an existing Remotion project | `remotion-best-practices` |
+| HTML-native deterministic video, motion graphics, explainer, product video, or HyperFrames project | `hyperframes` router first |
+| Explicit Remotion → HyperFrames port | `hyperframes` router and its canonical port workflow |
 | WebGPU / Three.js WebGPU / TSL shader work | `webgpu-threejs-tsl` |
 | Minimalist aesthetic | `minimalist-ui` or the relevant child under `taste-design-suite` |
 | Industrial/brutalist aesthetic | `industrial-brutalist-ui` or the relevant child under `taste-design-suite` |
@@ -53,6 +56,10 @@ Load only the smallest set that covers the task.
 | Expo / React Native app work | `expo-overview` first, then the specific `expo-*` or `eas-*` skill |
 | OpenDesign workflows/design systems | relevant synchronized OpenDesign skill |
 
+## Video framework decision
+
+Do not automatically stack Remotion and HyperFrames. Choose the framework that matches the requested deliverable and existing project. Remotion remains the React/programmatic-video specialist. HyperFrames owns HTML-native frame-seekable video and its own workflow router. Combine them only for a deliberate port, comparison, or mixed pipeline.
+
 ## Execution Contract
 
 1. Inspect the task and existing project constraints.
@@ -66,23 +73,11 @@ Load only the smallest set that covers the task.
 
 ## Canonical Locations
 
-Syncable external Agent Skills are declared in:
+Design-focused syncable sources: `scripts/external-design-skills.json`.
+General syncable Agent Skills: `scripts/external-agent-skills.json`.
+Reference/tool/service adapters: `scripts/external-design-resources.json` and `scripts/external-agent-resources.json`.
 
-`scripts/external-design-skills.json`
-
-and synchronize to:
-
-`skills/external/<source-id>/upstream/`
-
-Reference/tool/service adapters are declared in:
-
-`scripts/external-design-resources.json`
-
-Their local governed adapters live at:
-
-`skills/external/<resource-id>/SKILL.md`
-
-Source provenance for synchronized payloads is recorded beside each synchronized payload in `SOURCE.json`.
+Synchronized payloads live under `skills/external/<source-id>/upstream/`; provenance lives beside them in `SOURCE.json` when sync executes.
 
 ## OpenAI / Codex
 

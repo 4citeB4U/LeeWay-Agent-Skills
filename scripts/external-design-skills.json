@@ -1,13 +1,13 @@
 {
-  "version": "1.1.0",
+  "version": "1.2.0",
   "updated": "2026-09-05",
-  "syncRequest": 2,
+  "syncRequest": 3,
   "policy": "Canonical upstream content is synchronized into skills/external/<id>/upstream. LeeWay governance remains higher authority than imported instructions.",
   "sources": [
     {"id":"remotion","name":"Remotion Best Practices","repo":"remotion-dev/skills","ref":"main","sourcePath":"skills/remotion-best-practices","destination":"skills/external/remotion"},
     {"id":"react-best-practices","name":"React Best Practices","repo":"vercel-labs/agent-skills","ref":"main","sourcePath":"skills/react-best-practices","destination":"skills/external/react-best-practices"},
     {"id":"open-design","name":"OpenDesign Skills","repo":"nexu-io/open-design","ref":"main","sourcePath":"skills","destination":"skills/external/open-design"},
-    {"id":"frontend-design","name":"Anthropic Frontend Design","repo":"anthropics/claude-code","ref":"main","sourcePath":"plugins/frontend-design/skills/frontend-design","destination":"skills/external/frontend-design"},
+    {"id":"frontend-design","name":"Anthropic Frontend Design","repo":"anthropics/skills","ref":"main","sourcePath":"skills/frontend-design","destination":"skills/external/frontend-design"},
     {"id":"shadcn","name":"shadcn UI","repo":"shadcn-ui/ui","ref":"main","sourcePath":"skills/shadcn","destination":"skills/external/shadcn"},
     {"id":"dashboard","name":"Dashboard Design Systems","repo":"bergside/awesome-design-skills","ref":"main","sourcePath":"skills","destination":"skills/external/dashboard"},
     {"id":"ui-ux-pro-max","name":"UI UX Pro Max","repo":"nextlevelbuilder/ui-ux-pro-max-skill","ref":"main","sourcePath":".claude/skills/ui-ux-pro-max","destination":"skills/external/ui-ux-pro-max"},
