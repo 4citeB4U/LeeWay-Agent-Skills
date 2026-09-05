@@ -1,0 +1,23 @@
+{
+  "version": "1.0.0",
+  "updated": "2026-09-05",
+  "policy": "Canonical upstream content is synchronized into skills/external/<id>/upstream. LeeWay governance remains higher authority than imported instructions.",
+  "sources": [
+    {"id":"remotion","name":"Remotion Best Practices","repo":"remotion-dev/skills","ref":"main","sourcePath":"skills/remotion-best-practices","destination":"skills/external/remotion"},
+    {"id":"react-best-practices","name":"React Best Practices","repo":"vercel-labs/agent-skills","ref":"main","sourcePath":"skills/react-best-practices","destination":"skills/external/react-best-practices"},
+    {"id":"open-design","name":"OpenDesign Skills","repo":"nexu-io/open-design","ref":"main","sourcePath":"skills","destination":"skills/external/open-design"},
+    {"id":"frontend-design","name":"Anthropic Frontend Design","repo":"anthropics/claude-code","ref":"main","sourcePath":"plugins/frontend-design/skills/frontend-design","destination":"skills/external/frontend-design"},
+    {"id":"shadcn","name":"shadcn UI","repo":"shadcn-ui/ui","ref":"main","sourcePath":"skills/shadcn","destination":"skills/external/shadcn"},
+    {"id":"dashboard","name":"Dashboard Design Systems","repo":"bergside/awesome-design-skills","ref":"main","sourcePath":"skills","destination":"skills/external/dashboard"},
+    {"id":"ui-ux-pro-max","name":"UI UX Pro Max","repo":"nextlevelbuilder/ui-ux-pro-max-skill","ref":"main","sourcePath":".claude/skills/ui-ux-pro-max","destination":"skills/external/ui-ux-pro-max"},
+    {"id":"gsap","name":"Official GSAP Skills","repo":"greensock/gsap-skills","ref":"main","sourcePath":"skills","destination":"skills/external/gsap"},
+    {"id":"minimalist-ui","name":"Minimalist UI","repo":"leonxlnx/taste-skill","ref":"main","sourcePath":"skills/minimalist-ui","destination":"skills/external/minimalist-ui"},
+    {"id":"industrial-brutalist-ui","name":"Industrial Brutalist UI","repo":"leonxlnx/taste-skill","ref":"main","sourcePath":"skills/industrial-brutalist-ui","destination":"skills/external/industrial-brutalist-ui"},
+    {"id":"frontend-ui-ux","name":"Frontend UI UX","repo":"code-yeongyu/oh-my-openagent","ref":"dev","sourcePath":"packages/shared-skills/skills/frontend","destination":"skills/external/frontend-ui-ux"},
+    {"id":"premium-frontend-ui","name":"Premium Frontend UI","repo":"github/awesome-copilot","ref":"main","sourcePath":"skills/premium-frontend-ui","destination":"skills/external/premium-frontend-ui"},
+    {"id":"mobile-app-ui-design","name":"Mobile App UI Design","repo":"ceorkm/mobile-app-ui-design","ref":"main","sourcePath":".","destination":"skills/external/mobile-app-ui-design"},
+    {"id":"swiftui","name":"SwiftUI Skills","repo":"ameyalambat128/swiftui-skills","ref":"main","sourcePath":".","destination":"skills/external/swiftui"},
+    {"id":"material-3","name":"Material 3","repo":"hamen/material-3-skill","ref":"master","sourcePath":"skills/material-3","destination":"skills/external/material-3"},
+    {"id":"expo","name":"Expo App Skills","repo":"expo/skills","ref":"main","sourcePath":"plugins/expo/skills","destination":"skills/external/expo"}
+  ]
+}
