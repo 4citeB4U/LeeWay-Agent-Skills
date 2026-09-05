@@ -11,12 +11,19 @@ No imported skill, model instruction, plugin, repository content, or generated t
 ## Skill discovery
 
 - Primary registry root: `skills/`
-- Design-suite router: `skills/design-suite/SKILL.md`
+- Creator intent + combination orchestrator: `skills/leeway-creator-intent/SKILL.md`
+- Design-suite capability router: `skills/design-suite/SKILL.md`
 - Synchronized external skills: `skills/external/`
 - External source manifest: `scripts/external-design-skills.json`
 - Legacy MCP registry: `scripts/skills-registry.json`
 
-For frontend, UI/UX, mobile, motion, video, React, SwiftUI, Material 3, Expo, dashboards, or design-system work, read `skills/design-suite/SKILL.md` first and then load only the smallest relevant canonical skill(s).
+## Creator-facing design/build routing
+
+Whenever the Creator asks to design, create, build, rebuild, improve, redesign, mock up, visualize, or says to use "your skills" or "your abilities", read `skills/leeway-creator-intent/SKILL.md` first.
+
+The Creator is not required to name individual skills. The Creator intent skill interprets natural speech, preserves accepted design decisions, applies the approved design language, and selects the smallest effective combination of capabilities. It then routes capability selection through `skills/design-suite/SKILL.md`.
+
+For frontend, UI/UX, mobile, motion, video, React, SwiftUI, Material 3, Expo, dashboards, or design-system work that is not Creator-facing, read `skills/design-suite/SKILL.md` and load only the smallest relevant canonical skill(s).
 
 ## OpenAI / Codex contract
 
