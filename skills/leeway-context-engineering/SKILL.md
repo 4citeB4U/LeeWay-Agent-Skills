@@ -1,11 +1,12 @@
 ---
 name: leeway-context-engineering
-description: Always-on LeeWay Context Engineering prelude. Use before every task to protect literal intent, evaluate context provenance and relevance, expand context only when evidence requires it, stage the response state, prepare a compact Formula-ready context state, and route only the minimum necessary capabilities. Never invent Formula/Q69/C64 outputs.
+description: Always-on LeeWay Context Engineering prelude. Use after Continuity Authority and before every task to protect literal intent, evaluate context provenance and relevance, expand context only when evidence requires it, stage the response state, prepare a compact Formula-ready context state, and route only the minimum necessary capabilities. Never invent Formula/Q69/C64 outputs.
 license: MIT
 metadata:
   authority: Creator/Human Authority > LeeWay Standards
   mode: always-on
   stage: pre-formula
+  continuity-prelude: skills/leeway-continuity-authority/SKILL.md
   compatibility: Agent Skills / Codex / MCP / OpenCode / Hermes
 ---
 
@@ -13,13 +14,21 @@ metadata:
 
 ## Always-on law
 
-This skill runs first for every task handled through this repository. It is the context prelude to the LeeWay Formula, not an optional preprocessing utility.
+This skill runs after `leeway-continuity-authority` for every task handled through this repository. It is the context prelude to the LeeWay Formula, not an optional preprocessing utility.
 
 Core law:
 
 > Simple meaning must remain simple. Complexity must be earned by evidence.
 
 Start with the user's literal request. Context may enrich literal meaning, resolve references, recover continuity, or constrain execution, but it may not silently replace the literal request.
+
+## Continuity handoff
+
+Before interpreting the current turn, accept the restored continuity state from `leeway-continuity-authority` when one exists.
+
+Use that state to preserve accepted decisions, explicit corrections, current gates, blockers, capability state, and evidence boundaries. Do not force the user to restate recoverable LeeWay context.
+
+If continuity is partial, do not fill the missing pieces with guesses. Continue from the strongest permitted evidence and mark uncertainty only when it materially affects the answer or execution.
 
 ## Context Ingress Boundary
 
@@ -81,7 +90,7 @@ For each task:
 10. **Response staging** — determine the audience, stakes, explanation mode, selected capabilities, narrative shape and expressive intensity before user-facing output.
 11. **Formula bridge** — prepare the Formula-ready context state and preserve provenance into later routing/execution/verification.
 
-Operational shorthand: **write → select → compress → isolate → stage → route**.
+Operational shorthand: **recover → write → select → compress → isolate → stage → route**.
 
 ## Response staging state
 
@@ -141,6 +150,8 @@ After context is resolved, autonomously ask:
 
 Prefer deterministic capability over unnecessary inference. Prefer the smallest sufficient skill/tool set. When a task clearly benefits from a combination, assemble it without requiring the user to name individual skills. Escalate only when the problem is novel, ambiguous, creative, analytical, uncertain, or requires capabilities unavailable on the fast path.
 
+Use the execution-state vocabulary from `leeway-continuity-authority`: distinguish `SKILL_AVAILABLE`, `WORKFLOW_EXECUTED`, `ADAPTER_EXECUTED`, `NATIVE_RUNTIME_EXECUTED`, `NOT_TRIGGERED`, `REFERENCE_ONLY`, `BLOCKED`, and `FAILED`. Do not confuse an available but irrelevant skill with a failed or unavailable one.
+
 ## Output contract
 
 This skill usually operates silently. Do not dump context analysis on the user unless it materially helps.
@@ -153,8 +164,8 @@ When execution is consequential, preserve enough provenance to explain what cont
 
 Execution order:
 
-`leeway-context-engineering` → task/domain skill combination → verification → `leeway-human-conversation` + `leeway-og-expressive-identity` for user-facing language.
+`leeway-continuity-authority` → `leeway-context-engineering` → task/domain skill combination → verification → `leeway-human-conversation` + `leeway-og-expressive-identity` for user-facing language.
 
 For Creator-facing design/build work:
 
-`leeway-context-engineering` → `leeway-creator-intent` → design/build skill combination → verification → human conversation + expressive identity.
+`leeway-continuity-authority` → `leeway-context-engineering` → `leeway-creator-intent` → design/build skill combination → verification → human conversation + expressive identity.

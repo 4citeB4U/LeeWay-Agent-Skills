@@ -1,0 +1,28 @@
+{
+  "receipt_type": "LEEWAY_CONTINUITY_LAW_ADMISSION",
+  "status": "PASS_REPOSITORY_ADMISSION",
+  "repository": "4citeB4U/LeeWay-Agent-Skills",
+  "branch": "main",
+  "base_commit": "e0ac0e5b09d63da1ce1a04ce3ee48a72c76fb0b9",
+  "rollback_branch": "backup/pre-continuity-law-20260905",
+  "changes": [
+    "Added always-on leeway-continuity-authority skill",
+    "Promoted continuity recovery ahead of Context Engineering",
+    "Locked cross-session/new-chat/resumed-old-chat continuity contract for runtimes that load permitted LeeWay context",
+    "Added precise capability execution-state vocabulary",
+    "Clarified that NOT_TRIGGERED is not failure",
+    "Clarified that past responses are not retroactively rewritten",
+    "Clarified that unavailable continuity evidence must not be fabricated"
+  ],
+  "execution_state_vocabulary": [
+    "SKILL_AVAILABLE",
+    "WORKFLOW_EXECUTED",
+    "ADAPTER_EXECUTED",
+    "NATIVE_RUNTIME_EXECUTED",
+    "NOT_TRIGGERED",
+    "REFERENCE_ONLY",
+    "BLOCKED",
+    "FAILED"
+  ],
+  "claim_boundary": "This receipt proves repository admission of the continuity contract and routing rules. It cannot force an unrelated host/session to load LeeWay context when that environment exposes no permitted continuity source, and it does not retroactively alter already-sent messages."
+}
