@@ -1,0 +1,148 @@
+version: "1.0.0"
+name: "LeeWay Universal Capability Manifold"
+authority: "Creator/Human Authority > LeeWay Standards"
+canonical_skill: "skills/leeway-universal-capability-kernel/SKILL.md"
+
+layers:
+  constitutional_core:
+    purpose: "Always-on identity, authority, continuity, context, Formula, evidence and delivery law."
+  ambient_capability_field:
+    purpose: "All promoted skill metadata, primitives, transfer patterns, constraints and evidence remain eligible."
+    full_skill_documents_loaded_by_default: false
+  task_capability_weave:
+    purpose: "Cross-domain capabilities materially useful to the current context."
+    scale: "may include tens or hundreds of micro-capabilities"
+  focal_execution_set:
+    purpose: "Bounded subset requiring full skill instructions, tools, adapters, workflows or runtimes."
+
+skill_atom_schema:
+  fields:
+    - skillId
+    - version
+    - authorityRef
+    - lifecycleState
+    - mastery
+    - activationPriority
+    - transferability
+    - criticality
+    - recency
+    - evidenceQuality
+    - compatibility
+    - primitives
+    - patterns
+    - constraints
+    - failureModes
+    - references
+    - relationships
+    - runtimeCost
+    - lastVerifiedReceipt
+
+primitive_families:
+  - perception
+  - classification
+  - diagnosis
+  - prediction
+  - sequencing
+  - planning
+  - routing
+  - prioritization
+  - measurement
+  - calibration
+  - safety
+  - containment
+  - escalation
+  - rollback_recovery
+  - communication
+  - negotiation
+  - teaching
+  - persuasion
+  - humor
+  - storytelling
+  - visual_composition
+  - abstraction
+  - analogy
+  - mathematical_modeling
+  - optimization
+  - verification
+  - documentation
+  - compliance
+  - maintenance
+  - adaptation
+  - empathy_audience_modeling
+  - leadership_delegation
+  - creativity_synthesis
+  - extensible
+
+relationships:
+  - shares_primitive_with
+  - transfers_pattern_to
+  - analogous_failure_mode_to
+  - analogous_safety_pattern_to
+  - requires
+  - supports
+  - verifies
+  - criticizes
+  - fallback_for
+  - supersedes
+  - conflicts_with
+  - teaches
+  - explains
+  - compresses
+  - humanizes
+  - quantum_accelerable
+  - classical_fallback
+
+routing:
+  sequence:
+    - verify_skill_authority
+    - recover_continuity
+    - construct_context_state
+    - obtain_formula_route_when_executable
+    - query_ambient_capability_field
+    - construct_task_capability_weave
+    - resolve_conflicts_dependencies_and_verifiers
+    - expand_full_skill_details_when_required
+    - build_focal_execution_set
+    - execute
+    - veritas
+    - receipt
+    - verified_learning_update
+
+laws:
+  - "broad_influence != broad_heavy_execution"
+  - "dormant != absent"
+  - "not_focal != not_used"
+  - "domain_label != transfer_boundary"
+  - "analogy_may_route_but_does_not_prove"
+  - "only_verified_outcomes_promote_authoritative_transfer_rules"
+
+formula_compatibility:
+  c64_q69_aware: true
+  sixty_four_by_sixty_four_compatible_when_canonical_mapping_exists: true
+  prohibit_invented_mapping: true
+  fallback_representation: "provenance-bound structured capability graph"
+  preserve_when_real:
+    - formulaImplementation
+    - formulaVersion
+    - formulaAuthorityHash
+    - projectionSchema
+    - inputStateHash
+    - decisionHash
+
+learning:
+  update_from_verified_outcomes_only: true
+  may_update:
+    - mastery
+    - transferability
+    - successful_weaves
+    - failed_combinations
+    - contextual_triggers
+    - explanatory_patterns
+    - safety_relationships
+    - reference_relationships
+    - focal_execution_costs
+    - classical_quantum_backend_suitability
+
+output:
+  enumerate_micro_skills_by_default: false
+  behavioral_proof: "integrated cross-domain intelligence with inspectable evidence when consequential"
