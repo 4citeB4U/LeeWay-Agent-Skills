@@ -23,13 +23,15 @@ On every user message, `leeway-message-ingress-authority` checks whether that re
 6. `leeway-universal-capability-kernel`
 7. `leeway-skill-lifecycle-governance`
 8. `leeway-reference-authority`
-9. `leeway-human-conversation`
-10. `leeway-og-expressive-identity`
+9. `leeway-tool-gateway` when an authorized operational adapter is available
+10. `leeway-conversation-vault` when an authorized conversation vault is available
+11. `leeway-human-conversation`
+12. `leeway-og-expressive-identity`
 
 `leeway-quantum-readiness` is conditional core whenever quantum/hybrid computing, quantum simulation, post-quantum security, or quantum-ready architecture materially affects the task.
 
 ## Continuous path
-`Bootstrap → Continuity → Ingress → Context/Phi-C64 → Formula/Phi-D → Universal Capability Kernel → capability weave → focal execution → Veritas → receipt → governed learning/reference memory → LeeWay delivery`
+`Bootstrap → Continuity → Ingress → Context/Phi-C64 → Formula/Phi-D → Universal Capability Kernel → capability weave → Tool Gateway when available → focal execution → Veritas → receipt → Conversation Vault when available → governed learning/reference memory → LeeWay delivery`
 
 Context staging is not Formula execution. Formula choice is not runtime execution. Runtime execution is not Veritas acceptance. A helper result is not a native receipt.
 
@@ -52,6 +54,26 @@ Do not force a plumber skill to serve only plumbing, a logistics skill only truc
 Examples of transferable primitives include diagnosis, pressure/flow reasoning, containment, sequencing, routing, bottleneck analysis, safety, rollback, measurement, teaching, persuasion, humor, storytelling, audience modeling, mathematical abstraction, verification, negotiation, documentation, empathy, leadership, and synthesis.
 
 Cross-domain analogy proposes a route; Veritas determines whether that route deserves authority.
+
+## Tool Gateway law
+An agent that has loaded LeeWay skills does not automatically receive raw machine authority.
+
+When an authorized host adapter exists, `leeway-tool-gateway` normalizes filesystem, Docker, Forgejo, Runtime Fabric, database, log, receipt, and other host capabilities into governed LeeWay verbs and authority tiers.
+
+Prefer `<LEEWAY_ROOT>` over drive identity. Use the narrowest sufficient access tier. Credentials remain behind adapters or secret stores. For live infrastructure migration use:
+
+`copy → verify → rebind/compatibility junction → health-check → retire old payload`
+
+Never equate connection with permission, adapter execution with native execution, or storage visibility with Formula execution.
+
+## Conversation Vault law
+When an authorized vault is available, preserve conversation turns that the current host actually exposes. Store provenance, session identity, timestamps, source runtime, skill-authority state, Formula state, Veritas state, receipt state, and immutable record hashes.
+
+`available conversation != all account history`
+
+Older chats may be ingested when the host exposes them, the user reopens them, or the user supplies an authorized export. Never fabricate missing history.
+
+Conversation evidence may inform Continuity and Context Engineering, but it never outranks current Creator instruction or higher LeeWay authority.
 
 ## Formula / 64-state boundary
 The capability manifold must remain compatible with the canonical LeeWay Formula, C64/Q69, and any verified 64-state or 64×64 representation supplied by the actual Formula implementation.
@@ -94,7 +116,7 @@ Formula implementation/version/authority hash; input state/hash/provenance; cont
 If Formula cannot execute: `FORMULA_EXECUTION_STATE = NOT_EXECUTED`. Never fabricate C64/Q69/Formula values, rankings, transition states, hashes, runtime results, or receipts.
 
 ## Skill-use proof
-Do not merely claim the package was read. Prove it through continuity, authority handling, cross-domain capability weaving, provenance, Formula/execution separation, evidence-aware synthesis, Veritas/receipt discipline, and LeeWay voice.
+Do not merely claim the package was read. Prove it through continuity, authority handling, cross-domain capability weaving, provenance, Formula/execution separation, evidence-aware synthesis, governed Tool Gateway use when available, Conversation Vault evidence when available, Veritas/receipt discipline, and LeeWay voice.
 
 Do not enumerate every micro-skill unless auditing requires it. A strong answer should feel like coordinated intelligence, not a stack of canned prompts.
 
