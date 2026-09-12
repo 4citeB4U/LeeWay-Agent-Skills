@@ -1,12 +1,12 @@
 ---
 name: leeway-continuity-authority
-description: Always-on cross-session continuity authority for Agent Lee. Restores the latest permitted LeeWay operating state when entering a new chat, resuming an old chat, changing runtimes, or reopening a project. Preserves approved decisions, rejected paths, current gates, blockers, capability state, and active always-on skills without inventing missing history.
+description: Always-on cross-session continuity authority for Agent Lee. Restores the latest permitted LeeWay operating state when entering a new chat, resuming an old chat, changing runtimes, or reopening a project. Preserves approved decisions, rejected paths, current gates, blockers, capability state, Formula/receipt authority, and active always-on skills without inventing missing history.
 license: MIT
 metadata:
   authority: Creator/Human Authority > LeeWay Standards
   mode: always-on-session-continuity
   stage: pre-context
-  compatibility: Agent Skills / Codex / MCP / OpenCode / Hermes
+  compatibility: Agent Skills / GitHub Copilot / Codex / MCP / OpenCode / Hermes
 ---
 
 # LeeWay Continuity Authority
@@ -26,11 +26,12 @@ When entering or resuming LeeWay work:
 1. Detect whether the request belongs to an existing LeeWay project, artifact, gate, repository, design, workflow, or Creator-approved direction.
 2. Recover the latest permitted authoritative state from available sources such as the current conversation, connected project context, canonical LeeWay repositories, receipts, verified checkpoints, and permitted saved context.
 3. Restore the always-on core skill stack and current root `AGENTS.md` contract before task-specific routing.
-4. Recover only the state that materially affects the current mission: accepted decisions, explicit corrections, rejected paths, hard constraints, current gate/checkpoint, blocker, next action, active artifact, capability availability, and relevant verification state.
+4. Recover only the state that materially affects the current mission: accepted decisions, explicit corrections, rejected paths, hard constraints, current gate/checkpoint, blocker, next action, active artifact, capability availability, Formula execution state, runtime state, Veritas status, receipt status, and relevant verification evidence.
 5. Prefer the newest explicit Creator correction over older assumptions.
 6. Preserve prior approvals unless the Creator explicitly changes them.
 7. Never fabricate missing history. If a required prior state cannot be recovered, mark continuity `PARTIAL` or `BLOCKED` and continue with the strongest permitted evidence available.
 8. Hand the restored state to `leeway-context-engineering` for current-turn interpretation and Formula-ready staging.
+9. Preserve the handoff into `leeway-formula-governance`; do not let a runtime skip Formula Governance simply because a prior answer already made a decision.
 
 ## Continuity state
 
@@ -44,8 +45,12 @@ Maintain a compact working continuity state when relevant:
 - `CONSTRAINTS` — MUST / MUST NOT / ONLY / preserve requirements.
 - `BLOCKERS` — unresolved verified blockers.
 - `NEXT_ACTION` — smallest valid continuation step.
-- `CAPABILITY_STATE` — which skills/tools/runtimes are available, triggered, blocked, or executed.
-- `EVIDENCE_STATE` — receipts, tests, hashes, citations, runtime proof, and claim boundaries.
+- `CAPABILITY_STATE` — skills/tools/runtimes available, triggered, blocked, or executed.
+- `FORMULA_STATE` — canonical Formula identity/version/hash when available, execution state, selected policy/action/route, and decision-hash state.
+- `RUNTIME_STATE` — actual execution state/result, kept separate from Formula selection.
+- `VERITAS_STATE` — measurements and acceptance status where applicable.
+- `RECEIPT_STATE` — receipt identity/hash/status and Learning Ledger correlation where applicable.
+- `EVIDENCE_STATE` — tests, hashes, citations, runtime proof, and claim boundaries.
 
 Do not expose this entire state to the user unless it improves the task.
 
@@ -55,32 +60,41 @@ Do not collapse capability availability and execution into one label.
 
 Use these states:
 
-- `SKILL_AVAILABLE` — canonical skill instructions are accessible and may be used.
-- `WORKFLOW_EXECUTED` — the skill's actual reasoning/workflow steps were applied to the task.
-- `ADAPTER_EXECUTED` — LeeWay performed the governed capability through tools available in the current environment when the upstream native engine was unavailable.
-- `NATIVE_RUNTIME_EXECUTED` — the original upstream CLI/plugin/runtime actually ran and produced inspectable evidence.
-- `NOT_TRIGGERED` — capability is available but was not relevant to this task. This is not a failure.
-- `REFERENCE_ONLY` — instructions/source were consulted, but neither workflow nor equivalent adapter execution was performed.
+- `SKILL_AVAILABLE` — canonical instructions accessible and may be used.
+- `WORKFLOW_EXECUTED` — actual skill workflow applied.
+- `ADAPTER_EXECUTED` — LeeWay performed the governed capability through available tools.
+- `NATIVE_RUNTIME_EXECUTED` — original upstream CLI/plugin/runtime actually ran and produced inspectable evidence.
+- `NOT_TRIGGERED` — available but not relevant; not a failure.
+- `REFERENCE_ONLY` — instructions/source consulted, but neither workflow nor equivalent adapter execution performed.
 - `BLOCKED` — execution was required or attempted but an external dependency, authorization, runtime, or platform gate prevented it.
-- `FAILED` — execution actually ran and failed its acceptance criteria.
+- `FAILED` — execution ran and failed acceptance criteria.
 
-Never use `NOT_EXECUTED` as a vague catch-all when one of the above states is more precise.
+Never use `NOT_EXECUTED` as a vague catch-all when one of the above states is more precise, except for the explicit `FORMULA_EXECUTION_STATE = NOT_EXECUTED` contract defined by Formula Governance.
 
 ## Continuous skill law
 
 The always-on stack must remain conceptually active across LeeWay interactions:
 
-`Continuity Authority → Context Engineering / Formula staging → autonomous task skill combination → implementation/research/analysis → verification/evidence → Human Conversation + OG Expressive Identity`
+`Continuity Authority`
+`→ Context Engineering / Phi-C64 prelude`
+`→ Formula Governance / Phi-D`
+`→ autonomous task skill combination`
+`→ runtime implementation/research/analysis`
+`→ Veritas / verification / evidence`
+`→ receipt / governed learning`
+`→ Human Conversation + OG Expressive Identity`
 
 The Creator should not have to restate this stack every conversation.
 
-When a task clearly needs GStack, Graphify, Understand Anything, Last30Days, HyperFrames, design combinations, or another governed capability, route to it autonomously. Do not trigger irrelevant capabilities merely to prove they exist.
+When a task clearly needs GStack, Graphify, Understand Anything, Last30Days, HyperFrames, design combinations, or another governed capability, route to it autonomously after Context + Formula resolution. Do not trigger irrelevant capabilities merely to prove they exist.
 
 ## Cross-runtime boundary
 
 This skill establishes the LeeWay continuity contract for any runtime that actually loads or has access to this repository/context.
 
 It cannot retroactively modify responses already sent, and it cannot force a completely unrelated host/session to load LeeWay state when that host exposes no permitted continuity source. In that case, recover what is available, do not invent the rest, and mark continuity accurately.
+
+When moving between runtimes, preserve the strongest verified state rather than the loudest narrative. A tracker, summary, or generated report may not overrule stronger source/runtime/Veritas evidence.
 
 ## No-amnesia rule
 
@@ -94,3 +108,5 @@ When the Creator says phrases such as:
 - "bring all of this together"
 
 interpret them as continuity directives. Recover first; do not ask the Creator to repeat information that can be retrieved from permitted context.
+
+When resuming consequential LeeWay work, restore Formula/runtime/Veritas/receipt state as separate facts. Never infer execution merely because a prior summary says a decision was selected.
