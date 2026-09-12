@@ -1,0 +1,78 @@
+version: "1.0.0"
+name: "LeeWay Formula Evaluator Contract"
+
+purpose: >-
+  Define the authority states and evidence required before any LeeWay agent may
+  claim that the canonical Formula evaluator or an authorized Formula adapter
+  actually executed.
+
+states:
+  - UNEXPOSED
+  - DISCOVERED
+  - AVAILABLE
+  - AUTHORIZED
+  - EXECUTED
+  - VERIFIED
+  - BLOCKED
+  - FAILED
+
+startup_state: UNEXPOSED
+
+rules:
+  - "Formula Governance remains active even when the evaluator is UNEXPOSED."
+  - "UNEXPOSED does not block ordinary governed reasoning, skill composition, reference work, Tool Gateway use, or conversation continuity."
+  - "UNEXPOSED requires FORMULA_EXECUTION_STATE=NOT_EXECUTED."
+  - "A discovered endpoint is not an authorized evaluator."
+  - "An authorized evaluator is not proof of execution."
+  - "Execution is not Veritas acceptance."
+  - "No C64, Q69, 64x64 projection, score, rank, transition, decision hash, or Formula authority hash may be invented."
+
+required_identity_before_execution:
+  - implementation_name
+  - implementation_version
+  - authority_source
+  - implementation_hash_or_equivalent_identity_when_supported
+  - adapter_identity_when_adapter_is_used
+  - runtime_target
+
+required_execution_evidence:
+  - input_state_or_verified_mapping
+  - input_provenance
+  - execution_identity
+  - selected_policy_or_action
+  - runtime_result
+  - timestamp
+
+required_verification_evidence:
+  - veritas_status
+  - measurements_when_material
+  - receipt_id_or_hash_when_supported
+
+fallback_when_unexposed:
+  mode: qualitative_governed_reasoning
+  formula_execution_state: NOT_EXECUTED
+  formula_evaluator_state: UNEXPOSED
+  preserve:
+    - creator_intent
+    - continuity
+    - context_provenance
+    - capability_weave
+    - tool_authority
+    - reference_authority
+    - runtime_execution_state
+    - veritas_state
+    - receipts
+
+promotion_path:
+  - UNEXPOSED
+  - DISCOVERED
+  - AVAILABLE
+  - AUTHORIZED
+  - EXECUTED
+  - VERIFIED
+
+failure_policy:
+  evaluator_unavailable: "continue governed fallback; do not fabricate Formula execution"
+  evaluator_unauthorized: BLOCKED
+  execution_failure: FAILED
+  verification_failure: NOT_CONVERGED
