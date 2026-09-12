@@ -1,14 +1,14 @@
 ---
 # LEEWAY AGENT CONFIGURATION
 # Machine-readable runtime contract
-# Framework: LeeWay Standards + Lifelong Learning + Formula Governance
+# Framework: LeeWay Standards + Formula Governance + Universal Capability Manifold
 
 agent_system:
-  version: "1.1.0"
+  version: "1.2.0"
   name: "LeeWay Living Skill University"
   target_audience: "LLM and governed agent runtimes"
-  purpose: "Persistent skill authority, evidence-governed composition, lifelong learning, emerging-skill promotion, reference literacy, and quantum readiness"
   canonical_repository: "4citeB4U/LeeWay-Agent-Skills"
+  purpose: "Persistent skill authority, universal cross-domain capability weaving, evidence-governed execution, lifelong learning, reference literacy, and quantum readiness"
 
 agent:
   id: "agent-lee"
@@ -19,40 +19,27 @@ agent:
     - per_message_ingress_check
     - context_engineering
     - formula_governance
-    - skill_composition
+    - universal_capability_manifold
+    - cross_domain_skill_transfer
+    - focal_runtime_execution
     - skill_lifecycle
     - workflow_orchestration
     - lifelong_learning
     - reference_authority
     - quantum_readiness
     - memory_persistence
-    - pattern_extraction
 
 bootstrap:
   skill: "./skills/leeway-bootstrap-authority/SKILL.md"
   required_on_first_substantive_interaction: true
   session_receipt: "LEEWAY_SKILL_SESSION_RECEIPT"
   fail_closed_if_refresh_required_and_unavailable: true
-  on_startup:
-    - verify_canonical_repository_authority
-    - verify_core_skill_registry
-    - load_workflow_registry
-    - load_existing_governed_memory
-    - verify_formula_authority_state
-    - verify_compliance
-    - establish_skill_session_receipt
 
 message_ingress:
   skill: "./skills/leeway-message-ingress-authority/SKILL.md"
   check_every_user_message: true
   reload_only_when_needed: true
-  refresh_triggers:
-    - receipt_missing
-    - receipt_unknown
-    - receipt_stale
-    - receipt_contradictory
-    - authority_changed
-    - runtime_requires_new_receipt
+  refresh_triggers: [receipt_missing, receipt_unknown, receipt_stale, receipt_contradictory, authority_changed, runtime_requires_new_receipt]
 
 skills:
   registry_path: "./skills"
@@ -64,6 +51,7 @@ skills:
     - leeway-message-ingress-authority
     - leeway-context-engineering
     - leeway-formula-governance
+    - leeway-universal-capability-kernel
     - leeway-skill-lifecycle-governance
     - leeway-reference-authority
     - leeway-human-conversation
@@ -71,126 +59,132 @@ skills:
   conditional_core:
     - leeway-quantum-readiness
 
-  execution:
-    mastery_scoring: true
-    activation_priority_scoring: true
-    criticality_scoring: true
-    evidence_quality_tracking: true
-    recency_tracking: true
-    compatibility_tracking: true
-    parameter_optimization: true
-    token_budgeting: true
-    quality_evaluation: true
+  capability_manifold:
+    enabled: true
+    config: "./config/leeway-capability-manifold.yaml"
+    law: "broad influence does not require broad heavy execution"
+    layers:
+      constitutional_core:
+        always_on: true
+      ambient_capability_field:
+        all_promoted_skills_eligible: true
+        include_lightweight_metadata: true
+        include_primitives: true
+        include_transfer_patterns: true
+        include_constraints: true
+        include_evidence_state: true
+        load_full_skill_documents_by_default: false
+      task_capability_weave:
+        cross_domain: true
+        allow_many_micro_capabilities: true
+        artificial_small_skill_limit: false
+        preserve_provenance: true
+      focal_execution_set:
+        bounded: true
+        expand_full_skill_instructions_when_required: true
+        execute_tools_workflows_runtimes_only_when_required: true
+
+  skill_atom_dimensions:
+    - mastery
+    - activation_priority
+    - transferability
+    - criticality
+    - recency
+    - evidence_quality
+    - compatibility
+    - explanatory_value
+    - safety_impact
+    - verification_value
+    - runtime_cost
+
+  primitive_families:
+    - perception
+    - classification
+    - diagnosis
+    - prediction
+    - sequencing
+    - planning
+    - routing
+    - prioritization
+    - measurement
+    - calibration
+    - safety
+    - containment
+    - escalation
+    - rollback_recovery
+    - communication
+    - negotiation
+    - teaching
+    - persuasion
+    - humor
+    - storytelling
+    - visual_composition
+    - abstraction
+    - analogy
+    - mathematical_modeling
+    - optimization
+    - verification
+    - documentation
+    - compliance
+    - maintenance
+    - adaptation
+    - empathy_audience_modeling
+    - leadership_delegation
+    - creativity_synthesis
+    - extensible
+
+  relationships:
+    - shares_primitive_with
+    - transfers_pattern_to
+    - analogous_failure_mode_to
+    - analogous_safety_pattern_to
+    - requires
+    - supports
+    - verifies
+    - criticizes
+    - fallback_for
+    - supersedes
+    - conflicts_with
+    - teaches
+    - explains
+    - compresses
+    - humanizes
+    - quantum_accelerable
+    - classical_fallback
 
   mastery_tracking:
     enabled: true
     update_frequency: "verified_execution_only"
-    law: "mastery is capability quality; inactivity alone does not reduce mastery"
+    law: "mastery is verified capability quality; inactivity alone does not reduce mastery"
     components:
       verified_success_rate: 0.45
       verification_quality: 0.25
       robustness_across_contexts: 0.15
       efficiency: 0.10
       quality_trend: 0.05
-    forbidden_inputs:
-      - raw_reuse_frequency_as_mastery
-      - popularity
-      - model_confidence_without_evidence
-    thresholds:
-      novice: "0.00-0.33"
-      intermediate: "0.34-0.66"
-      expert: "0.67-1.00"
+    forbidden_inputs: [raw_reuse_frequency_as_mastery, popularity, model_confidence_without_evidence]
 
   activation_priority:
     independent_from_mastery: true
-    factors:
-      - current_task_relevance
-      - dependency_requirement
-      - criticality
-      - recency
-      - runtime_compatibility
-      - verified_performance
-      - replacement_quality
-    cooling_path: ["ACTIVE", "WARM", "DORMANT"]
+    cooling_path: [ACTIVE, WARM, DORMANT]
     cooling_reduces_mastery: false
+    dormant_means_absent: false
+    dormant_remains_ambiently_eligible: true
 
   lifecycle:
     skill: "./skills/leeway-skill-lifecycle-governance/SKILL.md"
-    states:
-      - CORE_ALWAYS_ON
-      - ACTIVE
-      - WARM
-      - DORMANT
-      - CANDIDATE
-      - SANDBOXED
-      - VERIFIED
-      - PROMOTED
-      - DEPRECATED
-      - RETIRED
-      - QUARANTINED
-    inactivity_decay_exempt:
-      - constitutional_governance
-      - safety
-      - security
-      - recovery
-      - compliance
-      - failover
-      - creator_pinned
-    emerging_skill_pipeline:
-      - DISCOVER
-      - SOURCE
-      - PROVENANCE
-      - COMPATIBILITY
-      - SANDBOX
-      - BENCHMARK
-      - VERITAS
-      - RECEIPT
-      - PROMOTE
-    revalidate_on:
-      - material_upstream_version_change
-      - api_or_standard_change
-      - security_posture_change
-      - license_change
-      - hardware_runtime_change
-      - contradictory_runtime_evidence
-
-  composition:
-    policy: "minimum_sufficient_skill_graph"
-    auto_load_required_skills: true
-    relationships:
-      - requires
-      - supports
-      - verifies
-      - criticizes
-      - fallback_for
-      - supersedes
-      - conflicts_with
-      - quantum_accelerable
-      - classical_fallback
-    preserve_shared_provenance: true
-    preserve_common_receipt_boundary: true
-    do_not_load_entire_registry_by_default: true
-
-workflows:
-  registry_path: "./workflows"
-  registry_format: "WORKFLOW.md"
-  auto_discover: true
-  execution_modes:
-    - sequential
-    - parallel
-    - hierarchical
-    - event_driven
-    - state_machine
-  intelligence:
-    learn_optimal_ordering: true
-    learn_parameters: true
-    learn_branching: true
-    adapt_to_failure: true
-    require_verified_outcomes_for_promotion: true
+    states: [CORE_ALWAYS_ON, ACTIVE, WARM, DORMANT, CANDIDATE, SANDBOXED, VERIFIED, PROMOTED, DEPRECATED, RETIRED, QUARANTINED]
+    emerging_skill_pipeline: [DISCOVER, SOURCE, PROVENANCE, COMPATIBILITY, SANDBOX, BENCHMARK, VERITAS, RECEIPT, PROMOTE]
+    revalidate_on: [material_upstream_version_change, api_or_standard_change, security_posture_change, license_change, hardware_runtime_change, contradictory_runtime_evidence]
 
 formula_governance:
   skill: "./skills/leeway-formula-governance/SKILL.md"
   formula_execution_separate_from_runtime_execution: true
+  capability_projection:
+    c64_q69_aware: true
+    sixty_four_by_sixty_four_ready_when_canonical_mapping_exists: true
+    prohibit_invented_mapping: true
+    fallback_representation: "provenance-bound structured capability graph"
   preserve_when_available:
     - formulaImplementation
     - formulaVersion
@@ -208,42 +202,28 @@ formula_governance:
     - veritasMeasurements
     - receiptId
     - receiptHash
-  never_fabricate:
-    - C64
-    - Q69
-    - formula_score
-    - ranking
-    - authority_hash
-    - decision_hash
-    - runtime_result
-    - receipt
+  never_fabricate: [C64, Q69, formula_score, ranking, authority_hash, decision_hash, runtime_result, receipt]
+
+workflows:
+  registry_path: "./workflows"
+  registry_format: "WORKFLOW.md"
+  auto_discover: true
+  execution_modes: [sequential, parallel, hierarchical, event_driven, state_machine]
+  intelligence:
+    learn_optimal_ordering: true
+    learn_parameters: true
+    learn_branching: true
+    adapt_to_failure: true
+    require_verified_outcomes_for_promotion: true
 
 reference_authority:
   enabled: true
   skill: "./skills/leeway-reference-authority/SKILL.md"
-  source_classes:
-    - PRIMARY
-    - SECONDARY
-    - TERTIARY
-    - COMMUNITY
-    - HISTORICAL
-    - LEEWAY_NATIVE
+  source_classes: [PRIMARY, SECONDARY, TERTIARY, COMMUNITY, HISTORICAL, LEEWAY_NATIVE]
   source_mesh: "claim -> strongest_source -> corroboration -> conflict_check -> synthesis"
-  citation_policy: "density proportional to claim stakes and verification need"
   goal: "maximum useful reference density per claim"
   prohibit_fabricated_references: true
   distinguish_retrieved_sources_from_general_model_knowledge: true
-  memory_fields:
-    - source_identity
-    - canonical_locator
-    - source_class
-    - version_or_date
-    - verified_at
-    - supported_claims
-    - contradictions
-    - limitations
-    - provenance_hash_or_receipt
-    - supersession_relationship
 
 quantum_readiness:
   enabled: true
@@ -251,105 +231,72 @@ quantum_readiness:
   mode: "hybrid_ready_classical_safe"
   quantum_aware_not_quantum_executed: true
   classical_fallback_required_unless_inherently_quantum: true
-  states:
-    - QUANTUM_NOT_RELEVANT
-    - QUANTUM_AWARE_CLASSICAL_ONLY
-    - QUANTUM_SIMULATOR_AVAILABLE
-    - QUANTUM_HARDWARE_AVAILABLE
-    - QUANTUM_HYBRID_EXECUTED
-    - QUANTUM_EXECUTED
-    - QUANTUM_BLOCKED
-    - QUANTUM_FAILED
-  distinguish:
-    - simulator_vs_hardware
-    - theoretical_vs_measured_advantage
-    - mitigation_vs_error_correction
-    - noisy_hardware_vs_fault_tolerant_projection
-  backend_neutral_problem_contracts: true
-  preserve_evidence_when_available:
-    - provider
-    - backend
-    - runtime_version
-    - circuit_or_program_identity
-    - circuit_or_program_hash
-    - compilation_settings
-    - problem_size
-    - shots_or_sampling_policy
-    - seed
-    - job_or_execution_id
-    - calibration_or_noise_snapshot
-    - mitigation_method
-    - raw_result
-    - classical_preprocessing
-    - classical_postprocessing
-    - comparison_baseline
-    - veritas
-    - receipt
+  states: [QUANTUM_NOT_RELEVANT, QUANTUM_AWARE_CLASSICAL_ONLY, QUANTUM_SIMULATOR_AVAILABLE, QUANTUM_HARDWARE_AVAILABLE, QUANTUM_HYBRID_EXECUTED, QUANTUM_EXECUTED, QUANTUM_BLOCKED, QUANTUM_FAILED]
+  distinguish: [simulator_vs_hardware, theoretical_vs_measured_advantage, mitigation_vs_error_correction, noisy_hardware_vs_fault_tolerant_projection]
 
 learning:
   enabled: true
-  law: "only verified outcomes may alter mastery, lifecycle promotion, semantic rules, or procedural authority"
+  law: "only verified outcomes may alter mastery, authoritative transfer relationships, lifecycle promotion, semantic rules, or procedural authority"
   memory_system:
     root: "./memory"
-    episodic:
-      enabled: true
-      retention: "governed"
-      auto_compress: true
-      compress_after_episodes: 1000
-      directory: "./memory/episodes"
-    semantic:
-      enabled: true
-      auto_extraction: true
-      extraction_interval_episodes: 10
-      min_verified_success_rate_for_pattern: 0.80
-      directory: "./memory/semantic"
-    procedural:
-      enabled: true
-      auto_save: true
-      min_verified_success_rate: 0.85
-      directory: "./memory/procedural"
-    references:
-      enabled: true
-      directory: "./memory/references"
-      preserve_provenance: true
-    lifecycle:
-      enabled: true
-      directory: "./memory/skill-lifecycle"
+    episodic: {enabled: true, retention: governed, directory: "./memory/episodes"}
+    semantic: {enabled: true, directory: "./memory/semantic"}
+    procedural: {enabled: true, directory: "./memory/procedural"}
+    references: {enabled: true, directory: "./memory/references", preserve_provenance: true}
+    lifecycle: {enabled: true, directory: "./memory/skill-lifecycle"}
+    capability_manifold: {enabled: true, directory: "./memory/capability-manifold"}
 
   learning_loop:
     phases:
       1: authority_check
       2: perception_context
       3: formula_decision
-      4: skill_composition
-      5: action
-      6: verification_veritas
-      7: memory_reference_update
-      8: lifecycle_update
-      9: next_decision
-    execution: "every_substantive_skill_use"
+      4: ambient_capability_query
+      5: task_capability_weave
+      6: focal_execution
+      7: verification_veritas
+      8: memory_reference_update
+      9: transfer_relationship_update
+      10: lifecycle_update
+      11: next_decision
 
-  pattern_extraction:
-    enabled: true
-    triggers:
-      - verified_success
-      - verified_failure
-      - pattern_stability
-      - contradiction
-      - upstream_change
-    patterns_stored:
-      - trigger_conditions
-      - parameter_optimization
-      - failure_modes
-      - workflow_orderings
-      - efficiency_gains
-      - reference_relationships
-      - skill_combinations
-      - supersession_patterns
+skill_execution_flow:
+  ingress_phase:
+    1: validate_skill_session_receipt
+    2: refresh_authority_if_required
+  cognition_phase:
+    1: recover_continuity
+    2: resolve_context
+    3: obtain_formula_route_when_executable
+    4: query_ambient_capability_field
+    5: construct_cross_domain_task_capability_weave
+    6: resolve_dependencies_conflicts_verifiers_and_transfer_edges
+    7: expand_full_skill_documents_when_needed
+    8: build_focal_execution_set
+    9: retrieve_relevant_verified_references
+  execute_phase:
+    1: initialize_focal_execution_set
+    2: preserve_wider_weave_for_reasoning_safety_explanation_and_verification
+    3: monitor_runtime_state
+    4: preserve_execution_identity
+    5: record_raw_result
+  evaluate_phase:
+    1: run_acceptance_checks
+    2: run_veritas_when_required
+    3: identify_failure_boundary
+    4: evaluate_cross_domain_transfer_quality
+    5: compare_to_reference_and_runtime_authority
+  update_phase:
+    1: store_verified_episode
+    2: update_semantic_patterns_if_qualified
+    3: update_procedural_memory_if_qualified
+    4: update_mastery_from_verified_execution
+    5: update_activation_priority_independently
+    6: update_transfer_relationships_only_if_evidence_qualifies
+    7: update_lifecycle_state_if_evidence_justifies
 
 compliance:
   framework: "LeeWay Standards"
-  mode: "continuous_monitoring"
   enforced_policies:
     - NO_SECRETS_IN_CODE
     - PROVENANCE_REQUIRED_FOR_PROMOTION
@@ -357,103 +304,20 @@ compliance:
     - NO_FABRICATED_REFERENCES
     - FORMULA_EXECUTION_SEPARATE_FROM_RUNTIME
     - QUANTUM_CLAIMS_REQUIRE_QUANTUM_EVIDENCE
-  compliance_agents:
-    compliance_monitor: "active"
-    skill_validator: "per_skill_update"
-    autonomy_auditor: "continuous"
-    lifecycle_auditor: "continuous"
-    reference_auditor: "on_material_research"
-
-metrics:
-  tracking_enabled: true
-  per_skill:
-    - mastery_score
-    - activation_priority
-    - criticality
-    - evidence_quality
-    - recency
-    - compatibility
-    - lifecycle_state
-    - verified_success_rate
-    - efficiency_score
-    - quality_trend
-  per_workflow:
-    - execution_count
-    - verified_success_rate
-    - optimal_skill_orders
-    - learned_parameters
-    - performance_trend
-  agent_wide:
-    - total_verified_episodes
-    - skills_by_lifecycle_state
-    - promoted_emerging_skills
-    - deprecated_skills
-    - quarantined_skills
-    - verified_reference_nodes
-    - procedural_automations_saved
-    - quantum_execution_count
-
-skill_execution_flow:
-  ingress_phase:
-    1: validate_skill_session_receipt
-    2: refresh_authority_if_required
-  load_phase:
-    1: recover_continuity
-    2: resolve_context
-    3: obtain_formula_route
-    4: build_minimum_sufficient_skill_graph
-    5: retrieve_relevant_verified_patterns_and_references
-  execute_phase:
-    1: initialize_selected_skills
-    2: monitor_runtime_state
-    3: preserve_execution_identity
-    4: record_raw_result
-  evaluate_phase:
-    1: run_acceptance_checks
-    2: run_veritas_when_required
-    3: identify_failure_boundary
-    4: compare_to_reference_and_runtime_authority
-  update_phase:
-    1: store_verified_episode
-    2: update_semantic_patterns_if_qualified
-    3: update_procedural_memory_if_qualified
-    4: update_mastery_from_verified_execution
-    5: update_activation_priority_independently
-    6: update_lifecycle_state_if_evidence_justifies
-
-integrations:
-  with_skills:
-    - discover
-    - verify
-    - compose
-    - execute
-    - cool_or_promote_without_amnesia
-  with_workflows:
-    - orchestrate_verified_skill_graphs
-    - learn_optimal_orderings
-  with_mcp:
-    - expose_governed_skills_and_workflows_when_supported
-    - preserve_execution_state_distinctions
-  with_quantum:
-    - expose_backend_adapters_when_verified
-    - preserve_classical_fallback
-  with_leeway_standards:
-    - preserve_formula_authority
-    - preserve_veritas_receipts
-    - preserve_reference_provenance
-    - preserve_learning_ledger_boundaries
+    - CROSS_DOMAIN_TRANSFER_PRESERVES_PROVENANCE
+    - ANALOGY_DOES_NOT_EQUAL_PROOF
 
 core_beliefs:
-  - "A living skill library grows without forgetting why a capability was trusted."
+  - "A mature agent uses many skills at once without pretending every skill needs full runtime execution."
+  - "A skill label is a domain home, not a transfer boundary."
+  - "Dormant means low focal priority, not forgotten."
   - "Inactivity changes activation priority, not verified mastery."
   - "New technology earns promotion through evidence."
-  - "Broad knowledge is useful; fabricated references are not."
-  - "Quantum readiness means being able to route real quantum capability without pretending classical execution is quantum."
-  - "Formula decides; runtime executes; Veritas measures; receipts bind; learning follows proof."
+  - "Formula decides when executable; runtime executes; Veritas measures; receipts bind; learning follows proof."
 
 status:
   governance_contract: "ACTIVE"
-  learning_enabled: true
+  universal_capability_manifold_enabled: true
   lifecycle_enabled: true
   reference_authority_enabled: true
   quantum_readiness_enabled: true
