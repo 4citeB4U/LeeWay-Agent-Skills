@@ -76,3 +76,21 @@ failure_policy:
   evaluator_unauthorized: BLOCKED
   execution_failure: FAILED
   verification_failure: NOT_CONVERGED
+
+recovered_canonical_authority:
+  status: VERIFIED_ON_LEEWAY_WORKSTATION_2026-09-12
+  formula_id: LEEWAY-FORMULA-v1.0
+  runtime_base: http://127.0.0.1:4001
+  health_endpoint: /runtime/formula/v1/health
+  evaluate_endpoint: /runtime/formula/v1/evaluate
+  adapter_id: raw-base64-v1
+  historical_authority: C:\LeeWay-Storage-Science\S4R-20260907-131056\S4R-runtime-formula-authority.json
+  decision_adapter: C:\LeeWay-Storage-Science\X5-Formula-MultiVariable-Controller-v1.5.0.ps1
+  recovery_skill: skills/leeway-formula-authority-recovery/SKILL.md
+  d_recovery_manifest: <LEEWAY_ROOT>\Authority\Formula-Recovery\20260912\FORMULA-AUTHORITY-RECOVERY-MANIFEST.json
+  pinned_hashes:
+    engine: 6502791BBA909D7481DB3A204F3CBF67B1DC06A4B76A73C797D709408341D63E
+    canonical_input: 4087FC14A9F1F44EB46D9D6417156176794E2ACC72EE9BF481F21A5D0ABE5236
+    raw_adapter: 2C8B477ABAD73A0B8519127B20E500BC857F6D26A2722634F23637D4EEAC6215
+    formula_service: 59C74A850CFBACAB4408D73538C824D25687AE0FBD12F07AB5D3622661B7B1EC
+  discovery_rule: "Search known C:/D:/E: authorities and live runtime before declaring UNEXPOSED or creating replacement Formula contracts."
