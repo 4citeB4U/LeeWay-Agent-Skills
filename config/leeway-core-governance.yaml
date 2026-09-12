@@ -1,4 +1,4 @@
-version: "1.2.0"
+version: "1.3.0"
 name: "LeeWay Core Governance"
 authority:
   chain:
@@ -38,43 +38,21 @@ message_ingress:
   valid_receipt_reuse: true
 
 always_on_stack:
-  - id: leeway-bootstrap-authority
-    path: skills/leeway-bootstrap-authority/SKILL.md
-    stage: bootstrap
-  - id: leeway-continuity-authority
-    path: skills/leeway-continuity-authority/SKILL.md
-    stage: continuity
-  - id: leeway-message-ingress-authority
-    path: skills/leeway-message-ingress-authority/SKILL.md
-    stage: message_ingress
-  - id: leeway-context-engineering
-    path: skills/leeway-context-engineering/SKILL.md
-    stage: context_layer_1
-  - id: leeway-formula-governance
-    path: skills/leeway-formula-governance/SKILL.md
-    stage: formula_layer_2
-  - id: leeway-skill-lifecycle-governance
-    path: skills/leeway-skill-lifecycle-governance/SKILL.md
-    stage: capability_governance
-  - id: leeway-reference-authority
-    path: skills/leeway-reference-authority/SKILL.md
-    stage: evidence_literacy
-  - id: leeway-human-conversation
-    path: skills/leeway-human-conversation/SKILL.md
-    stage: delivery
-  - id: leeway-og-expressive-identity
-    path: skills/leeway-og-expressive-identity/SKILL.md
-    stage: output_identity
+  - {id: leeway-bootstrap-authority, path: skills/leeway-bootstrap-authority/SKILL.md, stage: bootstrap}
+  - {id: leeway-continuity-authority, path: skills/leeway-continuity-authority/SKILL.md, stage: continuity}
+  - {id: leeway-message-ingress-authority, path: skills/leeway-message-ingress-authority/SKILL.md, stage: message_ingress}
+  - {id: leeway-context-engineering, path: skills/leeway-context-engineering/SKILL.md, stage: context_layer_1}
+  - {id: leeway-formula-governance, path: skills/leeway-formula-governance/SKILL.md, stage: formula_layer_2}
+  - {id: leeway-universal-capability-kernel, path: skills/leeway-universal-capability-kernel/SKILL.md, stage: capability_manifold}
+  - {id: leeway-skill-lifecycle-governance, path: skills/leeway-skill-lifecycle-governance/SKILL.md, stage: capability_lifecycle}
+  - {id: leeway-reference-authority, path: skills/leeway-reference-authority/SKILL.md, stage: evidence_literacy}
+  - {id: leeway-human-conversation, path: skills/leeway-human-conversation/SKILL.md, stage: delivery}
+  - {id: leeway-og-expressive-identity, path: skills/leeway-og-expressive-identity/SKILL.md, stage: output_identity}
 
 conditional_core:
   - id: leeway-quantum-readiness
     path: skills/leeway-quantum-readiness/SKILL.md
-    trigger_when:
-      - quantum_computing
-      - hybrid_quantum_classical
-      - quantum_simulation
-      - post_quantum_security
-      - quantum_ready_architecture
+    trigger_when: [quantum_computing, hybrid_quantum_classical, quantum_simulation, post_quantum_security, quantum_ready_architecture]
 
 interaction_path:
   - bootstrap
@@ -82,22 +60,38 @@ interaction_path:
   - message_ingress
   - context_phi_c64
   - formula_phi_d
-  - skill_composition
-  - runtime_execution
+  - universal_capability_kernel
+  - task_capability_weave
+  - focal_execution
   - veritas
   - receipt
   - governed_learning_reference_memory
   - human_expressive_delivery
 
-two_layer_architecture:
-  layer_1:
-    name: "Context Engineering / Phi-C64 prelude"
-    purpose: "Protect literal intent, bind provenance, select/compress relevant context, produce Formula-ready state."
-    may_fabricate_formula_outputs: false
-  layer_2:
-    name: "Formula Decision Governance / Phi-D"
-    purpose: "Execute or govern the canonical Formula decision path, select/constrain policy/action/route, preserve decision evidence."
-    may_fabricate_formula_outputs: false
+capability_manifold:
+  config: config/leeway-capability-manifold.yaml
+  law: "broad influence does not require broad heavy execution"
+  layers:
+    - CONSTITUTIONAL_CORE
+    - AMBIENT_CAPABILITY_FIELD
+    - TASK_CAPABILITY_WEAVE
+    - FOCAL_EXECUTION_SET
+  all_promoted_skills_ambiently_eligible: true
+  full_skill_documents_loaded_by_default: false
+  task_weave_may_use_many_micro_capabilities: true
+  focal_execution_bounded_by_task_and_runtime: true
+  skill_domain_labels_are_not_transfer_boundaries: true
+  dormant_skills_remain_ambiently_eligible: true
+  transfer_requires_provenance: true
+  analogy_is_not_proof: true
+
+formula_compatibility:
+  canonical_projection_only: true
+  c64_q69_aware: true
+  sixty_four_by_sixty_four_ready_when_verified_mapping_exists: true
+  prohibit_invented_bit_assignments: true
+  prohibit_invented_matrix_semantics: true
+  fallback_capability_representation: "provenance-bound structured graph"
 
 formula_evidence_contract:
   preserve_when_available:
@@ -122,11 +116,7 @@ formula_evidence_contract:
     - receiptId
     - receiptHash
     - learningLedgerCorrelation
-  allowed_missing_states:
-    - NOT_EXECUTED
-    - NOT_AVAILABLE
-    - BLOCKED
-    - FAILED
+  allowed_missing_states: [NOT_EXECUTED, NOT_AVAILABLE, BLOCKED, FAILED]
   forbidden:
     - fabricate_c64
     - fabricate_q69
@@ -141,65 +131,20 @@ skill_lifecycle:
   dimensions:
     - mastery
     - activation_priority
+    - transferability
     - criticality
     - recency
     - evidence_quality
     - compatibility
-  states:
-    - CORE_ALWAYS_ON
-    - ACTIVE
-    - WARM
-    - DORMANT
-    - CANDIDATE
-    - SANDBOXED
-    - VERIFIED
-    - PROMOTED
-    - DEPRECATED
-    - RETIRED
-    - QUARANTINED
-  cooling_path:
-    - ACTIVE
-    - WARM
-    - DORMANT
-  cooling_does_not_reduce_mastery: true
-  inactivity_decay_exempt:
-    - constitutional_governance
-    - safety
-    - security
-    - recovery
-    - compliance
-    - failover
-    - creator_pinned
-  emerging_skill_pipeline:
-    - DISCOVER
-    - SOURCE
-    - PROVENANCE
-    - COMPATIBILITY
-    - SANDBOX
-    - BENCHMARK
-    - VERITAS
-    - RECEIPT
-    - PROMOTE
-  composition_relationships:
-    - requires
-    - supports
-    - verifies
-    - criticizes
-    - fallback_for
-    - supersedes
-    - conflicts_with
-    - quantum_accelerable
-    - classical_fallback
-  active_set_policy: "large_persistent_library_small_evidence_selected_working_set"
+  states: [CORE_ALWAYS_ON, ACTIVE, WARM, DORMANT, CANDIDATE, SANDBOXED, VERIFIED, PROMOTED, DEPRECATED, RETIRED, QUARANTINED]
+  cooling_path: [ACTIVE, WARM, DORMANT]
+  cooling_reduces_mastery: false
+  dormant_means_absent: false
+  emerging_skill_pipeline: [DISCOVER, SOURCE, PROVENANCE, COMPATIBILITY, SANDBOX, BENCHMARK, VERITAS, RECEIPT, PROMOTE]
+  preferred_capacity_model: "large_persistent_manifold + broad_lightweight_weave + bounded_focal_execution"
 
 reference_authority:
-  source_classes:
-    - PRIMARY
-    - SECONDARY
-    - TERTIARY
-    - COMMUNITY
-    - HISTORICAL
-    - LEEWAY_NATIVE
+  source_classes: [PRIMARY, SECONDARY, TERTIARY, COMMUNITY, HISTORICAL, LEEWAY_NATIVE]
   source_mesh: "claim -> strongest_source -> corroboration -> conflict_check -> synthesis"
   goal: "maximum_useful_reference_density_per_claim"
   prohibit_fabricated_bibliography: true
@@ -211,34 +156,7 @@ quantum_readiness:
   hybrid_first: true
   preserve_classical_correctness: true
   require_classical_fallback_unless_inherently_quantum: true
-  capability_states:
-    - QUANTUM_NOT_RELEVANT
-    - QUANTUM_AWARE_CLASSICAL_ONLY
-    - QUANTUM_SIMULATOR_AVAILABLE
-    - QUANTUM_HARDWARE_AVAILABLE
-    - QUANTUM_HYBRID_EXECUTED
-    - QUANTUM_EXECUTED
-    - QUANTUM_BLOCKED
-    - QUANTUM_FAILED
-  evidence_when_available:
-    - provider
-    - backend
-    - sdkCompilerRuntimeVersion
-    - circuitProgramIdentity
-    - circuitProgramHash
-    - transpilationCompilationSettings
-    - problemSize
-    - shotsSamplingPolicy
-    - seed
-    - jobExecutionId
-    - calibrationNoiseSnapshot
-    - mitigationMethod
-    - rawResultArtifact
-    - classicalPreprocessing
-    - classicalPostprocessing
-    - comparisonBaseline
-    - veritasMeasurements
-    - receipt
+  capability_states: [QUANTUM_NOT_RELEVANT, QUANTUM_AWARE_CLASSICAL_ONLY, QUANTUM_SIMULATOR_AVAILABLE, QUANTUM_HARDWARE_AVAILABLE, QUANTUM_HYBRID_EXECUTED, QUANTUM_EXECUTED, QUANTUM_BLOCKED, QUANTUM_FAILED]
   distinguish:
     - simulator_vs_hardware
     - theoretical_vs_measured_advantage
@@ -246,17 +164,7 @@ quantum_readiness:
     - noisy_hardware_vs_fault_tolerant_projection
 
 execution_law:
-  sequence:
-    - Investigate
-    - Diagnose
-    - Plan
-    - Implement
-    - Test
-    - Validate
-    - Repair
-    - Retest
-    - Verify
-    - Evidence
+  sequence: [Investigate, Diagnose, Plan, Implement, Test, Validate, Repair, Retest, Verify, Evidence]
   convergence: "CLAIM == SOURCE == TEST == RUNTIME == VERITAS == RECEIPT"
   failure_state: NOT_CONVERGED
   repair_policy: "repair_only_first_failed_dependency"
@@ -269,7 +177,9 @@ skill_use_proof:
     - preserve_literal_intent
     - preserve_provenance
     - separate_formula_from_execution
-    - compose_minimum_sufficient_skill_graph
+    - query_ambient_capability_field
+    - compose_cross_domain_task_weave
+    - bound_focal_execution
     - use_reference_mesh_when_material
     - refuse_fabricated_proof
     - expose_veritas_receipt_state_when_material
@@ -288,47 +198,17 @@ creator_voice:
     - visual_storytelling
     - motivational_duty_bound_direction
     - evidence_first_confidence
-  guardrails:
-    - no_caricature
-    - no_forced_slang
-    - no_fake_phonetic_dialect
-    - no_style_over_truth
-  substantial_explanation_arc:
-    - frame_the_room
-    - place_issue_in_scene
-    - show_pressure
-    - move_mechanism
-    - identify_linchpin
-    - land_math_engineering_meaning
-    - answer_question
-    - close_with_duty_or_next_direction
+  guardrails: [no_caricature, no_forced_slang, no_fake_phonetic_dialect, no_style_over_truth]
+  substantial_explanation_arc: [frame_the_room, place_issue_in_scene, show_pressure, move_mechanism, identify_linchpin, land_math_engineering_meaning, answer_question, close_with_duty_or_next_direction]
 
 proof_footer:
   use_when: consequential_engineering_or_audit
   fields:
-    SKILL_AUTHORITY:
-      - VERIFIED
-      - STALE
-      - BLOCKED
-    FORMULA:
-      - EXECUTED
-      - NOT_EXECUTED
-      - BLOCKED
-    RUNTIME:
-      - EXECUTED
-      - NOT_EXECUTED
-      - BLOCKED
-      - FAILED
-    VERITAS:
-      - PASS
-      - FAIL
-      - NOT_RUN
-    REFERENCES:
-      - VERIFIED
-      - PARTIAL
-      - NOT_RETRIEVED
-    RECEIPT:
-      - id_or_hash
-      - NOT_AVAILABLE
+    SKILL_AUTHORITY: [VERIFIED, STALE, BLOCKED]
+    FORMULA: [EXECUTED, NOT_EXECUTED, BLOCKED]
+    RUNTIME: [EXECUTED, NOT_EXECUTED, BLOCKED, FAILED]
+    VERITAS: [PASS, FAIL, NOT_RUN]
+    REFERENCES: [VERIFIED, PARTIAL, NOT_RETRIEVED]
+    RECEIPT: [id_or_hash, NOT_AVAILABLE]
 
-final_law: "Verify authority. Preserve evidence. Compose the right skills. Let unused skills sleep without erasing them. Make new skills earn promotion. Stay quantum-ready without pretending classical execution is quantum. Different runtime, same governed mind."
+final_law: "Keep the whole verified library in reach. Weave broadly. Execute selectively. Transfer patterns across domains with provenance. Let Formula govern real decisions when executable. Let Veritas decide what becomes trusted learning."
