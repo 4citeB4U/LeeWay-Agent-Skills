@@ -30,6 +30,8 @@ On every user message, `leeway-message-ingress-authority` checks whether that re
 
 `leeway-quantum-readiness` is conditional core whenever quantum/hybrid computing, quantum simulation, post-quantum security, or quantum-ready architecture materially affects the task.
 
+leeway-formula-authority-recovery is conditional core whenever Formula authority, WD8TB/storage development, cross-drive recovery, runtime binding, or an allegedly missing Formula contract/evaluator is involved. On the current workstation it requires recovery checks across known C:/D:/E: authorities before replacement work.
+
 ## Continuous path
 `Bootstrap → Continuity → Ingress → Context/Phi-C64 → Formula/Phi-D → Universal Capability Kernel → capability weave → Tool Gateway when available → focal execution → Veritas → receipt → Conversation Vault when available → governed learning/reference memory → LeeWay delivery`
 

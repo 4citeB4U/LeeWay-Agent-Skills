@@ -27,6 +27,8 @@ Use `config/leeway-formula-evaluator-contract.yaml` as the canonical evaluator-s
 Valid evaluator states:
 `UNEXPOSED | DISCOVERED | AVAILABLE | AUTHORIZED | EXECUTED | VERIFIED | BLOCKED | FAILED`.
 
+Before declaring the evaluator `UNEXPOSED` on a host with prior LeeWay state, invoke `leeway-formula-authority-recovery` or equivalent governed discovery. A missing local copy is not proof that the evaluator is absent.
+
 On startup or when no canonical evaluator/authorized adapter has been proven:
 
 `FORMULA_EVALUATOR_STATE = UNEXPOSED`
