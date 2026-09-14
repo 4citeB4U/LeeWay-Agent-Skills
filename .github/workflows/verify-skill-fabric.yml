@@ -5,8 +5,9 @@ on:
     branches: [main]
     paths:
       - 'mcp-server/**'
+      - 'mcp-remote/**'
       - 'skills/**'
-      - 'scripts/external-design-skills.json'
+      - 'scripts/**'
       - '.github/workflows/verify-skill-fabric.yml'
   workflow_dispatch:
 
@@ -35,6 +36,14 @@ jobs:
         working-directory: mcp-server
         run: npm run build
 
+      - name: Install remote MCP dependencies
+        working-directory: mcp-remote
+        run: npm install --no-audit --no-fund
+
+      - name: Build remote Streamable HTTP MCP
+        working-directory: mcp-remote
+        run: npm run build
+
       - name: Validate synchronized external skills
         shell: pwsh
         run: |
@@ -55,7 +64,7 @@ jobs:
           if ($missing.Count) { throw "Missing usable SKILL.md payloads for: $($missing -join ', ')" }
           Write-Host "External portable skills discovered: $($skillFiles.Count)"
 
-      - name: Runtime smoke test MCP discovery
+      - name: Runtime smoke test local stdio MCP discovery
         shell: bash
         run: |
           set +e
@@ -70,3 +79,25 @@ jobs:
             echo "Unexpected MCP process exit: $code"
             exit "$code"
           fi
+
+      - name: Runtime smoke test remote HTTP MCP health
+        working-directory: mcp-remote
+        shell: bash
+        env:
+          LEEWAY_MCP_BEARER_TOKEN: ci-test-token
+          LEEWAY_MCP_HOST: 127.0.0.1
+          LEEWAY_MCP_PORT: 8788
+        run: |
+          node dist/index.js >remote-mcp.log 2>&1 &
+          pid=$!
+          trap 'kill $pid 2>/dev/null || true' EXIT
+          for i in {1..20}; do
+            if curl -fsS http://127.0.0.1:8788/health >health.json; then
+              break
+            fi
+            sleep 0.5
+          done
+          cat remote-mcp.log
+          cat health.json
+          grep -q '"status":"ok"' health.json
+          curl -sS -o unauthorized.json -w '%{http_code}' http://127.0.0.1:8788/mcp | grep -q '^401$'
