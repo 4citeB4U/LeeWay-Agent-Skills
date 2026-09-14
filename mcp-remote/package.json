@@ -1,0 +1,24 @@
+{
+  "name": "@leeway/skills-mcp-remote",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Read-only LeeWay Agent Skills MCP over Streamable HTTP for Gemini and other remote MCP clients",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "npm run build && node dist/index.js"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/node": "^2.0.0",
+    "@modelcontextprotocol/server": "^2.0.0",
+    "zod": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "^6.0.0"
+  }
+}
