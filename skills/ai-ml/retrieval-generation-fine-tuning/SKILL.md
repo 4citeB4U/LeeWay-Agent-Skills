@@ -1,3 +1,12 @@
+---
+name: retrieval-generation-fine-tuning
+description: "LeeWay-governed Model Fine-Tuning and Adaptation workflow. Use when a task requires retrieval generation fine tuning procedures, validation, and evidence."
+license: MIT
+metadata:
+  authority: Creator/Human Authority > LeeWay Standards
+  source-class: legacy-native-normalized
+  canonical-path: skills/ai-ml/retrieval-generation-fine-tuning/SKILL.md
+---
 /*
 LEEWAY HEADER — DO NOT REMOVE
 

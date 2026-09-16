@@ -1,3 +1,12 @@
+---
+name: api-documentation
+description: "LeeWay-governed API Documentation workflow. Use when a task requires api documentation procedures, validation, and evidence."
+license: MIT
+metadata:
+  authority: Creator/Human Authority > LeeWay Standards
+  source-class: legacy-native-normalized
+  canonical-path: skills/documentation/api-documentation/SKILL.md
+---
 /*
 LEEWAY HEADER — DO NOT REMOVE
 

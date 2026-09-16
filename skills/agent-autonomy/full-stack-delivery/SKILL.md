@@ -1,3 +1,12 @@
+---
+name: full-stack-delivery
+description: "LeeWay-governed Full-Stack Application Delivery (AI Employee) workflow. Use when a task requires full stack delivery procedures, validation, and evidence."
+license: MIT
+metadata:
+  authority: Creator/Human Authority > LeeWay Standards
+  source-class: legacy-native-normalized
+  canonical-path: skills/agent-autonomy/full-stack-delivery/SKILL.md
+---
 /*
 LEEWAY HEADER — DO NOT REMOVE
 

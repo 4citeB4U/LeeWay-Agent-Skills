@@ -1,3 +1,12 @@
+---
+name: agent-design-patterns
+description: "LeeWay-governed Agent Patterns and Architectures workflow. Use when a task requires agent design patterns procedures, validation, and evidence."
+license: MIT
+metadata:
+  authority: Creator/Human Authority > LeeWay Standards
+  source-class: legacy-native-normalized
+  canonical-path: skills/agent-patterns/agent-design-patterns/SKILL.md
+---
 /*
 LEEWAY HEADER — DO NOT REMOVE
 

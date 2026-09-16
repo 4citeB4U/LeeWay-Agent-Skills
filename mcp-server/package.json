@@ -10,6 +10,8 @@
   },
   "scripts": {
     "build": "tsc",
+    "test": "npm run build && node --test dist/crochet-tools.test.js",
+    "test:protocol": "node scripts/protocol-smoke.mjs",
     "start": "node dist/index.js",
     "dev": "tsc && node dist/index.js",
     "badge:install": "node dist/install-badge-proof.js",

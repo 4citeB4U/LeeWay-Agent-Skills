@@ -1,3 +1,12 @@
+---
+name: git-collaboration
+description: "LeeWay-governed Git Workflow and Collaboration workflow. Use when a task requires git collaboration procedures, validation, and evidence."
+license: MIT
+metadata:
+  authority: Creator/Human Authority > LeeWay Standards
+  source-class: legacy-native-normalized
+  canonical-path: skills/git-workflow/git-collaboration/SKILL.md
+---
 /*
 LEEWAY HEADER — DO NOT REMOVE
 

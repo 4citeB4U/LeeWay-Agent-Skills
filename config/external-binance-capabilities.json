@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0.0",
+  "source_repository": "binance/binance-skills-hub",
+  "observed_drive_commit": "084e3a637b197674e451f5ab45a9d75ab73b08f2",
+  "observed_skill_file_count": 23,
+  "admission": "CATALOGUED_NOT_VENDORED_NO_LICENSE_FILE",
+  "execution": "REQUIRES_AUTHORIZED_CONNECTOR",
+  "capabilities": [
+    "algo",
+    "alpha",
+    "assets",
+    "convert",
+    "crypto-market-rank",
+    "derivatives-trading-coin-futures",
+    "derivatives-trading-options",
+    "derivatives-trading-portfolio-margin",
+    "derivatives-trading-portfolio-margin-pro",
+    "derivatives-trading-usds-futures",
+    "fiat",
+    "margin-trading",
+    "meme-rush",
+    "onchain-pay",
+    "query-address-info",
+    "query-token-audit",
+    "query-token-info",
+    "simple-earn",
+    "spot",
+    "square-post",
+    "sub-account",
+    "trading-signal",
+    "vip-loan"
+  ]
+}

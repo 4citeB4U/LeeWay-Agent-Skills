@@ -1,3 +1,12 @@
+---
+name: multimodal-systems
+description: "LeeWay-governed Multimodal Systems workflow. Use when a task requires multimodal systems procedures, validation, and evidence."
+license: MIT
+metadata:
+  authority: Creator/Human Authority > LeeWay Standards
+  source-class: legacy-native-normalized
+  canonical-path: skills/ai-ml/multimodal-systems/SKILL.md
+---
 /*
 LEEWAY HEADER — DO NOT REMOVE
 

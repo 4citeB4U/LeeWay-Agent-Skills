@@ -1,3 +1,12 @@
+---
+name: css-styling
+description: "LeeWay-governed CSS Styling and Layout workflow. Use when a task requires css styling procedures, validation, and evidence."
+license: MIT
+metadata:
+  authority: Creator/Human Authority > LeeWay Standards
+  source-class: legacy-native-normalized
+  canonical-path: skills/web-development/css-styling/SKILL.md
+---
 /*
 LEEWAY HEADER — DO NOT REMOVE
 

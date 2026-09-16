@@ -1,3 +1,12 @@
+---
+name: pandas-analysis
+description: "LeeWay-governed Pandas Data Analysis workflow. Use when a task requires pandas analysis procedures, validation, and evidence."
+license: MIT
+metadata:
+  authority: Creator/Human Authority > LeeWay Standards
+  source-class: legacy-native-normalized
+  canonical-path: skills/data-analysis/pandas-analysis/SKILL.md
+---
 /*
 LEEWAY HEADER — DO NOT REMOVE
 

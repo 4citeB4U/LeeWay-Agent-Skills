@@ -1,0 +1,130 @@
+{
+  "schema_version": "1.0.0",
+  "observed_at": "2026-09-16T00:00:00Z",
+  "scope": "D and E drives; filenames containing MCP; node_modules, recycle bin, and model payloads excluded",
+  "raw_observation": {
+    "D": {
+      "artifact_paths": 119,
+      "unique_basenames": 61
+    },
+    "E": {
+      "artifact_paths": 457,
+      "unique_basenames": 111
+    }
+  },
+  "deduplication_law": "Repeated copies, compiled output, logs, receipts, screenshots, tests, configuration snippets, and registries are not independent MCP servers.",
+  "families": [
+    {
+      "id": "generated-domain-mcp-agents",
+      "observed_names": [
+        "backend-mcp",
+        "canvas-mcp",
+        "creative-mcp",
+        "design-system-mcp",
+        "frontend-mcp",
+        "insforge-frontend-mcp",
+        "leeway-build-auditor-mcp",
+        "leeway-ci-blueprint-mcp",
+        "leeway-deployment-target-mcp",
+        "leeway-edge-optimizer-mcp",
+        "leeway-full-repo-checker-mcp",
+        "leeway-responsive-ui-mcp",
+        "memory-mcp",
+        "qa-mcp",
+        "react-native-mcp",
+        "scheduler-mcp",
+        "ui-builder-mcp"
+      ],
+      "classification": "GENERATED_STUB",
+      "admission": "NOT_COPIED",
+      "resolution": "Capabilities are represented by non-duplicate canonical skills; no mock-success executor is promoted."
+    },
+    {
+      "id": "leeway-global-python-mcp",
+      "observed_tools": [
+        "leeway_hello",
+        "leeway_harness_status"
+      ],
+      "classification": "SOURCE_PRESENT_CONFLICTING",
+      "admission": "NOT_COPIED",
+      "conflicts": [
+        "hard-coded D-drive root",
+        "hard-coded health endpoint",
+        "unearned formula_verified=true response"
+      ],
+      "resolution": "Use canonical portable stdio/remote MCPs; Formula state remains unverified until a real evaluator executes."
+    },
+    {
+      "id": "cerebral-fastmcp",
+      "classification": "SOURCE_PRESENT_HOST_BOUND",
+      "observed_bindings": [
+        "desktop actions",
+        "system health",
+        "environment and discovery waves",
+        "hardware baseline",
+        "audit/stage/repair waves",
+        "Sentinel",
+        "Navigator",
+        "CodeScout",
+        "Archivist"
+      ],
+      "conflicts": [
+        "hard-coded C-drive root",
+        "hard-coded localhost port variants",
+        "embedded approval token",
+        "arbitrary browser JavaScript surface",
+        "direct fallback bypasses a single governed gateway"
+      ],
+      "resolution": "CATALOGUED_FOR_PORTABLE_TOOL_GATEWAY_ADAPTER; not declared live in GitHub."
+    },
+    {
+      "id": "runtime-fabric-vscode-mcp",
+      "classification": "CONFIGURED_HARD_CODED",
+      "observed_transport": "stdio node server.cjs",
+      "resolution": "Replace drive identity with a runtime-resolved LEEWAY_ROOT binding before promotion."
+    },
+    {
+      "id": "seafile-tool-config",
+      "classification": "CONFIGURED_WITH_SECRET_MATERIAL",
+      "observed_tools": [
+        "seafile_download",
+        "seafile_get_repos",
+        "seafile_upload",
+        "seafile_list",
+        "seafile_create_repo"
+      ],
+      "admission": "QUARANTINED_NOT_COPIED",
+      "resolution": "Remove credentials from source, rotate exposed credentials, and bind secrets at runtime before implementing a governed adapter."
+    },
+    {
+      "id": "ros2-mcp-adapter",
+      "classification": "PROBE_ONLY",
+      "observed_behavior": "Checks MCP_SERVER_ROS2_COMMAND existence and reports PASS/BLOCKED",
+      "resolution": "Keep as a future adapter candidate; probe success is not ROS2 MCP protocol verification."
+    },
+    {
+      "id": "marketing-tool-integrations",
+      "classification": "LICENSED_TOOLS_ADMITTED",
+      "source": "coreyhaines31/marketingskills@9d4d29a795113c492b22e01c9b48a8396e140b8d",
+      "tool_files": 137,
+      "node_cli_files": 61,
+      "syntax_verification": "PASS_61_OF_61",
+      "runtime_verification": "NOT_EXECUTED_REQUIRES_PER_PROVIDER_AUTHORIZATION"
+    },
+    {
+      "id": "canonical-github-mcps",
+      "classification": "BUILT_AND_LOCALLY_PROTOCOL_VERIFIED",
+      "servers": [
+        "mcp-server stdio",
+        "mcp-remote Streamable HTTP"
+      ],
+      "new_domain_tools": [
+        "crochet_validate_lesson",
+        "crochet_diagnose_attempt",
+        "crochet_calculate_gauge",
+        "crochet_recommend_next_lesson"
+      ]
+    }
+  ],
+  "claim_boundary": "This manifest accounts for discovered MCP-named artifacts by functional family. It does not call source files, registries, logs, probes, or generated stubs live MCP servers."
+}

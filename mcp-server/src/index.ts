@@ -43,6 +43,11 @@ import {
 import fs from "fs/promises";
 import path from "path";
 import { fileURLToPath, pathToFileURL } from "url";
+import {
+  crochetToolDefinitions,
+  executeCrochetTool,
+  isCrochetTool,
+} from "./crochet-tools.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -290,7 +295,7 @@ export class LeewaySkillsMCPServer {
 
   private setupHandlers(): void {
     this.server.setRequestHandler(ListToolsRequestSchema, async () => {
-      const tools: Tool[] = [];
+      const tools: Tool[] = [...crochetToolDefinitions];
 
       for (const [skillId, skill] of this.skills) {
         tools.push({
@@ -330,6 +335,30 @@ export class LeewaySkillsMCPServer {
 
     this.server.setRequestHandler(CallToolRequestSchema, async (request) => {
       const toolName = request.params.name;
+
+      if (isCrochetTool(toolName)) {
+        try {
+          return {
+            content: [
+              {
+                type: "text" as const,
+                text: executeCrochetTool(toolName, request.params.arguments),
+              },
+            ],
+          };
+        } catch (error) {
+          return {
+            content: [
+              {
+                type: "text" as const,
+                text: `Error executing crochet tool "${toolName}": ${error instanceof Error ? error.message : String(error)}`,
+              },
+            ],
+            isError: true,
+          };
+        }
+      }
+
       const skill = this.skills.get(toolName);
 
       if (!skill) {
@@ -433,7 +462,9 @@ Provide structured, actionable output that can be directly used.
     await this.server.connect(transport);
 
     console.error("[Leeway Skills MCP] Server started successfully");
-    console.error(`[Leeway Skills MCP] Serving ${this.skills.size} skills`);
+    console.error(
+      `[Leeway Skills MCP] Serving ${this.skills.size + crochetToolDefinitions.length} tools (${this.skills.size} skill tools + ${crochetToolDefinitions.length} deterministic domain tools)`,
+    );
     console.error("[Leeway Skills MCP] Ready to accept tool calls from LLMs");
   }
 }

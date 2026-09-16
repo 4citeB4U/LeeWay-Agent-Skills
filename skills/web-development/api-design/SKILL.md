@@ -1,3 +1,12 @@
+---
+name: api-design
+description: "LeeWay-governed API Design and REST/GraphQL workflow. Use when a task requires api design procedures, validation, and evidence."
+license: MIT
+metadata:
+  authority: Creator/Human Authority > LeeWay Standards
+  source-class: legacy-native-normalized
+  canonical-path: skills/web-development/api-design/SKILL.md
+---
 /*
 LEEWAY HEADER — DO NOT REMOVE
 

@@ -1,3 +1,12 @@
+---
+name: monitoring-and-observability
+description: "LeeWay-governed Observability and Monitoring workflow. Use when a task requires monitoring and observability procedures, validation, and evidence."
+license: MIT
+metadata:
+  authority: Creator/Human Authority > LeeWay Standards
+  source-class: legacy-native-normalized
+  canonical-path: skills/observability/monitoring-and-observability/SKILL.md
+---
 /*
 LEEWAY HEADER — DO NOT REMOVE
 
