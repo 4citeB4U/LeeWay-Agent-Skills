@@ -1,15 +1,11 @@
 import { Client } from "@modelcontextprotocol/sdk/client/index.js";
 import { StdioClientTransport } from "@modelcontextprotocol/sdk/client/stdio.js";
+import { gameDevelopmentToolDefinitions } from "../dist/game-development-tools.js";
 
-const requiredTools = [
-  "crochet_validate_lesson",
-  "crochet_diagnose_attempt",
-  "crochet_calculate_gauge",
-  "crochet_recommend_next_lesson",
-];
+const requiredTools = gameDevelopmentToolDefinitions.map((tool) => tool.name);
 
 const client = new Client(
-  { name: "leeway-crochet-protocol-smoke", version: "1.0.0" },
+  { name: "leeway-game-development-protocol-smoke", version: "1.0.0" },
   { capabilities: {} },
 );
 const transport = new StdioClientTransport({
@@ -25,23 +21,40 @@ try {
     if (!names.includes(name)) throw new Error(`MCP tool list is missing ${name}`);
   }
 
-  const called = await client.callTool({
-    name: "crochet_calculate_gauge",
-    arguments: { stitches: 18, rows: 24, width_cm: 10, height_cm: 10 },
+  const planned = await client.callTool({
+    name: "game_plan_slice",
+    arguments: {
+      concept: "A small traversal prototype",
+      engine: "godot",
+      target_platforms: ["windows"],
+      acceptance_criteria: ["player_can_complete_primary_loop"],
+    },
   });
-  const text = called.content?.[0]?.text;
-  if (typeof text !== "string") throw new Error("Gauge tool returned no text payload");
-  const result = JSON.parse(text);
-  if (result.stitches_per_10cm !== 18 || result.rows_per_10cm !== 24) {
-    throw new Error(`Unexpected gauge result: ${text}`);
+  const planText = planned.content?.[0]?.text;
+  if (typeof planText !== "string") throw new Error("Planning tool returned no text payload");
+  const plan = JSON.parse(planText);
+  if (plan.state !== "EXECUTED_LOCAL" || plan.executed !== true) {
+    throw new Error(`Unexpected planning result: ${planText}`);
+  }
+
+  const blockedCall = await client.callTool({
+    name: "game_run_build",
+    arguments: { project_root: "/approved/project", target: "windows", configuration: "release" },
+  });
+  const blockedText = blockedCall.content?.[0]?.text;
+  if (typeof blockedText !== "string") throw new Error("Build tool returned no text payload");
+  const blocked = JSON.parse(blockedText);
+  if (blocked.state !== "BLOCKED_ADAPTER_UNCONFIGURED" || blocked.executed !== false) {
+    throw new Error(`Build tool did not preserve the adapter boundary: ${blockedText}`);
   }
 
   console.log(
     JSON.stringify({
       state: "PROTOCOL_VERIFIED",
       tool_count: names.length,
-      crochet_tools: requiredTools,
-      gauge: result,
+      game_development_tools: requiredTools.length,
+      planning_state: plan.state,
+      unconfigured_execution_state: blocked.state,
     }),
   );
 } finally {

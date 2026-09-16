@@ -37,7 +37,7 @@ import { CallToolRequestSchema, ListToolsRequestSchema, } from "@modelcontextpro
 import fs from "fs/promises";
 import path from "path";
 import { fileURLToPath, pathToFileURL } from "url";
-import { crochetToolDefinitions, executeCrochetTool, isCrochetTool, } from "./crochet-tools.js";
+import { executeGameDevelopmentTool, gameDevelopmentToolDefinitions, isGameDevelopmentTool, } from "./game-development-tools.js";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 function slug(value) {
@@ -219,7 +219,7 @@ export class LeewaySkillsMCPServer {
     }
     setupHandlers() {
         this.server.setRequestHandler(ListToolsRequestSchema, async () => {
-            const tools = [...crochetToolDefinitions];
+            const tools = [...gameDevelopmentToolDefinitions];
             for (const [skillId, skill] of this.skills) {
                 tools.push({
                     name: skillId,
@@ -256,13 +256,13 @@ export class LeewaySkillsMCPServer {
         });
         this.server.setRequestHandler(CallToolRequestSchema, async (request) => {
             const toolName = request.params.name;
-            if (isCrochetTool(toolName)) {
+            if (isGameDevelopmentTool(toolName)) {
                 try {
                     return {
                         content: [
                             {
                                 type: "text",
-                                text: executeCrochetTool(toolName, request.params.arguments),
+                                text: await executeGameDevelopmentTool(toolName, request.params.arguments),
                             },
                         ],
                     };
@@ -272,7 +272,7 @@ export class LeewaySkillsMCPServer {
                         content: [
                             {
                                 type: "text",
-                                text: `Error executing crochet tool "${toolName}": ${error instanceof Error ? error.message : String(error)}`,
+                                text: `Error executing game-development tool "${toolName}": ${error instanceof Error ? error.message : String(error)}`,
                             },
                         ],
                         isError: true,
@@ -364,7 +364,7 @@ Provide structured, actionable output that can be directly used.
         const transport = new StdioServerTransport();
         await this.server.connect(transport);
         console.error("[Leeway Skills MCP] Server started successfully");
-        console.error(`[Leeway Skills MCP] Serving ${this.skills.size + crochetToolDefinitions.length} tools (${this.skills.size} skill tools + ${crochetToolDefinitions.length} deterministic domain tools)`);
+        console.error(`[Leeway Skills MCP] Serving ${this.skills.size + gameDevelopmentToolDefinitions.length} tools (${this.skills.size} skill tools + ${gameDevelopmentToolDefinitions.length} bounded game-development tools)`);
         console.error("[Leeway Skills MCP] Ready to accept tool calls from LLMs");
     }
 }

@@ -55,8 +55,10 @@
       "duplicate_leaf_names": 0,
       "portable_skill_mcp_tools": 238,
       "legacy_registry_tools": 44,
-      "deterministic_domain_tools": 4,
-      "total_stdio_mcp_tools": 286
+      "bounded_game_development_tools": 36,
+      "locally_executing_game_tools": 1,
+      "adapter_dependent_game_tools": 35,
+      "total_stdio_mcp_tools": 318
     },
     "external_drive_snapshots": {
       "awesome_ai_agent_skills": {
@@ -99,7 +101,7 @@
     ],
     "new_domain": [
       "leeway-skill-factory",
-      "leeway-crochet-game-factory",
+      "video-game-development",
       "logistics-dispatch",
       "freight-broker-negotiation",
       "front-office-reception",
@@ -133,12 +135,12 @@
   },
   "domain_sources": [
     {
-      "name": "Crochet-game architecture brief",
-      "source_filename": "Pasted markdown(20260916-180223).md",
-      "sha256": "4c4ed71a11ecd44548e14f489337ed155989410daf6ad9909bd13dfb07cc37c4",
+      "name": "Reusable video-game-development capability and tool contract brief",
+      "source_filename": "Pasted markdown(20260916-191458).md",
+      "sha256": "b7776b3f87a8f46d304006b1278c643065f829f55b8fd107b39963f2cc47d063",
       "promoted_as": [
-        "skills/leeway-crochet-game-factory/SKILL.md",
-        "mcp-server/src/crochet-tools.ts"
+        "skills/video-game-development/SKILL.md",
+        "mcp-server/src/game-development-tools.ts"
       ]
     }
   ],

@@ -19,7 +19,7 @@ This is an exclusive architecture for LLM agents to:
 
 **Not for humans. Not time-based. For LLMs only.**
 
-**Verified repository state (2026-09-16)**: 238 unique `SKILL.md` capabilities; 286 locally protocol-listed stdio MCP tools; 4 deterministic crochet-domain tools; 61 imported marketing CLIs syntax-verified. GitHub Actions is currently `FAILED_UNDIAGNOSED_EXTERNAL` because the observed jobs failed before any runner steps, so hosted deployment is not claimed.
+**Verified repository state (2026-09-16)**: 238 unique `SKILL.md` capabilities; 318 locally protocol-listed stdio MCP tools; 36 bounded video-game-development tool contracts; 61 imported marketing CLIs syntax-verified. Of the game tools, `game_plan_slice` executes locally while engine, playtest, visual-QA, release, and Blender actions require an authorized runtime gateway. GitHub Actions is currently `FAILED_UNDIAGNOSED_EXTERNAL` because the observed jobs failed before any runner steps, so hosted deployment is not claimed.
 
 Drive reconciliation evidence is recorded in [`config/leeway-capability-universe.json`](config/leeway-capability-universe.json), [`config/drive-mcp-reconciliation.json`](config/drive-mcp-reconciliation.json), and [`skills/external/SOURCES.md`](skills/external/SOURCES.md). A file, registry entry, generated agent, or configured endpoint is not described as live unless fresh execution evidence proves it.
 
@@ -62,7 +62,7 @@ node scripts/leeway-agents/header-injector.js
 
 ## MCP Server - Use Skills as Tools
 
-Leeway Agent Skills is available as an **MCP (Model Context Protocol) server**. It currently discovers 44 enabled legacy-registry entries and 238 portable `SKILL.md` files, then adds four deterministic crochet tools for a locally verified total of 286 protocol-listed tools.
+Leeway Agent Skills is available as an **MCP (Model Context Protocol) server**. It currently discovers 44 enabled legacy-registry entries and 238 portable `SKILL.md` files, then adds 36 bounded video-game-development tools for a locally verified total of 318 protocol-listed tools.
 
 ### Install As Full NPM SDK
 
@@ -94,7 +94,7 @@ npm run build
 # 2. Start the server
 npm start
 
-# Expected: 282 skill tools + 4 deterministic domain tools = 286 tools
+# Expected: 282 skill tools + 36 bounded game-development tools = 318 tools
 ```
 
 ### Use Skills in Agent Lee

@@ -118,12 +118,16 @@
         "mcp-server stdio",
         "mcp-remote Streamable HTTP"
       ],
-      "new_domain_tools": [
-        "crochet_validate_lesson",
-        "crochet_diagnose_attempt",
-        "crochet_calculate_gauge",
-        "crochet_recommend_next_lesson"
-      ]
+      "new_domain_tools": {
+        "family": "reusable-video-game-development",
+        "tool_count": 36,
+        "locally_executing": [
+          "game_plan_slice"
+        ],
+        "adapter_dependent_count": 35,
+        "unconfigured_state": "BLOCKED_ADAPTER_UNCONFIGURED",
+        "source": "mcp-server/src/game-development-tools.ts"
+      }
     }
   ],
   "claim_boundary": "This manifest accounts for discovered MCP-named artifacts by functional family. It does not call source files, registries, logs, probes, or generated stubs live MCP servers."
