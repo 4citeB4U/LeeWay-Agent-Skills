@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 const ACCESS_TOKEN = process.env.GA4_ACCESS_TOKEN
+const API_SECRET = process.env.GA4_API_SECRET
 const DATA_API = 'https://analyticsdata.googleapis.com/v1beta'
 const ADMIN_API = 'https://analyticsadmin.googleapis.com/v1beta'
 const MP_URL = 'https://www.google-analytics.com/mp/collect'
@@ -23,11 +24,14 @@ async function api(method, baseUrl, path, body) {
     body: body ? JSON.stringify(body) : undefined,
   })
   const text = await res.text()
+  let payload
   try {
-    return JSON.parse(text)
+    payload = JSON.parse(text)
   } catch {
-    return { status: res.status, body: text }
+    payload = { body: text }
   }
+  if (!res.ok) return { error: 'GA4 API request failed', status: res.status, details: payload }
+  return payload
 }
 
 async function mpApi(measurementId, apiSecret, body) {
@@ -41,12 +45,18 @@ async function mpApi(measurementId, apiSecret, body) {
     body: JSON.stringify(body),
   })
   const text = await res.text()
-  if (!text) return { status: res.status, success: res.ok }
-  try {
-    return JSON.parse(text)
-  } catch {
-    return { status: res.status, body: text }
+  if (!text) {
+    if (!res.ok) return { error: 'GA4 Measurement Protocol request failed', status: res.status }
+    return { status: res.status, success: true }
   }
+  let payload
+  try {
+    payload = JSON.parse(text)
+  } catch {
+    payload = { body: text }
+  }
+  if (!res.ok) return { error: 'GA4 Measurement Protocol request failed', status: res.status, details: payload }
+  return payload
 }
 
 function parseArgs(args) {
@@ -147,7 +157,8 @@ async function main() {
       switch (sub) {
         case 'send': {
           if (!args['measurement-id']) { result = { error: '--measurement-id required' }; break }
-          if (!args['api-secret']) { result = { error: '--api-secret required' }; break }
+          if (args['api-secret']) { result = { error: '--api-secret is not accepted; use the GA4_API_SECRET environment variable or an authorized secret store' }; break }
+          if (!API_SECRET) { result = { error: 'GA4_API_SECRET environment variable required' }; break }
           if (!args['client-id']) { result = { error: '--client-id required' }; break }
           if (!args['event-name']) { result = { error: '--event-name required' }; break }
           let eventParams = {}
@@ -165,7 +176,7 @@ async function main() {
               params: eventParams,
             }],
           }
-          result = await mpApi(args['measurement-id'], args['api-secret'], body)
+          result = await mpApi(args['measurement-id'], API_SECRET, body)
           break
         }
         default:
@@ -180,11 +191,12 @@ async function main() {
           reports: 'reports run --property <id> [--start-date <date>] [--end-date <date>] [--dimensions <dims>] [--metrics <metrics>]',
           realtime: 'realtime run --property <id> [--dimensions <dims>] [--metrics <metrics>]',
           conversions: 'conversions [list|create] --property <id> [--event-name <name>]',
-          events: 'events send --measurement-id <id> --api-secret <secret> --client-id <id> --event-name <name> [--params <json>]',
+          events: 'GA4_API_SECRET=<secret> events send --measurement-id <id> --client-id <id> --event-name <name> [--params <json>]',
         }
       }
   }
 
+  if (result?.error) process.exitCode = 1
   console.log(JSON.stringify(result, null, 2))
 }
 

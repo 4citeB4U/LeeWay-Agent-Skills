@@ -43,10 +43,13 @@ function assert(condition, message) {
 }
 
 const marketingFiles = await filesUnder(marketingRoot);
+const marketingOverlayFiles = marketingFiles.filter(file => path.relative(marketingRoot, file).split(path.sep)[0] === "tests");
+const marketingPayloadFiles = marketingFiles.filter(file => !marketingOverlayFiles.includes(file));
 const cliFiles = marketingFiles.filter(file => file.endsWith(".js") && path.dirname(file).endsWith(`${path.sep}clis`));
 const integrationFiles = marketingFiles.filter(file => file.endsWith(".md") && path.dirname(file).endsWith(`${path.sep}integrations`));
 
-assert(marketingFiles.length === 137, `Expected 137 marketing tool files, found ${marketingFiles.length}`);
+assert(marketingPayloadFiles.length === 137, `Expected 137 marketing payload files, found ${marketingPayloadFiles.length}`);
+assert(marketingOverlayFiles.length === 1, `Expected 1 LeeWay marketing hardening test, found ${marketingOverlayFiles.length}`);
 assert(cliFiles.length === 61, `Expected 61 marketing CLI files, found ${cliFiles.length}`);
 assert(integrationFiles.length === 72, `Expected 72 marketing integration guides, found ${integrationFiles.length}`);
 
@@ -86,7 +89,8 @@ console.log(JSON.stringify({
   state: "PASS",
   skill_files: skillFiles.length,
   duplicate_skill_leaf_names: duplicates.length,
-  marketing_tool_files: marketingFiles.length,
+  marketing_tool_payload_files: marketingPayloadFiles.length,
+  leeway_marketing_hardening_tests: marketingOverlayFiles.length,
   marketing_cli_files: cliFiles.length,
   marketing_integration_guides: integrationFiles.length,
   registry_links_checked: new Set(linkedPaths).size,
