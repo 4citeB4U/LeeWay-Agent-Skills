@@ -6,12 +6,15 @@
   "main": "dist/index.js",
   "exports": {
     ".": "./dist/index.js",
-    "./badge-proof": "./dist/badge-proof.js"
+    "./badge-proof": "./dist/badge-proof.js",
+    "./blender-mcp": "./dist/blender-mcp-server.js"
   },
   "scripts": {
     "build": "tsc",
     "start": "node dist/index.js",
     "dev": "tsc && node dist/index.js",
+    "blender:start": "node dist/blender-mcp-server.js",
+    "blender:dev": "tsc && node dist/blender-mcp-server.js",
     "badge:install": "node dist/install-badge-proof.js",
     "prebuild": "npm run clean",
     "clean": "node -e \"require('fs').rmSync('dist',{ recursive: true, force: true })\""
@@ -20,6 +23,8 @@
     "mcp",
     "model-context-protocol",
     "leeway-skills",
+    "blender",
+    "3d",
     "agent",
     "tools",
     "ai"

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "leeway://skills/blender-3d/contracts/blender-worker-result-v1.schema.json",
+  "title": "LeeWay Blender Worker Result v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["protocol_version", "task_id", "operation", "status", "evidence"],
+  "properties": {
+    "protocol_version": { "const": "LEEWAY-BLENDER-WORKER-v1" },
+    "task_id": { "type": "string", "minLength": 1 },
+    "operation": { "type": "string", "minLength": 1 },
+    "status": { "enum": ["SUCCEEDED", "FAILED", "BLOCKED"] },
+    "blender_version": { "type": "string" },
+    "evidence": { "type": "array", "items": { "type": "string" } },
+    "artifacts": { "type": "array", "items": { "type": "string" } },
+    "warnings": { "type": "array", "items": { "type": "string" } },
+    "error": { "type": ["string", "null"] }
+  }
+}
