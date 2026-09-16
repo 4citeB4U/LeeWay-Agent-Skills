@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "leeway://skills/blender-3d/contracts/blender-worker-v1.schema.json",
+  "title": "LeeWay Blender Worker Request v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["protocol_version", "task_id", "operation", "parameters"],
+  "properties": {
+    "protocol_version": { "const": "LEEWAY-BLENDER-WORKER-v1" },
+    "task_id": { "type": "string", "minLength": 1 },
+    "operation": {
+      "enum": [
+        "scene.inspect",
+        "object.create",
+        "object.transform",
+        "object.delete",
+        "material.create",
+        "material.assign",
+        "camera.configure",
+        "light.configure",
+        "render.preview",
+        "project.save",
+        "export.glb",
+        "export.gltf"
+      ]
+    },
+    "parameters": { "type": "object" },
+    "project": { "type": "string" },
+    "expected_artifacts": { "type": "array", "items": { "type": "string" } },
+    "acceptance_tests": { "type": "array", "items": { "type": "string" } }
+  }
+}
