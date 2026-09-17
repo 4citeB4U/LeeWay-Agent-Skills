@@ -19,6 +19,7 @@ MIT
 import assert from 'node:assert/strict'
 import { spawn, spawnSync } from 'node:child_process'
 import { createServer } from 'node:http'
+import { readFileSync, readdirSync } from 'node:fs'
 import test from 'node:test'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
@@ -106,4 +107,38 @@ test('ActiveCampaign HTTP failures return a nonzero status', async t => {
   const payload = JSON.parse(result.stdout)
   assert.equal(payload.error, 'ActiveCampaign API request failed')
   assert.equal(payload.status, 422)
+})
+
+test('every imported marketing CLI marks structured errors as failures', () => {
+  const scripts = readdirSync(cliRoot).filter(name => name.endsWith('.js')).sort()
+  assert.equal(scripts.length, 61)
+  for (const script of scripts) {
+    const source = readFileSync(path.join(cliRoot, script), 'utf8')
+    assert.match(source, /if \(result\?\.error\) process\.exitCode = 1\s+console\.log\(JSON\.stringify\(result, null, 2\)\)/, script)
+  }
+})
+
+test('representative imported CLIs return nonzero for invalid commands', () => {
+  const cases = [
+    {
+      script: 'adobe-analytics.js',
+      args: ['dimensions', 'list', '--dry-run'],
+      env: { ADOBE_ACCESS_TOKEN: 'test', ADOBE_CLIENT_ID: 'test', ADOBE_COMPANY_ID: 'test' },
+    },
+    {
+      script: 'ahrefs.js',
+      args: ['backlinks', 'list', '--dry-run'],
+      env: { AHREFS_API_KEY: 'test' },
+    },
+    {
+      script: 'sendgrid.js',
+      args: ['contacts', 'get', '--dry-run'],
+      env: { SENDGRID_API_KEY: 'test' },
+    },
+  ]
+  for (const entry of cases) {
+    const result = runSync(entry.script, entry.args, entry.env)
+    assert.equal(result.status, 1, entry.script)
+    assert.equal(typeof JSON.parse(result.stdout).error, 'string', entry.script)
+  }
 })

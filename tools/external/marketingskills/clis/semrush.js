@@ -198,6 +198,7 @@ async function main() {
       }
   }
 
+  if (result?.error) process.exitCode = 1
   console.log(JSON.stringify(result, null, 2))
 }
 

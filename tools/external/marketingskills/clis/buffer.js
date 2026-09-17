@@ -25,11 +25,10 @@ async function api(method, path, body) {
     body: body ? new URLSearchParams(body).toString() : undefined,
   })
   const text = await res.text()
-  try {
-    return JSON.parse(text)
-  } catch {
-    return { status: res.status, body: text }
-  }
+  let payload
+  try { payload = JSON.parse(text) } catch { payload = text }
+  if (!res.ok) return { error: "API request failed", status: res.status, details: payload }
+  return payload
 }
 
 async function apiJson(method, path, body) {
@@ -46,11 +45,10 @@ async function apiJson(method, path, body) {
     body: body ? JSON.stringify(body) : undefined,
   })
   const text = await res.text()
-  try {
-    return JSON.parse(text)
-  } catch {
-    return { status: res.status, body: text }
-  }
+  let payload
+  try { payload = JSON.parse(text) } catch { payload = text }
+  if (!res.ok) return { error: "API request failed", status: res.status, details: payload }
+  return payload
 }
 
 function parseArgs(args) {
@@ -175,7 +173,9 @@ async function main() {
             body: formBody.toString(),
           })
           const resText = await res.text()
-          try { result = JSON.parse(resText) } catch { result = { status: res.status, body: resText } }
+          let payload
+          try { payload = JSON.parse(resText) } catch { payload = resText }
+          result = res.ok ? payload : { error: 'API request failed', status: res.status, details: payload }
           break
         }
         case 'update': {
@@ -221,7 +221,9 @@ async function main() {
             body: formBody.toString(),
           })
           const resText = await res.text()
-          try { result = JSON.parse(resText) } catch { result = { status: res.status, body: resText } }
+          let payload
+          try { payload = JSON.parse(resText) } catch { payload = resText }
+          result = res.ok ? payload : { error: 'API request failed', status: res.status, details: payload }
           break
         }
         case 'shuffle': {
@@ -251,6 +253,7 @@ async function main() {
       }
   }
 
+  if (result?.error) process.exitCode = 1
   console.log(JSON.stringify(result, null, 2))
 }
 

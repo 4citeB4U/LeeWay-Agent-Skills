@@ -33,11 +33,10 @@ async function trackApi(method, path, body) {
     body: body ? JSON.stringify(body) : undefined,
   })
   const text = await res.text()
-  try {
-    return JSON.parse(text)
-  } catch {
-    return { status: res.status, body: text }
-  }
+  let payload
+  try { payload = JSON.parse(text) } catch { payload = text }
+  if (!res.ok) return { error: "API request failed", status: res.status, details: payload }
+  return payload
 }
 
 async function appApi(method, path, body) {
@@ -56,11 +55,10 @@ async function appApi(method, path, body) {
     body: body ? JSON.stringify(body) : undefined,
   })
   const text = await res.text()
-  try {
-    return JSON.parse(text)
-  } catch {
-    return { status: res.status, body: text }
-  }
+  let payload
+  try { payload = JSON.parse(text) } catch { payload = text }
+  if (!res.ok) return { error: "API request failed", status: res.status, details: payload }
+  return payload
 }
 
 function parseArgs(args) {
@@ -196,6 +194,7 @@ async function main() {
       }
   }
 
+  if (result?.error) process.exitCode = 1
   console.log(JSON.stringify(result, null, 2))
 }
 

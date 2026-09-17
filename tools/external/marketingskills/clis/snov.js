@@ -19,6 +19,7 @@ async function getToken() {
     body: JSON.stringify({ grant_type: 'client_credentials', client_id: CLIENT_ID, client_secret: CLIENT_SECRET }),
   })
   const data = await res.json()
+  if (!res.ok) throw new Error(data.error_description || data.error || `OAuth request failed (${res.status})`)
   if (!data.access_token) {
     throw new Error(data.error_description || data.error || 'Failed to obtain access token')
   }
@@ -42,11 +43,10 @@ async function api(method, path, body) {
   if (body) opts.body = JSON.stringify(body)
   const res = await fetch(`${BASE_URL}${path}`, opts)
   const text = await res.text()
-  try {
-    return JSON.parse(text)
-  } catch {
-    return { status: res.status, body: text }
-  }
+  let payload
+  try { payload = JSON.parse(text) } catch { payload = text }
+  if (!res.ok) return { error: "API request failed", status: res.status, details: payload }
+  return payload
 }
 
 function parseArgs(args) {
@@ -228,6 +228,7 @@ async function main() {
       }
   }
 
+  if (result?.error) process.exitCode = 1
   console.log(JSON.stringify(result, null, 2))
 }
 

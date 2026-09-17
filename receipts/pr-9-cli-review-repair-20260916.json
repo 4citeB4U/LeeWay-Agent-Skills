@@ -32,7 +32,7 @@
     "remote_mcp_build": "PASS",
     "npm_pack_dry_run": "PASS",
     "inventory_audit": "PASS (137 upstream payload files; 1 LeeWay test overlay)",
-    "diff_check": "PASS"
+    "diff_check": "PASS_WORKING_TREE_ONLY_INSUFFICIENT_SCOPE"
   },
   "external_execution": {
     "formula": "NOT_EXECUTED",
@@ -43,5 +43,11 @@
     "status_at_receipt_creation": "NOT_YET_PUBLISHED",
     "review_request": "PENDING_PUBLICATION",
     "merge": "NOT_PERFORMED"
+  },
+  "post_publication_correction": {
+    "recorded_at": "2026-09-17T04:28:18Z",
+    "state": "SUPERSEDED_BY_FRESH_CODEX_REVIEW",
+    "reason": "The original diff check covered the working delta only. Codex later proved the required base-to-head check failed on instructional conflict-marker examples and identified four additional findings on published head 2c1415ffb9b208acdda881afff6fd65bd6be4fe2.",
+    "corrective_receipt": "receipts/pr-9-review-repair-20260917.json"
   }
 }

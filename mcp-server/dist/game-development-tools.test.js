@@ -103,4 +103,53 @@ test("execution tools block honestly when no gateway is configured", async () =>
 test("rejects missing required arguments", async () => {
     await assert.rejects(executeGameDevelopmentTool("blender_validate_mesh", { asset_path: "asset.glb" }), /Missing required arguments/);
 });
+test("enforces the published input schema before local execution", async () => {
+    await assert.rejects(executeGameDevelopmentTool("game_plan_slice", {
+        concept: 123,
+        engine: "unity",
+        target_platforms: "windows",
+        acceptance_criteria: [42],
+    }), /Invalid arguments: concept, engine, target_platforms, acceptance_criteria/);
+    await assert.rejects(executeGameDevelopmentTool("game_plan_slice", {
+        concept: "Valid concept",
+        engine: "godot",
+        target_platforms: ["windows"],
+        acceptance_criteria: ["slice_runs"],
+        undeclared: true,
+    }), /Unexpected arguments: undeclared/);
+});
+test("blocks partial Blender credentials instead of mixing adapter pairs", async () => {
+    const names = [
+        "LEEWAY_BLENDER_MCP_URL",
+        "LEEWAY_BLENDER_MCP_BEARER_TOKEN",
+        "LEEWAY_GAME_MCP_GATEWAY_URL",
+        "LEEWAY_GAME_MCP_BEARER_TOKEN",
+    ];
+    const prior = Object.fromEntries(names.map((name) => [name, process.env[name]]));
+    process.env.LEEWAY_BLENDER_MCP_URL = "https://blender.invalid";
+    delete process.env.LEEWAY_BLENDER_MCP_BEARER_TOKEN;
+    process.env.LEEWAY_GAME_MCP_GATEWAY_URL = "https://game.invalid";
+    process.env.LEEWAY_GAME_MCP_BEARER_TOKEN = "must-not-cross-adapters";
+    try {
+        const result = JSON.parse(await executeGameDevelopmentTool("blender_import_model", {
+            source_path: "source.glb",
+            destination_path: "working.blend",
+            format: "glb",
+        }));
+        assert.equal(result.state, "BLOCKED_ADAPTER_UNCONFIGURED");
+        assert.equal(result.executed, false);
+        assert.deepEqual(result.required_environment, [
+            "LEEWAY_BLENDER_MCP_URL",
+            "LEEWAY_BLENDER_MCP_BEARER_TOKEN",
+        ]);
+    }
+    finally {
+        for (const name of names) {
+            if (prior[name] === undefined)
+                delete process.env[name];
+            else
+                process.env[name] = prior[name];
+        }
+    }
+});
 //# sourceMappingURL=game-development-tools.test.js.map

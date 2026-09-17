@@ -63,11 +63,11 @@ git diff --name-only --diff-filter=U
 The conflicting file contains:
 ```typescript
 function formatDate(date: Date): string {
-<<<<<<< HEAD
+  <<<<<<< HEAD
   return date.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" });
-=======
+  =======
   return new Intl.DateTimeFormat("en-US", { dateStyle: "medium" }).format(date);
->>>>>>> main
+  >>>>>>> main
 }
 ```
 

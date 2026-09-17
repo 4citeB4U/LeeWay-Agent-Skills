@@ -99,6 +99,38 @@ function requireArguments(spec, args) {
     if (missing.length > 0)
         throw new Error(`Missing required arguments: ${missing.join(", ")}`);
 }
+function isJsonObject(value) {
+    return value !== null && typeof value === "object" && !Array.isArray(value);
+}
+function valueMatchesSchema(value, schema) {
+    if (schema.enum && Array.isArray(schema.enum) && !schema.enum.includes(value))
+        return false;
+    switch (schema.type) {
+        case "string": return typeof value === "string";
+        case "number": return typeof value === "number" && Number.isFinite(value);
+        case "boolean": return typeof value === "boolean";
+        case "object": return isJsonObject(value);
+        case "array": {
+            if (!Array.isArray(value))
+                return false;
+            const itemSchema = isJsonObject(schema.items) ? schema.items : {};
+            return value.every((item) => valueMatchesSchema(item, itemSchema));
+        }
+        default: return false;
+    }
+}
+function validateArguments(spec, args) {
+    requireArguments(spec, args);
+    const unknown = Object.keys(args).filter((key) => !(key in spec.properties));
+    if (unknown.length > 0)
+        throw new Error(`Unexpected arguments: ${unknown.join(", ")}`);
+    const invalid = Object.entries(args)
+        .filter(([, value]) => value !== undefined)
+        .filter(([key, value]) => !valueMatchesSchema(value, spec.properties[key]))
+        .map(([key]) => key);
+    if (invalid.length > 0)
+        throw new Error(`Invalid arguments: ${invalid.join(", ")}`);
+}
 function planSlice(args) {
     const acceptance = Array.isArray(args.acceptance_criteria) ? args.acceptance_criteria : [];
     const targets = Array.isArray(args.target_platforms) ? args.target_platforms : [];
@@ -125,12 +157,20 @@ function planSlice(args) {
 }
 function gatewayFor(family) {
     if (family === "blender") {
-        const url = process.env.LEEWAY_BLENDER_MCP_URL || process.env.LEEWAY_GAME_MCP_GATEWAY_URL;
-        const token = process.env.LEEWAY_BLENDER_MCP_BEARER_TOKEN || process.env.LEEWAY_GAME_MCP_BEARER_TOKEN;
+        const blenderUrl = process.env.LEEWAY_BLENDER_MCP_URL;
+        const blenderToken = process.env.LEEWAY_BLENDER_MCP_BEARER_TOKEN;
+        const blenderConfigured = Boolean(blenderUrl || blenderToken);
+        if (blenderConfigured) {
+            return {
+                url: blenderUrl && blenderToken ? blenderUrl : undefined,
+                token: blenderUrl && blenderToken ? blenderToken : undefined,
+                requiredEnv: ["LEEWAY_BLENDER_MCP_URL", "LEEWAY_BLENDER_MCP_BEARER_TOKEN"],
+            };
+        }
         return {
-            url,
-            token,
-            requiredEnv: ["LEEWAY_BLENDER_MCP_URL or LEEWAY_GAME_MCP_GATEWAY_URL", "LEEWAY_BLENDER_MCP_BEARER_TOKEN or LEEWAY_GAME_MCP_BEARER_TOKEN"],
+            url: process.env.LEEWAY_GAME_MCP_GATEWAY_URL,
+            token: process.env.LEEWAY_GAME_MCP_BEARER_TOKEN,
+            requiredEnv: ["LEEWAY_GAME_MCP_GATEWAY_URL", "LEEWAY_GAME_MCP_BEARER_TOKEN"],
         };
     }
     return {
@@ -143,7 +183,7 @@ export async function executeGameDevelopmentTool(name, args = {}) {
     const spec = specsByName.get(name);
     if (!spec)
         throw new Error(`Unknown game-development tool: ${name}`);
-    requireArguments(spec, args);
+    validateArguments(spec, args);
     if (name === "game_plan_slice")
         return planSlice(args);
     const gateway = gatewayFor(spec.family);
