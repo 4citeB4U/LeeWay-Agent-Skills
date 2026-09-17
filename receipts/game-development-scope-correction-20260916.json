@@ -1,0 +1,50 @@
+{
+  "receipt_type": "LEEWAY_CAPABILITY_SCOPE_CORRECTION",
+  "receipt_version": "1.0",
+  "timestamp_utc": "2026-09-16T19:28:18Z",
+  "repository": "4citeB4U/LeeWay-Agent-Skills",
+  "pull_request": 9,
+  "status": "PASS_LOCAL_SCOPE_CORRECTION_BUILD_TEST_PROTOCOL_AND_INVENTORY",
+  "correction": {
+    "project_specific_skill_removed": 1,
+    "project_specific_mcp_tools_removed": 4,
+    "project_specific_source_test_and_generated_artifacts_removed": true,
+    "replacement_skill": "video-game-development",
+    "existing_blender_skill_extended": "leeway-blender-mcp",
+    "bounded_game_development_mcp_tools": 36,
+    "locally_executing_tools": [
+      "game_plan_slice"
+    ],
+    "adapter_dependent_tools": 35,
+    "unconfigured_execution_state": "BLOCKED_ADAPTER_UNCONFIGURED"
+  },
+  "inventory_verification": {
+    "skill_files": 238,
+    "validated_skills": 238,
+    "duplicate_skill_leaf_names": 0,
+    "marketing_tool_files": 137,
+    "marketing_cli_files": 61,
+    "marketing_cli_syntax": "PASS_61_OF_61",
+    "marketing_integration_guides": 72,
+    "marketing_registry_links_checked": 134,
+    "game_development_mcp_tools": 36,
+    "project_specific_forbidden_references": 0
+  },
+  "verification": {
+    "typescript_build": "PASS",
+    "mcp_unit_tests": "PASS_4_OF_4",
+    "mcp_stdio_protocol": "PASS",
+    "mcp_stdio_tool_count": 318,
+    "mcp_remote_build": "PASS",
+    "npm_pack_dry_run_files": 637,
+    "git_diff_check": "PASS",
+    "canonical_formula_execution": "NOT_EXECUTED",
+    "engine_or_blender_worker_execution": "NOT_EXECUTED_ADAPTER_UNCONFIGURED",
+    "github_update": "NOT_YET_PUBLISHED"
+  },
+  "source_evidence": {
+    "brief_filename": "Pasted markdown(20260916-191458).md",
+    "brief_sha256": "b7776b3f87a8f46d304006b1278c643065f829f55b8fd107b39963f2cc47d063"
+  },
+  "claim_boundary": "This receipt proves repository scope correction, skill and tool inventory, compilation, unit tests, packaging inspection, and a real stdio MCP list/call round trip. It does not prove a configured game-engine gateway, Blender worker execution, a built game, GitHub merge, deployment, Veritas acceptance of external execution, or Formula execution."
+}

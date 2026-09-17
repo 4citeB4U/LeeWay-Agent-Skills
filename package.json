@@ -72,7 +72,8 @@
     "mcp-server/tsconfig.json",
     "scripts/",
     "sdk/",
-    "skills/"
+    "skills/",
+    "tools/"
   ],
   "repository": {
     "type": "git",

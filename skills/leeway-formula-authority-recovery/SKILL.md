@@ -1,6 +1,6 @@
 ---
 name: leeway-formula-authority-recovery
-description: Recover, verify, preserve, and reuse proven LeeWay Formula authority before creating replacement contracts. Searches known host authority locations, reconciles hashes and receipts, distinguishes canonical executable Formula v1 from diagnostic Formula v2 candidates, and binds recovered authority into WD8TB/D-drive development without breaking live C:/E: sources.
+description: "Recover, verify, preserve, and reuse proven LeeWay Formula authority before creating replacement contracts. Searches known host authority locations, reconciles hashes and receipts, distinguishes canonical executable Formula v1 from diagnostic Formula v2 candidates, and binds recovered authority into WD8TB/D-drive development without breaking live C:/E: sources."
 license: MIT
 metadata:
   authority: Creator/Human Authority > LeeWay Standards > Root of Trust > Runtime Fabric > Formula > Veritas > receipt

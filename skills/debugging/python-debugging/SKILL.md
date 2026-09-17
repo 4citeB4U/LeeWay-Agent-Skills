@@ -1,3 +1,12 @@
+---
+name: python-debugging
+description: "LeeWay-governed Python Debugging workflow. Use when a task requires python debugging procedures, validation, and evidence."
+license: MIT
+metadata:
+  authority: Creator/Human Authority > LeeWay Standards
+  source-class: legacy-native-normalized
+  canonical-path: skills/debugging/python-debugging/SKILL.md
+---
 /*
 LEEWAY HEADER — DO NOT REMOVE
 

@@ -1,3 +1,12 @@
+---
+name: cicd-pipelines
+description: "LeeWay-governed CI/CD Pipeline Engineering workflow. Use when a task requires cicd pipelines procedures, validation, and evidence."
+license: MIT
+metadata:
+  authority: Creator/Human Authority > LeeWay Standards
+  source-class: legacy-native-normalized
+  canonical-path: skills/infrastructure/cicd-pipelines/SKILL.md
+---
 /*
 LEEWAY HEADER — DO NOT REMOVE
 

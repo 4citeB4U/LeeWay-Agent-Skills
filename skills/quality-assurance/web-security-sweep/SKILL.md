@@ -1,3 +1,12 @@
+---
+name: web-security-sweep
+description: "LeeWay-governed Web Security Sweep workflow. Use when a task requires web security sweep procedures, validation, and evidence."
+license: MIT
+metadata:
+  authority: Creator/Human Authority > LeeWay Standards
+  source-class: legacy-native-normalized
+  canonical-path: skills/quality-assurance/web-security-sweep/SKILL.md
+---
 /*
 LEEWAY HEADER — DO NOT REMOVE
 

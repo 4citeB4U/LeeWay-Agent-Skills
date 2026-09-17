@@ -1,3 +1,12 @@
+---
+name: custom-tool-creation
+description: "LeeWay-governed Custom Tool Integration workflow. Use when a task requires custom tool creation procedures, validation, and evidence."
+license: MIT
+metadata:
+  authority: Creator/Human Authority > LeeWay Standards
+  source-class: legacy-native-normalized
+  canonical-path: skills/tool-integration/custom-tool-creation/SKILL.md
+---
 /*
 LEEWAY HEADER — DO NOT REMOVE
 

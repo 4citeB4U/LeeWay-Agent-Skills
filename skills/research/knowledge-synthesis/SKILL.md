@@ -1,3 +1,12 @@
+---
+name: knowledge-synthesis
+description: "LeeWay-governed Knowledge Synthesis and Research workflow. Use when a task requires knowledge synthesis procedures, validation, and evidence."
+license: MIT
+metadata:
+  authority: Creator/Human Authority > LeeWay Standards
+  source-class: legacy-native-normalized
+  canonical-path: skills/research/knowledge-synthesis/SKILL.md
+---
 /*
 LEEWAY HEADER — DO NOT REMOVE
 

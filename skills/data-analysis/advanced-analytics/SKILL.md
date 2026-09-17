@@ -1,3 +1,12 @@
+---
+name: advanced-analytics
+description: "LeeWay-governed Advanced Data Analytics workflow. Use when a task requires advanced analytics procedures, validation, and evidence."
+license: MIT
+metadata:
+  authority: Creator/Human Authority > LeeWay Standards
+  source-class: legacy-native-normalized
+  canonical-path: skills/data-analysis/advanced-analytics/SKILL.md
+---
 /*
 LEEWAY HEADER — DO NOT REMOVE
 

@@ -1,3 +1,12 @@
+---
+name: runtime-self-profiling
+description: "LeeWay-governed Runtime Self-Profiling and Optimization workflow. Use when a task requires runtime self profiling procedures, validation, and evidence."
+license: MIT
+metadata:
+  authority: Creator/Human Authority > LeeWay Standards
+  source-class: legacy-native-normalized
+  canonical-path: skills/self-optimization/runtime-self-profiling/SKILL.md
+---
 /*
 LEEWAY HEADER — DO NOT REMOVE
 

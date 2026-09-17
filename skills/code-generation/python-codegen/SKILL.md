@@ -1,3 +1,12 @@
+---
+name: python-codegen
+description: "LeeWay-governed Python Code Generation workflow. Use when a task requires python codegen procedures, validation, and evidence."
+license: MIT
+metadata:
+  authority: Creator/Human Authority > LeeWay Standards
+  source-class: legacy-native-normalized
+  canonical-path: skills/code-generation/python-codegen/SKILL.md
+---
 /*
 LEEWAY HEADER — DO NOT REMOVE
 

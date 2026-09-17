@@ -61,6 +61,19 @@ Allowed MCP surface:
 
 Do not expose arbitrary remote Python/`bpy` execution in Gate 1.
 
+## Game asset contracts
+
+The canonical LeeWay Skills MCP also exposes these bounded adapter contracts for reusable game-asset work:
+
+- `blender_import_model`
+- `blender_validate_mesh`
+- `blender_generate_collision`
+- `blender_generate_lods`
+- `blender_apply_material`
+- `blender_export_asset`
+
+These contracts return `BLOCKED_ADAPTER_UNCONFIGURED` until an authorized Blender gateway and bearer token are bound at runtime. Contract availability is not Blender execution.
+
 ## Planning behavior
 
 Before mutation:

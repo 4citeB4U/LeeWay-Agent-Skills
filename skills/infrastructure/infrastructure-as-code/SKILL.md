@@ -1,3 +1,12 @@
+---
+name: infrastructure-as-code
+description: "LeeWay-governed Infrastructure-as-Code workflow. Use when a task requires infrastructure as code procedures, validation, and evidence."
+license: MIT
+metadata:
+  authority: Creator/Human Authority > LeeWay Standards
+  source-class: legacy-native-normalized
+  canonical-path: skills/infrastructure/infrastructure-as-code/SKILL.md
+---
 /*
 LEEWAY HEADER — DO NOT REMOVE
 

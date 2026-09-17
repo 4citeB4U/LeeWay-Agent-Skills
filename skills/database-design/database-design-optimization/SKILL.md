@@ -1,3 +1,12 @@
+---
+name: database-design-optimization
+description: "LeeWay-governed Database Design and Optimization workflow. Use when a task requires database design optimization procedures, validation, and evidence."
+license: MIT
+metadata:
+  authority: Creator/Human Authority > LeeWay Standards
+  source-class: legacy-native-normalized
+  canonical-path: skills/database-design/database-design-optimization/SKILL.md
+---
 /*
 LEEWAY HEADER — DO NOT REMOVE
 
