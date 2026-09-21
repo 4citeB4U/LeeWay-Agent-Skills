@@ -1,3 +1,12 @@
+---
+name: advanced-frontend-patterns
+description: "LeeWay-governed Advanced Frontend Patterns workflow. Use when a task requires advanced frontend patterns procedures, validation, and evidence."
+license: MIT
+metadata:
+  authority: Creator/Human Authority > LeeWay Standards
+  source-class: legacy-native-normalized
+  canonical-path: skills/web-development/advanced-frontend-patterns/SKILL.md
+---
 /*
 LEEWAY HEADER — DO NOT REMOVE
 

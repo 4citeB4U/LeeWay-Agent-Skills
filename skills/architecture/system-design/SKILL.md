@@ -1,3 +1,12 @@
+---
+name: system-design
+description: "LeeWay-governed System Design and Architecture workflow. Use when a task requires system design procedures, validation, and evidence."
+license: MIT
+metadata:
+  authority: Creator/Human Authority > LeeWay Standards
+  source-class: legacy-native-normalized
+  canonical-path: skills/architecture/system-design/SKILL.md
+---
 /*
 LEEWAY HEADER — DO NOT REMOVE
 

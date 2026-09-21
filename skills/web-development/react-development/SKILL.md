@@ -1,3 +1,12 @@
+---
+name: react-development
+description: "LeeWay-governed React Development workflow. Use when a task requires react development procedures, validation, and evidence."
+license: MIT
+metadata:
+  authority: Creator/Human Authority > LeeWay Standards
+  source-class: legacy-native-normalized
+  canonical-path: skills/web-development/react-development/SKILL.md
+---
 /*
 LEEWAY HEADER — DO NOT REMOVE
 

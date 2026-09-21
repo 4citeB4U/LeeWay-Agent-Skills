@@ -43,6 +43,11 @@ import {
 import fs from "fs/promises";
 import path from "path";
 import { fileURLToPath, pathToFileURL } from "url";
+import {
+  executeGameDevelopmentTool,
+  gameDevelopmentToolDefinitions,
+  isGameDevelopmentTool,
+} from "./game-development-tools.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -290,7 +295,7 @@ export class LeewaySkillsMCPServer {
 
   private setupHandlers(): void {
     this.server.setRequestHandler(ListToolsRequestSchema, async () => {
-      const tools: Tool[] = [];
+      const tools: Tool[] = [...gameDevelopmentToolDefinitions];
 
       for (const [skillId, skill] of this.skills) {
         tools.push({
@@ -330,6 +335,30 @@ export class LeewaySkillsMCPServer {
 
     this.server.setRequestHandler(CallToolRequestSchema, async (request) => {
       const toolName = request.params.name;
+
+      if (isGameDevelopmentTool(toolName)) {
+        try {
+          return {
+            content: [
+              {
+                type: "text" as const,
+                text: await executeGameDevelopmentTool(toolName, request.params.arguments),
+              },
+            ],
+          };
+        } catch (error) {
+          return {
+            content: [
+              {
+                type: "text" as const,
+                text: `Error executing game-development tool "${toolName}": ${error instanceof Error ? error.message : String(error)}`,
+              },
+            ],
+            isError: true,
+          };
+        }
+      }
+
       const skill = this.skills.get(toolName);
 
       if (!skill) {
@@ -433,7 +462,9 @@ Provide structured, actionable output that can be directly used.
     await this.server.connect(transport);
 
     console.error("[Leeway Skills MCP] Server started successfully");
-    console.error(`[Leeway Skills MCP] Serving ${this.skills.size} skills`);
+    console.error(
+      `[Leeway Skills MCP] Serving ${this.skills.size + gameDevelopmentToolDefinitions.length} tools (${this.skills.size} skill tools + ${gameDevelopmentToolDefinitions.length} bounded game-development tools)`,
+    );
     console.error("[Leeway Skills MCP] Ready to accept tool calls from LLMs");
   }
 }

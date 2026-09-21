@@ -1,0 +1,148 @@
+{
+  "schema_version": "1.0.0",
+  "observed_at": "2026-09-16T00:00:00Z",
+  "authority": {
+    "repository": "4citeB4U/LeeWay-Agent-Skills",
+    "branch": "main",
+    "baseline_commit": "66c976bb0e79e24503c847ef90929c6fb9d5d818",
+    "authority_file": "AGENTS.md"
+  },
+  "baseline": {
+    "canonical_skill_files": 100,
+    "stdio_mcp_tools_observed": 144,
+    "stdio_mcp_breakdown": {
+      "legacy_registry": 44,
+      "portable_skill_discoveries": 100
+    },
+    "mcp_server_build": "PASS",
+    "mcp_remote_build": "PASS",
+    "mcp_remote_health": "PASS_LOCAL",
+    "github_actions": "FAILED_UNDIAGNOSED_EXTERNAL"
+  },
+  "host_inventories": [
+    {
+      "root": "C:/",
+      "skill_files_observed": 116,
+      "unique_leaf_names": 64,
+      "state": "DISCOVERED_READ_ONLY"
+    },
+    {
+      "root": "D:/",
+      "skill_files_observed": 235,
+      "unique_leaf_names": 101,
+      "state": "DISCOVERED_READ_ONLY"
+    },
+    {
+      "root": "E:/",
+      "skill_files_observed": 450,
+      "unique_leaf_names": 88,
+      "state": "DISCOVERED_READ_ONLY"
+    }
+  ],
+  "expanded_drive_reconciliation": {
+    "scan_scope": "Whole D and E drives; recycle bin and node_modules excluded from admission",
+    "D": {
+      "skill_file_paths": 109,
+      "unique_leaf_names": 64
+    },
+    "E": {
+      "skill_file_paths": 1669,
+      "unique_leaf_names": 291
+    },
+    "canonical_after_reconciliation": {
+      "skill_files": 238,
+      "unique_leaf_names": 238,
+      "duplicate_leaf_names": 0,
+      "portable_skill_mcp_tools": 238,
+      "legacy_registry_tools": 44,
+      "bounded_game_development_tools": 36,
+      "locally_executing_game_tools": 1,
+      "adapter_dependent_game_tools": 35,
+      "total_stdio_mcp_tools": 318
+    },
+    "external_drive_snapshots": {
+      "awesome_ai_agent_skills": {
+        "commit": "a6c8c0ef3c240faefe1b0b5cabe1567beaea60fd",
+        "drive_skill_files": 91,
+        "admitted_after_dedupe": 84,
+        "license": "MIT"
+      },
+      "marketingskills": {
+        "commit": "9d4d29a795113c492b22e01c9b48a8396e140b8d",
+        "drive_skill_files": 33,
+        "admitted_after_dedupe": 33,
+        "license": "MIT",
+        "tool_files_admitted": 137,
+        "node_cli_files": 61,
+        "node_cli_syntax": "PASS_61_OF_61"
+      },
+      "binance_skills_hub": {
+        "commit": "084e3a637b197674e451f5ab45a9d75ab73b08f2",
+        "drive_skill_files": 23,
+        "raw_files_admitted": 0,
+        "state": "CATALOGUED_NOT_VENDORED_NO_LICENSE_FILE"
+      }
+    }
+  },
+  "promotion_groups": {
+    "normalized_enterprise_skills": [
+      "leeway-api-governance",
+      "leeway-application-final-review",
+      "leeway-cicd-quality-gates",
+      "leeway-deployment-readiness",
+      "leeway-developer-workflow",
+      "leeway-infrastructure-governance",
+      "leeway-model-serving-governance",
+      "leeway-permission-security-review",
+      "leeway-reliability-slo",
+      "leeway-runtime-durability",
+      "leeway-scalability-proof",
+      "leeway-telemetry-observability"
+    ],
+    "new_domain": [
+      "leeway-skill-factory",
+      "video-game-development",
+      "logistics-dispatch",
+      "freight-broker-negotiation",
+      "front-office-reception",
+      "office-management",
+      "warehouse-storage-operations",
+      "front-counter-service",
+      "binance-capability-router"
+    ],
+    "blocked_or_deferred": [
+      {
+        "name": "voice-conduit",
+        "reason": "Source authority claims conflict with canonical AGENTS.md and mandatory device behavior is not portable; functionality is covered by canonical human-conversation and governed telephony work skills pending a live adapter."
+      },
+      {
+        "name": "agent-lee-learning-memory",
+        "reason": "Source contains hard-coded host paths and needs a Tool Gateway adapter contract."
+      },
+      {
+        "name": "drive-mcp-agents",
+        "reason": "Observed generated agents return mock success and are GENERATED_STUB, not protocol-verified MCP executors."
+      },
+      {
+        "name": "leeway-mcp-server.py",
+        "reason": "Observed hard-coded drive binding and unearned formula_verified=true claim require repair before promotion."
+      },
+      {
+        "name": "Rent the Universe / Skill Factory literal artifact",
+        "reason": "No exact-name artifact was found in the read-only C/D/E inventory; leeway-skill-factory is a governed implementation, not a claim that the named artifact was recovered."
+      }
+    ]
+  },
+  "domain_sources": [
+    {
+      "name": "Reusable video-game-development capability and tool contract brief",
+      "source_filename": "Pasted markdown(20260916-191458).md",
+      "sha256": "b7776b3f87a8f46d304006b1278c643065f829f55b8fd107b39963f2cc47d063",
+      "promoted_as": [
+        "skills/video-game-development/SKILL.md",
+        "mcp-server/src/game-development-tools.ts"
+      ]
+    }
+  ],
+  "evidence_note": "Counts are a point-in-time read-only discovery baseline. PRESENT or CONFIGURED does not imply LIVE or VERIFIED."
+}

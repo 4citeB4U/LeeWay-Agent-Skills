@@ -1,3 +1,12 @@
+---
+name: prompt-engineering-advanced
+description: "LeeWay-governed Advanced Prompt Optimization workflow. Use when a task requires prompt engineering advanced procedures, validation, and evidence."
+license: MIT
+metadata:
+  authority: Creator/Human Authority > LeeWay Standards
+  source-class: legacy-native-normalized
+  canonical-path: skills/prompt-optimization/prompt-engineering-advanced/SKILL.md
+---
 /*
 LEEWAY HEADER — DO NOT REMOVE
 

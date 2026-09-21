@@ -1,3 +1,12 @@
+---
+name: multi-agent-orchestration
+description: "LeeWay-governed Multi-Agent Orchestration workflow. Use when a task requires multi agent orchestration procedures, validation, and evidence."
+license: MIT
+metadata:
+  authority: Creator/Human Authority > LeeWay Standards
+  source-class: legacy-native-normalized
+  canonical-path: skills/agent-orchestration/multi-agent-orchestration/SKILL.md
+---
 /*
 LEEWAY HEADER — DO NOT REMOVE
 

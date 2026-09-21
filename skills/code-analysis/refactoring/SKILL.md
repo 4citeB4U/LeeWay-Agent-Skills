@@ -1,3 +1,12 @@
+---
+name: refactoring
+description: "LeeWay-governed Refactoring Code workflow. Use when a task requires refactoring procedures, validation, and evidence."
+license: MIT
+metadata:
+  authority: Creator/Human Authority > LeeWay Standards
+  source-class: legacy-native-normalized
+  canonical-path: skills/code-analysis/refactoring/SKILL.md
+---
 /*
 LEEWAY HEADER — DO NOT REMOVE
 

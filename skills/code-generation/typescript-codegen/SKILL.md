@@ -1,3 +1,12 @@
+---
+name: typescript-codegen
+description: "LeeWay-governed TypeScript Code Generation workflow. Use when a task requires typescript codegen procedures, validation, and evidence."
+license: MIT
+metadata:
+  authority: Creator/Human Authority > LeeWay Standards
+  source-class: legacy-native-normalized
+  canonical-path: skills/code-generation/typescript-codegen/SKILL.md
+---
 /*
 LEEWAY HEADER — DO NOT REMOVE
 

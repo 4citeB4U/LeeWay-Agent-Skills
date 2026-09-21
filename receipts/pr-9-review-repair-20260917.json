@@ -1,0 +1,63 @@
+{
+  "receipt_type": "LEEWAY_PR_REVIEW_REPAIR",
+  "generated_at": "2026-09-17T04:28:18Z",
+  "repository": "4citeB4U/LeeWay-Agent-Skills",
+  "pull_request": 9,
+  "reviewed_head": "2c1415ffb9b208acdda881afff6fd65bd6be4fe2",
+  "base_head": "66c976bb0e79e24503c847ef90929c6fb9d5d818",
+  "scope": {
+    "fresh_codex_findings_repaired": 4,
+    "severity": {
+      "P1": 1,
+      "P2": 3
+    },
+    "merge_authorized": false
+  },
+  "repairs": [
+    "Blender gateway credentials and URLs are selected as complete adapter pairs; partial Blender configuration blocks without falling through to game credentials.",
+    "All 61 imported marketing CLIs return nonzero for structured errors and normalize non-2xx HTTP responses into error results.",
+    "All 36 game-development MCP contracts validate required fields, declared properties, primitive types, array item types, and enums before local or gateway execution.",
+    "Instructional merge-conflict markers are indented so the required base-to-head diff check succeeds."
+  ],
+  "artifact_hashes": {
+    "mcp_server_source_sha256": "1fa978adfcda4cbf9171c4f2817b122c61fc74dad0415428fd5e5b601456196d",
+    "mcp_server_tests_sha256": "eea815d69d1e10b25d8d10939ee9ba604fee7afb8d2266f9e5b8ce813efd3624",
+    "marketing_failure_tests_sha256": "99e7713d65005ce52139cea4e34398ac5ccde1582a740e0f1e7298a2a962bd4f",
+    "version_control_skill_sha256": "15a4764049b6624846b7839de6046d70137d7c0f8a610d73d505c1fa32cfe5e3",
+    "marketing_cli_set_sha256": "65b6ebf5c1d296fc9366b8fe7bdd5d0dfe99d79923daa2799cabf5334c37ff1e",
+    "superseded_receipt_sha256": "006071f6fb382e574b1517470c737773288b394fda13b028eecb2d38ecc3c588"
+  },
+  "verification": {
+    "skill_frontmatter_normalization": "PASS (0 changes)",
+    "inventory_audit": "PASS (238 skills; 0 duplicate leaf names; 61 CLIs; 36 game tools)",
+    "marketing_cli_syntax": "61/61 PASS",
+    "marketing_cli_failure_path_tests": "6/6 PASS",
+    "mcp_game_tool_tests": "6/6 PASS",
+    "mcp_stdio_protocol": "PASS (318 tools; 36 game tools; local planning executed; unconfigured gateway blocked)",
+    "remote_mcp_build": "PASS",
+    "npm_pack_dry_run": "PASS (638 files)",
+    "base_to_candidate_diff_check": "PASS",
+    "secret_pattern_scan": "PASS (no live credential material introduced)"
+  },
+  "desktop_commander_evidence": {
+    "adapter_state": "ADAPTER_EXECUTED",
+    "device": "Agent-Lee",
+    "platform": "Windows",
+    "d_root_state": "D:\\Leeway-Ecosystem v2.1.4 is a junction to Pending-Reconciliation; D:\\LeeWay\\Ecosystem is a junction to the canonical E shadow and contains the active .leeway-root.",
+    "e_root_state": "Original E root is present and its former .leeway-root is demoted.",
+    "matching_git_repository_within_bounded_depth": "NOT_FOUND",
+    "global_filename_search": "PARTIAL (protected directories prevented whole-volume completion)"
+  },
+  "formula": {
+    "evaluator_state": "DISCOVERED",
+    "health_state": "LEEWAY_FORMULA_V1_PASS",
+    "execution_state": "NOT_EXECUTED",
+    "reason": "No verified Formula input mapping applies to this repository repair.",
+    "provider_calls": 0
+  },
+  "publication": {
+    "status_at_receipt_creation": "NOT_YET_PUBLISHED",
+    "review_request": "PENDING_PUBLICATION",
+    "merge": "NOT_PERFORMED"
+  }
+}

@@ -1,3 +1,12 @@
+---
+name: static-analysis
+description: "LeeWay-governed Static Code Analysis workflow. Use when a task requires static analysis procedures, validation, and evidence."
+license: MIT
+metadata:
+  authority: Creator/Human Authority > LeeWay Standards
+  source-class: legacy-native-normalized
+  canonical-path: skills/code-analysis/static-analysis/SKILL.md
+---
 /*
 LEEWAY HEADER — DO NOT REMOVE
 

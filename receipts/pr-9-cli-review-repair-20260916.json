@@ -1,0 +1,53 @@
+{
+  "receipt_type": "LEEWAY_PR_REVIEW_REPAIR",
+  "generated_at": "2026-09-16T20:13:28Z",
+  "repository": "4citeB4U/LeeWay-Agent-Skills",
+  "pull_request": 9,
+  "reviewed_head": "aab03361fe29732de80b0acfb1ffb57bd9589c45",
+  "scope": {
+    "active_findings_repaired": 2,
+    "outdated_thread_to_resolve": "PRRT_kwDORn7XPM6jE-02",
+    "merge_authorized": false
+  },
+  "artifacts": [
+    {
+      "path": "tools/external/marketingskills/clis/ga4.js",
+      "sha256": "953e30eb24cd823705b84dd74927c6096b19e37383b25e04048f4603309a237a"
+    },
+    {
+      "path": "tools/external/marketingskills/clis/activecampaign.js",
+      "sha256": "c2394cab8261c70835545f4c9efc02ed4304d3bc3fae6af7ade48fbd9f7f2426"
+    },
+    {
+      "path": "tools/external/marketingskills/tests/cli-failure-paths.test.mjs",
+      "sha256": "84f512b89a41a6caaf0d65b622d4467d187c359dfe18be909563f613061608ae"
+    }
+  ],
+  "verification": {
+    "official_skill_validation": "238/238 PASS",
+    "marketing_cli_syntax": "61/61 PASS",
+    "cli_failure_path_tests": "4/4 PASS",
+    "mcp_unit_tests": "4/4 PASS",
+    "mcp_stdio_protocol": "PASS (318 tools; 36 game tools)",
+    "remote_mcp_build": "PASS",
+    "npm_pack_dry_run": "PASS",
+    "inventory_audit": "PASS (137 upstream payload files; 1 LeeWay test overlay)",
+    "diff_check": "PASS_WORKING_TREE_ONLY_INSUFFICIENT_SCOPE"
+  },
+  "external_execution": {
+    "formula": "NOT_EXECUTED",
+    "reason": "No verified formula input mapping was supplied.",
+    "provider_calls": 0
+  },
+  "publication": {
+    "status_at_receipt_creation": "NOT_YET_PUBLISHED",
+    "review_request": "PENDING_PUBLICATION",
+    "merge": "NOT_PERFORMED"
+  },
+  "post_publication_correction": {
+    "recorded_at": "2026-09-17T04:28:18Z",
+    "state": "SUPERSEDED_BY_FRESH_CODEX_REVIEW",
+    "reason": "The original diff check covered the working delta only. Codex later proved the required base-to-head check failed on instructional conflict-marker examples and identified four additional findings on published head 2c1415ffb9b208acdda881afff6fd65bd6be4fe2.",
+    "corrective_receipt": "receipts/pr-9-review-repair-20260917.json"
+  }
+}

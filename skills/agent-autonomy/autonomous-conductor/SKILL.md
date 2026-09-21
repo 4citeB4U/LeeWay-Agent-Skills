@@ -1,3 +1,12 @@
+---
+name: autonomous-conductor
+description: "LeeWay-governed Autonomous Project Conductor workflow. Use when a task requires autonomous conductor procedures, validation, and evidence."
+license: MIT
+metadata:
+  authority: Creator/Human Authority > LeeWay Standards
+  source-class: legacy-native-normalized
+  canonical-path: skills/agent-autonomy/autonomous-conductor/SKILL.md
+---
 /*
 LEEWAY HEADER — DO NOT REMOVE
 

@@ -1,3 +1,12 @@
+---
+name: code-security
+description: "LeeWay-governed Code Security Analysis workflow. Use when a task requires code security procedures, validation, and evidence."
+license: MIT
+metadata:
+  authority: Creator/Human Authority > LeeWay Standards
+  source-class: legacy-native-normalized
+  canonical-path: skills/security/code-security/SKILL.md
+---
 /*
 LEEWAY HEADER — DO NOT REMOVE
 

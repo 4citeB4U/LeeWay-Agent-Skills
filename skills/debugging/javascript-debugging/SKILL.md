@@ -1,3 +1,12 @@
+---
+name: javascript-debugging
+description: "LeeWay-governed JavaScript/Node.js Debugging workflow. Use when a task requires javascript debugging procedures, validation, and evidence."
+license: MIT
+metadata:
+  authority: Creator/Human Authority > LeeWay Standards
+  source-class: legacy-native-normalized
+  canonical-path: skills/debugging/javascript-debugging/SKILL.md
+---
 /*
 LEEWAY HEADER — DO NOT REMOVE
 
