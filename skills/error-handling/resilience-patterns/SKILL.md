@@ -1,3 +1,12 @@
+---
+name: resilience-patterns
+description: "LeeWay-governed Error Handling and Resilience workflow. Use when a task requires resilience patterns procedures, validation, and evidence."
+license: MIT
+metadata:
+  authority: Creator/Human Authority > LeeWay Standards
+  source-class: legacy-native-normalized
+  canonical-path: skills/error-handling/resilience-patterns/SKILL.md
+---
 /*
 LEEWAY HEADER — DO NOT REMOVE
 

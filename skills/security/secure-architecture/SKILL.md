@@ -1,3 +1,12 @@
+---
+name: secure-architecture
+description: "LeeWay-governed Secure Architecture Design workflow. Use when a task requires secure architecture procedures, validation, and evidence."
+license: MIT
+metadata:
+  authority: Creator/Human Authority > LeeWay Standards
+  source-class: legacy-native-normalized
+  canonical-path: skills/security/secure-architecture/SKILL.md
+---
 /*
 LEEWAY HEADER — DO NOT REMOVE
 

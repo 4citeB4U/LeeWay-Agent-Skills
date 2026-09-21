@@ -1,3 +1,12 @@
+---
+name: performance-engineering
+description: "LeeWay-governed Performance Optimization Engineering workflow. Use when a task requires performance engineering procedures, validation, and evidence."
+license: MIT
+metadata:
+  authority: Creator/Human Authority > LeeWay Standards
+  source-class: legacy-native-normalized
+  canonical-path: skills/performance-optimization/performance-engineering/SKILL.md
+---
 /*
 LEEWAY HEADER — DO NOT REMOVE
 

@@ -1,3 +1,12 @@
+---
+name: dev-loop-optimizer
+description: "LeeWay-governed Dev Loop Optimizer workflow. Use when a task requires dev loop optimizer procedures, validation, and evidence."
+license: MIT
+metadata:
+  authority: Creator/Human Authority > LeeWay Standards
+  source-class: legacy-native-normalized
+  canonical-path: skills/self-optimization/dev-loop-optimizer/SKILL.md
+---
 /*
 LEEWAY HEADER — DO NOT REMOVE
 

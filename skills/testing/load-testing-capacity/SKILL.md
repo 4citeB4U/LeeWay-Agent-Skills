@@ -1,3 +1,12 @@
+---
+name: load-testing-capacity
+description: "LeeWay-governed Load Testing and Capacity Planning workflow. Use when a task requires load testing capacity procedures, validation, and evidence."
+license: MIT
+metadata:
+  authority: Creator/Human Authority > LeeWay Standards
+  source-class: legacy-native-normalized
+  canonical-path: skills/testing/load-testing-capacity/SKILL.md
+---
 /*
 LEEWAY HEADER — DO NOT REMOVE
 

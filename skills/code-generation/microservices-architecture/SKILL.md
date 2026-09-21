@@ -1,3 +1,12 @@
+---
+name: microservices-architecture
+description: "LeeWay-governed Microservices Architecture and Design workflow. Use when a task requires microservices architecture procedures, validation, and evidence."
+license: MIT
+metadata:
+  authority: Creator/Human Authority > LeeWay Standards
+  source-class: legacy-native-normalized
+  canonical-path: skills/code-generation/microservices-architecture/SKILL.md
+---
 /*
 LEEWAY HEADER — DO NOT REMOVE
 

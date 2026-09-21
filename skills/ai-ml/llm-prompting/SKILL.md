@@ -1,3 +1,12 @@
+---
+name: llm-prompting
+description: "LeeWay-governed LLM Prompting and Engineering workflow. Use when a task requires llm prompting procedures, validation, and evidence."
+license: MIT
+metadata:
+  authority: Creator/Human Authority > LeeWay Standards
+  source-class: legacy-native-normalized
+  canonical-path: skills/ai-ml/llm-prompting/SKILL.md
+---
 /*
 LEEWAY HEADER — DO NOT REMOVE
 

@@ -7,7 +7,10 @@ on:
       - 'mcp-server/**'
       - 'mcp-remote/**'
       - 'skills/**'
+      - 'tools/**'
+      - 'config/**'
       - 'scripts/**'
+      - 'package.json'
       - '.github/workflows/verify-skill-fabric.yml'
   workflow_dispatch:
 
@@ -32,9 +35,29 @@ jobs:
         working-directory: mcp-server
         run: npm ci
 
+      - name: Verify every skill has portable frontmatter
+        run: node scripts/normalize-legacy-skill-frontmatter.mjs --check
+
+      - name: Parse imported marketing CLI tools
+        shell: bash
+        run: |
+          while IFS= read -r -d '' file; do
+            node --check "$file"
+          done < <(find tools/external/marketingskills/clis -maxdepth 1 -type f -name '*.js' -print0)
+
+      - name: Test imported marketing CLI failure paths
+        run: node --test tools/external/marketingskills/tests/cli-failure-paths.test.mjs
+
+      - name: Audit complete skill and tool inventory
+        run: node scripts/audit-tool-inventory.mjs
+
       - name: Build MCP server
         working-directory: mcp-server
         run: npm run build
+
+      - name: Test bounded MCP tools
+        working-directory: mcp-server
+        run: npm test && npm run test:protocol
 
       - name: Install remote MCP dependencies
         working-directory: mcp-remote

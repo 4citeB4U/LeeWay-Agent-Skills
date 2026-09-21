@@ -1,3 +1,12 @@
+---
+name: memory-learning
+description: "LeeWay-governed Memory and Continuous Learning workflow. Use when a task requires memory learning procedures, validation, and evidence."
+license: MIT
+metadata:
+  authority: Creator/Human Authority > LeeWay Standards
+  source-class: legacy-native-normalized
+  canonical-path: skills/self-optimization/memory-learning/SKILL.md
+---
 /*
 LEEWAY HEADER — DO NOT REMOVE
 

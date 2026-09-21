@@ -1,3 +1,12 @@
+---
+name: rag-systems
+description: "LeeWay-governed RAG (Retrieval-Augmented Generation) workflow. Use when a task requires rag systems procedures, validation, and evidence."
+license: MIT
+metadata:
+  authority: Creator/Human Authority > LeeWay Standards
+  source-class: legacy-native-normalized
+  canonical-path: skills/rag-knowledge/rag-systems/SKILL.md
+---
 /*
 LEEWAY HEADER — DO NOT REMOVE
 

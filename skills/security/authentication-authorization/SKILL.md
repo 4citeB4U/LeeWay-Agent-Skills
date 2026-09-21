@@ -1,3 +1,12 @@
+---
+name: authentication-authorization
+description: "LeeWay-governed Authentication and Authorization workflow. Use when a task requires authentication authorization procedures, validation, and evidence."
+license: MIT
+metadata:
+  authority: Creator/Human Authority > LeeWay Standards
+  source-class: legacy-native-normalized
+  canonical-path: skills/security/authentication-authorization/SKILL.md
+---
 /*
 LEEWAY HEADER — DO NOT REMOVE
 

@@ -1,3 +1,12 @@
+---
+name: advanced-testing-strategies
+description: "LeeWay-governed Advanced Testing Strategies workflow. Use when a task requires advanced testing strategies procedures, validation, and evidence."
+license: MIT
+metadata:
+  authority: Creator/Human Authority > LeeWay Standards
+  source-class: legacy-native-normalized
+  canonical-path: skills/testing/advanced-testing-strategies/SKILL.md
+---
 /*
 LEEWAY HEADER — DO NOT REMOVE
 

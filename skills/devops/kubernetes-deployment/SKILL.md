@@ -1,3 +1,12 @@
+---
+name: kubernetes-deployment
+description: "LeeWay-governed Kubernetes Deployment workflow. Use when a task requires kubernetes deployment procedures, validation, and evidence."
+license: MIT
+metadata:
+  authority: Creator/Human Authority > LeeWay Standards
+  source-class: legacy-native-normalized
+  canonical-path: skills/devops/kubernetes-deployment/SKILL.md
+---
 /*
 LEEWAY HEADER — DO NOT REMOVE
 

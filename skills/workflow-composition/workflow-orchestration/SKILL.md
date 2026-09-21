@@ -1,3 +1,12 @@
+---
+name: workflow-orchestration
+description: "LeeWay-governed Complex Workflow Composition workflow. Use when a task requires workflow orchestration procedures, validation, and evidence."
+license: MIT
+metadata:
+  authority: Creator/Human Authority > LeeWay Standards
+  source-class: legacy-native-normalized
+  canonical-path: skills/workflow-composition/workflow-orchestration/SKILL.md
+---
 /*
 LEEWAY HEADER — DO NOT REMOVE
 

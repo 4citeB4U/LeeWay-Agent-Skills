@@ -1,3 +1,12 @@
+---
+name: ml-model-development
+description: "LeeWay-governed Machine Learning Model Development workflow. Use when a task requires ml model development procedures, validation, and evidence."
+license: MIT
+metadata:
+  authority: Creator/Human Authority > LeeWay Standards
+  source-class: legacy-native-normalized
+  canonical-path: skills/ai-ml/ml-model-development/SKILL.md
+---
 /*
 LEEWAY HEADER — DO NOT REMOVE
 

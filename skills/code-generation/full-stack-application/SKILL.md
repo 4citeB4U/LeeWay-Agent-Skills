@@ -1,3 +1,12 @@
+---
+name: full-stack-application
+description: "LeeWay-governed Full-Stack Application Delivery workflow. Use when a task requires full stack application procedures, validation, and evidence."
+license: MIT
+metadata:
+  authority: Creator/Human Authority > LeeWay Standards
+  source-class: legacy-native-normalized
+  canonical-path: skills/code-generation/full-stack-application/SKILL.md
+---
 /*
 LEEWAY HEADER — DO NOT REMOVE
 
