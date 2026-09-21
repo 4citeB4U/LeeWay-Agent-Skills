@@ -111,3 +111,8 @@ When the TASK_CAPABILITY_WEAVE contains independent work units, hand bounded job
 ## Company context
 
 Before finalizing a substantive TASK_CAPABILITY_WEAVE, consult `leeway-company-capability-fabric` for affected departments, role/tier perspectives, decision rights, upstream/downstream dependencies, and parallel program lanes. Focal execution must not silo the ambient field. Use `leeway-centered-skill-metrics` only with evidence-bound measurements and explicit targets.
+
+
+## Orchestration precedence
+
+`leeway-skill-orchestrator` owns capability selection/composition and the TASK_CAPABILITY_WEAVE. `leeway-parallel-workplane` owns delegated worker lanes, interrupt/retool state and parent conversation sovereignty. `multi-agent-orchestration` is a domain implementation skill for designing/building multi-agent systems and messaging architectures; it does not supersede the parent LeeWay orchestrator. `workflow-orchestration` is a domain implementation skill for DAG/state-machine/business workflow construction, retries and compensation; it does not own Agent Lee identity or skill selection. One parent control plane; subordinate orchestration capabilities compose beneath it.
