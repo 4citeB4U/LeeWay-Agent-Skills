@@ -3,8 +3,8 @@ import test from "node:test";
 import {
   classifySkillRoute,
   executeSkillThroughGateway,
-  GatewaySkill,
 } from "./skill-execution-gateway.js";
+import type { GatewaySkill } from "./skill-execution-gateway.js";
 
 function skill(
   name: string,
