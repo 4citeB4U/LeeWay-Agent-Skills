@@ -16,7 +16,7 @@ const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),"..");
 const walk=async dir=>{const out=[];for(const e of await fs.readdir(dir,{withFileTypes:true})){if([".git","node_modules"].includes(e.name))continue;const p=path.join(dir,e.name);if(e.isDirectory())out.push(...await walk(p));else out.push(p);}return out;};
 const rel=p=>path.relative(root,p).split(path.sep).join("/");
 const files=(await walk(root)).map(rel).sort();
-const canonical=files.filter(p=>/^skills\/[^/]+\/SKILL\.md$/.test(p));
+const canonical=files.filter(p=>/^skills\/.+\/SKILL\.md$/.test(p));
 const toolLike=files.filter(p=>/(^|\/)(tools?|scripts?|bin)\//i.test(p)||/\.(ps1|sh|mjs|js|ts)$/.test(p));
 const skills=[];
 for(const p of canonical){const txt=await fs.readFile(path.join(root,p),"utf8");const name=(txt.match(/^name:\s*(.+)$/m)||[])[1]?.trim()||p.split("/")[1];const refs=[...new Set([...txt.matchAll(/`(leeway-[a-z0-9-]+)`/gi)].map(m=>m[1]))].sort();skills.push({name,path:p,refs});}
@@ -26,5 +26,5 @@ const registryRows=(registry.skills||[]).map(s=>({name:s.name,path:s.path,artifa
 const registryDrift=registryRows.filter(x=>!x.artifactPresent);
 const referenced=new Set(skills.flatMap(s=>s.refs));const skillNames=new Set(skills.map(s=>s.name));
 const unresolvedSkillRefs=[...referenced].filter(x=>!skillNames.has(x)).sort();
-const report={schemaVersion:"1.0.0",generatedAt:new Date().toISOString(),counts:{files:files.length,canonicalSkills:skills.length,toolLike:toolLike.length,registryDeclared:(registry.skills||[]).length,registryDrift:registryDrift.length,unresolvedSkillRefs:unresolvedSkillRefs.length},canonicalSkills:skills,registryDrift,unresolvedSkillRefs,toolLike};
+const coreSkills=skills.filter(s=>s.path.split("/").length===3); const nestedSkills=skills.filter(s=>s.path.split("/").length>3); const externalSkills=skills.filter(s=>s.path.startsWith("skills/external/")); const report={schemaVersion:"1.1.0",generatedAt:new Date().toISOString(),counts:{files:files.length,allSkillArtifacts:skills.length,coreTopLevel:coreSkills.length,nestedSkills:nestedSkills.length,externalSkills:externalSkills.length,toolLike:toolLike.length,registryDeclared:(registry.skills||[]).length,registryDrift:registryDrift.length,unresolvedSkillRefs:unresolvedSkillRefs.length},coreSkills,nestedSkills,externalSkills,registryDrift,unresolvedSkillRefs,toolLike};
 console.log(JSON.stringify(report,null,2));
