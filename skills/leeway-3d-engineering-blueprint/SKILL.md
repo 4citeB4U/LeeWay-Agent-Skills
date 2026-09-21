@@ -55,3 +55,7 @@ A substantial 3D program may run independent lanes: requirements/dimensions; geo
 ## Truth
 
 rendered != dimensionally correct; dimensionally correct != manufacturable; manufacturable != physically validated; Blender tool success != blueprint verification.
+
+## Reconstruction composition
+
+Use `leeway-triposr` when a reference image should rapidly seed geometry. Use deterministic/parametric geometry when dimensions and constraints dominate and image inference adds little value. For hybrid work: TripoSR seeds form → Blueprint establishes coordinate/scale/constraints → Blender refines/visualizes → Veritas measures the result. Never derive hidden dimensions from a single image without explicit reference scale/evidence.
