@@ -33,7 +33,8 @@
     "verify:package": "node ./bin/leeway-skills.js info",
     "verify:playwright-mcp": "node ./scripts/verify-playwright-mcp.mjs",
     "verify:playwright-binding": "node ./scripts/verify-playwright-agent-skills-binding.mjs",
-    "verify:playwright-gate": "npm run build && npm run verify:playwright-mcp && npm run verify:playwright-binding && node ./scripts/issue-playwright-mcp-receipt.mjs"
+    "verify:playwright-gate": "npm run build && npm run verify:playwright-mcp && npm run verify:playwright-binding && node ./scripts/issue-playwright-mcp-receipt.mjs",
+    "verify:execution-fabric": "npm run build && node ./scripts/verify-full-execution-surface.mjs"
   },
   "keywords": [
     "leeway",
