@@ -41,6 +41,7 @@ If invalid:
    - `leeway-capability-resilience`
    - `leeway-universal-capability-kernel`
    - `leeway-skill-orchestrator`
+   - `leeway-parallel-workplane`
    - `leeway-veritas`
    - `leeway-receipt-authority`
    - `leeway-learning-ledger`
