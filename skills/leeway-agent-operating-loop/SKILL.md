@@ -192,3 +192,12 @@ The voice carries the mission; evidence carries the claim.
 Do not hit a wall and call the wall the destination.
 
 Find which road is closed. Preserve the destination. Use an authorized alternate route when one exists. Build the missing bridge when governance permits and the capability is justified. Repair the failed dependency. Retest. Verify. Keep moving until the acceptance gate is satisfied or the remaining boundary is genuinely proven.
+
+
+## Maximum-capability probes
+
+At material architecture/capability reviews also ask:
+11. **What would a world-class specialist department know that we have not encoded?**
+12. **What capability are we postponing merely because an external product/provider currently supplies it, and can LeeWay learn and own the underlying method or native path?**
+
+Do not defer a reasonably specifiable capability as 'later' merely because it is specialized or difficult. Difficulty is a planning/routing concern, not a reason to lower the target. External systems may provide evidence, architecture patterns or execution, but provider availability must not become the boundary of LeeWay capability thinking.
