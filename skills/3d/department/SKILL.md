@@ -47,3 +47,7 @@ TripoSR seeds image-derived geometry. 3D Engineering Blueprint owns dimensional 
 ## Completion
 
 A 3D asset is not complete because it renders. Verify intended shape, scale, materials, UVs, texture integrity, topology, normals/tangents, performance budget, collision/LODs when required, export integrity and visible result.
+
+## Formula tunnel v2 authority
+
+Canonical department workflow: `config/3d-department-workflow.json` v2. Provider acceptance contract: `config/3d-execution-capability-contract.json`. Provider qualification state: `config/3d-provider-qualification.json`. Before claiming the department can execute a requested operation, distinguish SKILL_COVERAGE from PROVIDER_CAPABILITY_MAPPING from EXECUTION_VERIFIED. Missing provider capability routes through Capability Resilience; do not hide it with prose.
