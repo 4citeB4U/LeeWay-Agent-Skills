@@ -1,0 +1,124 @@
+{
+  "schemaVersion": "1.0.0",
+  "contractId": "LEEWAY_3D_EXECUTION_CAPABILITY_CONTRACT",
+  "evidenceState": "REQUIRED_CAPABILITIES_NOT_ASSERTED_LIVE",
+  "capabilities": [
+    {
+      "id": "scene.inventory",
+      "required": true
+    },
+    {
+      "id": "scene.object.read",
+      "required": true
+    },
+    {
+      "id": "scene.object.transform",
+      "required": true
+    },
+    {
+      "id": "mesh.metrics",
+      "required": true
+    },
+    {
+      "id": "mesh.validate",
+      "required": true
+    },
+    {
+      "id": "mesh.edit",
+      "required": true
+    },
+    {
+      "id": "mesh.normals",
+      "required": true
+    },
+    {
+      "id": "uv.inspect",
+      "required": true
+    },
+    {
+      "id": "uv.unwrap",
+      "required": true
+    },
+    {
+      "id": "material.inspect",
+      "required": true
+    },
+    {
+      "id": "material.assign",
+      "required": true
+    },
+    {
+      "id": "texture.inspect",
+      "required": true
+    },
+    {
+      "id": "texture.bind",
+      "required": true
+    },
+    {
+      "id": "texture.bake",
+      "required": false
+    },
+    {
+      "id": "render.preview",
+      "required": true
+    },
+    {
+      "id": "render.final",
+      "required": true
+    },
+    {
+      "id": "camera.inspect_edit",
+      "required": true
+    },
+    {
+      "id": "lighting.inspect_edit",
+      "required": true
+    },
+    {
+      "id": "import.mesh_scene",
+      "required": true
+    },
+    {
+      "id": "export.mesh_scene",
+      "required": true
+    },
+    {
+      "id": "lod.generate_validate",
+      "required": false
+    },
+    {
+      "id": "collision.create_validate",
+      "required": false
+    },
+    {
+      "id": "rig.inspect_edit",
+      "required": false
+    },
+    {
+      "id": "animation.inspect_edit",
+      "required": false
+    },
+    {
+      "id": "simulation.configure_bake",
+      "required": false
+    },
+    {
+      "id": "procedural.generate",
+      "required": false
+    },
+    {
+      "id": "artifact.hash_receipt",
+      "required": true
+    }
+  ],
+  "providerQualificationStates": [
+    "UNMAPPED",
+    "MAPPED",
+    "PROTOCOL_VERIFIED",
+    "EXECUTION_VERIFIED",
+    "FAILED",
+    "BLOCKED"
+  ],
+  "law": "A provider is not 3D-department-qualified because it connects. Required capabilities must be mapped and execution-verified on representative assets."
+}
