@@ -1,0 +1,18 @@
+{
+  "schemaVersion": "1.0.0",
+  "providers": [
+    {
+      "id": "BLENDER",
+      "skill": "leeway-blender-mcp",
+      "state": "UNMAPPED_IN_THIS_AUDIT",
+      "role": "major edit/render/scene provider"
+    },
+    {
+      "id": "TRIPOSR",
+      "skill": "leeway-triposr",
+      "state": "HISTORICAL_CONFIGURED_LIVE_UNVERIFIED",
+      "role": "image-to-3d reconstruction provider"
+    }
+  ],
+  "nextQualification": "Map Blender tools/actions to config/3d-execution-capability-contract.json, then execute representative scene audit/edit/render/export tests. Map TripoSR inference to reconstruction stage and verify artifact handoff."
+}
