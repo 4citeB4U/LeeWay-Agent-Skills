@@ -1,0 +1,36 @@
+{
+  "schemaVersion": "1.0.0",
+  "parentProfile": "mathematical-sun-v1-11-ray",
+  "extensionModel": "HIERARCHICAL_SUNS",
+  "subSuns": [
+    {
+      "id": "creative-rendering-sun-v1",
+      "state": "PROPOSED",
+      "rays": [
+        "MOTION_DYNAMICS",
+        "PBR_BRDF",
+        "OKLAB_COLOR",
+        "BEZIER_CONTINUITY",
+        "FRAME_VRAM"
+      ],
+      "notes": "Preserves Mathematical Sun v1 bit order. Creative sub-Sun may feed v1 rays 6,8,9,10,11 and Shiproom evidence without silently adding a 12th v1 bit."
+    },
+    {
+      "id": "company-department-suns",
+      "state": "PROPOSED",
+      "rays": [
+        "SWE",
+        "SRE",
+        "PRODUCT",
+        "UX",
+        "SECURITY",
+        "DATA_AI",
+        "BUSINESS",
+        "OPERATIONS",
+        "LEADERSHIP"
+      ],
+      "notes": "Department sub-Suns may retain richer vectors than the 11-bit release profile and converge through Shiproom."
+    }
+  ],
+  "law": "A parent bit may summarize a verified sub-Sun only through an explicit versioned aggregation rule. No hidden averaging and no invented weights."
+}
