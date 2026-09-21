@@ -6,6 +6,7 @@
       "intent": "Create and verify a dimensioned 3D engineered blueprint and rendered model.",
       "requiredSkills": [
         "leeway-3d-engineering-blueprint",
+        "leeway-triposr",
         "leeway-blender-mcp",
         "leeway-creative-rendering-engineering",
         "leeway-centered-skill-metrics",
@@ -13,15 +14,16 @@
         "leeway-veritas"
       ],
       "lanes": [
+        "source-image-reconstruction",
         "requirements-geometry",
-        "model-execution",
+        "model-refinement",
         "materials-render",
         "blueprint-documentation",
         "performance-validation"
       ],
       "verifier": "leeway-veritas",
       "recovery": "leeway-capability-resilience",
-      "rule": "Blender is provider; blueprint skill owns engineering intent."
+      "rule": "TripoSR seeds candidate geometry; Blueprint owns engineering intent; Blender refines/scene-builds; Veritas measures."
     },
     {
       "id": "production-web-application",
