@@ -146,11 +146,11 @@
   ],
   "evidence_note": "Counts are a point-in-time read-only discovery baseline. PRESENT or CONFIGURED does not imply LIVE or VERIFIED.",
   "current_repository_observation": {
-    "observed_at": "2026-09-21T21:10:00Z",
+    "observed_at": "2026-09-21T21:20:00Z",
     "evidence_state": "OBSERVED_REPOSITORY_TREE_NOT_RUNTIME_PROOF",
     "tracked_blob_files": 688,
-    "skill_artifacts": 246,
-    "top_level_core_style_skills": 28,
+    "skill_artifacts": 247,
+    "top_level_core_style_skills": 29,
     "nested_domain_external_workforce_skills": 218,
     "external_skill_artifacts": 149,
     "broad_tool_script_like_artifacts": 237,
@@ -164,11 +164,28 @@
       "leeway-receipt-authority",
       "leeway-learning-ledger",
       "leeway-device-bridge",
-      "leeway-host-commander"
+      "leeway-host-commander",
+      "leeway-parallel-workplane"
     ],
     "legacy_registry_44": "ALL_REFERENCED_ARTIFACTS_PRESENT_PARTIAL_REGISTRY_NOT_COMPLETE_UNIVERSE",
     "audit_tool": "scripts/audit-skill-tool-graph.mjs",
     "generator": "scripts/generate-capability-universe-observation.mjs",
-    "relationship_schema": "config/skill-tool-relationship.schema.json"
+    "relationship_schema": "config/skill-tool-relationship.schema.json",
+    "tool_classification": {
+      "generated": 10,
+      "tests": 6,
+      "external_tool_material": 137,
+      "audit_maintenance": 24,
+      "candidate_executor_adapter": 60,
+      "candidate_families": {
+        "leeway_standards_agents": 39,
+        "standards_core_cli": 7,
+        "bin": 5,
+        "sdk": 3,
+        "mcp_provider": 6
+      },
+      "ownership_manifest": "config/tool-ownership-families.json",
+      "classifier": "scripts/classify-tool-artifacts.mjs"
+    }
   }
 }
