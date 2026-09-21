@@ -1,7 +1,7 @@
 {
   "name": "@agentlee5/agent-skills",
   "version": "1.0.0",
-  "description": "Full Leeway Agent Skills application bundle for npm, including the MCP server, standards toolkit, skill library, workflows, badge assets, and governance automation.",
+  "description": "Full Leeway Agent Skills application bundle for npm, including the MCP server, standards toolkit, skill library, workflows, badge assets, governance automation, and governed Playwright browser execution.",
   "type": "module",
   "main": "./sdk/index.js",
   "exports": {
@@ -13,6 +13,7 @@
     "./standards": "./LeeWay-Standards/src/index.js",
     "./registry.json": "./scripts/skills-registry.json",
     "./skills-config.json": "./config/skills-config.json",
+    "./playwright-runtime.json": "./config/leeway-playwright-runtime.json",
     "./package.json": "./package.json"
   },
   "bin": {
@@ -23,13 +24,19 @@
     "leeway-skills": "./bin/leeway-skills.js",
     "leeway-skills-mcp": "./bin/leeway-skills-mcp.js",
     "leeway-skills-badge": "./bin/leeway-skills-badge.js",
-    "leeway-standards": "./bin/leeway-standards.js"
+    "leeway-standards": "./bin/leeway-standards.js",
+    "leeway-playwright-mcp": "./bin/leeway-playwright-mcp.js",
+    "leeway-playwright-cli": "./bin/leeway-playwright-cli.js"
   },
   "scripts": {
     "build": "npm --prefix mcp-server run build",
     "prepack": "npm run build",
     "pack:dry-run": "npm pack --dry-run",
-    "verify:package": "node ./bin/leeway-skills.js info"
+    "verify:package": "node ./bin/leeway-skills.js info",
+    "playwright:mcp": "node ./bin/leeway-playwright-mcp.js",
+    "playwright:cli": "node ./bin/leeway-playwright-cli.js",
+    "playwright:verify": "node ./scripts/playwright-mcp-smoke.mjs",
+    "playwright:gate": "powershell -NoProfile -ExecutionPolicy Bypass -File ./scripts/Install-LeeWay-Playwright.ps1"
   },
   "keywords": [
     "leeway",
@@ -40,7 +47,9 @@
     "ai",
     "governance",
     "workflows",
-    "badge"
+    "badge",
+    "playwright",
+    "browser-automation"
   ],
   "author": "Leeway Industries (By Leonard Jerome Lee)",
   "license": "MIT",
@@ -48,7 +57,10 @@
     "node": ">=18.0.0"
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^0.5.0"
+    "@modelcontextprotocol/sdk": "^0.5.0",
+    "@playwright/cli": "0.1.21",
+    "@playwright/mcp": "0.0.82",
+    "playwright": "1.63.0"
   },
   "files": [
     ".leeway/config.json",
