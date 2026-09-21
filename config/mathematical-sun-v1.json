@@ -1,0 +1,62 @@
+{
+  "schemaVersion": "1.0.0",
+  "profileId": "mathematical-sun-v1-11-ray",
+  "authorityState": "PROPOSED_GOVERNED_EVALUATION_PROFILE_NOT_CANONICAL_FORMULA_ENCODING",
+  "bitCount": 11,
+  "omegaMax": 2047,
+  "bitOrder": [
+    {
+      "i": 1,
+      "id": "SWE_DETERMINISM"
+    },
+    {
+      "i": 2,
+      "id": "DISTRIBUTED_ARCHITECTURE"
+    },
+    {
+      "i": 3,
+      "id": "SRE_OBSERVABILITY_BUDGET"
+    },
+    {
+      "i": 4,
+      "id": "PRODUCT_DELIVERY_VALUE"
+    },
+    {
+      "i": 5,
+      "id": "APPSEC_STRIDE"
+    },
+    {
+      "i": 6,
+      "id": "UX_ACCESSIBILITY"
+    },
+    {
+      "i": 7,
+      "id": "ORG_CAPACITY"
+    },
+    {
+      "i": 8,
+      "id": "MOTION_DYNAMICS"
+    },
+    {
+      "i": 9,
+      "id": "PBR_BRDF"
+    },
+    {
+      "i": 10,
+      "id": "OKLAB_COLOR"
+    },
+    {
+      "i": 11,
+      "id": "FRAME_VRAM"
+    }
+  ],
+  "gate": {
+    "bitRule": "b_i = 1 iff r_i <= theta_i",
+    "radialRule": "r_i = sqrt(x_i^T W_i x_i)",
+    "omegaRule": "sum(b_i * 2^(11-i))",
+    "phiRule": "product(b_i)",
+    "releaseInvariant": "Phi_Gate = 1 iff Omega = 2047"
+  },
+  "hardConstraints": "Independent Shiproom blockers outside this profile remain authoritative.",
+  "extensionPolicy": "Version bit order/schema; do not silently insert/reorder rays."
+}
