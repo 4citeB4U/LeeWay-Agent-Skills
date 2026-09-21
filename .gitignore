@@ -27,6 +27,7 @@ mcp-server/*.err
 .leeway/badge-proof-sdk-cli/
 .leeway/full-package-smoke/
 .leeway/full-package-smoke-2/
+.leeway/runtime-evidence/
 
 # Keep the committed runtime config
 !.leeway/
