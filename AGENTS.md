@@ -210,3 +210,8 @@ Device and host capabilities route through `leeway-device-bridge` and `leeway-ho
 ## Company-scale anti-silo law
 
 `leeway-company-capability-fabric` inserts ORGANIZATIONAL_CONTEXT between the ambient capability field and task weave. Focal skill selection must never remove materially relevant ambient capabilities. For substantial programs, consider cross-functional lanes across engineering, SRE/platform, product, UX/research, security/compliance, data/AI, business/GTM, operations, and leadership. `leeway-centered-skill-metrics` may evaluate evidence-bound deviation vectors and shiproom ellipsoids but must not invent canonical Formula weights/constants.
+
+
+## Company program convergence
+
+Company-scale parallel lanes converge through `leeway-shiproom`. Department PASS states are inputs, not global completion. Shiproom combines Veritas evidence and optional centered metrics while preserving independent hard blockers and recovery requirements.
