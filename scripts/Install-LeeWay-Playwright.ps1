@@ -54,6 +54,8 @@ $packagePath = Join-Path $RepoRoot 'package.json'
 $skillPath = Join-Path $RepoRoot 'skills\external\playwright\SKILL.md'
 $configPath = Join-Path $RepoRoot 'config\leeway-playwright-runtime.json'
 $smokeScript = Join-Path $RepoRoot 'scripts\playwright-mcp-smoke.mjs'
+$mcpLauncher = Join-Path $RepoRoot 'bin\leeway-playwright-mcp.js'
+$cliLauncher = Join-Path $RepoRoot 'bin\leeway-playwright-cli.js'
 $receiptPath = Join-Path $RepoRoot 'receipts\LEEWAY-PLAYWRIGHT-RUNTIME-BINDING-GATE-1.json'
 $evidenceDir = Join-Path $RepoRoot '.leeway\runtime-evidence\playwright'
 
