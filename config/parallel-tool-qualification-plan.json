@@ -1,0 +1,49 @@
+{
+  "schemaVersion": "1.0.0",
+  "parentObjectiveId": "whole-skill-tool-formula-pass-2",
+  "lanes": [
+    {
+      "workId": "tool-qual-bin",
+      "objective": "Qualify bin entrypoints",
+      "artifacts": [
+        "bin/leeway-playwright-mcp.js",
+        "bin/leeway-skills-badge.js",
+        "bin/leeway-skills-mcp.js",
+        "bin/leeway-skills.js",
+        "bin/leeway-standards.js"
+      ],
+      "status": "PROPOSED"
+    },
+    {
+      "workId": "tool-qual-sdk",
+      "objective": "Qualify SDK modules",
+      "artifacts": [
+        "sdk/application-installer.js",
+        "sdk/index.js",
+        "sdk/paths.js"
+      ],
+      "status": "PROPOSED"
+    },
+    {
+      "workId": "tool-qual-provider",
+      "objective": "Qualify optional MCP/provider adapter artifacts without making them central authority",
+      "artifacts": [
+        "mcp-remote/src/index.ts",
+        "mcp-server/scripts/protocol-smoke.mjs",
+        "mcp-server/src/badge-proof.ts",
+        "mcp-server/src/game-development-tools.ts",
+        "mcp-server/src/index.ts",
+        "mcp-server/src/install-badge-proof.ts"
+      ],
+      "status": "PROPOSED"
+    },
+    {
+      "workId": "tool-qual-standards",
+      "objective": "Qualify selected LeeWay Standards CLI/core/agent entrypoints and map verifier/recovery roles",
+      "artifactFamily": "LeeWay-Standards/src/**",
+      "status": "PROPOSED"
+    }
+  ],
+  "controlPlane": "Parent Agent Lee retains Creator conversation, authority, retool/cancel decisions, acceptance and merge.",
+  "harnessBoundary": "Actual persistent background execution requires a harness that exposes workers. This plan is dispatch-ready; it is not evidence that workers are currently running."
+}
