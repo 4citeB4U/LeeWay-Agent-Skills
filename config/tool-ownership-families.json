@@ -1,0 +1,109 @@
+{
+  "schemaVersion": "1.0.0",
+  "evidenceState": "OBSERVED_PATH_OWNERSHIP_CONTRACT_NOT_RUNTIME_PROOF",
+  "families": [
+    {
+      "id": "leeway-standards-agents",
+      "match": "LeeWay-Standards/src/agents/**",
+      "countObserved": 39,
+      "classification": "DETERMINISTIC_STANDARDS_AGENT",
+      "owner": "leeway-reference-authority",
+      "supports": [
+        "leeway-veritas",
+        "leeway-skill-orchestrator",
+        "leeway-tool-gateway"
+      ],
+      "notes": "Discovery/governance/integrity/security/standards/orchestration agents are LeeWay Standards capability providers; individual execution still requires runtime proof."
+    },
+    {
+      "id": "leeway-standards-core",
+      "match": "LeeWay-Standards/src/{core,cli}/** + src/index.js + examples/**",
+      "countObserved": 7,
+      "classification": "DETERMINISTIC_STANDARDS_CORE",
+      "owner": "leeway-reference-authority",
+      "supports": [
+        "leeway-veritas",
+        "leeway-skill-factory"
+      ],
+      "notes": "Parsers/classifiers/validators/compliance/CLI; examples are reference-only unless invoked."
+    },
+    {
+      "id": "leeway-bin-entrypoints",
+      "match": "bin/**",
+      "countObserved": 5,
+      "classification": "CLI_ENTRYPOINT",
+      "owner": "leeway-tool-gateway",
+      "supports": [
+        "leeway-skill-orchestrator",
+        "leeway-capability-resilience"
+      ],
+      "notes": "Entrypoints expose skills/standards/provider adapters; presence is not live proof."
+    },
+    {
+      "id": "leeway-sdk",
+      "match": "sdk/**",
+      "countObserved": 3,
+      "classification": "SDK_MODULE",
+      "owner": "leeway-tool-gateway",
+      "supports": [
+        "leeway-skill-factory",
+        "leeway-skill-orchestrator"
+      ],
+      "notes": "Application installer/path/index modules; runtime qualification required."
+    },
+    {
+      "id": "mcp-provider-adapters",
+      "match": "mcp-remote/** + mcp-server/src/** + mcp-server/scripts/**",
+      "countObserved": 6,
+      "classification": "OPTIONAL_PROVIDER_ADAPTER",
+      "owner": "leeway-tool-gateway",
+      "supports": [
+        "leeway-capability-resilience"
+      ],
+      "notes": "MCP is a provider path, not skill-system authority. Prefer skills/native tools where sufficient."
+    },
+    {
+      "id": "external-marketing-tools",
+      "match": "tools/external/marketingskills/**",
+      "countObserved": 137,
+      "classification": "EXTERNAL_TOOL_MATERIAL",
+      "owner": "skills/external/marketing/*",
+      "supports": [
+        "leeway-skill-orchestrator"
+      ],
+      "notes": "Subordinate external integrations/CLIs/resources; credentials/runtime must be separately authorized and verified."
+    },
+    {
+      "id": "generated",
+      "match": "**/dist/** + **/*.d.ts",
+      "countObserved": 10,
+      "classification": "GENERATED",
+      "owner": "BUILD_PIPELINE",
+      "supports": [],
+      "notes": "Never select directly as an independent Agent Lee tool."
+    },
+    {
+      "id": "tests",
+      "match": "**/*.test.* + **/tests/**",
+      "countObserved": 6,
+      "classification": "VERIFICATION_ASSET",
+      "owner": "leeway-veritas",
+      "supports": [
+        "domain owners"
+      ],
+      "notes": "Verification assets, not execution capabilities."
+    },
+    {
+      "id": "audit-maintenance",
+      "match": "scripts/** and audit/verify/sync/normalize/publish maintenance",
+      "countObserved": 24,
+      "classification": "REPOSITORY_MAINTENANCE",
+      "owner": "leeway-skill-factory",
+      "supports": [
+        "leeway-skill-lifecycle-governance",
+        "leeway-veritas"
+      ],
+      "notes": "Repository maintenance/governance; not automatically task-level tools."
+    }
+  ]
+}
