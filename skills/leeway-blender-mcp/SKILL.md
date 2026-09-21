@@ -150,3 +150,8 @@ This skill is fully live only after:
 4. one object is created through MCP;
 5. a preview render is returned;
 6. the Blender receipt is preserved and independently inspectable.
+
+
+## TripoSR reconstruction handoff
+
+When input originates from `leeway-triposr`, treat it as a reconstruction candidate, not verified engineering geometry. Inspect/import the mesh, preserve source artifact identity, verify orientation/scale status, validate topology, record occluded/backside uncertainty, then perform only authorized repair/remesh/material/UV/scene operations. If dimensions/constraints matter, `leeway-3d-engineering-blueprint` owns that intent before final verification.
