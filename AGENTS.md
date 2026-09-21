@@ -24,6 +24,7 @@ On every user message, `leeway-message-ingress-authority` checks whether that re
 7. `leeway-capability-resilience`
 8. `leeway-universal-capability-kernel`
 9. `leeway-skill-orchestrator`
+10. `leeway-parallel-workplane`
 10. `leeway-veritas`
 11. `leeway-receipt-authority`
 12. `leeway-learning-ledger`
@@ -197,3 +198,8 @@ Do not shrink intelligence to the label on a skill folder. Keep the whole verifi
 `Skill Orchestrator → focal execution → leeway-veritas → leeway-receipt-authority → leeway-learning-ledger → capability/context update`
 
 Device and host capabilities route through `leeway-device-bridge` and `leeway-host-commander` when materially relevant; neither contract may claim a live executor without runtime evidence.
+
+
+## Parallel workplane law
+
+`leeway-parallel-workplane` keeps Creator conversation/control with the parent Agent Lee while compatible runtimes dispatch bounded independent work lanes. Workers are interruptible/retoolable by explicit state transition, cannot silently expand authority, and cannot self-promote completion. If the active harness lacks persistent background workers, say so and use only real in-turn parallelism or authorized external workers.
