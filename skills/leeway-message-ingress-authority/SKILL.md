@@ -38,6 +38,7 @@ If invalid:
    - `leeway-context-engineering`
    - `leeway-formula-governance`
    - `leeway-agent-operating-loop`
+   - `leeway-capability-resilience`
    - `leeway-universal-capability-kernel`
    - `leeway-skill-lifecycle-governance`
    - `leeway-reference-authority`
@@ -64,7 +65,7 @@ That state does not block governed reasoning, cross-domain capability weaving, r
 Never upgrade `UNEXPOSED` to `AVAILABLE`, `AUTHORIZED`, or `EXECUTED` without evidence.
 
 ## Governed route
-`Bootstrap → Continuity → Ingress → Context/Phi-C64 → Formula/Phi-D → Agent Operating Loop → Universal Capability Kernel → Task Capability Weave → Tool Gateway when available → Focal Execution → Veritas → Receipt → Conversation Vault when available → LeeWay Delivery`
+`Bootstrap → Continuity → Ingress → Context/Phi-C64 → Formula/Phi-D → Agent Operating Loop → Capability Resilience → Universal Capability Kernel → Task Capability Weave → Tool Gateway when available → Focal Execution → Veritas → Receipt → Conversation Vault when available → LeeWay Delivery`
 
 The kernel may let many micro-capabilities shape one answer while keeping heavy full-skill/runtime execution bounded.
 
