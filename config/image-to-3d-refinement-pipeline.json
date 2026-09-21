@@ -1,0 +1,74 @@
+{
+  "schemaVersion": "1.0.0",
+  "pipelineId": "leeway-image-to-3d-refinement-v1",
+  "abstractCapability": "IMAGE_TO_3D_RECONSTRUCTION_AND_REFINEMENT",
+  "stages": [
+    {
+      "order": 1,
+      "id": "REFERENCE",
+      "owner": "creator/context",
+      "output": "source-image"
+    },
+    {
+      "order": 2,
+      "id": "RECONSTRUCT",
+      "owner": "leeway-triposr",
+      "provider": "historical:leeway-triposr-backend",
+      "output": "candidate-mesh"
+    },
+    {
+      "order": 3,
+      "id": "INSPECT_NORMALIZE",
+      "owner": "leeway-3d-engineering-blueprint",
+      "output": "normalized-mesh-plus-uncertainty"
+    },
+    {
+      "order": 4,
+      "id": "ENGINEERING_CONSTRAINTS",
+      "owner": "leeway-3d-engineering-blueprint",
+      "conditional": true,
+      "output": "dimensioned-geometry-intent"
+    },
+    {
+      "order": 5,
+      "id": "REFINE_SCENE",
+      "owner": "leeway-blender-mcp",
+      "output": "refined-scene-model"
+    },
+    {
+      "order": 6,
+      "id": "CREATIVE_RENDER",
+      "owner": "leeway-creative-rendering-engineering",
+      "conditional": true,
+      "output": "render-evidence"
+    },
+    {
+      "order": 7,
+      "id": "VERIFY",
+      "owner": "leeway-veritas",
+      "output": "verified-or-failed-evidence"
+    },
+    {
+      "order": 8,
+      "id": "RECEIPT",
+      "owner": "leeway-receipt-authority",
+      "output": "receipt"
+    }
+  ],
+  "parallelLanes": [
+    "source-image-quality-and-mask",
+    "engineering-references-and-dimensions",
+    "material-style-and-render-intent",
+    "hardware-resource-envelope"
+  ],
+  "mergeRule": "TripoSR mesh is a candidate input. Engineering constraints and Blender refinements merge only after coordinate/scale/artifact identity is explicit.",
+  "historicalRuntime": {
+    "project": "triposr-studio / leeway-triposr-tool",
+    "backendContainer": "leeway-triposr-backend",
+    "webContainer": "leeway-triposr-web",
+    "backendHostPort": 18000,
+    "webHostPort": 13000,
+    "workingDirectory": "D:\\\\triposr-studio\\\\.leeway-portable",
+    "evidenceState": "HISTORICAL_OBSERVED_REQUIRES_LIVE_REDISCOVERY"
+  }
+}
