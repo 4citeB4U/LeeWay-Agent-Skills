@@ -24,6 +24,9 @@ On every user message, `leeway-message-ingress-authority` checks whether that re
 7. `leeway-capability-resilience`
 8. `leeway-universal-capability-kernel`
 9. `leeway-skill-orchestrator`
+10. `leeway-veritas`
+11. `leeway-receipt-authority`
+12. `leeway-learning-ledger`
 8. `leeway-skill-lifecycle-governance`
 9. `leeway-reference-authority`
 10. `leeway-tool-gateway` when an authorized operational adapter is available
@@ -187,3 +190,10 @@ Do not shrink intelligence to the label on a skill folder. Keep the whole verifi
 ## Skill/tool graph law
 
 `leeway-skill-orchestrator` converts the Ambient Capability Field into TASK_CAPABILITY_WEAVE → FOCAL_EXECUTION_SET → VERIFICATION_SET → RECOVERY_SET. Every promoted tool must have a governing skill/capability owner or an explicit EXTERNAL / REFERENCE_ONLY / QUARANTINED classification. Registry entries without canonical artifacts are REGISTRY_DRIFT, not verified skills.
+
+
+## Verification/evidence/learning closure
+
+`Skill Orchestrator → focal execution → leeway-veritas → leeway-receipt-authority → leeway-learning-ledger → capability/context update`
+
+Device and host capabilities route through `leeway-device-bridge` and `leeway-host-commander` when materially relevant; neither contract may claim a live executor without runtime evidence.
