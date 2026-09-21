@@ -77,3 +77,8 @@ MIT
 ## Tags
 
 `workflows` `orchestration` `automation` `pipelines` `distributed-systems` `etl`
+
+
+## LeeWay orchestration boundary
+
+This skill builds task/workflow DAGs, state machines, retries, compensation and long-running business processes. It may be selected inside a TASK_CAPABILITY_WEAVE, but `leeway-skill-orchestrator` owns skill composition and `leeway-parallel-workplane` owns Agent Lee delegated-worker lifecycle. Workflow state must not silently become governance authority.
