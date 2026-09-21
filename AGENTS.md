@@ -215,3 +215,8 @@ Device and host capabilities route through `leeway-device-bridge` and `leeway-ho
 ## Company program convergence
 
 Company-scale parallel lanes converge through `leeway-shiproom`. Department PASS states are inputs, not global completion. Shiproom combines Veritas evidence and optional centered metrics while preserving independent hard blockers and recovery requirements.
+
+
+## Mathematical Sun evaluation
+
+`leeway-mathematical-sun` is a versioned evidence-bound radial evaluation profile feeding `leeway-shiproom`; it is not automatically the canonical Formula encoding. `leeway-creative-rendering-engineering` combines motion, PBR, perceptual color, vector geometry and GPU/frame-budget capabilities. Rays are measurement axes, not skill silos. The v1 11-bit register preserves exact bit order and may be extended only through versioned hierarchical sub-Suns.
