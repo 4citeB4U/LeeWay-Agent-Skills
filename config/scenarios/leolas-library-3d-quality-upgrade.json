@@ -1,0 +1,56 @@
+{
+  "id": "leolas-library-3d-quality-upgrade",
+  "intent": "Inspect the existing full 3D Leola's Library scene, preserve approved architecture, improve UV wrapping/skin/material quality and environmental detail from simple/blocky styling toward richer realistic game-asset quality, optimize for the target runtime, and verify before/after.",
+  "requiredSkills": [
+    "leeway-3d-department",
+    "leeway-3d-scene-audit",
+    "leeway-3d-art-direction",
+    "leeway-3d-environment-architecture",
+    "leeway-3d-geometry-topology",
+    "leeway-3d-material-lookdev",
+    "leeway-3d-game-asset-production",
+    "leeway-3d-lighting-render-validation",
+    "leeway-3d-engineering-blueprint",
+    "leeway-blender-mcp",
+    "leeway-creative-rendering-engineering",
+    "leeway-parallel-workplane",
+    "leeway-veritas"
+  ],
+  "optionalSkills": [
+    "leeway-triposr"
+  ],
+  "parallelLanes": [
+    {
+      "id": "A_GEOMETRY",
+      "owns": [
+        "geometry/topology audit and repair plan"
+      ]
+    },
+    {
+      "id": "B_MATERIALS",
+      "owns": [
+        "UV/material/texture audit and lookdev plan"
+      ]
+    },
+    {
+      "id": "C_ENVIRONMENT",
+      "owns": [
+        "building/interior/exterior/landscape asset families"
+      ]
+    },
+    {
+      "id": "D_PERFORMANCE",
+      "owns": [
+        "LOD/collision/material/texture/frame budgets"
+      ]
+    },
+    {
+      "id": "E_LOOKDEV",
+      "owns": [
+        "diagnostic/final lighting and camera evidence"
+      ]
+    }
+  ],
+  "convergence": "Blender integration after lane plans/assets; serialize mutations to same scene; Veritas checks visual + geometry + performance acceptance.",
+  "tripoRule": "Use TripoSR only to reconstruct missing/reference-derived assets; do not rebuild existing approved library geometry merely because TripoSR exists."
+}
