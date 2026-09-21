@@ -1,0 +1,192 @@
+{
+  "schemaVersion": "1.0.0",
+  "evidenceState": "PROPOSED_ORGANIZATIONAL_MODEL_REQUIRES_SKILL_MAPPING",
+  "departments": [
+    {
+      "id": "SWE",
+      "name": "Software Engineering",
+      "tiers": [
+        "ENTRY_MID",
+        "SENIOR",
+        "PRINCIPAL_ARCHITECT"
+      ],
+      "capabilityFamilies": [
+        "language-runtime",
+        "algorithms",
+        "api-protocol",
+        "testing",
+        "source-control-cicd",
+        "debugging",
+        "distributed-systems",
+        "database",
+        "concurrency",
+        "telemetry",
+        "code-review",
+        "enterprise-architecture",
+        "resilience-chaos",
+        "performance",
+        "zero-trust"
+      ]
+    },
+    {
+      "id": "SRE",
+      "name": "Site Reliability & Platform",
+      "tiers": [
+        "MID",
+        "SENIOR_LEAD"
+      ],
+      "capabilityFamilies": [
+        "iac",
+        "containers-orchestration",
+        "systems-admin",
+        "automation",
+        "sli-slo-sla",
+        "observability",
+        "incident-command",
+        "finops-capacity"
+      ]
+    },
+    {
+      "id": "PM",
+      "name": "Product Management",
+      "tiers": [
+        "ENTRY_MID",
+        "SENIOR",
+        "PRINCIPAL"
+      ],
+      "capabilityFamilies": [
+        "specification",
+        "analytics",
+        "backlog",
+        "customer-discovery",
+        "competitive-research",
+        "dependency-mapping",
+        "experimentation",
+        "strategy",
+        "business-case",
+        "gtm"
+      ]
+    },
+    {
+      "id": "UX",
+      "name": "Product Design & User Research",
+      "tiers": [
+        "MID",
+        "SENIOR_LEAD"
+      ],
+      "capabilityFamilies": [
+        "wireframing",
+        "design-systems",
+        "usability",
+        "interaction-architecture",
+        "accessibility",
+        "research-synthesis",
+        "design-tokens"
+      ]
+    },
+    {
+      "id": "SEC",
+      "name": "Product Security & Compliance",
+      "tiers": [
+        "MID",
+        "SENIOR"
+      ],
+      "capabilityFamilies": [
+        "threat-modeling",
+        "sast-dast",
+        "vulnerability-assessment",
+        "cryptography",
+        "identity-access",
+        "compliance"
+      ]
+    },
+    {
+      "id": "DATA_AI",
+      "name": "Data AI & Research",
+      "tiers": [
+        "PRACTITIONER",
+        "SENIOR",
+        "PRINCIPAL"
+      ],
+      "capabilityFamilies": [
+        "data-analysis",
+        "ml",
+        "llm",
+        "multimodal",
+        "rag",
+        "research",
+        "evaluation",
+        "model-serving"
+      ]
+    },
+    {
+      "id": "BIZ",
+      "name": "Business Finance & Go-to-Market",
+      "tiers": [
+        "PRACTITIONER",
+        "LEAD",
+        "EXECUTIVE"
+      ],
+      "capabilityFamilies": [
+        "financial-modeling",
+        "pricing",
+        "marketing",
+        "sales",
+        "revops",
+        "customer-success",
+        "p-and-l",
+        "market-analysis"
+      ]
+    },
+    {
+      "id": "OPS",
+      "name": "Operations Support & Logistics",
+      "tiers": [
+        "PRACTITIONER",
+        "LEAD",
+        "DIRECTOR"
+      ],
+      "capabilityFamilies": [
+        "support",
+        "office",
+        "reception",
+        "logistics",
+        "warehouse",
+        "incident-operations",
+        "workflow-automation"
+      ]
+    },
+    {
+      "id": "LEADERSHIP",
+      "name": "Department & Executive Leadership",
+      "tiers": [
+        "MANAGER",
+        "DIRECTOR",
+        "VP_EXECUTIVE"
+      ],
+      "capabilityFamilies": [
+        "capacity",
+        "performance-management",
+        "governance",
+        "resource-allocation",
+        "dependency-arbitration",
+        "risk",
+        "business-continuity",
+        "org-design"
+      ]
+    }
+  ],
+  "orchestrationLevels": [
+    "CONSTITUTIONAL_CORE",
+    "AMBIENT_CAPABILITY_FIELD",
+    "ORGANIZATIONAL_CONTEXT",
+    "TASK_CAPABILITY_WEAVE",
+    "PARALLEL_PROGRAM_LANES",
+    "FOCAL_EXECUTION_SET",
+    "VERIFICATION_SET",
+    "RECOVERY_SET",
+    "SHIPROOM_GATE",
+    "EVIDENCE_LEARNING"
+  ],
+  "hardRule": "FOCAL_SKILL_SELECTION_MUST_NOT_REMOVE_MATERIALLY_RELEVANT_AMBIENT_CAPABILITIES"
+}
