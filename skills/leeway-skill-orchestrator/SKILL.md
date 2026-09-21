@@ -97,3 +97,7 @@ Tool presence in source is not proof of runtime availability.
 ## Output
 
 For audits, produce a graph/matrix with canonical skills, tools/resources, ownership, relationships, gaps, duplicates/conflicts, missing skills/tools, missing orchestration/execution/verification/recovery levels, proposed compositions, and evidence state. For ordinary tasks, use the graph silently and expose only the materially useful weave.
+
+## Verification and recovery closure
+
+Build VERIFICATION_SET using `leeway-veritas` and domain-specific verifiers. After verification route evidence through `leeway-receipt-authority`, then admit only verified learning through `leeway-learning-ledger`. Build RECOVERY_SET using `leeway-capability-resilience`, `leeway-host-commander`, device/platform fallbacks, rollback skills, or domain recovery capabilities as applicable.
