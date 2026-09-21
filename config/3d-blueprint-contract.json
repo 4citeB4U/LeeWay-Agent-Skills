@@ -1,0 +1,37 @@
+{
+  "schemaVersion": "1.0.0",
+  "domain": "3D_ENGINEERING_BLUEPRINT",
+  "requiredForEngineering": [
+    "units",
+    "coordinateFrame",
+    "dimensions",
+    "acceptanceCriteria"
+  ],
+  "optional": [
+    "tolerances",
+    "materials",
+    "parts",
+    "assemblies",
+    "constraints",
+    "clearances",
+    "referencePlanes",
+    "views",
+    "meshRequirements",
+    "performanceBudget",
+    "manufacturingIntent"
+  ],
+  "providers": [
+    "BLENDER",
+    "CAD_KERNEL",
+    "DETERMINISTIC_GEOMETRY",
+    "WEBGPU_THREEJS",
+    "VECTOR_2D"
+  ],
+  "evidenceStates": [
+    "PROPOSED",
+    "OBSERVED",
+    "VERIFIED",
+    "FAILED",
+    "BLOCKED"
+  ]
+}
