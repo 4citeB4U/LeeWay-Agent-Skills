@@ -144,5 +144,22 @@
       ]
     }
   ],
-  "evidence_note": "Counts are a point-in-time read-only discovery baseline. PRESENT or CONFIGURED does not imply LIVE or VERIFIED."
+  "evidence_note": "Counts are a point-in-time read-only discovery baseline. PRESENT or CONFIGURED does not imply LIVE or VERIFIED.",
+  "current_repository_observation": {
+    "observed_at": "2026-09-21T21:10:00Z",
+    "evidence_state": "OBSERVED_REPOSITORY_TREE_NOT_RUNTIME_PROOF",
+    "skill_artifacts": 241,
+    "top_level_core_style_skills": 23,
+    "nested_domain_external_workforce_skills": 218,
+    "historical_reconciliation_skill_files": 238,
+    "delta_since_historical_baseline": 3,
+    "delta_explanation": [
+      "leeway-agent-operating-loop",
+      "leeway-capability-resilience",
+      "leeway-skill-orchestrator"
+    ],
+    "legacy_registry_44": "ALL_REFERENCED_ARTIFACTS_PRESENT_PARTIAL_REGISTRY_NOT_COMPLETE_UNIVERSE",
+    "audit_tool": "scripts/audit-skill-tool-graph.mjs",
+    "generator": "scripts/generate-capability-universe-observation.mjs"
+  }
 }
