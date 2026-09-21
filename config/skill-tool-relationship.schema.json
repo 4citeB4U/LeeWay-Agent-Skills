@@ -1,0 +1,14 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://leeway.local/schemas/skill-tool-relationship.schema.json",
+  "title":"LeeWay Skill Tool Relationship",
+  "type":"object",
+  "required":["from","relationship","to","evidenceState"],
+  "properties":{
+    "from":{"type":"string","minLength":1},
+    "relationship":{"enum":["PROVIDES","REQUIRES","SUPPORTS","USES_TOOL","TOOL_OWNED_BY","VERIFIES","FALLBACK_FOR","CONFLICTS_WITH","SUPERSEDES","SHARES_PRIMITIVE_WITH","TRANSFERS_PATTERN_TO","OUTPUTS_TO","INPUTS_FROM"]},
+    "to":{"type":"string","minLength":1},
+    "evidenceState":{"enum":["VERIFIED","OBSERVED","INFERRED","PROPOSED","UNVERIFIED","FAILED","BLOCKED"]},
+    "source":{"type":"string"}
+  }
+}
