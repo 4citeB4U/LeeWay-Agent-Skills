@@ -34,11 +34,10 @@ const root = path.resolve(here, "..");
 const configPath = path.join(root, "config", "leeway-playwright-runtime.json");
 const config = JSON.parse(await fsp.readFile(configPath, "utf8"));
 
-const binName = process.platform === "win32" ? "playwright-mcp.cmd" : "playwright-mcp";
-const localBin = path.join(root, "node_modules", ".bin", binName);
+const runtimeEntry = path.join(root, "node_modules", "@playwright", "mcp", "cli.js");
 
-if (!fs.existsSync(localBin)) {
-  console.error("[LeeWay Playwright] BLOCKED: pinned playwright-mcp binary is not installed.");
+if (!fs.existsSync(runtimeEntry)) {
+  console.error("[LeeWay Playwright] BLOCKED: pinned @playwright/mcp runtime is not installed.");
   console.error("[LeeWay Playwright] Run: npm run playwright:gate");
   process.exit(3);
 }
@@ -56,11 +55,11 @@ const args = [...configuredArgs];
 if (!hasOutput) args.push(`--output-dir=${outputDir}`);
 args.push(...passthrough);
 
-const child = spawn(localBin, args, {
+const child = spawn(process.execPath, [runtimeEntry, ...args], {
   cwd: process.cwd(),
   env: process.env,
   stdio: "inherit",
-  shell: process.platform === "win32",
+  shell: false,
   windowsHide: true,
 });
 
