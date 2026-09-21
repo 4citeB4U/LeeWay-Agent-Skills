@@ -75,3 +75,8 @@ MIT
 ## Tags
 
 `agents` `orchestration` `multi-agent` `coordination` `message-passing` `distributed`
+
+
+## LeeWay orchestration boundary
+
+This is a domain skill for designing/implementing multi-agent systems. When Agent Lee itself delegates work, `leeway-skill-orchestrator` remains the capability-selection parent and `leeway-parallel-workplane` remains the worker lifecycle/control-plane authority. Do not create a competing parent Agent Lee identity.
