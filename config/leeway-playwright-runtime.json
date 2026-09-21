@@ -57,7 +57,12 @@
   },
   "mcp": {
     "binary": "playwright-mcp",
-    "args": ["--browser=msedge", "--headless", "--isolated"]
+    "args": [
+      "--browser=msedge",
+      "--headless",
+      "--isolated",
+      "--no-webmcp"
+    ]
   },
   "cli": {
     "binary": "playwright-cli"
@@ -69,5 +74,14 @@
     "requiresSemanticInteraction": true,
     "requiresPostInteractionAssertion": true,
     "requiresEvidence": true
+  },
+  "toolPolicy": {
+    "enforcementState": "LEEWAY_GOVERNANCE_POLICY",
+    "prohibitedByDefault": [
+      "browser_run_code_unsafe"
+    ],
+    "pageEvaluation": "AUTHORIZED_PAGE_SCOPE_ONLY",
+    "fileUpload": "EXPLICIT_AUTHORIZATION_REQUIRED",
+    "advertisedToolIsAuthorized": false
   }
 }
