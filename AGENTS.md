@@ -163,6 +163,14 @@ Math establishes structure. Execution establishes reality. Veritas establishes t
 
 The always-on `leeway-agent-operating-loop` owns completion persistence: define the acceptance gate, repeatedly ask what is not being discovered and what needs enhancement, scope blockers instead of globalizing them, search authorized alternate routes, create/qualify missing capabilities when justified, and resume the parent mission. `first success != completion`.
 
+At every material state transition, architecture pass, failure, repair, or acceptance review, the operating loop must ask internally:
+1. **What are we not discovering?**
+2. **What needs to be enhanced?**
+3. **What prevents us from reaching the acceptance gate from here?**
+4. **What authorized route gets us past that boundary?**
+
+Feed material answers into the next state; these are decision probes, not decorative response headings.
+
 The always-on `leeway-capability-resilience` layer treats MCPs/tools/services as replaceable providers of abstract capabilities, tracks fallback routes and capability debt, and routes genuine gaps through composition/extension/adaptation/Skill Factory/native promotion before the parent mission is declared blocked.
 
 `CLAIM == SOURCE == TEST == RUNTIME == VERITAS == RECEIPT`
