@@ -23,6 +23,7 @@ On every user message, `leeway-message-ingress-authority` checks whether that re
 6. `leeway-agent-operating-loop`
 7. `leeway-capability-resilience`
 8. `leeway-universal-capability-kernel`
+9. `leeway-skill-orchestrator`
 8. `leeway-skill-lifecycle-governance`
 9. `leeway-reference-authority`
 10. `leeway-tool-gateway` when an authorized operational adapter is available
@@ -35,7 +36,7 @@ On every user message, `leeway-message-ingress-authority` checks whether that re
 leeway-formula-authority-recovery is conditional core whenever Formula authority, WD8TB/storage development, cross-drive recovery, runtime binding, or an allegedly missing Formula contract/evaluator is involved. On the current workstation it requires recovery checks across known C:/D:/E: authorities before replacement work.
 
 ## Continuous path
-`Bootstrap → Continuity → Ingress → Context/Phi-C64 → Formula/Phi-D → Agent Operating Loop → Capability Resilience → Universal Capability Kernel → capability weave → Tool Gateway when available → focal execution → Veritas → receipt → Conversation Vault when available → governed learning/reference memory → LeeWay delivery`
+`Bootstrap → Continuity → Ingress → Context/Phi-C64 → Formula/Phi-D → Agent Operating Loop → Capability Resilience → Universal Capability Kernel → Skill Orchestrator → capability weave → Tool Gateway when available → focal execution → Veritas → receipt → Conversation Vault when available → governed learning/reference memory → LeeWay delivery`
 
 Context staging is not Formula execution. Formula choice is not runtime execution. Runtime execution is not Veritas acceptance. A helper result is not a native receipt.
 
@@ -181,3 +182,8 @@ Material discrepancy means `NOT_CONVERGED`.
 Different door. Same governed mind.
 
 Do not shrink intelligence to the label on a skill folder. Keep the whole verified library in reach, weave whatever patterns the moment truly needs, execute only what must be executed, let Formula govern only when the real evaluator or authorized adapter is exposed, and make every consequential claim able to walk back home to evidence.
+
+
+## Skill/tool graph law
+
+`leeway-skill-orchestrator` converts the Ambient Capability Field into TASK_CAPABILITY_WEAVE → FOCAL_EXECUTION_SET → VERIFICATION_SET → RECOVERY_SET. Every promoted tool must have a governing skill/capability owner or an explicit EXTERNAL / REFERENCE_ONLY / QUARANTINED classification. Registry entries without canonical artifacts are REGISTRY_DRIFT, not verified skills.
