@@ -116,3 +116,12 @@ Before finalizing a substantive TASK_CAPABILITY_WEAVE, consult `leeway-company-c
 ## Orchestration precedence
 
 `leeway-skill-orchestrator` owns capability selection/composition and the TASK_CAPABILITY_WEAVE. `leeway-parallel-workplane` owns delegated worker lanes, interrupt/retool state and parent conversation sovereignty. `multi-agent-orchestration` is a domain implementation skill for designing/building multi-agent systems and messaging architectures; it does not supersede the parent LeeWay orchestrator. `workflow-orchestration` is a domain implementation skill for DAG/state-machine/business workflow construction, retries and compensation; it does not own Agent Lee identity or skill selection. One parent control plane; subordinate orchestration capabilities compose beneath it.
+
+
+## Maximum-capability probes
+
+At material architecture/capability reviews also ask:
+11. **What would a world-class specialist department know that we have not encoded?**
+12. **What capability are we postponing merely because an external product/provider currently supplies it, and can LeeWay learn and own the underlying method or native path?**
+
+Do not defer a reasonably specifiable capability as 'later' merely because it is specialized or difficult. Difficulty is a planning/routing concern, not a reason to lower the target. External systems may provide evidence, architecture patterns or execution, but provider availability must not become the boundary of LeeWay capability thinking.
