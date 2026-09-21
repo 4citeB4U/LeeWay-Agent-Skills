@@ -1,0 +1,19 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://leeway.local/schemas/tool-qualification.schema.json",
+  "title":"LeeWay Tool Qualification",
+  "type":"object",
+  "required":["toolId","artifact","owner","state","evidence"],
+  "properties":{
+    "toolId":{"type":"string"},
+    "artifact":{"type":"string"},
+    "owner":{"type":"string"},
+    "providerType":{"enum":["NATIVE","CLI","SDK","ADAPTER","EXTERNAL","MCP_PROVIDER","VERIFICATION_ASSET","GENERATED","REFERENCE_ONLY"]},
+    "state":{"enum":["PRESENT","CONFIGURED","BUILT","PROTOCOL_VERIFIED","LIVE","VERIFIED","FAILED","BLOCKED","QUARANTINED"]},
+    "acceptanceCriteria":{"type":"array","items":{"type":"string"}},
+    "evidence":{"type":"array","items":{"type":"string"}},
+    "lastVerifiedAt":{"type":["string","null"],"format":"date-time"},
+    "failureBoundary":{"type":["string","null"]},
+    "fallbacks":{"type":"array","items":{"type":"string"}}
+  }
+}
