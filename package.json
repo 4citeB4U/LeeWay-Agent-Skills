@@ -23,13 +23,17 @@
     "leeway-skills": "./bin/leeway-skills.js",
     "leeway-skills-mcp": "./bin/leeway-skills-mcp.js",
     "leeway-skills-badge": "./bin/leeway-skills-badge.js",
-    "leeway-standards": "./bin/leeway-standards.js"
+    "leeway-standards": "./bin/leeway-standards.js",
+    "leeway-playwright-mcp": "./bin/leeway-playwright-mcp.js"
   },
   "scripts": {
     "build": "npm --prefix mcp-server run build",
     "prepack": "npm run build",
     "pack:dry-run": "npm pack --dry-run",
-    "verify:package": "node ./bin/leeway-skills.js info"
+    "verify:package": "node ./bin/leeway-skills.js info",
+    "verify:playwright-mcp": "node ./scripts/verify-playwright-mcp.mjs",
+    "verify:playwright-binding": "node ./scripts/verify-playwright-agent-skills-binding.mjs",
+    "verify:playwright-gate": "npm run build && npm run verify:playwright-mcp && npm run verify:playwright-binding && node ./scripts/issue-playwright-mcp-receipt.mjs"
   },
   "keywords": [
     "leeway",
@@ -48,7 +52,8 @@
     "node": ">=18.0.0"
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^0.5.0"
+    "@modelcontextprotocol/sdk": "1.30.0",
+    "@playwright/mcp": "0.0.82"
   },
   "files": [
     ".leeway/config.json",
@@ -60,6 +65,7 @@
     "LeeWay-Standards/src/",
     "LICENSE",
     "README.md",
+    "receipts/playwright-mcp-integration-20260921.json",
     "agent-config.yaml",
     "agentbage.png.png",
     "bin/",

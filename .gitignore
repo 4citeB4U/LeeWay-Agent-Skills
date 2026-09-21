@@ -22,6 +22,7 @@ mcp-server/*.err
 # Local Leeway runtime artifacts
 .leeway/reports/
 .leeway/metrics/
+.leeway/playwright-evidence/
 .leeway/badge-proof-demo/
 .leeway/badge-proof-demo-npm/
 .leeway/badge-proof-sdk-cli/

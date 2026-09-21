@@ -1,0 +1,69 @@
+{
+  "schema": "leeway.playwright-mcp.integration-receipt.v1",
+  "receipt_id": "LEEWAY-PLAYWRIGHT-MCP-INTEGRATION-20260921",
+  "status": "VERIFIED",
+  "issued_at": "2026-09-21T05:19:50.100Z",
+  "authority": "Creator/Human Authority > LeeWay Standards > Agent Skills > Tool Gateway",
+  "pre_commit_sha": "66c976bb0e79e24503c847ef90929c6fb9d5d818",
+  "runtime": {
+    "upstream": "microsoft/playwright-mcp",
+    "package": "@playwright/mcp@0.0.82",
+    "mcp_sdk_root": "@modelcontextprotocol/sdk@1.30.0",
+    "mcp_sdk_nested": "@modelcontextprotocol/sdk@1.30.0",
+    "transport": "stdio",
+    "browser": "msedge",
+    "server_version": {
+      "name": "Playwright",
+      "version": "1.64.0-alpha-1789764292000"
+    }
+  },
+  "proof": {
+    "playwright_mcp_tool_count": 25,
+    "leeway_skills_tool_count": 144,
+    "playwright_skill_present": true,
+    "snapshot_contains_proof": true,
+    "screenshot_sha256": "2af03b8aae4c392a4cbc9c360c79e419f5a977c52ccbbf0574d5ef826ec84460",
+    "navigation_sha256": "b007c4457a299d86c558f88a2eb5f3b5cdfab8acd24341579a0b5d3f71429dec",
+    "snapshot_sha256": "d6804960bb750b196f874bc75c224588c2d0be39697fb907f3e0659896d9096d"
+  },
+  "security": {
+    "root_npm_vulnerabilities": {
+      "info": 0,
+      "low": 0,
+      "moderate": 0,
+      "high": 0,
+      "critical": 0,
+      "total": 0
+    },
+    "nested_mcp_npm_vulnerabilities": {
+      "info": 0,
+      "low": 0,
+      "moderate": 0,
+      "high": 0,
+      "critical": 0,
+      "total": 0
+    },
+    "unrestricted_file_access_enabled": false,
+    "webmcp_enabled": false,
+    "browser_run_code_unsafe_default_authorized": false
+  },
+  "governed_file_sha256": {
+    "agent-config.yaml": "255401c304942eccb3af0a4e432c7bf80e54d955bd700ff7ba58356254508a38",
+    "config/mcp-runtime-registry.json": "2ae2f2368d49929336b37ffc37f1bce9f6aa2043e58419dc38b66286aa6e6b70",
+    "skills/external/playwright/SKILL.md": "367bc8733be70406ac0437cda07a5385dd0197557b175e653b8756a3d9342c24",
+    "bin/leeway-playwright-mcp.js": "f789311ac8a8779569eeedcd51e7061eafe874821d0c25b5e3bd8ff7a7ebf511",
+    "scripts/verify-playwright-mcp.mjs": "1d3f31fa0ee2ee122cb64222679e9fd5007f8de5dddc8b345451774257030405",
+    "scripts/verify-playwright-agent-skills-binding.mjs": "917c05476f672ae87f25957951893ef6e42913937a7676e56b530f72c47968fb",
+    "scripts/issue-playwright-mcp-receipt.mjs": "b20047c647fc6000321bff8d0304a08a8925f2b4ef2b6297624e50bdc8dbbc1c",
+    "package.json": "7df0b4196fc49206b0511025942019b76c2cdf0f45a7ea53d623b9b7fb986b9a",
+    "package-lock.json": "943d92abe10b7f3f8e60b5b46c63c854ca62298d302a21e6fd238d6d22cbbf19",
+    "mcp-server/package.json": "c12ebc4ddf7b32e771e0d2aaf150ee470461fb344f4f00531de6f98fe9c4ec6b",
+    "mcp-server/package-lock.json": "81bf9c6673b17fb279d037ac8b334e6c51f2d2840b2747d318556e65880e4bc0"
+  },
+  "evidence": {
+    "browser_verification": ".leeway/playwright-evidence/playwright-mcp-verification.json",
+    "binding_verification": ".leeway/playwright-evidence/playwright-agent-skills-binding.json",
+    "screenshot": ".leeway/playwright-evidence/playwright-mcp-proof.png"
+  },
+  "learning_ledger_updated": false
+}

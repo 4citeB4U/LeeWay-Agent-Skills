@@ -1,0 +1,30 @@
+{
+  "schema": "leeway.mcp-runtime-registry.v1",
+  "version": "1.0.0",
+  "runtimes": {
+    "playwright-mcp": {
+      "display_name": "LeeWay Playwright MCP",
+      "authority": "Creator/Human Authority > LeeWay Standards > Agent Skills > Tool Gateway",
+      "upstream": "microsoft/playwright-mcp",
+      "package": "@playwright/mcp",
+      "pinned_version": "0.0.82",
+      "command": "leeway-playwright-mcp",
+      "local_entry": "./bin/leeway-playwright-mcp.js",
+      "transport": "stdio",
+      "state": "VERIFIED_EXECUTION_READY",
+      "safe_defaults": [
+        "browser=msedge",
+        "headless=true",
+        "isolated=true",
+        "webmcp=false",
+        "workspace_bounded=true"
+      ],
+      "default_denied_or_elevated_tools": [
+        "browser_run_code_unsafe"
+      ],
+      "verification_command": "npm run verify:playwright-mcp",
+      "evidence_directory": ".leeway/playwright-evidence",
+      "receipt": "receipts/playwright-mcp-integration-20260921.json"
+    }
+  }
+}

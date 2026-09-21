@@ -124,7 +124,9 @@ tool_gateway:
   skill: "./skills/leeway-tool-gateway/SKILL.md"
   prefer_root_symbol: "<LEEWAY_ROOT>"
   authority_tiers: [READ, OPERATE, MUTATE, ADMIN]
-  normalized_capabilities: [files, docker, forgejo, runtime, database, logs, receipts]
+  normalized_capabilities: [files, docker, forgejo, runtime, database, logs, receipts, browser]
+  mcp_runtime_registry: "./config/mcp-runtime-registry.json"
+  browser_runtime: "playwright-mcp"
   connection_does_not_imply_permission: true
   credentials_remain_behind_adapter: true
   migration_sequence: [copy, verify, rebind_or_compatibility_junction, health_check, retire_old_payload]
