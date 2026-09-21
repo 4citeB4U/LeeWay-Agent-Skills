@@ -225,3 +225,12 @@ Company-scale parallel lanes converge through `leeway-shiproom`. Department PASS
 ## Company Fabric seal
 
 Current source-architecture seal: `config/leeway-agent-skills-company-fabric-seal.json`. A fresh Agent Lee should read this manifest after root authority/continuity and verify referenced artifacts against `main` before treating the sealed company-scale skill fabric as current. Seal presence proves source identity only; it does not prove host synchronization, runtime reload, worker execution, Formula execution, or Veritas runtime PASS.
+
+
+## Maximum-capability probes
+
+At material architecture/capability reviews also ask:
+11. **What would a world-class specialist department know that we have not encoded?**
+12. **What capability are we postponing merely because an external product/provider currently supplies it, and can LeeWay learn and own the underlying method or native path?**
+
+Do not defer a reasonably specifiable capability as 'later' merely because it is specialized or difficult. Difficulty is a planning/routing concern, not a reason to lower the target. External systems may provide evidence, architecture patterns or execution, but provider availability must not become the boundary of LeeWay capability thinking.
