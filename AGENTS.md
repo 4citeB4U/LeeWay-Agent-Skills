@@ -23,7 +23,9 @@ On every user message, `leeway-message-ingress-authority` checks whether that re
 6. `leeway-agent-operating-loop`
 7. `leeway-capability-resilience`
 8. `leeway-universal-capability-kernel`
-9. `leeway-skill-orchestrator`
+9. `leeway-company-capability-fabric`
+10. `leeway-skill-orchestrator`
+11. `leeway-centered-skill-metrics`
 10. `leeway-parallel-workplane`
 10. `leeway-veritas`
 11. `leeway-receipt-authority`
@@ -203,3 +205,8 @@ Device and host capabilities route through `leeway-device-bridge` and `leeway-ho
 ## Parallel workplane law
 
 `leeway-parallel-workplane` keeps Creator conversation/control with the parent Agent Lee while compatible runtimes dispatch bounded independent work lanes. Workers are interruptible/retoolable by explicit state transition, cannot silently expand authority, and cannot self-promote completion. If the active harness lacks persistent background workers, say so and use only real in-turn parallelism or authorized external workers.
+
+
+## Company-scale anti-silo law
+
+`leeway-company-capability-fabric` inserts ORGANIZATIONAL_CONTEXT between the ambient capability field and task weave. Focal skill selection must never remove materially relevant ambient capabilities. For substantial programs, consider cross-functional lanes across engineering, SRE/platform, product, UX/research, security/compliance, data/AI, business/GTM, operations, and leadership. `leeway-centered-skill-metrics` may evaluate evidence-bound deviation vectors and shiproom ellipsoids but must not invent canonical Formula weights/constants.
