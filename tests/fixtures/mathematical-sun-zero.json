@@ -1,0 +1,158 @@
+{
+  "rays": [
+    {
+      "i": 1,
+      "id": "SWE_DETERMINISM",
+      "x": [
+        0
+      ],
+      "W": [
+        [
+          1
+        ]
+      ],
+      "theta": 0,
+      "evidence": "TEST_FIXTURE_ZERO_DEVIATION"
+    },
+    {
+      "i": 2,
+      "id": "DISTRIBUTED_ARCHITECTURE",
+      "x": [
+        0
+      ],
+      "W": [
+        [
+          1
+        ]
+      ],
+      "theta": 0,
+      "evidence": "TEST_FIXTURE_ZERO_DEVIATION"
+    },
+    {
+      "i": 3,
+      "id": "SRE_OBSERVABILITY_BUDGET",
+      "x": [
+        0
+      ],
+      "W": [
+        [
+          1
+        ]
+      ],
+      "theta": 0,
+      "evidence": "TEST_FIXTURE_ZERO_DEVIATION"
+    },
+    {
+      "i": 4,
+      "id": "PRODUCT_DELIVERY_VALUE",
+      "x": [
+        0
+      ],
+      "W": [
+        [
+          1
+        ]
+      ],
+      "theta": 0,
+      "evidence": "TEST_FIXTURE_ZERO_DEVIATION"
+    },
+    {
+      "i": 5,
+      "id": "APPSEC_STRIDE",
+      "x": [
+        0
+      ],
+      "W": [
+        [
+          1
+        ]
+      ],
+      "theta": 0,
+      "evidence": "TEST_FIXTURE_ZERO_DEVIATION"
+    },
+    {
+      "i": 6,
+      "id": "UX_ACCESSIBILITY",
+      "x": [
+        0
+      ],
+      "W": [
+        [
+          1
+        ]
+      ],
+      "theta": 0,
+      "evidence": "TEST_FIXTURE_ZERO_DEVIATION"
+    },
+    {
+      "i": 7,
+      "id": "ORG_CAPACITY",
+      "x": [
+        0
+      ],
+      "W": [
+        [
+          1
+        ]
+      ],
+      "theta": 0,
+      "evidence": "TEST_FIXTURE_ZERO_DEVIATION"
+    },
+    {
+      "i": 8,
+      "id": "MOTION_DYNAMICS",
+      "x": [
+        0
+      ],
+      "W": [
+        [
+          1
+        ]
+      ],
+      "theta": 0,
+      "evidence": "TEST_FIXTURE_ZERO_DEVIATION"
+    },
+    {
+      "i": 9,
+      "id": "PBR_BRDF",
+      "x": [
+        0
+      ],
+      "W": [
+        [
+          1
+        ]
+      ],
+      "theta": 0,
+      "evidence": "TEST_FIXTURE_ZERO_DEVIATION"
+    },
+    {
+      "i": 10,
+      "id": "OKLAB_COLOR",
+      "x": [
+        0
+      ],
+      "W": [
+        [
+          1
+        ]
+      ],
+      "theta": 0,
+      "evidence": "TEST_FIXTURE_ZERO_DEVIATION"
+    },
+    {
+      "i": 11,
+      "id": "FRAME_VRAM",
+      "x": [
+        0
+      ],
+      "W": [
+        [
+          1
+        ]
+      ],
+      "theta": 0,
+      "evidence": "TEST_FIXTURE_ZERO_DEVIATION"
+    }
+  ]
+}
