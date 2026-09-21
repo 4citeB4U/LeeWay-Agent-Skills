@@ -1,0 +1,73 @@
+{
+  "version": "1.0.0",
+  "capabilityId": "leeway.browser.playwright",
+  "canonicalSource": "microsoft/playwright",
+  "authority": "Creator/Human Authority > LeeWay Standards > Root of Trust > Runtime Fabric > Harness > Formula > Tool Gateway",
+  "packages": {
+    "@playwright/mcp": "0.0.82",
+    "@playwright/cli": "0.1.21",
+    "playwright": "1.63.0"
+  },
+  "defaultBrowser": {
+    "channel": "msedge",
+    "headless": true,
+    "isolated": true
+  },
+  "executionModes": [
+    "PLAYWRIGHT_CLI",
+    "PLAYWRIGHT_MCP",
+    "PLAYWRIGHT_LIBRARY"
+  ],
+  "runtimeStates": [
+    "REFERENCE_ADAPTER",
+    "RUNTIME_DISCOVERED",
+    "RUNTIME_AVAILABLE",
+    "RUNTIME_AUTHORIZED",
+    "BROWSER_EXECUTED",
+    "DIAGNOSTICS_CAPTURED",
+    "VERITAS_PASS",
+    "RECEIPT_CREATED",
+    "BLOCKED",
+    "FAILED"
+  ],
+  "formula": {
+    "contract": "./config/leeway-formula-evaluator-contract.yaml",
+    "governanceSkill": "./skills/leeway-formula-governance/SKILL.md",
+    "recoverySkill": "./skills/leeway-formula-authority-recovery/SKILL.md",
+    "browserDiagnosticsMappingState": "UNVERIFIED",
+    "law": "No Playwright measurement becomes a Formula value without a verified adapter/mapping."
+  },
+  "diagnostics": {
+    "semanticLocatorsFirst": true,
+    "ariaSnapshots": true,
+    "consoleAndPageErrors": true,
+    "networkFailures": true,
+    "responseFailures": true,
+    "responsiveEvidence": true,
+    "visualEvidence": true,
+    "traceOnFailure": true,
+    "performanceObservations": true,
+    "canvasWebGLWebGPUObservations": true,
+    "crossBrowserWhenMaterial": true
+  },
+  "evidence": {
+    "defaultRelativeDirectory": ".leeway/runtime-evidence/playwright",
+    "redactSecrets": true,
+    "receiptAfterVeritasOnly": true
+  },
+  "mcp": {
+    "binary": "playwright-mcp",
+    "args": ["--browser=msedge", "--headless", "--isolated"]
+  },
+  "cli": {
+    "binary": "playwright-cli"
+  },
+  "acceptance": {
+    "requiresRealBrowser": true,
+    "requiresMcpToolsList": true,
+    "requiresNavigation": true,
+    "requiresSemanticInteraction": true,
+    "requiresPostInteractionAssertion": true,
+    "requiresEvidence": true
+  }
+}
