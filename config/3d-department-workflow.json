@@ -1,93 +1,202 @@
 {
-  "schemaVersion": "1.0.0",
+  "schemaVersion": "2.0.0",
   "department": "LEEWAY_3D",
   "controlSkill": "leeway-3d-department",
+  "laws": [
+    "FOCAL != SILOED",
+    "provider != capability identity",
+    "rendered != verified",
+    "preserve approved source",
+    "parallelize independent work; serialize conflicting canonical mutations"
+  ],
   "phases": [
     {
-      "id": "INGEST_AUDIT",
-      "skills": [
-        "leeway-3d-scene-audit"
-      ],
-      "parallel": false
+      "id": "INGEST_LIFECYCLE_AUDIT",
+      "parallel": true,
+      "lanes": [
+        {
+          "id": "scene-audit",
+          "skills": [
+            "leeway-3d-scene-audit"
+          ]
+        },
+        {
+          "id": "asset-lifecycle",
+          "skills": [
+            "leeway-3d-asset-lifecycle"
+          ]
+        }
+      ]
     },
     {
-      "id": "INTENT_PROFILE",
-      "skills": [
-        "leeway-3d-art-direction",
-        "leeway-3d-engineering-blueprint"
-      ],
-      "parallel": true
+      "id": "INTENT_TARGET",
+      "parallel": true,
+      "lanes": [
+        {
+          "id": "art-direction",
+          "skills": [
+            "leeway-3d-art-direction"
+          ]
+        },
+        {
+          "id": "engineering",
+          "skills": [
+            "leeway-3d-engineering-blueprint"
+          ],
+          "conditional": "dimensions/constraints matter"
+        },
+        {
+          "id": "target-profile",
+          "skills": [
+            "leeway-3d-game-asset-production"
+          ],
+          "config": "config/3d-target-profiles.json"
+        }
+      ]
     },
     {
-      "id": "RECONSTRUCTION",
-      "skills": [
-        "leeway-triposr"
-      ],
-      "conditional": true
+      "id": "ACQUISITION_GENERATION",
+      "parallel": true,
+      "conditional": true,
+      "lanes": [
+        {
+          "id": "image-reconstruction",
+          "skills": [
+            "leeway-triposr"
+          ],
+          "when": "reference image should seed missing geometry"
+        },
+        {
+          "id": "procedural",
+          "skills": [
+            "leeway-3d-procedural-modeling"
+          ],
+          "when": "repeatable/modular/parametric generation helps"
+        }
+      ]
     },
     {
       "id": "PRODUCTION",
       "parallel": true,
       "lanes": [
         {
-          "id": "geometry",
+          "id": "geometry-topology",
           "skills": [
-            "leeway-3d-geometry-topology",
-            "leeway-3d-engineering-blueprint"
-          ]
-        },
-        {
-          "id": "materials",
-          "skills": [
-            "leeway-3d-material-lookdev",
-            "leeway-creative-rendering-engineering"
+            "leeway-3d-geometry-topology"
           ]
         },
         {
           "id": "environment",
           "skills": [
             "leeway-3d-environment-architecture"
+          ],
+          "conditional": "environment/building scene"
+        },
+        {
+          "id": "materials-uv",
+          "skills": [
+            "leeway-3d-material-lookdev"
           ]
+        },
+        {
+          "id": "texture-baking",
+          "skills": [
+            "leeway-3d-texture-baking"
+          ],
+          "conditional": "baked/high-to-low/PBR maps required"
+        },
+        {
+          "id": "rig-animation",
+          "skills": [
+            "leeway-3d-rigging-animation"
+          ],
+          "conditional": "animated/deforming asset"
+        },
+        {
+          "id": "simulation",
+          "skills": [
+            "leeway-3d-physics-simulation"
+          ],
+          "conditional": "physics/simulation required"
         },
         {
           "id": "game-readiness",
           "skills": [
             "leeway-3d-game-asset-production"
-          ]
+          ],
+          "conditional": "realtime/runtime asset"
         },
         {
           "id": "lookdev",
           "skills": [
-            "leeway-3d-lighting-render-validation"
+            "leeway-3d-lighting-render-validation",
+            "leeway-creative-rendering-engineering"
           ]
         }
       ]
     },
     {
-      "id": "PROVIDER_EXECUTION",
+      "id": "INTEGRATION_EXECUTION",
       "skills": [
         "leeway-blender-mcp"
       ],
-      "parallel": false,
-      "notes": "May use other qualified providers; Blender is not department authority."
+      "notes": "Blender is current major provider; other qualified CAD/geometry/render providers may execute bounded operations."
     },
     {
-      "id": "VERIFY",
-      "skills": [
-        "leeway-veritas",
-        "leeway-3d-lighting-render-validation"
-      ],
-      "parallel": false
+      "id": "INTERCHANGE_RUNTIME",
+      "parallel": true,
+      "conditional": true,
+      "lanes": [
+        {
+          "id": "export",
+          "skills": [
+            "leeway-3d-interchange-export"
+          ]
+        },
+        {
+          "id": "engine",
+          "skills": [
+            "leeway-3d-game-engine-integration"
+          ],
+          "when": "interactive/game runtime target"
+        }
+      ]
     },
     {
-      "id": "RECEIPT_LEARN",
+      "id": "VALIDATION",
+      "parallel": true,
+      "lanes": [
+        {
+          "id": "visual-regression",
+          "skills": [
+            "leeway-3d-visual-regression"
+          ]
+        },
+        {
+          "id": "render-validation",
+          "skills": [
+            "leeway-3d-lighting-render-validation"
+          ]
+        },
+        {
+          "id": "veritas",
+          "skills": [
+            "leeway-veritas"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "EVIDENCE_LEARNING",
       "skills": [
         "leeway-receipt-authority",
         "leeway-learning-ledger"
-      ],
-      "parallel": false
+      ]
     }
   ],
-  "mutationLaw": "Parallel lanes may prepare plans/assets independently; serialize conflicting mutation of the same canonical scene/object unless explicit merge ownership exists.",
-  "example": "Leola's Library: audit full scene → style profile → architecture/geometry/material/environment/game-readiness lanes → Blender integration → before/after render + performance validation."
+  "mutationLaw": "Lane plans and derived artifacts may run independently. A canonical scene/object has one mutation owner at a time unless explicit merge/locking exists.",
+  "providerStrategy": [
+    "config/image-to-3d-provider-strategy.json",
+    "config/image-to-3d-refinement-pipeline.json"
+  ]
 }
