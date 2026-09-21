@@ -1,0 +1,51 @@
+{
+  "schemaVersion": "1.0.0",
+  "evidenceState": "STARTING_PROFILES_REQUIRE_PROJECT_MEASUREMENT",
+  "profiles": [
+    {
+      "id": "WEB_MOBILE_STYLIZED",
+      "intent": "lightweight interactive",
+      "targets": [
+        "low draw calls",
+        "bounded texture/VRAM",
+        "aggressive LOD/instancing",
+        "mobile/web compatible materials"
+      ],
+      "numericBudgets": "PROJECT_DEFINED"
+    },
+    {
+      "id": "DESKTOP_GAME_HIGH",
+      "intent": "high-quality realtime",
+      "targets": [
+        "richer PBR",
+        "higher texel density",
+        "multiple LODs",
+        "runtime collision",
+        "measured frame budget"
+      ],
+      "numericBudgets": "PROJECT_DEFINED"
+    },
+    {
+      "id": "CINEMATIC_OFFLINE",
+      "intent": "offline render/film",
+      "targets": [
+        "maximum visual fidelity appropriate to render budget",
+        "high detail",
+        "offline simulation/baking allowed"
+      ],
+      "numericBudgets": "PROJECT_DEFINED"
+    },
+    {
+      "id": "ENGINEERING_BLUEPRINT",
+      "intent": "dimensional/constraint fidelity",
+      "targets": [
+        "units/scale",
+        "constraints/tolerances",
+        "measured geometry",
+        "visualization secondary to dimensional truth"
+      ],
+      "numericBudgets": "PROJECT_DEFINED"
+    }
+  ],
+  "law": "Do not invent universal polygon/texture/VRAM budgets. Bind numeric budgets to target hardware, camera, runtime and measured project needs."
+}
