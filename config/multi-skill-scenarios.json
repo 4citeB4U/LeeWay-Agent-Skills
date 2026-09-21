@@ -1,0 +1,91 @@
+{
+  "schemaVersion": "1.0.0",
+  "scenarios": [
+    {
+      "id": "3d-engineered-blueprint",
+      "intent": "Create and verify a dimensioned 3D engineered blueprint and rendered model.",
+      "requiredSkills": [
+        "leeway-3d-engineering-blueprint",
+        "leeway-blender-mcp",
+        "leeway-creative-rendering-engineering",
+        "leeway-centered-skill-metrics",
+        "leeway-parallel-workplane",
+        "leeway-veritas"
+      ],
+      "lanes": [
+        "requirements-geometry",
+        "model-execution",
+        "materials-render",
+        "blueprint-documentation",
+        "performance-validation"
+      ],
+      "verifier": "leeway-veritas",
+      "recovery": "leeway-capability-resilience",
+      "rule": "Blender is provider; blueprint skill owns engineering intent."
+    },
+    {
+      "id": "production-web-application",
+      "intent": "Build and ship a production application.",
+      "requiredSkills": [
+        "leeway-company-capability-fabric",
+        "leeway-software-engineering",
+        "leeway-product-management",
+        "leeway-product-design-research",
+        "leeway-product-security",
+        "leeway-sre-platform",
+        "leeway-parallel-workplane",
+        "leeway-shiproom",
+        "leeway-veritas"
+      ],
+      "lanes": [
+        "product",
+        "architecture-engineering",
+        "ux-accessibility",
+        "security",
+        "sre-deployment"
+      ],
+      "verifier": "leeway-veritas",
+      "recovery": "leeway-capability-resilience"
+    },
+    {
+      "id": "host-runtime-incident",
+      "intent": "Diagnose and repair a production host/runtime failure.",
+      "requiredSkills": [
+        "leeway-agent-operating-loop",
+        "leeway-host-commander",
+        "leeway-sre-platform",
+        "leeway-product-security",
+        "leeway-parallel-workplane",
+        "leeway-veritas"
+      ],
+      "lanes": [
+        "diagnostics",
+        "dependency-health",
+        "security-integrity",
+        "repair-recovery"
+      ],
+      "verifier": "leeway-veritas",
+      "recovery": "leeway-capability-resilience"
+    },
+    {
+      "id": "high-end-interactive-graphics",
+      "intent": "Build a high-end interactive graphics experience under accessibility and frame-budget constraints.",
+      "requiredSkills": [
+        "leeway-creative-rendering-engineering",
+        "leeway-product-design-research",
+        "leeway-centered-skill-metrics",
+        "leeway-mathematical-sun",
+        "leeway-parallel-workplane",
+        "leeway-veritas"
+      ],
+      "lanes": [
+        "interaction-motion",
+        "color-accessibility",
+        "rendering-shaders",
+        "gpu-performance"
+      ],
+      "verifier": "leeway-veritas",
+      "recovery": "leeway-capability-resilience"
+    }
+  ]
+}
