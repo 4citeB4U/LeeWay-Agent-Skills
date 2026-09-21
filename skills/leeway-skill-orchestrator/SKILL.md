@@ -101,3 +101,8 @@ For audits, produce a graph/matrix with canonical skills, tools/resources, owner
 ## Verification and recovery closure
 
 Build VERIFICATION_SET using `leeway-veritas` and domain-specific verifiers. After verification route evidence through `leeway-receipt-authority`, then admit only verified learning through `leeway-learning-ledger`. Build RECOVERY_SET using `leeway-capability-resilience`, `leeway-host-commander`, device/platform fallbacks, rollback skills, or domain recovery capabilities as applicable.
+
+
+## Parallel execution handoff
+
+When the TASK_CAPABILITY_WEAVE contains independent work units, hand bounded jobs to `leeway-parallel-workplane`. The parent retains conversation, authority, acceptance gate and merge responsibility. Serialize conflicting canonical mutations.
