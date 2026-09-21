@@ -124,20 +124,33 @@ try {
   if (!refMatch) throw new Error("Semantic button reference was not found in MCP accessibility snapshot.");
   result.semanticElementDiscovered = true;
 
-  await client.callTool({
+  const click = await client.callTool({
     name: "browser_click",
-    arguments: { element: "Run diagnostic button", ref: refMatch[1] },
+    arguments: { element: "Run diagnostic button", target: refMatch[1] },
   });
+  if (click?.isError) throw new Error(`browser_click failed: ${textFrom(click)}`);
   result.interaction = true;
 
-  const after = textFrom(
-    await client.callTool({ name: "browser_snapshot", arguments: {} }),
-  );
+  if (result.toolNames.includes("browser_wait_for")) {
+    const waited = await client.callTool({
+      name: "browser_wait_for",
+      arguments: { text: "PASS" },
+    });
+    if (waited?.isError) throw new Error(`browser_wait_for failed: ${textFrom(waited)}`);
+  }
+
+  const afterResponse = await client.callTool({ name: "browser_snapshot", arguments: {} });
+  if (afterResponse?.isError) throw new Error(`browser_snapshot failed: ${textFrom(afterResponse)}`);
+  const after = textFrom(afterResponse);
   if (!/PASS/.test(after)) throw new Error("Post-interaction state PASS was not observed.");
   result.postInteractionAssertion = true;
 
   if (result.toolNames.includes("browser_take_screenshot")) {
-    await client.callTool({ name: "browser_take_screenshot", arguments: {} });
+    const screenshot = await client.callTool({
+      name: "browser_take_screenshot",
+      arguments: { type: "png", fullPage: true, scale: "css" },
+    });
+    if (screenshot?.isError) throw new Error(`browser_take_screenshot failed: ${textFrom(screenshot)}`);
     result.screenshotRequested = true;
   }
 
