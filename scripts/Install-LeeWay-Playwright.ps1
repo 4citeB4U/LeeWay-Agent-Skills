@@ -25,7 +25,8 @@ MIT
 
 [CmdletBinding()]
 param(
-    [string]$RepoRoot
+    [string]$RepoRoot,
+    [switch]$ReuseInstalledDependencies
 )
 
 Set-StrictMode -Version Latest
@@ -56,7 +57,7 @@ $smokeScript = Join-Path $RepoRoot 'scripts\playwright-mcp-smoke.mjs'
 $receiptPath = Join-Path $RepoRoot 'receipts\LEEWAY-PLAYWRIGHT-RUNTIME-BINDING-GATE-1.json'
 $evidenceDir = Join-Path $RepoRoot '.leeway\runtime-evidence\playwright'
 
-foreach ($required in @($packagePath, $skillPath, $configPath, $smokeScript)) {
+foreach ($required in @($packagePath, $skillPath, $configPath, $smokeScript, $mcpLauncher, $cliLauncher)) {
     if (-not (Test-Path -LiteralPath $required)) {
         throw "BLOCKED: required authority file missing: $required"
     }
@@ -80,21 +81,28 @@ if (-not $edgePath) {
 $edgeVersion = (Get-Item -LiteralPath $edgePath).VersionInfo.FileVersion
 
 $preHashes = [ordered]@{
+    package = Get-Sha256 $packagePath
     skill = Get-Sha256 $skillPath
     config = Get-Sha256 $configPath
     smoke = Get-Sha256 $smokeScript
+    mcpLauncher = Get-Sha256 $mcpLauncher
+    cliLauncher = Get-Sha256 $cliLauncher
 }
 
 Push-Location $RepoRoot
 try {
     $env:PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD = '1'
-    if (Test-Path -LiteralPath (Join-Path $RepoRoot 'package-lock.json')) {
-        Invoke-Checked 'Installing root dependencies from lockfile' { npm ci --no-audit --no-fund }
+    if ($ReuseInstalledDependencies) {
+        Invoke-Checked 'Verifying existing pinned Playwright dependencies' { npm list @playwright/mcp@0.0.82 @playwright/cli@0.1.21 playwright@1.63.0 --depth=0 }
     } else {
-        Invoke-Checked 'Installing pinned root dependencies and creating lockfile' { npm install --no-audit --no-fund }
+        if (Test-Path -LiteralPath (Join-Path $RepoRoot 'package-lock.json')) {
+            Invoke-Checked 'Installing root dependencies from lockfile' { npm ci --no-audit --no-fund }
+        } else {
+            Invoke-Checked 'Installing pinned root dependencies and creating lockfile' { npm install --no-audit --no-fund }
+        }
+        Invoke-Checked 'Installing MCP server dependencies from lockfile' { npm --prefix mcp-server ci --no-audit --no-fund }
     }
 
-    Invoke-Checked 'Installing MCP server dependencies from lockfile' { npm --prefix mcp-server ci --no-audit --no-fund }
     Invoke-Checked 'Building LeeWay Skills MCP server' { npm run build }
 
     New-Item -ItemType Directory -Path $evidenceDir -Force | Out-Null
@@ -131,6 +139,7 @@ $receipt = [ordered]@{
     nodeVersion = $nodeText
     npmVersion = $npmText
     browser = [ordered]@{ channel = 'msedge'; executable = $edgePath; version = $edgeVersion }
+    dependencyRestore = $(if ($ReuseInstalledDependencies) { 'REUSED_VERIFIED_EXISTING' } else { 'INSTALLED_OR_RESTORED' })
     packages = [ordered]@{
         playwrightMcp = Get-InstalledVersion '@playwright/mcp'
         playwrightCli = Get-InstalledVersion '@playwright/cli'
