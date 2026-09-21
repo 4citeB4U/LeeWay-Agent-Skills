@@ -1,0 +1,99 @@
+{
+  "schemaVersion": "2.0.0",
+  "sealId": "LEEWAY-AGENT-SKILLS-INTEGRATION-REVIEW-SEAL-2026-09-21",
+  "supersedes": "LEEWAY-AGENT-SKILLS-COMPANY-FABRIC-SEAL-2026-09-21",
+  "repository": "4citeB4U/LeeWay-Agent-Skills",
+  "branch": "main",
+  "evidenceState": "SOURCE_INTEGRATION_REVIEWED_NOT_FULL_RUNTIME_PROOF",
+  "inventory": {
+    "trackedBlobFiles": 719,
+    "skillArtifacts": 259,
+    "topLevelSkillArtifacts": 35
+  },
+  "reviewGates": {
+    "structuralIntegrity": "PASS_SOURCE",
+    "multiSkillResolution": "PASS_SOURCE",
+    "orchestrationPrecedence": "PASS_SOURCE",
+    "parallelGovernance": "PASS_SOURCE",
+    "threeDBlueprintCapability": "PASS_SOURCE",
+    "scenarioRuntimeExecution": "NOT_EXECUTED_IN_THIS_HARNESS",
+    "persistentBackgroundWorkers": "UNAVAILABLE_IN_THIS_CHAT_HARNESS"
+  },
+  "artifacts": [
+    {
+      "path": "AGENTS.md",
+      "gitBlobSha": "bd3e7991c58d2f9aa3c41e7e4d838f4174c261d4",
+      "state": "OBSERVED_ON_MAIN"
+    },
+    {
+      "path": "skills/leeway-skill-orchestrator/SKILL.md",
+      "gitBlobSha": "9f7908b553ae384eb69d4bf68377ac532ef720ec",
+      "state": "OBSERVED_ON_MAIN"
+    },
+    {
+      "path": "skills/leeway-parallel-workplane/SKILL.md",
+      "gitBlobSha": "b05a38bfe733ce317a69bcf62a161cba78cbf3f2",
+      "state": "OBSERVED_ON_MAIN"
+    },
+    {
+      "path": "skills/leeway-3d-engineering-blueprint/SKILL.md",
+      "gitBlobSha": "1b4f808a785b67916b658c2cb9713a4f3597b414",
+      "state": "OBSERVED_ON_MAIN"
+    },
+    {
+      "path": "skills/leeway-blender-mcp/SKILL.md",
+      "gitBlobSha": "d46ee7501ca5351159fce113cfea0fd5bd5b8e67",
+      "state": "OBSERVED_ON_MAIN"
+    },
+    {
+      "path": "skills/leeway-company-capability-fabric/SKILL.md",
+      "gitBlobSha": "6aeb07dfc1753d543f064cd67b940c4c59854bb0",
+      "state": "OBSERVED_ON_MAIN"
+    },
+    {
+      "path": "skills/leeway-mathematical-sun/SKILL.md",
+      "gitBlobSha": "3916396d9199db99ddf63cb4c025e33d2b23afb2",
+      "state": "OBSERVED_ON_MAIN"
+    },
+    {
+      "path": "skills/leeway-shiproom/SKILL.md",
+      "gitBlobSha": "ab1952d9e72805203c4f52eb3e0a8e264ac2d886",
+      "state": "OBSERVED_ON_MAIN"
+    },
+    {
+      "path": "skills/leeway-veritas/SKILL.md",
+      "gitBlobSha": "c037927c76fd48e6b675d33929fae25a84a921a1",
+      "state": "OBSERVED_ON_MAIN"
+    },
+    {
+      "path": "skills/agent-orchestration/multi-agent-orchestration/SKILL.md",
+      "gitBlobSha": "49c25cc6b85914a51f9590cb08592aee458cd0e1",
+      "state": "OBSERVED_ON_MAIN"
+    },
+    {
+      "path": "skills/workflow-composition/workflow-orchestration/SKILL.md",
+      "gitBlobSha": "7f7952b56df07a587cda571eb652a993a227e6c9",
+      "state": "OBSERVED_ON_MAIN"
+    },
+    {
+      "path": "config/3d-blueprint-contract.json",
+      "gitBlobSha": "24a80f7414753ea2e463511c9f5ae4bac97c12e5",
+      "state": "OBSERVED_ON_MAIN"
+    },
+    {
+      "path": "config/multi-skill-scenarios.json",
+      "gitBlobSha": "6377aae0dd2ea50d851803d12c3053713c02d334",
+      "state": "OBSERVED_ON_MAIN"
+    },
+    {
+      "path": "tests/multi-skill-scenarios.test.mjs",
+      "gitBlobSha": "d6f274a5edb9ba76e5e767073c006fc2447493c1",
+      "state": "OBSERVED_ON_MAIN"
+    },
+    {
+      "path": "config/leeway-agent-skills-company-fabric-seal.json",
+      "gitBlobSha": "b89c0c99b25cf9ea99942749bb5b2c5894e45e45",
+      "state": "OBSERVED_ON_MAIN"
+    }
+  ]
+}
