@@ -104,4 +104,4 @@ Default route:
 
 ## Tool ownership law
 
-A promoted tool must resolve to a governing skill/capability owner in `leeway-skill-orchestrator`, or be explicitly classified EXTERNAL, REFERENCE_ONLY, GENERATED, DEPRECATED, or QUARANTINED. `tool present != tool governed` and `tool governed != runtime verified`. Orphan tools are capability-graph gaps and must not silently enter the focal execution set.
+A promoted tool must resolve to a governing skill/capability owner in `leeway-skill-orchestrator`, or be explicitly classified EXTERNAL, REFERENCE_ONLY, GENERATED, DEPRECATED, or QUARANTINED. `tool present != tool governed` and `tool governed != runtime verified`. Classify an unowned promoted tool as `ORPHAN_TOOL`. ORPHAN_TOOL entries are capability-graph gaps and must not silently enter the focal execution set.
