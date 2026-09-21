@@ -1,0 +1,54 @@
+{
+  "schemaVersion": "1.0.0",
+  "capability": "IMAGE_TO_3D_RECONSTRUCTION",
+  "selectionAuthority": "leeway-capability-resilience + leeway-skill-orchestrator",
+  "providers": [
+    {
+      "id": "LEEWAY_TRIPOSR",
+      "state": "HISTORICAL_CONFIGURED_REQUIRES_LIVE_REDISCOVERY",
+      "skill": "leeway-triposr",
+      "strengths": [
+        "existing LeeWay runtime",
+        "single-image reconstruction",
+        "fast seed mesh"
+      ],
+      "limitations": [
+        "single-view occlusion uncertainty",
+        "live runtime currently unverified from phone"
+      ]
+    },
+    {
+      "id": "STABLE_FAST_3D",
+      "state": "CANDIDATE_NOT_INSTALLED_BY_THIS_AUDIT",
+      "strengths": [
+        "TripoSR-derived",
+        "UV unwrapping",
+        "material-oriented asset output"
+      ],
+      "promotion": "benchmark before adoption"
+    },
+    {
+      "id": "SPAR3D",
+      "state": "CANDIDATE_NOT_INSTALLED_BY_THIS_AUDIT",
+      "strengths": [
+        "single-image reconstruction",
+        "point-cloud conditioning",
+        "backside editability/structure improvement"
+      ],
+      "promotion": "benchmark before adoption"
+    }
+  ],
+  "decisionDimensions": [
+    "live availability",
+    "authorization",
+    "hardware/VRAM",
+    "latency",
+    "mesh quality",
+    "occluded/backside uncertainty",
+    "UV/material needs",
+    "output compatibility",
+    "license",
+    "measured reliability"
+  ],
+  "law": "Do not download, replace, or promote a provider solely because it is newer. Existing TripoSR remains canonical LeeWay provider until comparative evidence supports promotion."
+}
