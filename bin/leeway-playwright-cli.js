@@ -20,20 +20,19 @@ import { fileURLToPath } from "node:url";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(here, "..");
-const binName = process.platform === "win32" ? "playwright-cli.cmd" : "playwright-cli";
-const localBin = path.join(root, "node_modules", ".bin", binName);
+const runtimeEntry = path.join(root, "node_modules", "@playwright", "cli", "playwright-cli.js");
 
-if (!fs.existsSync(localBin)) {
-  console.error("[LeeWay Playwright] BLOCKED: pinned playwright-cli binary is not installed.");
+if (!fs.existsSync(runtimeEntry)) {
+  console.error("[LeeWay Playwright] BLOCKED: pinned @playwright/cli runtime is not installed.");
   console.error("[LeeWay Playwright] Run: npm run playwright:gate");
   process.exit(3);
 }
 
-const child = spawn(localBin, process.argv.slice(2), {
+const child = spawn(process.execPath, [runtimeEntry, ...process.argv.slice(2)], {
   cwd: process.cwd(),
   env: process.env,
   stdio: "inherit",
-  shell: process.platform === "win32",
+  shell: false,
   windowsHide: true,
 });
 
