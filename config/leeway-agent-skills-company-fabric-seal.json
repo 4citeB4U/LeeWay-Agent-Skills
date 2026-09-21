@@ -1,0 +1,222 @@
+{
+  "schemaVersion": "1.0.0",
+  "sealId": "LEEWAY-AGENT-SKILLS-COMPANY-FABRIC-SEAL-2026-09-21",
+  "repository": "4citeB4U/LeeWay-Agent-Skills",
+  "branch": "main",
+  "evidenceState": "SOURCE_ARCHITECTURE_SEALED_NOT_RUNTIME_EXECUTION_PROOF",
+  "inventory": {
+    "trackedBlobFiles": 713,
+    "skillArtifacts": 258,
+    "topLevelSkillArtifacts": 34
+  },
+  "operatingChain": [
+    "Creator/Human Authority",
+    "Continuity",
+    "Context Engineering",
+    "Formula Governance",
+    "Agent Operating Loop",
+    "Capability Resilience",
+    "Universal Capability Kernel",
+    "Company Capability Fabric",
+    "Skill Orchestrator",
+    "Parallel Workplane",
+    "Focal Execution",
+    "Centered Metrics / Mathematical Sun when applicable",
+    "Veritas",
+    "Shiproom when program-scale",
+    "Receipt Authority",
+    "Learning Ledger",
+    "Human Conversation",
+    "OG Expressive Identity"
+  ],
+  "laws": [
+    "FOCAL != SILOED",
+    "first success != completion",
+    "local blocker != global blocker",
+    "available != authorized",
+    "configured != proven",
+    "generated != executed",
+    "executed != verified",
+    "model output != proof",
+    "MCP/provider != capability identity"
+  ],
+  "formulaProbes": [
+    "What are we not discovering?",
+    "What needs to be enhanced?",
+    "What skill is missing?",
+    "What tool is missing?",
+    "What orchestration level is missing?",
+    "What execution level is missing?",
+    "What other skills can compose with this skill?",
+    "How does this skill connect upstream/downstream?",
+    "Which tools does it own/use and who governs them?",
+    "Which verifier/recovery capability closes the loop?"
+  ],
+  "artifacts": [
+    {
+      "path": "AGENTS.md",
+      "gitBlobSha": "779a82836104c4240cc44a03e33d90534db0bec0",
+      "state": "OBSERVED_ON_MAIN"
+    },
+    {
+      "path": "skills/leeway-agent-operating-loop/SKILL.md",
+      "gitBlobSha": "cd2a2124d53fbed00f598906820db2e175fa9701",
+      "state": "OBSERVED_ON_MAIN"
+    },
+    {
+      "path": "skills/leeway-capability-resilience/SKILL.md",
+      "gitBlobSha": "5514705817e6be65a205fa3f8a89aea33e1de54e",
+      "state": "OBSERVED_ON_MAIN"
+    },
+    {
+      "path": "skills/leeway-universal-capability-kernel/SKILL.md",
+      "gitBlobSha": "bc6869ba5c19ef528556aa4551c2a34077cd55b0",
+      "state": "OBSERVED_ON_MAIN"
+    },
+    {
+      "path": "skills/leeway-company-capability-fabric/SKILL.md",
+      "gitBlobSha": "6aeb07dfc1753d543f064cd67b940c4c59854bb0",
+      "state": "OBSERVED_ON_MAIN"
+    },
+    {
+      "path": "skills/leeway-skill-orchestrator/SKILL.md",
+      "gitBlobSha": "67732428f37b833b20f1c12851ccfe2f3959c942",
+      "state": "OBSERVED_ON_MAIN"
+    },
+    {
+      "path": "skills/leeway-parallel-workplane/SKILL.md",
+      "gitBlobSha": "b05a38bfe733ce317a69bcf62a161cba78cbf3f2",
+      "state": "OBSERVED_ON_MAIN"
+    },
+    {
+      "path": "skills/leeway-centered-skill-metrics/SKILL.md",
+      "gitBlobSha": "8cfdbff09aece3a6444eeeac7585faea1d391b87",
+      "state": "OBSERVED_ON_MAIN"
+    },
+    {
+      "path": "skills/leeway-mathematical-sun/SKILL.md",
+      "gitBlobSha": "3916396d9199db99ddf63cb4c025e33d2b23afb2",
+      "state": "OBSERVED_ON_MAIN"
+    },
+    {
+      "path": "skills/leeway-creative-rendering-engineering/SKILL.md",
+      "gitBlobSha": "5818e15c3df745d878dee36bb3ecd190bfab61ef",
+      "state": "OBSERVED_ON_MAIN"
+    },
+    {
+      "path": "skills/leeway-shiproom/SKILL.md",
+      "gitBlobSha": "ab1952d9e72805203c4f52eb3e0a8e264ac2d886",
+      "state": "OBSERVED_ON_MAIN"
+    },
+    {
+      "path": "skills/leeway-veritas/SKILL.md",
+      "gitBlobSha": "c037927c76fd48e6b675d33929fae25a84a921a1",
+      "state": "OBSERVED_ON_MAIN"
+    },
+    {
+      "path": "skills/leeway-receipt-authority/SKILL.md",
+      "gitBlobSha": "22a3a63f9cc5bff3300bbadf7d9b74bed6479c29",
+      "state": "OBSERVED_ON_MAIN"
+    },
+    {
+      "path": "skills/leeway-learning-ledger/SKILL.md",
+      "gitBlobSha": "1a0aec475f7f0d06df942cf273252a354bc06277",
+      "state": "OBSERVED_ON_MAIN"
+    },
+    {
+      "path": "skills/leeway-device-bridge/SKILL.md",
+      "gitBlobSha": "a3961408f9c2636ca557941f3df076b59db1498a",
+      "state": "OBSERVED_ON_MAIN"
+    },
+    {
+      "path": "skills/leeway-host-commander/SKILL.md",
+      "gitBlobSha": "e383a35284f2f34025e804203f9b580bfc164b35",
+      "state": "OBSERVED_ON_MAIN"
+    },
+    {
+      "path": "skills/company/software-engineering/SKILL.md",
+      "gitBlobSha": "4d1cd5f53e6af900ffece403ed70b64d67d37f29",
+      "state": "OBSERVED_ON_MAIN"
+    },
+    {
+      "path": "skills/company/sre-platform/SKILL.md",
+      "gitBlobSha": "87dcf1ef664eb8a44a42c33ac95325f477758a6a",
+      "state": "OBSERVED_ON_MAIN"
+    },
+    {
+      "path": "skills/company/product-management/SKILL.md",
+      "gitBlobSha": "89e472f223194cbc17a03299cfc42d1091eb964e",
+      "state": "OBSERVED_ON_MAIN"
+    },
+    {
+      "path": "skills/company/product-design-research/SKILL.md",
+      "gitBlobSha": "aa202f70dfe546270c28a50ca977bb4e53b39963",
+      "state": "OBSERVED_ON_MAIN"
+    },
+    {
+      "path": "skills/company/product-security/SKILL.md",
+      "gitBlobSha": "f6c757b5e5b0720636e3005170074a3af8b0cbae",
+      "state": "OBSERVED_ON_MAIN"
+    },
+    {
+      "path": "skills/company/leadership-governance/SKILL.md",
+      "gitBlobSha": "f7b82fdd6bda3bd9641ce86959084775c65069d6",
+      "state": "OBSERVED_ON_MAIN"
+    },
+    {
+      "path": "config/company-capability-model.json",
+      "gitBlobSha": "a3d6d5325c0f067839491c5b11fb6a5436bdbb44",
+      "state": "OBSERVED_ON_MAIN"
+    },
+    {
+      "path": "config/mathematical-sun-v1.json",
+      "gitBlobSha": "4ae5309038764bf24bb385bc4a6209c23a94ebae",
+      "state": "OBSERVED_ON_MAIN"
+    },
+    {
+      "path": "config/mathematical-sun-extensions.json",
+      "gitBlobSha": "aa61d077f0dcf1057743be59b3214880c5d06bc8",
+      "state": "OBSERVED_ON_MAIN"
+    },
+    {
+      "path": "config/tool-ownership-families.json",
+      "gitBlobSha": "74b6b779556ea87ae0192e236fd96c4dc99833d1",
+      "state": "OBSERVED_ON_MAIN"
+    },
+    {
+      "path": "config/tool-qualification.schema.json",
+      "gitBlobSha": "8fc5e3e0aa254667854922b5ee14405eeb595da3",
+      "state": "OBSERVED_ON_MAIN"
+    },
+    {
+      "path": "config/delegated-work.schema.json",
+      "gitBlobSha": "1155d86ac5267240ba952b613ff2f92796f1a3c8",
+      "state": "OBSERVED_ON_MAIN"
+    },
+    {
+      "path": "config/skill-tool-relationship.schema.json",
+      "gitBlobSha": "6f3de538138fc0c1fcabbc18b6e08084b15da868",
+      "state": "OBSERVED_ON_MAIN"
+    },
+    {
+      "path": "scripts/audit-skill-tool-graph.mjs",
+      "gitBlobSha": "8305ddc2a0f7c3e07d630a8d2af99ddc65afe356",
+      "state": "OBSERVED_ON_MAIN"
+    },
+    {
+      "path": "scripts/classify-tool-artifacts.mjs",
+      "gitBlobSha": "57bae0d9bc4f7da761a2f75d9cddd65fffb3b857",
+      "state": "OBSERVED_ON_MAIN"
+    },
+    {
+      "path": "scripts/generate-capability-universe-observation.mjs",
+      "gitBlobSha": "e0042f55ac3ffe072d091e55f0dbe9589ccddc98",
+      "state": "OBSERVED_ON_MAIN"
+    },
+    {
+      "path": "scripts/evaluate-mathematical-sun.mjs",
+      "gitBlobSha": "2c091ffd689752871a682dec352465ee1b7fc8d9",
+      "state": "OBSERVED_ON_MAIN"
+    }
+  ]
+}
