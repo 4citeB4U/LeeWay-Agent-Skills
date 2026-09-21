@@ -106,3 +106,8 @@ Build VERIFICATION_SET using `leeway-veritas` and domain-specific verifiers. Aft
 ## Parallel execution handoff
 
 When the TASK_CAPABILITY_WEAVE contains independent work units, hand bounded jobs to `leeway-parallel-workplane`. The parent retains conversation, authority, acceptance gate and merge responsibility. Serialize conflicting canonical mutations.
+
+
+## Company context
+
+Before finalizing a substantive TASK_CAPABILITY_WEAVE, consult `leeway-company-capability-fabric` for affected departments, role/tier perspectives, decision rights, upstream/downstream dependencies, and parallel program lanes. Focal execution must not silo the ambient field. Use `leeway-centered-skill-metrics` only with evidence-bound measurements and explicit targets.
