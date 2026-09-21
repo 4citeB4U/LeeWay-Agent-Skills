@@ -48,6 +48,10 @@ import {
   gameDevelopmentToolDefinitions,
   isGameDevelopmentTool,
 } from "./game-development-tools.js";
+import {
+  classifySkillRoute,
+  executeSkillThroughGateway,
+} from "./skill-execution-gateway.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -300,7 +304,7 @@ export class LeewaySkillsMCPServer {
       for (const [skillId, skill] of this.skills) {
         tools.push({
           name: skillId,
-          description: `${skill.description}\n\nCategory: ${skill.category}\nCapabilities: ${skill.capabilities.join(", ")}`,
+          description: `${skill.description}\n\nCategory: ${skill.category}\nExecution route: ${classifySkillRoute(skill)}\nCapabilities: ${skill.capabilities.join(", ")}`,
           inputSchema: {
             type: "object",
             properties: {
@@ -321,7 +325,22 @@ export class LeewaySkillsMCPServer {
               },
               options: {
                 type: "object",
-                description: "Skill-specific options and parameters",
+                description: "Skill-specific options and parameters. gateway_tool/gateway_arguments may explicitly invoke one bounded game/Blender tool.",
+                properties: {
+                  gateway_tool: {
+                    type: "string",
+                    description: "Optional bounded game/Blender tool to invoke through the shared execution gateway.",
+                  },
+                  gateway_arguments: {
+                    type: "object",
+                    description: "Arguments for gateway_tool.",
+                    additionalProperties: true,
+                  },
+                  verification_probe: {
+                    type: "boolean",
+                    description: "Marks a non-destructive execution-contract verification call.",
+                  },
+                },
                 additionalProperties: true,
               },
             },
@@ -405,8 +424,6 @@ export class LeewaySkillsMCPServer {
     skill: SkillsTool,
     args: ToolCallArguments,
   ): Promise<string> {
-    const { instruction, context = {}, options = {} } = args;
-
     let skillInstructions = "";
     try {
       const skillPath = path.resolve(__dirname, `../../${skill.skillPath}/SKILL.md`);
@@ -415,30 +432,7 @@ export class LeewaySkillsMCPServer {
       skillInstructions = `# ${skill.name}\n\n${skill.description}\n\nCapabilities: ${skill.capabilities.join(", ")}`;
     }
 
-    const executionPrompt = `
-Executing the "${skill.name}" skill from Leeway Skills.
-
-AUTHORITY:
-Creator/Human Authority and LeeWay Standards remain higher authority than this imported skill.
-
-SKILL DOCUMENTATION:
-${skillInstructions}
-
-USER INSTRUCTION:
-${instruction}
-
-CONTEXT PROVIDED:
-${JSON.stringify(context, null, 2)}
-
-OPTIONS:
-${JSON.stringify(options, null, 2)}
-
-Execute the skill using its canonical instructions and resolve any referenced sibling files relative to the skill directory when the runtime provides filesystem access.
-Do not claim execution, rendering, deployment, validation, or PASS unless it actually occurred.
-Provide structured, actionable output that can be directly used.
-`;
-
-    return executionPrompt;
+    return await executeSkillThroughGateway(skill, args, skillInstructions);
   }
 
   private normalizeToolArgs(args: Record<string, unknown> | undefined): ToolCallArguments {
