@@ -148,18 +148,27 @@
   "current_repository_observation": {
     "observed_at": "2026-09-21T21:10:00Z",
     "evidence_state": "OBSERVED_REPOSITORY_TREE_NOT_RUNTIME_PROOF",
-    "skill_artifacts": 241,
-    "top_level_core_style_skills": 23,
+    "tracked_blob_files": 688,
+    "skill_artifacts": 246,
+    "top_level_core_style_skills": 28,
     "nested_domain_external_workforce_skills": 218,
+    "external_skill_artifacts": 149,
+    "broad_tool_script_like_artifacts": 237,
     "historical_reconciliation_skill_files": 238,
-    "delta_since_historical_baseline": 3,
-    "delta_explanation": [
+    "delta_since_historical_baseline": 8,
+    "audit_added_or_promoted": [
       "leeway-agent-operating-loop",
       "leeway-capability-resilience",
-      "leeway-skill-orchestrator"
+      "leeway-skill-orchestrator",
+      "leeway-veritas",
+      "leeway-receipt-authority",
+      "leeway-learning-ledger",
+      "leeway-device-bridge",
+      "leeway-host-commander"
     ],
     "legacy_registry_44": "ALL_REFERENCED_ARTIFACTS_PRESENT_PARTIAL_REGISTRY_NOT_COMPLETE_UNIVERSE",
     "audit_tool": "scripts/audit-skill-tool-graph.mjs",
-    "generator": "scripts/generate-capability-universe-observation.mjs"
+    "generator": "scripts/generate-capability-universe-observation.mjs",
+    "relationship_schema": "config/skill-tool-relationship.schema.json"
   }
 }
