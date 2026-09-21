@@ -1,0 +1,21 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://leeway.local/schemas/delegated-work.schema.json",
+  "title":"LeeWay Delegated Work Contract",
+  "type":"object",
+  "required":["workId","parentObjectiveId","objective","acceptanceCriteria","authorityScope","status"],
+  "properties":{
+    "workId":{"type":"string"},
+    "parentObjectiveId":{"type":"string"},
+    "revision":{"type":"integer","minimum":1},
+    "objective":{"type":"string"},
+    "acceptanceCriteria":{"type":"array","items":{"type":"string"}},
+    "authorityScope":{"type":"array","items":{"type":"string"}},
+    "dependencies":{"type":"array","items":{"type":"string"}},
+    "mutationScope":{"type":"array","items":{"type":"string"}},
+    "checkpointPolicy":{"type":"string"},
+    "interruptPolicy":{"type":"string"},
+    "status":{"enum":["PROPOSED","DISPATCHED","RUNNING","CHECKPOINTED","PAUSE_REQUESTED","PAUSED","CANCEL_REQUESTED","CANCELLED","RETOOL_REQUIRED","SUPERSEDED","COMPLETED","FAILED","BLOCKED"]},
+    "evidence":{"type":"array","items":{"type":"string"}}
+  }
+}
