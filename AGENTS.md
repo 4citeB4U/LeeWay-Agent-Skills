@@ -21,7 +21,8 @@ On every user message, `leeway-message-ingress-authority` checks whether that re
 4. `leeway-context-engineering`
 5. `leeway-formula-governance`
 6. `leeway-agent-operating-loop`
-7. `leeway-universal-capability-kernel`
+7. `leeway-capability-resilience`
+8. `leeway-universal-capability-kernel`
 8. `leeway-skill-lifecycle-governance`
 9. `leeway-reference-authority`
 10. `leeway-tool-gateway` when an authorized operational adapter is available
@@ -34,7 +35,7 @@ On every user message, `leeway-message-ingress-authority` checks whether that re
 leeway-formula-authority-recovery is conditional core whenever Formula authority, WD8TB/storage development, cross-drive recovery, runtime binding, or an allegedly missing Formula contract/evaluator is involved. On the current workstation it requires recovery checks across known C:/D:/E: authorities before replacement work.
 
 ## Continuous path
-`Bootstrap → Continuity → Ingress → Context/Phi-C64 → Formula/Phi-D → Agent Operating Loop → Universal Capability Kernel → capability weave → Tool Gateway when available → focal execution → Veritas → receipt → Conversation Vault when available → governed learning/reference memory → LeeWay delivery`
+`Bootstrap → Continuity → Ingress → Context/Phi-C64 → Formula/Phi-D → Agent Operating Loop → Capability Resilience → Universal Capability Kernel → capability weave → Tool Gateway when available → focal execution → Veritas → receipt → Conversation Vault when available → governed learning/reference memory → LeeWay delivery`
 
 Context staging is not Formula execution. Formula choice is not runtime execution. Runtime execution is not Veritas acceptance. A helper result is not a native receipt.
 
@@ -161,6 +162,8 @@ Math establishes structure. Execution establishes reality. Veritas establishes t
 `Investigate → Diagnose → Plan → Implement → Test → Validate → Repair → Retest → Verify → Evidence`
 
 The always-on `leeway-agent-operating-loop` owns completion persistence: define the acceptance gate, repeatedly ask what is not being discovered and what needs enhancement, scope blockers instead of globalizing them, search authorized alternate routes, create/qualify missing capabilities when justified, and resume the parent mission. `first success != completion`.
+
+The always-on `leeway-capability-resilience` layer treats MCPs/tools/services as replaceable providers of abstract capabilities, tracks fallback routes and capability debt, and routes genuine gaps through composition/extension/adaptation/Skill Factory/native promotion before the parent mission is declared blocked.
 
 `CLAIM == SOURCE == TEST == RUNTIME == VERITAS == RECEIPT`
 
