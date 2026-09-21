@@ -137,9 +137,11 @@ The capability-development subtask must not silently replace the Creator's paren
 
 ## Capability sovereignty / resilience
 
+Delegate provider dependency, fallback, capability-debt, and native-promotion analysis to `leeway-capability-resilience`. The operating loop preserves the parent acceptance gate while resilience repairs the provider/capability route.
+
 Track repeatedly required external capabilities as dependencies. When recurrence, criticality, failure impact, security, economics, portability, or availability justify ownership, evaluate a LeeWay-native fallback or replacement.
 
-External dependency loss should trigger fallback selection and capability-gap remediation, not automatic abandonment.
+External dependency loss should trigger `leeway-capability-resilience` fallback selection and capability-gap remediation, not automatic abandonment.
 
 Do not clone every external capability. Formula/qualitative governance must decide whether to reuse, adapt, compose, extend, create, promote, deprecate, or remain external.
 
