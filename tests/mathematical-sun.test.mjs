@@ -1,0 +1,3 @@
+import fs from "node:fs";import assert from "node:assert/strict";import {spawnSync} from "node:child_process";
+const p=spawnSync(process.execPath,["scripts/evaluate-mathematical-sun.mjs","tests/fixtures/mathematical-sun-zero.json"],{encoding:"utf8"});
+assert.equal(p.status,0,p.stderr);const out=JSON.parse(p.stdout);assert.equal(out.bits,"11111111111");assert.equal(out.omega,2047);assert.equal(out.phi,1);assert.equal(out.shipProfilePass,true);console.log("PASS mathematical sun zero fixture");
