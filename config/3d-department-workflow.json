@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "2.0.0",
+  "schemaVersion": "3.0.0",
   "department": "LEEWAY_3D",
   "controlSkill": "leeway-3d-department",
   "laws": [
@@ -11,9 +11,15 @@
   ],
   "phases": [
     {
-      "id": "INGEST_LIFECYCLE_AUDIT",
+      "id": "REFERENCE_INGEST",
       "parallel": true,
       "lanes": [
+        {
+          "id": "reference-research",
+          "skills": [
+            "leeway-3d-reference-asset-research"
+          ]
+        },
         {
           "id": "scene-audit",
           "skills": [
@@ -41,9 +47,10 @@
         {
           "id": "engineering",
           "skills": [
-            "leeway-3d-engineering-blueprint"
+            "leeway-3d-engineering-blueprint",
+            "leeway-3d-cad-bim-manufacturing"
           ],
-          "conditional": "dimensions/constraints matter"
+          "conditional": "engineering/BIM/manufacturing"
         },
         {
           "id": "target-profile",
@@ -55,32 +62,56 @@
       ]
     },
     {
-      "id": "ACQUISITION_GENERATION",
+      "id": "ACQUIRE_GENERATE",
       "parallel": true,
       "conditional": true,
       "lanes": [
         {
-          "id": "image-reconstruction",
+          "id": "single-image",
           "skills": [
             "leeway-triposr"
-          ],
-          "when": "reference image should seed missing geometry"
+          ]
+        },
+        {
+          "id": "multi-view-capture",
+          "skills": [
+            "leeway-3d-photogrammetry-spatial-capture"
+          ]
+        },
+        {
+          "id": "neural-scene",
+          "skills": [
+            "leeway-3d-gaussian-splat-neural-scene"
+          ]
         },
         {
           "id": "procedural",
           "skills": [
             "leeway-3d-procedural-modeling"
-          ],
-          "when": "repeatable/modular/parametric generation helps"
+          ]
         }
       ]
     },
     {
-      "id": "PRODUCTION",
+      "id": "MODEL_BUILD",
       "parallel": true,
       "lanes": [
         {
-          "id": "geometry-topology",
+          "id": "sculpt",
+          "skills": [
+            "leeway-3d-digital-sculpting"
+          ],
+          "conditional": "high-detail organic/hard-surface sculpt"
+        },
+        {
+          "id": "character",
+          "skills": [
+            "leeway-3d-character-anatomy"
+          ],
+          "conditional": "character/creature"
+        },
+        {
+          "id": "geometry",
           "skills": [
             "leeway-3d-geometry-topology"
           ]
@@ -90,8 +121,28 @@
           "skills": [
             "leeway-3d-environment-architecture"
           ],
-          "conditional": "environment/building scene"
+          "conditional": "environment/building"
         },
+        {
+          "id": "terrain",
+          "skills": [
+            "leeway-3d-terrain-geospatial"
+          ],
+          "conditional": "terrain/geospatial"
+        },
+        {
+          "id": "vegetation",
+          "skills": [
+            "leeway-3d-vegetation-ecosystem"
+          ],
+          "conditional": "vegetation/biome"
+        }
+      ]
+    },
+    {
+      "id": "SURFACE_LOOK",
+      "parallel": true,
+      "lanes": [
         {
           "id": "materials-uv",
           "skills": [
@@ -99,56 +150,131 @@
           ]
         },
         {
-          "id": "texture-baking",
+          "id": "baking",
           "skills": [
             "leeway-3d-texture-baking"
           ],
-          "conditional": "baked/high-to-low/PBR maps required"
+          "conditional": "bakes required"
         },
+        {
+          "id": "shaders",
+          "skills": [
+            "leeway-3d-shader-authoring"
+          ]
+        },
+        {
+          "id": "groom",
+          "skills": [
+            "leeway-3d-groom-hair-fur"
+          ],
+          "conditional": "hair/fur"
+        },
+        {
+          "id": "clothing",
+          "skills": [
+            "leeway-3d-clothing-costume"
+          ],
+          "conditional": "garments/costume"
+        }
+      ]
+    },
+    {
+      "id": "MOTION_SIMULATION",
+      "parallel": true,
+      "conditional": true,
+      "lanes": [
         {
           "id": "rig-animation",
           "skills": [
             "leeway-3d-rigging-animation"
-          ],
-          "conditional": "animated/deforming asset"
+          ]
         },
         {
-          "id": "simulation",
+          "id": "facial",
+          "skills": [
+            "leeway-3d-facial-performance"
+          ]
+        },
+        {
+          "id": "mocap",
+          "skills": [
+            "leeway-3d-mocap-performance-capture"
+          ]
+        },
+        {
+          "id": "physics",
           "skills": [
             "leeway-3d-physics-simulation"
-          ],
-          "conditional": "physics/simulation required"
+          ]
         },
         {
-          "id": "game-readiness",
+          "id": "vfx",
           "skills": [
-            "leeway-3d-game-asset-production"
-          ],
-          "conditional": "realtime/runtime asset"
-        },
+            "leeway-3d-vfx-volumetrics"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SCENE_REALTIME",
+      "parallel": true,
+      "lanes": [
         {
           "id": "lookdev",
           "skills": [
             "leeway-3d-lighting-render-validation",
             "leeway-creative-rendering-engineering"
           ]
+        },
+        {
+          "id": "camera",
+          "skills": [
+            "leeway-3d-cinematography-camera"
+          ]
+        },
+        {
+          "id": "large-scene",
+          "skills": [
+            "leeway-3d-scene-streaming-virtualized-geometry"
+          ],
+          "conditional": "large/dense realtime scene"
+        },
+        {
+          "id": "navigation",
+          "skills": [
+            "leeway-3d-navigation-gameplay-spatial"
+          ],
+          "conditional": "gameplay/traversal"
+        },
+        {
+          "id": "spatial-audio",
+          "skills": [
+            "leeway-3d-spatial-audio-hooks"
+          ],
+          "conditional": "interactive audio"
         }
       ]
     },
     {
-      "id": "INTEGRATION_EXECUTION",
+      "id": "PROVIDER_EXECUTION",
       "skills": [
         "leeway-blender-mcp"
       ],
-      "notes": "Blender is current major provider; other qualified CAD/geometry/render providers may execute bounded operations."
+      "notes": "Major current provider; execute only mapped/authorized capabilities. Other providers may be selected."
     },
     {
-      "id": "INTERCHANGE_RUNTIME",
+      "id": "DELIVERY",
       "parallel": true,
-      "conditional": true,
       "lanes": [
         {
-          "id": "export",
+          "id": "game-readiness",
+          "skills": [
+            "leeway-3d-game-asset-production"
+          ],
+          "conditional": "realtime"
+        },
+        {
+          "id": "interchange",
           "skills": [
             "leeway-3d-interchange-export"
           ]
@@ -158,7 +284,14 @@
           "skills": [
             "leeway-3d-game-engine-integration"
           ],
-          "when": "interactive/game runtime target"
+          "conditional": "runtime target"
+        },
+        {
+          "id": "compositing",
+          "skills": [
+            "leeway-3d-compositing-post"
+          ],
+          "conditional": "final rendered media"
         }
       ]
     },
@@ -166,6 +299,12 @@
       "id": "VALIDATION",
       "parallel": true,
       "lanes": [
+        {
+          "id": "automated-qa",
+          "skills": [
+            "leeway-3d-qa-automation"
+          ]
+        },
         {
           "id": "visual-regression",
           "skills": [
@@ -198,5 +337,19 @@
   "providerStrategy": [
     "config/image-to-3d-provider-strategy.json",
     "config/image-to-3d-refinement-pipeline.json"
+  ],
+  "formulaQuestions": [
+    "What are we not discovering?",
+    "What needs enhancement?",
+    "What skill is missing?",
+    "What tool is missing?",
+    "What orchestration level is missing?",
+    "What execution level is missing?",
+    "What other skills can compose with this skill?",
+    "How does this skill connect upstream/downstream?",
+    "Which tools does it own/use and who governs them?",
+    "Which verifier/recovery capability closes the loop?",
+    "What would a world-class specialist department know that we have not encoded?",
+    "What capability are we postponing because an external product currently provides it, and can LeeWay learn/own the underlying method?"
   ]
 }
