@@ -85,7 +85,7 @@ If no sufficient provider exists:
 
 `gap → compose existing primitives? → extend canonical owner? → create adapter? → create skill/MCP/native capability? → qualify → register → resume parent mission`
 
-Use `leeway-skill-factory` and lifecycle governance for new or sourced skills. Use the Universal Capability Kernel for cross-capability composition and routing.
+Use `leeway-skill-factory` and `leeway-skill-lifecycle-governance` for new or sourced skills. After qualification, re-enumerate through `leeway-universal-capability-kernel` and return control to `leeway-agent-operating-loop` so the original acceptance gate resumes. Use the Universal Capability Kernel for cross-capability composition and routing.
 
 ## Capability sovereignty law
 
