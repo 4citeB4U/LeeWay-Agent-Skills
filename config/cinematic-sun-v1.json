@@ -1,0 +1,25 @@
+{
+  "schemaVersion": "1.0.0",
+  "profileId": "cinematic-sun-v1-eight-ray",
+  "authorityState": "PROPOSED_GOVERNED_EVALUATION_PROFILE_NOT_CANONICAL_FORMULA_ENCODING",
+  "rays": [
+    "STAGING_GEOGRAPHY",
+    "OPTICS_EXPOSURE",
+    "LIGHT_TRANSPORT",
+    "MOTION_CONTINUITY",
+    "PERFORMANCE_STORY",
+    "COLOR_LOOK",
+    "SOUND_EDITORIAL",
+    "DELIVERY_QC"
+  ],
+  "centeredRule": "Zero means zero measured deviation from the declared shot/sequence target profile, not adherence to one universal aesthetic.",
+  "hardGates": [
+    "STORY_PURPOSE_OR_REQUIRED_COVERAGE",
+    "IDENTITY_REFERENCE_CONTINUITY_WHEN_REQUIRED",
+    "RIGHTS_PROVENANCE",
+    "MEDIA_INTEGRITY",
+    "COLOR_DELIVERY_CONFORMANCE",
+    "ACCESSIBILITY_DELIVERABLES_WHEN_REQUIRED"
+  ],
+  "law": "Creative convention is a profile; technical continuity and delivery constraints are evaluated according to declared project requirements."
+}
