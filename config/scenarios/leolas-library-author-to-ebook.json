@@ -1,0 +1,31 @@
+{
+  "schemaVersion": "1.0.0",
+  "scenarioId": "leolas-library-author-to-ebook",
+  "intent": "Author/revise a work, preserve provenance and canon, produce a professional accessible ebook, validate it, then make the edition dynamically insertable/removable from Leola's Library catalog.",
+  "requiredSkills": [
+    "leeway-writing-publishing-department",
+    "leeway-author-provenance-versioning",
+    "leeway-narrative-architecture",
+    "leeway-story-continuity-canon",
+    "leeway-developmental-editing",
+    "leeway-line-copy-editing",
+    "leeway-manuscript-qa",
+    "leeway-book-design-production",
+    "leeway-cover-illustration-coordination",
+    "leeway-epub-production",
+    "leeway-epub-accessibility",
+    "leeway-epub-validation",
+    "leeway-publishing-metadata-identifiers",
+    "leeway-publishing-rights-permissions",
+    "leeway-publishing-distribution-release",
+    "leeway-literary-sun",
+    "leeway-veritas"
+  ],
+  "catalogSeparation": {
+    "manuscript": "creative content",
+    "edition": "format/version/identifier/cover/metadata",
+    "offer": "price/store/distributor/availability",
+    "libraryPlacement": "display/shelf/premiere/featured state"
+  },
+  "rule": "Books are records/assets, not hardcoded library UI. Price and outbound store destination belong to offer/distribution records, not manuscript source."
+}
