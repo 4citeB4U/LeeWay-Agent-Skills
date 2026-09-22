@@ -1,0 +1,87 @@
+{
+  "schemaVersion": "1.0.0",
+  "house": "CYBER_DEFENSE",
+  "controlSkill": "leeway-house-cyber-defense",
+  "formulaQuestions": [
+    "What assets/identities/data/workloads are we not discovering?",
+    "What threat model or trust boundary is missing?",
+    "What telemetry is absent/stale/untrusted?",
+    "What skill/tool/orchestration/execution level is missing?",
+    "What would a world-class defensive security organization know that is not encoded?",
+    "What capability are we postponing because a vendor provides it?",
+    "Which security claim is preventive, detective, responsive or recovery evidence?",
+    "What false-positive/false-negative cost accompanies this control?",
+    "What action is authorized automatically and what requires human approval?",
+    "What rollback/recovery path exists if containment breaks production?",
+    "What unknown could make a green score false?",
+    "Does cryptographic migration match data/signature lifetime and interoperability?",
+    "Is identity authentication being confused with authorization?",
+    "Can the system restore trust after compromise, not merely block traffic?"
+  ],
+  "phases": [
+    {
+      "id": "INVENTORY_ARCHITECTURE",
+      "parallel": true,
+      "skills": [
+        "leeway-security-telemetry-asset-inventory",
+        "leeway-security-architecture-threat-modeling",
+        "leeway-security-governance-risk-compliance"
+      ]
+    },
+    {
+      "id": "PREVENT",
+      "parallel": true,
+      "skills": [
+        "leeway-crypto-pqc-agility",
+        "leeway-key-secrets-management",
+        "leeway-edge-network-defense",
+        "leeway-bot-abuse-defense",
+        "leeway-zero-trust-architecture",
+        "leeway-iam-pam",
+        "leeway-cloud-container-security",
+        "leeway-data-security-privacy",
+        "leeway-software-supply-chain-security",
+        "leeway-appsec-secure-sdlc"
+      ]
+    },
+    {
+      "id": "DETECT",
+      "parallel": true,
+      "skills": [
+        "leeway-soc-detection-engineering",
+        "leeway-threat-intelligence",
+        "leeway-vulnerability-exposure-management"
+      ]
+    },
+    {
+      "id": "RESPOND",
+      "skills": [
+        "leeway-incident-response-forensics"
+      ],
+      "notes": "Consequential containment follows pre-authorized runbooks/action governance."
+    },
+    {
+      "id": "RECOVER",
+      "skills": [
+        "leeway-cyber-resilience-recovery"
+      ]
+    },
+    {
+      "id": "VALIDATE",
+      "parallel": true,
+      "skills": [
+        "leeway-security-validation",
+        "leeway-cyber-defense-sun",
+        "leeway-veritas"
+      ]
+    },
+    {
+      "id": "LEARN_GOVERN",
+      "skills": [
+        "leeway-security-awareness-human-risk",
+        "leeway-receipt-authority",
+        "leeway-learning-ledger"
+      ]
+    }
+  ]
+}
