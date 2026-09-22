@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "1.0.0",
+  "profileId": "LEEWAY_REALTIME_VOICE_MULTIMODAL_PROFILE_V1",
+  "claimClass": "PROJECT_PROFILE_TARGET",
+  "defaults": {
+    "audio": {
+      "preferredFrameMs": [
+        10,
+        20
+      ],
+      "pcmExamples": [
+        16000,
+        24000,
+        48000
+      ],
+      "opusForWebRTC": true
+    },
+    "latencyMs": {
+      "networkIngest": [
+        20,
+        80
+      ],
+      "vadEndpoint": [
+        50,
+        250
+      ],
+      "sttUseful": [
+        100,
+        300
+      ],
+      "llmTTFT": [
+        100,
+        400
+      ],
+      "ttsTTFB": [
+        80,
+        250
+      ],
+      "playout": [
+        20,
+        80
+      ]
+    },
+    "turnTaking": {
+      "breathPauseMs": "CALIBRATE",
+      "turnCompletionMs": "CALIBRATE",
+      "semanticEndpointer": true
+    },
+    "chunking": {
+      "punctuationCue": true,
+      "maxWordFallback": [
+        8,
+        16
+      ],
+      "prosodyAware": true
+    },
+    "vision": {
+      "mode": "ADAPTIVE_SEMANTIC_KEYFRAMING",
+      "baselineFpsRange": [
+        0.5,
+        2
+      ],
+      "burstOnChange": true
+    }
+  },
+  "note": "Defaults are starting profiles, not universal standards. Device/network/provider empirical calibration governs deployment."
+}
