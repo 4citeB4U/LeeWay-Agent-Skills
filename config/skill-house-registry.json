@@ -254,6 +254,47 @@
         "SECURITY_COMPLIANCE",
         "DATA_AI_RESEARCH"
       ]
+    },
+    {
+      "id": "CYBER_DEFENSE",
+      "skill": "leeway-house-cyber-defense",
+      "path": "skills/houses/cyber-defense/SKILL.md",
+      "memberScopes": [
+        "skills/cyber/**",
+        "skills/leeway-cyber-defense-sun/SKILL.md"
+      ],
+      "workflow": "config/cyber-defense-house-workflow.json",
+      "executionContract": "config/cyber-defense-execution-capability-contract.json",
+      "providers": [
+        "native OS/network/security controls",
+        "identity providers",
+        "SIEM/XDR/EDR",
+        "WAF/edge providers",
+        "cloud/container security",
+        "SAST/DAST/fuzzing",
+        "SBOM/Sigstore/SLSA tooling",
+        "backup/recovery systems"
+      ],
+      "verification": [
+        "leeway-cyber-defense-sun",
+        "leeway-security-validation",
+        "leeway-veritas"
+      ],
+      "recovery": [
+        "leeway-cyber-resilience-recovery",
+        "leeway-capability-resilience",
+        "incident rollback/compensation",
+        "clean restore"
+      ],
+      "crossHouseEdges": [
+        "SOFTWARE_ENGINEERING",
+        "SRE_PLATFORM",
+        "ENTERPRISE_OPERATIONS",
+        "EXECUTIVE_GOVERNANCE",
+        "COMMERCE_CUSTODY",
+        "DIGITAL_CRAFT_SPATIAL_INTERFACE",
+        "DATA_AI_RESEARCH"
+      ]
     }
   ],
   "plannedHouseFamilies": [
@@ -267,5 +308,5 @@
     "OPERATIONS_LOGISTICS",
     "LEADERSHIP_GOVERNANCE"
   ],
-  "evidenceState": "SEVEN_HOUSES_PROMOTED; REMAINING_HOUSE_FAMILIES_REQUIRE_RECONCILIATION"
+  "evidenceState": "EIGHT_HOUSES_PROMOTED; REMAINING_HOUSE_FAMILIES_REQUIRE_RECONCILIATION"
 }
