@@ -1,0 +1,173 @@
+{
+  "schemaVersion": "1.0.0",
+  "registryId": "LEEWAY-FORMULA-KNOWLEDGE-REGISTRY-v1",
+  "authority": "LFEA",
+  "canonicalFormulaState": "NOT_REVERIFIED_IN_CURRENT_CAMPAIGN",
+  "canonicalRecoveredReference": {
+    "spec": "<LEEWAY_ROOT>/LeeWay-Standards/Formula/LEEWAY-FORMULA-v1.0.md",
+    "sha256": "aa0290bb7c084f33ee49a50bff02fc5d61c05b9ec6a585d89f7dada81aa6f51e",
+    "state": "RECOVERED_REFERENCE_NOT_CURRENT_REHASH"
+  },
+  "candidateCorpus": {
+    "id": "21-family-corpus-v1",
+    "families": 21,
+    "status": "PARTIAL_PASS_WITH_REPAIRS_REQUIRED"
+  },
+  "executedEvidence": [
+    {
+      "id": "binary-register-property",
+      "cases": 3800,
+      "result": "PASS",
+      "class": "MATHEMATICAL_IDENTITY",
+      "claim": "For binary bits, product(b)=1 iff Omega=2^N-1."
+    },
+    {
+      "id": "spring-normalization-property",
+      "cases": 1000,
+      "result": "PASS",
+      "class": "DOMAIN_CONSTRAINED_IDENTITY",
+      "domain": "m>0,k>0,c>=0",
+      "claim": "omega0 and zeta definitions reproduce normalized damping coefficient."
+    },
+    {
+      "id": "bezier-endpoint-derivative-property",
+      "cases": 1000,
+      "result": "PASS",
+      "class": "MATHEMATICAL_IDENTITY",
+      "claim": "Analytic cubic Bezier endpoint derivatives agree with finite-difference checks."
+    }
+  ],
+  "knownDefects": [
+    {
+      "id": "F21-DIM-001",
+      "family": 21,
+      "class": "DIMENSIONAL_VALIDITY",
+      "state": "FAIL",
+      "claim": "X_Total declared R10",
+      "counterexample": "3+2+4=9",
+      "repair": "R9 or define missing state"
+    },
+    {
+      "id": "F16-MKTG-001",
+      "family": 16,
+      "class": "MODEL_DIRECTION",
+      "state": "FAIL",
+      "claim": "CAC overrun penalty",
+      "counterexample": "max(0,target-actual) ignores actual>target",
+      "repair": "Reverse one-sided penalty or define two-sided deviation"
+    },
+    {
+      "id": "F04-PM-001",
+      "family": 4,
+      "class": "DOMAIN_VALIDITY",
+      "state": "FAIL",
+      "claim": "normalized PM ratios universal",
+      "counterexample": "planned=0 or target value=0 causes division by zero",
+      "repair": "domain guard/alternate absolute metric"
+    },
+    {
+      "id": "F14-NARR-001",
+      "family": 14,
+      "class": "DOMAIN_VALIDITY",
+      "state": "FAIL",
+      "claim": "character force defined for all states",
+      "counterexample": "Ci=Cj makes denominator zero",
+      "repair": "regularize or replace profile"
+    },
+    {
+      "id": "F19-BILL-001",
+      "family": 19,
+      "class": "MODEL_VALIDITY",
+      "state": "FAIL",
+      "claim": "billed=cash+credit at arbitrary time",
+      "counterexample": "legitimate open AR",
+      "repair": "period/open-item accounting identity"
+    },
+    {
+      "id": "F19-3WAY-001",
+      "family": 19,
+      "class": "MODEL_VALIDITY",
+      "state": "FAIL",
+      "claim": "BOL is receiving leg of universal three-way match",
+      "counterexample": "shipment != accepted receipt; vector semantics can differ",
+      "repair": "PO-receipt-invoice separate from BOL custody and BOM consumption"
+    },
+    {
+      "id": "F15-HYPER-001",
+      "family": 15,
+      "class": "CONVENTION",
+      "state": "HOLD",
+      "claim": "H=f^2/(Nc) exact universal hyperfocal",
+      "counterexample": "common thin-lens convention includes +f",
+      "repair": "declare approximation/convention"
+    },
+    {
+      "id": "F12-FRAME-001",
+      "family": 12,
+      "class": "MODEL_VALIDITY",
+      "state": "HOLD",
+      "claim": "frame time always max CPU/GPU",
+      "counterexample": "serialized critical-path work",
+      "repair": "measure/model overlap and critical path"
+    },
+    {
+      "id": "F12-VRAM-001",
+      "family": 12,
+      "class": "MODEL_VALIDITY",
+      "state": "HOLD",
+      "claim": "4/3 mip memory universal",
+      "counterexample": "compression/alignment/partial mip/resource classes",
+      "repair": "resource-aware estimator"
+    },
+    {
+      "id": "F11-APCA-001",
+      "family": 11,
+      "class": "STANDARD_BOUND_RULE",
+      "state": "HOLD",
+      "claim": "short power-law is complete APCA conformance",
+      "repair": "bind exact version/reference implementation; normative WCAG remains separate"
+    },
+    {
+      "id": "F10-PBR-001",
+      "family": 10,
+      "class": "PHYSICAL_ENGINEERING_MODEL",
+      "state": "HOLD",
+      "claim": "kd+ks=1 proves energy conservation",
+      "counterexample": "BRDF hemispherical integral/material assumptions matter",
+      "repair": "integrated reflectance validation"
+    },
+    {
+      "id": "F20-ZT-001",
+      "family": 20,
+      "class": "MODEL_VALIDITY",
+      "state": "FAIL",
+      "claim": "mTLS+attestation fully defines authorization",
+      "repair": "subject/action/resource/context policy decision"
+    },
+    {
+      "id": "F20-PQC-001",
+      "family": 20,
+      "class": "PROJECT_PROFILE_TARGET",
+      "state": "HOLD",
+      "claim": "all legacy keys equal quantum exposure",
+      "repair": "risk-weight by purpose/exposure/data-signature lifetime/migration policy"
+    },
+    {
+      "id": "F21-NEURO-001",
+      "family": 21,
+      "class": "NEUROSCIENCE_INSPIRED_MODEL",
+      "state": "EMPIRICALLY_UNVERIFIED",
+      "claim": "equations reproduce LLM/human imagination mechanism",
+      "repair": "behavioral A/B predict-observe validation; no consciousness/neural equivalence claim"
+    }
+  ],
+  "laws": [
+    "VALID_MATH_DOES_NOT_PROVE_MODEL_ASSUMPTIONS",
+    "VALID_MODEL_DOES_NOT_IMPLY_UNIVERSAL_LAW",
+    "PROFILE_TARGET_IS_NOT_STANDARD",
+    "STANDARD_VERSION_MUST_BE_BOUND",
+    "EMPIRICAL_CLAIM_REQUIRES_EMPIRICAL_EVIDENCE",
+    "CANDIDATE_IS_NOT_CANONICAL",
+    "PASS_AND_FAIL_BOTH_PERSIST_AS_KNOWLEDGE"
+  ]
+}
