@@ -1,0 +1,38 @@
+{
+  "schemaVersion": "1.0.0",
+  "profileId": "cyber-defense-sun-v1-four-ray",
+  "omegaMax": 15,
+  "rays": [
+    "CRYPTO_PQC",
+    "EDGE_NETWORK",
+    "SOC_IR",
+    "APPSEC_ZERO_TRUST"
+  ],
+  "standardsAnchors": {
+    "pqc": [
+      "NIST FIPS 203 ML-KEM",
+      "NIST FIPS 204 ML-DSA",
+      "NIST FIPS 205 SLH-DSA"
+    ],
+    "zeroTrust": [
+      "NIST SP 800-207",
+      "CISA Zero Trust Maturity Model v2.0"
+    ],
+    "threatKnowledge": [
+      "MITRE ATT&CK"
+    ],
+    "supplyChain": [
+      "SLSA",
+      "Sigstore/SBOM as distinct evidence types"
+    ]
+  },
+  "hardGates": [
+    "ACTIVE_UNCONTAINED_INCIDENT",
+    "COMPROMISED_TRUST_ANCHOR_OR_KEY",
+    "UNAUTHORIZED_ACCESS_GRANTED",
+    "UNKNOWN_CRITICAL_ASSET_OR_REQUIRED_TELEMETRY_GAP",
+    "FAILED_REQUIRED_RECOVERY_TEST",
+    "UNVERIFIED_CRITICAL_RELEASE_ARTIFACT"
+  ],
+  "evidenceState": "PROFILE_DEFINED; WEIGHTS_THRESHOLDS_REQUIRE_SYSTEM_THREAT_MODEL_AND_MEASUREMENT"
+}
