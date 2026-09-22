@@ -1,0 +1,128 @@
+{
+  "schemaVersion": "1.0.0",
+  "tunnelId": "LEEWAY_FORMULA_TUNNEL_REALTIME_VOICE_V1",
+  "input": "Real-Time Voice & Multimodal Infrastructure proposal",
+  "status": "FORMULA_TUNNEL_ANALYZED_REPAIR_REQUIRED",
+  "contextQuestions": {
+    "whatAreWeNotDiscovering": [
+      "acoustic echo/feedback and AEC convergence",
+      "capture/playout clock drift",
+      "network congestion and jitter regime changes",
+      "session reconnect and continuity",
+      "audio route/focus/permission changes",
+      "codec renegotiation",
+      "telephony gateway constraints",
+      "multilingual/code-switch segmentation",
+      "privacy/consent and retention state",
+      "device thermal/power throttling",
+      "backpressure/overload",
+      "provider cancellation semantics",
+      "difference between rendered audio and actually heard audio"
+    ],
+    "whatNeedsEnhancement": [
+      "separate Media/Control/Cognitive/Evidence planes",
+      "adaptive policy controller",
+      "capability and provider registry",
+      "clock synchronization model",
+      "explicit backpressure policy",
+      "interrupt epoch/generation IDs for stale-event rejection",
+      "acoustic loopback evidence when available",
+      "session continuity/recovery state",
+      "security/privacy hard gates",
+      "device/network learned profiles",
+      "deterministic diagnostics and replay harness"
+    ],
+    "whatCanBecomeDeterministic": [
+      "frame geometry",
+      "format conversion validation",
+      "queue accounting",
+      "generation/interrupt epoch handling",
+      "playout ledger",
+      "latency instrumentation",
+      "provider capability negotiation",
+      "state-machine transitions",
+      "stale packet rejection",
+      "bounded-buffer enforcement",
+      "test-vector replay"
+    ],
+    "whatRequiresMeasurement": [
+      "endpoint threshold",
+      "jitter buffer size",
+      "AEC quality",
+      "barge-in spill",
+      "STT stabilization",
+      "LLM TTFT",
+      "TTS TTFB/RTF",
+      "actual underrun risk",
+      "clock drift",
+      "network loss/jitter",
+      "thermal throttling",
+      "visual sampling recall"
+    ]
+  },
+  "planes": {
+    "media": [
+      "capture",
+      "DSP/AEC/NS/AGC as applicable",
+      "codec",
+      "RTP/media transport",
+      "STT/TTS streams",
+      "playout"
+    ],
+    "control": [
+      "session",
+      "ICE/signaling",
+      "state machine",
+      "interrupt epochs",
+      "cancellation",
+      "backpressure",
+      "reconnect",
+      "provider failover"
+    ],
+    "cognitive": [
+      "turn semantics",
+      "context",
+      "LLM",
+      "speech normalization",
+      "prosody/chunk planning",
+      "adaptive vision relevance"
+    ],
+    "evidence": [
+      "timestamps",
+      "latency histograms",
+      "queue occupancy",
+      "render ledger",
+      "packet/jitter stats",
+      "provider identity",
+      "Formula/LFEA state",
+      "receipts"
+    ]
+  },
+  "multiStateVector": {
+    "dimensions": [
+      "response_onset_deviation",
+      "barge_in_spill",
+      "underrun_rate",
+      "turn_false_cutoff",
+      "turn_late_endpoint",
+      "transcript_revision_error",
+      "queue_overrun",
+      "clock_drift",
+      "packet_loss_jitter_penalty",
+      "aec_residual",
+      "context_after_interrupt_error",
+      "vision_context_miss",
+      "privacy_or_authority_violation"
+    ],
+    "hardGates": [
+      "privacy_or_authority_violation=0",
+      "uncancellable_playout=0",
+      "unbounded_queue=0",
+      "stale_generation_audio_after_interrupt=0",
+      "irreversible_action_from_unstable_transcript=0"
+    ],
+    "note": "Weights/tolerances are profiles requiring Formula Factory qualification and empirical calibration."
+  },
+  "candidateDecision": "ADAPT_REQUIRED",
+  "next": "Repair skill/contracts, then execute Formula qualification tests and live provider campaign before production qualification."
+}
