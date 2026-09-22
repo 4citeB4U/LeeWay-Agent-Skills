@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://leeway.local/schemas/author-generative-model.schema.json",
+  "title": "LeeWay Authorized Author Generative Model",
+  "type": "object",
+  "required": [
+    "modelId",
+    "subjectAuthority",
+    "layers",
+    "evidenceState",
+    "approvalState"
+  ],
+  "properties": {
+    "modelId": {
+      "type": "string"
+    },
+    "subjectAuthority": {
+      "enum": [
+        "SELF_AUTHORED",
+        "AUTHORIZED_GHOSTWRITING",
+        "EDITORIAL_COLLABORATION",
+        "UNCONSENTING_LIVING_WRITER_BROAD_TRAITS_ONLY",
+        "PUBLIC_DOMAIN_OR_DECEASED_REFERENCE"
+      ]
+    },
+    "layers": {
+      "type": "object",
+      "properties": {
+        "contentMemory": {
+          "type": "object"
+        },
+        "statedValues": {
+          "type": "object"
+        },
+        "attentionSelection": {
+          "type": "object"
+        },
+        "cognitiveRhetorical": {
+          "type": "object"
+        },
+        "lexicalIdiolect": {
+          "type": "object"
+        },
+        "discourseRhythm": {
+          "type": "object"
+        },
+        "audienceRelationship": {
+          "type": "object"
+        },
+        "emotionalModulation": {
+          "type": "object"
+        },
+        "mediumModulation": {
+          "type": "object"
+        },
+        "choicePreferences": {
+          "type": "object"
+        },
+        "revisionPolicy": {
+          "type": "object"
+        }
+      }
+    },
+    "permissions": {
+      "type": "object"
+    },
+    "evidenceRefs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "heldOutValidationRefs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "uncertainty": {
+      "type": "object"
+    },
+    "evidenceState": {
+      "enum": [
+        "DRAFT",
+        "PARTIAL",
+        "CALIBRATING",
+        "VALIDATED",
+        "AUTHOR_APPROVED"
+      ]
+    },
+    "approvalState": {
+      "enum": [
+        "NOT_REVIEWED",
+        "REVIEW_REQUIRED",
+        "APPROVED",
+        "REJECTED",
+        "REVISION_REQUIRED"
+      ]
+    }
+  }
+}
