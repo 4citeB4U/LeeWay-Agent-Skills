@@ -1,0 +1,40 @@
+{
+  "schemaVersion": "1.0.0",
+  "profileId": "leeway-imagination-execution-v1",
+  "dimensions": [
+    {
+      "id": "GROUNDING_COVERAGE",
+      "question": "Were consequential priors/unknowns identified and grounded before simulation?"
+    },
+    {
+      "id": "MODEL_VALIDITY",
+      "question": "Was an appropriate model selected and were its assumptions explicit?"
+    },
+    {
+      "id": "CANDIDATE_DIVERSITY",
+      "question": "Were materially distinct alternatives considered where useful?"
+    },
+    {
+      "id": "PREEXEC_FAILURE_CAPTURE",
+      "question": "Did simulation catch violations before mutation?"
+    },
+    {
+      "id": "PREDICTION_FIDELITY",
+      "question": "How closely did predicted observables match post-execution observations?"
+    },
+    {
+      "id": "REPAIR_EFFICIENCY",
+      "question": "Did repair isolate failed dimensions without reopening passed state?"
+    },
+    {
+      "id": "AUTHORITY_INTEGRITY",
+      "question": "Were simulation, authorization, execution and verification kept distinct?"
+    },
+    {
+      "id": "EVIDENCE_CLOSURE",
+      "question": "Did Veritas/receipt reflect only actual evidence?"
+    }
+  ],
+  "comparisonDesign": "For repeatable tasks compare baseline/direct execution versus kernel-governed execution on failure rate, retries, rollback incidence, time/cost, acceptance-pass rate and prediction error. Same task inputs/providers where feasible.",
+  "successRule": "Promote claims only from observed comparative evidence. The kernel is useful if it measurably improves execution outcomes; no consciousness/imagination claim is inferred."
+}
