@@ -1,0 +1,87 @@
+{
+  "schemaVersion": "1.0.0",
+  "basePath": "/formula/v1",
+  "endpoints": [
+    {
+      "method": "GET",
+      "path": "/health",
+      "class": "READ"
+    },
+    {
+      "method": "GET",
+      "path": "/authority",
+      "class": "READ"
+    },
+    {
+      "method": "GET",
+      "path": "/catalog",
+      "class": "READ"
+    },
+    {
+      "method": "GET",
+      "path": "/formula/{formulaId}",
+      "class": "READ"
+    },
+    {
+      "method": "POST",
+      "path": "/inspect",
+      "class": "READ"
+    },
+    {
+      "method": "POST",
+      "path": "/evaluate",
+      "class": "COMPUTE"
+    },
+    {
+      "method": "POST",
+      "path": "/evaluate/batch",
+      "class": "COMPUTE"
+    },
+    {
+      "method": "POST",
+      "path": "/compare",
+      "class": "COMPUTE"
+    },
+    {
+      "method": "POST",
+      "path": "/lab/qualify",
+      "class": "LAB"
+    },
+    {
+      "method": "POST",
+      "path": "/lab/test",
+      "class": "LAB"
+    },
+    {
+      "method": "POST",
+      "path": "/lab/counterexample",
+      "class": "LAB"
+    },
+    {
+      "method": "POST",
+      "path": "/promotion/propose",
+      "class": "GOVERN"
+    },
+    {
+      "method": "GET",
+      "path": "/receipt/{receiptId}",
+      "class": "READ"
+    }
+  ],
+  "responseEnvelope": [
+    "requestId",
+    "formulaId",
+    "formulaVersion",
+    "authorityState",
+    "claimClass",
+    "result",
+    "units",
+    "assumptionsApplied",
+    "warnings",
+    "validationState",
+    "canonicalBinding",
+    "evidenceRefs",
+    "receiptRef"
+  ],
+  "rule": "No compute response may omit Formula identity/version/authority state."
+}
