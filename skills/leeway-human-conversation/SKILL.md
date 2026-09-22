@@ -82,3 +82,10 @@ Never promote a new pronunciation, slang term, verbal tic or stylistic pattern t
 Where a live voice stack exists, useful Veritas targets include turn-taking precision/recall, interruption behavior, pronunciation, prosody, expressive-identity consistency and long-session stability.
 
 Do not claim these tests passed unless they actually ran.
+
+
+## Real-Time Voice & Multimodal Infrastructure routing
+
+For live voice, streaming STT/TTS, barge-in, phone/receptionist/avatar voice, read-aloud, WebRTC media, live screen/camera multimodal, or audio-latency work, route through `leeway-real-time-voice-multimodal-infrastructure` as a focal execution skill and apply `config/realtime-voice-heavy-use-routing-v1.json`.
+
+Do not substitute the generic multimodal skill for production real-time media engineering. Use the real-time execution contract, playout ledger, interrupt bus, telemetry and LFEA-qualified profiles. Thresholds are tunable evidence-bound profiles; transport/provider choices remain task-dependent and subordinate to LeeWay authority.
