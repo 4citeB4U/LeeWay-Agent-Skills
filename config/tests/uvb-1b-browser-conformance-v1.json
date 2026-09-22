@@ -1,0 +1,46 @@
+{
+  "schemaVersion": "1.0.0",
+  "campaignId": "LEEWAY_UVB_1B_BROWSER_CONFORMANCE_V1",
+  "targetModels": [
+    {
+      "id": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+      "class": "1.7B",
+      "license": "Apache-2.0",
+      "role": "PRIMARY"
+    },
+    {
+      "id": "Qwen/Qwen2.5-1.5B-Instruct",
+      "class": "1.5B",
+      "license": "Apache-2.0",
+      "role": "ALTERNATE"
+    }
+  ],
+  "stages": [
+    "PAGES_HTTP_LOAD",
+    "DEVICE_CAPABILITY_PROBE",
+    "MODEL_LOAD",
+    "TEXT_INFERENCE",
+    "SPEECH_OUTPUT",
+    "INTERRUPT_EPOCH",
+    "MIC_INPUT_IF_AVAILABLE",
+    "UVB_TRACE"
+  ],
+  "acceptance": {
+    "structural": [
+      "docs/voice-lab/index.html present",
+      "Pages workflow includes docs"
+    ],
+    "runtime": [
+      "public page HTTP reachable",
+      "model load event MODEL_LOAD_OK",
+      "nonempty assistant TEXT_DELTA",
+      "speech_start if SpeechSynthesis supported",
+      "CONTROL_CANCEL increments epoch",
+      "no stale response spoken after cancel"
+    ],
+    "optional": [
+      "microphone transcript when browser SpeechRecognition supported"
+    ]
+  },
+  "evidenceBoundary": "Runtime PASS requires execution in a real browser/device; source inspection alone is structural PASS."
+}
