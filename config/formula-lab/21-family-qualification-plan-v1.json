@@ -1,0 +1,49 @@
+{
+  "schemaVersion": "1.0.0",
+  "campaignId": "LEEWAY-CANDIDATE-FORMULA-21-FAMILY-QUALIFICATION-v1",
+  "candidateStatus": "UNPROMOTED",
+  "canonicalAuthorityExpected": {
+    "spec": "<LEEWAY_ROOT>/LeeWay-Standards/Formula/LEEWAY-FORMULA-v1.0.md",
+    "specSha256": "aa0290bb7c084f33ee49a50bff02fc5d61c05b9ec6a585d89f7dada81aa6f51e",
+    "implementation": "<LEEWAY_ROOT>/LeeWay-Standards/Formula/LEEWAY-FORMULA-v1.0.psm1",
+    "note": "Historical/recovered authority only until re-hashed from canonical D: source for this campaign."
+  },
+  "families": [
+    "fundamental_metric_gates",
+    "software_distributed",
+    "sre",
+    "product_management",
+    "stride_security",
+    "ux_accessibility",
+    "org_capacity",
+    "unified_11_sun",
+    "motion_springs",
+    "pbr_brdf",
+    "color_apca",
+    "curves_shaders_ui_perf",
+    "multi_agent",
+    "narrative",
+    "cinematography",
+    "enterprise_ops",
+    "executive_statecraft",
+    "accounting_statistics",
+    "billing_bom_bol",
+    "cyber_pqc_zero_trust",
+    "neurocognitive_blind_geometry"
+  ],
+  "tests": [
+    "parse_and_symbol_inventory",
+    "domain_preconditions",
+    "dimension_unit_analysis",
+    "algebraic_identity",
+    "boundary_singularity",
+    "monotonicity_invariance",
+    "known_vector",
+    "randomized_property",
+    "adversarial_counterexample",
+    "numerical_stability",
+    "empirical_claim_separation",
+    "canonical_formula_comparison"
+  ],
+  "promotionRule": "No family is branded canonical LeeWay Formula unless canonical artifact/hash/runtime is reverified and explicit comparison/promotion authority passes."
+}
