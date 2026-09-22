@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0.0",
+  "appId": "LEEWAY_AGENT_VOICE_BROWSER_V1",
+  "targetStandaloneRepository": "4citeB4U/LEEWAY-AGENT-VOICE",
+  "currentStagingPath": "docs/agent-voice",
+  "acceptance": [
+    "UI loads",
+    "capability indicators visible",
+    "local model produces response",
+    "speech output begins if supported",
+    "mic produces prompt if supported",
+    "interrupt increments epoch",
+    "stale generation cannot speak",
+    "trace preserves events"
+  ],
+  "evidenceState": "SOURCE_BUILT_PAGES_DEPLOYMENT_AND_DEVICE_RUNTIME_PENDING"
+}
