@@ -1,0 +1,115 @@
+{
+  "schemaVersion": "1.0.0",
+  "authority": "Creator/Human Authority > LeeWay Standards > Skill House Registry",
+  "routingLaw": "HOUSE_FIRST_FOR_SUBSTANTIAL_DOMAIN_WORK; FOCAL_SKILLS_DEEPEN_EXECUTION; AMBIENT_RELEVANT_SKILLS_REMAIN_ELIGIBLE",
+  "houseModel": {
+    "purpose": "Department-scale entry points over the skill graph",
+    "doesNotReplace": "Individual skills, Universal Capability Kernel, Skill Orchestrator, Parallel Workplane, Veritas or providers",
+    "requiredFields": [
+      "mission",
+      "memberScopes",
+      "workflow",
+      "formulaQuestions",
+      "parallelLanes",
+      "providers",
+      "verification",
+      "recovery",
+      "crossHouseEdges"
+    ]
+  },
+  "houses": [
+    {
+      "id": "WRITING_PUBLISHING",
+      "skill": "leeway-house-writing-publishing",
+      "path": "skills/houses/writing-publishing/SKILL.md",
+      "observedMemberSkills": 63,
+      "memberScopes": [
+        "skills/writing/**",
+        "skills/publishing/**",
+        "skills/leeway-literary-sun/SKILL.md"
+      ],
+      "workflow": "config/writing-publishing-department-workflow.json",
+      "executionContract": "config/digital-publication-execution-contract.json",
+      "scenarios": [
+        "config/scenarios/leolas-library-author-to-ebook.json"
+      ],
+      "providers": [
+        "document/file tools",
+        "EPUB tooling",
+        "EPUBCheck when installed/authorized",
+        "publishing/distribution connectors when authorized"
+      ],
+      "verification": [
+        "leeway-literary-sun",
+        "leeway-veritas",
+        "author approval",
+        "EPUB validation when applicable"
+      ],
+      "recovery": [
+        "leeway-capability-resilience",
+        "version rollback",
+        "editorial revision"
+      ],
+      "crossHouseEdges": [
+        "DESIGN",
+        "3D/ILLUSTRATION",
+        "WEB_APPLICATION",
+        "BUSINESS_GTM",
+        "LEGAL_RIGHTS",
+        "DATA_RESEARCH"
+      ]
+    },
+    {
+      "id": "THREE_D_PRODUCTION",
+      "skill": "leeway-house-3d-production",
+      "path": "skills/houses/3d-production/SKILL.md",
+      "observedMemberSkills": 40,
+      "memberScopes": [
+        "skills/3d/**",
+        "skills/leeway-3d-engineering-blueprint/SKILL.md",
+        "skills/leeway-blender-mcp/SKILL.md",
+        "skills/leeway-triposr/SKILL.md",
+        "skills/leeway-creative-rendering-engineering/SKILL.md"
+      ],
+      "workflow": "config/3d-department-workflow.json",
+      "executionContract": "config/3d-execution-capability-contract.json",
+      "scenarios": [
+        "config/scenarios/leolas-library-3d-quality-upgrade.json"
+      ],
+      "providers": [
+        "Blender",
+        "TripoSR",
+        "qualified CAD/geometry/render/runtime providers"
+      ],
+      "verification": [
+        "leeway-3d-qa-automation",
+        "leeway-3d-visual-regression",
+        "leeway-veritas"
+      ],
+      "recovery": [
+        "leeway-capability-resilience",
+        "asset lifecycle rollback",
+        "provider fallback"
+      ],
+      "crossHouseEdges": [
+        "DESIGN",
+        "WEB_APPLICATION",
+        "GAME_RUNTIME",
+        "WRITING_PUBLISHING",
+        "HARDWARE_PERFORMANCE"
+      ]
+    }
+  ],
+  "plannedHouseFamilies": [
+    "SOFTWARE_ENGINEERING",
+    "SRE_PLATFORM",
+    "PRODUCT",
+    "DESIGN_UX",
+    "SECURITY_COMPLIANCE",
+    "DATA_AI_RESEARCH",
+    "BUSINESS_FINANCE_GTM",
+    "OPERATIONS_LOGISTICS",
+    "LEADERSHIP_GOVERNANCE"
+  ],
+  "evidenceState": "TWO_HOUSES_PROMOTED; REMAINING_HOUSE_FAMILIES_TO_BE_RECONCILED_FROM_EXISTING_SKILLS_NOT_BLINDLY_DUPLICATED"
+}
