@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://leeway.local/schemas/author-voice-profile.schema.json",
+  "title": "LeeWay Authorized Author Voice Profile",
+  "type": "object",
+  "required": [
+    "profileId",
+    "subjectAuthority",
+    "evidenceState",
+    "dimensions",
+    "approvalState"
+  ],
+  "properties": {
+    "profileId": {
+      "type": "string"
+    },
+    "subjectAuthority": {
+      "enum": [
+        "SELF_AUTHORED",
+        "AUTHORIZED_GHOSTWRITING",
+        "EDITORIAL_COLLABORATION",
+        "UNCONSENTING_LIVING_WRITER_BROAD_TRAITS_ONLY",
+        "PUBLIC_DOMAIN_OR_DECEASED_REFERENCE"
+      ]
+    },
+    "evidenceState": {
+      "enum": [
+        "DRAFT",
+        "EVIDENCE_PARTIAL",
+        "AUTHOR_REVIEWED",
+        "AUTHOR_APPROVED"
+      ]
+    },
+    "dimensions": {
+      "type": "object",
+      "properties": {
+        "vocabularyRegister": {
+          "type": "object"
+        },
+        "syntaxCadence": {
+          "type": "object"
+        },
+        "rhetoric": {
+          "type": "object"
+        },
+        "humor": {
+          "type": "object"
+        },
+        "figurativeLanguage": {
+          "type": "object"
+        },
+        "directness": {
+          "type": "object"
+        },
+        "emotionalModulation": {
+          "type": "object"
+        },
+        "dialogue": {
+          "type": "object"
+        },
+        "punctuationFormatting": {
+          "type": "object"
+        },
+        "dosDonts": {
+          "type": "object"
+        }
+      }
+    },
+    "evidenceRefs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "approvalState": {
+      "enum": [
+        "NOT_REVIEWED",
+        "REVIEW_REQUIRED",
+        "APPROVED",
+        "REJECTED",
+        "REVISION_REQUIRED"
+      ]
+    }
+  }
+}
