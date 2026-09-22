@@ -1,0 +1,33 @@
+{
+  "schemaVersion": "1.0.0",
+  "receiptId": "LEEWAY-ASC-FORMULA-FUNNEL-V1-2026-09-22",
+  "status": "PASS_ADAPTED_ARCHITECTURE_CANDIDATE_KERNELS_HELD",
+  "funnelVerdict": "ADAPT_REQUIRED_MAJOR",
+  "mandatoryQuestionCount": 12,
+  "result": "ASC promoted as portable capability-negotiated coprocessor fabric; unproven geometric kernels remain Formula Factory candidates.",
+  "keyRepairs": [
+    "Universal Voice Bus supports minimum text plus optional richer native representations",
+    "unit hypersphere no longer claimed cross-model invariant",
+    "logprobs optional",
+    "shared semantic encoder/alignment required for shared coordinates",
+    "AEC/double-talk detector replaces cosine-only barge-in claim",
+    "platform adapters replace Python=device-agnostic claim",
+    "application buffer clear distinguished from hardware flush",
+    "provider cancellation uses adapter contract plus epoch invalidation",
+    "OT-CFM single-step latency remains empirical candidate"
+  ],
+  "artifacts": [
+    "config/formula-lab/asc-formula-funnel-v1.json",
+    "skills/leeway-acoustic-coprocessor-fabric/SKILL.md",
+    "config/universal-voice-bus-v1.json",
+    "config/realtime-voice-heavy-use-routing-v1.json"
+  ],
+  "externalEvidence": [
+    "Qwen2.5-Omni Thinker-Talker demonstrates richer native speech path",
+    "DeepSeek-V3 confirms architecture-specific MLA/MTP",
+    "AEC double-talk literature supports correlation/coherence/hybrid detection"
+  ],
+  "runtimeEvidence": "NOT_EXECUTED",
+  "learningLedger": "NOT_UPDATED",
+  "nextGate": "UNIVERSAL_VOICE_BUS_ADAPTER_PROTOTYPE_AND_CROSS_PROVIDER_CONFORMANCE_TEST"
+}
