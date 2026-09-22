@@ -1,0 +1,56 @@
+{
+  "schemaVersion": "1.0.0",
+  "house": "EXECUTIVE_GOVERNANCE",
+  "controlSkill": "leeway-house-executive-governance",
+  "phases": [
+    {
+      "id": "INTAKE_DOCKET",
+      "skills": [
+        "leeway-executive-secretariat",
+        "leeway-executive-records-briefing-integrity"
+      ]
+    },
+    {
+      "id": "ANALYZE",
+      "parallel": true,
+      "skills": [
+        "leeway-executive-decision-intelligence",
+        "leeway-strategic-negotiation-statecraft",
+        "leeway-executive-continuity-readiness",
+        "leeway-executive-strategic-communications",
+        "leeway-senior-personnel-governance"
+      ]
+    },
+    {
+      "id": "CABINET",
+      "skills": [
+        "leeway-cabinet-coordination"
+      ]
+    },
+    {
+      "id": "AUTHORITY_DECISION",
+      "notes": "Authorized human/Creator decision; Agent Lee provides evidence/options."
+    },
+    {
+      "id": "TASK_EXECUTION",
+      "skills": [
+        "leeway-skill-orchestrator",
+        "leeway-parallel-workplane"
+      ]
+    },
+    {
+      "id": "VERIFY",
+      "skills": [
+        "leeway-executive-governance-sun",
+        "leeway-veritas"
+      ]
+    },
+    {
+      "id": "RECORD",
+      "skills": [
+        "leeway-receipt-authority",
+        "leeway-learning-ledger"
+      ]
+    }
+  ]
+}
