@@ -40,6 +40,10 @@
     {
       "trigger": "UI/interface/design system/motion/spatial UI/WebGPU/shader/frontend interaction/accessibility/performance/visual craft",
       "house": "DIGITAL_CRAFT_SPATIAL_INTERFACE"
+    },
+    {
+      "trigger": "cybersecurity/PQC/cryptography/zero trust/AppSec/SOC/threat detection/incident response/WAF/DDoS/IAM/supply chain/vulnerability/security validation",
+      "house": "CYBER_DEFENSE"
     }
   ],
   "compositionLaw": "One task may activate multiple Houses. Houses form a company-level weave; no House becomes a silo or supersedes Creator/Human Authority."
