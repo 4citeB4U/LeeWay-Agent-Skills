@@ -36,6 +36,10 @@
     {
       "trigger": "billing/invoice/accounts receivable/cash application/BOM/BOL/freight custody/three-way match/lot serial/reconciliation",
       "house": "COMMERCE_CUSTODY"
+    },
+    {
+      "trigger": "UI/interface/design system/motion/spatial UI/WebGPU/shader/frontend interaction/accessibility/performance/visual craft",
+      "house": "DIGITAL_CRAFT_SPATIAL_INTERFACE"
     }
   ],
   "compositionLaw": "One task may activate multiple Houses. Houses form a company-level weave; no House becomes a silo or supersedes Creator/Human Authority."
