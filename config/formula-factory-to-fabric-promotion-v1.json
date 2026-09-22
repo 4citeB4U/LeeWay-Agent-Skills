@@ -1,0 +1,35 @@
+{
+  "schemaVersion": "1.0.0",
+  "contractId": "LEEWAY_FORMULA_FACTORY_TO_FABRIC_PROMOTION",
+  "source": "Formula Factory",
+  "destination": "Formula Fabric",
+  "required": [
+    "candidate ID/version/hash",
+    "LFEA record",
+    "provenance/license/source",
+    "domain/units/preconditions",
+    "test campaign and raw evidence refs",
+    "known failures/counterexamples",
+    "repair/retest history",
+    "canonical comparison",
+    "compatibility/delta analysis",
+    "golden vectors",
+    "runtime implementation binding",
+    "rollback",
+    "authorization",
+    "Veritas",
+    "receipt"
+  ],
+  "states": [
+    "FACTORY_CANDIDATE",
+    "QUALIFIED_CANDIDATE",
+    "PROMOTION_PROPOSED",
+    "AUTHORIZED",
+    "FABRIC_STAGED",
+    "FABRIC_VERIFIED",
+    "PROMOTED",
+    "ROLLED_BACK",
+    "REJECTED"
+  ],
+  "rule": "Factory output cannot appear as canonical/production Fabric capability before AUTHORIZED + FABRIC_VERIFIED."
+}
