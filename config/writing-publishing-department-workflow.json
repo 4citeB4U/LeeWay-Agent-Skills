@@ -1,0 +1,116 @@
+{
+  "schemaVersion": "1.0.0",
+  "department": "LEEWAY_WRITING_PUBLISHING",
+  "controlSkill": "leeway-writing-publishing-department",
+  "formulaQuestions": [
+    "What are we not discovering?",
+    "What needs enhancement?",
+    "What skill is missing?",
+    "What tool is missing?",
+    "What orchestration level is missing?",
+    "What execution level is missing?",
+    "What other skills can compose with this skill?",
+    "How does this skill connect upstream/downstream?",
+    "Which tools does it own/use and who governs them?",
+    "Which verifier/recovery capability closes the loop?",
+    "What would a world-class specialist department know that we have not encoded?",
+    "What capability are we postponing because an external product/provider currently supplies it, and can LeeWay learn/own the underlying method?"
+  ],
+  "phases": [
+    {
+      "id": "AUTHORSHIP_BASELINE",
+      "parallel": true,
+      "skills": [
+        "leeway-author-provenance-versioning",
+        "leeway-publishing-rights-permissions"
+      ]
+    },
+    {
+      "id": "RESEARCH_PROFILE",
+      "parallel": true,
+      "skills": [
+        "leeway-writing-fact-source-verification",
+        "leeway-genre-reader-promise",
+        "leeway-worldbuilding"
+      ]
+    },
+    {
+      "id": "CRAFT_ARCHITECTURE",
+      "parallel": true,
+      "skills": [
+        "leeway-narrative-architecture",
+        "leeway-character-psychology",
+        "leeway-theme-symbolism",
+        "leeway-information-revelation",
+        "leeway-story-continuity-canon"
+      ]
+    },
+    {
+      "id": "DRAFT",
+      "skills": [
+        "leeway-writers-room-orchestration"
+      ],
+      "notes": "Select medium skills: novel/screenplay/episodic/nonfiction/children/comics/audio/copy/poetry."
+    },
+    {
+      "id": "EDITORIAL",
+      "parallel": true,
+      "skills": [
+        "leeway-developmental-editing",
+        "leeway-line-copy-editing",
+        "leeway-authenticity-sensitivity-review",
+        "leeway-manuscript-qa"
+      ]
+    },
+    {
+      "id": "ADAPT_LOCALIZE",
+      "parallel": true,
+      "conditional": true,
+      "skills": [
+        "leeway-adaptation-transmedia",
+        "leeway-localization-transcreation"
+      ]
+    },
+    {
+      "id": "BOOK_PRODUCTION",
+      "parallel": true,
+      "skills": [
+        "leeway-book-design-production",
+        "leeway-cover-illustration-coordination",
+        "leeway-publishing-metadata-identifiers",
+        "leeway-publishing-citations-indexing"
+      ]
+    },
+    {
+      "id": "DIGITAL_PUBLICATION",
+      "parallel": true,
+      "conditional": "ebook",
+      "skills": [
+        "leeway-epub-production",
+        "leeway-epub-accessibility",
+        "leeway-epub-validation"
+      ]
+    },
+    {
+      "id": "RELEASE",
+      "skills": [
+        "leeway-publishing-distribution-release"
+      ]
+    },
+    {
+      "id": "VERIFY",
+      "parallel": true,
+      "skills": [
+        "leeway-literary-sun",
+        "leeway-veritas"
+      ]
+    },
+    {
+      "id": "EVIDENCE_LEARNING",
+      "skills": [
+        "leeway-receipt-authority",
+        "leeway-learning-ledger"
+      ]
+    }
+  ]
+}
