@@ -1,0 +1,47 @@
+{
+  "schemaVersion": "1.0.0",
+  "protocolId": "LEEWAY_UNIVERSAL_VOICE_BUS_V1",
+  "requiredEnvelope": [
+    "sessionId",
+    "eventId",
+    "eventType",
+    "monotonicTimestamp",
+    "generationEpoch",
+    "source",
+    "provenance"
+  ],
+  "minimumEventTypes": [
+    "TEXT_DELTA",
+    "CONTROL_CANCEL",
+    "CONTROL_END",
+    "ERROR"
+  ],
+  "optionalEventTypes": [
+    "TOKEN_LOGPROBS",
+    "SEMANTIC_EVENT",
+    "TOOL_EVENT",
+    "PHONEME_EVENT",
+    "PROSODY_EVENT",
+    "AUDIO_EMBEDDING",
+    "AUDIO_CODEC_UNIT",
+    "NATIVE_AUDIO_CHUNK",
+    "VISION_EVENT",
+    "CONFIDENCE_EVENT"
+  ],
+  "capabilityNegotiation": {
+    "required": [
+      "inputCapabilities",
+      "outputCapabilities",
+      "cancelSemantics",
+      "timingSemantics",
+      "providerModelIdentity"
+    ],
+    "rule": "Never assume an optional representation exists."
+  },
+  "invariants": [
+    "stale generationEpoch output is rejected",
+    "events preserve source/provenance",
+    "control/evidence side channels remain available even when native audio bypasses text TTS",
+    "provider adapters cannot elevate their own authority"
+  ]
+}
