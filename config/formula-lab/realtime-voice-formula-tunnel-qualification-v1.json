@@ -1,0 +1,65 @@
+{
+  "schemaVersion": "1.0.0",
+  "campaignId": "REALTIME_VOICE_FORMULA_TUNNEL_QUALIFICATION_V1",
+  "status": "PARTIAL_EXECUTED",
+  "tests": [
+    {
+      "id": "FRAME_GEOMETRY_KNOWN_VECTORS",
+      "cases": 6,
+      "result": "PASS",
+      "vectors": [
+        "16kHz/20ms=320 samples",
+        "24kHz/20ms=480",
+        "48kHz/20ms=960",
+        "16kHz/10ms=160",
+        "24kHz/10ms=240",
+        "48kHz/10ms=480"
+      ]
+    },
+    {
+      "id": "PCM_BYTE_GEOMETRY",
+      "cases": 6,
+      "result": "PASS",
+      "claim": "bytes=N*(B/8)*channels for integer PCM under declared format"
+    },
+    {
+      "id": "RTF_BOUNDARY",
+      "cases": 4,
+      "result": "PASS",
+      "claim": "RTF=synth_time/audio_duration; <1 faster-than-realtime, =1 realtime, >1 slower"
+    },
+    {
+      "id": "LITTLE_LAW_DOMAIN",
+      "cases": 3,
+      "result": "PASS_WITH_DOMAIN_CONSTRAINT",
+      "claim": "L=lambda*W only admitted for defined stable average queue regime; rejected as transient flush identity"
+    },
+    {
+      "id": "RENDERED_HEARD_SEPARATION",
+      "cases": 3,
+      "result": "PASS_LOGICAL_GATE",
+      "claim": "rendered estimate never promoted to heard without acoustic evidence"
+    },
+    {
+      "id": "STALE_EPOCH_REJECTION",
+      "cases": 4,
+      "result": "PASS_DESIGN_INVARIANT",
+      "claim": "events from invalidated generation epoch must be discarded regardless of late provider delivery"
+    }
+  ],
+  "notExecuted": [
+    "real jitter/loss network campaign",
+    "AEC acoustic test",
+    "live WebRTC/ICE/TURN",
+    "live STT revisions",
+    "live LLM cancellation",
+    "live TTS cancellation",
+    "hardware buffer flush/spill",
+    "clock drift",
+    "thermal/device route change",
+    "adaptive vision recall",
+    "privacy/platform permission tests"
+  ],
+  "verdict": "QUALIFIED_FOR_STRUCTURAL_USE_NOT_RUNTIME_PRODUCTION",
+  "next": "Bind real providers and execute live full-duplex qualification."
+}
