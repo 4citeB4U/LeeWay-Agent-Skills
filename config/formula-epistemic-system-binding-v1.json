@@ -1,0 +1,41 @@
+{
+  "schemaVersion": "1.0.0",
+  "integrationId": "LEEWAY_FORMULA_EPISTEMIC_SYSTEM_BINDING_v1",
+  "upstream": [
+    "Creator/Human Authority",
+    "LeeWay Standards",
+    "Root of Trust",
+    "Canonical Formula"
+  ],
+  "core": [
+    "leeway-formula-epistemic-authority",
+    "formula-knowledge-registry-v1",
+    "candidate-formula-laboratory"
+  ],
+  "consumers": [
+    "leeway-imagination-simulation-kernel",
+    "leeway-skill-orchestrator",
+    "leeway-agent-operating-loop",
+    "all Skill Houses",
+    "Veritas"
+  ],
+  "flow": [
+    "FORMULA_REQUEST",
+    "SELF_INSPECT",
+    "CLASSIFY",
+    "CHECK_DOMAIN_UNITS_ASSUMPTIONS",
+    "LOAD_TEST_EVIDENCE",
+    "CHECK_CANONICAL_STATE",
+    "EVALUATE",
+    "SIMULATE_OR_EXECUTE_IF_AUTHORIZED",
+    "OBSERVE",
+    "VERITAS",
+    "UPDATE_EVIDENCE_WITHOUT_ERASING_HISTORY"
+  ],
+  "canonicalMutationState": "NOT_AUTHORIZED_UNTIL_LIVE_CANONICAL_REHASH_AND_COMPARISON",
+  "currentEvidence": {
+    "executedPropertyCases": 5800,
+    "knownDefects": 14,
+    "candidateFamilies": 21
+  }
+}
