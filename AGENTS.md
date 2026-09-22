@@ -234,3 +234,12 @@ At material architecture/capability reviews also ask:
 12. **What capability are we postponing merely because an external product/provider currently supplies it, and can LeeWay learn and own the underlying method or native path?**
 
 Do not defer a reasonably specifiable capability as 'later' merely because it is specialized or difficult. Difficulty is a planning/routing concern, not a reason to lower the target. External systems may provide evidence, architecture patterns or execution, but provider availability must not become the boundary of LeeWay capability thinking.
+
+
+## Skill Houses
+
+Primary department registry: `config/skill-house-registry.json`. Matrix: `config/skill-house-matrix.json`.
+
+For substantial domain work use HOUSE → TASK_CAPABILITY_WEAVE → FOCAL_EXECUTION_SET rather than flat skill selection. Houses preserve ambient department context while only focal skills receive full execution depth. A task may activate multiple Houses. Current promoted Houses are `leeway-house-writing-publishing` and `leeway-house-3d-production`.
+
+House != silo. House != new Agent Lee identity. House != provider. The Skill Orchestrator remains the parent capability composer; Parallel Workplane owns delegated lanes; Veritas owns verification.
