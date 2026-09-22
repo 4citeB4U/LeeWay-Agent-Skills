@@ -1,0 +1,47 @@
+{
+  "schemaVersion": "1.0.0",
+  "profileId": "literary-sun-v1-six-ray",
+  "authorityState": "PROPOSED_GOVERNED_EVALUATION_PROFILE_NOT_CANONICAL_FORMULA_ENCODING",
+  "rays": [
+    "NARRATIVE_ARCHITECTURE",
+    "CHARACTER_DYNAMICS",
+    "SCENE_TENSION_ECONOMY",
+    "THEME_RESONANCE",
+    "INFORMATION_REVELATION",
+    "VOICE_MEDIUM_EXECUTION"
+  ],
+  "structuralProfiles": {
+    "FEATURE_THREE_ACT": {
+      "beatTargets": [
+        0.12,
+        0.25,
+        0.5,
+        0.75,
+        0.9
+      ],
+      "state": "HEURISTIC_PROFILE_PROJECT_TUNABLE"
+    },
+    "EPISODIC": {
+      "state": "PROJECT_SERIES_PROFILE_REQUIRED"
+    },
+    "NOVEL": {
+      "state": "PROJECT_FORM_GENRE_PROFILE_REQUIRED"
+    },
+    "COMMERCIAL_SHORT": {
+      "state": "CHANNEL_DURATION_PROFILE_REQUIRED"
+    },
+    "NONLINEAR": {
+      "state": "CUSTOM_STRUCTURE_PROFILE_REQUIRED"
+    }
+  },
+  "hardPublishingGates": [
+    "CANON_CONTINUITY_WHEN_REQUIRED",
+    "FACTUAL_INTEGRITY_WHEN_REQUIRED",
+    "RIGHTS_PERMISSIONS",
+    "AUTHOR_APPROVAL",
+    "EPUB_CONFORMANCE_WHEN_EPUB",
+    "ACCESSIBILITY_CLAIMS_EVIDENCED",
+    "METADATA_INTEGRITY"
+  ],
+  "law": "Craft geometry summarizes evidence; it does not replace editorial judgment or hard publication constraints."
+}
