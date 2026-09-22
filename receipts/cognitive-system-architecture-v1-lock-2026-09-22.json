@@ -1,0 +1,21 @@
+{
+  "schemaVersion": "1.0.0",
+  "receiptId": "LEEWAY-COGNITIVE-ARCHITECTURE-V1-LOCK-2026-09-22",
+  "action": "Lock LeeWay Cognitive System Architecture v1 baseline",
+  "authority": "Creator/Human explicit instruction",
+  "artifacts": [
+    {
+      "path": "config/leeway-cognitive-system-architecture-v1.json",
+      "commit": "a54ce81400b6f5b3127830ea7ad66a20a1b390a3"
+    },
+    {
+      "path": "docs/LEEWAY-COGNITIVE-SYSTEM-ARCHITECTURE-V1.md",
+      "commit": "3045e24a7d689a3f9ebea5a1b060c8c988bc15c6"
+    }
+  ],
+  "state": "SOURCE_LOCK_COMMITTED",
+  "runtimeProof": "NOT_CLAIMED",
+  "canonicalDFormulaProof": "NOT_EXECUTED_IN_THIS_LOCK",
+  "learningLedger": "NOT_UPDATED",
+  "nextGate": "PAGES_DEPLOYMENT_VERIFICATION_THEN_CANONICAL_D_FORMULA_REHASH"
+}
