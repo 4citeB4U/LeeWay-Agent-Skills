@@ -1,0 +1,41 @@
+{
+  "schemaVersion": "1.0.0",
+  "contractId": "LEEWAY_IMAGINATION_SIMULATION_EXECUTION_CONTRACT",
+  "mandatoryFor": "Substantive multi-step work where simulation/planning can materially reduce error, cost or risk; especially physical/spatial, software mutation, publishing, film, operations, security and consequential workflows.",
+  "sequence": [
+    "INTENT",
+    "GROUND",
+    "REPRESENT",
+    "GENERATE",
+    "SIMULATE",
+    "EVALUATE",
+    "REPAIR",
+    "SELECT",
+    "AUTHORIZE",
+    "EXECUTE",
+    "OBSERVE",
+    "COMPARE",
+    "VERIFY",
+    "EVIDENCE"
+  ],
+  "invariants": [
+    "OBSERVED_STATE_NEVER_OVERWRITTEN_BY_SIMULATION",
+    "CANDIDATE_PASS_NEVER_RELABELED_EXECUTION_PASS",
+    "EXECUTION_NEVER_RELABELED_VERIFICATION",
+    "MISSING_EVIDENCE_NEVER_ZERO_FILLED",
+    "FAILED_CANDIDATE_TRIGGERS_REPAIR_OR_ALTERNATIVE_UNLESS_VERIFIED_BLOCKER",
+    "CONSEQUENTIAL_EXECUTION_REQUIRES_APPLICABLE_AUTHORITY",
+    "PREDICTION_AND_POST_OBSERVATION_USE_COMPARABLE_OBSERVABLES",
+    "FORMULA_MODEL_MUST_BE_CANONICALLY_VERIFIED_WHEN_FORMULA_AUTHORITY_IS_CLAIMED"
+  ],
+  "outputMinimum": [
+    "selected candidate/plan",
+    "assumptions/unknowns",
+    "acceptance gates",
+    "execution authority state",
+    "predicted observables",
+    "post-execution evidence when executed",
+    "Veritas state"
+  ],
+  "law": "The kernel creates disciplined counterfactual reasoning and execution behavior; it does not establish consciousness, subjective imagination, self-awareness or human-equivalent neural processing."
+}
