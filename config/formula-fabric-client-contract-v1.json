@@ -1,0 +1,29 @@
+{
+  "schemaVersion": "1.0.0",
+  "contractId": "LEEWAY_FORMULA_FABRIC_CLIENT",
+  "discovery": [
+    "Pages manifest/config",
+    "Runtime Fabric registry",
+    "sealed offline manifest"
+  ],
+  "requestMinimum": [
+    "operation",
+    "formulaId or capability",
+    "inputs",
+    "units/context",
+    "required authority state"
+  ],
+  "clientResponsibilities": [
+    "verify service identity/authority metadata",
+    "send units/domain context",
+    "preserve warnings/unknowns",
+    "do not relabel candidate result canonical",
+    "store receipt/evidence reference when consequential"
+  ],
+  "fallbackOrder": [
+    "authorized live Formula Fabric",
+    "verified sealed offline bundle",
+    "BLOCKED_NO_VERIFIED_FORMULA_CAPABILITY"
+  ],
+  "prohibition": "Do not fall back to an unverified copied Formula merely because the Fabric is unavailable."
+}
