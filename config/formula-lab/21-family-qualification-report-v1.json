@@ -1,0 +1,116 @@
+{
+  "schemaVersion": "1.0.0",
+  "campaignId": "LEEWAY-CANDIDATE-FORMULA-21-FAMILY-QUALIFICATION-v1",
+  "executionState": "PARTIAL_EXECUTED",
+  "testsExecuted": {
+    "binaryGateRegister": {
+      "cases": 3800,
+      "result": "PASS",
+      "property": "Phi=1 iff Omega=2^N-1 for binary b"
+    },
+    "springIdentity": {
+      "cases": 1000,
+      "result": "PASS",
+      "property": "omega0=sqrt(k/m), zeta=c/(2sqrt(mk)) reproduces c/m=2*zeta*omega0 for m,k,c>0"
+    },
+    "cubicBezierEndpointDerivative": {
+      "cases": 1000,
+      "result": "PASS",
+      "property": "analytic endpoint derivatives agree with finite-difference derivatives"
+    }
+  },
+  "defects": [
+    {
+      "family": 21,
+      "severity": "FORMAL",
+      "issue": "X_Total declared R^10 but xImag(3)+xPrior(2)+xShape(4)=9 components.",
+      "repair": "Correct to R^9 or identify/define missing tenth state."
+    },
+    {
+      "family": 16,
+      "severity": "FORMAL",
+      "issue": "Marketing CAC penalty max(0,TargetCAC-ActualCAC) penalizes lower CAC and ignores over-target CAC.",
+      "repair": "For an overrun penalty use max(0,ActualCAC-TargetCAC), or define a two-sided target deviation explicitly."
+    },
+    {
+      "family": 4,
+      "severity": "DOMAIN",
+      "issue": "PM normalized ratios divide by N_planned and V_target; zero targets are undefined.",
+      "repair": "Add nonzero-domain guards or alternate absolute-error state."
+    },
+    {
+      "family": 14,
+      "severity": "DOMAIN",
+      "issue": "Character inverse-square-like force is singular at coincident character vectors.",
+      "repair": "Do not use as universal narrative law; regularize or replace with declared distance/profile metric."
+    },
+    {
+      "family": 19,
+      "severity": "MODEL",
+      "issue": "Billing delta treats billed balance as immediately reconcilable to cash+credits and omits legitimate open AR/timing/unapplied cash.",
+      "repair": "Use period/open-item accounting identity."
+    },
+    {
+      "family": 19,
+      "severity": "MODEL",
+      "issue": "3-way match conflates BOL with receipt/acceptance and may compare finished shipment vector to BOM component vector.",
+      "repair": "Separate BOM consumption invariant from PO-receipt-invoice three-way match and BOL custody evidence."
+    },
+    {
+      "family": 15,
+      "severity": "CONVENTION",
+      "issue": "Hyperfocal H=f^2/(Nc) omits +f under common thin-lens convention.",
+      "repair": "Declare approximation/convention or use H=f^2/(Nc)+f consistently."
+    },
+    {
+      "family": 12,
+      "severity": "MODEL",
+      "issue": "T_frame=max(T_CPU,T_GPU) assumes suitable overlap; critical path may include serialized work.",
+      "repair": "Model measured frame critical path/overlap explicitly."
+    },
+    {
+      "family": 12,
+      "severity": "MODEL",
+      "issue": "VRAM full-mip 4/3 approximation omits compression/alignment/render targets and only fits specific mip assumptions.",
+      "repair": "Make format/mip/compression/alignment/resource classes explicit."
+    },
+    {
+      "family": 11,
+      "severity": "STANDARD",
+      "issue": "Displayed APCA short expression is not a complete normative conformance algorithm.",
+      "repair": "Keep experimental/profile status and bind exact version/implementation before numeric conformance claims."
+    },
+    {
+      "family": 10,
+      "severity": "MODEL",
+      "issue": "kd+ks=1 alone is insufficient proof of integrated BRDF energy conservation.",
+      "repair": "Validate hemispherical reflectance/integral and material model assumptions."
+    },
+    {
+      "family": 20,
+      "severity": "MODEL",
+      "issue": "Zero-trust authorization tensor reduces decision to mTLS+attestation and omits subject/action/resource/context policy.",
+      "repair": "Separate authentication/attestation from authorization policy decision."
+    },
+    {
+      "family": 20,
+      "severity": "MODEL",
+      "issue": "N_legacy gives equal penalty to all classical keys despite different HNDL/signing/data-lifetime risk.",
+      "repair": "Risk-weight inventory by purpose, exposure, lifetime and migration policy."
+    },
+    {
+      "family": 21,
+      "severity": "EMPIRICAL",
+      "issue": "Neural/LLM mapping equations are not established as a literal mechanism of LLM imagination.",
+      "repair": "Classify as neuroscience-inspired candidate model; validate behavior through predict/observe A/B experiments."
+    }
+  ],
+  "canonicalComparison": {
+    "state": "BLOCKED_PENDING_LIVE_CANONICAL_REHASH",
+    "recoveredAuthority": "LEEWAY-FORMULA-v1.0",
+    "recoveredSpecPath": "<LEEWAY_ROOT>/LeeWay-Standards/Formula/LEEWAY-FORMULA-v1.0.md",
+    "recoveredSpecSha256": "aa0290bb7c084f33ee49a50bff02fc5d61c05b9ec6a585d89f7dada81aa6f51e",
+    "rule": "Historical/recovered identity is sufficient to stage comparison, not to claim current canonical equality. Rehash live D: artifact and execute canonical golden vectors before comparison."
+  },
+  "verdict": "PARTIAL_PASS_WITH_REPAIRS_REQUIRED"
+}
