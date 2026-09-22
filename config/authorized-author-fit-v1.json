@@ -1,0 +1,23 @@
+{
+  "schemaVersion": "1.0.0",
+  "profileId": "authorized-author-fit-v1",
+  "authorityState": "COLLABORATIVE_EVALUATION_NOT_IDENTITY_PROOF",
+  "dimensions": [
+    "ATTENTION_SELECTION",
+    "CONTENT_CHOICE",
+    "COGNITIVE_RHETORICAL",
+    "LEXICAL_REGISTER",
+    "SYNTAX_RHYTHM",
+    "CONTEXT_EMOTIONAL_MODULATION",
+    "AUDIENCE_RELATIONSHIP_ADAPTATION",
+    "REVISION_BEHAVIOR"
+  ],
+  "centeredModel": "For each dimension define evidence-bound deviation d_i from the AUTHOR_APPROVED target behavior for the current task/context. Optional quadratic radial evaluation requires justified weights; no universal author-clone score.",
+  "hardGates": [
+    "AUTHORIZED_USE",
+    "NO_UNAPPROVED_PERSONAL_CONTENT_ATTRIBUTION",
+    "CANON_FACT_INTEGRITY",
+    "AUTHOR_REVIEW_FOR_GHOSTWRITING"
+  ],
+  "acceptance": "Held-out evidence + author review/approval outrank model self-assessment."
+}
