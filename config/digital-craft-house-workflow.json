@@ -1,0 +1,98 @@
+{
+  "schemaVersion": "1.0.0",
+  "house": "DIGITAL_CRAFT_SPATIAL_INTERFACE",
+  "controlSkill": "leeway-house-digital-craft-spatial-interface",
+  "formulaQuestions": [
+    "What are we not discovering?",
+    "What needs enhancement?",
+    "What skill/tool/orchestration/execution level is missing?",
+    "What other skills/Houses compose?",
+    "What would a world-class digital craft studio know that is not encoded?",
+    "What are we postponing because a vendor/framework supplies it?",
+    "Which requirement is normative versus experimental versus project target?",
+    "What input/browser/device capability is being assumed?",
+    "What happens under reduced motion, keyboard/screen reader, zoom, localization and offline/degraded states?",
+    "What does the low-end device do?",
+    "What does the 120Hz/high-end device do?",
+    "What memory/VRAM/network/energy cost buys this visual effect?",
+    "What field evidence contradicts lab results?",
+    "What fallback preserves the task if WebGPU/View Transitions/haptics are unavailable?"
+  ],
+  "phases": [
+    {
+      "id": "SYSTEM_ARCHITECTURE",
+      "parallel": true,
+      "skills": [
+        "leeway-design-token-architecture",
+        "leeway-design-system-governance",
+        "leeway-design-to-code-contract",
+        "leeway-component-state-architecture"
+      ]
+    },
+    {
+      "id": "VISUAL_LAYOUT",
+      "parallel": true,
+      "skills": [
+        "leeway-perceptual-color-wide-gamut",
+        "leeway-typography-grid-layout",
+        "leeway-localization-bidi-content-resilience",
+        "leeway-accessibility-interface-architecture"
+      ]
+    },
+    {
+      "id": "INTERACTION_MOTION",
+      "parallel": true,
+      "skills": [
+        "leeway-motion-spring-physics",
+        "leeway-gesture-haptic-audio",
+        "leeway-view-transition-spatial-navigation",
+        "leeway-input-device-capability",
+        "leeway-prototyping-interaction-validation"
+      ]
+    },
+    {
+      "id": "CREATIVE_ENGINEERING",
+      "parallel": true,
+      "skills": [
+        "leeway-dom-render-lifecycle",
+        "leeway-webgpu-shader-runtime",
+        "leeway-ui-asset-streaming-compression",
+        "leeway-spatial-3d-interface",
+        "leeway-data-visualization-interface"
+      ]
+    },
+    {
+      "id": "COMPATIBILITY_ADAPT",
+      "parallel": true,
+      "skills": [
+        "leeway-responsive-adaptive-cross-platform",
+        "leeway-browser-compatibility-progressive-enhancement"
+      ]
+    },
+    {
+      "id": "PERFORMANCE",
+      "parallel": true,
+      "skills": [
+        "leeway-ui-runtime-performance-hardware",
+        "leeway-performance-lab-field",
+        "leeway-ui-energy-thermal-efficiency"
+      ]
+    },
+    {
+      "id": "VERIFY",
+      "parallel": true,
+      "skills": [
+        "leeway-visual-interaction-regression",
+        "leeway-digital-craft-sun",
+        "leeway-veritas"
+      ]
+    },
+    {
+      "id": "EVIDENCE",
+      "skills": [
+        "leeway-receipt-authority",
+        "leeway-learning-ledger"
+      ]
+    }
+  ]
+}
