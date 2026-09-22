@@ -1,0 +1,29 @@
+{
+  "schemaVersion": "1.0.0",
+  "service": "LEEWAY_FORMULA_FABRIC",
+  "publicationMode": "STATIC_DISCOVERY_ONLY",
+  "apiVersion": "formula/v1",
+  "contracts": {
+    "service": "config/formula-fabric-service-v1.json",
+    "api": "config/formula-fabric-api-v1.json",
+    "client": "config/formula-fabric-client-contract-v1.json",
+    "epistemicSchema": "config/formula-epistemic-authority-v1.schema.json",
+    "selfInspection": "config/formula-self-inspection-contract-v1.json",
+    "knowledgeRegistry": "config/formula-knowledge-registry-v1.json"
+  },
+  "recoveredCanonicalReference": {
+    "formula": "LEEWAY-FORMULA-v1.0",
+    "specPath": "<LEEWAY_ROOT>/LeeWay-Standards/Formula/LEEWAY-FORMULA-v1.0.md",
+    "sha256": "aa0290bb7c084f33ee49a50bff02fc5d61c05b9ec6a585d89f7dada81aa6f51e",
+    "state": "RECOVERED_REFERENCE_NOT_CURRENT_LIVE_REHASH"
+  },
+  "liveRuntime": {
+    "state": "NOT_VERIFIED_BY_THIS_PUBLICATION",
+    "endpoint": null
+  },
+  "offline": {
+    "supported": true,
+    "requirement": "sealed manifest/version/hash verification"
+  },
+  "warning": "This static manifest does not execute Formula and does not prove live canonical runtime binding."
+}
