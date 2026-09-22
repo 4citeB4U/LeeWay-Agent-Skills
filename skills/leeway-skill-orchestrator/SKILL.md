@@ -125,3 +125,11 @@ At material architecture/capability reviews also ask:
 12. **What capability are we postponing merely because an external product/provider currently supplies it, and can LeeWay learn and own the underlying method or native path?**
 
 Do not defer a reasonably specifiable capability as 'later' merely because it is specialized or difficult. Difficulty is a planning/routing concern, not a reason to lower the target. External systems may provide evidence, architecture patterns or execution, but provider availability must not become the boundary of LeeWay capability thinking.
+
+
+## Skill House routing
+For substantial domain work, consult `config/skill-house-registry.json` before selecting isolated skills. A Skill House is a department-scale capability view over the graph. Activate one or more Houses ambiently, then derive TASK_CAPABILITY_WEAVE and FOCAL_EXECUTION_SET from their member capabilities. Small/local tasks may route directly to a skill when House activation adds no material context.
+
+House activation does not load every member skill at full depth. It guarantees contextual eligibility and exposes department workflow, providers, gates, verification, recovery and cross-House dependencies.
+
+Current promoted Houses: WRITING_PUBLISHING and THREE_D_PRODUCTION. Multiple Houses may compose in one program.
