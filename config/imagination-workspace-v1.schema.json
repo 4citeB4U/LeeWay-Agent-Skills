@@ -1,0 +1,155 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://leeway.local/schemas/imagination-workspace-v1.schema.json",
+  "title": "LeeWay Intent Simulation Execution Workspace",
+  "type": "object",
+  "required": [
+    "workspaceId",
+    "intent",
+    "authority",
+    "observedState",
+    "candidates",
+    "phase",
+    "evidenceState"
+  ],
+  "properties": {
+    "workspaceId": {
+      "type": "string"
+    },
+    "intent": {
+      "type": "object"
+    },
+    "authority": {
+      "type": "object"
+    },
+    "observedState": {
+      "type": "object",
+      "description": "Evidence-backed baseline only."
+    },
+    "groundedPriors": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "modelSelection": {
+      "type": "object"
+    },
+    "candidates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "candidateId",
+          "state",
+          "assumptions",
+          "predictions",
+          "gateState"
+        ],
+        "properties": {
+          "candidateId": {
+            "type": "string"
+          },
+          "parentId": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "state": {
+            "type": "object"
+          },
+          "operators": {
+            "type": "array"
+          },
+          "assumptions": {
+            "type": "array"
+          },
+          "predictions": {
+            "type": "object"
+          },
+          "constraints": {
+            "type": "array"
+          },
+          "gateState": {
+            "enum": [
+              "UNEVALUATED",
+              "PASS_MODEL",
+              "FAIL_MODEL",
+              "BLOCKED_MODEL"
+            ]
+          },
+          "failureReasons": {
+            "type": "array"
+          },
+          "repairHistory": {
+            "type": "array"
+          }
+        }
+      }
+    },
+    "selectedCandidateId": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "authorizationState": {
+      "enum": [
+        "NOT_REQUIRED",
+        "REQUIRED",
+        "APPROVED",
+        "DENIED",
+        "BLOCKED"
+      ]
+    },
+    "execution": {
+      "type": "object"
+    },
+    "postObservedState": {
+      "type": "object"
+    },
+    "predictObserveDelta": {
+      "type": "object"
+    },
+    "veritasState": {
+      "enum": [
+        "NOT_RUN",
+        "PASS",
+        "FAIL",
+        "BLOCKED"
+      ]
+    },
+    "phase": {
+      "enum": [
+        "INTENT",
+        "GROUND",
+        "REPRESENT",
+        "GENERATE",
+        "SIMULATE",
+        "EVALUATE",
+        "REPAIR",
+        "SELECT",
+        "AUTHORIZE",
+        "EXECUTE",
+        "OBSERVE",
+        "COMPARE",
+        "VERIFY",
+        "COMPLETE",
+        "BLOCKED"
+      ]
+    },
+    "evidenceState": {
+      "enum": [
+        "PROPOSED",
+        "PARTIAL",
+        "READY_TO_SIMULATE",
+        "MODEL_PASS",
+        "EXECUTED",
+        "VERIFIED",
+        "FAILED",
+        "BLOCKED"
+      ]
+    }
+  }
+}
