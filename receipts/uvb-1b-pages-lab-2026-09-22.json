@@ -1,0 +1,24 @@
+{
+  "schemaVersion": "1.0.0",
+  "receiptId": "LEEWAY-UVA-1B-PAGES-LAB-2026-09-22",
+  "status": "SOURCE_COMMITTED_PENDING_PAGES_AND_DEVICE_RUNTIME",
+  "artifacts": [
+    "docs/voice-lab/index.html",
+    "docs/voice-lab/README.md",
+    "config/tests/uvb-1b-browser-conformance-v1.json"
+  ],
+  "modelTargets": [
+    "SmolLM2-1.7B-Instruct",
+    "Qwen2.5-1.5B-Instruct"
+  ],
+  "runtimeEvidence": {
+    "pages": "PENDING",
+    "modelLoad": "NOT_EXECUTED",
+    "inference": "NOT_EXECUTED",
+    "speech": "NOT_EXECUTED",
+    "microphone": "NOT_EXECUTED",
+    "interrupt": "NOT_EXECUTED"
+  },
+  "nextGate": "VERIFY_PAGES_THEN_RUN_TARGET_DEVICE_BROWSER_TEST",
+  "learningLedger": "NOT_UPDATED"
+}
