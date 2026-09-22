@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "1.0.0",
+  "dimensions": [
+    "HOUSE",
+    "MISSION",
+    "AMBIENT_CAPABILITIES",
+    "FOCAL_SKILLS",
+    "TOOLS_PROVIDERS",
+    "PARALLEL_LANES",
+    "HARD_GATES",
+    "VERIFIER",
+    "RECOVERY",
+    "CROSS_HOUSE_EDGES"
+  ],
+  "routing": [
+    {
+      "trigger": "write/book/script/story/ghostwrite/edit/publish/ebook/author/catalog",
+      "house": "WRITING_PUBLISHING"
+    },
+    {
+      "trigger": "3D/model/mesh/Blender/TripoSR/scene/game asset/CAD/animation/render",
+      "house": "THREE_D_PRODUCTION"
+    }
+  ],
+  "compositionLaw": "One task may activate multiple Houses. Houses form a company-level weave; no House becomes a silo or supersedes Creator/Human Authority."
+}
