@@ -19,3 +19,10 @@ Preserve author intent, voice, approved canon, drafts, versions and provenance. 
 
 ## Formula
 Use the 12 LeeWay Formula questions plus: What does this medium/genre require? What would an elite writers' room/editorial house catch that we have not encoded? What information/canon/rights uncertainty could invalidate the work?
+
+
+## Author generative model
+For authorized collaborative/ghostwriting work, do not stop at surface voice. Model and validate the chain: PERCEPTION/ATTENTION → CONTENT CHOICE → INTERPRETATION/RHETORIC → LINGUISTIC REALIZATION → CONTEXT/EMOTIONAL MODULATION → REVISION. Keep content memory, stated values, craft behavior and linguistic voice permission-separated. Use held-out validation and author approval before treating the model as production-ready.
+
+## Additional Formula probes
+Ask whether voice has been confounded with topic/genre, speech with polished writing, stable traits with context, and memorized phrases with generative behavior. Ask what evidence most efficiently reduces uncertainty, whether the model generalizes to unseen contexts, and whether feedback can update it without erasing approved historical states.
