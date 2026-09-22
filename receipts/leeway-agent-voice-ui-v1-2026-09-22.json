@@ -1,0 +1,10 @@
+{
+  "schemaVersion": "1.0.0",
+  "receiptId": "LEEWAY-AGENT-VOICE-UI-V1-2026-09-22",
+  "status": "SOURCE_BUILT_PENDING_DEPLOYMENT_AND_RUNTIME",
+  "targetStandaloneRepository": "4citeB4U/LEEWAY-AGENT-VOICE",
+  "repositoryCreation": "BLOCKED_BY_CONNECTED_GITHUB_CAPABILITY_NO_CREATE_REPOSITORY_ACTION",
+  "currentPagesCandidate": "https://4citeb4u.github.io/LeeWay-Agent-Skills/agent-voice/",
+  "runtimeState": "PAGES_NOT_YET_REACHABLE_MODEL_MIC_SPEECH_NOT_EXECUTED",
+  "learningLedger": "NOT_UPDATED"
+}
