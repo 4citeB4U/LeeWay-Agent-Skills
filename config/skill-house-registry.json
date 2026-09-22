@@ -138,6 +138,43 @@
         "SOFTWARE_ENGINEERING",
         "BUSINESS_GTM"
       ]
+    },
+    {
+      "id": "ENTERPRISE_OPERATIONS",
+      "skill": "leeway-house-enterprise-operations",
+      "path": "skills/houses/enterprise-operations/SKILL.md",
+      "memberScopes": [
+        "skills/operations/**",
+        "skills/leeway-operational-sun/SKILL.md"
+      ],
+      "workflow": "config/enterprise-operations-house-workflow.json",
+      "executionContract": "config/enterprise-operational-state.schema.json",
+      "providers": [
+        "Frappe Framework",
+        "optional ERPNext subject to GPL policy",
+        "LangGraph optional workflow provider",
+        "PocketBase optional lightweight data provider",
+        "PostgreSQL/custom LeeWay data path"
+      ],
+      "verification": [
+        "leeway-operational-sun",
+        "leeway-veritas",
+        "department hard gates"
+      ],
+      "recovery": [
+        "leeway-capability-resilience",
+        "business-process compensation",
+        "data reconciliation",
+        "rollback"
+      ],
+      "crossHouseEdges": [
+        "SOFTWARE_ENGINEERING",
+        "SRE_PLATFORM",
+        "SECURITY_COMPLIANCE",
+        "DATA_AI_RESEARCH",
+        "BUSINESS_FINANCE_GTM",
+        "LEADERSHIP_GOVERNANCE"
+      ]
     }
   ],
   "plannedHouseFamilies": [
@@ -151,5 +188,5 @@
     "OPERATIONS_LOGISTICS",
     "LEADERSHIP_GOVERNANCE"
   ],
-  "evidenceState": "THREE_HOUSES_PROMOTED; REMAINING_HOUSE_FAMILIES_REQUIRE_RECONCILIATION"
+  "evidenceState": "FOUR_HOUSES_PROMOTED; REMAINING_HOUSE_FAMILIES_REQUIRE_RECONCILIATION"
 }
