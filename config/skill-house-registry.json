@@ -215,6 +215,45 @@
         "DATA_AI_RESEARCH",
         "SECURITY_COMPLIANCE"
       ]
+    },
+    {
+      "id": "DIGITAL_CRAFT_SPATIAL_INTERFACE",
+      "skill": "leeway-house-digital-craft-spatial-interface",
+      "path": "skills/houses/digital-craft-spatial-interface/SKILL.md",
+      "memberScopes": [
+        "skills/digital-craft/**",
+        "skills/leeway-digital-craft-sun/SKILL.md"
+      ],
+      "workflow": "config/digital-craft-house-workflow.json",
+      "executionContract": "config/digital-craft-execution-capability-contract.json",
+      "providers": [
+        "native web platform",
+        "React/other UI frameworks",
+        "SwiftUI/Flutter/native runtimes",
+        "WebGPU/WebGL",
+        "browser DevTools",
+        "RUM/telemetry",
+        "design/prototyping tools"
+      ],
+      "verification": [
+        "leeway-digital-craft-sun",
+        "leeway-visual-interaction-regression",
+        "leeway-veritas"
+      ],
+      "recovery": [
+        "leeway-capability-resilience",
+        "progressive enhancement/fallback",
+        "performance degradation profiles",
+        "version rollback"
+      ],
+      "crossHouseEdges": [
+        "SOFTWARE_ENGINEERING",
+        "PRODUCT",
+        "THREE_D_PRODUCTION",
+        "FILM_CINEMATIC_PRODUCTION",
+        "SECURITY_COMPLIANCE",
+        "DATA_AI_RESEARCH"
+      ]
     }
   ],
   "plannedHouseFamilies": [
@@ -228,5 +267,5 @@
     "OPERATIONS_LOGISTICS",
     "LEADERSHIP_GOVERNANCE"
   ],
-  "evidenceState": "SIX_HOUSES_PROMOTED; REMAINING_HOUSE_FAMILIES_REQUIRE_RECONCILIATION"
+  "evidenceState": "SEVEN_HOUSES_PROMOTED; REMAINING_HOUSE_FAMILIES_REQUIRE_RECONCILIATION"
 }
