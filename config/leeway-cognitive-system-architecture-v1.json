@@ -1,0 +1,135 @@
+{
+  "schemaVersion": "1.0.0",
+  "architectureId": "LEEWAY_COGNITIVE_SYSTEM_ARCHITECTURE_V1",
+  "status": "LOCKED_BASELINE",
+  "authority": "Creator/Human Authority > LeeWay Standards > Root of Trust > Canonical Formula > Runtime Fabric > Agent Lee > Harness > Formula > Skills/Tools > Execution > Veritas > Receipt > Learning Ledger",
+  "purpose": "Make LeeWay accumulate governed capability so models are replaceable cognitive engines rather than the sole repository of intelligence.",
+  "laws": [
+    "NEW_CHAT_IS_NEW_WINDOW_NOT_NEW_IDENTITY",
+    "MODEL_OUTPUT_IS_NOT_PROOF",
+    "GENERATED_IS_NOT_EXECUTED",
+    "EXECUTED_IS_NOT_VERIFIED",
+    "AVAILABLE_IS_NOT_AUTHORIZED",
+    "PASS_AND_FAIL_BOTH_TEACH",
+    "SOLVED_PROBLEM_SHOULD_REDUCE_REASONING_NEXT_TIME",
+    "GRADUATE_STABLE_REPEATED_REASONING_INTO_DETERMINISTIC_CAPABILITY",
+    "MODEL_ESCALATION_FOLLOWS_GROUNDING_EXTERNALIZATION_DECOMPOSITION_SPECIALIZATION_PARALLELIZATION_SIMULATION_AND_VERIFICATION",
+    "CANDIDATE_FORMULA_NEVER_SILENTLY_BECOMES_CANONICAL",
+    "PROVIDERS_EXECUTE_CAPABILITY_BUT_DO_NOT_BECOME_LEEWAY_AUTHORITY"
+  ],
+  "spine": [
+    "Creator/Human Authority",
+    "LeeWay Standards",
+    "Root of Trust",
+    "Continuity Authority",
+    "Canonical Formula Authority",
+    "Formula Epistemic Authority",
+    "Formula Factory",
+    "Formula Fabric",
+    "Agent Skills Authority",
+    "Skill Houses",
+    "Context Engineering",
+    "Mechanical Imagination",
+    "Cognitive Load Transfer",
+    "Model Capability Envelope",
+    "Task Graph / Parallel Workers",
+    "Perception Harness",
+    "Tool/Provider Runtime",
+    "Real Execution",
+    "Predict-Observe Delta",
+    "Veritas",
+    "Receipt Authority",
+    "Learning Ledger",
+    "Skill/Formula Capability Graduation"
+  ],
+  "promotedSkillHouses": [
+    "WRITING_PUBLISHING",
+    "THREE_D_PRODUCTION",
+    "FILM_CINEMATIC_PRODUCTION",
+    "ENTERPRISE_OPERATIONS",
+    "EXECUTIVE_GOVERNANCE",
+    "COMMERCE_CUSTODY",
+    "DIGITAL_CRAFT_SPATIAL_INTERFACE",
+    "CYBER_DEFENSE"
+  ],
+  "formulaArchitecture": {
+    "factory": "discover/normalize/classify/test/attack/repair/retest/qualify/propose promotion",
+    "fabric": "control/compute/knowledge/lab/evidence service",
+    "pages": "static discovery/publication only",
+    "offline": "sealed versioned hash-verified Formula bundles",
+    "promotion": "Factory candidate -> qualification -> canonical comparison -> authorization -> Fabric staging -> verification -> promotion"
+  },
+  "modelArchitecture": {
+    "identityLaw": "Agent Lee persists; models are replaceable cognitive engines.",
+    "target": "Expand task classes where a governed small-model system meets the same predefined acceptance criteria as a larger reference model.",
+    "prohibitedClaim": "Do not equate parameter count or claim 1B=100B without experiment evidence.",
+    "overloadPolicy": [
+      "externalize state",
+      "retrieve proven capability",
+      "decompose recursively",
+      "specialize",
+      "parallelize",
+      "simulate",
+      "verify",
+      "then consider model escalation"
+    ]
+  },
+  "learningArchitecture": {
+    "stages": [
+      "L0_MODEL_REASONING",
+      "L1_EVIDENCE",
+      "L2_PROCEDURAL_KNOWLEDGE",
+      "L3_DETERMINISTIC_CAPABILITY",
+      "L4_AUTOMATIC_GOVERNED_ROUTING"
+    ],
+    "cognitiveLoadTransfer": "MODEL_REASONING -> EVIDENCE -> FORMULA_KNOWLEDGE/SKILL -> WORKFLOW -> DETERMINISTIC_TOOL -> RUNTIME_CAPABILITY -> AUTOMATIC_ROUTING"
+  },
+  "executionLoop": [
+    "INVESTIGATE",
+    "DIAGNOSE",
+    "PLAN",
+    "IMPLEMENT",
+    "TEST",
+    "VALIDATE",
+    "REPAIR",
+    "RETEST",
+    "VERIFY",
+    "EVIDENCE"
+  ],
+  "currentCompletionPath": [
+    "PAGES_DEPLOYMENT_VERIFICATION",
+    "CANONICAL_D_FORMULA_REHASH_AND_GOLDEN_VECTORS",
+    "FORMULA_21_FAMILY_REPAIR_RETEST_COMPLETION",
+    "CANDIDATE_TO_CANONICAL_FORMULA_COMPARISON",
+    "FORMULA_FABRIC_LIVE_RUNTIME_PROOF",
+    "SKILL_HOUSE_PROVIDER_EXECUTION_QUALIFICATION",
+    "MECHANICAL_IMAGINATION_AB_PROOF",
+    "MODEL_CAPABILITY_ENVELOPE_AND_COGNITIVE_LOAD_TRANSFER_RUNTIME",
+    "RAW_1B_TO_FULL_LEEWAY_1B_TO_LARGE_REFERENCE_EXPERIMENT",
+    "CAPABILITY_GRADUATION",
+    "WHOLE_SYSTEM_VERITAS_RECEIPT_LEARNING"
+  ],
+  "evidenceBoundary": {
+    "currentRepoCheckpoint": {
+      "blobFiles": 999,
+      "skillArtifacts": 489,
+      "promotedSkillHouses": 8,
+      "formulaPropertyCasesExecuted": 5800,
+      "formulaCandidateDefectsPreserved": 14
+    },
+    "unverified": [
+      "live D canonical Formula rehash",
+      "live Formula Fabric compute runtime",
+      "full House provider execution qualification",
+      "Mechanical Imagination A/B superiority",
+      "small-model amplification factor",
+      "large-model-class outcome equivalence"
+    ],
+    "rule": "Do not promote structural presence or design intent to runtime proof."
+  },
+  "changeControl": {
+    "lockedMeaning": "Architecture baseline; refinement may add evidence/capability but cannot silently weaken authority, evidence boundaries, canonical Formula law, human authority or completion path.",
+    "reopeningRule": "Reopen settled architecture only with new evidence, explicit Creator direction, or verified conflict with higher authority.",
+    "mutationRule": "Change this baseline by explicit versioned commit with rationale and evidence impact."
+  }
+}
