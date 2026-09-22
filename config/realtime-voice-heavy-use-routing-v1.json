@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "1.1.0",
+  "schemaVersion": "1.2.0",
   "policyId": "LEEWAY_REALTIME_VOICE_HEAVY_USE_ROUTING_V1",
   "mandatoryWhenAny": [
     "live voice",
@@ -16,6 +16,7 @@
     "audio latency diagnostics"
   ],
   "composeWith": [
+    "leeway-acoustic-coprocessor-fabric",
     "leeway-frontier-voice-architecture-selector",
     "leeway-human-conversation",
     "leeway-context-engineering",
@@ -25,6 +26,8 @@
     "cyber-defense when network/security relevant",
     "digital-craft when client UI/audio interaction relevant"
   ],
-  "routingLaw": "For matched tasks, first use leeway-frontier-voice-architecture-selector to choose cascaded, verified native speech-to-speech, or CGSS research path; then load leeway-real-time-voice-multimodal-infrastructure as the common full-duplex execution fabric.",
-  "architectureSelector": "leeway-frontier-voice-architecture-selector"
+  "routingLaw": "For matched tasks: Formula/context -> frontier voice architecture selector -> Universal Voice Bus capability negotiation -> Acoustic Coprocessor Fabric -> common real-time voice infrastructure -> provider/platform adapters -> Veritas.",
+  "architectureSelector": "leeway-frontier-voice-architecture-selector",
+  "acousticCoprocessor": "leeway-acoustic-coprocessor-fabric",
+  "universalVoiceBus": "config/universal-voice-bus-v1.json"
 }
