@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "1.0.0",
+  "contractId": "LEEWAY_DIGITAL_PUBLICATION_EXECUTION_CONTRACT",
+  "evidenceState": "REQUIRED_CAPABILITIES_NOT_ASSERTED_LIVE",
+  "capabilities": [
+    "manuscript.read_write_version",
+    "canon.style_sheet.manage",
+    "source.citation.manage",
+    "book.semantic_structure",
+    "cover.illustration.asset_bind",
+    "epub.xhtml_css_generate",
+    "epub.package_nav_generate",
+    "epub.accessibility_metadata",
+    "epub.package_build",
+    "epubcheck.execute_report",
+    "reading_system.smoke_test",
+    "metadata.validate",
+    "identifier.bind_external",
+    "artifact.hash_version",
+    "rights_provenance.bind",
+    "catalog.record.generate",
+    "release.package",
+    "distribution.link_bind"
+  ],
+  "law": "Generated EPUB != validated EPUB; internal provenance != copyright registration; catalog price/store links are edition/distribution metadata and should not be hardcoded into manuscript content."
+}
