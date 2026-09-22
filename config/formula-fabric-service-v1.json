@@ -1,0 +1,65 @@
+{
+  "schemaVersion": "1.0.0",
+  "serviceId": "LEEWAY_FORMULA_FABRIC",
+  "architecture": "CONTROL_COMPUTE_KNOWLEDGE_LAB_EVIDENCE",
+  "authorityChain": [
+    "Creator/Human Authority",
+    "LeeWay Standards",
+    "Root of Trust",
+    "Canonical Formula",
+    "Formula Fabric"
+  ],
+  "planes": {
+    "control": [
+      "authority",
+      "catalog",
+      "versions",
+      "hashes",
+      "policy",
+      "promotion proposals"
+    ],
+    "compute": [
+      "evaluate",
+      "batch evaluate",
+      "compare",
+      "quantify"
+    ],
+    "knowledge": [
+      "self inspect",
+      "domain/unit/assumption lookup",
+      "known failures/counterexamples",
+      "validation evidence"
+    ],
+    "lab": [
+      "candidate register",
+      "qualify",
+      "property tests",
+      "boundary tests",
+      "adversarial tests",
+      "canonical comparison"
+    ],
+    "evidence": [
+      "Veritas state",
+      "receipt reference",
+      "Learning Ledger handoff"
+    ]
+  },
+  "clients": [
+    "Agent Skills",
+    "Mechanical Imagination",
+    "Harness",
+    "Runtime Fabric",
+    "Perception Harness",
+    "Skill Houses",
+    "Device Bridge",
+    "Digital Brain",
+    "model workers",
+    "applications"
+  ],
+  "deployment": {
+    "pages": "STATIC_DISCOVERY_PUBLICATION",
+    "runtime": "AUTHORIZED_EXECUTION_SERVICE",
+    "offline": "SEALED_VERSIONED_BUNDLE"
+  },
+  "canonicalMutation": "SEPARATE_AUTHORIZED_PROMOTION_PATH_ONLY"
+}
