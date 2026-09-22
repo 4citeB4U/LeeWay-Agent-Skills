@@ -272,3 +272,10 @@ Formula consumers should request governed Formula capability through `leeway-for
 Route: consumer → Formula Fabric discovery → authority/self-inspection → compute/lab operation → authority/evidence envelope → Veritas/receipt when consequential.
 
 GitHub Pages/static publication is discovery only and cannot prove or execute Formula runtime. Live authoritative computation requires a verified Formula Fabric runtime bound to canonical Formula implementation evidence. Verified sealed offline bundles are allowed by manifest/version/hash; unverified copied Formula fallback is prohibited.
+
+
+## Real-Time Voice & Multimodal Infrastructure routing
+
+For live voice, streaming STT/TTS, barge-in, phone/receptionist/avatar voice, read-aloud, WebRTC media, live screen/camera multimodal, or audio-latency work, route through `leeway-real-time-voice-multimodal-infrastructure` as a focal execution skill and apply `config/realtime-voice-heavy-use-routing-v1.json`.
+
+Do not substitute the generic multimodal skill for production real-time media engineering. Use the real-time execution contract, playout ledger, interrupt bus, telemetry and LFEA-qualified profiles. Thresholds are tunable evidence-bound profiles; transport/provider choices remain task-dependent and subordinate to LeeWay authority.
