@@ -1,0 +1,146 @@
+{
+  "schemaVersion": "1.0.0",
+  "house": "FILM_CINEMATIC_PRODUCTION",
+  "controlSkill": "leeway-house-film-cinematic-production",
+  "formulaQuestions": [
+    "What are we not discovering?",
+    "What needs enhancement?",
+    "What skill is missing?",
+    "What tool is missing?",
+    "What orchestration level is missing?",
+    "What execution level is missing?",
+    "What other skills/Houses compose here?",
+    "How does this connect upstream/downstream?",
+    "Which tools/providers execute each operation?",
+    "Which verifier/recovery closes the loop?",
+    "What would a world-class film department know that is not encoded?",
+    "What capability are we postponing because an external provider supplies it?",
+    "Can this shot cut coherently with the shots around it?",
+    "What does the audience need to perceive/feel/know at this exact moment?",
+    "Which parameter is physical/measured versus merely a generator semantic?",
+    "What continuity dimension may be intentionally broken, and why?",
+    "What coverage/edit option is missing if this shot fails?",
+    "What delivery/accessibility/color/sound requirement can invalidate an otherwise beautiful image?"
+  ],
+  "phases": [
+    {
+      "id": "STORY_INTENT",
+      "parallel": true,
+      "skills": [
+        "leeway-house-writing-publishing",
+        "leeway-film-visual-reference-research",
+        "leeway-film-production-management"
+      ]
+    },
+    {
+      "id": "DIRECTOR_PREVIS",
+      "parallel": true,
+      "skills": [
+        "leeway-film-directing-performance",
+        "leeway-film-production-design",
+        "leeway-film-storyboard-previs-animatic",
+        "leeway-film-shot-design-coverage",
+        "leeway-film-continuity-graph"
+      ]
+    },
+    {
+      "id": "TECH_SCOUT_TEST",
+      "parallel": true,
+      "skills": [
+        "leeway-film-location-tech-scout",
+        "leeway-film-lens-camera-testing",
+        "leeway-film-aspect-framing-language",
+        "leeway-film-color-management-grading"
+      ]
+    },
+    {
+      "id": "SHOT_EXECUTION",
+      "parallel": true,
+      "lanes": [
+        {
+          "id": "performance-blocking",
+          "skills": [
+            "leeway-film-directing-performance",
+            "leeway-film-spatial-blocking-continuity"
+          ]
+        },
+        {
+          "id": "camera",
+          "skills": [
+            "leeway-film-camera-optics-exposure",
+            "leeway-film-camera-movement-support"
+          ]
+        },
+        {
+          "id": "lighting",
+          "skills": [
+            "leeway-film-lighting-electrical-grip"
+          ]
+        },
+        {
+          "id": "art",
+          "skills": [
+            "leeway-film-production-design",
+            "leeway-film-costume-hair-makeup-continuity"
+          ]
+        },
+        {
+          "id": "sound",
+          "skills": [
+            "leeway-film-sound-production-post"
+          ]
+        },
+        {
+          "id": "supervision",
+          "skills": [
+            "leeway-film-script-supervision-continuity"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "GENERATIVE_VIRTUAL",
+      "parallel": true,
+      "conditional": true,
+      "skills": [
+        "leeway-film-generative-video-direction",
+        "leeway-film-virtual-production",
+        "leeway-house-3d-production"
+      ]
+    },
+    {
+      "id": "POST",
+      "parallel": true,
+      "skills": [
+        "leeway-film-editorial-montage",
+        "leeway-film-vfx-compositing-motion",
+        "leeway-film-color-management-grading",
+        "leeway-film-sound-production-post",
+        "leeway-film-music-supervision-score",
+        "leeway-film-titles-graphics"
+      ]
+    },
+    {
+      "id": "ACCESS_DELIVERY",
+      "parallel": true,
+      "skills": [
+        "leeway-film-accessibility-localization",
+        "leeway-film-delivery-mastering-qc"
+      ]
+    },
+    {
+      "id": "VERIFY",
+      "skills": [
+        "leeway-veritas"
+      ]
+    },
+    {
+      "id": "EVIDENCE",
+      "skills": [
+        "leeway-film-media-provenance-versioning",
+        "leeway-receipt-authority",
+        "leeway-learning-ledger"
+      ]
+    }
+  ]
+}
