@@ -1,0 +1,143 @@
+{
+  "schemaVersion": "1.0.0",
+  "tunnelId": "LEEWAY_ASC_FORMULA_FUNNEL_V1",
+  "verdict": "ADAPT_REQUIRED_MAJOR",
+  "mandatoryQuestions": [
+    "What are we not discovering?",
+    "What needs enhancement?",
+    "What can become deterministic?",
+    "What requires physical measurement?",
+    "What assumptions are being presented as laws without proof?",
+    "What abstraction breaks when model/device/OS/transport/language/provider changes?",
+    "What information is lost at each representation boundary, and can it be reconstructed?",
+    "What must remain outside the coprocessor because it belongs to higher authority/security/privacy/tools/conversation state?",
+    "What failure modes appear only under concurrency/interruption/loss/echo/reconnect/thermal pressure/long sessions?",
+    "What capability should be learned/reused next time?",
+    "What simpler architecture can meet the same acceptance criteria?",
+    "What experiment would falsify the proposed advantage?"
+  ],
+  "coreFinding": "Agnosticism requires capability negotiation and stable external contracts, not forced reduction of every backend to text nor assumed cross-model latent invariance.",
+  "repairedArchitecture": {
+    "modelAdapterPlane": [
+      "text_delta REQUIRED minimum",
+      "semantic/tool events OPTIONAL",
+      "token probabilities/logprobs OPTIONAL",
+      "native audio/codec tokens OPTIONAL",
+      "audio embeddings OPTIONAL",
+      "timing/confidence/cancel OPTIONAL"
+    ],
+    "universalVoiceBus": "typed capability-negotiated event protocol with timestamps, epochs, provenance and authority metadata",
+    "acousticCoprocessor": [
+      "speech normalization/planning",
+      "portable TTS engine interface",
+      "optional continuous/flow engine",
+      "AEC/double-talk",
+      "bounded ring buffers",
+      "device sink adapters",
+      "playout ledger"
+    ],
+    "controlEvidence": [
+      "interrupt epochs",
+      "provider cancellation",
+      "session recovery",
+      "privacy/consent",
+      "telemetry",
+      "Veritas"
+    ]
+  },
+  "claimVerdicts": [
+    {
+      "claim": "unit hypersphere normalization preserves semantics across arbitrary models",
+      "verdict": "FALSE_GENERALIZATION",
+      "repair": "Use a shared semantic encoder or calibrated cross-model alignment/anchors; unit norm only normalizes magnitude."
+    },
+    {
+      "claim": "all modern LLMs expose categorical probability vectors",
+      "verdict": "FALSE_GENERALIZATION",
+      "repair": "Treat logprobs/probabilities as optional capability; text/event deltas are minimum portable surface."
+    },
+    {
+      "claim": "token Hermite spline creates universal semantic trajectory sufficient for speech",
+      "verdict": "INSUFFICIENT_MODEL",
+      "repair": "Spline can smooth timing/conditioning but does not recover lost acoustic/prosodic information."
+    },
+    {
+      "claim": "OT straight path guarantees one tensor contraction / 12-18ms universal synthesis",
+      "verdict": "EMPIRICALLY_UNVERIFIED_FALSE_IMPLICATION",
+      "repair": "Benchmark quality vs NFE and hardware; learned field and decoder determine actual cost/accuracy."
+    },
+    {
+      "claim": "1-cos^2 mic/speaker spectrum robustly separates echo vs human",
+      "verdict": "INSUFFICIENT_DETECTOR",
+      "repair": "Use AEC residual plus delay-aware coherence/cross-correlation/neural near-end evidence and calibrated double-talk detector."
+    },
+    {
+      "claim": "bytearray.clear is O(1) hardware-level flush",
+      "verdict": "IMPLEMENTATION_FALSE_EQUIVALENCE",
+      "repair": "Application queue clear is not device/WebRTC/ALSA/CoreAudio buffer flush and complexity/latency is implementation-dependent."
+    },
+    {
+      "claim": "abort upstream LLM socket is universal",
+      "verdict": "PORTABILITY_FAILURE",
+      "repair": "Use provider adapter cancellation contract plus epoch invalidation; some APIs cannot instantly stop already-emitted work."
+    },
+    {
+      "claim": "Python runtime implies device agnosticism",
+      "verdict": "FALSE_GENERALIZATION",
+      "repair": "Define portable core contracts plus platform adapters; iOS, Android, browser, native desktop and server have different audio/runtime/permission constraints."
+    },
+    {
+      "claim": "ASC should always receive only text tokens",
+      "verdict": "LOSSY_ABSTRACTION",
+      "repair": "Minimum text path plus optional richer native media/semantic representations negotiated by capability."
+    }
+  ],
+  "formulaQuestionsResult": {
+    "notDiscovered": [
+      "cross-model semantic alignment",
+      "phoneme/G2P and multilingual normalization",
+      "prosody source when upstream is text-only",
+      "AEC echo-path delay/reverb",
+      "sample-clock/device latency",
+      "platform audio APIs and permissions",
+      "native omni bypass path",
+      "tool/audit transcript side channel",
+      "voice identity/consent",
+      "offline model packaging",
+      "CPU/NPU/GPU fallback",
+      "quality degradation policy"
+    ],
+    "enhance": [
+      "Universal Voice Bus",
+      "capability descriptor",
+      "shared semantic encoder option",
+      "phoneme/prosody planner",
+      "AEC/DTD subsystem",
+      "platform sink/source adapters",
+      "portable cancellation/epoch contract",
+      "benchmark harness"
+    ],
+    "deterministic": [
+      "event schema",
+      "epoch logic",
+      "ring-buffer bounds",
+      "frame conversion",
+      "G2P normalization rules where deterministic",
+      "capability negotiation",
+      "latency spans",
+      "device adapter conformance tests"
+    ],
+    "measurement": [
+      "AEC/DTD ROC",
+      "barge-in spill",
+      "TTFA",
+      "TTS RTF/NFE",
+      "speaker/prosody fidelity",
+      "device buffer latency",
+      "power/thermal",
+      "network jitter",
+      "cross-model semantic alignment error"
+    ]
+  },
+  "promotion": "Create ASC as interface/skill architecture; keep hypersphere/OT-CFM/spectral-curvature kernels in Formula Factory until qualified."
+}
