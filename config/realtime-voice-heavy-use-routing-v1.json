@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "1.0.0",
+  "schemaVersion": "1.1.0",
   "policyId": "LEEWAY_REALTIME_VOICE_HEAVY_USE_ROUTING_V1",
   "mandatoryWhenAny": [
     "live voice",
@@ -16,6 +16,7 @@
     "audio latency diagnostics"
   ],
   "composeWith": [
+    "leeway-frontier-voice-architecture-selector",
     "leeway-human-conversation",
     "leeway-context-engineering",
     "leeway-imagination-simulation-kernel",
@@ -24,5 +25,6 @@
     "cyber-defense when network/security relevant",
     "digital-craft when client UI/audio interaction relevant"
   ],
-  "routingLaw": "For matched tasks, load this infrastructure skill as a focal execution skill; do not rely only on generic multimodal-systems."
+  "routingLaw": "For matched tasks, first use leeway-frontier-voice-architecture-selector to choose cascaded, verified native speech-to-speech, or CGSS research path; then load leeway-real-time-voice-multimodal-infrastructure as the common full-duplex execution fabric.",
+  "architectureSelector": "leeway-frontier-voice-architecture-selector"
 }
