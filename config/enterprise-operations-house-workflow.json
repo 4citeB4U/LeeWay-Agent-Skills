@@ -1,0 +1,137 @@
+{
+  "schemaVersion": "1.0.0",
+  "house": "ENTERPRISE_OPERATIONS",
+  "controlSkill": "leeway-house-enterprise-operations",
+  "formulaQuestions": [
+    "What are we not discovering?",
+    "What needs enhancement?",
+    "What skill/tool/orchestration/execution level is missing?",
+    "What other skills/Houses compose here?",
+    "What would a world-class operations department know that is not encoded?",
+    "What capability are we postponing because a provider supplies it?",
+    "Is the metric definition/source/freshness trustworthy?",
+    "Is the target a universal law or business profile?",
+    "Does a breach authorize diagnosis only or an action?",
+    "What human/legal/financial approval is required?",
+    "What rollback/compensation exists?",
+    "What hard gate can block despite aggregate green?",
+    "What event/state race or duplicate could cause a false action?",
+    "What does success look like after remediation and how is it remeasured?"
+  ],
+  "phases": [
+    {
+      "id": "INGEST",
+      "skills": [
+        "leeway-enterprise-event-normalization",
+        "leeway-enterprise-data-semantics"
+      ]
+    },
+    {
+      "id": "EVIDENCE_QUALITY",
+      "skills": [
+        "leeway-operational-metric-provenance-quality"
+      ]
+    },
+    {
+      "id": "EVALUATE",
+      "skills": [
+        "leeway-operational-sun"
+      ]
+    },
+    {
+      "id": "ROUTE",
+      "skills": [
+        "leeway-skill-orchestrator",
+        "leeway-parallel-workplane",
+        "leeway-business-process-orchestration"
+      ]
+    },
+    {
+      "id": "DIAGNOSE",
+      "parallel": true,
+      "lanes": [
+        {
+          "id": "admin",
+          "skills": [
+            "leeway-admin-front-office"
+          ]
+        },
+        {
+          "id": "logistics",
+          "skills": [
+            "leeway-logistics-warehouse-freight"
+          ]
+        },
+        {
+          "id": "sales",
+          "skills": [
+            "leeway-sales-crm"
+          ]
+        },
+        {
+          "id": "marketing",
+          "skills": [
+            "leeway-marketing-growth-operations"
+          ]
+        },
+        {
+          "id": "people",
+          "skills": [
+            "leeway-people-hr-operations"
+          ]
+        },
+        {
+          "id": "finance",
+          "skills": [
+            "leeway-finance-accounting-operations"
+          ]
+        },
+        {
+          "id": "procurement",
+          "skills": [
+            "leeway-procurement-vendor-operations"
+          ]
+        },
+        {
+          "id": "support",
+          "skills": [
+            "leeway-customer-support-service-operations"
+          ]
+        },
+        {
+          "id": "compliance",
+          "skills": [
+            "leeway-enterprise-compliance-risk"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ACTION_GATE",
+      "skills": [
+        "leeway-enterprise-action-governance"
+      ]
+    },
+    {
+      "id": "REMEDIATE",
+      "skills": [
+        "leeway-enterprise-incident-remediation"
+      ],
+      "conditional": "authorized action exists"
+    },
+    {
+      "id": "REMEASURE_VERIFY",
+      "skills": [
+        "leeway-operational-sun",
+        "leeway-veritas"
+      ]
+    },
+    {
+      "id": "EVIDENCE",
+      "skills": [
+        "leeway-receipt-authority",
+        "leeway-learning-ledger"
+      ]
+    }
+  ]
+}
