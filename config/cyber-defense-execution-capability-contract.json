@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "1.0.0",
+  "contractId": "LEEWAY_CYBER_DEFENSE_EXECUTION_CAPABILITY_CONTRACT",
+  "evidenceState": "REQUIRED_CAPABILITIES_NOT_ASSERTED_LIVE",
+  "capabilities": [
+    "asset.inventory.reconcile",
+    "identity.inventory.reconcile",
+    "crypto.algorithm_key_cert.inventory",
+    "pqc.migration.plan_test",
+    "key_secret.rotate_revoke_test",
+    "network.flow_telemetry.inspect",
+    "edge.waf_rate_policy.inspect_test",
+    "ddos.mitigation.authorized_test",
+    "endpoint_identity_cloud.telemetry.ingest",
+    "detection.rule.test",
+    "attack_mapping.annotate",
+    "incident.case_evidence.preserve",
+    "containment.endpoint_isolate.authorized",
+    "containment.token_revoke.authorized",
+    "containment.network_policy.authorized",
+    "zero_trust.policy_evaluate",
+    "iam.least_privilege_review",
+    "appsec.sast_dast_fuzz_authorized",
+    "vulnerability.reachability_exposure.assess",
+    "sbom.generate_reconcile",
+    "provenance.signature.verify",
+    "container_cloud.posture.inspect",
+    "data_access_encryption_retention.inspect",
+    "backup.restore_test",
+    "security.validation.scoped_execute",
+    "artifact.hash_receipt"
+  ],
+  "qualificationStates": [
+    "UNMAPPED",
+    "MAPPED",
+    "PROTOCOL_VERIFIED",
+    "EXECUTION_VERIFIED",
+    "FAILED",
+    "BLOCKED"
+  ],
+  "law": "Vendor/API connection is not Cyber House qualification. Active tests require authorization/scope. Consequential containment requires pre-authorized action class, blast-radius control and rollback/recovery."
+}
