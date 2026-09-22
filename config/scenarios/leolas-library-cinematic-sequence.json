@@ -1,0 +1,38 @@
+{
+  "schemaVersion": "1.0.0",
+  "scenarioId": "leolas-library-cinematic-sequence",
+  "intent": "Take an approved Leola's Library story scene and produce a coherent cinematic sequence using the existing 3D library/environment while preserving canon, character/environment identity, spatial continuity, cinematic intent and delivery requirements.",
+  "houses": [
+    "WRITING_PUBLISHING",
+    "THREE_D_PRODUCTION",
+    "FILM_CINEMATIC_PRODUCTION"
+  ],
+  "requiredSkills": [
+    "leeway-house-film-cinematic-production",
+    "leeway-house-writing-publishing",
+    "leeway-house-3d-production",
+    "leeway-film-directing-performance",
+    "leeway-film-shot-design-coverage",
+    "leeway-film-spatial-blocking-continuity",
+    "leeway-film-camera-optics-exposure",
+    "leeway-film-lighting-electrical-grip",
+    "leeway-film-storyboard-previs-animatic",
+    "leeway-film-editorial-montage",
+    "leeway-film-color-management-grading",
+    "leeway-film-sound-production-post",
+    "leeway-film-generative-video-direction",
+    "leeway-cinematic-sun",
+    "leeway-veritas"
+  ],
+  "parallelLanes": [
+    "script-canon-performance",
+    "previs-blocking-camera",
+    "3d-environment-assets",
+    "lighting-look-color",
+    "sound-music",
+    "editorial-continuity",
+    "delivery-accessibility"
+  ],
+  "convergence": "Film House owns cinematic sequence intent; Writing House owns story/canon; 3D House owns spatial assets/environment. Veritas checks cross-House acceptance.",
+  "rule": "No provider may silently change canon, character/environment identity, shot continuity or delivery state."
+}
