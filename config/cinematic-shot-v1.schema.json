@@ -1,0 +1,274 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://leeway.local/schemas/cinematic-shot-v1.schema.json",
+  "title": "LeeWay Cinematic Shot v1",
+  "type": "object",
+  "required": [
+    "shotId",
+    "sceneId",
+    "intent",
+    "frame",
+    "camera",
+    "blocking",
+    "lighting",
+    "continuity",
+    "color",
+    "editorial",
+    "evidenceState"
+  ],
+  "properties": {
+    "shotId": {
+      "type": "string"
+    },
+    "sceneId": {
+      "type": "string"
+    },
+    "intent": {
+      "type": "string"
+    },
+    "frame": {
+      "type": "object",
+      "required": [
+        "aspectRatio",
+        "resolution",
+        "frameRate"
+      ],
+      "properties": {
+        "aspectRatio": {
+          "type": "string"
+        },
+        "resolution": {
+          "type": "array",
+          "items": {
+            "type": "integer"
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "frameRate": {
+          "type": "number"
+        },
+        "durationSeconds": {
+          "type": [
+            "number",
+            "null"
+          ]
+        }
+      }
+    },
+    "camera": {
+      "type": "object",
+      "properties": {
+        "worldTransform": {
+          "type": "object"
+        },
+        "sensor": {
+          "type": "object"
+        },
+        "focalLengthMm": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "apertureFNumber": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "focusDistanceM": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "shutterAngleDeg": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "isoEi": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "rollDeg": {
+          "type": "number"
+        },
+        "movement": {
+          "type": "object"
+        },
+        "lensIntent": {
+          "type": "string"
+        },
+        "providerCalibrationState": {
+          "enum": [
+            "PHYSICAL",
+            "CALIBRATED_APPROXIMATION",
+            "PROMPT_SEMANTIC_ONLY",
+            "UNKNOWN"
+          ]
+        }
+      }
+    },
+    "blocking": {
+      "type": "object",
+      "properties": {
+        "subjects": {
+          "type": "array"
+        },
+        "foreground": {
+          "type": "array"
+        },
+        "midground": {
+          "type": "array"
+        },
+        "background": {
+          "type": "array"
+        },
+        "actionAxis": {
+          "type": [
+            "object",
+            "null"
+          ]
+        },
+        "screenDirection": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "compositionIntent": {
+          "type": "string"
+        }
+      }
+    },
+    "lighting": {
+      "type": "object",
+      "properties": {
+        "sources": {
+          "type": "array"
+        },
+        "targetContrastStops": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "exposureIntent": {
+          "type": "string"
+        },
+        "clipPolicy": {
+          "type": "string"
+        }
+      }
+    },
+    "continuity": {
+      "type": "object",
+      "properties": {
+        "previousShotIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "nextShotIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "axisState": {
+          "type": "string"
+        },
+        "eyelineState": {
+          "type": "string"
+        },
+        "characterStateRefs": {
+          "type": "array"
+        },
+        "propStateRefs": {
+          "type": "array"
+        },
+        "intentionalDiscontinuities": {
+          "type": "array"
+        }
+      }
+    },
+    "color": {
+      "type": "object",
+      "properties": {
+        "inputColorSpace": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "workingSpace": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "displayOutput": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "lookIntent": {
+          "type": "string"
+        },
+        "ocioConfigRef": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "acesState": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "sound": {
+      "type": "object"
+    },
+    "editorial": {
+      "type": "object"
+    },
+    "productionDesign": {
+      "type": "object"
+    },
+    "performance": {
+      "type": "object"
+    },
+    "vfx": {
+      "type": "object"
+    },
+    "accessibility": {
+      "type": "object"
+    },
+    "providerControls": {
+      "type": "object",
+      "description": "Provider-specific controls are subordinate translations of canonical intent."
+    },
+    "evidenceState": {
+      "enum": [
+        "PROPOSED",
+        "PREVIS",
+        "GENERATED",
+        "CAPTURED",
+        "REVIEWED",
+        "APPROVED",
+        "FAILED",
+        "BLOCKED"
+      ]
+    }
+  }
+}
