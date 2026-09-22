@@ -133,3 +133,14 @@ For substantial domain work, consult `config/skill-house-registry.json` before s
 House activation does not load every member skill at full depth. It guarantees contextual eligibility and exposes department workflow, providers, gates, verification, recovery and cross-House dependencies.
 
 Current promoted Houses: WRITING_PUBLISHING and THREE_D_PRODUCTION. Multiple Houses may compose in one program.
+
+
+## LeeWay Imagination & Simulation Kernel
+
+For substantive work where pre-execution simulation can materially reduce error, cost or risk, route through `leeway-imagination-simulation-kernel` and `config/imagination-simulation-execution-contract.json` before real mutation.
+
+Required behavior: INTENT → GROUND → REPRESENT → GENERATE → SIMULATE → EVALUATE → REPAIR → SELECT → AUTHORIZE → EXECUTE → OBSERVE → COMPARE → VERIFY → EVIDENCE.
+
+The workspace must keep OBSERVED, CANDIDATE/PREDICTED, EXECUTED and VERIFIED states distinct. A modeled PASS is never execution proof. Failed candidates trigger repair/alternative search until acceptance or a verified blocker. Select task-appropriate models; do not force every problem into geometry. Formula authority may be claimed only after canonical Formula artifact/version/hash/implementation is verified as required by LeeWay standards.
+
+This kernel is disciplined counterfactual planning/execution behavior, not a claim that Agent Lee is conscious, self-aware, subjectively imagines, or literally reproduces human neural mechanisms.
