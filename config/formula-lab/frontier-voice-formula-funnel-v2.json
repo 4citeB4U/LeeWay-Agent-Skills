@@ -1,0 +1,111 @@
+{
+  "schemaVersion": "1.0.0",
+  "tunnelId": "LEEWAY_FORMULA_FUNNEL_FRONTIER_VOICE_V2",
+  "inputClass": "FRONTIER_VOICE_DUAL_STACK_PLUS_CGSS_PROPOSAL",
+  "verdict": "ADAPT_AND_SPLIT",
+  "questions": {
+    "whatAreWeNotDiscovering": [
+      "task-dependent value of explicit transcripts for tools/audit/accessibility",
+      "native model capability differences: duplex, tool use, speech preservation, interruption semantics",
+      "actual codec algorithmic delay by codec/configuration",
+      "architecture-specific cache geometry rather than generic MLA assumptions",
+      "flow-matching solver error versus number of function evaluations",
+      "continuous-state memory growth and retention quality",
+      "causal streaming constraints in flow/diffusion acoustic generation",
+      "how continuous latent speech is inspected/audited/redacted",
+      "speaker/prosody preservation versus privacy/consent",
+      "cross-modal clock synchronization and alignment",
+      "fallback path when native speech model/tool path fails"
+    ],
+    "whatNeedsEnhancement": [
+      "architecture selector: cascaded vs native speech-to-speech vs experimental CGSS",
+      "representation contract: text, continuous embeddings, discrete codec units, continuous acoustic latents",
+      "native duplex capability contract",
+      "tool/audit side-channel for native speech systems",
+      "architecture-specific memory estimator",
+      "speculative/MTP capability detection instead of assumption",
+      "flow-matching research qualification harness",
+      "correct differential-geometry definitions before using Lie brackets",
+      "quality/latency/control/privacy Pareto evaluator"
+    ],
+    "whatCanBecomeDeterministic": [
+      "architecture capability discovery",
+      "memory byte accounting from declared tensor shapes/dtypes",
+      "codec/frame delay accounting",
+      "solver-NFE benchmarking",
+      "representation conversion contracts",
+      "fallback routing",
+      "transcript side-channel policy",
+      "generation epoch cancellation"
+    ],
+    "whatRequiresMeasurement": [
+      "TTFT/TTFA",
+      "VRAM/session",
+      "MTP/speculative acceptance rate",
+      "codec delay",
+      "native speech semantic/prosody quality",
+      "tool-call reliability",
+      "barge-in spill",
+      "flow solver quality versus NFE",
+      "continuous latent memory scaling",
+      "concurrency"
+    ]
+  },
+  "tiers": {
+    "production_cascaded": {
+      "state": "ADMITTED",
+      "use": "deterministic tools, auditability, modular provider control, broad compatibility"
+    },
+    "production_native_s2s": {
+      "state": "ADMITTED_WHEN_PROVIDER_CAPABILITY_VERIFIED",
+      "use": "prosody-rich low-latency speech/multimodal interaction"
+    },
+    "experimental_cgss": {
+      "state": "FORMULA_FACTORY_RESEARCH_CANDIDATE",
+      "use": "continuous latent/state-space/flow-matching research; no production authority until empirical qualification"
+    }
+  },
+  "claimCorrections": [
+    {
+      "claim": "Native speech must eliminate STT",
+      "class": "FALSE_GENERALIZATION",
+      "repair": "Native systems may avoid STT on the primary acoustic path while retaining transcript/semantic side channels for tools, audit, accessibility and recovery."
+    },
+    {
+      "claim": "MLA should be specified for all voice inference",
+      "class": "ARCHITECTURE_SPECIFIC",
+      "repair": "Use MLA only when the selected model implements compatible MLA; otherwise estimate its actual attention/cache architecture."
+    },
+    {
+      "claim": "MTP guarantees sub-100ms TTFT or 2.5x clause speed",
+      "class": "EMPIRICAL_HYPOTHESIS",
+      "repair": "Benchmark model/server/hardware; MTP/speculation affects decoding throughput/latency according to implementation and acceptance."
+    },
+    {
+      "claim": "RVQ necessarily adds 100-200ms",
+      "class": "EMPIRICAL_HYPOTHESIS",
+      "repair": "Measure codec/model algorithmic delay; discrete codecs are not categorically disqualified."
+    },
+    {
+      "claim": "Straight OT path implies accurate one-step Euler synthesis",
+      "class": "FALSE_GENERALIZATION",
+      "repair": "Benchmark quality/error versus NFE; training path geometry does not guarantee learned field integration accuracy at NFE=1."
+    },
+    {
+      "claim": "Provided barge-in function computes Lie bracket",
+      "class": "MATHEMATICALLY_INCORRECT_LABEL",
+      "repair": "It computes an orthogonal residual, not [U,V]=DV·U-DU·V; projection must use the correct vector in numerator/denominator."
+    },
+    {
+      "claim": "Hyperbolic 10Hz cognition / 100Hz acoustics are laws",
+      "class": "PROJECT_PROFILE_OR_RESEARCH_HYPOTHESIS",
+      "repair": "Treat clocks/manifold geometry as experimentally selected model profiles."
+    },
+    {
+      "claim": "LRPA guarantees linear indefinite sessions",
+      "class": "UNVERIFIED_RESEARCH_CLAIM",
+      "repair": "Require explicit algorithm, approximation error, retention policy and measured complexity."
+    }
+  ],
+  "decision": "Create a Frontier Voice Architecture Selector skill and a separate CGSS Formula Lab candidate; do not overwrite the already-qualified cascaded skill."
+}
