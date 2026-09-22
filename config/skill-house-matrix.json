@@ -28,6 +28,14 @@
     {
       "trigger": "office/admin/logistics/warehouse/freight/sales/CRM/marketing/HR/payroll/finance/procurement/support/enterprise operations",
       "house": "ENTERPRISE_OPERATIONS"
+    },
+    {
+      "trigger": "executive decision/secretariat/cabinet/continuity/strategic communications/senior personnel/high-stakes negotiation",
+      "house": "EXECUTIVE_GOVERNANCE"
+    },
+    {
+      "trigger": "billing/invoice/accounts receivable/cash application/BOM/BOL/freight custody/three-way match/lot serial/reconciliation",
+      "house": "COMMERCE_CUSTODY"
     }
   ],
   "compositionLaw": "One task may activate multiple Houses. Houses form a company-level weave; no House becomes a silo or supersedes Creator/Human Authority."
