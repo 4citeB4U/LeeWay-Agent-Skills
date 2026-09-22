@@ -1,0 +1,32 @@
+{
+  "schemaVersion": "1.0.0",
+  "receiptId": "LEEWAY-REALTIME-VOICE-FORMULA-TUNNEL-V1-2026-09-22",
+  "status": "PASS_FORMULA_TUNNEL_STRUCTURAL_ADAPTATION",
+  "inputState": "Previously admitted voice skill had LFEA hardening but had not undergone full Formula Tunnel.",
+  "tunnelVerdict": "ADAPT_REQUIRED",
+  "repairs": [
+    "four-plane Media/Control/Cognitive/Evidence architecture",
+    "generation/interrupt epochs and stale-event rejection",
+    "bounded queues/backpressure",
+    "AEC/echo state",
+    "clock/device/network state",
+    "session recovery",
+    "privacy/consent/authority hard gates",
+    "rendered-vs-heard truth boundary",
+    "adaptive Formula policy",
+    "capability graduation"
+  ],
+  "qualification": {
+    "executedCases": 26,
+    "status": "PARTIAL_EXECUTED",
+    "runtimeProduction": "NOT_VERIFIED"
+  },
+  "artifacts": [
+    "config/formula-lab/realtime-voice-formula-tunnel-v1.json",
+    "skills/leeway-real-time-voice-multimodal-infrastructure/SKILL.md",
+    "config/realtime-voice-execution-contract-v1.json",
+    "config/formula-lab/realtime-voice-formula-tunnel-qualification-v1.json"
+  ],
+  "nextGate": "LIVE_PROVIDER_FULL_DUPLEX_QUALIFICATION",
+  "learningLedger": "NOT_UPDATED"
+}
