@@ -20,6 +20,10 @@
     {
       "trigger": "3D/model/mesh/Blender/TripoSR/scene/game asset/CAD/animation/render",
       "house": "THREE_D_PRODUCTION"
+    },
+    {
+      "trigger": "film/movie/video/cinematic/direct/shot/camera/lens/lighting/edit/color grade/storyboard/previs",
+      "house": "FILM_CINEMATIC_PRODUCTION"
     }
   ],
   "compositionLaw": "One task may activate multiple Houses. Houses form a company-level weave; no House becomes a silo or supersedes Creator/Human Authority."
