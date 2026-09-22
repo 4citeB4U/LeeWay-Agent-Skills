@@ -64,3 +64,12 @@ Before using a Formula/equation as governing evidence, consult `leeway-formula-e
 Required distinction: mathematical validity, dimensional validity, domain validity, numerical stability, empirical validity, standards conformance, runtime validation and canonical authority are independent dimensions. Never collapse them into one PASS.
 
 Classify the expression/model before use. A heuristic/project target/standard-bound rule/empirical hypothesis cannot be promoted to universal mathematical law. Candidate equations remain subordinate to verified canonical LeeWay Formula authority. PASS and FAIL evidence are both retained. If canonical Formula authority is claimed, reverify the canonical artifact/version/hash/implementation as required before comparison/promotion.
+
+
+## Formula Fabric routing
+
+Formula consumers should request governed Formula capability through `leeway-formula-fabric` and `config/formula-fabric-client-contract-v1.json` rather than creating or carrying independent canonical Formula copies.
+
+Route: consumer → Formula Fabric discovery → authority/self-inspection → compute/lab operation → authority/evidence envelope → Veritas/receipt when consequential.
+
+GitHub Pages/static publication is discovery only and cannot prove or execute Formula runtime. Live authoritative computation requires a verified Formula Fabric runtime bound to canonical Formula implementation evidence. Verified sealed offline bundles are allowed by manifest/version/hash; unverified copied Formula fallback is prohibited.
