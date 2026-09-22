@@ -1,0 +1,61 @@
+{
+  "schemaVersion": "1.0.0",
+  "house": "COMMERCE_CUSTODY",
+  "controlSkill": "leeway-house-commerce-custody",
+  "phases": [
+    {
+      "id": "MASTER_CONTRACT",
+      "parallel": true,
+      "skills": [
+        "leeway-billing-rating-invoicing",
+        "leeway-product-master-bom"
+      ]
+    },
+    {
+      "id": "TRANSACT",
+      "parallel": true,
+      "skills": [
+        "leeway-ar-cash-application",
+        "leeway-lot-serial-genealogy",
+        "leeway-bol-freight-custody",
+        "leeway-receiving-inspection"
+      ]
+    },
+    {
+      "id": "RECONCILE",
+      "parallel": true,
+      "skills": [
+        "leeway-three-way-match",
+        "leeway-inventory-custody-reconciliation",
+        "leeway-ar-cash-application"
+      ]
+    },
+    {
+      "id": "EXCEPTIONS",
+      "skills": [
+        "leeway-commerce-exception-control",
+        "leeway-collections-dunning-disputes"
+      ]
+    },
+    {
+      "id": "ACTION_GATE",
+      "skills": [
+        "leeway-enterprise-action-governance"
+      ]
+    },
+    {
+      "id": "VERIFY",
+      "skills": [
+        "leeway-commerce-custody-sun",
+        "leeway-veritas"
+      ]
+    },
+    {
+      "id": "EVIDENCE",
+      "skills": [
+        "leeway-receipt-authority",
+        "leeway-learning-ledger"
+      ]
+    }
+  ]
+}
