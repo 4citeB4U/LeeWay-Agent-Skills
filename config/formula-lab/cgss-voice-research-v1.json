@@ -1,0 +1,81 @@
+{
+  "schemaVersion": "1.0.0",
+  "candidateFamilyId": "LEEWAY_CGSS_VOICE_RESEARCH_V1",
+  "authorityState": "FORMULA_FACTORY_CANDIDATE",
+  "components": [
+    {
+      "id": "HYPERBOLIC_COGNITIVE_LATENT",
+      "class": "EMPIRICAL_HYPOTHESIS",
+      "required": [
+        "explicit Poincare metric/distance",
+        "baseline Euclidean comparison",
+        "distortion/task metrics"
+      ]
+    },
+    {
+      "id": "CONTROLLED_NEURAL_SDE",
+      "class": "STATISTICAL_MODEL",
+      "form": "dz=f_theta(z,t)dt + G_theta(z,t)dW + B_theta(z,t)u_audio(t)dt",
+      "required": [
+        "well-posed dimensions",
+        "causal streaming",
+        "stability",
+        "solver cost"
+      ]
+    },
+    {
+      "id": "OT_CFM_SPEECH",
+      "class": "PHYSICAL_ENGINEERING_MODEL",
+      "required": [
+        "training path definition",
+        "learned vector field",
+        "quality vs NFE",
+        "causal chunking",
+        "waveform/latent decoder"
+      ]
+    },
+    {
+      "id": "DIFFERENTIAL_BARGE_IN",
+      "class": "CANDIDATE_EXTENSION",
+      "required": [
+        "actual Lie bracket [U,V]=DV(U)-DU(V) if claimed",
+        "comparison against acoustic-semantic detector",
+        "measured spill/false interrupts"
+      ]
+    },
+    {
+      "id": "CONTINUOUS_LOW_RANK_PAGED_MEMORY",
+      "class": "CANDIDATE_EXTENSION",
+      "required": [
+        "algorithm",
+        "memory complexity",
+        "approximation error",
+        "retention quality",
+        "paged allocator behavior"
+      ]
+    }
+  ],
+  "rejectAsLaws": [
+    "10Hz cognition",
+    "100Hz acoustic motor",
+    "1-2 ODE steps always sufficient",
+    "15-25ms universal synthesis",
+    "RVQ always adds 100-200ms",
+    "continuous memory guarantees indefinite sessions"
+  ],
+  "promotionTests": [
+    "same-hardware cascaded baseline",
+    "same-hardware native-S2S baseline",
+    "semantic correctness",
+    "prosody/speaker fidelity",
+    "TTFA",
+    "barge-in spill",
+    "false interruption",
+    "VRAM/session",
+    "concurrency",
+    "tool reliability",
+    "privacy/auditability",
+    "solver NFE-quality curve",
+    "long-session memory retention"
+  ]
+}
