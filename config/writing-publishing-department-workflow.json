@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "1.0.0",
+  "schemaVersion": "2.0.0",
   "department": "LEEWAY_WRITING_PUBLISHING",
   "controlSkill": "leeway-writing-publishing-department",
   "formulaQuestions": [
@@ -18,7 +18,7 @@
   ],
   "phases": [
     {
-      "id": "AUTHORSHIP_BASELINE",
+      "id": "AUTHORSHIP_RIGHTS_BASELINE",
       "parallel": true,
       "skills": [
         "leeway-author-provenance-versioning",
@@ -26,12 +26,62 @@
       ]
     },
     {
-      "id": "RESEARCH_PROFILE",
+      "id": "AUTHOR_DISCOVERY",
       "parallel": true,
+      "lanes": [
+        {
+          "id": "interview",
+          "skills": [
+            "leeway-author-discovery-interview"
+          ]
+        },
+        {
+          "id": "voice",
+          "skills": [
+            "leeway-authorized-voice-profile",
+            "leeway-emotional-language-model"
+          ]
+        },
+        {
+          "id": "memory",
+          "skills": [
+            "leeway-lived-experience-memory-mining"
+          ],
+          "conditional": "memoir/biography/personal voice"
+        }
+      ]
+    },
+    {
+      "id": "RESEARCH",
+      "parallel": true,
+      "lanes": [
+        {
+          "id": "plan",
+          "skills": [
+            "leeway-prewriting-research-plan"
+          ]
+        },
+        {
+          "id": "external",
+          "skills": [
+            "leeway-writing-fact-source-verification",
+            "leeway-writing-research-notebook"
+          ]
+        },
+        {
+          "id": "creative",
+          "skills": [
+            "leeway-worldbuilding",
+            "leeway-genre-reader-promise",
+            "leeway-story-continuity-canon"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PREWRITING_GATE",
       "skills": [
-        "leeway-writing-fact-source-verification",
-        "leeway-genre-reader-promise",
-        "leeway-worldbuilding"
+        "leeway-prewriting-readiness"
       ]
     },
     {
@@ -41,16 +91,24 @@
         "leeway-narrative-architecture",
         "leeway-character-psychology",
         "leeway-theme-symbolism",
-        "leeway-information-revelation",
-        "leeway-story-continuity-canon"
+        "leeway-information-revelation"
       ]
     },
     {
       "id": "DRAFT",
       "skills": [
-        "leeway-writers-room-orchestration"
+        "leeway-writers-room-orchestration",
+        "leeway-ghostwriting-collaboration"
       ],
-      "notes": "Select medium skills: novel/screenplay/episodic/nonfiction/children/comics/audio/copy/poetry."
+      "notes": "Select medium-specific skills; ghostwriting only when authorized/appropriate."
+    },
+    {
+      "id": "VOICE_CONTINUITY_CHECK",
+      "parallel": true,
+      "skills": [
+        "leeway-voice-drift-verification",
+        "leeway-story-continuity-canon"
+      ]
     },
     {
       "id": "EDITORIAL",
@@ -94,7 +152,8 @@
     {
       "id": "RELEASE",
       "skills": [
-        "leeway-publishing-distribution-release"
+        "leeway-publishing-distribution-release",
+        "leeway-publishing-catalog-premiere-merchandising"
       ]
     },
     {
