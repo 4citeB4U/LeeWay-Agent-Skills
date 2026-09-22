@@ -175,6 +175,46 @@
         "BUSINESS_FINANCE_GTM",
         "LEADERSHIP_GOVERNANCE"
       ]
+    },
+    {
+      "id": "EXECUTIVE_GOVERNANCE",
+      "skill": "leeway-house-executive-governance",
+      "path": "skills/houses/executive-governance/SKILL.md",
+      "memberScopes": [
+        "skills/executive/**",
+        "skills/leeway-executive-governance-sun/SKILL.md"
+      ],
+      "workflow": "config/executive-governance-house-workflow.json",
+      "verification": [
+        "leeway-executive-governance-sun",
+        "leeway-veritas"
+      ],
+      "crossHouseEdges": [
+        "ENTERPRISE_OPERATIONS",
+        "SECURITY_COMPLIANCE",
+        "DATA_AI_RESEARCH",
+        "LEADERSHIP_GOVERNANCE"
+      ]
+    },
+    {
+      "id": "COMMERCE_CUSTODY",
+      "skill": "leeway-house-commerce-custody",
+      "path": "skills/houses/commerce-custody/SKILL.md",
+      "memberScopes": [
+        "skills/commerce/**",
+        "skills/leeway-commerce-custody-sun/SKILL.md"
+      ],
+      "workflow": "config/commerce-custody-house-workflow.json",
+      "verification": [
+        "leeway-commerce-custody-sun",
+        "leeway-veritas"
+      ],
+      "crossHouseEdges": [
+        "ENTERPRISE_OPERATIONS",
+        "SOFTWARE_ENGINEERING",
+        "DATA_AI_RESEARCH",
+        "SECURITY_COMPLIANCE"
+      ]
     }
   ],
   "plannedHouseFamilies": [
@@ -188,5 +228,5 @@
     "OPERATIONS_LOGISTICS",
     "LEADERSHIP_GOVERNANCE"
   ],
-  "evidenceState": "FOUR_HOUSES_PROMOTED; REMAINING_HOUSE_FAMILIES_REQUIRE_RECONCILIATION"
+  "evidenceState": "SIX_HOUSES_PROMOTED; REMAINING_HOUSE_FAMILIES_REQUIRE_RECONCILIATION"
 }
