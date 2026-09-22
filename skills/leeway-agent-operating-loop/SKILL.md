@@ -201,3 +201,14 @@ At material architecture/capability reviews also ask:
 12. **What capability are we postponing merely because an external product/provider currently supplies it, and can LeeWay learn and own the underlying method or native path?**
 
 Do not defer a reasonably specifiable capability as 'later' merely because it is specialized or difficult. Difficulty is a planning/routing concern, not a reason to lower the target. External systems may provide evidence, architecture patterns or execution, but provider availability must not become the boundary of LeeWay capability thinking.
+
+
+## LeeWay Imagination & Simulation Kernel
+
+For substantive work where pre-execution simulation can materially reduce error, cost or risk, route through `leeway-imagination-simulation-kernel` and `config/imagination-simulation-execution-contract.json` before real mutation.
+
+Required behavior: INTENT → GROUND → REPRESENT → GENERATE → SIMULATE → EVALUATE → REPAIR → SELECT → AUTHORIZE → EXECUTE → OBSERVE → COMPARE → VERIFY → EVIDENCE.
+
+The workspace must keep OBSERVED, CANDIDATE/PREDICTED, EXECUTED and VERIFIED states distinct. A modeled PASS is never execution proof. Failed candidates trigger repair/alternative search until acceptance or a verified blocker. Select task-appropriate models; do not force every problem into geometry. Formula authority may be claimed only after canonical Formula artifact/version/hash/implementation is verified as required by LeeWay standards.
+
+This kernel is disciplined counterfactual planning/execution behavior, not a claim that Agent Lee is conscious, self-aware, subjectively imagines, or literally reproduces human neural mechanisms.
