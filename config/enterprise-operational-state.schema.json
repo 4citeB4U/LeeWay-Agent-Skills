@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://leeway.local/schemas/enterprise-operational-state.schema.json",
+  "title": "LeeWay Enterprise Operational State",
+  "type": "object",
+  "required": [
+    "stateId",
+    "asOf",
+    "metrics",
+    "evidenceState"
+  ],
+  "properties": {
+    "stateId": {
+      "type": "string"
+    },
+    "asOf": {
+      "type": "string"
+    },
+    "window": {
+      "type": "object"
+    },
+    "metrics": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "metricId",
+          "department",
+          "value",
+          "unit",
+          "source",
+          "observedAt",
+          "qualityState"
+        ],
+        "properties": {
+          "metricId": {
+            "type": "string"
+          },
+          "department": {
+            "type": "string"
+          },
+          "value": {},
+          "unit": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "observedAt": {
+            "type": "string"
+          },
+          "qualityState": {
+            "enum": [
+              "VERIFIED",
+              "OBSERVED",
+              "STALE",
+              "MISSING",
+              "CONFLICTED",
+              "FAILED"
+            ]
+          },
+          "uncertainty": {}
+        }
+      }
+    },
+    "hardGateStates": {
+      "type": "object"
+    },
+    "evidenceState": {
+      "enum": [
+        "PARTIAL",
+        "READY_FOR_EVALUATION",
+        "BLOCKED_DATA",
+        "EVALUATED"
+      ]
+    }
+  }
+}
