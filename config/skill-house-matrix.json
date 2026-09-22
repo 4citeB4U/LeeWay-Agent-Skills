@@ -24,6 +24,10 @@
     {
       "trigger": "film/movie/video/cinematic/direct/shot/camera/lens/lighting/edit/color grade/storyboard/previs",
       "house": "FILM_CINEMATIC_PRODUCTION"
+    },
+    {
+      "trigger": "office/admin/logistics/warehouse/freight/sales/CRM/marketing/HR/payroll/finance/procurement/support/enterprise operations",
+      "house": "ENTERPRISE_OPERATIONS"
     }
   ],
   "compositionLaw": "One task may activate multiple Houses. Houses form a company-level weave; no House becomes a silo or supersedes Creator/Human Authority."
