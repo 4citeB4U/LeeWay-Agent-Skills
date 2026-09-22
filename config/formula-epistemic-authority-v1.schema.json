@@ -1,0 +1,142 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://leeway.local/schemas/formula-epistemic-authority-v1.schema.json",
+  "title": "LeeWay Formula Epistemic Authority Record",
+  "type": "object",
+  "required": [
+    "formulaId",
+    "expressionRef",
+    "claimClass",
+    "authorityState",
+    "domains",
+    "validation",
+    "lifecycleState"
+  ],
+  "properties": {
+    "formulaId": {
+      "type": "string"
+    },
+    "familyId": {
+      "type": "string"
+    },
+    "expressionRef": {
+      "type": "string"
+    },
+    "claimClass": {
+      "enum": [
+        "MATHEMATICAL_IDENTITY",
+        "DOMAIN_CONSTRAINED_IDENTITY",
+        "PHYSICAL_ENGINEERING_MODEL",
+        "STATISTICAL_MODEL",
+        "OPTIMIZATION_OBJECTIVE",
+        "HEURISTIC",
+        "PROJECT_PROFILE_TARGET",
+        "STANDARD_BOUND_RULE",
+        "EMPIRICAL_HYPOTHESIS",
+        "NEUROSCIENCE_INSPIRED_MODEL",
+        "CANDIDATE_EXTENSION",
+        "CANONICAL_FORMULA_BINDING"
+      ]
+    },
+    "authorityState": {
+      "enum": [
+        "CANDIDATE",
+        "QUALIFIED_CANDIDATE",
+        "CANONICAL_COMPARED",
+        "CANONICAL",
+        "ADAPTED",
+        "HELD",
+        "REJECTED",
+        "SUPERSEDED"
+      ]
+    },
+    "domains": {
+      "type": "object"
+    },
+    "units": {
+      "type": "object"
+    },
+    "assumptions": {
+      "type": "array"
+    },
+    "preconditions": {
+      "type": "array"
+    },
+    "singularities": {
+      "type": "array"
+    },
+    "parameters": {
+      "type": "object"
+    },
+    "standardsRefs": {
+      "type": "array"
+    },
+    "evidenceRefs": {
+      "type": "array"
+    },
+    "validation": {
+      "type": "object",
+      "properties": {
+        "mathematical": {
+          "type": "string"
+        },
+        "dimensional": {
+          "type": "string"
+        },
+        "domain": {
+          "type": "string"
+        },
+        "numerical": {
+          "type": "string"
+        },
+        "empirical": {
+          "type": "string"
+        },
+        "standards": {
+          "type": "string"
+        },
+        "runtime": {
+          "type": "string"
+        },
+        "canonicalComparison": {
+          "type": "string"
+        }
+      }
+    },
+    "falsifiers": {
+      "type": "array"
+    },
+    "knownCounterexamples": {
+      "type": "array"
+    },
+    "repairHistory": {
+      "type": "array"
+    },
+    "version": {
+      "type": "string"
+    },
+    "canonicalBinding": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "lifecycleState": {
+      "enum": [
+        "DISCOVERED",
+        "NORMALIZED",
+        "ANALYZED",
+        "TESTED",
+        "REPAIRED",
+        "RETESTED",
+        "QUALIFIED",
+        "CANONICAL_COMPARED",
+        "PROMOTED",
+        "ADAPTED",
+        "HELD",
+        "REJECTED",
+        "SUPERSEDED"
+      ]
+    }
+  }
+}
