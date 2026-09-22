@@ -98,6 +98,46 @@
         "WRITING_PUBLISHING",
         "HARDWARE_PERFORMANCE"
       ]
+    },
+    {
+      "id": "FILM_CINEMATIC_PRODUCTION",
+      "skill": "leeway-house-film-cinematic-production",
+      "path": "skills/houses/film-cinematic-production/SKILL.md",
+      "memberScopes": [
+        "skills/film/**",
+        "skills/leeway-cinematic-sun/SKILL.md"
+      ],
+      "workflow": "config/film-cinematic-house-workflow.json",
+      "executionContract": "config/film-execution-capability-contract.json",
+      "scenarios": [
+        "config/scenarios/leolas-library-cinematic-sequence.json"
+      ],
+      "providers": [
+        "image/video generation providers",
+        "Blender/3D providers",
+        "FFmpeg",
+        "Remotion/MoviePy or NLE/editorial providers",
+        "OCIO/ACES color tools",
+        "audio tools"
+      ],
+      "verification": [
+        "leeway-cinematic-sun",
+        "leeway-veritas",
+        "technical QC"
+      ],
+      "recovery": [
+        "leeway-capability-resilience",
+        "shot regeneration/pickup",
+        "edit substitution",
+        "version rollback"
+      ],
+      "crossHouseEdges": [
+        "WRITING_PUBLISHING",
+        "THREE_D_PRODUCTION",
+        "DESIGN_UX",
+        "SOFTWARE_ENGINEERING",
+        "BUSINESS_GTM"
+      ]
     }
   ],
   "plannedHouseFamilies": [
@@ -111,5 +151,5 @@
     "OPERATIONS_LOGISTICS",
     "LEADERSHIP_GOVERNANCE"
   ],
-  "evidenceState": "TWO_HOUSES_PROMOTED; REMAINING_HOUSE_FAMILIES_TO_BE_RECONCILED_FROM_EXISTING_SKILLS_NOT_BLINDLY_DUPLICATED"
+  "evidenceState": "THREE_HOUSES_PROMOTED; REMAINING_HOUSE_FAMILIES_REQUIRE_RECONCILIATION"
 }
