@@ -1,0 +1,29 @@
+{
+  "schemaVersion": "1.0.0",
+  "contractId": "LEEWAY_FILM_EXECUTION_CAPABILITY_CONTRACT",
+  "evidenceState": "REQUIRED_CAPABILITIES_NOT_ASSERTED_LIVE",
+  "capabilities": [
+    "shot.schema.read_write",
+    "storyboard.generate_bind",
+    "previs.scene_camera",
+    "camera.transform_lens_focus",
+    "blocking.subject_transform",
+    "lighting.create_measure",
+    "character.reference_continuity",
+    "image.generate_reference_conditioned",
+    "video.generate_reference_conditioned",
+    "frame.sequence.inspect",
+    "timeline.create_edit",
+    "timeline.otio_interchange",
+    "audio.sync_edit_mix",
+    "vfx.composite",
+    "color.ocio_aces_transform",
+    "grade.shot_match",
+    "caption.subtitle.generate_validate",
+    "render.encode.ffmpeg",
+    "master.imf_dcp_platform_package",
+    "media.hash_version_receipt",
+    "qc.audio_video_text"
+  ],
+  "law": "Provider availability is not execution proof. Cinematic intent remains canonical; provider translations must declare unsupported/approximate parameters."
+}
