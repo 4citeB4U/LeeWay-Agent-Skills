@@ -1,0 +1,90 @@
+{
+  "schemaVersion": "1.0.0",
+  "candidateFamilyId": "REALTIME_VOICE_MULTIMODAL_MATH_V1",
+  "authorityState": "CANDIDATE",
+  "lfeaRequired": true,
+  "models": [
+    {
+      "id": "AUDIO_FRAME_GEOMETRY",
+      "class": "DOMAIN_CONSTRAINED_IDENTITY",
+      "expression": "N = Fs*dt_frame; bytes = N*(B/8)*C",
+      "preconditions": [
+        "Fs>0",
+        "dt_frame>0",
+        "B divisible by 8",
+        "C>=1"
+      ]
+    },
+    {
+      "id": "PIPELINE_CRITICAL_PATH",
+      "class": "PHYSICAL_ENGINEERING_MODEL",
+      "expression": "T_response_onset = critical_path(network, endpointing, STT, LLM_TTFT, chunker_dwell, TTS_TTFB, playout)",
+      "note": "Do not blindly sum stages that overlap; measure DAG dependencies."
+    },
+    {
+      "id": "SYNTHESIS_REALTIME_FACTOR",
+      "class": "DOMAIN_CONSTRAINED_IDENTITY",
+      "expression": "RTF_i = synth_wall_time_i / rendered_audio_duration_i",
+      "note": "RTF<1 indicates faster-than-realtime synthesis for that sample, not guaranteed no-underrun."
+    },
+    {
+      "id": "QUEUE_LITTLE",
+      "class": "STATISTICAL_MODEL",
+      "expression": "L=lambda*W",
+      "preconditions": [
+        "stable/meaningful averaging interval",
+        "consistent queue definition"
+      ],
+      "note": "Not a transient barge-in law."
+    },
+    {
+      "id": "BARGE_IN_SPILL",
+      "class": "PHYSICAL_ENGINEERING_MODEL",
+      "expression": "T_spill ~= detection + local_flush + already_uninterruptible_device_path",
+      "note": "Measure at acoustic/output boundary; queued frames that can be purged do not equal unavoidable drain."
+    },
+    {
+      "id": "VAD_STE",
+      "class": "PHYSICAL_ENGINEERING_MODEL",
+      "expression": "STE = sum_n w[n]*x[n]^2",
+      "note": "Feature only; robust turn-taking may combine neural/acoustic and semantic evidence."
+    },
+    {
+      "id": "VAD_RMS",
+      "class": "PHYSICAL_ENGINEERING_MODEL",
+      "expression": "RMS=sqrt((1/N)*sum x[n]^2); dBFS=20*log10(RMS/xmax)",
+      "preconditions": [
+        "RMS>0 for finite log"
+      ]
+    },
+    {
+      "id": "SEMANTIC_TURN_POSTERIOR",
+      "class": "STATISTICAL_MODEL",
+      "expression": "P(turn_complete | acoustic_state, semantic_state, conversation_state)",
+      "note": "Threshold is calibrated profile, not universal constant."
+    },
+    {
+      "id": "CHUNK_MARGIN",
+      "class": "PHYSICAL_ENGINEERING_MODEL",
+      "expression": "M_i = audio_duration_i - synth_wall_time_i",
+      "note": "Positive local margin is useful but total stability also depends on arrival jitter, chunker dwell, queue policy and provider variance."
+    },
+    {
+      "id": "VISION_SAMPLING",
+      "class": "HEURISTIC",
+      "expression": "sample if semantic_change_score >= theta or task_trigger",
+      "note": "Adaptive profile; fixed FPS is fallback."
+    }
+  ],
+  "qualificationTests": [
+    "unit/dimension checks",
+    "known vectors",
+    "zero/invalid domain tests",
+    "randomized audio frame cases",
+    "queue transient counterexamples",
+    "jitter/packet-loss simulation",
+    "barge-in measured spill",
+    "provider variance distributions",
+    "adaptive vision load/recall"
+  ]
+}
