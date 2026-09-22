@@ -1,0 +1,35 @@
+{
+  "schemaVersion": "1.0.0",
+  "receiptId": "LEEWAY-FRONTIER-VOICE-FORMULA-FUNNEL-V2-2026-09-22",
+  "status": "PASS_ARCHITECTURE_ADAPTATION_RESEARCH_HELD",
+  "input": "dual-stack frontier voice + CGSS proposal",
+  "funnelVerdict": "ADAPT_AND_SPLIT",
+  "productionArchitectures": [
+    "CASCADED_STREAMING",
+    "NATIVE_SPEECH_TO_SPEECH_WHEN_PROVIDER_VERIFIED"
+  ],
+  "researchArchitecture": "CGSS_FORMULA_FACTORY_CANDIDATE",
+  "keyCorrections": [
+    "native speech does not universally ban transcript/STT side channels",
+    "MLA architecture-specific",
+    "MTP/speculation benchmarked not assumed",
+    "discrete codec tokens not categorically obsolete",
+    "OT-CFM straight training path does not prove one-step integration",
+    "provided barge-in code is not a Lie bracket",
+    "10Hz/100Hz and latency figures are profiles/hypotheses",
+    "LRPA indefinite-linear claim unverified"
+  ],
+  "artifacts": [
+    "config/formula-lab/frontier-voice-formula-funnel-v2.json",
+    "skills/leeway-frontier-voice-architecture-selector/SKILL.md",
+    "config/formula-lab/cgss-voice-research-v1.json",
+    "config/realtime-voice-heavy-use-routing-v1.json"
+  ],
+  "externalEvidence": [
+    "Qwen2.5-Omni Thinker-Talker official architecture",
+    "DeepSeek-V3 MLA and MTP technical report"
+  ],
+  "runtimeEvidence": "NOT_EXECUTED_FOR_NATIVE_OR_CGSS",
+  "learningLedger": "NOT_UPDATED",
+  "nextGate": "QUALIFY_NATIVE_PROVIDER_CAPABILITIES_AND_BUILD_CGSS_CONTROLLED_EXPERIMENT"
+}
