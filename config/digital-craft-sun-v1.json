@@ -1,0 +1,53 @@
+{
+  "schemaVersion": "1.0.0",
+  "profileId": "digital-craft-sun-v1-four-ray",
+  "omegaMax": 15,
+  "rays": [
+    "DESIGN_SYSTEMS",
+    "MOTION_INTERACTION",
+    "GRAPHICS_RUNTIME",
+    "PERFORMANCE_HARDWARE"
+  ],
+  "normativeBaseline": {
+    "accessibility": "WCAG 2.2 applicable success criteria/project legal requirements",
+    "coreWebVitalsGood75p": {
+      "LCP_ms": 2500,
+      "INP_ms": 200,
+      "CLS": 0.1
+    },
+    "evidence": "Current standards checked 2026-09-21"
+  },
+  "eliteProfiles": {
+    "LEEWAY_HIGH_END_WEB": {
+      "LCP_ms_target": 1500,
+      "INP_ms_target": 50,
+      "frameRateTargets": [
+        60,
+        120
+      ],
+      "state": "PROJECT_TARGET_NOT_GENERAL_STANDARD"
+    },
+    "APCA_ENHANCED": {
+      "state": "EXPERIMENTAL_ENHANCED_PROFILE_NOT_SOLE_CONFORMANCE_GATE"
+    },
+    "MOTION": {
+      "dampingRatioTarget": 0.85,
+      "state": "OPTIONAL_PROJECT_PROFILE"
+    },
+    "TYPOGRAPHY": {
+      "modularRatios": [
+        1.25,
+        1.333
+      ],
+      "state": "OPTIONAL_PROJECT_PROFILE"
+    }
+  },
+  "hardGates": [
+    "ESSENTIAL_FUNCTIONALITY",
+    "APPLICABLE_ACCESSIBILITY",
+    "FOCUS_KEYBOARD_SEMANTICS",
+    "CRITICAL_STATE_MACHINE_CORRECTNESS",
+    "NO_UNRECOVERABLE_CRASH_MEMORY_FAILURE"
+  ],
+  "law": "Elite visual/performance targets may exceed standards but cannot override accessibility, functionality, user preferences or measured device constraints."
+}
