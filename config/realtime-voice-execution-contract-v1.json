@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "1.0.0",
+  "schemaVersion": "1.1.0",
   "contractId": "LEEWAY_REALTIME_VOICE_EXECUTION_CONTRACT_V1",
   "requiredCapabilities": [
     "audio_capture",
@@ -13,7 +13,14 @@
     "audio_sink_flush",
     "playout_ledger",
     "telemetry",
-    "optional_vision_sampler"
+    "optional_vision_sampler",
+    "aec_or_echo_strategy",
+    "clock_drift_observer",
+    "bounded_backpressure",
+    "generation_epoch_guard",
+    "session_recovery",
+    "privacy_authority_gate",
+    "provider_capability_negotiation"
   ],
   "stateMachine": [
     "LISTENING",
@@ -29,7 +36,11 @@
     "no_generated_text_as_heard_text",
     "no_unbounded_audio_queue",
     "no_irreversible_action_from_unstable_interim_transcript",
-    "no_silent_provider_fallback_without_evidence"
+    "no_silent_provider_fallback_without_evidence",
+    "no_stale_epoch_output_after_interrupt",
+    "no_unresolved_playback_echo_as_user_barge_in",
+    "no_privacy_or_authority_violation",
+    "no_unbounded_latency_growth"
   ],
   "evidence": [
     "stage_latency_histograms",
@@ -41,6 +52,48 @@
     "rendered_audio_ledger",
     "cancellation_trace",
     "provider_identity",
-    "formula_profile"
-  ]
+    "formula_profile",
+    "generation_epoch_trace",
+    "queue_occupancy_trace",
+    "clock_drift_measurement",
+    "aec_or_echo_evidence",
+    "session_reconnect_trace",
+    "privacy_authority_state",
+    "device_network_profile_id"
+  ],
+  "formulaTunnel": "ADAPTED_V1",
+  "planes": {
+    "media": [
+      "capture",
+      "DSP/AEC",
+      "codec",
+      "transport",
+      "STT/TTS media",
+      "playout"
+    ],
+    "control": [
+      "session",
+      "state",
+      "interrupt epochs",
+      "cancellation",
+      "backpressure",
+      "recovery"
+    ],
+    "cognitive": [
+      "semantic endpointing",
+      "LLM",
+      "speech normalization",
+      "prosody/chunking",
+      "vision relevance"
+    ],
+    "evidence": [
+      "timestamps",
+      "latency",
+      "queues",
+      "packet stats",
+      "playout ledger",
+      "Formula/LFEA",
+      "authority"
+    ]
+  }
 }
