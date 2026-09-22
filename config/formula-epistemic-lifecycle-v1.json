@@ -1,0 +1,39 @@
+{
+  "schemaVersion": "1.0.0",
+  "authority": "LEEWAY_FORMULA_EPISTEMIC_AUTHORITY",
+  "states": [
+    "DISCOVERED",
+    "NORMALIZED",
+    "ANALYZED",
+    "TESTED",
+    "REPAIRED",
+    "RETESTED",
+    "QUALIFIED",
+    "CANONICAL_COMPARED",
+    "PROMOTED",
+    "ADAPTED",
+    "HELD",
+    "REJECTED",
+    "SUPERSEDED"
+  ],
+  "requiredPromotionEvidence": [
+    "canonical artifact/version/hash/implementation reverified",
+    "candidate normalized and uniquely identified",
+    "domain/unit/precondition analysis",
+    "symbolic/property/boundary/adversarial tests",
+    "known failures and repair history",
+    "golden-vector comparison",
+    "compatibility/delta analysis",
+    "rollback plan",
+    "Creator/Human-authorized promotion",
+    "Veritas/receipt"
+  ],
+  "prohibitions": [
+    "candidate silently overwrites canonical",
+    "heuristic labeled mathematical law",
+    "standard/profile target labeled universal constant",
+    "empirical hypothesis labeled proven by algebra",
+    "simulation labeled execution evidence",
+    "missing evidence zero-filled"
+  ]
+}
