@@ -1,0 +1,65 @@
+{
+  "schemaVersion": "1.0.0",
+  "capability": "ENTERPRISE_OPERATIONAL_RUNTIME",
+  "providers": [
+    {
+      "id": "FRAPPE_FRAMEWORK",
+      "license": "MIT",
+      "state": "CANDIDATE_OR_EXISTING_UNVERIFIED",
+      "role": [
+        "business app framework",
+        "REST/data/workflow provider"
+      ],
+      "notes": "Framework is MIT; do not relabel ERPNext GPLv3 as MIT."
+    },
+    {
+      "id": "ERPNEXT",
+      "license": "GPL-3.0",
+      "state": "OPTIONAL_PROVIDER_LICENSE_REVIEW_REQUIRED",
+      "role": [
+        "ERP application/reference implementation"
+      ],
+      "notes": "May be used subject to license/deployment policy; not LeeWay authority."
+    },
+    {
+      "id": "LANGGRAPH",
+      "license": "MIT",
+      "state": "CANDIDATE_PROVIDER",
+      "role": [
+        "stateful multi-actor workflow implementation"
+      ],
+      "notes": "Subordinate to LeeWay Skill Orchestrator/Parallel Workplane/Business Process Orchestration."
+    },
+    {
+      "id": "POCKETBASE",
+      "license": "MIT",
+      "state": "CANDIDATE_LIGHTWEIGHT_PROVIDER",
+      "role": [
+        "SQLite realtime REST backend"
+      ],
+      "notes": "Pre-v1 backward compatibility warning; durability/backup/migration strategy required."
+    },
+    {
+      "id": "POSTGRESQL_CUSTOM",
+      "license": "provider-dependent",
+      "state": "CANDIDATE_CANONICAL_DATA_PATH",
+      "role": [
+        "durable relational operational state"
+      ],
+      "notes": "Schema/event/API layer must be governed by LeeWay semantics."
+    }
+  ],
+  "selectionDimensions": [
+    "license/deployment obligations",
+    "durability",
+    "transactions",
+    "auditability",
+    "schema control",
+    "realtime/event support",
+    "backup/recovery",
+    "scale",
+    "security",
+    "existing ecosystem fit"
+  ],
+  "law": "Provider selection follows measured requirements. No provider defines LeeWay operational semantics or authority."
+}
