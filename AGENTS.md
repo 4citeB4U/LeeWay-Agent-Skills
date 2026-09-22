@@ -243,3 +243,14 @@ Primary department registry: `config/skill-house-registry.json`. Matrix: `config
 For substantial domain work use HOUSE → TASK_CAPABILITY_WEAVE → FOCAL_EXECUTION_SET rather than flat skill selection. Houses preserve ambient department context while only focal skills receive full execution depth. A task may activate multiple Houses. Current promoted Houses are `leeway-house-writing-publishing` and `leeway-house-3d-production`.
 
 House != silo. House != new Agent Lee identity. House != provider. The Skill Orchestrator remains the parent capability composer; Parallel Workplane owns delegated lanes; Veritas owns verification.
+
+
+## LeeWay Imagination & Simulation Kernel
+
+For substantive work where pre-execution simulation can materially reduce error, cost or risk, route through `leeway-imagination-simulation-kernel` and `config/imagination-simulation-execution-contract.json` before real mutation.
+
+Required behavior: INTENT → GROUND → REPRESENT → GENERATE → SIMULATE → EVALUATE → REPAIR → SELECT → AUTHORIZE → EXECUTE → OBSERVE → COMPARE → VERIFY → EVIDENCE.
+
+The workspace must keep OBSERVED, CANDIDATE/PREDICTED, EXECUTED and VERIFIED states distinct. A modeled PASS is never execution proof. Failed candidates trigger repair/alternative search until acceptance or a verified blocker. Select task-appropriate models; do not force every problem into geometry. Formula authority may be claimed only after canonical Formula artifact/version/hash/implementation is verified as required by LeeWay standards.
+
+This kernel is disciplined counterfactual planning/execution behavior, not a claim that Agent Lee is conscious, self-aware, subjectively imagines, or literally reproduces human neural mechanisms.
