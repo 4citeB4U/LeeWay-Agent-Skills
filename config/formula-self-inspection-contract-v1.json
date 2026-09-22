@@ -1,0 +1,61 @@
+{
+  "schemaVersion": "1.0.0",
+  "contractId": "LEEWAY_FORMULA_SELF_INSPECTION_CONTRACT",
+  "requiredQuestions": [
+    {
+      "id": "IDENTITY",
+      "q": "What formula/model/profile are you and what version/family owns you?"
+    },
+    {
+      "id": "AUTHORITY",
+      "q": "Are you candidate, qualified candidate, canonical-compared, canonical, adapted, held, rejected or superseded?"
+    },
+    {
+      "id": "CLASS",
+      "q": "What epistemic claim class are you?"
+    },
+    {
+      "id": "DOMAIN",
+      "q": "For what input domain/preconditions are you defined?"
+    },
+    {
+      "id": "UNITS",
+      "q": "Are dimensions/units consistent and what normalization is required?"
+    },
+    {
+      "id": "ASSUMPTIONS",
+      "q": "What assumptions make this model valid?"
+    },
+    {
+      "id": "FAILURES",
+      "q": "What singularities, counterexamples and known failures exist?"
+    },
+    {
+      "id": "VALIDATION",
+      "q": "Which mathematical/domain/dimensional/numerical/empirical/standards/runtime/canonical tests passed or failed?"
+    },
+    {
+      "id": "THRESHOLD",
+      "q": "Are constants/thresholds mathematical constants, standard requirements, empirical estimates, heuristics or project targets?"
+    },
+    {
+      "id": "FALSIFIABILITY",
+      "q": "What observation/test would falsify or limit this claim?"
+    },
+    {
+      "id": "EXECUTION_ROLE",
+      "q": "May this govern execution, constrain simulation, score evidence, or only suggest a profile?"
+    },
+    {
+      "id": "CANONICAL_BINDING",
+      "q": "If canonical authority is claimed, what artifact/version/hash/implementation and golden-vector evidence prove the binding?"
+    }
+  ],
+  "responseStates": [
+    "ANSWERED_FROM_VERIFIED_RECORD",
+    "ANSWERED_FROM_CANDIDATE_RECORD",
+    "UNKNOWN",
+    "BLOCKED_MISSING_EVIDENCE"
+  ],
+  "law": "UNKNOWN/BLOCKED must remain visible; self-inspection may not infer missing epistemic metadata."
+}
