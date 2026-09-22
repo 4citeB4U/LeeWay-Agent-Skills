@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "2.0.0",
+  "schemaVersion": "3.0.0",
   "department": "LEEWAY_WRITING_PUBLISHING",
   "controlSkill": "leeway-writing-publishing-department",
   "formulaQuestions": [
@@ -50,6 +50,71 @@
           "conditional": "memoir/biography/personal voice"
         }
       ]
+    },
+    {
+      "id": "AUTHOR_MODEL_BUILD",
+      "parallel": true,
+      "lanes": [
+        {
+          "id": "separation",
+          "skills": [
+            "leeway-author-model-separation"
+          ]
+        },
+        {
+          "id": "attention-cognition",
+          "skills": [
+            "leeway-author-perception-attention",
+            "leeway-author-cognitive-rhetorical-model"
+          ]
+        },
+        {
+          "id": "language",
+          "skills": [
+            "leeway-lexical-idiolect-analysis",
+            "leeway-discourse-rhythm-analysis"
+          ]
+        },
+        {
+          "id": "context",
+          "skills": [
+            "leeway-audience-relationship-voice",
+            "leeway-author-state-transition"
+          ]
+        },
+        {
+          "id": "choice-revision",
+          "skills": [
+            "leeway-author-choice-model",
+            "leeway-author-revision-behavior"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "AUTHOR_MODEL_CALIBRATION",
+      "parallel": true,
+      "lanes": [
+        {
+          "id": "experiments",
+          "skills": [
+            "leeway-author-calibration-experiments"
+          ]
+        },
+        {
+          "id": "active-learning",
+          "skills": [
+            "leeway-author-model-active-learning"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "AUTHOR_MODEL_VALIDATION",
+      "skills": [
+        "leeway-author-model-validation"
+      ],
+      "gate": "Required before high-confidence long-form authorized ghostwriting; author approval remains final."
     },
     {
       "id": "RESEARCH",
@@ -171,5 +236,23 @@
         "leeway-learning-ledger"
       ]
     }
+  ],
+  "authorModelFormulaQuestions": [
+    "What does this author notice that another writer would overlook?",
+    "How does the author transform observation into interpretation?",
+    "What values, memories, culture, expertise and assumptions filter that interpretation?",
+    "How does audience/relationship change expression?",
+    "What does the author omit, soften, intensify, joke about or leave implicit?",
+    "How does first-draft behavior differ from revision behavior?",
+    "Which traits are stable versus context/emotion/medium dependent?",
+    "What evidence distinguishes generative consistency from superficial lexical mimicry?",
+    "What adversarial test would expose a bad author model?",
+    "What next question/sample would reduce uncertainty the most?",
+    "Can we separate author voice from topic/genre effects?",
+    "Can we separate spontaneous speech from polished writing?",
+    "Does the model generalize to unseen topics and audiences?",
+    "Can it explain voice mismatch in author-correctable terms?",
+    "Are contradictions genuine human variation rather than errors to flatten?",
+    "Can feedback update the model without erasing prior approved versions?"
   ]
 }
