@@ -6,6 +6,7 @@ metadata:
   authority: Creator/Human Authority > LeeWay Standards
   class: CROSS_HOUSE_REALTIME_INFRASTRUCTURE
   use-priority: HIGH_FOR_LIVE_VOICE_MULTIMODAL
+  formula-tunnel: ADAPTED_V1
 ---
 # LeeWay Real-Time Voice & Multimodal Infrastructure
 
@@ -59,3 +60,47 @@ Use this skill by default for: Agent Lee live voice, phone receptionist, recepti
 
 ## Evidence law
 Configured != proven; streaming != low latency; cancellation requested != downstream silence; audio generated != audio heard; transport connected != healthy; model output != proof.
+
+
+## 14. Formula Tunnel four-plane architecture
+
+### Media Plane
+Capture, DSP, AEC/noise suppression/gain control when applicable, resampling, codec/packetization, media transport, STT/TTS media streams and playout. Media timestamps must preserve clock-domain identity.
+
+### Control Plane
+Session/signaling, connectivity state, provider capability negotiation, state transitions, interrupt epochs, cancellation propagation, bounded queues/backpressure, reconnect, codec/provider changes and stale-event rejection.
+
+### Cognitive Plane
+Semantic endpointing, context construction, LLM streaming, speech normalization, prosody/chunk planning, adaptive visual relevance and conversation-state reconciliation.
+
+### Evidence Plane
+Monotonic timestamps, stage spans, queue occupancy, packet/jitter/loss evidence, playout ledger, interruption trace, provider identity/version, Formula/LFEA state, privacy/authority state and receipt references.
+
+## 15. Interrupt epochs and stale work
+Every response generation receives a monotonically increasing generation/interrupt epoch. Barge-in invalidates the current epoch before upstream cancellation. Audio/text/events arriving from an invalid epoch are dropped even if a provider ignores or races cancellation. Cancellation requested != cancellation completed.
+
+## 16. Backpressure and bounded buffers
+Every queue has an explicit capacity, age limit and overflow policy. Never allow latency to grow silently by accumulating audio/text/video. Under overload, degrade deliberately: reduce vision sampling, shorten context, change chunking/provider profile, shed nonessential work or fail visibly according to authority.
+
+## 17. Clock, device and acoustic state
+Track capture clock, server monotonic clock and playout/device clock where observable. Measure drift rather than assuming synchronized clocks. Account for audio-route changes, focus/permission loss, Bluetooth/telephony path changes, device thermal/power throttling and codec renegotiation.
+
+Echo cancellation/feedback behavior is part of duplex qualification. VAD confidence is not trusted as user speech evidence when playback echo is unresolved.
+
+## 18. Session continuity and recovery
+Model CONNECTING, CONNECTED, DEGRADED, RECONNECTING and CLOSED session states independently from conversational turn state. Reconnect must preserve only evidence-backed conversational state and reject stale packets/generations from the prior transport epoch.
+
+## 19. Privacy, consent and authority
+Microphone/camera capture, recording, retention, speaker identification/voice cloning and telephony actions require applicable user/platform authorization. Privacy/authority violations are hard gates and cannot be traded against latency or quality.
+
+## 20. Rendered vs heard truth
+AUDIO_RENDERED_ESTIMATE means evidence that samples reached the observable playout boundary. It does not prove the human heard them. Use acoustic loopback/return evidence when available; otherwise preserve the distinction as uncertainty.
+
+## 21. Adaptive Formula policy
+VAD/endpointer thresholds, jitter buffer, chunk size, vision sampling, provider choice and degradation policy may adapt to measured device/network/speaker conditions. Adaptation is bounded by Formula/LFEA profiles and must preserve the selected profile/version/evidence.
+
+## 22. Capability graduation
+Verified device, network, speaker and provider profiles may seed future sessions. Reuse is conditional on matching identity/context/version evidence; do not blindly transfer calibration across devices, microphones, networks, languages or providers.
+
+## 23. Formula Tunnel questions
+For every significant voice/multimodal design or failure ask: What are we not discovering? What needs enhancement? What can become deterministic? What requires physical measurement? What existing Skill Houses/tools should compose? What failure state has not been simulated? What knowledge can be graduated so the next execution starts above zero?
