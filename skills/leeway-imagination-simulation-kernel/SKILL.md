@@ -55,3 +55,12 @@ A failed candidate is not a reason to stop if another authorized path exists. Re
 
 ## Anti-hallucination law
 Phi/radial gates can reject a modeled candidate; they cannot prove unknown facts or guarantee reality. Missing evidence cannot be converted into geometric zero.
+
+
+## Formula Epistemic Authority
+
+Before using a Formula/equation as governing evidence, consult `leeway-formula-epistemic-authority`, `config/formula-knowledge-registry-v1.json`, and the applicable epistemic record.
+
+Required distinction: mathematical validity, dimensional validity, domain validity, numerical stability, empirical validity, standards conformance, runtime validation and canonical authority are independent dimensions. Never collapse them into one PASS.
+
+Classify the expression/model before use. A heuristic/project target/standard-bound rule/empirical hypothesis cannot be promoted to universal mathematical law. Candidate equations remain subordinate to verified canonical LeeWay Formula authority. PASS and FAIL evidence are both retained. If canonical Formula authority is claimed, reverify the canonical artifact/version/hash/implementation as required before comparison/promotion.
