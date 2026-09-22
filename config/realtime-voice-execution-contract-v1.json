@@ -1,0 +1,46 @@
+{
+  "schemaVersion": "1.0.0",
+  "contractId": "LEEWAY_REALTIME_VOICE_EXECUTION_CONTRACT_V1",
+  "requiredCapabilities": [
+    "audio_capture",
+    "frame_clock",
+    "vad_or_turn_detector",
+    "streaming_stt",
+    "streaming_llm",
+    "speech_chunker",
+    "streaming_tts",
+    "interrupt_bus",
+    "audio_sink_flush",
+    "playout_ledger",
+    "telemetry",
+    "optional_vision_sampler"
+  ],
+  "stateMachine": [
+    "LISTENING",
+    "USER_SPEAKING",
+    "ENDPOINT_PENDING",
+    "AGENT_THINKING",
+    "AGENT_SPEAKING",
+    "INTERRUPTING",
+    "RECOVERING"
+  ],
+  "hardGates": [
+    "no_uncancellable_playout",
+    "no_generated_text_as_heard_text",
+    "no_unbounded_audio_queue",
+    "no_irreversible_action_from_unstable_interim_transcript",
+    "no_silent_provider_fallback_without_evidence"
+  ],
+  "evidence": [
+    "stage_latency_histograms",
+    "barge_in_spill_ms",
+    "underrun_count",
+    "packet_loss_jitter_context",
+    "turn_false_cutoff_rate",
+    "turn_late_endpoint_rate",
+    "rendered_audio_ledger",
+    "cancellation_trace",
+    "provider_identity",
+    "formula_profile"
+  ]
+}
