@@ -1,0 +1,28 @@
+{
+  "schemaVersion": "1.0.0",
+  "policyId": "LEEWAY_REALTIME_VOICE_HEAVY_USE_ROUTING_V1",
+  "mandatoryWhenAny": [
+    "live voice",
+    "streaming STT",
+    "streaming TTS",
+    "barge-in",
+    "phone call",
+    "receptionist voice",
+    "avatar voice",
+    "read aloud",
+    "WebRTC audio/video",
+    "live camera assistant",
+    "live screen multimodal",
+    "audio latency diagnostics"
+  ],
+  "composeWith": [
+    "leeway-human-conversation",
+    "leeway-context-engineering",
+    "leeway-imagination-simulation-kernel",
+    "leeway-formula-fabric",
+    "ai-ml/multimodal-systems",
+    "cyber-defense when network/security relevant",
+    "digital-craft when client UI/audio interaction relevant"
+  ],
+  "routingLaw": "For matched tasks, load this infrastructure skill as a focal execution skill; do not rely only on generic multimodal-systems."
+}
