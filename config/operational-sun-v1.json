@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "1.0.0",
+  "profileId": "operational-sun-v1-five-ray",
+  "omegaMax": 31,
+  "rays": [
+    {
+      "i": 1,
+      "id": "ADMIN_SERVICE",
+      "examples": [
+        "queue wait/SLA",
+        "utilization profile",
+        "data accuracy"
+      ]
+    },
+    {
+      "i": 2,
+      "id": "LOGISTICS_FULFILLMENT",
+      "examples": [
+        "pick-to-ship",
+        "stockout/service",
+        "inventory/replenishment",
+        "transport SLA"
+      ]
+    },
+    {
+      "i": 3,
+      "id": "SALES_PIPELINE",
+      "examples": [
+        "pipeline velocity",
+        "quota/target profile",
+        "response lag",
+        "forecast quality"
+      ]
+    },
+    {
+      "i": 4,
+      "id": "MARKETING_GROWTH",
+      "examples": [
+        "LTV:CAC profile",
+        "conversion",
+        "ROAS/payback",
+        "retention"
+      ]
+    },
+    {
+      "i": 5,
+      "id": "PEOPLE_HR",
+      "examples": [
+        "payroll discrepancy",
+        "retention/turnover profile",
+        "time-to-fill",
+        "compliance evidence"
+      ]
+    }
+  ],
+  "gate": "b_i=1 iff r_i<=theta_i; Omega=sum(b_i*2^(5-i)); Phi=product(b_i)",
+  "hardExtensions": [
+    "FINANCE_ACCOUNTING_INTEGRITY",
+    "COMPLIANCE_LEGAL_PRIVACY",
+    "AUTHORIZATION",
+    "PAYROLL_CORRECTNESS",
+    "SAFETY",
+    "DATA_QUALITY"
+  ],
+  "evidenceState": "PROFILE_DEFINED_THRESHOLDS_WEIGHTS_REQUIRE_BUSINESS_EVIDENCE"
+}
