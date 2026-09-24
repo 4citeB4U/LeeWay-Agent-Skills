@@ -12,6 +12,16 @@ on:
       - 'scripts/**'
       - 'package.json'
       - '.github/workflows/verify-skill-fabric.yml'
+  pull_request:
+    paths:
+      - 'mcp-server/**'
+      - 'mcp-remote/**'
+      - 'skills/**'
+      - 'tools/**'
+      - 'config/**'
+      - 'scripts/**'
+      - 'package.json'
+      - '.github/workflows/verify-skill-fabric.yml'
   workflow_dispatch:
 
 permissions:
@@ -58,6 +68,9 @@ jobs:
       - name: Test bounded MCP tools
         working-directory: mcp-server
         run: npm test && npm run test:protocol
+
+      - name: Verify full 238-skill execution fabric
+        run: npm run verify:execution-fabric
 
       - name: Install remote MCP dependencies
         working-directory: mcp-remote

@@ -1,6 +1,6 @@
 {
   "schema": "leeway.mcp-runtime-registry.v1",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "runtimes": {
     "playwright-mcp": {
       "display_name": "LeeWay Playwright MCP",
@@ -25,6 +25,59 @@
       "verification_command": "npm run verify:playwright-mcp",
       "evidence_directory": ".leeway/playwright-evidence",
       "receipt": "receipts/playwright-mcp-integration-20260921.json"
+    },
+    "skill-execution-fabric": {
+      "display_name": "LeeWay Full Skill Execution Fabric",
+      "authority": "Creator/Human Authority > LeeWay Standards > Agent Skills > Tool Gateway",
+      "transport": "internal-mcp-handler",
+      "canonical_skill_files": 238,
+      "compatibility_skill_aliases": 44,
+      "bounded_game_blender_tools": 36,
+      "state": "IMPLEMENTED_RUNTIME_VERIFICATION_PENDING",
+      "execution_states": {
+        "local_contract": "SKILL_CONTRACT_EXECUTED",
+        "downstream_proof_field": "external_action_executed"
+      },
+      "routes": [
+        "BLENDER_GATEWAY",
+        "GAME_GATEWAY",
+        "PLAYWRIGHT_MCP",
+        "GITHUB_MCP",
+        "FILESYSTEM_MCP",
+        "INSFORGE_MCP",
+        "MARKETING_CLI",
+        "TOOL_GATEWAY",
+        "LOCAL_SKILL_RUNTIME"
+      ],
+      "verification_command": "npm run verify:execution-fabric"
+    },
+    "game-gateway": {
+      "display_name": "LeeWay Game Execution Gateway",
+      "authority": "Creator/Human Authority > LeeWay Standards > Agent Skills > Tool Gateway",
+      "transport": "http",
+      "state": "HOST_BINDING_REQUIRED",
+      "environment": [
+        "LEEWAY_GAME_MCP_GATEWAY_URL",
+        "LEEWAY_GAME_MCP_BEARER_TOKEN"
+      ],
+      "tool_family": "game",
+      "bounded_contracts": 30,
+      "local_only_tool": "game_plan_slice",
+      "claim_boundary": "Contract availability is not engine execution. Upstream must explicitly return executed=true."
+    },
+    "blender-gateway": {
+      "display_name": "LeeWay Blender Execution Gateway",
+      "authority": "Creator/Human Authority > LeeWay Standards > Agent Skills > MCP Fabric",
+      "implementation_repository": "4citeB4U/LEEWAY-BRIDGE-",
+      "transport": "http",
+      "state": "HOST_BINDING_REQUIRED",
+      "environment": [
+        "LEEWAY_BLENDER_MCP_URL",
+        "LEEWAY_BLENDER_MCP_BEARER_TOKEN"
+      ],
+      "bounded_asset_contracts": 6,
+      "gate1_tools": 10,
+      "claim_boundary": "Worker availability and tool receipts are required before Blender execution is claimed."
     }
   }
 }

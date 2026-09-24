@@ -127,7 +127,7 @@ A successful Blender receipt should preserve when available:
 
 Primary implementation repository:
 
-`4citeB4U/LEEWAY-GEMINI-BRIDGE-`
+`4citeB4U/LEEWAY-BRIDGE-`
 
 Expected surfaces:
 

@@ -38,6 +38,29 @@ Normalize host-specific tools into LeeWay verbs:
 
 Host adapters may include Remote Desktop Commander, MCP servers, native APIs, local services, or deterministic scripts.
 
+## Full skill execution fabric
+
+All 238 canonical portable `SKILL.md` capabilities enter through the same governed execution fabric.
+
+A skill call first executes its local skill contract and receives one deterministic route:
+
+- `BLENDER_GATEWAY`
+- `GAME_GATEWAY`
+- `PLAYWRIGHT_MCP`
+- `GITHUB_MCP`
+- `FILESYSTEM_MCP`
+- `INSFORGE_MCP`
+- `MARKETING_CLI`
+- `TOOL_GATEWAY`
+- `LOCAL_SKILL_RUNTIME`
+
+The route is an execution binding, not proof that a downstream application ran.
+
+`SKILL_CONTRACT_EXECUTED` proves the skill contract resolved and executed locally.
+`external_action_executed=true` is separately required before claiming a browser, repository, provider, game engine, Blender worker, database, or host mutation actually executed.
+
+The video-game-development and Blender skills use the same fabric rather than operating as isolated side channels. Bounded game/Blender tools remain independently schema-validated and may only cross to a configured authorized gateway.
+
 ## Authority tiers
 
 Use the narrowest sufficient tier:
