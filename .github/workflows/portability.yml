@@ -15,6 +15,7 @@ jobs:
         with:
           node-version: 22
       - run: node scripts/audit-portability.mjs
+      - run: node scripts/verify-persistent-workplane-binding.mjs
       - run: npm ci --ignore-scripts --prefix mcp-server
       - run: npm run build --prefix mcp-server
       - run: node mcp-server/scripts/portability-smoke.mjs

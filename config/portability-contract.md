@@ -14,6 +14,8 @@ Model selection is based on required modalities, tools, context, latency, cost a
 
 Speech uses logical capabilities `speech.output`, `speech.cancel`, `speech.resume` and `speech.voice_inventory`; voice identity, shortcuts and mute state are adapter/user preferences. Browser work uses an authorized `browser` capability; host policy determines the allowed implementation.
 
+Persistent execution uses logical capabilities `workplane.status`, `workplane.jobs.list`, `workplane.job.read`, `workplane.job.enqueue` and `workplane.job.control` through `config/persistent-workplane-runtime-binding-v1.json`. The canonical implementation owner is the existing LeeWay Runtime Fabric; desktop, web, mobile, Codex, ChatGPT/Work or other clients are replaceable adapters. A host must authenticate and observe a real `workId` advancing in runtime state before claiming persistence. Runtime endpoints and credentials are host bindings, never universal skill identity.
+
 On phone, tablet, laptop, desktop or server, select a locally implemented or authorized remote execution route. Do not claim a phone runs Node, Docker, desktop speech or a Chrome extension unless that actual environment supports and verifies it. GitHub distributes versioned source/contracts; execution and storage still require a real authorized host or service.
 
 Track three separate claims: **CONTRACT_PORTABLE**, **ADAPTER_IMPLEMENTED**, **PLATFORM_TESTED**. A policy, source scan, configuration file or desktop test cannot establish universal execution. Report untested platforms and remaining adapters explicitly. Missing capabilities must fail visibly, never produce fabricated connection, execution or verification results.

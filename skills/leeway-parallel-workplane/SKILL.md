@@ -74,6 +74,20 @@ Do not make the Creator wait for a long explanation before work begins. Dispatch
 
 This skill is portable governance. Actual background persistence, subagent spawning, cancellation, messaging, and concurrency require a runtime/harness that exposes those controls. configured != running; dispatched != executing; executing != verified.
 
+## Canonical persistent-execution binding
+
+When persistent execution is requested, use `config/persistent-workplane-runtime-binding-v1.json` as the binding authority. The existing execution owner is `4citeB4U/Leeway-Runtime-Fabric` at the verified source baseline recorded by that binding. Do not create a second Runtime Fabric, Parallel Workplane, Agent Lee identity, persistent job queue, worker registry, supervisor, or event bus for this purpose while the canonical owners are recoverable.
+
+The canonical path is:
+
+`Parent Agent Lee control plane → leeway-parallel-workplane → LeeWay Runtime Fabric → automation-runtime durable job state → LeeWay Runtime Supervisor → existing Agent Lee Runtime / Bridge Runtime adapter → Veritas → receipt → Learning Ledger`.
+
+A host may claim persistent execution only after it proves the configured adapter can authenticate to the canonical Runtime Fabric, the runtime accepted a stable `workId`, and inspectable runtime state shows the work actually advanced. Repository presence, a configured endpoint, a returned queue object, or source-level CI is insufficient by itself.
+
+If the active host cannot reach/authenticate to the bound Runtime Fabric, classify persistent execution `UNAVAILABLE` or `BLOCKED` at that adapter boundary and retain ordinary conversation plus real in-turn parallelism. Never simulate a background worker.
+
+Creator controls map to the canonical runtime transitions `PAUSE`, `CANCEL`, `RETOOL`, `CONTINUE/RESUME`, and `SUPERSEDE`. A side question preserves the parent objective and current `workId`; it does not silently cancel or rewrite the job.
+
 ## Formula/context probes
 
 For each parallel plan ask: What are we not discovering? What needs enhancement? Which jobs are truly independent? What shared state can conflict? What can be delegated? What must remain with the parent? How can the Creator interrupt safely? What evidence lets the parent retool or merge correctly?

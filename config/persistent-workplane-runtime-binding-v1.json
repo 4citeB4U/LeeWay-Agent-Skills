@@ -1,0 +1,147 @@
+{
+  "schemaVersion": "1.0.0",
+  "bindingId": "LEEWAY_PERSISTENT_WORKPLANE_RUNTIME_BINDING_V1",
+  "capabilityId": "execution.persistent_workplane",
+  "authority": {
+    "creator": "Creator/Human Authority > LeeWay Standards",
+    "skillsRepository": "4citeB4U/LeeWay-Agent-Skills",
+    "runtimeRepository": "4citeB4U/Leeway-Runtime-Fabric",
+    "runtimeBranch": "main",
+    "runtimeCommit": "24dbad2e6114a9b3bf63f5c5a92b74e0c4ce8d4a",
+    "runtimePullRequest": 1,
+    "sourceProof": {
+      "workflow": "Persistent Workplane Proof",
+      "workflowRunId": 36406952640,
+      "conclusion": "success",
+      "provenAt": "2026-09-28",
+      "boundary": "Source syntax and Automation Runtime persistent-workplane proof passed. This is not proof that a particular deployed host is currently running or reachable."
+    }
+  },
+  "canonicalOwners": {
+    "orchestrationContract": "skills/leeway-parallel-workplane/SKILL.md",
+    "runtimeFabric": "4citeB4U/Leeway-Runtime-Fabric",
+    "durableJobState": "automation-runtime/job-queue.mjs",
+    "taskExecution": "automation-runtime/task-runner.mjs",
+    "scheduling": "automation-runtime/scheduler.mjs",
+    "retryPolicy": "automation-runtime/retry-policy.mjs",
+    "supervisor": "leeway-runtime-supervisor/supervisor.mjs",
+    "sovereignEventBus": "leeway-runtime-supervisor/services/eventBus.mjs",
+    "runtimeControlPlane": "server/index.cjs",
+    "executionAdapters": [
+      "agent-lee-runtime",
+      "bridge-runtime"
+    ]
+  },
+  "workplane": {
+    "id": "LEEWAY_RUNTIME_FABRIC_PERSISTENT_WORKPLANE",
+    "law": "conversation lifetime != job lifetime",
+    "requiredJobFields": [
+      "workId",
+      "parentObjectiveId",
+      "objective",
+      "acceptanceCriteria",
+      "authorityScope",
+      "capabilityWeave",
+      "focalExecutionSet",
+      "verificationSet",
+      "recoverySet",
+      "dependencies",
+      "mutationScope",
+      "checkpointPolicy",
+      "interruptPolicy",
+      "evidenceDestination",
+      "status",
+      "returnContract"
+    ],
+    "states": [
+      "QUEUED",
+      "RUNNING",
+      "CHECKPOINTED",
+      "PAUSE_REQUESTED",
+      "PAUSED",
+      "CANCEL_REQUESTED",
+      "CANCELLED",
+      "RETOOL_REQUIRED",
+      "BLOCKED",
+      "FAILED",
+      "COMPLETED",
+      "SUPERSEDED"
+    ],
+    "creatorControls": [
+      "PAUSE",
+      "CANCEL",
+      "RETOOL",
+      "CONTINUE",
+      "RESUME",
+      "SUPERSEDE"
+    ]
+  },
+  "controlPlane": {
+    "authentication": {
+      "required": true,
+      "environmentBinding": "LEEWAY_WORKPLANE_CONTROL_TOKEN",
+      "transport": [
+        "Authorization: Bearer <token>",
+        "X-LeeWay-Control-Token: <token>"
+      ],
+      "failClosedWhenUnconfigured": true,
+      "secretStorageLaw": "Credentials remain behind authorized host secret/configuration adapters and are never stored in this repository binding."
+    },
+    "routes": [
+      {
+        "method": "GET",
+        "path": "/api/persistent-workplane/status",
+        "capability": "workplane.status"
+      },
+      {
+        "method": "GET",
+        "path": "/api/persistent-workplane/jobs",
+        "capability": "workplane.jobs.list"
+      },
+      {
+        "method": "GET",
+        "path": "/api/persistent-workplane/jobs/:id",
+        "capability": "workplane.job.read"
+      },
+      {
+        "method": "POST",
+        "path": "/api/persistent-workplane/jobs",
+        "capability": "workplane.job.enqueue"
+      },
+      {
+        "method": "POST",
+        "path": "/api/persistent-workplane/jobs/:id/control",
+        "capability": "workplane.job.control"
+      }
+    ]
+  },
+  "adapterBindings": {
+    "agentLeeRuntimeEndpointEnvironment": "LEEWAY_AGENT_RUNTIME_ENDPOINT",
+    "bridgeRuntimeEndpointEnvironment": "LEEWAY_BRIDGE_RUNTIME_ENDPOINT",
+    "executionAuthorizationReference": "task.execution.authorizationEnv",
+    "adapterLaw": "A configured endpoint is not execution proof. The adapter must accept the job and runtime evidence must reach the work record before execution may be claimed."
+  },
+  "antiDuplicationLaw": [
+    "Do not create a second Runtime Fabric for persistent workplane execution.",
+    "Do not create a second Parallel Workplane skill.",
+    "Do not create a second Agent Lee identity.",
+    "Do not create a competing persistent job queue, worker registry, supervisor, or event bus when the canonical Runtime Fabric owner is repairable.",
+    "If a canonical owner is unavailable or contradicted, classify the binding BLOCKED and recover authority before replacement work."
+  ],
+  "claimStates": {
+    "CONTRACT_PORTABLE": "The skill/runtime contract is host-agnostic and uses logical capabilities plus configured adapters.",
+    "ADAPTER_IMPLEMENTED": "A host can reach and authenticate to the canonical Runtime Fabric persistent-workplane API.",
+    "PLATFORM_TESTED": "That host has successfully enqueued/controlled a real workId and preserved inspectable runtime evidence.",
+    "PERSISTENT_EXECUTION_VERIFIED": "A real workId reached execution and required Veritas/receipt evidence was produced."
+  },
+  "truthLaws": [
+    "mounted != executed",
+    "running != healthy",
+    "configured != proven",
+    "queued != executing",
+    "dispatched != executing",
+    "executing != verified",
+    "source proof != deployed runtime proof",
+    "model output != proof"
+  ]
+}

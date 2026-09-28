@@ -38,6 +38,9 @@ jobs:
       - name: Verify every skill has portable frontmatter
         run: node scripts/normalize-legacy-skill-frontmatter.mjs --check
 
+      - name: Verify persistent workplane Runtime Fabric binding
+        run: node scripts/verify-persistent-workplane-binding.mjs
+
       - name: Parse imported marketing CLI tools
         shell: bash
         run: |
