@@ -1,0 +1,26 @@
+name: Open Source Lineage Proof
+
+on:
+  pull_request:
+    paths:
+      - 'config/open-source-lineage-v1.json'
+      - 'docs/thank-you.html'
+      - 'docs/index.html'
+      - 'scripts/verify-open-source-lineage.mjs'
+      - '.github/workflows/open-source-lineage.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify-open-source-lineage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify provenance and dedication
+        run: node scripts/verify-open-source-lineage.mjs
