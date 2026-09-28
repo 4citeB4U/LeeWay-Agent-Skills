@@ -210,7 +210,9 @@ Device and host capabilities route through `leeway-device-bridge` and `leeway-ho
 
 ## Parallel workplane law
 
-`leeway-parallel-workplane` keeps Creator conversation/control with the parent Agent Lee while compatible runtimes dispatch bounded independent work lanes. Workers are interruptible/retoolable by explicit state transition, cannot silently expand authority, and cannot self-promote completion. If the active harness lacks persistent background workers, say so and use only real in-turn parallelism or authorized external workers.
+`leeway-parallel-workplane` keeps Creator conversation/control with the parent Agent Lee while compatible runtimes dispatch bounded independent work lanes. Workers are interruptible/retoolable by explicit state transition, cannot silently expand authority, and cannot self-promote completion.
+
+Canonical persistent-execution binding: `config/persistent-workplane-runtime-binding-v1.json`. Its runtime owner is the existing `4citeB4U/Leeway-Runtime-Fabric`; do not create a duplicate Runtime Fabric, Parallel Workplane, Agent Lee identity, persistent queue, worker registry, supervisor, or event bus while those canonical owners are recoverable. A host may claim persistent execution only after it can authenticate to the bound Runtime Fabric, receives/reads a stable `workId`, and observes real runtime state/evidence beyond `QUEUED`. If the active harness or adapter lacks that proof, classify persistence `UNAVAILABLE` or `BLOCKED` and use only real in-turn parallelism or an authorized external worker.
 
 
 ## Company-scale anti-silo law
