@@ -54,16 +54,16 @@ try {
         }
         $shortcutRegistered = [LeeWayStopShortcut]::Register()
         if (-not $shortcutRegistered) {
-            throw 'Control+Alt+S is unavailable. Playback was not started because the stop shortcut could not be registered.'
+            throw 'Control+Alt+Shift+M is unavailable. Playback was not started because the stop shortcut could not be registered.'
         }
-        Write-Output 'Stop shortcut ready: Control+Alt+S. It mutes the reader until Resume.'
+        Write-Output 'Stop shortcut ready: Control+Alt+Shift+M. It mutes the reader until Resume.'
         $startedAt = [DateTime]::UtcNow
         $speaker.SetOutputToDefaultAudioDevice()
         $prompt = $speaker.SpeakAsync($message)
         while (-not $prompt.IsCompleted) {
             if ([LeeWayStopShortcut]::Requested()) {
                 $speaker.SpeakAsyncCancelAll()
-                [IO.File]::WriteAllText($mutePath, 'Stopped using Control+Alt+S. Resume explicitly.')
+                [IO.File]::WriteAllText($mutePath, 'Stopped using Control+Alt+Shift+M. Resume explicitly.')
                 Write-Output 'Speech stopped by shortcut; read aloud remains muted.'
                 return
             }

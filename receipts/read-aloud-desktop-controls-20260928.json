@@ -1,0 +1,18 @@
+{
+  "id": "read-aloud-desktop-controls-20260928",
+  "recordedAt": "2026-09-28T05:12:00.7867216Z",
+  "baseCommit": "a4622097137d9fe76b0269c3067fd03f58d0b40e",
+  "reason": "User could mute but lacked a direct resume control; Control+Alt+S opened side chat",
+  "controls": [
+    "Resume Read Aloud.lnk",
+    "Stop Read Aloud.lnk"
+  ],
+  "muteShortcut": "Control+Alt+Shift+M",
+  "desktopStop": "PASS: invoked shortcut and observed mute latch",
+  "desktopResume": "PASS: invoked shortcut and observed mute cleared",
+  "hotkeyRegistration": "PASS",
+  "injectedCancellationMilliseconds": 133,
+  "physicalNewShortcut": "NOT_TESTED",
+  "voiceInterruption": "NOT_IMPLEMENTED",
+  "formulaExecution": "NOT_EXECUTED"
+}

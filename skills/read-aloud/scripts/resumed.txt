@@ -1,0 +1,1 @@
+Reading aloud is back on. Future replies will be spoken. This does not replay a reply that was stopped; ask me to repeat it if needed. To mute again, use the Stop Read Aloud desktop shortcut, or hold Control, Alt and Shift and press M while I am speaking.

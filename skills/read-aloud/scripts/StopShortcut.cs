@@ -23,8 +23,8 @@ public static class LeeWayStopShortcut
     [DllImport("user32.dll")]
     private static extern bool PeekMessage(out Message message, IntPtr window, uint min, uint max, uint remove);
     public static bool Register() {
-        // Control + Alt + S, with repeat suppression. Only held during playback.
-        return RegisterHotKey(IntPtr.Zero, Id, 0x4003, 0x53);
+        // Control + Alt + Shift + M, with repeat suppression. Only held during playback.
+        return RegisterHotKey(IntPtr.Zero, Id, 0x4007, 0x4D);
     }
     public static bool Requested() {
         Message message;
