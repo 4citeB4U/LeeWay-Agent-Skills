@@ -24,6 +24,10 @@ Context preparation, Formula decision, execution, verification, and receipt are 
 ## Evaluator exposure law
 Use `config/leeway-formula-evaluator-contract.yaml` as the canonical evaluator-state contract.
 
+The canonical `4citeB4U/Leeway-formula-live` repository supplies the recovered v1 runtime, portable HTTP client, and stdio MCP adapter. Follow its `docs/RUNTIME-RECOVERY.md`. On configured hosts, use `leeway_formula` tools `formula_health` and `formula_evaluate`; otherwise use the same verified central HTTP endpoint through `scripts/formula-client.mjs`. `LEEWAY_FORMULA_BASE_URL` selects the runtime, with localhost:4001 as compatibility default. Drive letters are deployment locations, never Formula identity.
+
+Every evaluation requires an authorized measured input and explicit source/mapping provenance. Health diagnostics and golden-vector test receipts do not evaluate the user's conversation. Do not fabricate a natural-language-to-matrix mapping or claim every LLM is connected merely because these tools exist. Refresh stale session evidence, preserve validated connections, and report the first actual missing dependency.
+
 Valid evaluator states:
 `UNEXPOSED | DISCOVERED | AVAILABLE | AUTHORIZED | EXECUTED | VERIFIED | BLOCKED | FAILED`.
 

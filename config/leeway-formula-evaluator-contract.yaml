@@ -77,6 +77,23 @@ failure_policy:
   execution_failure: FAILED
   verification_failure: NOT_CONVERGED
 
+portable_runtime_binding:
+  authority_repository: 4citeB4U/Leeway-formula-live
+  runtime_guide: https://github.com/4citeB4U/Leeway-formula-live/blob/main/docs/RUNTIME-RECOVERY.md
+  endpoint_environment: LEEWAY_FORMULA_BASE_URL
+  default_local_base: http://127.0.0.1:4001
+  mcp_server_name: leeway_formula
+  mcp_tools: [formula_health, formula_evaluate]
+  http_client: scripts/formula-client.mjs in the Formula authority repository
+  canonical_kernel: runtime/canonical/leeway-formula/v1 in the Formula authority repository
+  input_adapters: [raw-base64-v1, runtime-state-v1]
+  input_provenance_required: [source, mapping, authorization]
+  drive_dependency: NONE_IN_CONSUMER_CONTRACT
+  workstation_recovery: "2026-09-28: Creator confirmed D: destroyed. Formula-only service moved to C: using byte-preserved E: authority; original E: files and stopped fabric container preserved."
+  discovery_boundary: "MCP configuration is not proof tools loaded in this chat. Use verified HTTP client when tools are unavailable; check health and actual receipt."
+  scoring_boundary: "Golden-vector execution verifies the evaluator path, not arbitrary conversation scoring. No verified question-to-matrix adapter is currently supplied."
+  ecosystem_boundary: "Each host/LLM needs its own authorized tool binding. GitHub source is not an always-running service; remote consumers require an authenticated gateway."
+
 recovered_canonical_authority:
   status: VERIFIED_ON_LEEWAY_WORKSTATION_2026-09-12
   formula_id: LEEWAY-FORMULA-v1.0

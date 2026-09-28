@@ -22,6 +22,8 @@ Permanent law:
 A missing D: copy does not prove the authority is absent.
 
 ## Host recovery order
+
+Current workstation correction, 2026-09-28: the Creator confirmed D: was destroyed. C: and E: are the available recovery drives. The canonical `4citeB4U/Leeway-formula-live` repository now carries a byte-preserved recovered v1 kernel, startup hash gate, portable HTTP host and MCP adapter. Its `docs/RUNTIME-RECOVERY.md` supersedes the D-side deployment steps for this workstation. `leeway_formula` serves Formula-only endpoints at localhost:4001; the old `leeway_runtime_fabric` is preserved stopped. Do not repeatedly probe an acknowledged destroyed drive or restore its mount assumptions. Treat the D: guidance below as historical provenance or guidance for a separately authorized future appliance.
 On the current LeeWay workstation, search all known authority locations before declaring Formula authority missing:
 
 1. `D:\Leeway-Ecosystem v2.1.4` — WD8TB target ecosystem and current consolidation root.

@@ -1,0 +1,14 @@
+{
+  "type": "LEEWAY_FORMULA_RECOVERY_SUMMARY",
+  "date": "2026-09-28",
+  "creatorInstruction": "D drive destroyed; recover using C and E and repair canonical GitHub Formula connections",
+  "authorityRepository": "4citeB4U/Leeway-formula-live",
+  "kernel": "LEEWAY-FORMULA-v1.0; four historical pins unchanged",
+  "runtimeScope": "formula-only",
+  "transport": "MCP stdio -> HTTP localhost:4001 -> canonical kernel -> persisted receipt",
+  "verification": "Golden diagnostic evaluation verified against expected decimal/base64 values and independently read persisted receipt",
+  "resultHash": "5f1d72e38285d9f111f4454bfbea157f01ed3c10a4ec907a4e6bb71ba39af3aa",
+  "runtimeReceiptId": "leeway-formula-run-20260928054311-fce05596",
+  "conversationEvaluation": "NOT_EXECUTED_NO_VERIFIED_MAPPING",
+  "boundaries": ["Other fabric services not restored", "Remote LLM clients require individual authorization and binding", "Current chat tool hot-reload not verified", "Notebook extension binding and device pairing not promoted"]
+}
