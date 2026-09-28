@@ -1,0 +1,25 @@
+{
+  "id": "read-aloud-stop-shortcut-20260928",
+  "recordedAt": "2026-09-28T05:04:00.6807649Z",
+  "baseCommit": "5812a7f6f18a91bf182ef114f7ac1265b9ea808b",
+  "shortcut": "Control+Alt+S",
+  "registration": "PASS",
+  "injectedHotkeyCancellation": "PASS",
+  "observedStopMilliseconds": 130,
+  "subsequentPlaybackMuted": "PASS",
+  "explicitResume": "PASS",
+  "physicalKeyboard": "NOT_TESTED",
+  "microphoneInterruption": "NOT_IMPLEMENTED",
+  "formulaExecution": "NOT_EXECUTED",
+  "tests": "A real child playback process received an injected WM_HOTKEY on its own threads; cancellation, mute latch, and resume were verified. No physical keyboard input was simulated.",
+  "artifacts": [
+    {
+      "path": "skills/read-aloud/scripts/speak.ps1",
+      "sha256": "752ecfb90e7388d11b0332a3551d2b4fcee7e9346787c1133f4746b1aa094208"
+    },
+    {
+      "path": "skills/read-aloud/scripts/StopShortcut.cs",
+      "sha256": "d273a79477773f38121a763df299fa802c0c95ce45afa4bf1d7c6ece1bc3b6a7"
+    }
+  ]
+}

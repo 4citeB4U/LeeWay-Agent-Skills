@@ -19,6 +19,12 @@ powershell.exe -NoProfile -File "ABSOLUTE_SKILL_DIRECTORY/scripts/speak.ps1" -Te
 
 Use tool calls that yield promptly for lengthy playback, allowing new user input. Speak a progress update before lengthy work and the final answer before ending the turn. Use short sections so spoken questions reach the user promptly. Keep the written version accessible too.
 
+## Immediate interruption
+
+Before the first playback, explain: **Press Control+Alt+S to silence this reader. Say or type "Resume reading" in chat to enable it again.** The shortcut is global while this helper is playing, so Codex need not have focus. It stops speech and sets a persistent local mute latch; it does not cancel the user's main job. The helper registers only this shortcut and does not record keyboard input. Registration failure prevents playback rather than leaving the user without the stop control.
+
+Respect the latch across messages and chats. Do not clear it to deliver progress or a final answer. After an explicit resume request, call `speak.ps1 -Resume`, optionally with `-TextPath`. `-Stop` also mutes subsequent playback. A helper result saying muted means no speaker playback occurred. This shortcut controls only the Windows helper, not native ChatGPT voice or separately played WAV files. Voice barge-in is not implemented: microphone input must reach chat before the assistant can act on spoken requests. Do not claim continuous listening or that a key press was physically tested merely from an injected message test.
+
 Resolve ABSOLUTE_SKILL_DIRECTORY from this skill's actual location. The helper defaults to Microsoft Zira Desktop when installed, otherwise the Windows default voice, at rate -1. Optional parameters: `-Rate` (-10 to 10), `-Voice` (installed name), and `-WavePath` (absolute output WAV path, generates audio instead of speaker playback). To list voices, use `-ListVoices`. To cancel this helper's current speech on this host, call it with `-Stop`. Stop requests disable further speech in the current conversation; an explicit request to disable the persistent preference also updates its host instruction. Do not change system volume or the user's screen reader settings.
 
 If speaker playback fails, report the error without claiming the user heard anything. Offer or create a WAV under the workspace outputs directory and embed it as audio. A completed playback call confirms software completion, not audible sound at the user's device. Ask once whether the initial test was audible. No cloud service, API key, microphone, or screen capture is needed.
