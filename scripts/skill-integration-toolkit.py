@@ -5,6 +5,7 @@ Normalizes skills from external repos into Leeway Standards format
 """
 
 import json
+import argparse
 import os
 import shutil
 import yaml
@@ -299,8 +300,11 @@ class SkillRegistry:
 
 
 if __name__ == "__main__":
-    # Example usage
-    leeway_dir = "c:\\Tools\\AIskills\\skills"
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--skills-root", type=Path, default=Path(__file__).resolve().parents[1] / "skills")
+    parser.add_argument("--output", type=Path, default=Path.cwd() / "skill-registry.json")
+    args = parser.parse_args()
+    leeway_dir = args.skills_root
     
     # Normalize a skill
     normalizer = LeewaySkillNormalizer(leeway_dir)
@@ -309,7 +313,7 @@ if __name__ == "__main__":
     registry = SkillRegistry(leeway_dir)
     registry.build_registry()
     registry.build_search_index()
-    registry.save_registry(f"{leeway_dir}\\..\\skill-registry.json")
+    registry.save_registry(str(args.output))
     
     # Print report
     report = normalizer.generate_integration_report()

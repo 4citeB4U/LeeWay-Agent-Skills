@@ -3,6 +3,8 @@
 **Machine-Readable Learning Framework for AI Agents**  
 _Leeway Industries | Leonard Jerome Lee_
 
+**Ecosystem portability requirement:** all LeeWay core contracts and skill orchestration are path-, OS-, device- and model-agnostic. Read the [shared portability law](config/portability-contract.md) and [implementation/verification matrix](docs/PORTABILITY.md). Platform-specific tools are replaceable capability adapters. Historical drive records are evidence, never installation requirements. Portability intent does not certify untested hardware or services.
+
 ---
 
 ## 🎯 What This System Is

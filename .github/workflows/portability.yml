@@ -1,0 +1,23 @@
+name: LeeWay core portability
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  portable-core:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node scripts/audit-portability.mjs
+      - run: npm ci --ignore-scripts --prefix mcp-server
+      - run: npm run build --prefix mcp-server
+      - run: node mcp-server/scripts/portability-smoke.mjs
+      - run: npm ci --ignore-scripts --prefix mcp-remote
+      - run: npm run build --prefix mcp-remote
+      - run: node mcp-server/scripts/remote-portability-smoke.mjs

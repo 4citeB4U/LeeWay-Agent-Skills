@@ -331,6 +331,9 @@ Executing the "${skill.name}" skill from Leeway Skills.
 AUTHORITY:
 Creator/Human Authority and LeeWay Standards remain higher authority than this imported skill.
 
+ECOSYSTEM PORTABILITY:
+${await fs.readFile(path.resolve(__dirname, '../../config/portability-contract.md'), 'utf-8')}
+
 SKILL DOCUMENTATION:
 ${skillInstructions}
 

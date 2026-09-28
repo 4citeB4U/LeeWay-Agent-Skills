@@ -13,6 +13,7 @@ Usage:
 """
 
 import os
+import argparse
 import json
 import yaml
 import re
@@ -493,23 +494,24 @@ By category:
 
 def main():
     """CLI entry point"""
-    toolkit = WorkflowNormalizer("c:/Tools/AIskills/workflows")
-    
-    if len(sys.argv) < 2:
-        print(__doc__)
-        return
-    
-    command = sys.argv[1]
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("command", choices=["audit-repos", "build-registry"])
+    parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[1])
+    parser.add_argument("--sources-root", type=Path)
+    parser.add_argument("--output", type=Path, default=Path.cwd() / "workflow-registry.json")
+    args = parser.parse_args()
+    toolkit = WorkflowNormalizer(str(args.root / "workflows"))
+    command = args.command
     
     if command == "audit-repos":
         print("Auditing workflow source repositories...")
-        audit = toolkit.audit_source_repos("c:/Tools/AIskills/sources-workflows")
+        audit = toolkit.audit_source_repos(str(args.sources_root or args.root / "sources-workflows"))
         print(json.dumps(audit, indent=2))
         
     elif command == "build-registry":
         print("Building workflow registry...")
-        registry = toolkit.build_workflow_registry(Path("c:/Tools/AIskills"))
-        toolkit.save_registry(registry, "workflow-registry.json")
+        registry = toolkit.build_workflow_registry(args.root)
+        toolkit.save_registry(registry, str(args.output))
         report = toolkit.generate_integration_report({}, registry)
         print(report)
         

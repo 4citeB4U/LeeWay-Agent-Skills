@@ -18,6 +18,8 @@ Thumbs.db
 # Runtime and generated diagnostics
 mcp-server/*.out
 mcp-server/*.err
+mcp-remote/dist/
+__pycache__/
 
 # Local Leeway runtime artifacts
 .leeway/reports/

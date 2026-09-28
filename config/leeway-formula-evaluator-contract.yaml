@@ -110,4 +110,5 @@ recovered_canonical_authority:
     canonical_input: 4087FC14A9F1F44EB46D9D6417156176794E2ACC72EE9BF481F21A5D0ABE5236
     raw_adapter: 2C8B477ABAD73A0B8519127B20E500BC857F6D26A2722634F23637D4EEAC6215
     formula_service: 59C74A850CFBACAB4408D73538C824D25687AE0FBD12F07AB5D3622661B7B1EC
-  discovery_rule: "Search known C:/D:/E: authorities and live runtime before declaring UNEXPOSED or creating replacement Formula contracts."
+  historical_paths_are_runtime_requirements: false
+  discovery_rule: "Discover configured available authority resources and authorized live services; never require historical workstation roots or drive letters."

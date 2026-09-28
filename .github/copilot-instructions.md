@@ -2,6 +2,8 @@
 
 Canonical authority: `4citeB4U/LeeWay-Agent-Skills`.
 
+Apply `config/portability-contract.md` to every skill and integration: core contracts are path-, OS-, device- and model-agnostic; host paths, browsers, speech providers and model APIs are replaceable authorized adapters. Historical machine records are not deployment requirements. Report contract portability, adapter implementation and actual platform verification separately.
+
 Copilot and compatible agents that load this contract must use the canonical LeeWay package rather than reconstructing LeeWay from memory.
 
 ## First-turn bootstrap + every-message ingress

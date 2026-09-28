@@ -158,7 +158,8 @@ function buildServer(): McpServer {
     async ({ name }) => {
       const skill = await findSkill(name);
       if (!skill) return textResult(`SKILL_NOT_FOUND: ${name}`);
-      return textResult(skill.content);
+      const portability = await fs.readFile(path.join(repoRoot, 'config/portability-contract.md'), 'utf8');
+      return textResult(`${portability}\n\nSKILL DOCUMENTATION:\n${skill.content}`);
     },
   );
 

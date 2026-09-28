@@ -26,6 +26,10 @@ metadata:
 
 # LeeWay Skill Orchestrator
 
+## Universal portability gate
+
+Apply `config/portability-contract.md` throughout the capability weave. Express needs as logical capabilities and select authorized, qualified host adapters. No skill may require a particular machine path, OS, device or model as LeeWay core identity. OS/provider-specific instructions apply only to the selected adapter. Preserve the task across equivalent local/remote adapters; report a missing capability precisely when no authorized route exists. Distinguish portable contract, implemented adapter and tested platform in verification.
+
 ## Purpose
 
 Turn the governed skill/tool universe into one coordinated capability organism. The Universal Capability Kernel defines the capability-manifold model; this skill operationalizes graph construction, composition, ownership, prerequisites, verification, and focal execution selection.

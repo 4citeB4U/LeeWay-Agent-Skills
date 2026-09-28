@@ -2,7 +2,11 @@
 
 Canonical authority: `4citeB4U/LeeWay-Agent-Skills`.
 
-## Authority
+## Ecosystem portability — mandatory for every skill
+
+Apply `config/portability-contract.md` to all skill selection, tool execution and ecosystem integrations. LeeWay core contracts are path-, operating-system-, device- and model-agnostic. Discover logical capabilities and configure host adapters; never require a particular drive, user directory, device, browser or model for universal operation. Historical machine paths are provenance, not runtime instructions. Distinguish CONTRACT_PORTABLE, ADAPTER_IMPLEMENTED and PLATFORM_TESTED; do not claim untested device support.
+
+## Authority chain
 Creator/Human Authority > LeeWay Standards > Root of Trust > Runtime Fabric > Agent Lee > Harness > Formula > models/skills/MCPs/tools > execution > Veritas > receipt > Learning Ledger.
 
 No lower authority may silently override a higher one.
@@ -39,7 +43,7 @@ On every user message, `leeway-message-ingress-authority` checks whether that re
 
 `leeway-quantum-readiness` is conditional core whenever quantum/hybrid computing, quantum simulation, post-quantum security, or quantum-ready architecture materially affects the task.
 
-leeway-formula-authority-recovery is conditional core whenever Formula authority, WD8TB/storage development, cross-drive recovery, runtime binding, or an allegedly missing Formula contract/evaluator is involved. On the current workstation it requires recovery checks across known C:/D:/E: authorities before replacement work.
+leeway-formula-authority-recovery is conditional core whenever Formula authority, storage development, recovery, runtime binding, or an allegedly missing Formula contract/evaluator is involved. Discover configured available authority resources through authorized adapters before replacement work; historical machine roots are not required on another host.
 
 ## Continuous path
 `Bootstrap → Continuity → Ingress → Context/Phi-C64 → Formula/Phi-D → Agent Operating Loop → Capability Resilience → Universal Capability Kernel → Skill Orchestrator → capability weave → Tool Gateway when available → focal execution → Veritas → receipt → Conversation Vault when available → governed learning/reference memory → LeeWay delivery`

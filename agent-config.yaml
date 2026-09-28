@@ -13,6 +13,10 @@ agent:
   id: "agent-lee"
   model_compatible: ["any"]
   deployment_mode: "continuous_when_hosted"
+  portability_contract: "./config/portability-contract.md"
+  core_identity_requires_host_path: false
+  platform_selection: "authorized_capability_adapters"
+  model_selection: "user_preference_and_verified_task_capabilities"
   core_features:
     - skill_authority_bootstrap
     - per_message_ingress_check
@@ -126,7 +130,9 @@ tool_gateway:
   authority_tiers: [READ, OPERATE, MUTATE, ADMIN]
   normalized_capabilities: [files, docker, forgejo, runtime, database, logs, receipts, browser]
   mcp_runtime_registry: "./config/mcp-runtime-registry.json"
-  browser_runtime: "playwright-mcp"
+  browser_runtime: "authorized_host_adapter"
+  browser_capability: "browser"
+  known_browser_implementations: [host_provided_browser, playwright_mcp]
   connection_does_not_imply_permission: true
   credentials_remain_behind_adapter: true
   migration_sequence: [copy, verify, rebind_or_compatibility_junction, health_check, retire_old_payload]

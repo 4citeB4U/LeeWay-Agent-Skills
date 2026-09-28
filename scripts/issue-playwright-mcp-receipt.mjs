@@ -45,7 +45,7 @@ const run = (command, args, cwd = root) => {
 
 const runNpmAudit = (cwd) => {
   if (process.platform === "win32") {
-    const comspec = process.env.ComSpec || "C:\\Windows\\System32\\cmd.exe";
+    const comspec = process.env.ComSpec || "cmd.exe";
     return run(comspec, ["/d", "/s", "/c", "npm audit --json"], cwd);
   }
   return run("npm", ["audit", "--json"], cwd);

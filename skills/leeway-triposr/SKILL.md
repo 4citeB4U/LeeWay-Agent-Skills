@@ -24,7 +24,7 @@ metadata:
 
 ## Existing LeeWay runtime evidence
 
-Historical ecosystem evidence identifies `triposr-studio` / `leeway-triposr-tool`, with containers `leeway-triposr-backend` and `leeway-triposr-web`. Recorded host publication was backend 18000→8000 and web 13000→3000, from D:\\triposr-studio\\.leeway-portable. These are historical observed bindings and MUST be rediscovered before live execution.
+Historical ecosystem evidence identifies `triposr-studio` / `leeway-triposr-tool`, with containers `leeway-triposr-backend` and `leeway-triposr-web`. Recorded host publication was backend 18000→8000 and web 13000→3000. The former machine path is retained only as provenance in `config/image-to-3d-refinement-pipeline.json`. Discover the authorized current image-to-3D adapter and endpoint; no former drive, container name or port is a universal prerequisite.
 
 ## Purpose
 
