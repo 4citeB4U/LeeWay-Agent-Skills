@@ -1,0 +1,36 @@
+{
+  "id": "windows-read-aloud-accessibility-20260927",
+  "recordedAt": "2026-09-28T04:56:11.0846844Z",
+  "repository": "4citeB4U/LeeWay-Agent-Skills",
+  "baseCommit": "f5ac2dcd787f00a4e66fe8128b968b98031045a7",
+  "scope": "Prepared-text Windows speech adapter, persistent host preference routing, and spoken side-question labels",
+  "verification": {
+    "skillValidator": "PASS",
+    "portableFrontmatterCheck": "PASS",
+    "wavSynthesis": "PASS: 622354 frames at 22050 Hz",
+    "speakerPlayback": "COMPLETED by helper",
+    "originalVoiceAudibility": "USER_CONFIRMED in conversation",
+    "ziraAudibility": "NOT_YET_USER_CONFIRMED",
+    "inventoryAudit": "FAILED: fixed expected count 238; baseline already has 492; current has 493"
+  },
+  "formulaEvaluatorState": "UNEXPOSED",
+  "formulaExecutionState": "NOT_EXECUTED",
+  "deviceBridgeRuntime": "NOT_USED",
+  "notebookStudioBridge": "NOT_USED: direct Git transport used",
+  "learningLedger": "NOT_UPDATED",
+  "runtimeScope": "Windows host tested; fresh-chat behavior configured, not yet independently tested",
+  "artifacts": [
+    {
+      "path": "skills/read-aloud/SKILL.md",
+      "sha256": "f81e63c5a827248eeebfb63f3cedeb6a2353932eef4037c3ab10d289489abf95"
+    },
+    {
+      "path": "skills/read-aloud/scripts/speak.ps1",
+      "sha256": "949b613faa98ba590311a000e17d4b96c4cbc04a000fb2f722f95eeb06f20136"
+    },
+    {
+      "path": "skills/read-aloud/agents/openai.yaml",
+      "sha256": "633f639b7c65c75e0cd40156eab7e19bbc2ff03e3703bc3d5f9f5190500133cd"
+    }
+  ]
+}

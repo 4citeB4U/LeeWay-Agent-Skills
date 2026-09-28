@@ -66,6 +66,8 @@ If a worker discovers a missing skill/tool/provider, it reports the exact gap to
 
 ## Conversation availability
 
+For accessible conversation during a job, use spoken and written labels when requested: "Side question" before an incidental answer, "Main task update" for execution progress, and "Back to the main task" on resumption. A side question preserves the original objective unless the Creator explicitly changes it. These labels do not create separate chats or prove concurrency. State when a worker is actually running, and disclose when execution pauses while the parent answers.
+
 Do not make the Creator wait for a long explanation before work begins. Dispatch eligible lanes first, then report concise checkpoints while work continues where the harness genuinely supports continued execution.
 
 ## Harness boundary

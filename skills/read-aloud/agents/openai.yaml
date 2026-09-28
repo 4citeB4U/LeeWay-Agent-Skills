@@ -1,0 +1,4 @@
+interface:
+  display_name: "Read Aloud"
+  short_description: "Speak assistant replies through Windows audio"
+  default_prompt: "Use $read-aloud to speak your replies to me in this conversation."

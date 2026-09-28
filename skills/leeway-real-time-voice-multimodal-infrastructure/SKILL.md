@@ -56,6 +56,8 @@ All thresholds/equations must declare claim class, units, domains, assumptions a
 At minimum test: first-response latency distribution; sustained playout underruns; packet loss/jitter scenarios; barge-in spill; cancellation races; duplicate/late events; transcript revision; TTS failure/recovery; network handoff/TURN fallback where relevant; AEC/feedback; provider timeout; visual sampling load; context correctness after interruption.
 
 ## Heavy-use routing
+For local Windows playback of prepared assistant replies, use the bounded [Read Aloud adapter](../read-aloud/SKILL.md). It includes executable voice selection, rate control, cancellation and WAV output. Persistent accessibility preferences belong in the host's startup instructions. The adapter does not inherit untested streaming, microphone, or acoustic guarantees from this architecture skill.
+
 Use this skill by default for: Agent Lee live voice, phone receptionist, receptionist/front counter agents, avatar employees, accessibility/read-aloud, live phone calls, Device Bridge voice, two-way audio, live screen/camera assistants, streaming TTS/STT, barge-in, WebRTC diagnostics and multimodal low-latency systems.
 
 ## Evidence law
