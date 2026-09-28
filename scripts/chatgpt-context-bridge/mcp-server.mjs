@@ -1,0 +1,9 @@
+import fs from "node:fs"; import path from "node:path"; import {McpServer} from "@modelcontextprotocol/sdk/server/mcp.js"; import {StdioServerTransport} from "@modelcontextprotocol/sdk/server/stdio.js"; import {z} from "zod";
+const store=process.env.LEEWAY_CHATGPT_STORE||path.join(process.env.LOCALAPPDATA||process.cwd(),"LeeWay","ChatGPT-Context-Bridge");
+const load=(n)=>JSON.parse(fs.readFileSync(path.join(store,n),"utf8")); const server=new McpServer({name:"leeway-chatgpt-context-bridge",version:"1.0.0"});
+const result=(x)=>({content:[{type:"text",text:JSON.stringify(x,null,2)}]});
+server.tool("leeway_chatgpt_status","Report indexed ChatGPT evidence state",{},async()=>result(load("manifest.json")));
+server.tool("leeway_chatgpt_search","Search indexed authorized ChatGPT conversations",{query:z.string(),limit:z.number().int().min(1).max(50).default(20)},async({query,limit})=>{const terms=query.toLowerCase().split(/\s+/).filter(Boolean), rows=[];for(const c of load("conversations.json"))for(const m of c.messages){const h=(c.title+" "+m.text).toLowerCase(),score=terms.reduce((n,t)=>n+(h.includes(t)?1:0),0);if(score)rows.push({score,conversation_id:c.id,title:c.title,message_id:m.id,role:m.role,time:m.time,snippet:m.text.slice(0,1200)});}rows.sort((a,b)=>b.score-a.score);return result(rows.slice(0,limit));});
+server.tool("leeway_chatgpt_get_conversation","Get one indexed conversation",{conversation_id:z.string()},async({conversation_id})=>{const c=load("conversations.json").find(x=>x.id===conversation_id);return result(c||{status:"UNVERIFIED",reason:"conversation not indexed"});});
+server.tool("leeway_chatgpt_list_assets","List hashed assets from the authorized import",{contains:z.string().optional()},async({contains})=>{let a=load("manifest.json").assets||[];if(contains)a=a.filter(x=>x.path.toLowerCase().includes(contains.toLowerCase()));return result(a);});
+await server.connect(new StdioServerTransport());
