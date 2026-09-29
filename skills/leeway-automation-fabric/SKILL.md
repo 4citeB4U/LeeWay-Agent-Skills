@@ -1,6 +1,6 @@
 ---
 name: leeway-automation-fabric
-description: Govern and integrate LeeWay automation across Runtime Fabric, Formula F8, n8n, Home Assistant, Automatisch, Device Bridge, agents/workers and future robotics without making any provider the authority.
+description: Govern and integrate LeeWay automation across Runtime Fabric, Formula F8, n8n, Home Assistant, Device Bridge, agents/workers and future robotics without making any provider the authority.
 ---
 
 # LeeWay Automation Fabric
@@ -16,7 +16,6 @@ LeeWay Automation Harness is the domain authority. Runtime Fabric owns execution
 - native Runtime Fabric automation: canonical durable jobs/schedules/queues
 - n8n: deterministic workflow provider
 - Home Assistant: environment/device aggregation provider
-- Automatisch: workflow provider/donor; preserve AGPL/Enterprise license boundaries
 - Device Bridge: physical device capability authority
 - robotics adapters: future physical actuation/sensing routes
 
