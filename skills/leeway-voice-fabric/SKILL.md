@@ -64,3 +64,9 @@ The semantic voice mapping is `voice-runtime-state-v1`. Until calibrated ranges 
 `FORMULA EVALUATION = NOT EXECUTED`
 
 Never invent missing ranges or Q69 results.
+
+## Creator-facing read-aloud authority
+
+For Agent Lee Creator-facing speech, use only `agent-lee-voice-one`. Do not substitute Windows System.Speech, browser default SpeechSynthesis, Chatterbox shared profiles or unrelated voices. If Voice One cannot execute, report `VOICE_UNAVAILABLE`.
+
+ChatGPT-native Read Aloud/voice is owned by the ChatGPT client. When the user chooses that surface, do not replace it with a LeeWay fallback voice.
