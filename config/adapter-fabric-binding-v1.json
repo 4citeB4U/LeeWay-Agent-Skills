@@ -1,0 +1,28 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "LEEWAY_SKILL_ADAPTER_FABRIC_BINDING_V1",
+  "authority": "4citeB4U/LeeWay-Agent-Skills",
+  "law": "config/portability-contract.md",
+  "executionRegistry": "4citeB4U/Leeway-Runtime-Fabric/adapter.registry.json",
+  "universalContract": "4citeB4U/Leeway-Runtime-Fabric/contracts/universal-adapter-contract.v1.json",
+  "selectionOrder": [
+    "logical capability requirement",
+    "authorization/permission gate",
+    "canonical adapter registry lookup",
+    "platform/provider qualification",
+    "Formula routing when materially required",
+    "execution",
+    "Veritas"
+  ],
+  "forbidden": [
+    "skill-owned hard-coded provider as universal identity",
+    "fixed drive/path as portable requirement",
+    "claiming registry presence as execution proof",
+    "inventing Formula state when mapping/evaluator is absent"
+  ],
+  "statusClaims": [
+    "CONTRACT_PORTABLE",
+    "ADAPTER_IMPLEMENTED",
+    "PLATFORM_TESTED"
+  ]
+}
