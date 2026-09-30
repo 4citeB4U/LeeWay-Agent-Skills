@@ -80,6 +80,24 @@ Never request, copy into chat, persist in public evidence, or expose passwords, 
 
 No lower state implies a higher state.
 
+
+## Continuous durability gate
+
+Cold-boot reconnect does not prove indefinite background liveness.
+
+Before claiming ALWAYS_ON or 100-percent durability, additionally require:
+
+- Android/Samsung background restrictions reviewed and the workstation host exempted where appropriate;
+- the Remote MCP control plane isolated from heavy media, TTS, model, build or other long-running child workloads;
+- no orphaned child processes accumulating in the control-plane runtime;
+- a durable foreground-service or equivalent Android-supported keepalive strategy where required;
+- a sustained liveness soak test under representative workload;
+- recovery verified after process pressure, screen-off/Doze conditions and ordinary app switching.
+
+Voice/media work SHOULD execute in a separate provider/runtime. Do not run experimental TTS engines, PulseAudio stacks, or other heavy audio pipelines inside the same Termux process tree relied upon for Remote MCP availability.
+
+If the node becomes unreachable without an intentional shutdown, classify continuous durability as FAILED/OPEN even when cold-boot reconnect previously passed.
+
 ## Control boundary
 
 ### Verified workstation control
