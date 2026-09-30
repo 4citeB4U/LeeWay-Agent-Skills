@@ -1,9 +1,11 @@
 ---
 name: read-aloud
-description: Read assistant replies aloud using local Windows speech when requested or enabled by a persistent accessibility preference. Supports voice selection, speech rate, cancellation, and WAV output.
+description: Read assistant replies aloud using a qualified local host renderer when requested or enabled by a persistent accessibility preference. Supports Windows prepared-text speech and the qualified Android Samsung TTS bridge, cancellation, resume, and evidence-bound host routing.
 ---
 
 # Read Aloud
+
+Use a qualified local speech renderer to make assistant messages accessible. On Windows use the bundled System.Speech helper. On a qualified Android secondary workstation use the LeeWay Read Aloud Bridge with Samsung TTS. Prepared-text accessibility renderers are not Agent Lee Voice One and must never be labeled as such.
 
 Use local Windows speech to make assistant messages accessible. The user wants to hear the reply, including important progress updates and questions. Once requested, continue for subsequent replies in this conversation until the user disables it. A skill is not an app-wide streaming hook: do not promise automatic activation in every chat or reading every token as it appears.
 
@@ -18,6 +20,31 @@ powershell.exe -NoProfile -File "ABSOLUTE_SKILL_DIRECTORY/scripts/speak.ps1" -Te
 ```
 
 Use tool calls that yield promptly for lengthy playback, allowing new user input. Speak a progress update before lengthy work and the final answer before ending the turn. Use short sections so spoken questions reach the user promptly. Keep the written version accessible too.
+
+## Android secondary-workstation route
+
+When the qualified Android workstation is online and the creator's persistent read-aloud preference is enabled, send the same visible substantive reply to the phone after composing it.
+
+Write the prepared visible reply as UTF-8 to a file on the phone, then invoke:
+
+```bash
+bash "ABSOLUTE_SKILL_DIRECTORY/scripts/speak-android.sh" --text "ABSOLUTE_PATH_TO_TEXT"
+```
+
+The Android adapter expects the owner-installed package `industries.leeway.readaloud`, which exposes only `127.0.0.1:54321` and binds Samsung TTS `com.samsung.SMT`. The bridge provides `/health`, `/speak`, and `/stop`.
+
+Rules:
+- Speak visible assistant output only. Never speak hidden chain-of-thought, credentials, MFA codes, tokens, or private secrets.
+- Do not scrape the ChatGPT screen when the host can send prepared reply text directly.
+- Samsung TTS is `SAMSUNG_SYSTEM_TTS_ACCESSIBILITY_NOT_AGENT_LEE_VOICE_ONE`.
+- Use `speak-android.sh --stop` to mute and stop current speech.
+- Use `speak-android.sh --resume` only after an explicit resume request.
+- If `/health` is unavailable, the helper may launch the Read Aloud Bridge activity once and retry.
+- A successful HTTP acceptance confirms software handoff, not that sound was physically audible. Ask once after first qualification whether the user heard the test.
+- Android boot persistence belongs to the companion app/service; do not claim it until a cold-boot speech qualification passes.
+- If native ChatGPT voice is already speaking replies, suppress duplicate accessibility playback.
+
+The creator-approved policy is `4citeB4U/LeeWay-Voice-Fabric/contracts/creator-read-aloud-binding.v2.json`.
 
 ## Immediate interruption
 
