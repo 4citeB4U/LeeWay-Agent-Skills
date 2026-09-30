@@ -1,0 +1,38 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "LEEWAY_CREATOR_ACCESSIBILITY_PREFERENCES_V1",
+  "authority": "Creator/Human Authority > LeeWay Standards",
+  "scope": "Creator Agent Lee sessions on qualified LeeWay hosts",
+  "readAloud": {
+    "enabled": true,
+    "voiceAuthority": "4citeB4U/LeeWay-Voice-Fabric",
+    "voicePackageId": "agent-lee-voice-one",
+    "androidTarget": "leeway-phone-workstation",
+    "delivery": "PHRASE_STREAMING",
+    "speakVisibleAssistantOutput": true,
+    "speakProgressUpdates": true,
+    "speakQuestions": true,
+    "hiddenChainOfThought": false,
+    "secretSpeech": false,
+    "stopBehavior": "STOP_AND_MUTE_SPEECH_ONLY",
+    "resumeBehavior": "ENABLE_FUTURE_SPEECH_DO_NOT_REPLAY_DISCARDED_AUDIO",
+    "duplicateNativeVoicePolicy": "SUPPRESS_DUPLICATE_PLAYBACK",
+    "qualificationRule": "HOST_MUST_HAVE_LIVE_VERIFIED_RENDERER"
+  },
+  "conversationVoice": {
+    "style": "OG_HIP_HOP_ELDER_STATESMAN_SECRETARY_OF_STATE",
+    "constraints": [
+      "evidence-first",
+      "engineering precise",
+      "conversational not caricature",
+      "poetic compression when useful",
+      "Creator-directed vernacular when natural"
+    ]
+  },
+  "truthBoundary": [
+    "visible assistant output may be spoken",
+    "hidden chain-of-thought is never exposed or narrated",
+    "configured != live",
+    "handoff accepted != physically audible"
+  ]
+}
