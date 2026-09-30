@@ -1,6 +1,6 @@
 ---
 name: read-aloud
-description: Read assistant replies aloud using a qualified local host renderer when requested or enabled by a persistent accessibility preference. Supports Windows prepared-text speech and the qualified Android Samsung TTS bridge, cancellation, resume, and evidence-bound host routing.
+description: Read assistant replies aloud using a qualified local host renderer when requested or enabled by a persistent accessibility preference. For LeeWay-owned Agent Lee Android surfaces, route prepared text and streaming phrases to canonical Agent Lee Voice One through LeeWay Voice Fabric, with cancellation, mute/resume, and evidence-bound host routing.
 ---
 
 # Read Aloud
@@ -23,28 +23,38 @@ Use tool calls that yield promptly for lengthy playback, allowing new user input
 
 ## Android secondary-workstation route
 
-When the qualified Android workstation is online and the creator's persistent read-aloud preference is enabled, send the same visible substantive reply to the phone after composing it.
+When the qualified Android workstation is online and the Creator's persistent read-aloud preference is enabled, send the same visible substantive reply to the phone's **Agent Lee Voice One** bridge.
 
-Write the prepared visible reply as UTF-8 to a file on the phone, then invoke:
+Canonical path:
 
-```bash
-bash "ABSOLUTE_SKILL_DIRECTORY/scripts/speak-android.sh" --text "ABSOLUTE_PATH_TO_TEXT"
+```text
+visible assistant text
+→ phrase/chunk commit
+→ skills/read-aloud/scripts/speak-android.sh
+→ 127.0.0.1:54321
+→ industries.leeway.readaloud
+→ embedded LeeWay Voice Fabric WebView
+→ agent-lee-voice-one
+→ Android audio output
 ```
 
-The Android adapter expects the owner-installed package `industries.leeway.readaloud`, which exposes only `127.0.0.1:54321` and binds Samsung TTS `com.samsung.SMT`. The bridge provides `/health`, `/speak`, and `/stop`.
+The Android helper supports `--health`, `--prepare`, `--text`, `--stream-start`, `--stream-chunk`, `--stream-end`, `--stop`, and `--resume`.
 
 Rules:
 - Speak visible assistant output only. Never speak hidden chain-of-thought, credentials, MFA codes, tokens, or private secrets.
 - Do not scrape the ChatGPT screen when the host can send prepared reply text directly.
-- Samsung TTS is `SAMSUNG_SYSTEM_TTS_ACCESSIBILITY_NOT_AGENT_LEE_VOICE_ONE`.
-- Use `speak-android.sh --stop` to mute and stop current speech.
-- Use `speak-android.sh --resume` only after an explicit resume request.
+- `agent-lee-voice-one` is the required renderer for LeeWay-owned Agent Lee Android speech.
+- Android/Samsung/Google system TTS is not an authorized substitute for Agent Lee Voice One.
+- Start streaming after the first complete phrase/chunk, not after the entire answer. The canonical Voice Fabric pipeline decides phrase boundaries and preserves spoken order.
+- `--stop` cancels active Voice One playback and sets the persistent local mute latch. It does not cancel the parent reasoning/execution task.
+- `--resume` clears the mute latch and enables subsequent speech; discarded speech is not replayed automatically.
 - If `/health` is unavailable, the helper may launch the Read Aloud Bridge activity once and retry.
-- A successful HTTP acceptance confirms software handoff, not that sound was physically audible. Ask once after first qualification whether the user heard the test.
-- Android boot persistence belongs to the companion app/service; do not claim it until a cold-boot speech qualification passes.
-- If native ChatGPT voice is already speaking replies, suppress duplicate accessibility playback.
+- A successful HTTP acceptance proves software handoff, not physical audibility. Initial device qualification still requires a heard-audio confirmation plus runtime evidence.
+- Android boot persistence belongs to the companion app/service and must be cold-boot qualified.
+- If native ChatGPT voice is already speaking replies, suppress duplicate Voice One playback.
+- The Android Voice One bridge remains `ADAPTER_IMPLEMENTED_NOT_DEVICE_VERIFIED` until the current APK is installed and qualified on the target phone.
 
-The creator-approved policy is `4citeB4U/LeeWay-Voice-Fabric/contracts/creator-read-aloud-binding.v2.json`.
+The Creator-approved voice authority is `4citeB4U/LeeWay-Voice-Fabric`; the Android bridge may not silently downgrade to unrelated TTS.
 
 ## Immediate interruption
 
