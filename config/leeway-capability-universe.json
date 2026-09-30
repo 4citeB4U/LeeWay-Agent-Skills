@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "record_role": "HISTORICAL_INVENTORY_NOT_RUNTIME_BINDING",
   "portability_contract": "config/portability-contract.md",
-  "observed_at": "2026-09-16T00:00:00Z",
+  "observed_at": "2026-09-30T06:01:44Z",
   "authority": {
     "repository": "4citeB4U/LeeWay-Agent-Skills",
     "branch": "main",
@@ -188,6 +188,18 @@
       },
       "ownership_manifest": "config/tool-ownership-families.json",
       "classifier": "scripts/classify-tool-artifacts.mjs"
+    }
+  },
+  "runtime_qualifications": {
+    "android_secondary_workstation": {
+      "skill": "leeway-secondary-workstation",
+      "state": "VERIFIED_REFERENCE_IMPLEMENTATION",
+      "verified_at": "2026-09-30T06:01:44Z",
+      "evidence_repo": "4citeB4U/LEEWAY-DEVICE-BRIDGE",
+      "evidence_commit": "87b2a4d88cf1d0122dae12ad81439bebecdd7880",
+      "promotion_receipt": "receipts/leeway-secondary-workstation-android-cold-boot-20260930.json",
+      "boundary": "TERMUX_APP_UID_NON_ROOT",
+      "portability_rule": "EACH_PHONE_REQUIRES_OWN_QUALIFICATION"
     }
   }
 }
