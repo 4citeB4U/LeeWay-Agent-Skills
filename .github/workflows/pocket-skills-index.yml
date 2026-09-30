@@ -1,0 +1,21 @@
+name: Pocket Skill Index Gate
+
+on:
+  push:
+    branches:
+      - feature/pocket-static-skill-index-20260929
+    paths:
+      - 'docs/pocket-skills-index.json'
+      - 'tests/pocket-skills-index.test.mjs'
+      - '.github/workflows/pocket-skills-index.yml'
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify static skill index
+        run: node tests/pocket-skills-index.test.mjs
