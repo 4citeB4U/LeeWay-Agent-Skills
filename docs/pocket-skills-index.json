@@ -1,0 +1,2491 @@
+{
+  "schemaVersion": "1.0.0",
+  "authority": "4citeB4U/LeeWay-Agent-Skills",
+  "purpose": "Static read-only phone discovery index for canonical LeeWay Agent Skills. Index presence does not prove a skill executed.",
+  "skillsSourceCommit": "c9b7e6c0a824d73a34ec8097d31df00d35295b3a",
+  "authorityPath": "AGENTS.md",
+  "portabilityPath": "config/portability-contract.md",
+  "count": 496,
+  "skills": [
+    {
+      "slug": "art-direction",
+      "path": "skills/3d/art-direction/SKILL.md",
+      "category": "3d"
+    },
+    {
+      "slug": "asset-lifecycle",
+      "path": "skills/3d/asset-lifecycle/SKILL.md",
+      "category": "3d"
+    },
+    {
+      "slug": "cad-bim-manufacturing",
+      "path": "skills/3d/cad-bim-manufacturing/SKILL.md",
+      "category": "3d"
+    },
+    {
+      "slug": "character-anatomy",
+      "path": "skills/3d/character-anatomy/SKILL.md",
+      "category": "3d"
+    },
+    {
+      "slug": "cinematography-camera",
+      "path": "skills/3d/cinematography-camera/SKILL.md",
+      "category": "3d"
+    },
+    {
+      "slug": "clothing-costume",
+      "path": "skills/3d/clothing-costume/SKILL.md",
+      "category": "3d"
+    },
+    {
+      "slug": "compositing-post",
+      "path": "skills/3d/compositing-post/SKILL.md",
+      "category": "3d"
+    },
+    {
+      "slug": "department",
+      "path": "skills/3d/department/SKILL.md",
+      "category": "3d"
+    },
+    {
+      "slug": "digital-sculpting",
+      "path": "skills/3d/digital-sculpting/SKILL.md",
+      "category": "3d"
+    },
+    {
+      "slug": "environment-architecture",
+      "path": "skills/3d/environment-architecture/SKILL.md",
+      "category": "3d"
+    },
+    {
+      "slug": "facial-performance",
+      "path": "skills/3d/facial-performance/SKILL.md",
+      "category": "3d"
+    },
+    {
+      "slug": "game-asset-production",
+      "path": "skills/3d/game-asset-production/SKILL.md",
+      "category": "3d"
+    },
+    {
+      "slug": "game-engine-integration",
+      "path": "skills/3d/game-engine-integration/SKILL.md",
+      "category": "3d"
+    },
+    {
+      "slug": "gaussian-splat-neural-scene",
+      "path": "skills/3d/gaussian-splat-neural-scene/SKILL.md",
+      "category": "3d"
+    },
+    {
+      "slug": "geometry-topology",
+      "path": "skills/3d/geometry-topology/SKILL.md",
+      "category": "3d"
+    },
+    {
+      "slug": "groom-hair-fur",
+      "path": "skills/3d/groom-hair-fur/SKILL.md",
+      "category": "3d"
+    },
+    {
+      "slug": "interchange-export",
+      "path": "skills/3d/interchange-export/SKILL.md",
+      "category": "3d"
+    },
+    {
+      "slug": "lighting-render-validation",
+      "path": "skills/3d/lighting-render-validation/SKILL.md",
+      "category": "3d"
+    },
+    {
+      "slug": "material-lookdev",
+      "path": "skills/3d/material-lookdev/SKILL.md",
+      "category": "3d"
+    },
+    {
+      "slug": "mocap-performance-capture",
+      "path": "skills/3d/mocap-performance-capture/SKILL.md",
+      "category": "3d"
+    },
+    {
+      "slug": "navigation-gameplay-spatial",
+      "path": "skills/3d/navigation-gameplay-spatial/SKILL.md",
+      "category": "3d"
+    },
+    {
+      "slug": "photogrammetry-spatial-capture",
+      "path": "skills/3d/photogrammetry-spatial-capture/SKILL.md",
+      "category": "3d"
+    },
+    {
+      "slug": "physics-simulation",
+      "path": "skills/3d/physics-simulation/SKILL.md",
+      "category": "3d"
+    },
+    {
+      "slug": "procedural-modeling",
+      "path": "skills/3d/procedural-modeling/SKILL.md",
+      "category": "3d"
+    },
+    {
+      "slug": "qa-automation",
+      "path": "skills/3d/qa-automation/SKILL.md",
+      "category": "3d"
+    },
+    {
+      "slug": "reference-asset-research",
+      "path": "skills/3d/reference-asset-research/SKILL.md",
+      "category": "3d"
+    },
+    {
+      "slug": "rigging-animation",
+      "path": "skills/3d/rigging-animation/SKILL.md",
+      "category": "3d"
+    },
+    {
+      "slug": "scene-audit",
+      "path": "skills/3d/scene-audit/SKILL.md",
+      "category": "3d"
+    },
+    {
+      "slug": "scene-streaming-virtualized-geometry",
+      "path": "skills/3d/scene-streaming-virtualized-geometry/SKILL.md",
+      "category": "3d"
+    },
+    {
+      "slug": "shader-authoring",
+      "path": "skills/3d/shader-authoring/SKILL.md",
+      "category": "3d"
+    },
+    {
+      "slug": "spatial-audio-hooks",
+      "path": "skills/3d/spatial-audio-hooks/SKILL.md",
+      "category": "3d"
+    },
+    {
+      "slug": "terrain-geospatial",
+      "path": "skills/3d/terrain-geospatial/SKILL.md",
+      "category": "3d"
+    },
+    {
+      "slug": "texture-baking",
+      "path": "skills/3d/texture-baking/SKILL.md",
+      "category": "3d"
+    },
+    {
+      "slug": "vegetation-ecosystem",
+      "path": "skills/3d/vegetation-ecosystem/SKILL.md",
+      "category": "3d"
+    },
+    {
+      "slug": "vfx-volumetrics",
+      "path": "skills/3d/vfx-volumetrics/SKILL.md",
+      "category": "3d"
+    },
+    {
+      "slug": "visual-regression",
+      "path": "skills/3d/visual-regression/SKILL.md",
+      "category": "3d"
+    },
+    {
+      "slug": "autonomous-conductor",
+      "path": "skills/agent-autonomy/autonomous-conductor/SKILL.md",
+      "category": "agent-autonomy"
+    },
+    {
+      "slug": "full-stack-delivery",
+      "path": "skills/agent-autonomy/full-stack-delivery/SKILL.md",
+      "category": "agent-autonomy"
+    },
+    {
+      "slug": "multi-agent-orchestration",
+      "path": "skills/agent-orchestration/multi-agent-orchestration/SKILL.md",
+      "category": "agent-orchestration"
+    },
+    {
+      "slug": "agent-design-patterns",
+      "path": "skills/agent-patterns/agent-design-patterns/SKILL.md",
+      "category": "agent-patterns"
+    },
+    {
+      "slug": "llm-prompting",
+      "path": "skills/ai-ml/llm-prompting/SKILL.md",
+      "category": "ai-ml"
+    },
+    {
+      "slug": "ml-model-development",
+      "path": "skills/ai-ml/ml-model-development/SKILL.md",
+      "category": "ai-ml"
+    },
+    {
+      "slug": "multimodal-systems",
+      "path": "skills/ai-ml/multimodal-systems/SKILL.md",
+      "category": "ai-ml"
+    },
+    {
+      "slug": "retrieval-generation-fine-tuning",
+      "path": "skills/ai-ml/retrieval-generation-fine-tuning/SKILL.md",
+      "category": "ai-ml"
+    },
+    {
+      "slug": "system-design",
+      "path": "skills/architecture/system-design/SKILL.md",
+      "category": "architecture"
+    },
+    {
+      "slug": "refactoring",
+      "path": "skills/code-analysis/refactoring/SKILL.md",
+      "category": "code-analysis"
+    },
+    {
+      "slug": "security-vulnerability-scanning",
+      "path": "skills/code-analysis/security-vulnerability-scanning/SKILL.md",
+      "category": "code-analysis"
+    },
+    {
+      "slug": "static-analysis",
+      "path": "skills/code-analysis/static-analysis/SKILL.md",
+      "category": "code-analysis"
+    },
+    {
+      "slug": "full-stack-application",
+      "path": "skills/code-generation/full-stack-application/SKILL.md",
+      "category": "code-generation"
+    },
+    {
+      "slug": "microservices-architecture",
+      "path": "skills/code-generation/microservices-architecture/SKILL.md",
+      "category": "code-generation"
+    },
+    {
+      "slug": "python-codegen",
+      "path": "skills/code-generation/python-codegen/SKILL.md",
+      "category": "code-generation"
+    },
+    {
+      "slug": "typescript-codegen",
+      "path": "skills/code-generation/typescript-codegen/SKILL.md",
+      "category": "code-generation"
+    },
+    {
+      "slug": "accounts-receivable-cash-application",
+      "path": "skills/commerce/accounts-receivable-cash-application/SKILL.md",
+      "category": "commerce"
+    },
+    {
+      "slug": "billing-rating-invoicing",
+      "path": "skills/commerce/billing-rating-invoicing/SKILL.md",
+      "category": "commerce"
+    },
+    {
+      "slug": "bol-freight-custody",
+      "path": "skills/commerce/bol-freight-custody/SKILL.md",
+      "category": "commerce"
+    },
+    {
+      "slug": "collections-dunning-disputes",
+      "path": "skills/commerce/collections-dunning-disputes/SKILL.md",
+      "category": "commerce"
+    },
+    {
+      "slug": "commerce-exception-control",
+      "path": "skills/commerce/commerce-exception-control/SKILL.md",
+      "category": "commerce"
+    },
+    {
+      "slug": "inventory-custody-reconciliation",
+      "path": "skills/commerce/inventory-custody-reconciliation/SKILL.md",
+      "category": "commerce"
+    },
+    {
+      "slug": "lot-serial-genealogy",
+      "path": "skills/commerce/lot-serial-genealogy/SKILL.md",
+      "category": "commerce"
+    },
+    {
+      "slug": "product-master-bom",
+      "path": "skills/commerce/product-master-bom/SKILL.md",
+      "category": "commerce"
+    },
+    {
+      "slug": "receiving-inspection",
+      "path": "skills/commerce/receiving-inspection/SKILL.md",
+      "category": "commerce"
+    },
+    {
+      "slug": "three-way-match",
+      "path": "skills/commerce/three-way-match/SKILL.md",
+      "category": "commerce"
+    },
+    {
+      "slug": "leadership-governance",
+      "path": "skills/company/leadership-governance/SKILL.md",
+      "category": "company"
+    },
+    {
+      "slug": "product-design-research",
+      "path": "skills/company/product-design-research/SKILL.md",
+      "category": "company"
+    },
+    {
+      "slug": "product-management",
+      "path": "skills/company/product-management/SKILL.md",
+      "category": "company"
+    },
+    {
+      "slug": "product-security",
+      "path": "skills/company/product-security/SKILL.md",
+      "category": "company"
+    },
+    {
+      "slug": "software-engineering",
+      "path": "skills/company/software-engineering/SKILL.md",
+      "category": "company"
+    },
+    {
+      "slug": "sre-platform",
+      "path": "skills/company/sre-platform/SKILL.md",
+      "category": "company"
+    },
+    {
+      "slug": "appsec-secure-sdlc",
+      "path": "skills/cyber/appsec-secure-sdlc/SKILL.md",
+      "category": "cyber"
+    },
+    {
+      "slug": "bot-abuse-defense",
+      "path": "skills/cyber/bot-abuse-defense/SKILL.md",
+      "category": "cyber"
+    },
+    {
+      "slug": "cloud-container-security",
+      "path": "skills/cyber/cloud-container-security/SKILL.md",
+      "category": "cyber"
+    },
+    {
+      "slug": "crypto-pqc-agility",
+      "path": "skills/cyber/crypto-pqc-agility/SKILL.md",
+      "category": "cyber"
+    },
+    {
+      "slug": "cyber-resilience-recovery",
+      "path": "skills/cyber/cyber-resilience-recovery/SKILL.md",
+      "category": "cyber"
+    },
+    {
+      "slug": "data-security-privacy",
+      "path": "skills/cyber/data-security-privacy/SKILL.md",
+      "category": "cyber"
+    },
+    {
+      "slug": "edge-network-defense",
+      "path": "skills/cyber/edge-network-defense/SKILL.md",
+      "category": "cyber"
+    },
+    {
+      "slug": "iam-pam",
+      "path": "skills/cyber/iam-pam/SKILL.md",
+      "category": "cyber"
+    },
+    {
+      "slug": "incident-response-forensics",
+      "path": "skills/cyber/incident-response-forensics/SKILL.md",
+      "category": "cyber"
+    },
+    {
+      "slug": "key-secrets-management",
+      "path": "skills/cyber/key-secrets-management/SKILL.md",
+      "category": "cyber"
+    },
+    {
+      "slug": "security-architecture-threat-modeling",
+      "path": "skills/cyber/security-architecture-threat-modeling/SKILL.md",
+      "category": "cyber"
+    },
+    {
+      "slug": "security-awareness-human-risk",
+      "path": "skills/cyber/security-awareness-human-risk/SKILL.md",
+      "category": "cyber"
+    },
+    {
+      "slug": "security-governance-risk-compliance",
+      "path": "skills/cyber/security-governance-risk-compliance/SKILL.md",
+      "category": "cyber"
+    },
+    {
+      "slug": "security-telemetry-asset-inventory",
+      "path": "skills/cyber/security-telemetry-asset-inventory/SKILL.md",
+      "category": "cyber"
+    },
+    {
+      "slug": "security-validation",
+      "path": "skills/cyber/security-validation/SKILL.md",
+      "category": "cyber"
+    },
+    {
+      "slug": "soc-detection-engineering",
+      "path": "skills/cyber/soc-detection-engineering/SKILL.md",
+      "category": "cyber"
+    },
+    {
+      "slug": "software-supply-chain",
+      "path": "skills/cyber/software-supply-chain/SKILL.md",
+      "category": "cyber"
+    },
+    {
+      "slug": "threat-intelligence",
+      "path": "skills/cyber/threat-intelligence/SKILL.md",
+      "category": "cyber"
+    },
+    {
+      "slug": "vulnerability-exposure-management",
+      "path": "skills/cyber/vulnerability-exposure-management/SKILL.md",
+      "category": "cyber"
+    },
+    {
+      "slug": "zero-trust-architecture",
+      "path": "skills/cyber/zero-trust-architecture/SKILL.md",
+      "category": "cyber"
+    },
+    {
+      "slug": "advanced-analytics",
+      "path": "skills/data-analysis/advanced-analytics/SKILL.md",
+      "category": "data-analysis"
+    },
+    {
+      "slug": "pandas-analysis",
+      "path": "skills/data-analysis/pandas-analysis/SKILL.md",
+      "category": "data-analysis"
+    },
+    {
+      "slug": "database-design-optimization",
+      "path": "skills/database-design/database-design-optimization/SKILL.md",
+      "category": "database-design"
+    },
+    {
+      "slug": "javascript-debugging",
+      "path": "skills/debugging/javascript-debugging/SKILL.md",
+      "category": "debugging"
+    },
+    {
+      "slug": "python-debugging",
+      "path": "skills/debugging/python-debugging/SKILL.md",
+      "category": "debugging"
+    },
+    {
+      "slug": "design-suite",
+      "path": "skills/design-suite/SKILL.md",
+      "category": "general"
+    },
+    {
+      "slug": "dockerfile-creation",
+      "path": "skills/devops/dockerfile-creation/SKILL.md",
+      "category": "devops"
+    },
+    {
+      "slug": "kubernetes-deployment",
+      "path": "skills/devops/kubernetes-deployment/SKILL.md",
+      "category": "devops"
+    },
+    {
+      "slug": "accessibility-interface-architecture",
+      "path": "skills/digital-craft/accessibility-interface-architecture/SKILL.md",
+      "category": "digital-craft"
+    },
+    {
+      "slug": "asset-streaming-compression",
+      "path": "skills/digital-craft/asset-streaming-compression/SKILL.md",
+      "category": "digital-craft"
+    },
+    {
+      "slug": "browser-compatibility-progressive-enhancement",
+      "path": "skills/digital-craft/browser-compatibility-progressive-enhancement/SKILL.md",
+      "category": "digital-craft"
+    },
+    {
+      "slug": "component-state-architecture",
+      "path": "skills/digital-craft/component-state-architecture/SKILL.md",
+      "category": "digital-craft"
+    },
+    {
+      "slug": "data-visualization",
+      "path": "skills/digital-craft/data-visualization/SKILL.md",
+      "category": "digital-craft"
+    },
+    {
+      "slug": "design-system-governance",
+      "path": "skills/digital-craft/design-system-governance/SKILL.md",
+      "category": "digital-craft"
+    },
+    {
+      "slug": "design-to-code-contract",
+      "path": "skills/digital-craft/design-to-code-contract/SKILL.md",
+      "category": "digital-craft"
+    },
+    {
+      "slug": "design-token-architecture",
+      "path": "skills/digital-craft/design-token-architecture/SKILL.md",
+      "category": "digital-craft"
+    },
+    {
+      "slug": "dom-render-lifecycle",
+      "path": "skills/digital-craft/dom-render-lifecycle/SKILL.md",
+      "category": "digital-craft"
+    },
+    {
+      "slug": "energy-thermal-efficiency",
+      "path": "skills/digital-craft/energy-thermal-efficiency/SKILL.md",
+      "category": "digital-craft"
+    },
+    {
+      "slug": "gesture-haptic-audio",
+      "path": "skills/digital-craft/gesture-haptic-audio/SKILL.md",
+      "category": "digital-craft"
+    },
+    {
+      "slug": "input-device-capability",
+      "path": "skills/digital-craft/input-device-capability/SKILL.md",
+      "category": "digital-craft"
+    },
+    {
+      "slug": "localization-bidi-content-resilience",
+      "path": "skills/digital-craft/localization-bidi-content-resilience/SKILL.md",
+      "category": "digital-craft"
+    },
+    {
+      "slug": "motion-spring-physics",
+      "path": "skills/digital-craft/motion-spring-physics/SKILL.md",
+      "category": "digital-craft"
+    },
+    {
+      "slug": "perceptual-color-wide-gamut",
+      "path": "skills/digital-craft/perceptual-color-wide-gamut/SKILL.md",
+      "category": "digital-craft"
+    },
+    {
+      "slug": "performance-lab-field",
+      "path": "skills/digital-craft/performance-lab-field/SKILL.md",
+      "category": "digital-craft"
+    },
+    {
+      "slug": "prototyping-interaction-validation",
+      "path": "skills/digital-craft/prototyping-interaction-validation/SKILL.md",
+      "category": "digital-craft"
+    },
+    {
+      "slug": "responsive-adaptive-cross-platform",
+      "path": "skills/digital-craft/responsive-adaptive-cross-platform/SKILL.md",
+      "category": "digital-craft"
+    },
+    {
+      "slug": "runtime-performance-hardware",
+      "path": "skills/digital-craft/runtime-performance-hardware/SKILL.md",
+      "category": "digital-craft"
+    },
+    {
+      "slug": "spatial-3d-interface",
+      "path": "skills/digital-craft/spatial-3d-interface/SKILL.md",
+      "category": "digital-craft"
+    },
+    {
+      "slug": "typography-grid-layout",
+      "path": "skills/digital-craft/typography-grid-layout/SKILL.md",
+      "category": "digital-craft"
+    },
+    {
+      "slug": "view-transition-spatial-navigation",
+      "path": "skills/digital-craft/view-transition-spatial-navigation/SKILL.md",
+      "category": "digital-craft"
+    },
+    {
+      "slug": "visual-interaction-regression",
+      "path": "skills/digital-craft/visual-interaction-regression/SKILL.md",
+      "category": "digital-craft"
+    },
+    {
+      "slug": "webgpu-shader-runtime",
+      "path": "skills/digital-craft/webgpu-shader-runtime/SKILL.md",
+      "category": "digital-craft"
+    },
+    {
+      "slug": "api-documentation",
+      "path": "skills/documentation/api-documentation/SKILL.md",
+      "category": "documentation"
+    },
+    {
+      "slug": "leeway-api-governance",
+      "path": "skills/enterprise/leeway-api-governance/SKILL.md",
+      "category": "enterprise"
+    },
+    {
+      "slug": "leeway-application-final-review",
+      "path": "skills/enterprise/leeway-application-final-review/SKILL.md",
+      "category": "enterprise"
+    },
+    {
+      "slug": "leeway-cicd-quality-gates",
+      "path": "skills/enterprise/leeway-cicd-quality-gates/SKILL.md",
+      "category": "enterprise"
+    },
+    {
+      "slug": "leeway-deployment-readiness",
+      "path": "skills/enterprise/leeway-deployment-readiness/SKILL.md",
+      "category": "enterprise"
+    },
+    {
+      "slug": "leeway-developer-workflow",
+      "path": "skills/enterprise/leeway-developer-workflow/SKILL.md",
+      "category": "enterprise"
+    },
+    {
+      "slug": "leeway-infrastructure-governance",
+      "path": "skills/enterprise/leeway-infrastructure-governance/SKILL.md",
+      "category": "enterprise"
+    },
+    {
+      "slug": "leeway-model-serving-governance",
+      "path": "skills/enterprise/leeway-model-serving-governance/SKILL.md",
+      "category": "enterprise"
+    },
+    {
+      "slug": "leeway-permission-security-review",
+      "path": "skills/enterprise/leeway-permission-security-review/SKILL.md",
+      "category": "enterprise"
+    },
+    {
+      "slug": "leeway-reliability-slo",
+      "path": "skills/enterprise/leeway-reliability-slo/SKILL.md",
+      "category": "enterprise"
+    },
+    {
+      "slug": "leeway-runtime-durability",
+      "path": "skills/enterprise/leeway-runtime-durability/SKILL.md",
+      "category": "enterprise"
+    },
+    {
+      "slug": "leeway-scalability-proof",
+      "path": "skills/enterprise/leeway-scalability-proof/SKILL.md",
+      "category": "enterprise"
+    },
+    {
+      "slug": "leeway-telemetry-observability",
+      "path": "skills/enterprise/leeway-telemetry-observability/SKILL.md",
+      "category": "enterprise"
+    },
+    {
+      "slug": "resilience-patterns",
+      "path": "skills/error-handling/resilience-patterns/SKILL.md",
+      "category": "error-handling"
+    },
+    {
+      "slug": "cabinet-coordination",
+      "path": "skills/executive/cabinet-coordination/SKILL.md",
+      "category": "executive"
+    },
+    {
+      "slug": "continuity-readiness",
+      "path": "skills/executive/continuity-readiness/SKILL.md",
+      "category": "executive"
+    },
+    {
+      "slug": "decision-intelligence",
+      "path": "skills/executive/decision-intelligence/SKILL.md",
+      "category": "executive"
+    },
+    {
+      "slug": "executive-secretariat",
+      "path": "skills/executive/executive-secretariat/SKILL.md",
+      "category": "executive"
+    },
+    {
+      "slug": "records-briefing-integrity",
+      "path": "skills/executive/records-briefing-integrity/SKILL.md",
+      "category": "executive"
+    },
+    {
+      "slug": "senior-personnel-governance",
+      "path": "skills/executive/senior-personnel-governance/SKILL.md",
+      "category": "executive"
+    },
+    {
+      "slug": "strategic-communications",
+      "path": "skills/executive/strategic-communications/SKILL.md",
+      "category": "executive"
+    },
+    {
+      "slug": "strategic-negotiation-statecraft",
+      "path": "skills/executive/strategic-negotiation-statecraft/SKILL.md",
+      "category": "executive"
+    },
+    {
+      "slug": "21st-dev",
+      "path": "skills/external/21st-dev/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "awesome-design",
+      "path": "skills/external/awesome-design/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "binance-capability-router",
+      "path": "skills/external/binance-capability-router/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "dashboard",
+      "path": "skills/external/dashboard/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "expo",
+      "path": "skills/external/expo/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "frontend-design",
+      "path": "skills/external/frontend-design/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "frontend-ui-ux",
+      "path": "skills/external/frontend-ui-ux/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "google-fonts",
+      "path": "skills/external/google-fonts/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "graphify",
+      "path": "skills/external/graphify/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "gsap",
+      "path": "skills/external/gsap/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "gstack",
+      "path": "skills/external/gstack/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "hyperframes",
+      "path": "skills/external/hyperframes/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "impeccable",
+      "path": "skills/external/impeccable/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "industrial-brutalist-ui",
+      "path": "skills/external/industrial-brutalist-ui/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "last30days",
+      "path": "skills/external/last30days/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "ab-test-setup",
+      "path": "skills/external/marketing/ab-test-setup/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "ad-creative",
+      "path": "skills/external/marketing/ad-creative/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "ai-seo",
+      "path": "skills/external/marketing/ai-seo/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "analytics-tracking",
+      "path": "skills/external/marketing/analytics-tracking/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "churn-prevention",
+      "path": "skills/external/marketing/churn-prevention/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "cold-email",
+      "path": "skills/external/marketing/cold-email/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "competitor-alternatives",
+      "path": "skills/external/marketing/competitor-alternatives/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "content-strategy",
+      "path": "skills/external/marketing/content-strategy/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "copy-editing",
+      "path": "skills/external/marketing/copy-editing/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "copywriting",
+      "path": "skills/external/marketing/copywriting/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "email-sequence",
+      "path": "skills/external/marketing/email-sequence/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "form-cro",
+      "path": "skills/external/marketing/form-cro/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "free-tool-strategy",
+      "path": "skills/external/marketing/free-tool-strategy/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "launch-strategy",
+      "path": "skills/external/marketing/launch-strategy/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "lead-magnets",
+      "path": "skills/external/marketing/lead-magnets/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "marketing-ideas",
+      "path": "skills/external/marketing/marketing-ideas/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "marketing-psychology",
+      "path": "skills/external/marketing/marketing-psychology/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "onboarding-cro",
+      "path": "skills/external/marketing/onboarding-cro/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "page-cro",
+      "path": "skills/external/marketing/page-cro/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "paid-ads",
+      "path": "skills/external/marketing/paid-ads/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "paywall-upgrade-cro",
+      "path": "skills/external/marketing/paywall-upgrade-cro/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "popup-cro",
+      "path": "skills/external/marketing/popup-cro/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "pricing-strategy",
+      "path": "skills/external/marketing/pricing-strategy/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "product-marketing-context",
+      "path": "skills/external/marketing/product-marketing-context/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "programmatic-seo",
+      "path": "skills/external/marketing/programmatic-seo/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "referral-program",
+      "path": "skills/external/marketing/referral-program/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "revops",
+      "path": "skills/external/marketing/revops/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "sales-enablement",
+      "path": "skills/external/marketing/sales-enablement/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "schema-markup",
+      "path": "skills/external/marketing/schema-markup/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "seo-audit",
+      "path": "skills/external/marketing/seo-audit/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "signup-flow-cro",
+      "path": "skills/external/marketing/signup-flow-cro/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "site-architecture",
+      "path": "skills/external/marketing/site-architecture/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "social-content",
+      "path": "skills/external/marketing/social-content/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "material-3",
+      "path": "skills/external/material-3/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "minimalist-ui",
+      "path": "skills/external/minimalist-ui/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "mobile-app-ui-design",
+      "path": "skills/external/mobile-app-ui-design/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "open-design",
+      "path": "skills/external/open-design/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "playwright",
+      "path": "skills/external/playwright/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "premium-frontend-ui",
+      "path": "skills/external/premium-frontend-ui/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "react-best-practices",
+      "path": "skills/external/react-best-practices/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "remotion",
+      "path": "skills/external/remotion/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "shadcn",
+      "path": "skills/external/shadcn/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "skillui",
+      "path": "skills/external/skillui/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "stitch",
+      "path": "skills/external/stitch/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "stop-slop",
+      "path": "skills/external/stop-slop/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "swiftui",
+      "path": "skills/external/swiftui/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "taste",
+      "path": "skills/external/taste/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "ui-ux-pro-max",
+      "path": "skills/external/ui-ux-pro-max/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "understand-anything",
+      "path": "skills/external/understand-anything/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "webgpu",
+      "path": "skills/external/webgpu/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "accessibility-testing",
+      "path": "skills/external/workforce/accessibility-testing/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "analytics-reporting",
+      "path": "skills/external/workforce/analytics-reporting/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "api-integration",
+      "path": "skills/external/workforce/api-integration/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "blog-post-writing",
+      "path": "skills/external/workforce/blog-post-writing/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "budget-planning",
+      "path": "skills/external/workforce/budget-planning/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "chatbot-conversation-design",
+      "path": "skills/external/workforce/chatbot-conversation-design/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "churn-analysis",
+      "path": "skills/external/workforce/churn-analysis/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "ci-cd",
+      "path": "skills/external/workforce/ci-cd/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "cloud-monitoring",
+      "path": "skills/external/workforce/cloud-monitoring/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "code-documentation",
+      "path": "skills/external/workforce/code-documentation/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "code-review",
+      "path": "skills/external/workforce/code-review/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "competitive-battlecard-creation",
+      "path": "skills/external/workforce/competitive-battlecard-creation/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "compliance-checklist-generation",
+      "path": "skills/external/workforce/compliance-checklist-generation/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "context-compression",
+      "path": "skills/external/workforce/context-compression/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "context-injection",
+      "path": "skills/external/workforce/context-injection/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "context-optimization",
+      "path": "skills/external/workforce/context-optimization/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "context-ranking",
+      "path": "skills/external/workforce/context-ranking/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "context-retrieval",
+      "path": "skills/external/workforce/context-retrieval/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "contract-review",
+      "path": "skills/external/workforce/contract-review/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "crm-data-enrichment",
+      "path": "skills/external/workforce/crm-data-enrichment/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "customer-feedback-analysis",
+      "path": "skills/external/workforce/customer-feedback-analysis/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "data-analysis",
+      "path": "skills/external/workforce/data-analysis/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "data-cleaning",
+      "path": "skills/external/workforce/data-cleaning/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "data-labeling",
+      "path": "skills/external/workforce/data-labeling/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "data-visualization",
+      "path": "skills/external/workforce/data-visualization/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "database-backup",
+      "path": "skills/external/workforce/database-backup/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "database-migration",
+      "path": "skills/external/workforce/database-migration/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "database-schema-design",
+      "path": "skills/external/workforce/database-schema-design/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "database-seeding",
+      "path": "skills/external/workforce/database-seeding/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "debugging",
+      "path": "skills/external/workforce/debugging/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "deep-research",
+      "path": "skills/external/workforce/deep-research/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "dependency-scanning",
+      "path": "skills/external/workforce/dependency-scanning/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "docker-compose-setup",
+      "path": "skills/external/workforce/docker-compose-setup/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "dynamic-application-security-testing",
+      "path": "skills/external/workforce/dynamic-application-security-testing/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "email-drafting",
+      "path": "skills/external/workforce/email-drafting/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "expense-categorization",
+      "path": "skills/external/workforce/expense-categorization/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "exploratory-data-analysis",
+      "path": "skills/external/workforce/exploratory-data-analysis/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "fact-checking",
+      "path": "skills/external/workforce/fact-checking/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "file-organization",
+      "path": "skills/external/workforce/file-organization/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "financial-modeling",
+      "path": "skills/external/workforce/financial-modeling/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "financial-report-generation",
+      "path": "skills/external/workforce/financial-report-generation/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "graphql-api-design",
+      "path": "skills/external/workforce/graphql-api-design/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "hyperparameter-tuning",
+      "path": "skills/external/workforce/hyperparameter-tuning/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "invoice-processing",
+      "path": "skills/external/workforce/invoice-processing/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "keyword-research",
+      "path": "skills/external/workforce/keyword-research/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "knowledge-base-article-writing",
+      "path": "skills/external/workforce/knowledge-base-article-writing/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "knowledge-graph-creation",
+      "path": "skills/external/workforce/knowledge-graph-creation/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "lead-scoring",
+      "path": "skills/external/workforce/lead-scoring/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "license-analysis",
+      "path": "skills/external/workforce/license-analysis/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "literature-review",
+      "path": "skills/external/workforce/literature-review/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "logo-design",
+      "path": "skills/external/workforce/logo-design/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "meeting-scheduler",
+      "path": "skills/external/workforce/meeting-scheduler/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "meeting-transcription",
+      "path": "skills/external/workforce/meeting-transcription/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "ml-pipeline-creation",
+      "path": "skills/external/workforce/ml-pipeline-creation/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "model-deployment",
+      "path": "skills/external/workforce/model-deployment/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "model-training",
+      "path": "skills/external/workforce/model-training/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "note-taking",
+      "path": "skills/external/workforce/note-taking/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "oauth-2-0-setup",
+      "path": "skills/external/workforce/oauth-2-0-setup/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "onboarding-playbook-creation",
+      "path": "skills/external/workforce/onboarding-playbook-creation/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "presentation-creation",
+      "path": "skills/external/workforce/presentation-creation/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "privacy-policy-drafting",
+      "path": "skills/external/workforce/privacy-policy-drafting/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "project-management",
+      "path": "skills/external/workforce/project-management/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "proofreading",
+      "path": "skills/external/workforce/proofreading/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "proposal-generation",
+      "path": "skills/external/workforce/proposal-generation/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "query-optimization",
+      "path": "skills/external/workforce/query-optimization/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "report-generation",
+      "path": "skills/external/workforce/report-generation/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "sales-email-sequences",
+      "path": "skills/external/workforce/sales-email-sequences/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "security-audit",
+      "path": "skills/external/workforce/security-audit/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "seo-optimization",
+      "path": "skills/external/workforce/seo-optimization/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "social-media-posting",
+      "path": "skills/external/workforce/social-media-posting/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "sql-query-generation",
+      "path": "skills/external/workforce/sql-query-generation/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "static-application-security-testing",
+      "path": "skills/external/workforce/static-application-security-testing/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "summarization",
+      "path": "skills/external/workforce/summarization/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "task-automation",
+      "path": "skills/external/workforce/task-automation/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "technical-writing",
+      "path": "skills/external/workforce/technical-writing/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "terms-of-service-generation",
+      "path": "skills/external/workforce/terms-of-service-generation/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "testing",
+      "path": "skills/external/workforce/testing/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "threat-modeling",
+      "path": "skills/external/workforce/threat-modeling/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "ticket-triage",
+      "path": "skills/external/workforce/ticket-triage/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "translation",
+      "path": "skills/external/workforce/translation/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "user-flow-mapping",
+      "path": "skills/external/workforce/user-flow-mapping/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "version-control",
+      "path": "skills/external/workforce/version-control/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "webhook-setup",
+      "path": "skills/external/workforce/webhook-setup/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "wireframing",
+      "path": "skills/external/workforce/wireframing/SKILL.md",
+      "category": "external"
+    },
+    {
+      "slug": "accessibility-localization",
+      "path": "skills/film/accessibility-localization/SKILL.md",
+      "category": "film"
+    },
+    {
+      "slug": "action-stunt-choreography",
+      "path": "skills/film/action-stunt-choreography/SKILL.md",
+      "category": "film"
+    },
+    {
+      "slug": "aspect-framing-language",
+      "path": "skills/film/aspect-framing-language/SKILL.md",
+      "category": "film"
+    },
+    {
+      "slug": "camera-movement-support",
+      "path": "skills/film/camera-movement-support/SKILL.md",
+      "category": "film"
+    },
+    {
+      "slug": "camera-optics-exposure",
+      "path": "skills/film/camera-optics-exposure/SKILL.md",
+      "category": "film"
+    },
+    {
+      "slug": "color-management-grading",
+      "path": "skills/film/color-management-grading/SKILL.md",
+      "category": "film"
+    },
+    {
+      "slug": "continuity-graph",
+      "path": "skills/film/continuity-graph/SKILL.md",
+      "category": "film"
+    },
+    {
+      "slug": "costume-hair-makeup-continuity",
+      "path": "skills/film/costume-hair-makeup-continuity/SKILL.md",
+      "category": "film"
+    },
+    {
+      "slug": "delivery-mastering-qc",
+      "path": "skills/film/delivery-mastering-qc/SKILL.md",
+      "category": "film"
+    },
+    {
+      "slug": "directing-performance",
+      "path": "skills/film/directing-performance/SKILL.md",
+      "category": "film"
+    },
+    {
+      "slug": "editorial-montage",
+      "path": "skills/film/editorial-montage/SKILL.md",
+      "category": "film"
+    },
+    {
+      "slug": "generative-video-direction",
+      "path": "skills/film/generative-video-direction/SKILL.md",
+      "category": "film"
+    },
+    {
+      "slug": "intimacy-sensitive-performance",
+      "path": "skills/film/intimacy-sensitive-performance/SKILL.md",
+      "category": "film"
+    },
+    {
+      "slug": "lens-camera-testing",
+      "path": "skills/film/lens-camera-testing/SKILL.md",
+      "category": "film"
+    },
+    {
+      "slug": "lighting-electrical-grip",
+      "path": "skills/film/lighting-electrical-grip/SKILL.md",
+      "category": "film"
+    },
+    {
+      "slug": "location-tech-scout",
+      "path": "skills/film/location-tech-scout/SKILL.md",
+      "category": "film"
+    },
+    {
+      "slug": "media-provenance-versioning",
+      "path": "skills/film/media-provenance-versioning/SKILL.md",
+      "category": "film"
+    },
+    {
+      "slug": "music-supervision-score",
+      "path": "skills/film/music-supervision-score/SKILL.md",
+      "category": "film"
+    },
+    {
+      "slug": "production-design",
+      "path": "skills/film/production-design/SKILL.md",
+      "category": "film"
+    },
+    {
+      "slug": "production-management",
+      "path": "skills/film/production-management/SKILL.md",
+      "category": "film"
+    },
+    {
+      "slug": "script-supervision-continuity",
+      "path": "skills/film/script-supervision-continuity/SKILL.md",
+      "category": "film"
+    },
+    {
+      "slug": "shot-design-coverage",
+      "path": "skills/film/shot-design-coverage/SKILL.md",
+      "category": "film"
+    },
+    {
+      "slug": "sound-production-post",
+      "path": "skills/film/sound-production-post/SKILL.md",
+      "category": "film"
+    },
+    {
+      "slug": "spatial-blocking-continuity",
+      "path": "skills/film/spatial-blocking-continuity/SKILL.md",
+      "category": "film"
+    },
+    {
+      "slug": "storyboard-previs-animatic",
+      "path": "skills/film/storyboard-previs-animatic/SKILL.md",
+      "category": "film"
+    },
+    {
+      "slug": "titles-graphics",
+      "path": "skills/film/titles-graphics/SKILL.md",
+      "category": "film"
+    },
+    {
+      "slug": "vfx-compositing-motion",
+      "path": "skills/film/vfx-compositing-motion/SKILL.md",
+      "category": "film"
+    },
+    {
+      "slug": "virtual-production",
+      "path": "skills/film/virtual-production/SKILL.md",
+      "category": "film"
+    },
+    {
+      "slug": "visual-reference-research",
+      "path": "skills/film/visual-reference-research/SKILL.md",
+      "category": "film"
+    },
+    {
+      "slug": "git-collaboration",
+      "path": "skills/git-workflow/git-collaboration/SKILL.md",
+      "category": "git-workflow"
+    },
+    {
+      "slug": "3d-production",
+      "path": "skills/houses/3d-production/SKILL.md",
+      "category": "houses"
+    },
+    {
+      "slug": "commerce-custody",
+      "path": "skills/houses/commerce-custody/SKILL.md",
+      "category": "houses"
+    },
+    {
+      "slug": "cyber-defense",
+      "path": "skills/houses/cyber-defense/SKILL.md",
+      "category": "houses"
+    },
+    {
+      "slug": "digital-craft-spatial-interface",
+      "path": "skills/houses/digital-craft-spatial-interface/SKILL.md",
+      "category": "houses"
+    },
+    {
+      "slug": "enterprise-operations",
+      "path": "skills/houses/enterprise-operations/SKILL.md",
+      "category": "houses"
+    },
+    {
+      "slug": "executive-governance",
+      "path": "skills/houses/executive-governance/SKILL.md",
+      "category": "houses"
+    },
+    {
+      "slug": "film-cinematic-production",
+      "path": "skills/houses/film-cinematic-production/SKILL.md",
+      "category": "houses"
+    },
+    {
+      "slug": "writing-publishing",
+      "path": "skills/houses/writing-publishing/SKILL.md",
+      "category": "houses"
+    },
+    {
+      "slug": "cicd-pipelines",
+      "path": "skills/infrastructure/cicd-pipelines/SKILL.md",
+      "category": "infrastructure"
+    },
+    {
+      "slug": "infrastructure-as-code",
+      "path": "skills/infrastructure/infrastructure-as-code/SKILL.md",
+      "category": "infrastructure"
+    },
+    {
+      "slug": "leeway-3d-engineering-blueprint",
+      "path": "skills/leeway-3d-engineering-blueprint/SKILL.md",
+      "category": "general"
+    },
+    {
+      "slug": "leeway-acoustic-coprocessor-fabric",
+      "path": "skills/leeway-acoustic-coprocessor-fabric/SKILL.md",
+      "category": "general"
+    },
+    {
+      "slug": "leeway-agent-operating-loop",
+      "path": "skills/leeway-agent-operating-loop/SKILL.md",
+      "category": "general"
+    },
+    {
+      "slug": "leeway-automation-fabric",
+      "path": "skills/leeway-automation-fabric/SKILL.md",
+      "category": "general"
+    },
+    {
+      "slug": "leeway-blender-mcp",
+      "path": "skills/leeway-blender-mcp/SKILL.md",
+      "category": "general"
+    },
+    {
+      "slug": "leeway-bootstrap-authority",
+      "path": "skills/leeway-bootstrap-authority/SKILL.md",
+      "category": "general"
+    },
+    {
+      "slug": "leeway-candidate-formula-laboratory",
+      "path": "skills/leeway-candidate-formula-laboratory/SKILL.md",
+      "category": "general"
+    },
+    {
+      "slug": "leeway-candidate-search-repair",
+      "path": "skills/leeway-candidate-search-repair/SKILL.md",
+      "category": "general"
+    },
+    {
+      "slug": "leeway-capability-resilience",
+      "path": "skills/leeway-capability-resilience/SKILL.md",
+      "category": "general"
+    },
+    {
+      "slug": "leeway-centered-skill-metrics",
+      "path": "skills/leeway-centered-skill-metrics/SKILL.md",
+      "category": "general"
+    },
+    {
+      "slug": "leeway-cinematic-sun",
+      "path": "skills/leeway-cinematic-sun/SKILL.md",
+      "category": "general"
+    },
+    {
+      "slug": "leeway-commerce-custody-sun",
+      "path": "skills/leeway-commerce-custody-sun/SKILL.md",
+      "category": "general"
+    },
+    {
+      "slug": "leeway-company-capability-fabric",
+      "path": "skills/leeway-company-capability-fabric/SKILL.md",
+      "category": "general"
+    },
+    {
+      "slug": "leeway-context-engineering",
+      "path": "skills/leeway-context-engineering/SKILL.md",
+      "category": "general"
+    },
+    {
+      "slug": "leeway-continuity-authority",
+      "path": "skills/leeway-continuity-authority/SKILL.md",
+      "category": "general"
+    },
+    {
+      "slug": "leeway-conversation-vault",
+      "path": "skills/leeway-conversation-vault/SKILL.md",
+      "category": "general"
+    },
+    {
+      "slug": "leeway-counterfactual-workspace",
+      "path": "skills/leeway-counterfactual-workspace/SKILL.md",
+      "category": "general"
+    },
+    {
+      "slug": "leeway-creative-rendering-engineering",
+      "path": "skills/leeway-creative-rendering-engineering/SKILL.md",
+      "category": "general"
+    },
+    {
+      "slug": "leeway-creator-intent",
+      "path": "skills/leeway-creator-intent/SKILL.md",
+      "category": "general"
+    },
+    {
+      "slug": "leeway-cyber-defense-sun",
+      "path": "skills/leeway-cyber-defense-sun/SKILL.md",
+      "category": "general"
+    },
+    {
+      "slug": "leeway-device-bridge",
+      "path": "skills/leeway-device-bridge/SKILL.md",
+      "category": "general"
+    },
+    {
+      "slug": "leeway-digital-craft-sun",
+      "path": "skills/leeway-digital-craft-sun/SKILL.md",
+      "category": "general"
+    },
+    {
+      "slug": "leeway-executive-governance-sun",
+      "path": "skills/leeway-executive-governance-sun/SKILL.md",
+      "category": "general"
+    },
+    {
+      "slug": "leeway-formula-authority-recovery",
+      "path": "skills/leeway-formula-authority-recovery/SKILL.md",
+      "category": "general"
+    },
+    {
+      "slug": "leeway-formula-epistemic-authority",
+      "path": "skills/leeway-formula-epistemic-authority/SKILL.md",
+      "category": "general"
+    },
+    {
+      "slug": "leeway-formula-fabric",
+      "path": "skills/leeway-formula-fabric/SKILL.md",
+      "category": "general"
+    },
+    {
+      "slug": "leeway-formula-factory",
+      "path": "skills/leeway-formula-factory/SKILL.md",
+      "category": "general"
+    },
+    {
+      "slug": "leeway-formula-governance",
+      "path": "skills/leeway-formula-governance/SKILL.md",
+      "category": "general"
+    },
+    {
+      "slug": "leeway-frontier-voice-architecture-selector",
+      "path": "skills/leeway-frontier-voice-architecture-selector/SKILL.md",
+      "category": "general"
+    },
+    {
+      "slug": "leeway-google-ecosystem-bridge",
+      "path": "skills/leeway-google-ecosystem-bridge/SKILL.md",
+      "category": "general"
+    },
+    {
+      "slug": "leeway-grounded-prior-acquisition",
+      "path": "skills/leeway-grounded-prior-acquisition/SKILL.md",
+      "category": "general"
+    },
+    {
+      "slug": "leeway-host-commander",
+      "path": "skills/leeway-host-commander/SKILL.md",
+      "category": "general"
+    },
+    {
+      "slug": "leeway-human-conversation",
+      "path": "skills/leeway-human-conversation/SKILL.md",
+      "category": "general"
+    },
+    {
+      "slug": "leeway-imagination-simulation-kernel",
+      "path": "skills/leeway-imagination-simulation-kernel/SKILL.md",
+      "category": "general"
+    },
+    {
+      "slug": "leeway-learning-ledger",
+      "path": "skills/leeway-learning-ledger/SKILL.md",
+      "category": "general"
+    },
+    {
+      "slug": "leeway-literary-sun",
+      "path": "skills/leeway-literary-sun/SKILL.md",
+      "category": "general"
+    },
+    {
+      "slug": "leeway-mathematical-sun",
+      "path": "skills/leeway-mathematical-sun/SKILL.md",
+      "category": "general"
+    },
+    {
+      "slug": "leeway-message-ingress-authority",
+      "path": "skills/leeway-message-ingress-authority/SKILL.md",
+      "category": "general"
+    },
+    {
+      "slug": "leeway-og-expressive-identity",
+      "path": "skills/leeway-og-expressive-identity/SKILL.md",
+      "category": "general"
+    },
+    {
+      "slug": "leeway-operational-sun",
+      "path": "skills/leeway-operational-sun/SKILL.md",
+      "category": "general"
+    },
+    {
+      "slug": "leeway-parallel-workplane",
+      "path": "skills/leeway-parallel-workplane/SKILL.md",
+      "category": "general"
+    },
+    {
+      "slug": "leeway-predict-observe-delta",
+      "path": "skills/leeway-predict-observe-delta/SKILL.md",
+      "category": "general"
+    },
+    {
+      "slug": "leeway-quantum-readiness",
+      "path": "skills/leeway-quantum-readiness/SKILL.md",
+      "category": "general"
+    },
+    {
+      "slug": "leeway-real-time-voice-multimodal-infrastructure",
+      "path": "skills/leeway-real-time-voice-multimodal-infrastructure/SKILL.md",
+      "category": "general"
+    },
+    {
+      "slug": "leeway-receipt-authority",
+      "path": "skills/leeway-receipt-authority/SKILL.md",
+      "category": "general"
+    },
+    {
+      "slug": "leeway-reference-authority",
+      "path": "skills/leeway-reference-authority/SKILL.md",
+      "category": "general"
+    },
+    {
+      "slug": "leeway-secondary-workstation",
+      "path": "skills/leeway-secondary-workstation/SKILL.md",
+      "category": "general"
+    },
+    {
+      "slug": "leeway-shiproom",
+      "path": "skills/leeway-shiproom/SKILL.md",
+      "category": "general"
+    },
+    {
+      "slug": "leeway-simulation-model-selection",
+      "path": "skills/leeway-simulation-model-selection/SKILL.md",
+      "category": "general"
+    },
+    {
+      "slug": "leeway-skill-factory",
+      "path": "skills/leeway-skill-factory/SKILL.md",
+      "category": "general"
+    },
+    {
+      "slug": "leeway-skill-lifecycle-governance",
+      "path": "skills/leeway-skill-lifecycle-governance/SKILL.md",
+      "category": "general"
+    },
+    {
+      "slug": "leeway-skill-orchestrator",
+      "path": "skills/leeway-skill-orchestrator/SKILL.md",
+      "category": "general"
+    },
+    {
+      "slug": "leeway-tool-gateway",
+      "path": "skills/leeway-tool-gateway/SKILL.md",
+      "category": "general"
+    },
+    {
+      "slug": "leeway-triposr",
+      "path": "skills/leeway-triposr/SKILL.md",
+      "category": "general"
+    },
+    {
+      "slug": "leeway-universal-capability-kernel",
+      "path": "skills/leeway-universal-capability-kernel/SKILL.md",
+      "category": "general"
+    },
+    {
+      "slug": "leeway-veritas",
+      "path": "skills/leeway-veritas/SKILL.md",
+      "category": "general"
+    },
+    {
+      "slug": "leeway-voice-fabric",
+      "path": "skills/leeway-voice-fabric/SKILL.md",
+      "category": "general"
+    },
+    {
+      "slug": "monitoring-and-observability",
+      "path": "skills/observability/monitoring-and-observability/SKILL.md",
+      "category": "observability"
+    },
+    {
+      "slug": "action-governance",
+      "path": "skills/operations/action-governance/SKILL.md",
+      "category": "operations"
+    },
+    {
+      "slug": "admin-front-office",
+      "path": "skills/operations/admin-front-office/SKILL.md",
+      "category": "operations"
+    },
+    {
+      "slug": "business-process-orchestration",
+      "path": "skills/operations/business-process-orchestration/SKILL.md",
+      "category": "operations"
+    },
+    {
+      "slug": "compliance-risk",
+      "path": "skills/operations/compliance-risk/SKILL.md",
+      "category": "operations"
+    },
+    {
+      "slug": "customer-support-service",
+      "path": "skills/operations/customer-support-service/SKILL.md",
+      "category": "operations"
+    },
+    {
+      "slug": "enterprise-data-semantics",
+      "path": "skills/operations/enterprise-data-semantics/SKILL.md",
+      "category": "operations"
+    },
+    {
+      "slug": "event-normalization",
+      "path": "skills/operations/event-normalization/SKILL.md",
+      "category": "operations"
+    },
+    {
+      "slug": "finance-accounting",
+      "path": "skills/operations/finance-accounting/SKILL.md",
+      "category": "operations"
+    },
+    {
+      "slug": "incident-remediation",
+      "path": "skills/operations/incident-remediation/SKILL.md",
+      "category": "operations"
+    },
+    {
+      "slug": "logistics-warehouse-freight",
+      "path": "skills/operations/logistics-warehouse-freight/SKILL.md",
+      "category": "operations"
+    },
+    {
+      "slug": "marketing-growth",
+      "path": "skills/operations/marketing-growth/SKILL.md",
+      "category": "operations"
+    },
+    {
+      "slug": "metric-provenance-quality",
+      "path": "skills/operations/metric-provenance-quality/SKILL.md",
+      "category": "operations"
+    },
+    {
+      "slug": "people-hr",
+      "path": "skills/operations/people-hr/SKILL.md",
+      "category": "operations"
+    },
+    {
+      "slug": "procurement-vendor",
+      "path": "skills/operations/procurement-vendor/SKILL.md",
+      "category": "operations"
+    },
+    {
+      "slug": "sales-crm",
+      "path": "skills/operations/sales-crm/SKILL.md",
+      "category": "operations"
+    },
+    {
+      "slug": "performance-engineering",
+      "path": "skills/performance-optimization/performance-engineering/SKILL.md",
+      "category": "performance-optimization"
+    },
+    {
+      "slug": "prompt-engineering-advanced",
+      "path": "skills/prompt-optimization/prompt-engineering-advanced/SKILL.md",
+      "category": "prompt-optimization"
+    },
+    {
+      "slug": "acquisitions-editorial",
+      "path": "skills/publishing/acquisitions-editorial/SKILL.md",
+      "category": "publishing"
+    },
+    {
+      "slug": "author-onboarding-submissions",
+      "path": "skills/publishing/author-onboarding-submissions/SKILL.md",
+      "category": "publishing"
+    },
+    {
+      "slug": "author-provenance-versioning",
+      "path": "skills/publishing/author-provenance-versioning/SKILL.md",
+      "category": "publishing"
+    },
+    {
+      "slug": "book-design-production",
+      "path": "skills/publishing/book-design-production/SKILL.md",
+      "category": "publishing"
+    },
+    {
+      "slug": "catalog-premiere-merchandising",
+      "path": "skills/publishing/catalog-premiere-merchandising/SKILL.md",
+      "category": "publishing"
+    },
+    {
+      "slug": "citations-indexing",
+      "path": "skills/publishing/citations-indexing/SKILL.md",
+      "category": "publishing"
+    },
+    {
+      "slug": "contracts-royalties-operations",
+      "path": "skills/publishing/contracts-royalties-operations/SKILL.md",
+      "category": "publishing"
+    },
+    {
+      "slug": "cover-illustration-coordination",
+      "path": "skills/publishing/cover-illustration-coordination/SKILL.md",
+      "category": "publishing"
+    },
+    {
+      "slug": "distribution-release",
+      "path": "skills/publishing/distribution-release/SKILL.md",
+      "category": "publishing"
+    },
+    {
+      "slug": "epub-accessibility",
+      "path": "skills/publishing/epub-accessibility/SKILL.md",
+      "category": "publishing"
+    },
+    {
+      "slug": "epub-production",
+      "path": "skills/publishing/epub-production/SKILL.md",
+      "category": "publishing"
+    },
+    {
+      "slug": "epub-validation",
+      "path": "skills/publishing/epub-validation/SKILL.md",
+      "category": "publishing"
+    },
+    {
+      "slug": "manuscript-qa",
+      "path": "skills/publishing/manuscript-qa/SKILL.md",
+      "category": "publishing"
+    },
+    {
+      "slug": "metadata-identifiers",
+      "path": "skills/publishing/metadata-identifiers/SKILL.md",
+      "category": "publishing"
+    },
+    {
+      "slug": "rights-permissions",
+      "path": "skills/publishing/rights-permissions/SKILL.md",
+      "category": "publishing"
+    },
+    {
+      "slug": "deployment-validator",
+      "path": "skills/quality-assurance/deployment-validator/SKILL.md",
+      "category": "quality-assurance"
+    },
+    {
+      "slug": "web-security-sweep",
+      "path": "skills/quality-assurance/web-security-sweep/SKILL.md",
+      "category": "quality-assurance"
+    },
+    {
+      "slug": "rag-systems",
+      "path": "skills/rag-knowledge/rag-systems/SKILL.md",
+      "category": "rag-knowledge"
+    },
+    {
+      "slug": "read-aloud",
+      "path": "skills/read-aloud/SKILL.md",
+      "category": "general"
+    },
+    {
+      "slug": "knowledge-synthesis",
+      "path": "skills/research/knowledge-synthesis/SKILL.md",
+      "category": "research"
+    },
+    {
+      "slug": "authentication-authorization",
+      "path": "skills/security/authentication-authorization/SKILL.md",
+      "category": "security"
+    },
+    {
+      "slug": "code-security",
+      "path": "skills/security/code-security/SKILL.md",
+      "category": "security"
+    },
+    {
+      "slug": "secure-architecture",
+      "path": "skills/security/secure-architecture/SKILL.md",
+      "category": "security"
+    },
+    {
+      "slug": "dev-loop-optimizer",
+      "path": "skills/self-optimization/dev-loop-optimizer/SKILL.md",
+      "category": "self-optimization"
+    },
+    {
+      "slug": "memory-learning",
+      "path": "skills/self-optimization/memory-learning/SKILL.md",
+      "category": "self-optimization"
+    },
+    {
+      "slug": "runtime-self-profiling",
+      "path": "skills/self-optimization/runtime-self-profiling/SKILL.md",
+      "category": "self-optimization"
+    },
+    {
+      "slug": "advanced-testing-strategies",
+      "path": "skills/testing/advanced-testing-strategies/SKILL.md",
+      "category": "testing"
+    },
+    {
+      "slug": "integration-testing",
+      "path": "skills/testing/integration-testing/SKILL.md",
+      "category": "testing"
+    },
+    {
+      "slug": "load-testing-capacity",
+      "path": "skills/testing/load-testing-capacity/SKILL.md",
+      "category": "testing"
+    },
+    {
+      "slug": "unit-testing",
+      "path": "skills/testing/unit-testing/SKILL.md",
+      "category": "testing"
+    },
+    {
+      "slug": "custom-tool-creation",
+      "path": "skills/tool-integration/custom-tool-creation/SKILL.md",
+      "category": "tool-integration"
+    },
+    {
+      "slug": "video-game-development",
+      "path": "skills/video-game-development/SKILL.md",
+      "category": "general"
+    },
+    {
+      "slug": "advanced-frontend-patterns",
+      "path": "skills/web-development/advanced-frontend-patterns/SKILL.md",
+      "category": "web-development"
+    },
+    {
+      "slug": "api-design",
+      "path": "skills/web-development/api-design/SKILL.md",
+      "category": "web-development"
+    },
+    {
+      "slug": "css-styling",
+      "path": "skills/web-development/css-styling/SKILL.md",
+      "category": "web-development"
+    },
+    {
+      "slug": "react-development",
+      "path": "skills/web-development/react-development/SKILL.md",
+      "category": "web-development"
+    },
+    {
+      "slug": "freight-broker-negotiation",
+      "path": "skills/work-domains/freight-broker-negotiation/SKILL.md",
+      "category": "work-domains"
+    },
+    {
+      "slug": "front-counter-service",
+      "path": "skills/work-domains/front-counter-service/SKILL.md",
+      "category": "work-domains"
+    },
+    {
+      "slug": "front-office-reception",
+      "path": "skills/work-domains/front-office-reception/SKILL.md",
+      "category": "work-domains"
+    },
+    {
+      "slug": "logistics-dispatch",
+      "path": "skills/work-domains/logistics-dispatch/SKILL.md",
+      "category": "work-domains"
+    },
+    {
+      "slug": "office-management",
+      "path": "skills/work-domains/office-management/SKILL.md",
+      "category": "work-domains"
+    },
+    {
+      "slug": "warehouse-storage-operations",
+      "path": "skills/work-domains/warehouse-storage-operations/SKILL.md",
+      "category": "work-domains"
+    },
+    {
+      "slug": "workflow-orchestration",
+      "path": "skills/workflow-composition/workflow-orchestration/SKILL.md",
+      "category": "workflow-composition"
+    },
+    {
+      "slug": "adaptation-transmedia",
+      "path": "skills/writing/adaptation-transmedia/SKILL.md",
+      "category": "writing"
+    },
+    {
+      "slug": "audience-relationship-voice",
+      "path": "skills/writing/audience-relationship-voice/SKILL.md",
+      "category": "writing"
+    },
+    {
+      "slug": "audio-drama-podcast",
+      "path": "skills/writing/audio-drama-podcast/SKILL.md",
+      "category": "writing"
+    },
+    {
+      "slug": "authenticity-sensitivity-review",
+      "path": "skills/writing/authenticity-sensitivity-review/SKILL.md",
+      "category": "writing"
+    },
+    {
+      "slug": "author-calibration-experiments",
+      "path": "skills/writing/author-calibration-experiments/SKILL.md",
+      "category": "writing"
+    },
+    {
+      "slug": "author-choice-model",
+      "path": "skills/writing/author-choice-model/SKILL.md",
+      "category": "writing"
+    },
+    {
+      "slug": "author-cognitive-rhetorical-model",
+      "path": "skills/writing/author-cognitive-rhetorical-model/SKILL.md",
+      "category": "writing"
+    },
+    {
+      "slug": "author-discovery-interview",
+      "path": "skills/writing/author-discovery-interview/SKILL.md",
+      "category": "writing"
+    },
+    {
+      "slug": "author-model-active-learning",
+      "path": "skills/writing/author-model-active-learning/SKILL.md",
+      "category": "writing"
+    },
+    {
+      "slug": "author-model-separation",
+      "path": "skills/writing/author-model-separation/SKILL.md",
+      "category": "writing"
+    },
+    {
+      "slug": "author-model-validation",
+      "path": "skills/writing/author-model-validation/SKILL.md",
+      "category": "writing"
+    },
+    {
+      "slug": "author-perception-attention",
+      "path": "skills/writing/author-perception-attention/SKILL.md",
+      "category": "writing"
+    },
+    {
+      "slug": "author-revision-behavior",
+      "path": "skills/writing/author-revision-behavior/SKILL.md",
+      "category": "writing"
+    },
+    {
+      "slug": "author-state-transition",
+      "path": "skills/writing/author-state-transition/SKILL.md",
+      "category": "writing"
+    },
+    {
+      "slug": "authorized-voice-profile",
+      "path": "skills/writing/authorized-voice-profile/SKILL.md",
+      "category": "writing"
+    },
+    {
+      "slug": "character-psychology",
+      "path": "skills/writing/character-psychology/SKILL.md",
+      "category": "writing"
+    },
+    {
+      "slug": "children-illustrated",
+      "path": "skills/writing/children-illustrated/SKILL.md",
+      "category": "writing"
+    },
+    {
+      "slug": "comics-graphic-narrative",
+      "path": "skills/writing/comics-graphic-narrative/SKILL.md",
+      "category": "writing"
+    },
+    {
+      "slug": "commercial-copy",
+      "path": "skills/writing/commercial-copy/SKILL.md",
+      "category": "writing"
+    },
+    {
+      "slug": "continuity-canon",
+      "path": "skills/writing/continuity-canon/SKILL.md",
+      "category": "writing"
+    },
+    {
+      "slug": "department",
+      "path": "skills/writing/department/SKILL.md",
+      "category": "writing"
+    },
+    {
+      "slug": "developmental-editing",
+      "path": "skills/writing/developmental-editing/SKILL.md",
+      "category": "writing"
+    },
+    {
+      "slug": "discourse-rhythm-analysis",
+      "path": "skills/writing/discourse-rhythm-analysis/SKILL.md",
+      "category": "writing"
+    },
+    {
+      "slug": "emotional-language-model",
+      "path": "skills/writing/emotional-language-model/SKILL.md",
+      "category": "writing"
+    },
+    {
+      "slug": "episodic-writers-room",
+      "path": "skills/writing/episodic-writers-room/SKILL.md",
+      "category": "writing"
+    },
+    {
+      "slug": "fact-source-verification",
+      "path": "skills/writing/fact-source-verification/SKILL.md",
+      "category": "writing"
+    },
+    {
+      "slug": "genre-reader-promise",
+      "path": "skills/writing/genre-reader-promise/SKILL.md",
+      "category": "writing"
+    },
+    {
+      "slug": "ghostwriting-collaboration",
+      "path": "skills/writing/ghostwriting-collaboration/SKILL.md",
+      "category": "writing"
+    },
+    {
+      "slug": "information-revelation",
+      "path": "skills/writing/information-revelation/SKILL.md",
+      "category": "writing"
+    },
+    {
+      "slug": "lexical-idiolect-analysis",
+      "path": "skills/writing/lexical-idiolect-analysis/SKILL.md",
+      "category": "writing"
+    },
+    {
+      "slug": "line-copy-editing",
+      "path": "skills/writing/line-copy-editing/SKILL.md",
+      "category": "writing"
+    },
+    {
+      "slug": "lived-experience-memory-mining",
+      "path": "skills/writing/lived-experience-memory-mining/SKILL.md",
+      "category": "writing"
+    },
+    {
+      "slug": "localization-transcreation",
+      "path": "skills/writing/localization-transcreation/SKILL.md",
+      "category": "writing"
+    },
+    {
+      "slug": "narrative-architecture",
+      "path": "skills/writing/narrative-architecture/SKILL.md",
+      "category": "writing"
+    },
+    {
+      "slug": "nonfiction-argument",
+      "path": "skills/writing/nonfiction-argument/SKILL.md",
+      "category": "writing"
+    },
+    {
+      "slug": "novel-fiction",
+      "path": "skills/writing/novel-fiction/SKILL.md",
+      "category": "writing"
+    },
+    {
+      "slug": "poetry-lyrics",
+      "path": "skills/writing/poetry-lyrics/SKILL.md",
+      "category": "writing"
+    },
+    {
+      "slug": "prewriting-readiness",
+      "path": "skills/writing/prewriting-readiness/SKILL.md",
+      "category": "writing"
+    },
+    {
+      "slug": "prewriting-research-plan",
+      "path": "skills/writing/prewriting-research-plan/SKILL.md",
+      "category": "writing"
+    },
+    {
+      "slug": "prose-style",
+      "path": "skills/writing/prose-style/SKILL.md",
+      "category": "writing"
+    },
+    {
+      "slug": "research-notebook",
+      "path": "skills/writing/research-notebook/SKILL.md",
+      "category": "writing"
+    },
+    {
+      "slug": "scene-dialogue",
+      "path": "skills/writing/scene-dialogue/SKILL.md",
+      "category": "writing"
+    },
+    {
+      "slug": "screenplay",
+      "path": "skills/writing/screenplay/SKILL.md",
+      "category": "writing"
+    },
+    {
+      "slug": "theme-symbolism",
+      "path": "skills/writing/theme-symbolism/SKILL.md",
+      "category": "writing"
+    },
+    {
+      "slug": "voice-drift-verification",
+      "path": "skills/writing/voice-drift-verification/SKILL.md",
+      "category": "writing"
+    },
+    {
+      "slug": "worldbuilding",
+      "path": "skills/writing/worldbuilding/SKILL.md",
+      "category": "writing"
+    },
+    {
+      "slug": "writers-room-orchestration",
+      "path": "skills/writing/writers-room-orchestration/SKILL.md",
+      "category": "writing"
+    }
+  ]
+}
