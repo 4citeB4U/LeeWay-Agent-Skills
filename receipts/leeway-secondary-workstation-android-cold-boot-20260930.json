@@ -1,0 +1,45 @@
+{
+  "schema": "leeway.skill-promotion.v1",
+  "skill": "leeway-secondary-workstation",
+  "status": "PROMOTED_VERIFIED_REFERENCE_IMPLEMENTATION",
+  "promotedAt": "2026-09-30T06:01:44Z",
+  "authority": "Creator/Human Authority > LeeWay Standards",
+  "destination": "skills/leeway-secondary-workstation/SKILL.md",
+  "destinationCommit": "3dcbb1ab03d19b39e43ad978ea36546e41ea6948",
+  "sourceAuthority": "4citeB4U/LEEWAY-DEVICE-BRIDGE",
+  "sourceEvidenceCommit": "87b2a4d88cf1d0122dae12ad81439bebecdd7880",
+  "sourceEvidence": "workstation/receipts/2026-09-30-android-secondary-workstation-cold-boot.json",
+  "reusableAssets": [
+    "clients/phone-workstation/bootstrap-desktop-commander.sh",
+    "clients/phone-workstation/patch-desktop-commander-android.mjs",
+    "docs/ANDROID-SECONDARY-WORKSTATION.md",
+    "docs/provider-registry.json",
+    "docs/secondary-workstation-node.json"
+  ],
+  "validation": {
+    "executor": "qualified Android Fold secondary workstation",
+    "command": "node tests/phone-workstation-desktop-commander-source.test.mjs",
+    "result": "PASS",
+    "testedRepositoryCommit": "87b2a4d88cf1d0122dae12ad81439bebecdd7880"
+  },
+  "verifiedBehaviors": [
+    "direct remote registration",
+    "direct ping",
+    "shell execution",
+    "filesystem read/write",
+    "content search",
+    "local Git commit",
+    "GitHub network reachability",
+    "PC-independent execution",
+    "USB-independent execution",
+    "remote-session self recovery",
+    "cold-boot automatic reconnect",
+    "post-cold-boot execution"
+  ],
+  "securityBoundary": "TERMUX_APP_UID_NON_ROOT",
+  "portability": "METHOD_PORTABLE_EACH_PHONE_REQUIRES_OWN_VERITAS_RECEIPT",
+  "unresolved": [
+    "Privileged Android UI/hardware control is separate Device Bridge authority",
+    "Future Android, Termux or Desktop Commander versions require requalification"
+  ]
+}
