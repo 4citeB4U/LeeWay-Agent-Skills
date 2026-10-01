@@ -1,0 +1,264 @@
+{
+  "schema_version": "1.0.0",
+  "record_role": "CAPABILITY_RECOVERY_INVENTORY_NOT_UNIVERSAL_RUNTIME_PROOF",
+  "observed_at": "2026-10-01T02:10:00-05:00",
+  "portability_contract": "config/portability-contract.md",
+  "canonical_target": {
+    "repository": "https://github.com/4citeB4U/LeeWay-Agent-Skills",
+    "branch": "codex/capability-recovery-20261001",
+    "baseline_commit": "6aa0c94db9cdfadecfe7abb3fac66d6a7fca0779"
+  },
+  "evidence_states": {
+    "SOURCE_IMPLEMENTED": "Substantive executor source exists at the recorded commit; dependencies and live providers are not implied.",
+    "ADAPTER_CONTRACT_PROMOTED": "A portable, bounded canonical adapter contract and skill have been added.",
+    "RUNTIME_RESPONDED": "A named runtime endpoint answered during this work.",
+    "EXECUTED_UNVERIFIED": "A provider returned an artifact/result that still requires independent acceptance.",
+    "VERIFIED": "Independent postconditions and artifact evidence passed.",
+    "PLACEHOLDER_OR_SIMULATION": "The source returns mock, placeholder, deterministic shell, work-order-only, or self-issued success.",
+    "BLOCKED": "The dependency or authority required for execution was absent or failed.",
+    "FAILED": "The attempted current execution did not complete or satisfy its gate."
+  },
+  "source_repositories": [
+    {
+      "repository": "https://github.com/4citeB4U/leeway-ecosystemv2.14",
+      "ref": "source-baseline-20260803",
+      "commit": "4c1181630f65d041f3a8a877a8c5166ac51f4b40",
+      "files_observed": 4123,
+      "unique_blobs_observed": 3411,
+      "capability_families": {
+        "implemented_source": 17,
+        "partial_or_stub": 8,
+        "declaration_only": 7,
+        "historical_evidence": 4,
+        "current_live_proof_from_static_audit": 0
+      },
+      "mcp_evidence": {
+        "fastmcp_servers": 2,
+        "decorated_tools": 40,
+        "canonical_promotion": "SELECTIVE"
+      },
+      "promoted_sources": [
+        "Cerebral/services/agent-lee-sdxl-lightning-image-lane/app/main.py",
+        "Cerebral/services/agent-lee-tiny-sd-image-lane/app/main.py",
+        "Cerebral/services/agent-lee-telegram-vision-lane/app/main.py",
+        "Cerebral/services/agent-lee-image-to-3d-lane/app/main.py",
+        "Cerebral/services/agent-lee-image-to-3d-pattern-lane/app/main.py",
+        "agent-lee-coding-mode/creation-kernel/app/main.py"
+      ],
+      "disposition": "Recover visual, vision, 3D, meeting, browser and bounded desktop contracts; quarantine fixed paths, unauthenticated control, secrets, unsafe URL/path ingestion and self-issued PASS scripts."
+    },
+    {
+      "repository": "https://github.com/4citeB4U/LEEWAY-VSCODE",
+      "ref": "main",
+      "commit": "735442601bb6e79db47eec91a92cb087f7ea8809",
+      "implemented_recovery_material": [
+        "VS Code Agent Lee surface and 82 contributed commands",
+        "Ollama model adapter",
+        "image understanding",
+        "governed pending edits and WorkspaceEdit application",
+        "workspace indexing",
+        "fixed compile/lint/test verification",
+        "Playwright browser QA",
+        "GitHub read adapter",
+        "plugin permission gates and receipts",
+        "historical F5-TTS provider adapter",
+        "external MCP process launcher"
+      ],
+      "truth_limits": [
+        "No working image generator in this repository",
+        "Gmail client points to a missing bridge server",
+        "No phone, SMS, Android or native-device control implementation",
+        "Catalog entries do not implement standard MCP tools/list or tools/call",
+        "Windows and host-path bindings prevent direct universal promotion"
+      ],
+      "disposition": "Recover VS Code editing, verification, indexing, browser QA and plugin-safety adapters behind current Tool Gateway authority."
+    },
+    {
+      "repository": "https://github.com/4citeB4U/Agent-Lee-The-Sum-of-All-Systems",
+      "ref": "main",
+      "commit": "19b316b67038416600467c4ae84dea5503f3f27e",
+      "implemented_recovery_material": [
+        "FastAPI/WebSocket VAD to faster-whisper to Piper voice pipeline with barge-in",
+        "browser microphone turn-taking state",
+        "mediasoup WebRTC source",
+        "Playwright browser MCP",
+        "desktop/file/terminal MCP source requiring hardening",
+        "local Ollama routing",
+        "persona and intent handoff contracts"
+      ],
+      "truth_limits": [
+        "Creator Studio uses a Picsum mock",
+        "Pixel imports a missing inference service",
+        "deterministic HiveBrain is not an LLM",
+        "mailto and sms links are user handoffs, not send proof",
+        "no PSTN provider",
+        "no Android Accessibility or native UI-control runtime"
+      ],
+      "disposition": "Recover the streaming protocol, turn-taking, browser and intent contracts; use current Voice Fabric, Device Bridge and visual providers."
+    },
+    {
+      "repository": "https://github.com/4citeB4U/LeeWay-Agents-the-World-Within",
+      "ref": "main",
+      "commit": "5d991b6a0abf923aaa4b6dab18e124d76327b06a",
+      "files_observed": 1194,
+      "mcp_implementations_observed": 11,
+      "skill_files_observed": 210,
+      "unique_skill_hashes_observed": 159,
+      "agent_sources_observed": 102,
+      "unresolved_relative_imports_observed": 173,
+      "implemented_recovery_material": [
+        "local document retrieval",
+        "typed planning and context contracts",
+        "session memory primitives",
+        "Playwright and file adapter source",
+        "InsForge event and memory adapters",
+        "browser ONNX vision module"
+      ],
+      "truth_limits": [
+        "email and phone workflows are simulated or unwired",
+        "image service import is missing",
+        "legacy voice bypasses current Voice Fabric authority",
+        "packaging and imports are incomplete",
+        "security and validation gates require repair"
+      ],
+      "disposition": "Deduplicate 153 name-overlapping skills; recover only implementations with complete imports, scoped adapters and acceptance tests."
+    }
+  ],
+  "recovered_capability_families": [
+    {
+      "family": "visual",
+      "portable_skill": "skills/leeway-visual-generation-fabric/SKILL.md",
+      "mcp_tools": [
+        "visual_provider_status",
+        "visual_generate_image",
+        "visual_inspect_image",
+        "visual_convert_image_to_3d"
+      ],
+      "state": "ADAPTER_CONTRACT_PROMOTED",
+      "current_provider_observations": [
+        {
+          "provider": "agent-lee-creation-kernel:local",
+          "evidence": "Docker image source uses SDXL-Turbo and the preserved model volume.",
+          "state": "SOURCE_IMPLEMENTED"
+        },
+        {
+          "provider": "agent-lee-creation-models",
+          "evidence": "A roughly 13 GB Docker volume contained a cached stabilityai/sdxl-turbo model before the current Docker engine recovery.",
+          "state": "DEPENDENCIES_PRESENT"
+        },
+        {
+          "provider": "agent-lee-creation-outputs",
+          "evidence": [
+            {
+              "artifact": "agent-lee-proof-image-20260627-183152.png",
+              "media": "512x512 RGB PNG",
+              "sha256": "53190ec54977ccd548a7a0abf4a5542f8fa3586dcc27c467c6e0d16b890f5048"
+            },
+            {
+              "artifact": "agent-lee-real-image-20260627-184013.png",
+              "media": "512x512 RGB PNG",
+              "sha256": "13f4be8cce642e00449c40138a8d2f7d1d48076a53976ce897ba20eed3239782"
+            }
+          ],
+          "state": "HISTORICAL_VERIFIED_ARTIFACTS"
+        },
+        {
+          "provider": "SDXL-Turbo warmup on current host",
+          "evidence": "The health endpoint returned READY, but warmup hung without allocating the GPU and wedged the Docker engine.",
+          "state": "FAILED"
+        }
+      ]
+    },
+    {
+      "family": "communications",
+      "portable_skill": "skills/leeway-communications-action-fabric/SKILL.md",
+      "mcp_tools": [
+        "communications_prepare_action",
+        "communications_execute_approved"
+      ],
+      "state": "ADAPTER_CONTRACT_PROMOTED",
+      "execution_boundary": "Preparation is local. External email, phone, SMS and calendar mutation require a content-addressed work order, bound approval, idempotency, an authenticated provider gateway and a provider receipt.",
+      "provider_state": "BLOCKED_NO_CURRENT_AUTHENTICATED_PROVIDER_QUALIFICATION"
+    },
+    {
+      "family": "device",
+      "portable_skill": "skills/leeway-device-bridge/SKILL.md",
+      "mcp_tools": [
+        "device_list",
+        "device_capabilities",
+        "device_observe_screen",
+        "device_open_app",
+        "device_ui_action",
+        "device_files_read",
+        "device_files_write"
+      ],
+      "state": "ADAPTER_CONTRACT_PROMOTED",
+      "control_boundary": "UI actions are bounded by type, target and required postcondition. Mutations require bridge evidence and receipts.",
+      "provider_state": "CURRENT_REMOTE_MCP_GATEWAY_NOT_CONFIGURED_IN_CANONICAL_SKILLS_SERVER"
+    },
+    {
+      "family": "legacy_recovery_governance",
+      "portable_skill": "skills/leeway-legacy-capability-recovery/SKILL.md",
+      "state": "ADAPTER_CONTRACT_PROMOTED"
+    }
+  ],
+  "model_observations": [
+    {
+      "scope": "Windows host Ollama before Docker engine interruption",
+      "models": [
+        "gemma4:e4b (8B class, approximately 9.6 GB)",
+        "gemma3:270m-it-qat",
+        "Qwen 3 family",
+        "Qwen 2.5 VL",
+        "Qwen 2.5 Coder"
+      ],
+      "state": "RUNTIME_RESPONDED_BEFORE_ENGINE_INTERRUPTION",
+      "claim_boundary": "This proves host availability at observation time, not installation on the Fold."
+    },
+   {
+     "scope": "Galaxy Z Fold6 private Device Bridge storage",
+     "models": [
+       "SmolLM2_360M_instruct.litertlm"
+     ],
+      "state": "LIVE_STATUS_PASS_2026-10-01",
+      "evidence": "Authenticated Internet-relay model.status reports 373719040 bytes, the expected SHA-256, verified=true, CPU backend and busy=false.",
+      "claim_boundary": "The Device Bridge model API exposes this model; it does not enumerate Termux or other application-private models."
+    },
+    {
+      "scope": "Galaxy Z Fold6 Termux",
+      "models": [
+        "gemma3-270m-it-qat.gguf"
+      ],
+      "state": "HASH_VERIFIED_AND_INFERENCE_PASS",
+      "evidence": "241410464-byte GGUF v3; SHA-256 29005e200100bf723304e3a030c0365636df5efb45fe7ae3200389d7f042fca3; Google Gemma 3 270M metadata; local llama.cpp CPU response 2 + 2 = 4 in 2.03 seconds.",
+      "claim_boundary": "Accessible shared storage and Termux were searched. Other app-private storage, Android/data, Android/obb and other user profiles were not exhaustively readable."
+   }
+ ],
+  "canonical_mcp_verification": {
+    "unit_tests": {
+      "state": "PASS",
+      "passed": 24,
+      "failed": 0
+    },
+    "protocol_smoke": {
+      "state": "PROTOCOL_VERIFIED",
+      "listed_tools": 592,
+      "skill_tools": 543,
+      "bounded_capability_tools": 49,
+      "breakdown": {
+        "game_development": 36,
+        "visual": 4,
+        "communications": 2,
+        "device": 7
+      }
+    }
+  },
+  "remaining_gates": [
+    "Restore the current Docker engine and re-verify Voice Fabric, Formula, Vision, Ollama, Device Bridge services and preserved volumes.",
+    "Extend the phone model inventory only when additional app-private stores are authorized and readable; two phone-local models are currently evidenced.",
+    "Bind the standard device MCP tools to the authenticated Device Bridge gateway and execute observe/open/UI/file acceptance tests with receipts.",
+    "Qualify one image-generation provider end to end without exhausting the 8 GB GPU, then verify and hash a newly generated artifact.",
+    "Qualify authenticated communications providers before claiming email, phone, SMS or calendar execution.",
+    "Perform the final USB-independent phone workstation test and preserve the receipt."
+  ]
+}

@@ -9,13 +9,16 @@ The **Leeway Skills MCP Server** exposes LeeWay skills and bounded operational c
 
 ## Current verified surface
 
-At the 2026-09-16 reconciliation point, a real stdio MCP round trip listed **318 tools**:
+At the 2026-10-01 capability-recovery point, a real stdio MCP round trip listed **592 tools**:
 
 - 44 enabled legacy-registry skill entries;
-- 238 recursively discovered portable `SKILL.md` files;
-- 36 reusable video-game-development tools covering planning, engine work, playtesting, visual QA, and Blender asset processing.
+- 499 recursively discovered portable `SKILL.md` files;
+- 36 reusable video-game-development tools;
+- 4 portable visual-provider tools;
+- 2 content-addressed communications tools;
+- 7 portable Device Bridge tools.
 
-A skill-tool call returns the canonical skill instructions, user instruction, context, and options as an execution prompt for the host agent. It does not itself prove that an external application, model, browser, filesystem, or host tool executed. `game_plan_slice` performs local deterministic contract normalization. The other 35 game-development tools return `BLOCKED_ADAPTER_UNCONFIGURED` until an authorized game or Blender gateway is configured. See `config/drive-mcp-reconciliation.json` for the status of drive-discovered MCP artifacts.
+A skill-tool call returns the canonical skill instructions, user instruction, context, and options as an execution prompt for the host agent. It does not itself prove that an external application, model, browser, filesystem, device or provider executed. Bounded provider tools return an error state when their authorized adapter is absent or when tool-specific evidence is missing. See `config/ecosystem-capability-recovery-v1.json` for recovery provenance and current qualification limits.
 
 Instead of just reading skill documentation, your AI systems can now:
 
@@ -84,9 +87,9 @@ npm start
 **Expected Output**:
 
 ```text
-[Leeway Skills MCP] Loaded 282 tools (44 registry + 238 portable SKILL.md discoveries)
+[Leeway Skills MCP] Loaded 543 tools (44 registry + 499 portable SKILL.md discoveries)
 [Leeway Skills MCP] Server started successfully
-[Leeway Skills MCP] Serving 318 tools (282 skill tools + 36 bounded game-development tools)
+[Leeway Skills MCP] Serving 592 tools (543 skill tools + 49 bounded capability tools)
 [Leeway Skills MCP] Ready to accept tool calls from LLMs
 ```
 

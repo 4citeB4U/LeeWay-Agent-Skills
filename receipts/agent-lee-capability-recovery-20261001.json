@@ -1,0 +1,50 @@
+{
+  "schemaVersion": "1.0.0",
+  "receiptType": "LEEWAY_CAPABILITY_RECOVERY_AND_PHONE_REQUALIFICATION",
+  "createdAt": "2026-10-01T07:16:00Z",
+  "authority": "Creator request plus canonical LeeWay portability, skill lifecycle, Tool Gateway, Veritas and Receipt Authority contracts",
+  "canonicalBaseline": {
+    "repository": "4citeB4U/LeeWay-Agent-Skills",
+    "commit": "6aa0c94db9cdfadecfe7abb3fac66d6a7fca0779",
+    "branch": "codex/capability-recovery-20261001"
+  },
+  "sourceRepositories": [
+    {"repository": "4citeB4U/leeway-ecosystemv2.14", "ref": "source-baseline-20260803", "commit": "4c1181630f65d041f3a8a877a8c5166ac51f4b40"},
+    {"repository": "4citeB4U/LEEWAY-VSCODE", "ref": "main", "commit": "735442601bb6e79db47eec91a92cb087f7ea8809"},
+    {"repository": "4citeB4U/Agent-Lee-The-Sum-of-All-Systems", "ref": "main", "commit": "19b316b67038416600467c4ae84dea5503f3f27e"},
+    {"repository": "4citeB4U/LeeWay-Agents-the-World-Within", "ref": "main", "commit": "5d991b6a0abf923aaa4b6dab18e124d76327b06a"}
+  ],
+  "promotedArtifacts": [
+    {"path": "mcp-server/src/visual-capability-tools.ts", "sha256": "4a738390654bd59d28efdea4b803a210320afc833870abdbb794788c63dfbdd6"},
+    {"path": "mcp-server/src/communications-tools.ts", "sha256": "c12939c8cb22876de2eb2faf34f9125a3ab5db4e0cff1637504ee5365588f5e7"},
+    {"path": "mcp-server/src/device-capability-tools.ts", "sha256": "1c2d883e256f227e45b92fe36b4bca0b98efb1f1ccce0856bd79d72535d2aee0"},
+    {"path": "config/ecosystem-capability-recovery-v1.json", "sha256": "0e4db1187de9ce1bb4dff17e989a3e8326936e5e033e494e2cc5c81771a48ce5"},
+    {"path": "skills/leeway-visual-generation-fabric/SKILL.md", "sha256": "1b78009ade2e68e65cea901ba1eb56d0f64146670170288747d8ceff153e97a4"},
+    {"path": "skills/leeway-communications-action-fabric/SKILL.md", "sha256": "f0d22b4802e22b0f948c4efad3948396a0e45550ebb76a447b4b6630aff9b814"},
+    {"path": "skills/leeway-legacy-capability-recovery/SKILL.md", "sha256": "1539af8c2d27721b13ba9a9937665d84e3f5dd961e51cb49005c5872d94a3e7d"}
+  ],
+  "verification": {
+    "mcpUnitTests": {"state": "PASS", "passed": 24, "failed": 0},
+    "mcpProtocol": {"state": "PASS", "listedTools": 592, "skillTools": 543, "boundedCapabilityTools": 49},
+    "portabilityAudit": {"state": "PASS", "sourceFiles": 101, "skillFiles": 499, "configFiles": 82},
+    "toolInventory": {"state": "PASS", "skills": 499, "duplicateCanonicalSkillNames": 0, "boundedCapabilityTools": 49},
+    "skillToolGraph": {"state": "PASS", "preExistingUnresolvedReferences": 5},
+    "formulaHealth": {"state": "PASS", "identity": "LEEWAY-FORMULA-v1.0", "taskEvaluation": "NOT_EXECUTED"},
+    "phoneRelay": {"state": "PASS", "physicalUsb": "DISCONNECTED", "adb": "NO_DEVICES", "deviceHealthReceiptId": "134cc047-95d7-4357-bdf7-2880b422aacc", "modelStatusReceiptId": "82a03a98-865e-440f-9c35-b78631e86e0f"},
+    "phoneUiAcceptance": {"state": "PASS", "operation": "Calculator 2+2", "observed": "4 Calculation result", "returnedHome": true},
+    "phoneModels": {
+      "state": "PASS_TWO_MODELS",
+      "smolLm2": "FRESH_STATUS_VERIFIED_AND_PRIOR_INFERENCE_PASS",
+      "gemma3_270m": "HASH_VERIFIED_AND_INFERENCE_PASS"
+    },
+    "voice": {"state": "PASS_OWNER_CONFIRMED_POCKET_PATH", "nativeDeviceBridgeVoiceOne": "UNAVAILABLE"},
+    "imageGeneration": {"state": "FAILED_CURRENT_WARMUP", "container": "STOPPED_RESTART_DISABLED", "modelCache": "PRESERVED", "historicalPngArtifacts": 2}
+  },
+  "externalEvidenceHashes": {
+    "userReport": "314695a9c043e3de267b579af8f5f2178fd96cd9d5e62fea8db44e72509d61c8",
+    "userInventory": "33fe055159ccbb93df7fbea8a2879b53f5db80d6bb40794f0634c57340fa7a8c",
+    "freshPhoneRelayResult": "f356dfc868f65afff40c3335108d1a8e82f9ed1abff7eaba51e227a3669b533b",
+    "freshPhoneUiReceipt": "6b4f4818a96296758571d27a12afac1960e17f30c4a0cc04024a0dc3c9156444"
+  },
+  "claimBoundary": "This receipt proves the audited sources, promoted contracts, passing protocol and bounded Fold acceptance tests. It does not claim a qualified live image generator, authenticated email/SMS/calendar provider, PSTN call provider, unrestricted model-driven control, Formula task score or every-device compatibility."
+}
