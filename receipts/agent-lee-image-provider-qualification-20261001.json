@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0.0",
+  "record_role": "IMAGE_PROVIDER_QUALIFICATION_RECEIPT",
+  "observed_at": "2026-10-01T07:55:01.931Z",
+  "verdict": "PASS_VERIFIED_LOCAL_IMAGE_GENERATION",
+  "provider": {
+    "image": "agent-lee-tiny-sd-image-lane:recovered-20261001",
+    "app": "agent-lee-tiny-sd-image-lane",
+    "version": "1.1.0-anatomy-contract",
+    "source_repository": "https://github.com/4citeB4U/leeway-ecosystemv2.14",
+    "source_revision": "4c1181630f65d041f3a8a877a8c5166ac51f4b40",
+    "model": "segmind/tiny-sd",
+    "model_revision": "cad0bd7495fa6c4bcca01b19a723dc91627fe84f",
+    "device": "cuda",
+    "restart_policy": "unless-stopped"
+  },
+  "qualification": {
+    "offline_restart": "PASS",
+    "offline_warmup_seconds": 3.336,
+    "canonical_tool": "visual_generate_image",
+    "canonical_tool_state": "ADAPTER_EXECUTED_UNVERIFIED",
+    "provider_http_status": 200,
+    "provider_generation_seconds": 7.813,
+    "job_id": "0018cc0f-893c-461d-9122-00ff23188aec",
+    "prompt_refinement_used": false,
+    "vision_review_used": false
+  },
+  "artifact": {
+    "media_type": "image/png",
+    "width": 512,
+    "height": 512,
+    "bytes": 322939,
+    "sha256": "742814192dd5e7aac7d7d2ddcbe9bcdfb805a782cd97feb7d9ca53a21f9bcef8",
+    "provider_receipt_sha256": "f9ca5f2f2b89b3f645d378be1314214fca91be7a168b5fb4f6a225cf64cf1cf5"
+  },
+  "post_verification": {
+    "png_signature": "PASS",
+    "dimensions": "PASS",
+    "minimum_size": "PASS",
+    "provider_receipt_binding": "PASS",
+    "assistant_visual_inspection": "PASS_COHERENT_FOLDABLE_WORKSTATION_FORM_BLACK_GOLD_WITH_BLUE_CIRCUIT_LIGHTING",
+    "owner_visual_acceptance": "NOT_REQUESTED"
+  },
+  "tests": {
+    "mcp_unit_tests": {"passed": 25, "failed": 0},
+    "tiny_sd_receipt_compatibility": "PASS"
+  },
+  "external_evidence_hashes": {
+    "user_report": "86f23b3c625c515f3d0845bbc65e7106234db3517ede4bfac147be944acbb921",
+    "user_inventory": "18e48d03277ed57d82aefe55e066c1aa6dca92d03722192e01fc0bd8a670f4db",
+    "user_image_receipt": "385c2b80da954e68c3c624a6bdfac57d3d73e2d5cd7f0b6823623af31da42e1c"
+  },
+  "claim_boundary": "This receipt proves one recovered Tiny-SD provider, one offline restart, and one verified image generated through the canonical visual tool on the tested Windows/CUDA host. It does not claim phone-native inference, PC-off image generation, every prompt, every device, or universal provider availability."
+}

@@ -107,6 +107,38 @@ test("records a loopback provider artifact as unverified execution evidence", as
   }
 });
 
+test("accepts the recovered Tiny-SD provider receipt shape when it includes an image artifact", async () => {
+  const server = http.createServer((request, response) => {
+    if (request.method === "POST" && request.url === "/image/generate") {
+      response.writeHead(200, { "content-type": "application/json" });
+      response.end(JSON.stringify({
+        ok: true,
+        verdict: "IMAGE_GENERATED",
+        image_path: "/artifacts/recovered/image.png",
+        active_live_model: "segmind/tiny-sd",
+      }));
+      return;
+    }
+    response.writeHead(404).end();
+  });
+  await new Promise<void>((resolve) => server.listen(0, "127.0.0.1", resolve));
+  const address = server.address();
+  assert.ok(address && typeof address === "object");
+  const prior = process.env.LEEWAY_IMAGE_GENERATION_URL;
+  process.env.LEEWAY_IMAGE_GENERATION_URL = `http://127.0.0.1:${address.port}`;
+  try {
+    const execution = await executeVisualCapabilityTool("visual_generate_image", { prompt: "recovered image lane" });
+    const result = JSON.parse(execution.text);
+    assert.equal(result.state, "ADAPTER_EXECUTED_UNVERIFIED");
+    assert.equal(result.executed, true);
+    assert.equal(result.provider.image_path, "/artifacts/recovered/image.png");
+  } finally {
+    if (prior === undefined) delete process.env.LEEWAY_IMAGE_GENERATION_URL;
+    else process.env.LEEWAY_IMAGE_GENERATION_URL = prior;
+    await new Promise<void>((resolve, reject) => server.close((error) => error ? reject(error) : resolve()));
+  }
+});
+
 test("does not admit a generic executed flag without artifact evidence", async () => {
   const server = http.createServer((_request, response) => {
     response.writeHead(200, { "content-type": "application/json" });
