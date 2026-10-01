@@ -1,0 +1,131 @@
+{
+  "schema_version": "1.0.0",
+  "id": "leeway.android.developer-state.v1",
+  "authority": "Creator/Human Authority > LeeWay Standards",
+  "canonical_skill": "skills/leeway-secondary-workstation/SKILL.md",
+  "aliases": [
+    "LeeWay Developer Android State",
+    "Android Developer Workstation"
+  ],
+  "portability": {
+    "contract": "config/portability-contract.md",
+    "contract_portable": true,
+    "adapter_implemented": [
+      "Termux",
+      "Desktop Commander Remote MCP",
+      "Android Debug Bridge"
+    ],
+    "platform_tested": [
+      "Samsung Galaxy Z Fold6 / Android 16 / arm64"
+    ],
+    "rule": "Each phone must earn its own Veritas receipt."
+  },
+  "authority_lanes": {
+    "ordinary": {
+      "boundary": "TERMUX_APP_UID_NON_ROOT",
+      "required_proof": "app UID / untrusted_app context",
+      "purpose": "development, files, Git, Node, network, Remote MCP"
+    },
+    "privileged": {
+      "boundary": "ANDROID_ADB_SHELL_NON_ROOT",
+      "required_proof": [
+        "uid=2000(shell)",
+        "unambiguous authenticated target"
+      ],
+      "preferred_adapter": "skills/leeway-secondary-workstation/scripts/leeway-priv.sh",
+      "purpose": "permitted Android package/settings/activity/service diagnostics and actions"
+    },
+    "native": {
+      "boundary": "SEPARATELY_AUTHORIZED_ANDROID_PROVIDER",
+      "purpose": "UI, accessibility, camera, microphone, Bluetooth, USB/HID, notifications and other app/native surfaces"
+    }
+  },
+  "developer_options": {
+    "recommended_on": [
+      "development_settings_enabled",
+      "adb_enabled",
+      "adb_wifi_enabled when wireless lane is in use"
+    ],
+    "recommended_off": [
+      "debug GPU overdraw",
+      "show layout bounds",
+      "show surface updates",
+      "profile HWUI rendering",
+      "strict mode visual indicators",
+      "pointer location except touch diagnostics",
+      "force 4x MSAA",
+      "override force-dark",
+      "disable HW overlays",
+      "wait for debugger",
+      "don't keep activities / always finish activities"
+    ],
+    "background_process_limit": "standard/default unless a qualified experiment says otherwise"
+  },
+  "acceptance_states": [
+    "PRESENT",
+    "INSTALLED",
+    "DEVELOPER_OPTIONS_READY",
+    "REMOTE_REACHABLE",
+    "DIRECT_EXECUTION_VERIFIED",
+    "USB_INDEPENDENT_VERIFIED",
+    "PC_INDEPENDENT_VERIFIED",
+    "SESSION_RECOVERY_VERIFIED",
+    "COLD_BOOT_VERIFIED",
+    "WIRELESS_ADB_PAIRED",
+    "ADB_DEVICE_CONNECTED",
+    "ANDROID_SHELL_VERIFIED",
+    "GOVERNED_PRIVILEGE_GATE_VERIFIED",
+    "DEVELOPER_ANDROID_STATE_VERIFIED"
+  ],
+  "known_failures": [
+    {
+      "signature": "debug.hwui.overdraw=show",
+      "symptom": "colored red/pink/blue UI overlay",
+      "repair": "turn Debug GPU overdraw off; do not change unrelated developer options"
+    },
+    {
+      "signature": "cannot open /tmp/adb.<uid>.log",
+      "symptom": "Termux ADB server cannot start",
+      "repair": "set TMPDIR=$PREFIX/tmp and retry"
+    },
+    {
+      "signature": "SSLV3_ALERT_CERTIFICATE_UNKNOWN",
+      "symptom": "Shizuku wireless start fails",
+      "repair": "complete Wireless Debugging/Shizuku pairing before Start"
+    },
+    {
+      "signature": "Shizuku running but rish unhealthy",
+      "symptom": "rish cannot establish shell execution",
+      "repair": "fresh export + package ID + read-only DEX; if still unhealthy use direct authenticated ADB"
+    },
+    {
+      "signature": "ordinary app UID cannot see expected package",
+      "symptom": "package appears absent",
+      "repair": "corroborate with UI or privileged package query; Android package visibility may hide it"
+    },
+    {
+      "signature": "shell package query hits secondary profile denial",
+      "symptom": "Package Manager prints SecurityException for another user/profile",
+      "repair": "scope query to the active Android user"
+    }
+  ],
+  "safety": {
+    "root_claim": false,
+    "pairing_codes_persisted": false,
+    "credentials_in_receipts": false,
+    "destructive_commands_default": "BLOCKED",
+    "mutation_rule": "Explicit Creator/user authorization + rollback + acceptance test required.",
+    "ambiguous_target_rule": "BLOCKED"
+  },
+  "proof_law": [
+    "installed != running",
+    "running != healthy",
+    "paired != connected",
+    "connected != executable",
+    "Shizuku running != rish healthy",
+    "Termux success != Android shell authority",
+    "uid=2000(shell) != root",
+    "configured != proven",
+    "first success != completion"
+  ]
+}

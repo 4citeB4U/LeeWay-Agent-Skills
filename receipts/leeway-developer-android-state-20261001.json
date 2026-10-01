@@ -1,0 +1,73 @@
+{
+  "schema": "leeway.skill-promotion.v1",
+  "skill": "leeway-secondary-workstation",
+  "alias": "LeeWay Developer Android State",
+  "status": "EXTENDED_VERIFIED_REFERENCE_IMPLEMENTATION",
+  "promotedAt": "2026-10-01T16:11:00Z",
+  "authority": "Creator/Human Authority > LeeWay Standards",
+  "canonicalSkill": "skills/leeway-secondary-workstation/SKILL.md",
+  "previousBoundary": "TERMUX_APP_UID_NON_ROOT",
+  "extendedBoundary": [
+    "TERMUX_APP_UID_NON_ROOT",
+    "ANDROID_ADB_SHELL_NON_ROOT"
+  ],
+  "referencePlatform": {
+    "class": "Samsung Galaxy Z Fold6",
+    "android": "16",
+    "architecture": "arm64"
+  },
+  "executedEvidence": {
+    "remoteExecutor": "Desktop Commander Android workstation",
+    "desktopCommanderVersion": "0.2.52",
+    "termuxBoundary": "ordinary app UID / untrusted_app",
+    "adbClient": "Android Debug Bridge 1.0.41 / 35.0.2-android-tools",
+    "wirelessPairing": "PASS",
+    "adbConnection": "PASS",
+    "shellIdentity": "uid=2000(shell)",
+    "shellSelinuxContext": "u:r:shell:s0",
+    "activeAndroidUser": "0",
+    "protectedSettingsRead": {
+      "development_settings_enabled": "1",
+      "adb_enabled": "1",
+      "adb_wifi_enabled": "1"
+    },
+    "governedWrapper": {
+      "localPathProvenance": "$HOME/.leeway/authority/leeway-priv",
+      "sha256": "babea2941c933cf513f3b96ec774b2614fad3e4eb0ab5d326e825deea0cf36bf",
+      "rollbackHash": "3a742e41a48c7d7ae0f902be9236e6b91febdc15aa437d0917aa6f3c8a2a3051",
+      "lane": "adb",
+      "destructiveCommandTest": "reboot -> BLOCKED, exit 78",
+      "state": "PASS"
+    },
+    "localReceipt": {
+      "pathProvenance": "$HOME/.leeway/authority/logs/receipt-android-authority-20261001T1111.txt",
+      "sha256": "5fabe8311d5d7ce822b6b8cb896e4afab9131a81793a572012cc39480133592f"
+    }
+  },
+  "failureLearning": [
+    "Debug GPU overdraw can create a colored UI overlay and is unrelated to authority.",
+    "Termux ADB may fail when it tries to write logs under /tmp; TMPDIR=$PREFIX/tmp repairs that host-binding issue.",
+    "Shizuku running does not prove rish health.",
+    "A Shizuku version label is not sufficient package-version proof.",
+    "Android package visibility can make an installed app appear absent to an ordinary app UID.",
+    "Wireless ADB pairing endpoint and normal connection endpoint are distinct.",
+    "Direct authenticated ADB can provide a valid shell-authority fallback when rish is unhealthy.",
+    "An ADB shell must still be treated as non-root and governed."
+  ],
+  "security": {
+    "root": false,
+    "pairingCodeRecorded": false,
+    "networkEndpointRecorded": false,
+    "deviceSerialRecorded": false,
+    "credentialsRecorded": false,
+    "mutationStillRequiresAuthorization": true
+  },
+  "acceptance": {
+    "androidShellVerified": "PASS",
+    "governedPrivilegeGateVerified": "PASS",
+    "developerAndroidState": "PASS_FOR_REFERENCE_PHONE",
+    "coldBootPrivilegePersistence": "NOT_REQUALIFIED_IN_THIS_EXTENSION"
+  },
+  "portability": "METHOD_PORTABLE_EACH_PHONE_REQUIRES_OWN_VERITAS_RECEIPT",
+  "learningLedger": "NOT_UPDATED_BY_THIS_RECEIPT"
+}

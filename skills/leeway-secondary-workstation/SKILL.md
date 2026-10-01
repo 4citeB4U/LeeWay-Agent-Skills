@@ -1,30 +1,97 @@
 ---
 name: leeway-secondary-workstation
-description: Build, qualify, recover and route a governed Android secondary workstation for LeeWay or another authorized online LLM/agent using Termux, Desktop Commander Remote MCP, Git/GitHub, Device Bridge and evidence-based failover.
+description: Build, qualify, recover and route a governed Android developer workstation for LeeWay or another authorized LLM/agent using Termux, Desktop Commander Remote MCP, Git/GitHub, Device Bridge, Wireless ADB shell authority and evidence-based failover.
 license: MIT
 metadata:
   authority: Creator/Human Authority > LeeWay Standards
+  aliases: LeeWay Developer Android State; Android Developer Workstation
   canonical-device-authority: 4citeB4U/LEEWAY-DEVICE-BRIDGE
   runtime-owner: 4citeB4U/Leeway-Runtime-Fabric
+  developer-state-contract: config/android-developer-state-v1.json
   reference-guide: https://github.com/4citeB4U/LEEWAY-DEVICE-BRIDGE/blob/main/docs/ANDROID-SECONDARY-WORKSTATION.md
-  evidence: https://github.com/4citeB4U/LEEWAY-DEVICE-BRIDGE/blob/main/workstation/receipts/latest.json
+  evidence: receipts/leeway-developer-android-state-20261001.json
 ---
+<!--
+LEEWAY HEADER — DO NOT REMOVE
+
+REGION: LEEWAY.SKILLS.ANDROID
+TAG: LEEWAY.SKILLS.ANDROID.DEVELOPER_WORKSTATION
+
+COLOR_ONION_HEX:
+NEON=#39FF14
+FLUO=#00E5FF
+PASTEL=#DDF7FF
+
+ICON_ASCII:
+family=lucide
+glyph=smartphone-cog
+
+5WH:
+WHAT = Governed skill for preparing, qualifying, repairing and operating an Android developer workstation
+WHY = Turn an authorized Android phone into a repeatable LeeWay workstation with explicit non-root and ADB-shell authority lanes
+WHO = Leeway Industries / Creator-authorized Agent Lee and compatible authorized LLM or agent runtimes
+WHERE = skills/leeway-secondary-workstation/SKILL.md and qualified Android hosts
+WHEN = On new-phone preparation, workstation recovery, Android permission blockers, ADB/Shizuku setup, or privilege-lane repair
+HOW = Inspect -> diagnose -> prepare -> pair -> execute -> validate -> repair -> retest -> verify -> receipt
+
+AGENTS:
+ASSESS
+AUDIT
+EXECUTE
+VERIFY
+
+LICENSE:
+MIT
+-->
 
 # LeeWay Secondary Workstation
+
+## LeeWay Developer Android State
+
+This skill is the canonical LeeWay Android workstation skill.
+
+"LeeWay Developer Android State" is the qualified condition in which an authorized Android phone has a proven normal workstation lane plus, when explicitly enabled and verified, a governed Android ADB-shell lane.
+
+A new phone does not inherit verification from another phone. Every phone must earn its own receipt.
 
 ## Purpose
 
 Turn a supported Android phone into a real, independently reachable development/execution node for an authorized online LLM or agent.
 
-The phone does not become Windows and does not gain root by declaration. It becomes a qualified Android/Termux workstation with explicit capabilities, explicit boundaries, boot persistence and receipts.
+The phone does not become Windows and does not gain root by declaration. It becomes a qualified Android/Termux workstation with explicit capabilities, explicit boundaries, persistence evidence, optional Android shell authority, rollback and receipts.
 
-## Proven reference architecture
+## Authority architecture
 
-Online LLM / Agent -> authenticated Remote MCP -> Desktop Commander Remote device -> Android / Termux app UID -> shell + files + search + Node/npm + Git + HTTPS/OpenSSH -> GitHub / authorized workplane.
+### Lane A — ordinary workstation
 
-Separately, privileged phone capabilities route through LeeWay Device Bridge and its authorized Android-native providers.
+Online LLM / Agent
+-> authenticated Remote MCP
+-> Desktop Commander Remote device
+-> Android / Termux app UID
+-> shell + files + search + Node/npm + Git + HTTPS/OpenSSH
+-> GitHub / authorized workplane.
 
-Desktop Commander is the workstation execution connection. Device Bridge is the phone/device capability authority. They are complementary and MUST NOT be conflated.
+Boundary: `TERMUX_APP_UID_NON_ROOT`.
+
+### Lane B — governed Android shell
+
+Online LLM / Agent
+-> Desktop Commander / authorized execution adapter
+-> Termux
+-> `leeway-priv`
+-> authenticated Wireless ADB device
+-> Android `uid=2000(shell)`
+-> permitted package/settings/activity/service diagnostics and actions.
+
+Boundary: `ANDROID_ADB_SHELL_NON_ROOT`.
+
+The privileged lane MUST prove `uid=2000(shell)` before it is considered live.
+
+### Lane C — Android-native providers
+
+Privileged phone capabilities that require app APIs, user-consent flows, UI automation, hardware access, notifications, accessibility, media capture, Bluetooth, USB/HID or other Android-native surfaces route through LeeWay Device Bridge or another separately authorized provider.
+
+Desktop Commander, ADB shell and Device Bridge are complementary. They MUST NOT be conflated.
 
 ## Canonical reusable assets
 
@@ -33,53 +100,195 @@ Desktop Commander is the workstation execution connection. Device Bridge is the 
 - `4citeB4U/LEEWAY-DEVICE-BRIDGE/docs/ANDROID-SECONDARY-WORKSTATION.md`
 - `4citeB4U/LEEWAY-DEVICE-BRIDGE/docs/secondary-workstation-node.json`
 - `4citeB4U/LEEWAY-DEVICE-BRIDGE/docs/provider-registry.json`
-- `4citeB4U/LEEWAY-DEVICE-BRIDGE/workstation/receipts/latest.json`
+- `skills/leeway-secondary-workstation/scripts/leeway-priv.sh`
+- `skills/leeway-secondary-workstation/scripts/android-developer-state-audit.sh`
+- `config/android-developer-state-v1.json`
+- `receipts/leeway-developer-android-state-20261001.json`
 
 ## Reference qualification
 
-A physical Samsung Galaxy Z Fold6 running Android 16 / arm64 was qualified with Desktop Commander 0.2.52, Node.js 26.3.1, Git 2.54.0, ripgrep 15.1.0, Termux bash, persistent Remote MCP identity and a Termux boot supervisor.
+A physical Samsung Galaxy Z Fold6 running Android 16 / arm64 was first qualified as a PC-independent and USB-independent Termux/Desktop Commander workstation.
 
-Observed acceptance included PC-independent execution, USB-independent execution, session self-recovery, full phone power-cycle, automatic reconnect, fresh shell execution and GitHub reachability after cold boot.
+The same reference class was subsequently qualified for a direct Termux -> Wireless ADB -> Android shell lane. Acceptance proof included:
 
-That receipt proves the reference phone only. Every other phone must earn its own receipt.
+- Android Debug Bridge client in Termux;
+- Wireless Debugging enabled;
+- one-time Android pairing completed with user-visible pairing consent;
+- direct ADB connection to the phone;
+- `id` returned `uid=2000(shell)`;
+- SELinux context returned `u:r:shell:s0`;
+- protected settings became readable through the governed lane;
+- the privilege wrapper detected the exact shell identity;
+- the wrapper remained fail-closed without that identity;
+- destructive commands remained blocked by the wrapper;
+- the authenticated device was selected explicitly rather than relying on ambiguous ADB default routing.
+
+This proves the reference phone only.
+
+## Developer-options preparation
+
+### Keep on when building or operating the developer workstation
+
+- Developer options.
+- USB debugging when required for the selected ADB workflow.
+- Wireless debugging while using the direct Wireless ADB lane.
+
+### Keep off unless a specific diagnostic requires them
+
+- Debug GPU overdraw.
+- Show layout bounds.
+- Show surface updates.
+- Profile HWUI rendering.
+- Strict mode visual indicators.
+- Pointer location.
+- Show taps, unless touch diagnostics are active.
+- Force 4x MSAA.
+- Override force-dark.
+- Disable HW overlays.
+- Wait for debugger.
+- Don't keep activities / Always finish activities.
+
+Keep Background process limit at the standard/default limit unless a qualified experiment explicitly requires another value.
+
+Do not enable developer toggles merely because they appear powerful. A graphics or UI debugging switch does not increase Android authority.
 
 ## Build procedure
 
-1. Run the public bootstrap in Termux:
+### Phase 1 — inspect before mutation
 
-`curl -fsSL https://raw.githubusercontent.com/4citeB4U/LEEWAY-DEVICE-BRIDGE/main/clients/phone-workstation/bootstrap-desktop-commander.sh -o ~/bootstrap-desktop-commander.sh && bash ~/bootstrap-desktop-commander.sh`
+1. Identify Android version, architecture, OEM/build class and current user.
+2. Determine whether the host is ordinary app UID, ADB shell or root. Never infer privilege from a UI label.
+3. Inventory Termux, ADB, Desktop Commander, Git, Node and existing LeeWay assets.
+4. Identify the canonical target, rollback, acceptance test and user-consent gates.
+5. Run `android-developer-state-audit.sh` where available.
 
-2. Run `desktop-commander remote` and complete the provider-owned authentication flow yourself.
+### Phase 2 — establish the ordinary workstation
 
-Never request, copy into chat, persist in public evidence, or expose passwords, MFA/2FA codes, access tokens, refresh tokens or private pairing secrets.
+1. Install/prepare Termux from an authorized source.
+2. Bootstrap Desktop Commander using the canonical Device Bridge assets.
+3. Complete provider-owned authentication without exposing passwords, MFA codes, refresh tokens or private credentials.
+4. Verify ping, shell, filesystem, search, Node/npm, Git and outbound GitHub/network access.
+5. Remove the primary PC from the execution path.
+6. Disconnect USB and prove fresh phone-local execution.
+7. Verify session recovery.
+8. Verify cold-boot reconnect before claiming cold-boot persistence.
 
-3. Require a fresh direct ping to the phone node. A stale registry entry is not sufficient.
+### Phase 3 — prepare Android debugging
 
-4. Verify direct execution: Node, Git, ripgrep, architecture, file read/write, content search, local Git commit and outbound repository/network access.
+1. Enable Developer options.
+2. Enable USB debugging if required.
+3. Enable Wireless debugging for the direct wireless lane.
+4. Keep unrelated visual/performance debugging toggles off.
+5. Never bypass Android's required user pairing/installation confirmations.
 
-5. Remove the primary PC from the execution path and continue operating the phone node.
+### Phase 4 — optional Shizuku path
 
-6. Physically disconnect USB and run fresh phone-local execution over Remote MCP.
+Shizuku is an optional Android shell broker and may be useful for apps or terminal integration.
 
-7. Deliberately terminate the phone Remote MCP session. The phone-local supervisor must restore it without PC or USB intervention.
+For terminal use:
 
-8. Power the phone fully off and back on. Do not manually open Termux or Desktop Commander during the qualification window. Require automatic registration, fresh ping, fresh shell execution and Git/GitHub reachability.
+1. Start Shizuku through Wireless debugging.
+2. Complete Android pairing before pressing Start when required.
+3. Export the matching `rish` and `rish_shizuku.dex` pair from the running Shizuku app.
+4. Replace `PKG` in `rish` with the real terminal package, e.g. `com.termux`.
+5. On Android 14+, make the DEX non-writable before `app_process` loads it.
+6. Test `rish -c 'id'`.
+7. Accept only an actual `uid=2000(shell)` result.
+
+Shizuku "running" does not prove `rish` health. A displayed Shizuku version label does not by itself prove the installed package version. Package visibility from an untrusted app UID may also hide installed packages.
+
+If Shizuku/rish is unhealthy, do not globalize the failure. Use the direct ADB lane when authorized and supported.
+
+### Phase 5 — direct Wireless ADB lane
+
+1. Ensure the Termux ADB client can start its daemon from a writable Termux temp directory. If it attempts `/tmp` and receives permission denied, set `TMPDIR=$PREFIX/tmp`.
+2. On Android, open Wireless debugging -> Pair device with pairing code.
+3. Treat the six-digit pairing code as an ephemeral secret. Do not persist it in skill source, public receipts or logs.
+4. Distinguish the temporary pairing endpoint from the normal Wireless ADB connection endpoint; they are often different ports.
+5. Run `adb pair <pairing-host:pairing-port>` and provide the code through the authorized interactive channel.
+6. Connect with `adb connect <wireless-adb-host:port>`.
+7. Verify the device is in `device` state.
+8. Execute `adb -s <serial> shell id`.
+9. Require `uid=2000(shell)` and record the SELinux context.
+10. Bind future governed commands to the authenticated device serial. If multiple devices are connected and the target is ambiguous, fail closed.
+
+### Phase 6 — governed privilege gate
+
+Install or adapt `scripts/leeway-priv.sh`.
+
+Required behavior:
+
+- normal Termux remains the default execution context;
+- privileged Android work enters the wrapper explicitly;
+- the wrapper proves `uid=2000(shell)` before executing;
+- the wrapper binds to a specific authenticated ADB device;
+- no shell identity means BLOCKED, not simulated success;
+- destructive command families remain denied by default;
+- consequential mutation still requires Creator/user authorization and rollback planning;
+- commands and outcomes are logged without credentials, pairing codes or tokens.
+
+## Known failure signatures and repairs
+
+### Colored red/pink/blue overlay across Android UI
+
+Likely cause: Debug GPU overdraw enabled.
+
+Evidence example: `debug.hwui.overdraw=show`.
+
+Repair: turn Debug GPU overdraw off. Do not disable unrelated developer options.
+
+### ADB server cannot open `/tmp/adb.<uid>.log`
+
+Cause: Termux cannot use the host-style `/tmp` path.
+
+Repair: use `TMPDIR=$PREFIX/tmp`, create the directory and restart/retry the Termux ADB client.
+
+### Shizuku start shows `SSLV3_ALERT_CERTIFICATE_UNKNOWN`
+
+Cause: Wireless ADB certificate is not paired/trusted for that Shizuku session.
+
+Repair: complete Shizuku Wireless Debugging pairing first, then start the service.
+
+### Shizuku says running but `rish` fails
+
+Classification: service running != terminal bridge healthy.
+
+Repair order:
+
+1. export a fresh matching `rish` pair;
+2. set the terminal package ID correctly;
+3. enforce non-writable DEX on Android 14+;
+4. retest;
+5. if the terminal bridge remains unhealthy, use the independently paired direct ADB lane rather than inventing shell success.
+
+### `pm list packages` appears to say an app is missing from ordinary Termux
+
+Cause may be Android package-visibility restrictions.
+
+Do not infer uninstall from a single app-UID package query. Corroborate with the visible UI, privileged package manager query or another authorized source.
+
+### `pm list packages` under shell reports inaccessible secondary user/profile
+
+Scope the query to the active Android user, e.g. `--user 0`, rather than treating unrelated profile denial as total Package Manager failure.
 
 ## Acceptance states
 
 - `PRESENT`
 - `INSTALLED`
-- `PAIRED`
+- `DEVELOPER_OPTIONS_READY`
 - `REMOTE_REACHABLE`
 - `DIRECT_EXECUTION_VERIFIED`
 - `USB_INDEPENDENT_VERIFIED`
 - `PC_INDEPENDENT_VERIFIED`
 - `SESSION_RECOVERY_VERIFIED`
 - `COLD_BOOT_VERIFIED`
-- `SECONDARY_WORKSTATION_VERIFIED`
+- `WIRELESS_ADB_PAIRED`
+- `ADB_DEVICE_CONNECTED`
+- `ANDROID_SHELL_VERIFIED`
+- `GOVERNED_PRIVILEGE_GATE_VERIFIED`
+- `DEVELOPER_ANDROID_STATE_VERIFIED`
 
 No lower state implies a higher state.
-
 
 ## Continuous durability gate
 
@@ -87,36 +296,46 @@ Cold-boot reconnect does not prove indefinite background liveness.
 
 Before claiming ALWAYS_ON or 100-percent durability, additionally require:
 
-- Android/Samsung background restrictions reviewed and the workstation host exempted where appropriate;
-- the Remote MCP control plane isolated from heavy media, TTS, model, build or other long-running child workloads;
+- Android/OEM background restrictions reviewed and the workstation host exempted where appropriate;
+- Remote MCP control plane isolated from heavy media, TTS, model, build or other long-running child workloads;
 - no orphaned child processes accumulating in the control-plane runtime;
-- a durable foreground-service or equivalent Android-supported keepalive strategy where required;
-- a sustained liveness soak test under representative workload;
-- recovery verified after process pressure, screen-off/Doze conditions and ordinary app switching.
+- durable foreground-service or equivalent Android-supported keepalive strategy where required;
+- sustained liveness soak testing under representative workload;
+- recovery verified after process pressure, screen-off/Doze conditions, ordinary app switching and network changes.
 
-Voice/media work SHOULD execute in a separate provider/runtime. Do not run experimental TTS engines, PulseAudio stacks, or other heavy audio pipelines inside the same Termux process tree relied upon for Remote MCP availability.
-
-If the node becomes unreachable without an intentional shutdown, classify continuous durability as FAILED/OPEN even when cold-boot reconnect previously passed.
+Wireless ADB connection ports can change after Wireless Debugging restarts. Persistent pairing does not imply a permanently fixed connection endpoint.
 
 ## Control boundary
 
-### Verified workstation control
+### Verified ordinary workstation control
 
-Within the Termux/Android permission boundary, a qualified Remote MCP client can perform direct ping/health, shell execution, process launch/management supported by the runtime, Termux-accessible file read/write/edit/list, content search, Node.js/npm, Git, HTTPS/curl, OpenSSH tooling, repository operations, local build/test work that fits the phone, session recovery and boot reconnect.
+Within the Termux/Android app boundary, a qualified Remote MCP client can perform direct ping/health, shell execution, Termux-accessible file read/write/edit/list, content search, Node.js/npm, Git, HTTPS/curl, OpenSSH tooling, repository operations, local build/test work that fits the phone, session recovery and boot reconnect.
 
-### Not granted by Desktop Commander alone
+### Verified ADB-shell control
 
-Do not claim root, protected Android system-service access, another app's private storage, credential/password/MFA extraction, unrestricted notifications, unrestricted camera/microphone, unrestricted Bluetooth/USB/HID, unrestricted screen observation, unrestricted tap/swipe/type, or bypass of Android permissions/user consent.
+When `uid=2000(shell)` is freshly proven, the governed lane may perform operations available to Android's shell user, including many package, settings, activity/service and diagnostic commands.
 
-Those require separately authorized Android-native providers such as LeeWay Device Bridge, and each capability must be qualified independently.
+ADB shell is not root. It does not grant unrestricted access to protected app-private data, OEM/signature permissions, credentials, secure hardware or arbitrary kernel/system partitions.
+
+### Separately authorized capabilities
+
+Notifications, unrestricted camera/microphone, Bluetooth/USB/HID, screen observation, tap/swipe/type, accessibility and other Android-native surfaces require separately authorized and verified providers.
 
 ## Device Manager registration
 
-Register the workstation provider as:
+Register the ordinary workstation provider as:
 
 - provider: `desktop-commander-android-workstation`
 - node: `leeway-phone-workstation`
 - boundary: `TERMUX_APP_UID_NON_ROOT`
+
+Optional privileged provider:
+
+- provider: `leeway-android-adb-shell`
+- node: qualified target phone
+- boundary: `ANDROID_ADB_SHELL_NON_ROOT`
+- acceptance: exact `uid=2000(shell)` proof
+- routing: explicit authenticated device serial
 
 Logical workstation capabilities:
 
@@ -129,41 +348,70 @@ Logical workstation capabilities:
 - `workstation.github.network`
 - `workstation.session.recover`
 - `workstation.boot.reconnect`
+- `android.adb.pair`
+- `android.adb.connect`
+- `android.shell.execute`
+- `android.settings.read`
+- `android.package.inspect`
 
-Device Manager routes privileged phone operations through Device Bridge, not through an invented expansion of Remote MCP authority.
+Mutation capabilities are not automatically authorized merely because shell authority exists.
 
 ## Failover rule
 
-A work item requests logical capabilities, never a specific PC. Resolve requirements against the device/node registry, authorization, live health and supported capabilities. Preserve the parent objective/work ID and record failover evidence.
+A work item requests logical capabilities, never a specific PC, IP address or phone model. Resolve requirements against the device/node registry, user authorization, live health and supported capabilities.
+
+Preferred privileged routing:
+
+1. already verified authorized Android-native provider when the operation requires it;
+2. healthy `rish` when specifically required;
+3. direct authenticated ADB shell;
+4. ordinary Termux for non-privileged work;
+5. BLOCKED with exact dependency if no authorized route exists.
+
+Never silently broaden authority to "make it work."
 
 ## Developer portability rule
 
-The implementation may be offered to other developers, but verification does not transfer.
+`DISCOVER -> INSPECT -> INSTALL -> CONFIGURE -> PAIR -> DIRECT EXECUTION -> REMOVE PC -> REMOVE USB -> RECOVERY -> COLD BOOT -> ADB SHELL PROOF -> GOVERNED GATE -> VERITAS -> RECEIPT -> VERIFIED`
 
-`DISCOVER -> INSTALL -> PATCH/COMPATIBILITY -> PAIR -> DIRECT EXECUTION -> REMOVE PC -> REMOVE USB -> SESSION RECOVERY -> COLD BOOT -> VERITAS -> RECEIPT -> VERIFIED`
-
-Android vendor, Android version, Termux distribution and Desktop Commander version may change behavior. Pin qualified versions or re-run the full campaign after upgrades.
+Android vendor, Android version, Termux distribution, ADB client, Shizuku and Desktop Commander versions may change behavior. Re-run qualification after material upgrades.
 
 ## Proof law
 
 `installed != running`
 `running != healthy`
-`paired != reachable`
-`reachable != executable`
-`executable != PC-independent`
-`PC-independent != USB-independent`
-`USB-independent != session-recoverable`
-`session-recoverable != cold-boot persistent`
+`paired != connected`
+`connected != executable`
+`rish present != rish healthy`
+`Shizuku running != shell command verified`
+`Termux command success != Android shell authority`
+`uid=2000(shell) != root`
+`configured != proven`
 `first success != completion`
 
 ## Evidence requirements
 
-A receipt should include phone class/model and Android version without unnecessary unique identifiers, architecture, tool versions, direct ping, shell, filesystem, search, Git/GitHub, PC independence, USB independence, session recovery, cold boot, security boundary, limitations and source artifact revisions.
+A receipt should include:
 
-Never publish Remote MCP auth tokens, refresh tokens, Google account identifiers, private pairing secrets or other credentials.
+- phone class/model and Android version without unnecessary unique identifiers;
+- architecture and relevant tool versions;
+- ordinary Termux boundary;
+- Remote MCP direct ping and execution evidence when workstation qualification is claimed;
+- PC/USB independence, recovery and cold boot when those claims are made;
+- ADB pair/connect state when privileged lane is claimed;
+- exact `id` output proving `uid=2000(shell)`;
+- SELinux context;
+- active Android user where relevant;
+- governed wrapper identity/hash and rollback reference;
+- negative/destructive-command test;
+- unresolved limitations and provider boundaries.
+
+Never publish pairing codes, Remote MCP tokens, refresh tokens, Google account identifiers, private keys or other credentials.
 
 ## Completion rule
 
-The skill is complete for a target phone only when Veritas can support `SECONDARY_WORKSTATION_VERIFIED` and the receipt is inspectable.
+For ordinary workstation qualification, require `SECONDARY_WORKSTATION_VERIFIED`.
+
+For the full developer state, require `DEVELOPER_ANDROID_STATE_VERIFIED`, including a live governed privilege lane or an explicit record that privileged shell was not requested.
 
 First success is not completion.
