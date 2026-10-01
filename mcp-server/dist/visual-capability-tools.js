@@ -157,8 +157,9 @@ function providerExecuted(name, payload) {
     if (!isJsonObject(payload))
         return false;
     if (name === "visual_generate_image") {
-        const artifact = payload.path ?? payload.outputPath ?? payload.artifact_ref;
-        return payload.status === "READY" && nonEmptyString(artifact);
+        const artifact = payload.path ?? payload.outputPath ?? payload.artifact_ref ?? payload.image_path;
+        const providerAccepted = payload.status === "READY" || payload.ok === true;
+        return providerAccepted && nonEmptyString(artifact);
     }
     if (name === "visual_convert_image_to_3d") {
         const files = payload.mesh_files ?? payload.artifact_urls;
