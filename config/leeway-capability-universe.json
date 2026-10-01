@@ -190,6 +190,31 @@
       "classifier": "scripts/classify-tool-artifacts.mjs"
     }
   },
+  "capability_recovery_20261001": {
+    "inventory": "config/ecosystem-capability-recovery-v1.json",
+    "source_repositories_audited": 4,
+    "promoted_portable_skills": [
+      "leeway-visual-generation-fabric",
+      "leeway-communications-action-fabric",
+      "leeway-legacy-capability-recovery"
+    ],
+    "extended_portable_skills": [
+      "leeway-device-bridge"
+    ],
+    "promoted_bounded_mcp_tools": {
+      "visual": 4,
+      "communications": 2,
+      "device": 7
+    },
+    "canonical_protocol_observation": {
+      "state": "PROTOCOL_VERIFIED",
+      "tool_count": 592,
+      "skill_tools": 543,
+      "bounded_capability_tools": 49,
+      "unit_tests": "PASS_24_OF_24"
+    },
+    "truth_boundary": "Promoted contracts and passing protocol tests do not establish a configured provider, a live device connection, external message delivery, a connected telephone call or a newly generated image."
+  },
   "runtime_qualifications": {
     "android_secondary_workstation": {
       "skill": "leeway-secondary-workstation",

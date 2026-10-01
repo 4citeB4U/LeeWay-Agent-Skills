@@ -21,7 +21,7 @@ This is an exclusive architecture for LLM agents to:
 
 **Not for humans. Not time-based. For LLMs only.**
 
-**Verified repository state (2026-09-16)**: 238 unique `SKILL.md` capabilities; 318 locally protocol-listed stdio MCP tools; 36 bounded video-game-development tool contracts; 61 imported marketing CLIs syntax-verified. Of the game tools, `game_plan_slice` executes locally while engine, playtest, visual-QA, release, and Blender actions require an authorized runtime gateway. GitHub Actions is currently `FAILED_UNDIAGNOSED_EXTERNAL` because the observed jobs failed before any runner steps, so hosted deployment is not claimed.
+**Verified repository state (2026-10-01)**: 499 recursively discovered portable `SKILL.md` capabilities plus 44 legacy-registry entries; 592 locally protocol-listed stdio MCP tools; and 49 bounded operational tools: 36 game-development, 4 visual, 2 communications and 7 device tools. The recovery contracts preserve provider and receipt gates: listing a tool does not establish a configured image provider, a controlled device, a sent message or a connected phone call. The executable protocol test and source inventory are recorded in [`config/ecosystem-capability-recovery-v1.json`](config/ecosystem-capability-recovery-v1.json).
 
 Drive reconciliation evidence is recorded in [`config/leeway-capability-universe.json`](config/leeway-capability-universe.json), [`config/drive-mcp-reconciliation.json`](config/drive-mcp-reconciliation.json), and [`skills/external/SOURCES.md`](skills/external/SOURCES.md). A file, registry entry, generated agent, or configured endpoint is not described as live unless fresh execution evidence proves it.
 
@@ -64,7 +64,7 @@ node scripts/leeway-agents/header-injector.js
 
 ## MCP Server - Use Skills as Tools
 
-Leeway Agent Skills is available as an **MCP (Model Context Protocol) server**. It currently discovers 44 enabled legacy-registry entries and 238 portable `SKILL.md` files, then adds 36 bounded video-game-development tools for a locally verified total of 318 protocol-listed tools.
+Leeway Agent Skills is available as an **MCP (Model Context Protocol) server**. It currently discovers 44 enabled legacy-registry entries and 499 portable `SKILL.md` files, then adds 49 bounded operational tools for a locally verified total of 592 protocol-listed tools.
 
 ### Install As Full NPM SDK
 
@@ -96,7 +96,8 @@ npm run build
 # 2. Start the server
 npm start
 
-# Expected: 282 skill tools + 36 bounded game-development tools = 318 tools
+# Expected at the 2026-10-01 recovery point:
+# 543 skill tools + 49 bounded capability tools = 592 tools
 ```
 
 ### Use Skills in Agent Lee

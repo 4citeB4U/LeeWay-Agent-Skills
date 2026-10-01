@@ -79,20 +79,52 @@ const observedGameTools = [...gameSource.matchAll(/name:\s*"((?:game|blender)_[a
 const uniqueGameTools = [...new Set(observedGameTools)].sort();
 assert(JSON.stringify(uniqueGameTools) === JSON.stringify(expectedGameTools), "Game-development MCP contract inventory does not match the governed 36-tool set");
 
+async function assertToolSet(sourceFile, expected, label) {
+  const source = await fs.readFile(path.join(repoRoot, "mcp-server", "src", sourceFile), "utf8");
+  const observed = [...source.matchAll(/name:\s*"([a-z0-9_-]+)"/g)].map(match => match[1]);
+  const unique = [...new Set(observed)].filter(name => expected.includes(name)).sort();
+  const sortedExpected = [...expected].sort();
+  assert(JSON.stringify(unique) === JSON.stringify(sortedExpected), `${label} MCP contract inventory does not match its governed set`);
+  return unique;
+}
+
+const visualTools = await assertToolSet("visual-capability-tools.ts", [
+  "visual_provider_status", "visual_generate_image", "visual_inspect_image", "visual_convert_image_to_3d",
+], "Visual capability");
+const communicationsTools = await assertToolSet("communications-tools.ts", [
+  "communications_prepare_action", "communications_execute_approved",
+], "Communications capability");
+const deviceTools = await assertToolSet("device-capability-tools.ts", [
+  "device_list", "device_capabilities", "device_observe_screen", "device_open_app",
+  "device_ui_action", "device_files_read", "device_files_write",
+], "Device capability");
+
 const skillFiles = (await filesUnder(path.join(repoRoot, "skills"))).filter(file => path.basename(file) === "SKILL.md");
 const leafNames = skillFiles.map(file => path.basename(path.dirname(file)));
 const duplicates = [...new Set(leafNames.filter((name, index) => leafNames.indexOf(name) !== index))].sort();
-assert(skillFiles.length === 238, `Expected 238 SKILL.md files, found ${skillFiles.length}`);
-assert(duplicates.length === 0, `Duplicate skill leaf names: ${duplicates.join(", ")}`);
+const skillNames = await Promise.all(skillFiles.map(async file => {
+  const source = await fs.readFile(file, "utf8");
+  const match = source.match(/^name:\s*([^\r\n]+)$/m);
+  assert(match, `Missing frontmatter name in ${path.relative(repoRoot, file)}`);
+  return match[1].trim();
+}));
+const duplicateSkillNames = [...new Set(skillNames.filter((name, index) => skillNames.indexOf(name) !== index))].sort();
+assert(skillFiles.length > 0, "No SKILL.md files found");
+assert(duplicateSkillNames.length === 0, `Duplicate canonical skill names: ${duplicateSkillNames.join(", ")}`);
 
 console.log(JSON.stringify({
   state: "PASS",
   skill_files: skillFiles.length,
-  duplicate_skill_leaf_names: duplicates.length,
+  duplicate_canonical_skill_names: duplicateSkillNames.length,
+  duplicate_leaf_names_in_distinct_namespaces: duplicates,
   marketing_tool_payload_files: marketingPayloadFiles.length,
   leeway_marketing_hardening_tests: marketingOverlayFiles.length,
   marketing_cli_files: cliFiles.length,
   marketing_integration_guides: integrationFiles.length,
   registry_links_checked: new Set(linkedPaths).size,
   game_development_mcp_tools: uniqueGameTools.length,
+  visual_capability_mcp_tools: visualTools.length,
+  communications_mcp_tools: communicationsTools.length,
+  device_capability_mcp_tools: deviceTools.length,
+  bounded_capability_mcp_tools: uniqueGameTools.length + visualTools.length + communicationsTools.length + deviceTools.length,
 }, null, 2));

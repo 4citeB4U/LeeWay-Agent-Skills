@@ -74,6 +74,45 @@
       "notes": "Subordinate external integrations/CLIs/resources; credentials/runtime must be separately authorized and verified."
     },
     {
+      "id": "portable-visual-capability-tools",
+      "match": "mcp-server/src/visual-capability-tools.ts",
+      "countObserved": 4,
+      "classification": "PORTABLE_PROVIDER_ADAPTER_CONTRACT",
+      "owner": "leeway-visual-generation-fabric",
+      "supports": [
+        "leeway-tool-gateway",
+        "leeway-veritas",
+        "leeway-receipt-authority"
+      ],
+      "notes": "Image generation, image inspection, provider status and image-to-3D contracts. Provider configuration and artifact verification remain separate gates."
+    },
+    {
+      "id": "portable-communications-capability-tools",
+      "match": "mcp-server/src/communications-tools.ts",
+      "countObserved": 2,
+      "classification": "PORTABLE_EXTERNAL_ACTION_CONTRACT",
+      "owner": "leeway-communications-action-fabric",
+      "supports": [
+        "leeway-tool-gateway",
+        "leeway-veritas",
+        "leeway-receipt-authority"
+      ],
+      "notes": "Preparation is local. External execution requires a content-addressed work order, bound approval, idempotency, an authenticated gateway and provider receipt."
+    },
+    {
+      "id": "portable-device-capability-tools",
+      "match": "mcp-server/src/device-capability-tools.ts",
+      "countObserved": 7,
+      "classification": "PORTABLE_DEVICE_ADAPTER_CONTRACT",
+      "owner": "leeway-device-bridge",
+      "supports": [
+        "leeway-tool-gateway",
+        "leeway-veritas",
+        "leeway-receipt-authority"
+      ],
+      "notes": "Discovery, passport, screen, app, bounded UI and file tools. Each device and postcondition requires current authorization and evidence."
+    },
+    {
       "id": "generated",
       "match": "**/dist/** + **/*.d.ts",
       "countObserved": 10,

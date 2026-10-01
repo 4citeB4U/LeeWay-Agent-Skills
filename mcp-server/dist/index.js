@@ -38,6 +38,9 @@ import fs from "fs/promises";
 import path from "path";
 import { fileURLToPath, pathToFileURL } from "url";
 import { executeGameDevelopmentTool, gameDevelopmentToolDefinitions, isGameDevelopmentTool, } from "./game-development-tools.js";
+import { executeVisualCapabilityTool, isVisualCapabilityTool, visualCapabilityToolDefinitions, } from "./visual-capability-tools.js";
+import { communicationsToolDefinitions, executeCommunicationsTool, isCommunicationsTool, } from "./communications-tools.js";
+import { deviceCapabilityToolDefinitions, executeDeviceCapabilityTool, isDeviceCapabilityTool, } from "./device-capability-tools.js";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 function slug(value) {
@@ -219,7 +222,12 @@ export class LeewaySkillsMCPServer {
     }
     setupHandlers() {
         this.server.setRequestHandler(ListToolsRequestSchema, async () => {
-            const tools = [...gameDevelopmentToolDefinitions];
+            const tools = [
+                ...gameDevelopmentToolDefinitions,
+                ...visualCapabilityToolDefinitions,
+                ...communicationsToolDefinitions,
+                ...deviceCapabilityToolDefinitions,
+            ];
             for (const [skillId, skill] of this.skills) {
                 tools.push({
                     name: skillId,
@@ -273,6 +281,81 @@ export class LeewaySkillsMCPServer {
                             {
                                 type: "text",
                                 text: `Error executing game-development tool "${toolName}": ${error instanceof Error ? error.message : String(error)}`,
+                            },
+                        ],
+                        isError: true,
+                    };
+                }
+            }
+            if (isVisualCapabilityTool(toolName)) {
+                try {
+                    const result = await executeVisualCapabilityTool(toolName, request.params.arguments);
+                    return {
+                        content: [
+                            {
+                                type: "text",
+                                text: result.text,
+                            },
+                        ],
+                        isError: result.isError,
+                    };
+                }
+                catch (error) {
+                    return {
+                        content: [
+                            {
+                                type: "text",
+                                text: `Error executing visual capability tool "${toolName}": ${error instanceof Error ? error.message : String(error)}`,
+                            },
+                        ],
+                        isError: true,
+                    };
+                }
+            }
+            if (isCommunicationsTool(toolName)) {
+                try {
+                    const result = await executeCommunicationsTool(toolName, request.params.arguments);
+                    return {
+                        content: [
+                            {
+                                type: "text",
+                                text: result.text,
+                            },
+                        ],
+                        isError: result.isError,
+                    };
+                }
+                catch (error) {
+                    return {
+                        content: [
+                            {
+                                type: "text",
+                                text: `Error executing communications tool "${toolName}": ${error instanceof Error ? error.message : String(error)}`,
+                            },
+                        ],
+                        isError: true,
+                    };
+                }
+            }
+            if (isDeviceCapabilityTool(toolName)) {
+                try {
+                    const result = await executeDeviceCapabilityTool(toolName, request.params.arguments);
+                    return {
+                        content: [
+                            {
+                                type: "text",
+                                text: result.text,
+                            },
+                        ],
+                        isError: result.isError,
+                    };
+                }
+                catch (error) {
+                    return {
+                        content: [
+                            {
+                                type: "text",
+                                text: `Error executing device capability tool "${toolName}": ${error instanceof Error ? error.message : String(error)}`,
                             },
                         ],
                         isError: true,
@@ -367,7 +450,11 @@ Provide structured, actionable output that can be directly used.
         const transport = new StdioServerTransport();
         await this.server.connect(transport);
         console.error("[Leeway Skills MCP] Server started successfully");
-        console.error(`[Leeway Skills MCP] Serving ${this.skills.size + gameDevelopmentToolDefinitions.length} tools (${this.skills.size} skill tools + ${gameDevelopmentToolDefinitions.length} bounded game-development tools)`);
+        const boundedCapabilityTools = gameDevelopmentToolDefinitions.length
+            + visualCapabilityToolDefinitions.length
+            + communicationsToolDefinitions.length
+            + deviceCapabilityToolDefinitions.length;
+        console.error(`[Leeway Skills MCP] Serving ${this.skills.size + boundedCapabilityTools} tools (${this.skills.size} skill tools + ${boundedCapabilityTools} bounded capability tools)`);
         console.error("[Leeway Skills MCP] Ready to accept tool calls from LLMs");
     }
 }

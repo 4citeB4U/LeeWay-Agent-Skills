@@ -37,3 +37,17 @@ Local device authority may operate offline only within previously authorized loc
 ## Providers
 
 Android/Samsung and Apple are adapters behind one Device Bridge contract. Termux may be a worker/provider, not the sovereign bridge.
+
+## Standard MCP surface
+
+The canonical Skills MCP server exposes device-agnostic tool identities:
+
+- `device_list`
+- `device_capabilities`
+- `device_observe_screen`
+- `device_open_app`
+- `device_ui_action`
+- `device_files_read`
+- `device_files_write`
+
+They delegate only through `LEEWAY_DEVICE_MCP_GATEWAY_URL` plus `LEEWAY_DEVICE_MCP_BEARER_TOKEN`. A listed tool is a portable contract, not proof that a particular device granted or executed that capability. UI actions use a bounded action type and target plus a mandatory postcondition. Mutations require tool-specific evidence and a receipt; UI control additionally requires the bridge to report that the requested postcondition was observed. Veritas still controls final acceptance.
