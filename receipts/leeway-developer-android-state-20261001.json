@@ -69,5 +69,40 @@
     "coldBootPrivilegePersistence": "NOT_REQUALIFIED_IN_THIS_EXTENSION"
   },
   "portability": "METHOD_PORTABLE_EACH_PHONE_REQUIRES_OWN_VERITAS_RECEIPT",
-  "learningLedger": "NOT_UPDATED_BY_THIS_RECEIPT"
+  "learningLedger": "NOT_UPDATED_BY_THIS_RECEIPT",
+  "implementationCommit": "a14ae59d9d6e759035f532db479d45b9880a7652",
+  "postCommitValidation": {
+    "executor": "qualified Android 16 reference phone",
+    "result": "PASS",
+    "configParse": "PASS",
+    "committedPrivilegeAdapter": {
+      "sha256": "66a16432d135bde23fd04b6291a1aab80b3a84da52df50be7ef3b47d6244b7c5",
+      "status": "privileged_lane=adb",
+      "shellIdentity": "uid=2000(shell)",
+      "safeRead": "am get-current-user -> 0",
+      "destructiveNegativeTest": "reboot -> BLOCKED, exit 78"
+    },
+    "committedAuditAdapter": {
+      "sha256": "471aa8f1d44244a23592f45dab373e5e9a21cde61c814a2c9e963a52b516d7d1",
+      "mutationPerformed": false,
+      "observed": {
+        "android_release": "16",
+        "android_sdk": "36",
+        "architecture": "aarch64",
+        "adbd": "running",
+        "adb_wifi_enabled": "1",
+        "always_finish_activities": "0",
+        "debug_egl_force_msaa": "false"
+      }
+    },
+    "committedContract": {
+      "sha256": "292e47836713c47a33b91fd98172986fda1350a892f7857945b6d2617514637b",
+      "id": "leeway.android.developer-state.v1"
+    }
+  },
+  "learningClosure": {
+    "state": "ADMITTED_INTO_CANONICAL_SKILL_AND_RECEIPT",
+    "separateLedgerArtifact": "NOT_EXPOSED_BY_CURRENT_REPOSITORY_CONTRACT",
+    "note": "No separate Learning Ledger store was invented."
+  }
 }
