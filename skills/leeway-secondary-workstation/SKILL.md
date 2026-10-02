@@ -93,6 +93,27 @@ Privileged phone capabilities that require app APIs, user-consent flows, UI auto
 
 Desktop Commander, ADB shell and Device Bridge are complementary. They MUST NOT be conflated.
 
+### Lane independence law
+
+Lane A, Lane B and Lane C are independently qualified capability lanes inside one LeeWay workstation body.
+
+- Lane B is optional maintenance/diagnostic shell authority. Its absence, timeout or disconnection MUST NOT invalidate a healthy Lane A ordinary workstation or a healthy Lane C Android-native provider.
+- Lane C authority originates in the installed authorized Android provider and its Android permission/consent boundary, not in Termux, ADB, Shizuku or USB.
+- Termux/Desktop Commander may transport bootstrap or diagnostic requests, but they do not become the authority of Lane C.
+- A failed probe in one lane must be classified to that lane only. Do not globalize it into a workstation failure.
+- Before repairing a lane, inspect the canonical runtime/provider health and reuse the existing registered adapter/provider/package identity.
+- Never create a parallel package, runtime, registry or authority merely to bypass a failed lane.
+
+### Canonical package lineage law
+
+Repairs and updates must modify the existing canonical package/repository identity whenever that identity remains valid.
+
+- 4citeB4U/LEEWAY-DEVICE-BRIDGE remains the Android-native device authority.
+- 4citeB4U/LeeWay-Pocket-Agent remains the Pocket client identity.
+- 4citeB4U/Leeway-Runtime-Fabric remains the runtime owner/router.
+- Experimental builds may exist transiently for verification, but must not become parallel authorities or accumulate as user-visible install choices.
+- Preserve one qualified rollback; retire superseded generated package artifacts after the replacement passes Veritas.
+
 ## Canonical reusable assets
 
 - `4citeB4U/LEEWAY-DEVICE-BRIDGE/clients/phone-workstation/bootstrap-desktop-commander.sh`
