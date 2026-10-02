@@ -247,6 +247,18 @@ console.log(doctor.formatReport(diagnosis));
 
 ---
 
+## Canonical Update Governance
+
+All LeeWay applications and services that support updates must follow **LEEWAY-UPDATE-v1.0**.
+
+If a user/operator enables automatic updates, the product may automatically **check its canonical GitHub source, download, verify, and stage** a qualified newer release. It must still require explicit human approval before installation, activation, restart, or production cutover.
+
+`DISCOVER → QUALIFY → DOWNLOAD → VERIFY → STAGE → REQUEST_APPROVAL → APPLY → HEALTH_CHECK → RECEIPT`
+
+**Automatic retrieval is not automatic authority.** Silent apply/install is non-compliant. See `docs/LEEWAY_UPDATE_STANDARD_V1.md` and `schemas/leeway-update-policy-v1.schema.json`.
+
+---
+
 ## Security Rules
 
 The following rules must always be followed:
