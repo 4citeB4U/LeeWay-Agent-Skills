@@ -34,6 +34,7 @@ export { parseHeader, buildHeader, validateHeader } from './core/header-parser.j
 export { validateTag, inferTag } from './core/tag-validator.js';
 export { classifyRegion, REGIONS } from './core/region-classifier.js';
 export { scoreCompliance, COMPLIANCE_LEVELS } from './core/compliance-scorer.js';
+export { LEEWAY_UPDATE_STANDARD, UPDATE_STATES, createUpdatePolicy, mayAutomaticallyRetrieve, mayApplyUpdate, assertApplyTransition } from './core/update-policy.js';
 
 export { AssessAgent } from './agents/governance/assess-agent.js';
 export { AlignAgent } from './agents/governance/align-agent.js';

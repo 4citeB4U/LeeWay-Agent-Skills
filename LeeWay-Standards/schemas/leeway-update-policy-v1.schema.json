@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://leeway.industries/schemas/leeway-update-policy-v1.schema.json",
+  "title": "LeeWay Update Policy v1",
+  "type": "object",
+  "required": ["standard", "canonicalRepository", "channel", "automaticRetrievalEnabled", "applyRequiresUserApproval"],
+  "properties": {
+    "standard": { "const": "LEEWAY-UPDATE-v1.0" },
+    "canonicalRepository": { "type": "string", "minLength": 3 },
+    "channel": { "type": "string", "enum": ["stable", "beta", "dev", "custom"] },
+    "automaticRetrievalEnabled": { "type": "boolean", "default": false },
+    "applyRequiresUserApproval": { "const": true },
+    "checkIntervalHours": { "type": "number", "minimum": 1, "default": 24 },
+    "minimumRetryBackoffHours": { "type": "number", "minimum": 1, "default": 1 },
+    "wifiOnly": { "type": "boolean", "default": false },
+    "retainRollbackUntilHealthPass": { "const": true },
+    "requireSha256": { "const": true },
+    "requireSignerContinuityWhenSupported": { "const": true }
+  },
+  "additionalProperties": false
+}
