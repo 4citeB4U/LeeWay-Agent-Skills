@@ -85,6 +85,17 @@ Examples of transferable primitives include diagnosis, pressure/flow reasoning, 
 
 Cross-domain analogy proposes a route; Veritas determines whether that route deserves authority.
 
+## Update governance law
+
+All LeeWay applications, services, agents and deployable software that support updates must implement `LEEWAY-UPDATE-v1.0` from `LeeWay-Standards/docs/LEEWAY_UPDATE_STANDARD_V1.md`.
+
+When the user/operator explicitly enables automatic updates, the implementation may automatically check the declared canonical GitHub repository/release channel, download a newer qualified artifact, verify SHA-256/signing authority/compatibility, and stage it privately. The transition from `READY_FOR_APPROVAL` to `APPLYING` always requires an explicit human approval event. Never silently install, activate, restart into, or promote a downloaded update.
+
+Required lifecycle:
+`DISCOVER → QUALIFY → DOWNLOAD → VERIFY → STAGE → REQUEST_APPROVAL → APPLY → HEALTH_CHECK → RECEIPT`
+
+A download is not an install. Opening an installer is not install proof. First installer success is not completion. Retain rollback until post-apply health passes. Avoid accumulating stale duplicate installers. A product updater must never silently redirect to a superseded sibling package or different signing authority.
+
 ## Tool Gateway law
 An agent that has loaded LeeWay skills does not automatically receive raw machine authority.
 
