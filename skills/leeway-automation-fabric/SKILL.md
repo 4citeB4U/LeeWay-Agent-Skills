@@ -46,6 +46,38 @@ F8 currently has a documented empty-condition policy gap. Never infer zero-condi
 
 Domain Formula adapters must use calibrated measurements and the centralized evaluator. No invented Q69 state.
 
+## Device capability projection
+
+Agent Lee SHALL resolve physical-device intents through the canonical Device Bridge provider registry rather than calling vendor protocols directly.
+
+Current projected families:
+
+- `device.bluetooth.list-bonded` — VERIFIED on the qualified Android phone path; discovery does not imply control.
+- `device.network.discover` — VERIFIED phone-local SSDP + DNS-SD/mDNS discovery; observation only until a qualified actuation route exists.
+- Home Assistant — contract promoted and source-qualified; live instance remains UNVERIFIED until configured and observed.
+- Matter/Thread — wrapper implemented; qualified controller/provider still required.
+- MQTT — wrapper implemented; broker/client transport still required.
+- Tesla — wrapper implemented; owner-authorized live transport and vehicle qualification still required.
+- Drone — wrapper implemented; owner-authorized SDK/bridge and physical flight qualification still required.
+- Robot — wrapper implemented; owner-authorized transport and physical actuation qualification still required.
+- Appliance — normalized washer/dryer/refrigerator/lawn-equipment wrapper implemented; resolves through Home Assistant, Matter/Thread, MQTT, LAN, Bluetooth or a qualified vendor adapter.
+
+Provider selection law:
+
+1. exact registered device/provider binding;
+2. healthy local verified capability;
+3. Home Assistant binding;
+4. direct qualified protocol adapter;
+5. approved deterministic workflow for compound automation;
+6. provider-specific remote route;
+7. BLOCKED when no authorized verified route exists.
+
+Do not promote `configured`, `supported`, or `API accepted` to physical success. Consequential actuation requires explicit owner authority plus fresh post-state observation where the device exposes it.
+
+## RTC / voice boundary
+
+Realtime communication transport is not voice identity. LeeWay Live owns RTC/session transport; LeeWay Voice Fabric owns Agent Lee speech identity, queueing, interruption and provider routing. Edge RTC is a donor/evidence estate until its transport and voice behaviors are promoted through equivalence tests into those canonical authorities.
+
 ## External developer boundary
 
 Automation Fabric may be consumed independently through its contracts. Consumers do not need Agent Lee or the full Sensory Harness.
