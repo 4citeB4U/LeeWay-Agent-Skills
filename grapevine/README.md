@@ -1,11 +1,13 @@
-# LeeWay Agent Skills — Grapevine source package
+# LeeWay Agent Skills — Grapevine
 
-This directory contains the uploaded Grapevine 3D Registry & Pipeline Engine project used by GitHub Pages.
+The active GitHub Pages source now lives in `grapevine-app/`.
 
-- Source package: `leeway-grapevine-actual-fixed.zip`
-- Source package SHA-256: `145208f2656b218a8756a6caee72592d0a12660bc49631a6ec056d1d3fb834e4`
-- Visual source: the user-supplied React/Three.js Grapevine project.
-- Registry source: generated at deploy time from every canonical `skills/**/SKILL.md` in the checked-out commit.
-- Truth boundary: registry presence is not execution. Public GitHub Pages is read/select only; local execution remains subject to Runtime Fabric, MCP/provider authority, Veritas, and receipts.
+That directory is the React / Three.js Grapevine derived from the user-supplied **Grapevine 3D Registry & Pipeline Engine** project. The Pages workflow builds that source directly; it no longer depends on an archived transfer ZIP.
 
-The deploy workflow unpacks this source, generates `public/grapevine-state.json`, type-checks the project, builds it with Vite, and deploys the resulting `dist/`.
+The build generates `grapevine-app/public/grapevine-state.json` from every canonical `skills/**/SKILL.md` in the checked-out commit.
+
+Truth boundary:
+- one grape = one canonical `SKILL.md` source record;
+- registry presence does not imply execution or qualification;
+- GitHub Pages is a read/select interface;
+- MCP, Runtime Fabric, Desktop Commander, Device Bridge, Formula, Veritas and receipts retain their own authority/evidence requirements.
