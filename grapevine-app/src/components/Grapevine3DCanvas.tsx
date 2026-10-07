@@ -104,12 +104,15 @@ export const Grapevine3DCanvas:React.FC<Props>=({skills,branches,selectedSkill,b
  const wheelFn=(e:React.WheelEvent<HTMLDivElement>)=>{e.preventDefault();zoom.current=Math.max(10,Math.min(34,zoom.current+e.deltaY*.015));onCameraChange(target.current.yaw*180/Math.PI,target.current.pitch*180/Math.PI,zoom.current)};
  return <div ref={mount} onPointerDown={downFn} onPointerMove={moveFn} onPointerUp={upFn} onPointerCancel={upFn} onWheel={wheelFn} onDoubleClick={()=>zoom.current=zoom.current<18?23:14} className="absolute inset-0 w-full h-full overflow-hidden select-none touch-none bg-black cursor-grab active:cursor-grabbing">
    <div className="absolute inset-0 pointer-events-none overflow-hidden">
-     {branchLabels.map(l=><div key={l.branchKey} style={{transform:`translate3d(${l.x}px,${l.y}px,0) translate(-50%,-100%)`,display:l.visible?'block':'none',borderColor:`${l.color}90`,boxShadow:`0 0 24px ${l.color}45`}} className="absolute min-w-[132px] max-w-[174px] md:min-w-[168px] md:max-w-[220px] px-2.5 py-2 md:px-3 md:py-2.5 rounded-xl bg-black/88 backdrop-blur-xl border text-center">
-       <div className="flex items-center justify-center gap-1.5 mb-1">
-         <span className="w-2 h-2 md:w-2.5 md:h-2.5 rounded-full shrink-0" style={{backgroundColor:l.color,boxShadow:`0 0 10px ${l.color}`}} />
-         <div className="text-[9px] md:text-[11px] font-black font-mono tracking-[0.1em] uppercase leading-tight" style={{color:l.color}}>{l.title}</div>
+     {branchLabels.map(l=><div key={l.branchKey} style={{transform:`translate3d(${l.x}px,${l.y}px,0) translate(-50%,-100%)`,display:l.visible?'block':'none',borderColor:`${l.color}a8`,boxShadow:`0 0 28px ${l.color}55`}} className="absolute min-w-[142px] max-w-[188px] md:min-w-[178px] md:max-w-[236px] px-2.5 py-2 md:px-3 md:py-2.5 rounded-xl bg-black/92 backdrop-blur-xl border text-center">
+       <div className="mb-1 flex justify-center">
+         <span className="rounded-full border px-2 py-0.5 text-[6.5px] md:text-[7.5px] font-black font-mono tracking-[0.16em] uppercase" style={{color:l.color,borderColor:`${l.color}70`,backgroundColor:`${l.color}12`}}>CATEGORY</span>
        </div>
-       <div className="text-[7.5px] md:text-[9px] leading-snug text-zinc-200 font-semibold">{l.subtitle}</div>
+       <div className="flex items-center justify-center gap-1.5 mb-1">
+         <span className="w-2 h-2 md:w-2.5 md:h-2.5 rounded-full shrink-0" style={{backgroundColor:l.color,boxShadow:`0 0 12px ${l.color}`}} />
+         <div className="text-[10px] md:text-[12px] font-black font-mono tracking-[0.11em] uppercase leading-tight" style={{color:l.color}}>{l.title}</div>
+       </div>
+       <div className="text-[7.5px] md:text-[9px] leading-snug text-zinc-100 font-semibold">{l.subtitle}</div>
        <div className="mt-1 flex items-center justify-center gap-1.5 text-[7px] md:text-[8px] font-mono text-zinc-400">
          <span style={{color:l.color}}>{l.badge}</span><span>·</span><span>{l.count} grapes</span>
        </div>
