@@ -9,6 +9,7 @@ interface Props {
   onCameraChange:(yaw:number,pitch:number,zoom:number)=>void;
 }
 interface Label {skillId:string;skillName:string;categoryName:string;color:string;statusLabel:string;isHarvested:boolean;isSelected:boolean;x:number;y:number;visible:boolean}
+interface BranchLabel {branchKey:BranchKey;title:string;color:string;x:number;y:number;visible:boolean}
 interface Node {mesh:THREE.Group;skill:Skill;world:THREE.Vector3}
 
 export const Grapevine3DCanvas:React.FC<Props>=({skills,branches,selectedSkill,basket,activeBranchFilter,isCloseUp,onSelectSkill,cameraYaw,cameraPitch,onCameraChange})=>{
@@ -16,6 +17,7 @@ export const Grapevine3DCanvas:React.FC<Props>=({skills,branches,selectedSkill,b
  const target=useRef({yaw:cameraYaw*Math.PI/180,pitch:cameraPitch*Math.PI/180}),current=useRef({yaw:0,pitch:0});
  const zoom=useRef(isCloseUp?14:23),zoomNow=useRef(isCloseUp?14:23),cameraRef=useRef<THREE.PerspectiveCamera|null>(null),nodes=useRef<Node[]>([]);
  const [labels,setLabels]=useState<Label[]>([]);
+ const [branchLabels,setBranchLabels]=useState<BranchLabel[]>([]);
 
  useEffect(()=>{target.current={yaw:cameraYaw*Math.PI/180,pitch:cameraPitch*Math.PI/180}},[cameraYaw,cameraPitch]);
  useEffect(()=>{zoom.current=isCloseUp?14:23},[isCloseUp]);
@@ -41,8 +43,8 @@ export const Grapevine3DCanvas:React.FC<Props>=({skills,branches,selectedSkill,b
   for(let i=0;i<trunk.length-1;i++){const a=trunk[i],b=trunk[i+1],h=b[0]-a[0],m=new THREE.Mesh(new THREE.CylinderGeometry(b[2],a[1],h,28,2),crystal);m.position.set((a[3]+b[3])/2,a[0]+h/2,(a[4]+b[4])/2);m.rotation.y=.1+i*.3;tree.add(m)}
   const coreMat=new THREE.MeshBasicMaterial({color:0x38edf8,transparent:true,opacity:.85,blending:THREE.AdditiveBlending});const core=new THREE.Mesh(new THREE.CylinderGeometry(.26,.38,5.2,20),coreMat);core.position.y=-.8;tree.add(core);
 
-  const branchKeys=Object.keys(branches) as BranchKey[],branchGroups=new Map<BranchKey,THREE.Group>(),nodeList:Node[]=[];
-  branchKeys.forEach((key,bi)=>{const branch=branches[key],g=new THREE.Group();branchGroups.set(key,g);tree.add(g);const a=(bi/branchKeys.length)*Math.PI*2-.6;const c=new THREE.CatmullRomCurve3([new THREE.Vector3(0,.6,0),new THREE.Vector3(Math.cos(a)*2.8,1.25+Math.sin(bi*.7)*.5,Math.sin(a)*2.8),new THREE.Vector3(Math.cos(a)*6.2,2+Math.cos(bi*.8)*.75,Math.sin(a)*6.2)]);g.add(new THREE.Mesh(new THREE.TubeGeometry(c,30,.15,14),crystal));g.add(new THREE.Mesh(new THREE.TubeGeometry(c,30,.035,8),new THREE.MeshBasicMaterial({color:new THREE.Color(branch.color),transparent:true,opacity:.8,blending:THREE.AdditiveBlending})));});
+  const branchKeys=Object.keys(branches) as BranchKey[],branchGroups=new Map<BranchKey,THREE.Group>(),branchAnchors=new Map<BranchKey,THREE.Vector3>(),nodeList:Node[]=[];
+  branchKeys.forEach((key,bi)=>{const branch=branches[key],g=new THREE.Group();branchGroups.set(key,g);tree.add(g);const a=(bi/branchKeys.length)*Math.PI*2-.6;const end=new THREE.Vector3(Math.cos(a)*6.2,2+Math.cos(bi*.8)*.75,Math.sin(a)*6.2);branchAnchors.set(key,end.clone().add(new THREE.Vector3(0,.55,0)));const c=new THREE.CatmullRomCurve3([new THREE.Vector3(0,.6,0),new THREE.Vector3(Math.cos(a)*2.8,1.25+Math.sin(bi*.7)*.5,Math.sin(a)*2.8),end]);g.add(new THREE.Mesh(new THREE.TubeGeometry(c,30,.15,14),crystal));g.add(new THREE.Mesh(new THREE.TubeGeometry(c,30,.035,8),new THREE.MeshBasicMaterial({color:new THREE.Color(branch.color),transparent:true,opacity:.8,blending:THREE.AdditiveBlending})));});
 
   const grouped=new Map<BranchKey,Skill[]>();for(const s of skills){const arr=grouped.get(s.branchKey)||[];arr.push(s);grouped.set(s.branchKey,arr)}
   for(const key of branchKeys){const list=grouped.get(key)||[],bi=branchKeys.indexOf(key),base=(bi/branchKeys.length)*Math.PI*2-.6,group=branchGroups.get(key)!;for(let i=0;i<list.length;i++){const skill=list[i],t=(i+1)/(list.length+1),gold=i*2.3999632297,rad=1.7+t*4.9,ang=base+Math.sin(gold)*.31,y=-2.1+t*5.2+Math.cos(gold)*.42,pos=new THREE.Vector3(Math.cos(ang)*rad+Math.cos(gold)*.5,y,Math.sin(ang)*rad+Math.sin(gold)*.5),start=pos.clone().multiplyScalar(.78);start.y=(start.y+pos.y)/2;group.add(new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3([start,pos.clone().lerp(start,.35),pos]),5,.022,6),new THREE.MeshBasicMaterial({color:new THREE.Color(branches[key].color),transparent:true,opacity:.38})));
@@ -66,7 +68,20 @@ export const Grapevine3DCanvas:React.FC<Props>=({skills,branches,selectedSkill,b
   const animate=()=>{raf=requestAnimationFrame(animate);const t=clock.getElapsedTime();current.current.yaw+=(target.current.yaw-current.current.yaw)*.08;current.current.pitch+=(target.current.pitch-current.current.pitch)*.08;tree.rotation.y=current.current.yaw;tree.rotation.x=current.current.pitch;zoomNow.current+=(zoom.current-zoomNow.current)*.08;camera.position.z=zoomNow.current;coreMat.opacity=.64+Math.sin(t*2.4)*.2;floorPurple.intensity=3.1+Math.sin(t*.7)*.8;floorCyan.intensity=2.5+Math.sin(t*.9+1)*.6;
     nodeList.forEach((n,i)=>{const hi=basket.some(b=>b.id===n.skill.id)||selectedSkill?.id===n.skill.id,s=hi?1.35+Math.sin(t*3+i)*.08:1+Math.sin(t*2+i*.17)*.05;n.mesh.scale.setScalar(s);n.mesh.visible=!activeBranchFilter||n.skill.branchKey===activeBranchFilter});
     renderer.render(scene,camera);
-    if(++frame%4===0){tree.updateMatrixWorld(true);const limited=skills.length>120?nodeList.filter(n=>selectedSkill?.id===n.skill.id||basket.some(b=>b.id===n.skill.id)||(activeBranchFilter&&n.skill.branchKey===activeBranchFilter)).slice(0,80):nodeList;setLabels(limited.map(n=>{const p=n.world.clone().applyMatrix4(tree.matrixWorld).project(camera),visible=p.z>-1&&p.z<1;return{skillId:n.skill.id,skillName:n.skill.name,categoryName:branches[n.skill.branchKey].title,color:branches[n.skill.branchKey].color,statusLabel:n.skill.registryState==='CANONICAL_DISCOVERED'?'CANONICAL':n.skill.registryState,isHarvested:basket.some(b=>b.id===n.skill.id),isSelected:selectedSkill?.id===n.skill.id,x:Math.max(70,Math.min(host.clientWidth-70,(p.x*.5+.5)*host.clientWidth)),y:Math.max(72,Math.min(host.clientHeight-110,(-p.y*.5+.5)*host.clientHeight)),visible}}))}
+    if(++frame%4===0){
+      tree.updateMatrixWorld(true);
+      const limited=skills.length>120
+        ? nodeList.filter(n=>selectedSkill?.id===n.skill.id||basket.some(b=>b.id===n.skill.id)||(activeBranchFilter&&n.skill.branchKey===activeBranchFilter)).slice(0,80)
+        : nodeList;
+      setLabels(limited.map(n=>{
+        const p=n.world.clone().applyMatrix4(tree.matrixWorld).project(camera),visible=p.z>-1&&p.z<1;
+        return{skillId:n.skill.id,skillName:n.skill.name,categoryName:branches[n.skill.branchKey].title,color:branches[n.skill.branchKey].color,statusLabel:n.skill.registryState==='CANONICAL_DISCOVERED'?'CANONICAL':n.skill.registryState,isHarvested:basket.some(b=>b.id===n.skill.id),isSelected:selectedSkill?.id===n.skill.id,x:Math.max(70,Math.min(host.clientWidth-70,(p.x*.5+.5)*host.clientWidth)),y:Math.max(72,Math.min(host.clientHeight-110,(-p.y*.5+.5)*host.clientHeight)),visible};
+      }));
+      setBranchLabels(branchKeys.map(key=>{
+        const anchor=branchAnchors.get(key)!,p=anchor.clone().applyMatrix4(tree.matrixWorld).project(camera),visible=p.z>-1&&p.z<1&&(!activeBranchFilter||activeBranchFilter===key);
+        return{branchKey:key,title:branches[key].title,color:branches[key].color,x:Math.max(80,Math.min(host.clientWidth-80,(p.x*.5+.5)*host.clientWidth)),y:Math.max(78,Math.min(host.clientHeight-132,(-p.y*.5+.5)*host.clientHeight)),visible};
+      }));
+    }
   };animate();
   return()=>{cancelAnimationFrame(raf);window.removeEventListener('resize',onResize);renderer.dispose();host.replaceChildren()};
  },[skills,branches,basket,selectedSkill,activeBranchFilter]);
@@ -77,6 +92,15 @@ export const Grapevine3DCanvas:React.FC<Props>=({skills,branches,selectedSkill,b
  const upFn=(e:React.PointerEvent<HTMLDivElement>)=>{drag.current=false;try{(e.target as HTMLElement).releasePointerCapture(e.pointerId)}catch{};if(Math.hypot(e.clientX-down.current.x,e.clientY-down.current.y)<6){const skill=rayPick(e);if(skill)onSelectSkill(skill)}};
  const wheelFn=(e:React.WheelEvent<HTMLDivElement>)=>{e.preventDefault();zoom.current=Math.max(10,Math.min(34,zoom.current+e.deltaY*.015));onCameraChange(target.current.yaw*180/Math.PI,target.current.pitch*180/Math.PI,zoom.current)};
  return <div ref={mount} onPointerDown={downFn} onPointerMove={moveFn} onPointerUp={upFn} onPointerCancel={upFn} onWheel={wheelFn} onDoubleClick={()=>zoom.current=zoom.current<18?23:14} className="absolute inset-0 w-full h-full overflow-hidden select-none touch-none bg-black cursor-grab active:cursor-grabbing">
-   <div className="absolute inset-0 pointer-events-none overflow-hidden">{labels.map(l=><div key={l.skillId} style={{transform:`translate3d(${l.x}px,${l.y+16}px,0) translate(-50%,0)`,display:l.visible?'block':'none'}} onClick={e=>{e.stopPropagation();const skill=skills.find(s=>s.id===l.skillId);if(skill)onSelectSkill(skill)}} className={`absolute pointer-events-auto cursor-pointer px-2.5 py-1 rounded-xl backdrop-blur-md border text-center transition-all ${l.isHarvested?'bg-[#39FF14]/20 border-[#39FF14] text-white shadow-[0_0_15px_rgba(57,255,20,0.4)]':l.isSelected?'bg-white/15 border-white text-white shadow-lg':'bg-black/80 hover:bg-black/95 border-white/15 hover:border-[#39FF14]/60 text-zinc-200'}`}><div className="text-[10px] font-bold font-mono whitespace-nowrap">{l.skillName}</div><div className="text-[8.5px] font-mono text-[#39FF14] font-semibold">{l.statusLabel}</div></div>)}</div>
+   <div className="absolute inset-0 pointer-events-none overflow-hidden">
+     {branchLabels.map(l=><div key={l.branchKey} style={{transform:`translate3d(${l.x}px,${l.y}px,0) translate(-50%,-100%)`,display:l.visible?'block':'none',borderColor:`${l.color}70`,boxShadow:`0 0 18px ${l.color}35`}} className="absolute px-3 py-1.5 rounded-xl bg-black/78 backdrop-blur-md border text-center">
+       <div className="text-[10px] md:text-[11px] font-black font-mono tracking-[0.12em] uppercase whitespace-nowrap" style={{color:l.color}}>{l.title}</div>
+     </div>)}
+     {labels.map(l=><div key={l.skillId} style={{transform:`translate3d(${l.x}px,${l.y-8}px,0) translate(-50%,-100%)`,display:l.visible?'block':'none'}} onClick={e=>{e.stopPropagation();const skill=skills.find(s=>s.id===l.skillId);if(skill)onSelectSkill(skill)}} className={`absolute pointer-events-auto cursor-pointer px-2 py-1 rounded-lg backdrop-blur-md border text-center transition-all ${l.isHarvested?'bg-[#39FF14]/20 border-[#39FF14] text-white shadow-[0_0_15px_rgba(57,255,20,0.4)]':l.isSelected?'bg-white/15 border-white text-white shadow-lg':'bg-black/78 hover:bg-black/95 border-white/15 hover:border-[#39FF14]/60 text-zinc-200'}`}>
+       <div className="text-[7.5px] md:text-[8px] font-black font-mono uppercase tracking-[0.08em] whitespace-nowrap" style={{color:l.color}}>{l.categoryName}</div>
+       <div className="text-[9px] md:text-[10px] font-bold font-mono whitespace-nowrap max-w-[130px] truncate">{l.skillName}</div>
+       <div className="text-[7.5px] font-mono text-[#39FF14] font-semibold">{l.statusLabel}</div>
+     </div>)}
+   </div>
  </div>;
 };
