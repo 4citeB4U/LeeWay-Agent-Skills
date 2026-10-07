@@ -13,7 +13,7 @@ interface BranchLabel {branchKey:BranchKey;title:string;subtitle:string;badge:st
 interface Node {mesh:THREE.Group;skill:Skill;world:THREE.Vector3}
 
 export const Grapevine3DCanvas:React.FC<Props>=({skills,branches,selectedSkill,basket,activeBranchFilter,isCloseUp,onSelectSkill,cameraYaw,cameraPitch,onCameraChange})=>{
- const mount=useRef<HTMLDivElement|null>(null),drag=useRef(false),last=useRef({x:0,y:0}),down=useRef({x:0,y:0});
+ const canvasMount=useRef<HTMLDivElement|null>(null),drag=useRef(false),last=useRef({x:0,y:0}),down=useRef({x:0,y:0});
  const target=useRef({yaw:cameraYaw*Math.PI/180,pitch:cameraPitch*Math.PI/180}),current=useRef({yaw:0,pitch:0});
  const zoom=useRef(isCloseUp?14:23),zoomNow=useRef(isCloseUp?14:23),cameraRef=useRef<THREE.PerspectiveCamera|null>(null),nodes=useRef<Node[]>([]);
  const [labels,setLabels]=useState<Label[]>([]);
@@ -23,7 +23,7 @@ export const Grapevine3DCanvas:React.FC<Props>=({skills,branches,selectedSkill,b
  useEffect(()=>{zoom.current=isCloseUp?14:23},[isCloseUp]);
 
  useEffect(()=>{
-  const host=mount.current;if(!host)return;
+  const host=canvasMount.current;if(!host)return;
   const scene=new THREE.Scene();scene.background=new THREE.Color(0x000000);
   const camera=new THREE.PerspectiveCamera(36,host.clientWidth/host.clientHeight,.1,100);camera.position.set(0,.25,zoomNow.current);cameraRef.current=camera;
   const renderer=new THREE.WebGLRenderer({antialias:true,powerPreference:'high-performance'});renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.setSize(host.clientWidth,host.clientHeight);renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.35;host.replaceChildren(renderer.domElement);
@@ -97,13 +97,14 @@ export const Grapevine3DCanvas:React.FC<Props>=({skills,branches,selectedSkill,b
   return()=>{cancelAnimationFrame(raf);window.removeEventListener('resize',onResize);renderer.dispose();host.replaceChildren()};
  },[skills,branches,basket,selectedSkill,activeBranchFilter]);
 
- const rayPick=(e:React.PointerEvent<HTMLDivElement>)=>{const host=mount.current,camera=cameraRef.current;if(!host||!camera)return null;const rect=host.getBoundingClientRect(),mouse=new THREE.Vector2(((e.clientX-rect.left)/rect.width)*2-1,-((e.clientY-rect.top)/rect.height)*2+1),ray=new THREE.Raycaster();ray.setFromCamera(mouse,camera);const colliders=nodes.current.map(n=>n.mesh.children[n.mesh.children.length-1]);const hit=ray.intersectObjects(colliders,false)[0];return hit?nodes.current.find(n=>n.skill.id===(hit.object as THREE.Mesh).userData.skillId)?.skill:null};
+ const rayPick=(e:React.PointerEvent<HTMLDivElement>)=>{const host=canvasMount.current,camera=cameraRef.current;if(!host||!camera)return null;const rect=host.getBoundingClientRect(),mouse=new THREE.Vector2(((e.clientX-rect.left)/rect.width)*2-1,-((e.clientY-rect.top)/rect.height)*2+1),ray=new THREE.Raycaster();ray.setFromCamera(mouse,camera);const colliders=nodes.current.map(n=>n.mesh.children[n.mesh.children.length-1]);const hit=ray.intersectObjects(colliders,false)[0];return hit?nodes.current.find(n=>n.skill.id===(hit.object as THREE.Mesh).userData.skillId)?.skill:null};
  const downFn=(e:React.PointerEvent<HTMLDivElement>)=>{drag.current=true;last.current=down.current={x:e.clientX,y:e.clientY};(e.target as HTMLElement).setPointerCapture(e.pointerId)};
- const moveFn=(e:React.PointerEvent<HTMLDivElement>)=>{if(drag.current){const dx=e.clientX-last.current.x,dy=e.clientY-last.current.y;last.current={x:e.clientX,y:e.clientY};target.current.yaw+=dx*.008;target.current.pitch=Math.max(-.9,Math.min(.9,target.current.pitch+dy*.006));onCameraChange(target.current.yaw*180/Math.PI,target.current.pitch*180/Math.PI,zoom.current)}else if(mount.current)mount.current.style.cursor=rayPick(e)?'pointer':'grab'};
+ const moveFn=(e:React.PointerEvent<HTMLDivElement>)=>{if(drag.current){const dx=e.clientX-last.current.x,dy=e.clientY-last.current.y;last.current={x:e.clientX,y:e.clientY};target.current.yaw+=dx*.008;target.current.pitch=Math.max(-.9,Math.min(.9,target.current.pitch+dy*.006));onCameraChange(target.current.yaw*180/Math.PI,target.current.pitch*180/Math.PI,zoom.current)}else e.currentTarget.style.cursor=rayPick(e)?'pointer':'grab'};
  const upFn=(e:React.PointerEvent<HTMLDivElement>)=>{drag.current=false;try{(e.target as HTMLElement).releasePointerCapture(e.pointerId)}catch{};if(Math.hypot(e.clientX-down.current.x,e.clientY-down.current.y)<6){const skill=rayPick(e);if(skill)onSelectSkill(skill)}};
  const wheelFn=(e:React.WheelEvent<HTMLDivElement>)=>{e.preventDefault();zoom.current=Math.max(10,Math.min(34,zoom.current+e.deltaY*.015));onCameraChange(target.current.yaw*180/Math.PI,target.current.pitch*180/Math.PI,zoom.current)};
- return <div ref={mount} onPointerDown={downFn} onPointerMove={moveFn} onPointerUp={upFn} onPointerCancel={upFn} onWheel={wheelFn} onDoubleClick={()=>zoom.current=zoom.current<18?23:14} className="absolute inset-0 w-full h-full overflow-hidden select-none touch-none bg-black cursor-grab active:cursor-grabbing">
-   <div className="absolute inset-0 pointer-events-none overflow-hidden">
+ return <div onPointerDown={downFn} onPointerMove={moveFn} onPointerUp={upFn} onPointerCancel={upFn} onWheel={wheelFn} onDoubleClick={()=>zoom.current=zoom.current<18?23:14} className="absolute inset-0 w-full h-full overflow-hidden select-none touch-none bg-black cursor-grab active:cursor-grabbing">
+   <div ref={canvasMount} className="absolute inset-0 z-0 pointer-events-none" aria-hidden="true" />
+   <div className="absolute inset-0 z-10 pointer-events-none overflow-hidden">
      {branchLabels.map(l=><div key={l.branchKey} style={{transform:`translate3d(${l.x}px,${l.y}px,0) translate(-50%,-100%)`,display:l.visible?'block':'none',borderColor:`${l.color}a8`,boxShadow:`0 0 28px ${l.color}55`}} className="absolute min-w-[142px] max-w-[188px] md:min-w-[178px] md:max-w-[236px] px-2.5 py-2 md:px-3 md:py-2.5 rounded-xl bg-black/92 backdrop-blur-xl border text-center">
        <div className="mb-1 flex justify-center">
          <span className="rounded-full border px-2 py-0.5 text-[6.5px] md:text-[7.5px] font-black font-mono tracking-[0.16em] uppercase" style={{color:l.color,borderColor:`${l.color}70`,backgroundColor:`${l.color}12`}}>CATEGORY</span>
