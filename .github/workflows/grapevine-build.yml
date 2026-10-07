@@ -2,7 +2,7 @@ name: Grapevine Build Qualification
 
 on:
   push:
-    branches: [repair/actual-grapevine-ui-20261007, repair/grape-orb-mobile-basket-20261007, repair/tree-category-labels-20261007, repair/grapevine-section-nameplates-20261007]
+    branches: [repair/actual-grapevine-ui-20261007, repair/grape-orb-mobile-basket-20261007, repair/tree-category-labels-20261007, repair/grapevine-section-nameplates-20261007, repair/grapevine-explicit-category-tags-20261007]
     paths:
       - 'grapevine-app/**'
       - '.github/workflows/grapevine-build.yml'
