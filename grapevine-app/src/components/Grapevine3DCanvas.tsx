@@ -46,9 +46,18 @@ export const Grapevine3DCanvas:React.FC<Props>=({skills,branches,selectedSkill,b
 
   const grouped=new Map<BranchKey,Skill[]>();for(const s of skills){const arr=grouped.get(s.branchKey)||[];arr.push(s);grouped.set(s.branchKey,arr)}
   for(const key of branchKeys){const list=grouped.get(key)||[],bi=branchKeys.indexOf(key),base=(bi/branchKeys.length)*Math.PI*2-.6,group=branchGroups.get(key)!;for(let i=0;i<list.length;i++){const skill=list[i],t=(i+1)/(list.length+1),gold=i*2.3999632297,rad=1.7+t*4.9,ang=base+Math.sin(gold)*.31,y=-2.1+t*5.2+Math.cos(gold)*.42,pos=new THREE.Vector3(Math.cos(ang)*rad+Math.cos(gold)*.5,y,Math.sin(ang)*rad+Math.sin(gold)*.5),start=pos.clone().multiplyScalar(.78);start.y=(start.y+pos.y)/2;group.add(new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3([start,pos.clone().lerp(start,.35),pos]),5,.022,6),new THREE.MeshBasicMaterial({color:new THREE.Color(branches[key].color),transparent:true,opacity:.38})));
-    const cluster=new THREE.Group(),color=new THREE.Color(branches[key].color),mat=new THREE.MeshPhysicalMaterial({color,emissive:color,emissiveIntensity:.58,roughness:.12,metalness:.02,transmission:.2,transparent:true,opacity:.94,clearcoat:1});
-    const count=skills.length>120?3:9;for(let j=0;j<count;j++){const grape=new THREE.Mesh(new THREE.SphereGeometry(skills.length>120?.095:.13,10,8),mat);const r=count===3?.13:.19,aa=j*2.3999;grape.position.set(Math.cos(aa)*r,(j-count/2)*.045,Math.sin(aa)*r);cluster.add(grape)}
-    const collider=new THREE.Mesh(new THREE.SphereGeometry(skills.length>120?.22:.32,8,6),new THREE.MeshBasicMaterial({transparent:true,opacity:0}));collider.userData.skillId=skill.id;cluster.add(collider);cluster.position.copy(pos);group.add(cluster);nodeList.push({mesh:cluster,skill,world:pos});
+    const cluster=new THREE.Group(),color=new THREE.Color(branches[key].color);
+    // One canonical skill = one grape. Keep the visible geometry a single closed sphere so
+    // lighting/transmission cannot turn the skill into a hollow ring or broken mini-cluster.
+    const grapeRadius=skills.length>120?.14:.18;
+    const grape=new THREE.Mesh(
+      new THREE.SphereGeometry(grapeRadius,18,14),
+      new THREE.MeshStandardMaterial({color,emissive:color,emissiveIntensity:.34,roughness:.22,metalness:.08})
+    );
+    grape.userData.skillId=skill.id;
+    cluster.add(grape);
+    const collider=new THREE.Mesh(new THREE.SphereGeometry(skills.length>120?.235:.32,10,8),new THREE.MeshBasicMaterial({transparent:true,opacity:0,depthWrite:false}));
+    collider.userData.skillId=skill.id;cluster.add(collider);cluster.position.copy(pos);group.add(cluster);nodeList.push({mesh:cluster,skill,world:pos});
   }}
   nodes.current=nodeList;
 
