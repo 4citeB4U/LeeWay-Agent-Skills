@@ -27,7 +27,7 @@ export const Grapevine3DCanvas:React.FC<Props>=({skills,branches,selectedSkill,b
   const renderer=new THREE.WebGLRenderer({antialias:true,powerPreference:'high-performance'});renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.setSize(host.clientWidth,host.clientHeight);renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.35;host.replaceChildren(renderer.domElement);
 
   scene.add(new THREE.AmbientLight(0x1a2b3c,1.15));
-  for(const [color,pos,intensity] of [[0x38edf8,[14,18,16],3.2],[0xff007f,[-16,14,12],2.8],[0xa855f7,[-10,16,-14],3],[0x74ee15,[12,-4,-10],2.2]] as const){const l=new THREE.DirectionalLight(color,intensity);l.position.set(...pos);scene.add(l)}
+  for(const [color,pos,intensity] of [[0x38edf8,[14,18,16],3.2],[0xff007f,[-16,14,12],2.8],[0xa855f7,[-10,16,-14],3],[0x74ee15,[12,-4,-10],2.2]] as const){const l=new THREE.DirectionalLight(color,intensity);l.position.set(pos[0],pos[1],pos[2]);scene.add(l)}
   const floorPurple=new THREE.PointLight(0xa855f7,3.5,18);floorPurple.position.set(0,-4.2,0);scene.add(floorPurple);
   const floorCyan=new THREE.PointLight(0x38edf8,2.8,18);floorCyan.position.set(1.2,-4.2,1.2);scene.add(floorCyan);
   const ground=new THREE.Mesh(new THREE.PlaneGeometry(90,90),new THREE.MeshStandardMaterial({color:0x010305,roughness:.18,metalness:.9}));ground.rotation.x=-Math.PI/2;ground.position.y=-4.5;scene.add(ground);
