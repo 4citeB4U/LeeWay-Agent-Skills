@@ -9,7 +9,6 @@ interface Props {
   onCameraChange:(yaw:number,pitch:number,zoom:number)=>void;
 }
 interface Label {skillId:string;skillName:string;categoryName:string;color:string;statusLabel:string;isHarvested:boolean;isSelected:boolean;x:number;y:number;visible:boolean}
-interface BranchLabel {branchKey:BranchKey;title:string;subtitle:string;badge:string;color:string;count:number;x:number;y:number;visible:boolean}
 interface Node {mesh:THREE.Group;skill:Skill;world:THREE.Vector3}
 
 export const Grapevine3DCanvas:React.FC<Props>=({skills,branches,selectedSkill,basket,activeBranchFilter,isCloseUp,onSelectSkill,cameraYaw,cameraPitch,onCameraChange})=>{
@@ -17,7 +16,6 @@ export const Grapevine3DCanvas:React.FC<Props>=({skills,branches,selectedSkill,b
  const target=useRef({yaw:cameraYaw*Math.PI/180,pitch:cameraPitch*Math.PI/180}),current=useRef({yaw:0,pitch:0});
  const zoom=useRef(isCloseUp?14:23),zoomNow=useRef(isCloseUp?14:23),cameraRef=useRef<THREE.PerspectiveCamera|null>(null),nodes=useRef<Node[]>([]);
  const [labels,setLabels]=useState<Label[]>([]);
- const [branchLabels,setBranchLabels]=useState<BranchLabel[]>([]);
 
  useEffect(()=>{target.current={yaw:cameraYaw*Math.PI/180,pitch:cameraPitch*Math.PI/180}},[cameraYaw,cameraPitch]);
  useEffect(()=>{zoom.current=isCloseUp?14:23},[isCloseUp]);
@@ -61,16 +59,71 @@ export const Grapevine3DCanvas:React.FC<Props>=({skills,branches,selectedSkill,b
     const collider=new THREE.Mesh(new THREE.SphereGeometry(skills.length>120?.235:.32,10,8),new THREE.MeshBasicMaterial({transparent:true,opacity:0,depthWrite:false}));
     collider.userData.skillId=skill.id;cluster.add(collider);cluster.position.copy(pos);group.add(cluster);nodeList.push({mesh:cluster,skill,world:pos});
   }}
-  // Put each section nameplate over the actual skill cloud, not at the far tendril tip.
+  // Create true 3D billboards at fixed branch stations. These are scene objects,
+  // not screen-space overlays, so they remain attached to their category section as the tree moves.
+  const billboardTextures:THREE.Texture[]=[];
+  const billboardMaterials:THREE.SpriteMaterial[]=[];
+  const billboardSprites=new Map<BranchKey,THREE.Sprite>();
+  const makeBillboardTexture=(key:BranchKey,count:number)=>{
+    const branch=branches[key],canvas=document.createElement('canvas');
+    canvas.width=1400;canvas.height=280;
+    const ctx=canvas.getContext('2d');if(!ctx)throw new Error('GRAPEVINE_BILLBOARD_CANVAS_UNAVAILABLE');
+    const hex=branch.color;
+    const roundRect=(x:number,y:number,w:number,h:number,r:number)=>{
+      ctx.beginPath();ctx.roundRect(x,y,w,h,r);ctx.closePath();
+    };
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    ctx.fillStyle='rgba(0,0,0,0.90)';roundRect(6,6,1388,268,34);ctx.fill();
+    ctx.lineWidth=8;ctx.strokeStyle=hex;roundRect(8,8,1384,264,32);ctx.stroke();
+
+    ctx.fillStyle=hex;ctx.beginPath();ctx.arc(64,76,18,0,Math.PI*2);ctx.fill();
+    ctx.shadowColor=hex;ctx.shadowBlur=28;ctx.beginPath();ctx.arc(64,76,11,0,Math.PI*2);ctx.fill();ctx.shadowBlur=0;
+
+    ctx.textBaseline='middle';
+    ctx.textAlign='left';
+    ctx.font='800 70px "JetBrains Mono", Consolas, monospace';
+    ctx.fillStyle=hex;ctx.fillText(branch.title.toUpperCase(),104,76);
+
+    ctx.font='600 38px "Plus Jakarta Sans", Arial, sans-serif';
+    ctx.fillStyle='rgba(245,250,252,0.96)';
+    ctx.fillText(branch.subtitle,52,154);
+
+    ctx.font='700 27px "JetBrains Mono", Consolas, monospace';
+    ctx.fillStyle='rgba(190,205,214,0.92)';
+    ctx.fillText(`${branch.badge}  •  ${count} GRAPES`,52,222);
+
+    const texture=new THREE.CanvasTexture(canvas);
+    texture.colorSpace=THREE.SRGBColorSpace;
+    texture.minFilter=THREE.LinearFilter;texture.magFilter=THREE.LinearFilter;
+    texture.needsUpdate=true;
+    billboardTextures.push(texture);
+    return texture;
+  };
+
   for(const key of branchKeys){
     const members=nodeList.filter(n=>n.skill.branchKey===key);
     if(!members.length)continue;
-    const center=new THREE.Vector3();
-    let top=-Infinity;
+    const center=new THREE.Vector3();let top=-Infinity;
     for(const member of members){center.add(member.world);top=Math.max(top,member.world.y)}
     center.divideScalar(members.length);
-    center.y=top+.72;
+    center.y=top+.66;
     branchAnchors.set(key,center);
+
+    const material=new THREE.SpriteMaterial({
+      map:makeBillboardTexture(key,members.length),
+      transparent:true,
+      depthTest:false,
+      depthWrite:false
+    });
+    billboardMaterials.push(material);
+    const sprite=new THREE.Sprite(material);
+    sprite.center.set(.5,0);
+    sprite.position.copy(center);
+    sprite.scale.set(4.9,.98,1);
+    sprite.renderOrder=80;
+    sprite.userData={kind:'branch-billboard',branchKey:key};
+    tree.add(sprite);
+    billboardSprites.set(key,sprite);
   }
   nodes.current=nodeList;
 
@@ -88,13 +141,10 @@ export const Grapevine3DCanvas:React.FC<Props>=({skills,branches,selectedSkill,b
         const p=n.world.clone().applyMatrix4(tree.matrixWorld).project(camera),visible=p.z>-1&&p.z<1;
         return{skillId:n.skill.id,skillName:n.skill.name,categoryName:branches[n.skill.branchKey].title,color:branches[n.skill.branchKey].color,statusLabel:n.skill.registryState==='CANONICAL_DISCOVERED'?'CANONICAL':n.skill.registryState,isHarvested:basket.some(b=>b.id===n.skill.id),isSelected:selectedSkill?.id===n.skill.id,x:Math.max(70,Math.min(host.clientWidth-70,(p.x*.5+.5)*host.clientWidth)),y:Math.max(72,Math.min(host.clientHeight-110,(-p.y*.5+.5)*host.clientHeight)),visible};
       }));
-      setBranchLabels(branchKeys.map(key=>{
-        const anchor=branchAnchors.get(key)!,p=anchor.clone().applyMatrix4(tree.matrixWorld).project(camera),visible=p.z>-1&&p.z<1&&(!activeBranchFilter||activeBranchFilter===key);
-        return{branchKey:key,title:branches[key].title,subtitle:branches[key].subtitle,badge:branches[key].badge,color:branches[key].color,count:grouped.get(key)?.length||0,x:Math.max(96,Math.min(host.clientWidth-96,(p.x*.5+.5)*host.clientWidth)),y:Math.max(92,Math.min(host.clientHeight-142,(-p.y*.5+.5)*host.clientHeight)),visible};
-      }));
+      billboardSprites.forEach((sprite,key)=>{sprite.visible=!activeBranchFilter||activeBranchFilter===key});
     }
   };animate();
-  return()=>{cancelAnimationFrame(raf);window.removeEventListener('resize',onResize);renderer.dispose();host.replaceChildren()};
+  return()=>{cancelAnimationFrame(raf);window.removeEventListener('resize',onResize);billboardTextures.forEach(t=>t.dispose());billboardMaterials.forEach(m=>m.dispose());renderer.dispose();host.replaceChildren()};
  },[skills,branches,basket,selectedSkill,activeBranchFilter]);
 
  const rayPick=(e:React.PointerEvent<HTMLDivElement>)=>{const host=canvasMount.current,camera=cameraRef.current;if(!host||!camera)return null;const rect=host.getBoundingClientRect(),mouse=new THREE.Vector2(((e.clientX-rect.left)/rect.width)*2-1,-((e.clientY-rect.top)/rect.height)*2+1),ray=new THREE.Raycaster();ray.setFromCamera(mouse,camera);const colliders=nodes.current.map(n=>n.mesh.children[n.mesh.children.length-1]);const hit=ray.intersectObjects(colliders,false)[0];return hit?nodes.current.find(n=>n.skill.id===(hit.object as THREE.Mesh).userData.skillId)?.skill:null};
@@ -105,19 +155,6 @@ export const Grapevine3DCanvas:React.FC<Props>=({skills,branches,selectedSkill,b
  return <div onPointerDown={downFn} onPointerMove={moveFn} onPointerUp={upFn} onPointerCancel={upFn} onWheel={wheelFn} onDoubleClick={()=>zoom.current=zoom.current<18?23:14} className="absolute inset-0 w-full h-full overflow-hidden select-none touch-none bg-black cursor-grab active:cursor-grabbing">
    <div ref={canvasMount} className="absolute inset-0 z-0 pointer-events-none" aria-hidden="true" />
    <div className="absolute inset-0 z-10 pointer-events-none overflow-hidden">
-     {branchLabels.map(l=><div key={l.branchKey} style={{transform:`translate3d(${l.x}px,${l.y}px,0) translate(-50%,-100%)`,display:l.visible?'block':'none',borderColor:`${l.color}a8`,boxShadow:`0 0 28px ${l.color}55`}} className="absolute min-w-[142px] max-w-[188px] md:min-w-[178px] md:max-w-[236px] px-2.5 py-2 md:px-3 md:py-2.5 rounded-xl bg-black/92 backdrop-blur-xl border text-center">
-       <div className="mb-1 flex justify-center">
-         <span className="rounded-full border px-2 py-0.5 text-[6.5px] md:text-[7.5px] font-black font-mono tracking-[0.16em] uppercase" style={{color:l.color,borderColor:`${l.color}70`,backgroundColor:`${l.color}12`}}>CATEGORY</span>
-       </div>
-       <div className="flex items-center justify-center gap-1.5 mb-1">
-         <span className="w-2 h-2 md:w-2.5 md:h-2.5 rounded-full shrink-0" style={{backgroundColor:l.color,boxShadow:`0 0 12px ${l.color}`}} />
-         <div className="text-[10px] md:text-[12px] font-black font-mono tracking-[0.11em] uppercase leading-tight" style={{color:l.color}}>{l.title}</div>
-       </div>
-       <div className="text-[7.5px] md:text-[9px] leading-snug text-zinc-100 font-semibold">{l.subtitle}</div>
-       <div className="mt-1 flex items-center justify-center gap-1.5 text-[7px] md:text-[8px] font-mono text-zinc-400">
-         <span style={{color:l.color}}>{l.badge}</span><span>·</span><span>{l.count} grapes</span>
-       </div>
-     </div>)}
      {labels.map(l=><div key={l.skillId} style={{transform:`translate3d(${l.x}px,${l.y-8}px,0) translate(-50%,-100%)`,display:l.visible?'block':'none'}} onClick={e=>{e.stopPropagation();const skill=skills.find(s=>s.id===l.skillId);if(skill)onSelectSkill(skill)}} className={`absolute pointer-events-auto cursor-pointer px-2 py-1 rounded-lg backdrop-blur-md border text-center transition-all ${l.isHarvested?'bg-[#39FF14]/20 border-[#39FF14] text-white shadow-[0_0_15px_rgba(57,255,20,0.4)]':l.isSelected?'bg-white/15 border-white text-white shadow-lg':'bg-black/78 hover:bg-black/95 border-white/15 hover:border-[#39FF14]/60 text-zinc-200'}`}>
        <div className="text-[7.5px] md:text-[8px] font-black font-mono uppercase tracking-[0.08em] whitespace-nowrap" style={{color:l.color}}>{l.categoryName}</div>
        <div className="text-[9px] md:text-[10px] font-bold font-mono whitespace-nowrap max-w-[130px] truncate">{l.skillName}</div>
