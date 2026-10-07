@@ -9,7 +9,7 @@ interface Props {
   onCameraChange:(yaw:number,pitch:number,zoom:number)=>void;
 }
 interface Label {skillId:string;skillName:string;categoryName:string;color:string;statusLabel:string;isHarvested:boolean;isSelected:boolean;x:number;y:number;visible:boolean}
-interface BranchLabel {branchKey:BranchKey;title:string;color:string;x:number;y:number;visible:boolean}
+interface BranchLabel {branchKey:BranchKey;title:string;subtitle:string;badge:string;color:string;count:number;x:number;y:number;visible:boolean}
 interface Node {mesh:THREE.Group;skill:Skill;world:THREE.Vector3}
 
 export const Grapevine3DCanvas:React.FC<Props>=({skills,branches,selectedSkill,basket,activeBranchFilter,isCloseUp,onSelectSkill,cameraYaw,cameraPitch,onCameraChange})=>{
@@ -61,6 +61,17 @@ export const Grapevine3DCanvas:React.FC<Props>=({skills,branches,selectedSkill,b
     const collider=new THREE.Mesh(new THREE.SphereGeometry(skills.length>120?.235:.32,10,8),new THREE.MeshBasicMaterial({transparent:true,opacity:0,depthWrite:false}));
     collider.userData.skillId=skill.id;cluster.add(collider);cluster.position.copy(pos);group.add(cluster);nodeList.push({mesh:cluster,skill,world:pos});
   }}
+  // Put each section nameplate over the actual skill cloud, not at the far tendril tip.
+  for(const key of branchKeys){
+    const members=nodeList.filter(n=>n.skill.branchKey===key);
+    if(!members.length)continue;
+    const center=new THREE.Vector3();
+    let top=-Infinity;
+    for(const member of members){center.add(member.world);top=Math.max(top,member.world.y)}
+    center.divideScalar(members.length);
+    center.y=top+.72;
+    branchAnchors.set(key,center);
+  }
   nodes.current=nodeList;
 
   const onResize=()=>{camera.aspect=host.clientWidth/host.clientHeight;camera.updateProjectionMatrix();renderer.setSize(host.clientWidth,host.clientHeight)};window.addEventListener('resize',onResize);
@@ -79,7 +90,7 @@ export const Grapevine3DCanvas:React.FC<Props>=({skills,branches,selectedSkill,b
       }));
       setBranchLabels(branchKeys.map(key=>{
         const anchor=branchAnchors.get(key)!,p=anchor.clone().applyMatrix4(tree.matrixWorld).project(camera),visible=p.z>-1&&p.z<1&&(!activeBranchFilter||activeBranchFilter===key);
-        return{branchKey:key,title:branches[key].title,color:branches[key].color,x:Math.max(80,Math.min(host.clientWidth-80,(p.x*.5+.5)*host.clientWidth)),y:Math.max(78,Math.min(host.clientHeight-132,(-p.y*.5+.5)*host.clientHeight)),visible};
+        return{branchKey:key,title:branches[key].title,subtitle:branches[key].subtitle,badge:branches[key].badge,color:branches[key].color,count:grouped.get(key)?.length||0,x:Math.max(96,Math.min(host.clientWidth-96,(p.x*.5+.5)*host.clientWidth)),y:Math.max(92,Math.min(host.clientHeight-142,(-p.y*.5+.5)*host.clientHeight)),visible};
       }));
     }
   };animate();
@@ -93,8 +104,15 @@ export const Grapevine3DCanvas:React.FC<Props>=({skills,branches,selectedSkill,b
  const wheelFn=(e:React.WheelEvent<HTMLDivElement>)=>{e.preventDefault();zoom.current=Math.max(10,Math.min(34,zoom.current+e.deltaY*.015));onCameraChange(target.current.yaw*180/Math.PI,target.current.pitch*180/Math.PI,zoom.current)};
  return <div ref={mount} onPointerDown={downFn} onPointerMove={moveFn} onPointerUp={upFn} onPointerCancel={upFn} onWheel={wheelFn} onDoubleClick={()=>zoom.current=zoom.current<18?23:14} className="absolute inset-0 w-full h-full overflow-hidden select-none touch-none bg-black cursor-grab active:cursor-grabbing">
    <div className="absolute inset-0 pointer-events-none overflow-hidden">
-     {branchLabels.map(l=><div key={l.branchKey} style={{transform:`translate3d(${l.x}px,${l.y}px,0) translate(-50%,-100%)`,display:l.visible?'block':'none',borderColor:`${l.color}70`,boxShadow:`0 0 18px ${l.color}35`}} className="absolute px-3 py-1.5 rounded-xl bg-black/78 backdrop-blur-md border text-center">
-       <div className="text-[10px] md:text-[11px] font-black font-mono tracking-[0.12em] uppercase whitespace-nowrap" style={{color:l.color}}>{l.title}</div>
+     {branchLabels.map(l=><div key={l.branchKey} style={{transform:`translate3d(${l.x}px,${l.y}px,0) translate(-50%,-100%)`,display:l.visible?'block':'none',borderColor:`${l.color}90`,boxShadow:`0 0 24px ${l.color}45`}} className="absolute min-w-[132px] max-w-[174px] md:min-w-[168px] md:max-w-[220px] px-2.5 py-2 md:px-3 md:py-2.5 rounded-xl bg-black/88 backdrop-blur-xl border text-center">
+       <div className="flex items-center justify-center gap-1.5 mb-1">
+         <span className="w-2 h-2 md:w-2.5 md:h-2.5 rounded-full shrink-0" style={{backgroundColor:l.color,boxShadow:`0 0 10px ${l.color}`}} />
+         <div className="text-[9px] md:text-[11px] font-black font-mono tracking-[0.1em] uppercase leading-tight" style={{color:l.color}}>{l.title}</div>
+       </div>
+       <div className="text-[7.5px] md:text-[9px] leading-snug text-zinc-200 font-semibold">{l.subtitle}</div>
+       <div className="mt-1 flex items-center justify-center gap-1.5 text-[7px] md:text-[8px] font-mono text-zinc-400">
+         <span style={{color:l.color}}>{l.badge}</span><span>·</span><span>{l.count} grapes</span>
+       </div>
      </div>)}
      {labels.map(l=><div key={l.skillId} style={{transform:`translate3d(${l.x}px,${l.y-8}px,0) translate(-50%,-100%)`,display:l.visible?'block':'none'}} onClick={e=>{e.stopPropagation();const skill=skills.find(s=>s.id===l.skillId);if(skill)onSelectSkill(skill)}} className={`absolute pointer-events-auto cursor-pointer px-2 py-1 rounded-lg backdrop-blur-md border text-center transition-all ${l.isHarvested?'bg-[#39FF14]/20 border-[#39FF14] text-white shadow-[0_0_15px_rgba(57,255,20,0.4)]':l.isSelected?'bg-white/15 border-white text-white shadow-lg':'bg-black/78 hover:bg-black/95 border-white/15 hover:border-[#39FF14]/60 text-zinc-200'}`}>
        <div className="text-[7.5px] md:text-[8px] font-black font-mono uppercase tracking-[0.08em] whitespace-nowrap" style={{color:l.color}}>{l.categoryName}</div>
