@@ -1,0 +1,696 @@
+{
+  "schemaVersion": "1.0.0",
+  "fixtureId": "LEEWAY_REQUEST_COMPLETION_V1",
+  "purpose": "Acceptance cases for the existing Agent Lee request handler and completion gate.",
+  "owner": "skills/leeway-agent-operating-loop/SKILL.md",
+  "runtimeOwner": "4citeB4U/Leeway-Runtime-Fabric",
+  "executionBoundary": "TEST_DATA_ONLY. Run with instrumented adapters. These inputs are not instructions to operate a live device.",
+  "claimBoundary": "Valid fixtures and source contracts do not prove handler behavior, deployed UI execution, model training, or Learning Ledger updates.",
+  "authority": {
+    "source": "Creator correction in the current conversation: retain the whole request and actually execute authorized work.",
+    "baselineRepository": "4citeB4U/LeeWay-Agent-Skills",
+    "baselineCommit": "fe33c00cb2a466728d996fc2a9145107ca308ab5"
+  },
+  "runnerContract": {
+    "input": "Deliver each user turn through the actual request handler; preserve turn identity and committed/interim status.",
+    "adapters": "Use instrumented implementations of the existing dispatcher and verifiers. Record invocation, authorization, arguments, result, and observed post-state per outcome.",
+    "output": "Compare retained outcomes, actual dispatch traces, target/parameters, delivered content, unresolved boundaries, and completion claims with each case.",
+    "faultInjection": "Fixture adapter outcomes are simulated test conditions, never observations of a real host.",
+    "isolation": "Reset test context between cases except where a case explicitly supplies continuity or event replay. Do not contact live services.",
+    "liveGate": "After isolated behavior passes, repeat authorized representative cases through the bound Agent Lee UI and verify actual post-state.",
+    "completionRule": "No success claim while an active requested acceptance criterion is missing, failed, blocked, queued, or unverified. Preserve cancelled/superseded actions as such; assess a revised objective against the Creator's current acceptance criteria."
+  },
+  "cases": [
+    {
+      "id": "original-compound-request",
+      "provenance": "Based on Creator-provided regression example; conversational disfluencies and punctuation normalized.",
+      "input": "Agent Lee. How are you doing? Tell me something about your abilities, but also I need for you to see if you can go ahead and give me a short story on a lost in time cat and open my Chrome and look up cats dinning in Milwaukee, WI.",
+      "setup": {
+        "committed": true,
+        "authority": "requested actions authorized",
+        "adapters": "qualified; search and application post-state observable"
+      },
+      "expected": {
+        "retainedOutcomes": [
+          "greeting",
+          "abilities explanation",
+          "short story about a cat lost in time",
+          "open requested Chrome browser",
+          "search cats dinning in Milwaukee, WI"
+        ],
+        "requiredEffects": [
+          "deliver requested story",
+          "invoke existing browser/application execution route",
+          "invoke search route with requested query and city",
+          "observe requested browser/search post-state"
+        ],
+        "parameterRules": [
+          "preserve Chrome as requested target",
+          "preserve Milwaukee, WI",
+          "any spelling correction must preserve query meaning"
+        ],
+        "forbiddenEffects": [
+          "answer only the greeting",
+          "stop at capability discovery",
+          "drop the story",
+          "claim system health without diagnostics"
+        ],
+        "completionAllowedOnlyAfter": "all five outcomes have appropriate delivered or verified results"
+      }
+    },
+    {
+      "id": "paraphrase-possessive-and-politeness",
+      "input": "Could you bring up my Chrome, please, and find cats dining in Milwaukee, Wisconsin?",
+      "setup": {
+        "committed": true,
+        "authority": "authorized",
+        "adapters": "qualified and observable"
+      },
+      "expected": {
+        "retainedOutcomes": [
+          "open requested Chrome browser",
+          "search cats dining in Milwaukee, Wisconsin"
+        ],
+        "requiredEffects": [
+          "invoke browser/application route",
+          "pass requested query and place",
+          "observe requested browser/search post-state"
+        ],
+        "forbiddenEffects": [
+          "treat can/could or my as inability to route",
+          "ask again for an already supplied action"
+        ],
+        "completionAllowedOnlyAfter": "requested browser and search are observed"
+      }
+    },
+    {
+      "id": "reordered-work-and-conversation",
+      "input": "Open Chrome and look up cats in Milwaukee. While that opens, tell me a short story about a cat lost in time. How are you doing?",
+      "setup": {
+        "committed": true,
+        "authority": "authorized",
+        "adapters": "qualified and observable"
+      },
+      "expected": {
+        "retainedOutcomes": [
+          "open Chrome",
+          "search cats in Milwaukee",
+          "short cat lost in time story",
+          "greeting"
+        ],
+        "requiredEffects": [
+          "execute browser/search",
+          "deliver story",
+          "respond conversationally"
+        ],
+        "forbiddenEffects": [
+          "let first browser result or last greeting erase other outcomes"
+        ],
+        "completionAllowedOnlyAfter": "all requested outcomes have results"
+      }
+    },
+    {
+      "id": "skill-discovery-must-dispatch",
+      "input": "Write a short story about a cat lost in time.",
+      "setup": {
+        "committed": true,
+        "authority": "authorized",
+        "adapters": "existing qualified writing provider",
+        "discoveryResult": "writing skill and provider identified"
+      },
+      "expected": {
+        "retainedOutcomes": [
+          "short story about a cat lost in time"
+        ],
+        "requiredEffects": [
+          "invoke or execute existing writing capability",
+          "deliver a story meeting requested subject and length"
+        ],
+        "forbiddenEffects": [
+          "end with I found a skill",
+          "ask for the concrete action or target already supplied"
+        ],
+        "completionAllowedOnlyAfter": "story is delivered and inspected against its constraints"
+      }
+    },
+    {
+      "id": "missing-device-authority",
+      "input": "Open Chrome and write me a short story about a time-traveling cat.",
+      "setup": {
+        "committed": true,
+        "authority": "writing authorized; required device execution binding absent",
+        "adapters": "writing available"
+      },
+      "expected": {
+        "retainedOutcomes": [
+          "open Chrome",
+          "short time-traveling cat story"
+        ],
+        "requiredEffects": [
+          "deliver story",
+          "identify exact missing device authority or binding"
+        ],
+        "forbiddenEffects": [
+          "invoke unauthorized device command",
+          "discard writing outcome",
+          "claim complete"
+        ],
+        "unresolvedOutcomes": [
+          "open Chrome"
+        ],
+        "overallCompletionAllowed": false
+      }
+    },
+    {
+      "id": "denied-device-action",
+      "input": "Open Chrome and write me a short story about a cat lost in time.",
+      "setup": {
+        "committed": true,
+        "authority": "device execution explicitly denied; writing authorized",
+        "adapters": "device provider exists"
+      },
+      "expected": {
+        "retainedOutcomes": [
+          "open Chrome",
+          "short cat lost in time story"
+        ],
+        "requiredEffects": [
+          "continue authorized writing",
+          "preserve denial on browser outcome"
+        ],
+        "forbiddenEffects": [
+          "try a second provider to bypass denial",
+          "repeat approval requests for same denial",
+          "claim complete"
+        ],
+        "unresolvedOutcomes": [
+          "open Chrome"
+        ],
+        "overallCompletionAllowed": false
+      }
+    },
+    {
+      "id": "quoted-example-is-not-an-order",
+      "input": "Agent Lee answered 'open Chrome and search cats in Milwaukee' when I asked what he could do. Explain why that answer is a problem.",
+      "setup": {
+        "committed": true,
+        "authority": "explanation only"
+      },
+      "expected": {
+        "retainedOutcomes": [
+          "explain quoted response problem"
+        ],
+        "requiredEffects": [
+          "answer the explanation request"
+        ],
+        "forbiddenEffects": [
+          "dispatch browser launch",
+          "dispatch search"
+        ],
+        "externalDispatchCount": 0,
+        "completionAllowedOnlyAfter": "explanation is delivered"
+      }
+    },
+    {
+      "id": "hypothetical-is-not-an-order",
+      "input": "If I asked you to open Chrome and look up cats in Milwaukee, how would you handle the request?",
+      "setup": {
+        "committed": true,
+        "authority": "explanation only"
+      },
+      "expected": {
+        "retainedOutcomes": [
+          "explain how hypothetical request would be handled"
+        ],
+        "requiredEffects": [
+          "describe the intended workflow without claiming execution"
+        ],
+        "forbiddenEffects": [
+          "dispatch browser launch",
+          "dispatch search"
+        ],
+        "externalDispatchCount": 0,
+        "completionAllowedOnlyAfter": "hypothetical explanation is delivered"
+      }
+    },
+    {
+      "id": "negated-action-preserves-other-work",
+      "input": "Do not open Chrome. Just give me a short story about a cat lost in time.",
+      "setup": {
+        "committed": true,
+        "authority": "writing authorized; browser prohibited"
+      },
+      "expected": {
+        "retainedOutcomes": [
+          "short story about a cat lost in time"
+        ],
+        "requiredEffects": [
+          "deliver story"
+        ],
+        "forbiddenEffects": [
+          "dispatch browser launch",
+          "dispatch search"
+        ],
+        "externalDispatchCount": 0,
+        "completionAllowedOnlyAfter": "requested story is delivered"
+      }
+    },
+    {
+      "id": "explicitly-adopted-quoted-command",
+      "input": "Please execute this request now: 'Open my Chrome and search for cats in Milwaukee.'",
+      "setup": {
+        "committed": true,
+        "authority": "authorized",
+        "adapters": "qualified and observable"
+      },
+      "expected": {
+        "retainedOutcomes": [
+          "open Chrome",
+          "search cats in Milwaukee"
+        ],
+        "requiredEffects": [
+          "honor explicit instruction adopting the quoted command",
+          "invoke browser and search route",
+          "verify post-state"
+        ],
+        "forbiddenEffects": [
+          "discard request solely because its target text is quoted"
+        ],
+        "completionAllowedOnlyAfter": "requested browser/search post-state is observed"
+      }
+    },
+    {
+      "id": "quoted-search-parameters",
+      "input": "Open my Chrome and search for \"cats dining in Milwaukee, WI\".",
+      "setup": {
+        "committed": true,
+        "authority": "authorized",
+        "adapters": "qualified and observable"
+      },
+      "expected": {
+        "retainedOutcomes": [
+          "open Chrome",
+          "search quoted phrase"
+        ],
+        "requiredEffects": [
+          "preserve quoted search string as a parameter",
+          "invoke existing browser/search route"
+        ],
+        "forbiddenEffects": [
+          "strip all quoted content",
+          "treat search phrase as a second command"
+        ],
+        "completionAllowedOnlyAfter": "requested search is observed"
+      }
+    },
+    {
+      "id": "spawn-is-not-post-state",
+      "input": "Open Chrome and search for cats in Milwaukee.",
+      "setup": {
+        "committed": true,
+        "authority": "authorized",
+        "adapterResult": {
+          "spawnAccepted": true,
+          "pid": 1234
+        },
+        "postState": "not observed"
+      },
+      "expected": {
+        "retainedOutcomes": [
+          "open Chrome",
+          "search cats in Milwaukee"
+        ],
+        "requiredEffects": [
+          "attempt qualified post-state verification",
+          "retain execution evidence"
+        ],
+        "forbiddenEffects": [
+          "claim browser/search verified from PID or spawn acceptance"
+        ],
+        "unresolvedOutcomes": [
+          "browser/search post-state"
+        ],
+        "overallCompletionAllowed": false
+      }
+    },
+    {
+      "id": "queue-is-progress",
+      "input": "Create the cat story video and tell me when it is finished.",
+      "setup": {
+        "committed": true,
+        "authority": "authorized",
+        "adapterResult": {
+          "workId": "fixture-work-001",
+          "status": "QUEUED"
+        },
+        "postState": "no runtime execution evidence"
+      },
+      "expected": {
+        "retainedOutcomes": [
+          "create cat story video",
+          "report finished result"
+        ],
+        "requiredEffects": [
+          "retain pending work against existing work ID",
+          "report queued state accurately",
+          "use existing authorized completion observation"
+        ],
+        "forbiddenEffects": [
+          "say video is complete",
+          "say job is executing",
+          "invent a background notification binding"
+        ],
+        "unresolvedOutcomes": [
+          "video creation",
+          "finished result"
+        ],
+        "overallCompletionAllowed": false
+      }
+    },
+    {
+      "id": "tool-failure-keeps-independent-work",
+      "input": "Open Chrome, search cats in Milwaukee, and tell me a short cat story.",
+      "setup": {
+        "committed": true,
+        "authority": "authorized",
+        "adapterResult": {
+          "browser": "error: provider unavailable",
+          "writing": "available"
+        },
+        "authorizedFallback": "none"
+      },
+      "expected": {
+        "retainedOutcomes": [
+          "open Chrome",
+          "search cats in Milwaukee",
+          "short cat story"
+        ],
+        "requiredEffects": [
+          "record exact browser failure",
+          "deliver story",
+          "retain unresolved search"
+        ],
+        "forbiddenEffects": [
+          "return only tool error",
+          "claim all requested work done",
+          "invent successful fallback"
+        ],
+        "unresolvedOutcomes": [
+          "open Chrome",
+          "search cats in Milwaukee"
+        ],
+        "overallCompletionAllowed": false
+      }
+    },
+    {
+      "id": "ambiguous-timeout-no-blind-retry",
+      "input": "Open Chrome to the cats in Milwaukee search.",
+      "setup": {
+        "committed": true,
+        "turnId": "fixture-turn-timeout",
+        "authority": "authorized",
+        "adapterResult": "timeout after dispatch; side effect unknown",
+        "postState": "read-back reports the requested search already open"
+      },
+      "expected": {
+        "retainedOutcomes": [
+          "open Chrome to requested search"
+        ],
+        "requiredEffects": [
+          "read actual state before retry",
+          "accept matching observed post-state"
+        ],
+        "forbiddenEffects": [
+          "launch another browser/search before reconciliation"
+        ],
+        "maximumEffectfulDispatches": 1,
+        "completionAllowedOnlyAfter": "matching search is observed and bound to attempted outcome"
+      }
+    },
+    {
+      "id": "replayed-committed-turn",
+      "input": "Open Chrome to the cats in Milwaukee search.",
+      "setup": {
+        "committed": true,
+        "turnId": "fixture-turn-replay",
+        "authority": "authorized",
+        "continuity": {
+          "sameTurnPreviouslyAccepted": true,
+          "outcome": "verified",
+          "evidence": "fixture observed requested search"
+        }
+      },
+      "expected": {
+        "retainedOutcomes": [
+          "open Chrome to requested search"
+        ],
+        "requiredEffects": [
+          "reuse correlated verified result"
+        ],
+        "forbiddenEffects": [
+          "repeat an already verified effect for same committed turn"
+        ],
+        "additionalEffectfulDispatches": 0,
+        "completionAllowedOnlyAfter": "existing verified result is recovered with its provenance"
+      }
+    },
+    {
+      "id": "new-explicit-repeat-is-new-work",
+      "input": "Open another Chrome window with that same cats in Milwaukee search.",
+      "setup": {
+        "committed": true,
+        "turnId": "fixture-turn-new",
+        "authority": "authorized",
+        "continuity": {
+          "previousTurnId": "fixture-turn-old",
+          "previousOutcome": "verified cats in Milwaukee search"
+        },
+        "adapters": "qualified and observable"
+      },
+      "expected": {
+        "retainedOutcomes": [
+          "open another requested Chrome window with previous search"
+        ],
+        "requiredEffects": [
+          "resolve that same search from continuity",
+          "perform the newly authorized action",
+          "verify new requested state"
+        ],
+        "forbiddenEffects": [
+          "suppress new explicit request as a transport replay"
+        ],
+        "completionAllowedOnlyAfter": "new requested window/search is observed"
+      }
+    },
+    {
+      "id": "interim-voice-events",
+      "input": "Open Chrome and look up cats in Milwaukee.",
+      "setup": {
+        "authority": "authorized",
+        "events": [
+          {
+            "turnId": "fixture-voice-1",
+            "committed": false,
+            "text": "Open Chrome"
+          },
+          {
+            "turnId": "fixture-voice-1",
+            "committed": false,
+            "text": "Open Chrome and look up cats"
+          },
+          {
+            "turnId": "fixture-voice-1",
+            "committed": true,
+            "text": "Open Chrome and look up cats in Milwaukee."
+          }
+        ],
+        "adapters": "qualified and observable"
+      },
+      "expected": {
+        "retainedOutcomes": [
+          "open Chrome",
+          "search cats in Milwaukee"
+        ],
+        "requiredEffects": [
+          "wait for committed instruction",
+          "execute committed request once"
+        ],
+        "forbiddenEffects": [
+          "dispatch incomplete interim utterance",
+          "duplicate committed side effects"
+        ],
+        "dispatchBeforeCommit": 0,
+        "completionAllowedOnlyAfter": "committed requested outcomes are verified"
+      }
+    },
+    {
+      "id": "resume-only-unfinished-outcome",
+      "input": "Continue and finish opening that search.",
+      "setup": {
+        "committed": true,
+        "authority": "authorized",
+        "continuity": {
+          "parentRequest": "short cat story plus Chrome search for cats in Milwaukee",
+          "story": "delivered and accepted",
+          "browser": "blocked; qualified binding now restored"
+        },
+        "adapters": "qualified and observable"
+      },
+      "expected": {
+        "retainedOutcomes": [
+          "finish Chrome search for cats in Milwaukee"
+        ],
+        "requiredEffects": [
+          "recover accepted story and pending browser target",
+          "execute only unfinished browser/search outcome",
+          "verify result"
+        ],
+        "forbiddenEffects": [
+          "regenerate accepted story",
+          "restart whole parent task",
+          "ask user to repeat recoverable search"
+        ],
+        "completionAllowedOnlyAfter": "remaining requested browser/search is observed"
+      }
+    },
+    {
+      "id": "user-cancellation",
+      "input": "Cancel opening Chrome, but finish the cat story.",
+      "setup": {
+        "committed": true,
+        "authority": "authorized",
+        "continuity": {
+          "browser": "queued, not dispatched",
+          "story": "pending"
+        }
+      },
+      "expected": {
+        "retainedOutcomes": [
+          "cancel queued browser outcome",
+          "finish cat story"
+        ],
+        "requiredEffects": [
+          "cancel browser through existing control path",
+          "deliver story"
+        ],
+        "forbiddenEffects": [
+          "dispatch cancelled browser action",
+          "cancel independent writing",
+          "claim the cancelled browser opened"
+        ],
+        "completionAllowedOnlyAfter": "cancellation and revised story request are satisfied"
+      }
+    },
+    {
+      "id": "honest-diagnostic-language",
+      "input": "How are you doing? Tell me a short cat story.",
+      "setup": {
+        "committed": true,
+        "authority": "writing authorized",
+        "diagnostics": {
+          "formula": "blocked",
+          "voice": "unavailable"
+        }
+      },
+      "expected": {
+        "retainedOutcomes": [
+          "greeting",
+          "short cat story"
+        ],
+        "requiredEffects": [
+          "deliver conversational greeting and requested story",
+          "base any health claims on supplied diagnostics"
+        ],
+        "forbiddenEffects": [
+          "claim Formula integrity passing",
+          "claim Voice Fabric ready",
+          "replace story with status report"
+        ],
+        "completionAllowedOnlyAfter": "requested story and greeting delivered without unsupported health claims"
+      }
+    },
+    {
+      "id": "capability-description-only",
+      "input": "Tell me whether you have the ability to open Chrome. Do not open it yet.",
+      "setup": {
+        "committed": true,
+        "authority": "capability explanation only",
+        "adapters": "qualified browser provider available"
+      },
+      "expected": {
+        "retainedOutcomes": [
+          "explain currently available browser ability"
+        ],
+        "requiredEffects": [
+          "describe evidence-supported capability"
+        ],
+        "forbiddenEffects": [
+          "dispatch browser launch",
+          "equate provider available with action executed"
+        ],
+        "externalDispatchCount": 0,
+        "completionAllowedOnlyAfter": "accurate abilities explanation delivered"
+      }
+    },
+    {
+      "id": "stale-replay-after-cancellation",
+      "input": "Open Chrome and write a short cat story.",
+      "setup": {
+        "committed": true,
+        "turnId": "fixture-turn-old",
+        "authority": "original request authorized; newer cancellation governs",
+        "continuity": {
+          "newerTurnId": "fixture-turn-new",
+          "newerInstruction": "Cancel opening Chrome; keep the delivered story.",
+          "browser": "cancelled before dispatch",
+          "story": "delivered and accepted"
+        }
+      },
+      "expected": {
+        "retainedOutcomes": [
+          "preserve newer browser cancellation",
+          "preserve accepted story"
+        ],
+        "requiredEffects": [
+          "apply newer committed instruction",
+          "reuse existing accepted result"
+        ],
+        "forbiddenEffects": [
+          "reactivate browser from late replay",
+          "regenerate accepted story",
+          "claim cancelled browser opened"
+        ],
+        "additionalEffectfulDispatches": 0,
+        "completionAllowedOnlyAfter": "current revised objective and existing cancellation evidence are reconciled"
+      }
+    },
+    {
+      "id": "generated-writing-must-meet-constraints",
+      "input": "Write an exactly 100-word story about a cat stranded in 1920.",
+      "setup": {
+        "committed": true,
+        "authority": "writing authorized",
+        "adapterResult": {
+          "text": "fixture story about requested subject",
+          "measuredWordCount": 102,
+          "claimedComplete": true
+        }
+      },
+      "expected": {
+        "retainedOutcomes": [
+          "exactly 100-word story about a cat stranded in 1920"
+        ],
+        "requiredEffects": [
+          "check subject and exact requested length",
+          "repair the two-word excess through the existing writing workflow",
+          "deliver and verify revised content"
+        ],
+        "forbiddenEffects": [
+          "accept provider complete flag as proof",
+          "silently relax exactly 100 words"
+        ],
+        "completionAllowedOnlyAfter": "delivered story meets subject and exact length"
+      }
+    }
+  ]
+}
