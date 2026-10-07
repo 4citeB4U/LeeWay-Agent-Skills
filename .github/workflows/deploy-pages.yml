@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'grapevine/**'
+      - 'grapevine-app/**'
       - 'skills/**'
       - 'receipts/agent-lee-capability-recovery-20261001.json'
       - '.github/workflows/deploy-pages.yml'
@@ -35,27 +35,28 @@ jobs:
         with:
           node-version: '22'
 
-      - name: Materialize uploaded Grapevine project
-        shell: bash
-        run: |
-          rm -rf .grapevine-build
-          mkdir -p .grapevine-build
-          unzip -q grapevine/leeway-grapevine-actual-fixed.zip -d .grapevine-build
-
-      - name: Generate canonical 499-skill Grapevine registry
-        run: node .grapevine-build/scripts/generate-grapevine-state.mjs "$GITHUB_WORKSPACE" "$GITHUB_WORKSPACE/.grapevine-build/public/grapevine-state.json"
+      - name: Generate canonical Grapevine registry
+        run: node grapevine-app/scripts/generate-grapevine-state.mjs "$GITHUB_WORKSPACE" "$GITHUB_WORKSPACE/grapevine-app/public/grapevine-state.json"
 
       - name: Install Grapevine dependencies
-        working-directory: .grapevine-build
+        working-directory: grapevine-app
         run: npm install --no-audit --no-fund
 
-      - name: Type-check actual Grapevine project
-        working-directory: .grapevine-build
+      - name: Type-check actual Grapevine
+        working-directory: grapevine-app
         run: npm run lint
 
-      - name: Build actual Grapevine project
-        working-directory: .grapevine-build
+      - name: Build actual Grapevine
+        working-directory: grapevine-app
         run: npm run build
+
+      - name: Verify actual build
+        shell: bash
+        run: |
+          test -f grapevine-app/dist/index.html
+          grep -q "Grapevine 3D Registry" grapevine-app/dist/index.html
+          test -f grapevine-app/dist/grapevine-state.json
+          node -e "const x=require('./grapevine-app/dist/grapevine-state.json'); if(x.counts.canonicalSkillMd!==499||x.schemaVersion!=='leeway.grapevine.registry.v2') process.exit(2)"
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
@@ -65,7 +66,7 @@ jobs:
       - name: Upload actual Grapevine build
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .grapevine-build/dist
+          path: grapevine-app/dist
 
       - name: Deploy
         id: deployment
