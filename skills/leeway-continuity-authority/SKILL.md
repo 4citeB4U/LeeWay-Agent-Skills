@@ -33,6 +33,10 @@ When entering or resuming LeeWay work:
 8. Hand the restored state to `leeway-context-engineering` for current-turn interpretation and Formula-ready staging.
 9. Preserve the handoff into `leeway-formula-governance`; do not let a runtime skip Formula Governance simply because a prior answer already made a decision.
 
+## Cross-contributor continuity and handoff
+
+Before claiming a fresh task or repeating research, consult the [canonical shared contributor hub](https://github.com/4citeB4U/LeeWay-Agent-Skills/issues/22), [Contributor Handoff Protocol](../../docs/CONTRIBUTOR-HANDOFF-PROTOCOL.md), and the active mission issue/checklist in its source-owning repository. Inspect other agents', models', and humans' branch/PR/file claims; reuse source-verified findings and preserve their unfinished gates. Publish an accurate handoff linked to the owning mission issue at each substantive checkpoint. Existing source/CI evidence may be reused; unverified execution cannot be promoted. Missing GitHub access means continuity PARTIAL or BLOCKED, not permission to invent a history or create a duplicate registry.
+
 ## Continuity state
 
 Maintain a compact working continuity state when relevant:

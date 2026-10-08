@@ -1,0 +1,32 @@
+name: Verify LeeWay Contributor Handoff
+
+on:
+  pull_request:
+    paths:
+      - 'AGENTS.md'
+      - 'docs/CONTRIBUTOR-HANDOFF-PROTOCOL.md'
+      - 'skills/leeway-continuity-authority/SKILL.md'
+      - 'tests/contributor-handoff.test.mjs'
+      - '.github/workflows/verify-contributor-handoff.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'AGENTS.md'
+      - 'docs/CONTRIBUTOR-HANDOFF-PROTOCOL.md'
+      - 'skills/leeway-continuity-authority/SKILL.md'
+      - 'tests/contributor-handoff.test.mjs'
+      - '.github/workflows/verify-contributor-handoff.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  contributor-handoff-contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify mandatory GitHub handoff entrypoints and evidence fields
+        run: node --test tests/contributor-handoff.test.mjs
