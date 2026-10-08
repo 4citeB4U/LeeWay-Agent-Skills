@@ -11,6 +11,10 @@ Creator/Human Authority > LeeWay Standards > Root of Trust > Runtime Fabric > Ag
 
 No lower authority may silently override a higher one.
 
+## Shared multi-contributor coordination — mandatory
+
+Before any LeeWay engineering, read [Contributor Handoff Protocol](docs/CONTRIBUTOR-HANDOFF-PROTOCOL.md) and [Contributor Hub issue #22](https://github.com/4citeB4U/LeeWay-Agent-Skills/issues/22). Resolve the *owning project's* current mission issue, acceptance checklist, GitHub source/commit, active PRs and contributor file claims. Reuse verified work; do not silently overwrite overlapping contributors' branches. Leave a source-, CI-, Veritas- and checkpoint-linked handoff in the owning mission issue on completion or interruption. This applies equally to Agent Lee, ChatGPT instances, Gemini, other agents and human developers; it grants no extra permission or authority. When GitHub cannot be reached, report continuity PARTIAL/BLOCKED and do not invent checked work.
+
 ## Bootstrap + ingress
 On the first substantive interaction, apply `leeway-bootstrap-authority`, verify canonical skill authority when the host permits it, establish `LEEWAY_SKILL_SESSION_RECEIPT`, and hand state to Continuity Authority.
 
