@@ -1,3 +1,5 @@
+> **MANDATORY FIRST READ — Creator/LeeWay Engineering Laws:** https://github.com/4citeB4U/LeeWay-Standards/blob/main/Docs/governance/LEEWAY-CANONICAL-ENGINEERING-LAWS.md . Read before this file, any contributor hub entry, source, planning or testing. The Standards repo is law authority; the hub only coordinates teams.
+
 # LeeWay Agent Skills — Agent Runtime Map
 
 Canonical authority: `4citeB4U/LeeWay-Agent-Skills`.
