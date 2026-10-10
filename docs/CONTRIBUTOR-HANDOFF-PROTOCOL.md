@@ -1,3 +1,5 @@
+> **LAW FIRST, BEFORE THE HUB:** https://github.com/4citeB4U/LeeWay-Standards/blob/main/Docs/governance/LEEWAY-CANONICAL-ENGINEERING-LAWS.md — canonical multi-team engineering law; all progress notes, issue collaboration, reuse and recurring receipt analysis must comply. This protocol implements the law; it is not an independent authority.
+
 # LeeWay Contributor Handoff Protocol
 
 **Entry point:** [Shared Contributor Coordination Hub, Agent Skills issue #22](https://github.com/4citeB4U/LeeWay-Agent-Skills/issues/22). **Governance:** canonical LeeWay Standards R01–R25. **Mission records live in their owning repository**, not in a new database. For Golden Package C3 use [Runtime Fabric issue #21](https://github.com/4citeB4U/Leeway-Runtime-Fabric/issues/21) and its [architectural acceptance checklist](https://github.com/4citeB4U/Leeway-Runtime-Fabric/blob/repair/floating-agent-interaction/docs/C3-ARCHITECTURAL-ACCEPTANCE-CHECKLIST.md).
