@@ -57,3 +57,11 @@ Golden Package C3 stays owned by Runtime Fabric [issue #21](https://github.com/4
 - [ ] Physical execution and learning admission continue to require independent Veritas evidence.
 
 Documentation and CI adoption are **not** proof of all contributor compliance; those cases remain open until separately tested.
+
+## Creator completion mandate — mandatory stop rule
+
+**A contributor's job is to finish the assigned acceptance outcome, not merely report partial edits.** Follow the complete LeeWay factory and engineering loop: IDEA → NEED → AUTHORITY → DISCOVERY → CANONICAL CHECK → FORMULA/DECISION → IMPLEMENTATION → EXECUTION → VERITAS → PASS/FAIL → FREEZE; and Investigate → Diagnose → Plan → Implement → Test → Validate → Repair → Retest → Verify → Evidence. Reuse existing implementations, then complete all connected work within granted authority and time, including integration, GUI interaction, runtime activation, regression tests, independent receipts, and cross-device acceptance where required.
+
+**Do not stop after an isolated source edit, unit test, CI green, service-health check, or diagnostic click when the required real user outcome remains unverified and further authorized actions are available.** Continue through the remaining acceptance gates in the same execution cycle. Repair failures and retest until the outcome is physically verified, or identify a concrete irreducible blocker (missing access, human approval, incompatible source ownership, unavailable device, or safety/tool denial) with exact evidence. Never reframe a partial test as task graduation, or infer observed audio, GUI, cursor, or dual-device acceptance from code or endpoint status.
+
+**End-of-work report contract:** report (1) original owner objective and current acceptance numerator/denominator, (2) exact completed capabilities and independent receipts, (3) affected source SHAs, deployed runtime and device state, (4) remaining blocked gates with their real reasons, (5) rollback state, and (6) contributor handoff. Completion requires the full specified behavior, not a fresh to-do list. When interrupted, preserve a truthful current checkpoint and resume the same incomplete acceptance rather than repeating discovery. Never manufacture progress numbers or claim asynchronous work.
