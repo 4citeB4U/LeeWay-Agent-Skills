@@ -4,6 +4,7 @@ import { BRANCHES } from './data/skillsData';
 import { loadCanonicalRegistry } from './data/registryData';
 import { Grapevine3DCanvas } from './components/Grapevine3DCanvas';
 import { TopBar } from './components/TopBar';
+import { SkillsWidgetRail } from './components/SkillsWidgetRail';
 import { HarvestBasket } from './components/HarvestBasket';
 import { SkillInspectorModal } from './components/SkillInspectorModal';
 import { GrapevineNearRadar } from './components/GrapevineNearRadar';
@@ -30,7 +31,8 @@ export default function App() {
       if (!alive) return;
       setRegistryError(error?.message || 'GRAPEVINE_REGISTRY_LOAD_FAILED');
     });
-    return () => { alive = false; };
+    const widgetMode = new URLSearchParams(window.location.search).get('widget') === '1';
+  return () => { alive = false; };
   }, []);
 
   const [basket, setBasket] = useState<Skill[]>([]);
@@ -88,10 +90,12 @@ export default function App() {
     const branch = branches[key]; setCameraYaw(branch.yaw); setCameraPitch(branch.pitch); setCameraZoom(1.5); setActiveBranchFilter(key); setIsDrawerOpen(false);
   }, [branches]);
 
+  const widgetMode = new URLSearchParams(window.location.search).get('widget') === '1';
   return (
-    <main className="relative w-screen h-screen overflow-hidden bg-black select-none">
+    <main className={`relative w-screen h-screen overflow-hidden select-none ${widgetMode ? "bg-transparent" : "bg-black"}`}>
       <Grapevine3DCanvas skills={skills} branches={branches} selectedSkill={selectedSkill} basket={basket} activeBranchFilter={activeBranchFilter} nearModeSkill={nearFocalSkill} isNearModeActive={isNearModeActive} isCloseUp={isCloseUp} onSelectSkill={handleSelectSkill} cameraYaw={cameraYaw} cameraPitch={cameraPitch} cameraZoom={cameraZoom} onCameraChange={(yaw,pitch,zoom)=>{setCameraYaw(yaw);setCameraPitch(pitch);setCameraZoom(zoom)}} />
-      <TopBar onOpenDrawer={()=>setIsDrawerOpen(true)} onCenterCamera={handleCenterCamera} onToggleNearMode={handleToggleNearMode} isNearModeActive={isNearModeActive} onToggleCloseUp={handleToggleCloseUp} isCloseUp={isCloseUp} isAudioEnabled={isAudioEnabled} onToggleAudio={handleToggleAudio} onOpenGitHubModal={()=>setIsGitHubModalOpen(true)} />
+      {!widgetMode && <TopBar onOpenDrawer={()=>setIsDrawerOpen(true)} onCenterCamera={handleCenterCamera} onToggleNearMode={handleToggleNearMode} isNearModeActive={isNearModeActive} onToggleCloseUp={handleToggleCloseUp} isCloseUp={isCloseUp} isAudioEnabled={isAudioEnabled} onToggleAudio={handleToggleAudio} onOpenGitHubModal={()=>setIsGitHubModalOpen(true)} />}
+      {widgetMode && <SkillsWidgetRail branches={branches} skills={skills} onSelectBranch={handleSelectBranch} onCenter={handleCenterCamera} onNear={handleToggleNearMode} onCloseUp={handleToggleCloseUp} onAudio={handleToggleAudio} onOpenDrawer={()=>setIsDrawerOpen(true)} onOpenGitHub={()=>setIsGitHubModalOpen(true)} />}
       {registry && <div className="absolute top-16 left-1/2 -translate-x-1/2 z-20 pointer-events-none rounded-full border border-[#39FF14]/35 bg-[#041008]/80 px-3 py-1 text-[10px] font-mono text-[#b9ffad] backdrop-blur-md shadow-lg">{registry.counts.canonicalSkillMd} canonical grapes · {registry.counts.mcpProtocolListedTools} protocol-listed MCP tools · {registry.commit.slice(0,12)}</div>}
       {registryError && <div className="absolute top-16 left-1/2 -translate-x-1/2 z-30 rounded-xl border border-red-500/60 bg-red-950/90 px-4 py-2 text-xs font-mono text-red-100">Registry blocked: {registryError}</div>}
       {isNearModeActive && nearFocalSkill && <GrapevineNearRadar focalSkill={nearFocalSkill} allSkills={skills} branches={branches} basket={basket} onSelectSkill={handleSelectSkill} onAddToBasket={handleAddToBasket} onClose={()=>setIsNearModeActive(false)} />}
