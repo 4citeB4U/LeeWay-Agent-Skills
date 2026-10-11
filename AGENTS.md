@@ -304,3 +304,8 @@ GitHub Pages/static publication is discovery only and cannot prove or execute Fo
 For live voice, streaming STT/TTS, barge-in, phone/receptionist/avatar voice, read-aloud, WebRTC media, live screen/camera multimodal, or audio-latency work, route through `leeway-real-time-voice-multimodal-infrastructure` as a focal execution skill and apply `config/realtime-voice-heavy-use-routing-v1.json`.
 
 Do not substitute the generic multimodal skill for production real-time media engineering. Use the real-time execution contract, playout ledger, interrupt bus, telemetry and LFEA-qualified profiles. Thresholds are tunable evidence-bound profiles; transport/provider choices remain task-dependent and subordinate to LeeWay authority.
+
+
+## Governed Floating Widget routing — Creator-approved LFW-v1.0
+
+For Agent VT, Continuum, Vision, Agent Skills, Digital Brain, or any request to build/repair a true floating widget, read and apply `skills/ui/leeway-governed-floating-widget/SKILL.md` as the focal UI architecture skill. Distinguish independent floating widget versus hamburger menu pop-up, fixed edge tag, attached control rail, and internal capability panel. Preserve original capability/UI assets and backend, implement proportional mouse-wheel and touch scaling of the *whole* widget with its visible curved perimeter, independently qualify native Windows and Android surfaces, and do not call iframe/browser-only rendering a native widget. The Creator approved the architecture; implementation and cross-device Veritas require their own evidence.
