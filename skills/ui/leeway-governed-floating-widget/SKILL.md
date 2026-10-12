@@ -104,7 +104,7 @@ Agent VT canonical source: `4citeB4U/LeeWay-Agent-Workstation-Open-Notebook`, ap
 
 ## Standard request
 
-"Convert this canonical capability into a LeeWay Floating Widget under LFW-v1.0, using its approved form profile, existing native Agent Lee host, attached control rail, proportional wheel/pinch scaling, and original governed backend; qualify both requested platforms and provide evidence."
+"Convert this canonical capability into a LeeWay Floating Widget under LFW-v1.0, using its approved form profile, existing native Agent Lee host, direct bezel interaction without an external control rail, proportional wheel/pinch scaling, and original governed backend; qualify both requested platforms and provide evidence."
 
 
 ## Creator ruling 2026-10-11 — Pocket Golden Widget implementation reference
@@ -137,3 +137,34 @@ Source repository: \`4citeB4U/LeeWay-Pocket-Agent\`. The reference is assembled 
 7. **Acceptance before "officially implemented":** Compile/check complete source, confirm permissions and no second app/service identity, run host tests, verify actual button → widget open → move/resize → capability usage → collapse/return → reopen on each requested device, validate noninterference, obtain Veritas review, preserve revision/hash/build/device receipts. **Do not mark a device, release, or cross-platform rollout VERIFIED on source inspection alone.**
 
 This ruling upgrades the **design-reference authority** of the Pocket implementation. It does **not** retroactively qualify unmerged Pocket PRs, merge source, install APKs, or prove Windows parity. All earlier LFW-v1.0 geometry, native host, safety, permission and Veritas gates remain binding.
+
+
+## Creator ruling 2026-10-11 — exact visible-surface widget law and local build procedure
+
+**Creator-approved design authority for every LeeWay product presented as a widget** (supersedes any older required-external-control-rail language in this file). This is a visual/interaction **standard**, not proof that an implementation has passed. All Agent Lee hamburger capabilities eligible for floating presentation—Digital Brain, Agent VT/Notepad, Vision, Continuum, Skills and later products—MUST reuse the established native host and expose a discoverable **right-edge capability tab**. Do not transform nonvisual background services into decorative widgets.
+
+### Absolute shape and interaction invariants
+
+- **Content is the widget.** The native window bounds MUST match the outside silhouette of the original 3D capability, including its legitimate bezel/shadow; the native host MUST NOT display a larger dark rectangle or boxed margin. Pixels outside its silhouette MUST be alpha-transparent and nonobscuring. The approved capability itself may have an opaque or glass-like body.
+- **No separate floating command rail.** Remove prototype +/−/move/reset/collapse sidebar. Capability-specific controls stay in the original capability UI. Window-level motion/scale/return happen through unobtrusive designated bezel/host gestures, respecting accessible alternatives. A minimal transient affordance is allowed only if explicitly approved and does not become a permanent external frame.
+- **Native whole-surface transforms.** Mouse/touch drag on the designated *exterior bezel/handle* moves the entire host window among authorized screens. Wheel down shrinks, wheel up enlarges; touch pinch similarly scales the **entire exterior border + content + 3D visual** with one coherent transformation. Aspect ratio, minimum readable size, clipping, shadows and position must be conserved. Wheel over internal scrolling/editing remains available; do not hijack scroll within the app.
+- **3D must remain 3D and interactive.** Preserve original asset, material, lighting, tilt/sway, drag-to-rotate, clickable regions, touch gestures, focus, text inputs, navigation, real API bindings and capability operations. Distinguish perspective rotation from operating-system window dragging by interaction region/mode. A screenshot or 2D substitute FAILS.
+- **Right-edge tab** is a separate minimal launcher visually descriptive of the capability (not generic), based on the original Agent Lee button: transparent/contoured exterior, animated color cycling, vertically draggable on the right edge, bounded to a reachable location and persistent. Tap once opens/restores/focuses the single widget instance; collapse returns to the same movable tab without killing capability state. No fixed immovable tab and no uncontrolled duplicates.
+- **Open/collapse/restore** MUST preserve geometry and session appropriately, honor runtime permissions and host focus, allow return via the button or existing native close bridge, and never interfere with unrelated screens, applications or Agent Lee's native launcher. Multi-monitor host behavior must be qualified separately. Native overlay technique is platform-specific: Windows native transparent floating window; Android owner-enabled `TYPE_APPLICATION_OVERLAY`; do not copy Electron directly to Android.
+- **Capability fidelity** is mandatory: Agent VT remains a real working workstation, Vision a real camera viewer, Continuum the real spatial surface, Digital Brain the original renderer. An opening animation with dead controls is a FAIL. Verify the real host/capability binding independently of visual appearance.
+
+### Required construction sequence — derived from actual local Agent VT proof
+
+1. **Discover, pin and read** existing LFW-v1.0 authority, original capability, current native host, renderer, launcher and latest contributor checkpoint; hash relevant source (SHA-256). Classify reuse vs missing glue; preserve rollback. Do NOT build another Golden Package.
+2. **Baseline with real content**: point an isolated existing native host at the original authorized content (Agent VT proof uses `https://4citeb4u.github.io/LeeWay-Agent-Workstation-Open-Notebook/`), not an imitation. Verify page load and meaningful internal functions separately.
+3. **Create the right-edge capability tab** in the existing authorized host; use an image/shape representing the capability (not copying the Agent Lee emblem), color animation, drag-to-reposition and click-to-restore. Persist right-edge vertical position.
+4. **Create one native floating capability surface** using original 3D/UI assets. Tight-crop native bounds to the exterior content outline; set transparent native window/background/outside silhouette. Do not put a functioning visual into an oversized hidden-frame wrapper.
+5. **Wire direct interactions**: bezel drag for native movement, wheel/pinch for whole-window proportional scale, internal tilt/rotation and pointer interaction without event conflicts; return/collapse to right-edge tab. No permanent external control rail.
+6. **Qualify the exact gesture chain**: right-edge tab visible and movable → click → original capability visible with no background rectangle → drag between monitors → scroll/pinch to scale complete widget → rotate/tilt 3D content → click and use original inner functions → collapse → tab remains reachable → reopen with preserved bounds/session. Independently test multi-window and permission boundaries.
+7. **Finish the engineering loop**: test source syntax/build and real native interaction, record failures, smallest justified repair, retest, compare against Creator visual reference, independent Veritas review, release provenance and receipts. Freeze/publish only after all demanded platform gates PASS.
+
+### Local Windows proof and known defect boundary (evidence, not accepted final design)
+
+Creator visually observed a working right-edge launcher that opens interactive Agent VT. Isolated test harness: `E:\LeeWay-Work\agent-vt-golden-widget-proof\main.cjs`; source SHA-256 observed at initial working checkpoint: `BEDB11E84DB0B3498387AC193A411D8652B802D448D372967DF09AF5BE559B36`. The harness uses the installed Electron native host and original Pages workstation. **Observed FAILS:** right tab immovable, oversized black native exterior, separate left rail, unaligned native host and tablet, and unproven whole-window scroll gesture. These failures MUST NOT be propagated as the widget template. The approved target is the exact-silhouette tablet with direct gestures, fully interactive 3D content and movable animated tab. Creator screenshot/observation is visual evidence of opening and defects, not proof of complete acceptance, Android parity, or Veritas PASS.
+
+This law is added to the **existing** LFW-v1.0 skill, not a new engine, registry, service, or conflicting standard. Wherever an earlier paragraph mandates a *separate* attached control rail, interpret that as superseded by this ruling.
