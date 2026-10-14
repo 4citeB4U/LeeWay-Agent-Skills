@@ -13,6 +13,14 @@
 5. Check overlapping changed files, pending claims and current execution owners. If another contributor owns a conflicting mutation, coordinate in the owning issue **before editing**. Reading and independent tests can proceed in parallel.
 6. Publish a bounded work-intent comment on the owning mission issue with contributor identification (tool/model only; no credentials), parent objective, task IDs, intended files, baseline SHA, dependencies, verification plan, rollback and human-approval boundary.
 
+## Mandatory LeeWay source-authoring verification (R23)
+
+This protocol implements the canonical LeeWay Standards source-writing requirement; it does not supersede LeeWay Standards or introduce a new validator. Before creating or editing any LeeWay-authored governed source, determine the real file owner, permitted location, applicable header schema, accurate licensing and authorized agent roles. Confirm the leading LeeWay header and REGION, TAG, and 5WH (WHAT, WHY, WHO, WHERE, WHEN, HOW), with file-type-safe syntax and preserved interpreter directives, upstream attribution and existing runtime behavior. Do not invent ownership, dates or licenses. A missing authoritative value is BLOCKED pending owner review.
+
+Classify and record exceptions for generated, third-party/vendor, binary, lock and immutable receipt files. A directory has no literal Git header; use existing owner-approved metadata where applicable. For APIs, wrappers, adapters, services and widgets, identify the actual owning LeeWay contract and runtime authority boundary; an external API retains its own identity and rights. Cosmetic renaming or a compliant header does not establish working integration.
+
+Before marking source-qualified, run the existing canonical validation and relevant syntax, build, and CI checks on the real changed source; inspect the GitHub diff and readback and attach commit SHA, affected paths, exemptions and rollback evidence to the owning mission issue/PR. Record NOT TESTED or UNVERIFIED explicitly where execution or CI is absent; never infer Veritas PASS or update the Learning Ledger without eligible execution evidence.
+
 ## Handoff / reuse record
 
 Every meaningful work product leaves a searchable GitHub record linked to the *owning mission issue*. Use this format in an issue comment or PR description:
