@@ -116,6 +116,8 @@ For each task:
 12. **Acceptance staging** — preserve `DESIRED_RESULT` and `ACCEPTANCE_GATE`; scope blockers to the exact dependency they prevent and keep unblocked work moving.
 13. **Formula bridge** — package the Formula-ready state with provenance intact and hand it to `leeway-formula-governance`, then to `leeway-agent-operating-loop` for completion-oriented execution.
 
+For a turn containing multiple requests, hand every requested outcome and its target/constraints to the operating loop's **Request retention and completion gate**. A greeting must not replace later work; compression must preserve instruction versus quotation, hypothesis, negation, and already granted authorization.
+
 Operational shorthand:
 
 `recover → resolve → constrain → classify → select → compress → isolate → stage → handoff`
