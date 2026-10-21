@@ -53,4 +53,7 @@ test('compound, voice, replay, verification and fail-closed scenarios are repres
  const blocked=fixture.cases.find(x=>x.id==='denied-authority-continue-independent-work');
  assert.ok(blocked.expected.some(x=>x.acceptance.includes('BLOCKED_AUTHORITY')));
  assert.ok(blocked.expected.some(x=>x.dispatch==='draft'));
+ const unavailable=fixture.cases.find(x=>x.id==='partial-failure-no-global-abort');
+ assert.equal(unavailable.expected.find(x=>x.outcome==='readiness').dispatch,'none');
+ assert.equal(unavailable.expected.find(x=>x.outcome==='log-summary').dispatch,'read-existing-logs');
 });

@@ -1,91 +1,94 @@
 {
-  "name": "@agentlee5/agent-skills",
-  "version": "1.0.0",
-  "description": "Full Leeway Agent Skills application bundle for npm, including the MCP server, standards toolkit, skill library, workflows, badge assets, and governance automation.",
-  "type": "module",
-  "main": "./sdk/index.js",
-  "exports": {
-    ".": "./sdk/index.js",
-    "./paths": "./sdk/paths.js",
-    "./installer": "./sdk/application-installer.js",
-    "./badge-proof": "./mcp-server/dist/badge-proof.js",
-    "./mcp": "./mcp-server/dist/index.js",
-    "./standards": "./LeeWay-Standards/src/index.js",
-    "./registry.json": "./scripts/skills-registry.json",
-    "./skills-config.json": "./config/skills-config.json",
-    "./package.json": "./package.json"
-  },
-  "bin": {
-    "leeway-agent-skills": "./bin/leeway-skills.js",
-    "leeway-agent-skills-mcp": "./bin/leeway-skills-mcp.js",
-    "leeway-agent-skills-badge": "./bin/leeway-skills-badge.js",
-    "leeway-agent-standards": "./bin/leeway-standards.js",
-    "leeway-skills": "./bin/leeway-skills.js",
-    "leeway-skills-mcp": "./bin/leeway-skills-mcp.js",
-    "leeway-skills-badge": "./bin/leeway-skills-badge.js",
-    "leeway-standards": "./bin/leeway-standards.js",
-    "leeway-playwright-mcp": "./bin/leeway-playwright-mcp.js"
-  },
-  "scripts": {
-    "build": "npm --prefix mcp-server run build",
-    "prepack": "npm run build",
-    "pack:dry-run": "npm pack --dry-run",
-    "verify:package": "node ./bin/leeway-skills.js info",
-    "verify:playwright-mcp": "node ./scripts/verify-playwright-mcp.mjs",
-    "verify:playwright-binding": "node ./scripts/verify-playwright-agent-skills-binding.mjs",
-    "verify:playwright-gate": "npm run build && npm run verify:playwright-mcp && npm run verify:playwright-binding && node ./scripts/issue-playwright-mcp-receipt.mjs"
-  },
-  "keywords": [
-    "leeway",
-    "skills",
-    "sdk",
-    "mcp",
-    "agent",
-    "ai",
-    "governance",
-    "workflows",
-    "badge"
-  ],
-  "author": "Leeway Industries (By Leonard Jerome Lee)",
-  "license": "MIT",
-  "engines": {
-    "node": ">=18.0.0"
-  },
-  "dependencies": {
-    "@modelcontextprotocol/sdk": "1.30.0",
-    "@playwright/mcp": "0.0.82"
-  },
-  "files": [
-    ".leeway/config.json",
-    "LeeWay-Standards/LICENSE",
-    "LeeWay-Standards/README.md",
-    "LeeWay-Standards/examples/",
-    "LeeWay-Standards/package.json",
-    "LeeWay-Standards/schemas/",
-    "LeeWay-Standards/src/",
-    "LICENSE",
-    "README.md",
-    "receipts/playwright-mcp-integration-20260921.json",
-    "agent-config.yaml",
-    "agentbage.png.png",
-    "bin/",
-    "config/",
-    "documents/",
-    "mcp-server/README.md",
-    "mcp-server/dist/",
-    "mcp-server/package.json",
-    "mcp-server/src/",
-    "mcp-server/tsconfig.json",
-    "scripts/",
-    "sdk/",
-    "skills/",
-    "tools/"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "local"
-  },
-  "publishConfig": {
-    "access": "public"
-  }
+    "name":  "@agentlee5/agent-skills",
+    "version":  "1.0.0",
+    "description":  "Full Leeway Agent Skills application bundle for npm, including the MCP server, standards toolkit, skill library, workflows, badge assets, and governance automation.",
+    "type":  "module",
+    "main":  "./sdk/index.js",
+    "exports":  {
+                    ".":  "./sdk/index.js",
+                    "./paths":  "./sdk/paths.js",
+                    "./installer":  "./sdk/application-installer.js",
+                    "./badge-proof":  "./mcp-server/dist/badge-proof.js",
+                    "./mcp":  "./mcp-server/dist/index.js",
+                    "./standards":  "./LeeWay-Standards/src/index.js",
+                    "./registry.json":  "./scripts/skills-registry.json",
+                    "./skills-config.json":  "./config/skills-config.json",
+                    "./package.json":  "./package.json"
+                },
+    "bin":  {
+                "leeway-agent-skills":  "./bin/leeway-skills.js",
+                "leeway-agent-skills-mcp":  "./bin/leeway-skills-mcp.js",
+                "leeway-agent-skills-badge":  "./bin/leeway-skills-badge.js",
+                "leeway-agent-standards":  "./bin/leeway-standards.js",
+                "leeway-skills":  "./bin/leeway-skills.js",
+                "leeway-skills-mcp":  "./bin/leeway-skills-mcp.js",
+                "leeway-skills-badge":  "./bin/leeway-skills-badge.js",
+                "leeway-standards":  "./bin/leeway-standards.js",
+                "leeway-playwright-mcp":  "./bin/leeway-playwright-mcp.js"
+            },
+    "scripts":  {
+                    "build":  "npm --prefix mcp-server run build",
+                    "prepack":  "npm run build",
+                    "pack:dry-run":  "npm pack --dry-run",
+                    "verify:package":  "node ./bin/leeway-skills.js info",
+                    "verify:playwright-mcp":  "node ./scripts/verify-playwright-mcp.mjs",
+                    "verify:playwright-binding":  "node ./scripts/verify-playwright-agent-skills-binding.mjs",
+                    "verify:playwright-gate":  "npm run build \u0026\u0026 npm run verify:playwright-mcp \u0026\u0026 npm run verify:playwright-binding \u0026\u0026 node ./scripts/issue-playwright-mcp-receipt.mjs",
+                    "verify:request-completion-fixture":  "node --test tests/request-completion-fixture.test.mjs"
+                },
+    "keywords":  [
+                     "leeway",
+                     "skills",
+                     "sdk",
+                     "mcp",
+                     "agent",
+                     "ai",
+                     "governance",
+                     "workflows",
+                     "badge"
+                 ],
+    "author":  "Leeway Industries (By Leonard Jerome Lee)",
+    "license":  "MIT",
+    "engines":  {
+                    "node":  "\u003e=18.0.0"
+                },
+    "dependencies":  {
+                         "@modelcontextprotocol/sdk":  "1.30.0",
+                         "@playwright/mcp":  "0.0.82"
+                     },
+    "files":  [
+                  ".leeway/config.json",
+                  "LeeWay-Standards/LICENSE",
+                  "LeeWay-Standards/README.md",
+                  "LeeWay-Standards/examples/",
+                  "LeeWay-Standards/package.json",
+                  "LeeWay-Standards/schemas/",
+                  "LeeWay-Standards/src/",
+                  "LICENSE",
+                  "README.md",
+                  "receipts/playwright-mcp-integration-20260921.json",
+                  "agent-config.yaml",
+                  "agentbage.png.png",
+                  "bin/",
+                  "config/",
+                  "documents/",
+                  "mcp-server/README.md",
+                  "mcp-server/dist/",
+                  "mcp-server/package.json",
+                  "mcp-server/src/",
+                  "mcp-server/tsconfig.json",
+                  "scripts/",
+                  "sdk/",
+                  "skills/",
+                  "tools/",
+                  "tests/fixtures/request-completion.v1.json",
+                  "tests/request-completion-fixture.test.mjs"
+              ],
+    "repository":  {
+                       "type":  "git",
+                       "url":  "local"
+                   },
+    "publishConfig":  {
+                          "access":  "public"
+                      }
 }

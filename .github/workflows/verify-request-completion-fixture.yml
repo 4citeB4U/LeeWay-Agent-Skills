@@ -1,0 +1,62 @@
+# LEEWAY HEADER — DO NOT REMOVE
+# REGION: LEEWAY.AGENT.SKILLS.CI
+# TAG: LEEWAY.REQUEST.COMPLETION.SOURCE_FIXXTURE.V1
+# WHAT: Qualify shipped request-completion fixture and its package inclusion.
+# WHY: Installed agents must receive test cases; CI must fail if any are dropped.
+# WHO: GitHub Actions source-only test runner.
+# WHERE: .github/workflows/verify-request-completion-fixture.yml
+# WHEN: 2026-10-21.
+# HOW: Node fixture test plus npm pack archive inspection with scripts disabled.
+# AUTHORITY: Source and package contract only; no live Agent Lee handler admission.
+name: Request Completion Fixture Contract
+
+on:
+  pull_request:
+    paths:
+      - 'skills/leeway-agent-operating-loop/SKILL.md'
+      - 'skills/leeway-context-engineering/SKILL.md'
+      - 'skills/leeway-skill-orchestrator/SKILL.md'
+      - 'tests/fixtures/request-completion.v1.json'
+      - 'tests/request-completion-fixture.test.mjs'
+      - 'package.json'
+      - '.github/workflows/verify-request-completion-fixture.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'skills/leeway-agent-operating-loop/SKILL.md'
+      - 'skills/leeway-context-engineering/SKILL.md'
+      - 'skills/leeway-skill-orchestrator/SKILL.md'
+      - 'tests/fixtures/request-completion.v1.json'
+      - 'tests/request-completion-fixture.test.mjs'
+      - 'package.json'
+      - '.github/workflows/verify-request-completion-fixture.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  request-completion:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Fixture provenance and scenario integrity
+        run: npm run verify:request-completion-fixture
+      - name: Inspect actual npm package manifest without lifecycle scripts
+        run: npm pack --dry-run --ignore-scripts --json > pack-manifest.json
+      - name: Verify required fixture and test file are actually shipped
+        run: |
+          node --input-type=module -e "
+            import fs from 'node:fs';
+            const packs=JSON.parse(fs.readFileSync('pack-manifest.json','utf8'));
+            const files=new Set(packs[0]?.files?.map(x=>x.path)||[]);
+            for (const required of ['tests/fixtures/request-completion.v1.json','tests/request-completion-fixture.test.mjs']) {
+              if (!files.has(required)) {
+                console.error('MISSING_PACKAGE_FIXTURE: '+required);
+                process.exitCode=1;
+              }
+            }
+          "
