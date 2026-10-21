@@ -43,6 +43,26 @@ Permanent laws:
 
 A blocker has scope. Identify exactly what it prevents and continue every part of the parent objective that remains authorized and executable.
 
+## Request retention and completion gate
+
+Apply this gate to every request containing work, including a conversational turn that also contains a greeting or a question about abilities. Acknowledge the person naturally while retaining every requested outcome.
+
+1. Preserve each requested outcome in the existing parent task/context record before selecting a response. Bind it to the committed user turn, original wording, required target/parameters, dependencies, authority, and observable acceptance criterion. Keep greeting, explanation, writing, application action, and research outcomes distinct when the user requests them together. Do not reduce a compound request to its first matching intent.
+2. Resolve ordinary paraphrases and pronouns from permitted context. Treat "Can you open my Chrome?" as an action request when that is the user's intent. Preserve quoted search terms as parameters. Treat quoted examples, reported speech, hypothetical questions, and negated actions as informational context unless the user separately instructs their execution. Do not dispatch unfinished speech or duplicate transcript events.
+3. For each authorized, sufficiently specified outcome, invoke the selected qualified capability through the existing execution route. Skill discovery, provider selection, a plan, a promise, a worker ID, a queue entry, or a process-spawn acknowledgment is an intermediate state. None closes the requested outcome. Ask only for information or authority that is actually missing; do not ask the user to repeat an action or target already provided.
+4. Keep pending and running outcomes active until acceptance is verified, a scoped failure/blocker is recorded, or the Creator cancels or supersedes that outcome. Stop new dispatch immediately on cancellation; distinguish cancellation requested from observed cancellation and never imply that prior effects were reversed. Continue independent authorized work when one outcome fails. Report partial completion as partial completion. A failure or blocker never counts as success.
+5. Verify the result against the requested target and content. For writing, inspect the delivered content against the requested subject, form, and constraints. For browser/device work, observe the requested application/page/post-state through the qualified adapter; a successful process spawn alone does not prove it. If read-back is unavailable, preserve the execution evidence and mark acceptance UNVERIFIED.
+6. Correlate attempts and results with the existing turn/work/outcome identifiers. Reuse an in-flight or verified result for a replay of the same request; a newer committed correction or cancellation takes precedence over a late duplicate. After a timeout or ambiguous acknowledgment, read the actual state before retrying an action that may already have occurred. Do not create a second queue, ledger, runtime, or identity to track this work.
+7. Before final delivery, reconcile every active requested outcome with its result, evidence, or precise unresolved boundary. Preserve cancelled/superseded outcomes as such and evaluate completion against the Creator's revised objective. Claim complete only when all active acceptance criteria pass. If qualified persistent work continues, report its observed state and stable work ID as progress; do not claim success or future execution without that binding. Compose spoken confidence and health statements from observed evidence, not fixed reassurance.
+
+Use the current session's authorization and preserve its scope. This gate does not grant new permissions, permit bypassing a denial, or turn a mention of an action into authorization. Continue permitted preparation and independent work while a genuinely required approval is pending.
+
+## Behavioral regression and learned corrections
+
+Use `tests/fixtures/request-completion.v1.json` to qualify changes to request interpretation, routing, execution handoff, completion, or conversation delivery. Run the actual handler with instrumented adapters, inspect dispatches and returned results, and include the original compound request, paraphrases, denied or missing authority, quoted/hypothetical/negated commands, partial failures, replay, and ambiguous execution results. Fixture validation or source-string checks alone cannot establish behavior. Qualify the bound live UI separately before claiming deployment success.
+
+Preserve demonstrated successes and failures through existing Veritas, Receipt Authority, and Learning Ledger. Bind each learned correction to the request/outcomes, source version, observed dispatch/result, acceptance evidence, and recovery. Promote only a correction that survives independent regression cases; do not infer training, permanent learning, or an updated ledger from a prompt edit, generated example, unexecuted test, or model confidence. Learning never expands authority.
+
 ## Mandatory multi-state probes
 
 At every material context transition, architecture pass, failure, repair, or acceptance review, ask internally:

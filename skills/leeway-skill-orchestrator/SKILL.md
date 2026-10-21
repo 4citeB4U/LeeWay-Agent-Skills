@@ -86,6 +86,8 @@ Feed discoveries back through Capability Resilience / Skill Factory rather than 
 
 intent → acceptance gate → context/formula → capability demand → graph query → task weave → resolve dependencies/conflicts → focal execution set → verification set → recovery set → execute → verify → evidence → learn
 
+Apply the operating loop's **Request retention and completion gate** to each retained outcome: when authority, target, and prerequisites are sufficient, advance skill/provider discovery into actual dispatch, attach its result and verification to that outcome, and return every unresolved outcome to the parent. Discovery text or an execution acknowledgment must not replace the requested result.
+
 When multiple skills share a primitive, compose at the primitive level where possible rather than loading redundant full instructions.
 
 When a tool lacks a governing skill owner, classify it ORPHAN_TOOL until assigned, wrapped, deprecated, or quarantined.
