@@ -360,7 +360,7 @@ export class LeewaySkillsMCPServer {
       if (toolName === "leeway_compose_skills") {
         try {
           const args = request.params.arguments;
-          const result = await composeSkillCandidate({skillsRoot:this.skillsRoot,requestId:args?.requestId,skillIds:args?.skillIds});
+          const result = await composeSkillCandidate({skillsRoot:this.skillsRoot,requestId:typeof args?.requestId==='string'?args.requestId:'',skillIds:Array.isArray(args?.skillIds)&&args.skillIds.every((x:unknown)=>typeof x==='string')?args.skillIds as string[]:[]});
           return {content:[{type:"text" as const,text:JSON.stringify(result)}]};
         } catch(error) {
           return {content:[{type:"text" as const,text:JSON.stringify({state:"BLOCKED",reason:error instanceof Error?error.message:"INVALID_COMPOSITION"})}],isError:true};
