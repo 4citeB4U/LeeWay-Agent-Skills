@@ -41,6 +41,7 @@ import {
   Tool,
 } from "@modelcontextprotocol/sdk/types.js";
 import fs from "fs/promises";
+import { composeSkillCandidate } from "../../sdk/skill-composition.js";
 import path from "path";
 import { fileURLToPath, pathToFileURL } from "url";
 import {
@@ -317,6 +318,7 @@ export class LeewaySkillsMCPServer {
         ...deviceCapabilityToolDefinitions,
       ];
 
+      tools.push({name:"leeway_compose_skills",description:"Create a reference-only, SHA-256-bound multi-skill composition plan. Never executes.",inputSchema:{type:"object",properties:{requestId:{type:"string"},skillIds:{type:"array",items:{type:"string"},minItems:2,maxItems:8}},required:["requestId","skillIds"]}});
       for (const [skillId, skill] of this.skills) {
         tools.push({
           name: skillId,
@@ -355,6 +357,15 @@ export class LeewaySkillsMCPServer {
 
     this.server.setRequestHandler(CallToolRequestSchema, async (request) => {
       const toolName = request.params.name;
+      if (toolName === "leeway_compose_skills") {
+        try {
+          const args = request.params.arguments;
+          const result = await composeSkillCandidate({skillsRoot:this.skillsRoot,requestId:args?.requestId,skillIds:args?.skillIds});
+          return {content:[{type:"text" as const,text:JSON.stringify(result)}]};
+        } catch(error) {
+          return {content:[{type:"text" as const,text:JSON.stringify({state:"BLOCKED",reason:error instanceof Error?error.message:"INVALID_COMPOSITION"})}],isError:true};
+        }
+      }
 
       if (isGameDevelopmentTool(toolName)) {
         try {
