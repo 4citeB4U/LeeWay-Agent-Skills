@@ -76,3 +76,48 @@ Remain `CANDIDATE / UNVERIFIED` until these gates are satisfied; publishing this
 
 ## Dependencies
 LeeWay: `skills/leeway-skill-factory/SKILL.md`, `skills/leeway-skill-lifecycle-governance/SKILL.md`, `config/portability-contract.md`, canonical Runtime Fabric, Formula and Veritas providers. Upstream: `morluto/rea` (MIT), `rea-agents` CLI/MCP. No automatic installer, new governance layer or new runtime is authorized by this skill.
+
+## Deep code-and-runtime forensic diagnosis (expanded profile)
+Investigations must combine REA reverse engineering with source-aware static and runtime analysis when the corresponding inputs and permissions exist. Reverse engineering does not itself imply security scanning, source-level dataflow proof, fuzz coverage or comprehensive function coverage. Report absent evidence explicitly.
+
+### Six complementary lenses
+1. **Structure and execution**: dependency, call, event and IPC graphs; entry points, branches, loops, async waits, unhandled rejection paths, missing dispatch hooks and unreachable handlers.
+2. **Security and taint**: identify untrusted input sources, parsers, trust crossings, sinks, validation and authentication; inspect path traversal, injection, unsafe deserialization, secrets handling, unsafe tool invocation, capability escalation and prompt-injection propagation. Mark flows as PROVEN / POSSIBLE / NOT_ASSESSED, with evidence links. A sanitizer claim requires actual semantics, not name matching.
+3. **Failure breakpoints**: list exact source range / binary offset / request step, triggering precondition, observable symptom, impact, confidence, proposed minimal fix and test. If unavailable say LOCATION_UNKNOWN; never invent line numbers or fault sites.
+4. **Distributed and agent boundaries**: map signed identities, request correlation IDs, retries, duplicate delivery, replay checks, ordering, timeouts, cancellation, side effects and delegation permissions. Inspect mismatch between Veritas PRE decision and actual dispatcher actions.
+5. **State and resources**: inspect ownership, cache and persistence contracts, concurrency locks, transaction/lease boundaries, cancellation and resource release; collect measured CPU/RAM/VRAM/latency only from real host telemetry with observation window and units.
+6. **Dynamic and adversarial validation**: use isolated fixtures, malformed payloads, fault injection, concurrency/replay tests, recovery/endurance checks and independently observed outputs. Never fuzz live production networks or customer data by default. Fuzz runs are separate opt-in mutation-capable host operations, not a consequence of read-only static scanning.
+
+### Per-finding schema
+```json
+{
+  "findingId": "stable-id",
+  "requestId": "same-request-correlation-id",
+  "component": "canonical-component-id",
+  "category": "control_flow|security|concurrency|resource|behavior|contract",
+  "severity": "critical|high|medium|low|informational",
+  "confidence": "verified|observed|inferred|unverified",
+  "location": {"artifactSha256": "real-sha256-or-null", "path": "path-or-null", "line": null, "offset": null},
+  "trigger": "reproducible-precondition-or-unknown",
+  "evidence": ["immutable-reference-or-local-evidence-id"],
+  "impact": "bounded-description",
+  "minimalRepair": "proposed-change-not-applied",
+  "verification": {"test": "test-or-not-run", "result": "PASS|FAIL|NOT_RUN|BLOCKED"}
+}
+```
+Never invent populated fields, evidence references or PASS outcomes. A lack of findings does not establish absence of vulnerabilities.
+
+### Objective readiness gates
+- G0 TARGET: canonical identity, permissions, revision and hashes established.
+- G1 STRUCTURE: applicable source/binary/IPC/control-flow surfaces mapped, with coverage and blind spots.
+- G2 SECURITY: high-risk inputs, trust crossings and sinks reviewed using evidence-backed taint paths.
+- G3 RESILIENCE: bounded negative tests for fault isolation, concurrent state, retries/replay, resource ceilings and recovery, when authorized.
+- G4 POST: independent Veritas verifies the same request and test artifacts; failures block admission.
+- G5 PRODUCTION: receipts and Learning Ledger admission are proven through real providers.
+Classify overall result as PRODUCTION_READY only when all applicable gates pass, CANDIDATE_HARDENING when evidence is incomplete or remediable, or FAILED_STRUCTURAL_GAP for demonstrated blocking defects. Indicate NOT_ASSESSED independently; do not assign 'immune' or 'zero taint leakage' from a static scan.
+
+### Diagnostics integration contract
+The Runtime Fabric owns scheduling and diagnostics; this skill describes the analyzer workflow and produces data only. Use the existing dispatcher/Tool Gateway, Veritas and receipt contracts; do not instantiate a new Runtime Fabric, agent identity, verifier or registry. Input: requestId, canonicalTarget, observedRevision, approvedScope, profile (inventory|static|security|dynamic), optional priorReceipt. Output: normalized findings, dependency/control-flow edges, coverage, unknowns, gate states, evidence references, adapter version, and correlation IDs. Dynamic tests require separately authorized host execution, isolation and rollback. Expose the same capability to Agent Lee and any LLM through a least-privileged existing skill/MCP routing boundary; models do not gain direct host privileges.
+
+### Operational guarantee
+When upstream REA is absent, return ADAPTER_UNAVAILABLE and run only already-proven native static analyzers explicitly authorized in the same scope. Never silently install REA, download models, execute third-party binaries, or claim full coverage. For every report include OBSERVED / INFERRED / UNVERIFIED, pass/fail/blocked count, unexplored surfaces, receipt state, and next smallest test.
