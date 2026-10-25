@@ -41,3 +41,5 @@ export {
   LeewaySkillsMCPServer,
   startLeewaySkillsMCPServer,
 } from "../mcp-server/dist/index.js";
+
+export { composeSkillCandidate } from './skill-composition.js';
