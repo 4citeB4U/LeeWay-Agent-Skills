@@ -38,10 +38,12 @@ import {
   getPackageSummary,
 } from "../sdk/index.js";
 
+import { composeSkillCandidate } from '../sdk/skill-composition.js';
 const args = process.argv.slice(2);
 const command = args[0] ?? "help";
 
 const COMMANDS = {
+  compose: "Generate a governed, reference-only multi-skill composition plan",
   info: "Show package summary, skill counts, and key paths",
   paths: "Print packaged asset paths (use --json for JSON output)",
   extract: "Copy the full application bundle into a target directory",
@@ -127,6 +129,15 @@ async function main() {
   const paths = getPackagedPaths();
 
   switch (command) {
+    case "compose": {
+      const result = await composeSkillCandidate({
+        skillsRoot: getPackagedPaths().skillsRoot,
+        requestId: args[1],
+        skillIds: args.slice(2),
+      });
+      console.log(JSON.stringify(result));
+      break;
+    }
     case "info":
       await runInfo();
       break;
