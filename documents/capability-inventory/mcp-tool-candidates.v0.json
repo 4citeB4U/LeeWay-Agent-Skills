@@ -1,0 +1,1128 @@
+﻿{
+    "schema":  "leeway.capabilities.mcp-tool-candidates.v0",
+    "scope":  "ten targeted source roots, not ecosystem-wide",
+    "count":  154,
+    "uniqueHashes":  148,
+    "roots":  [
+                  {
+                      "id":  "skills-mcp",
+                      "path":  "E:\\LeeWay-Work\\agent-skills-benchmark\\mcp-server"
+                  },
+                  {
+                      "id":  "remote-mcp",
+                      "path":  "E:\\LeeWay-Work\\agent-skills-benchmark\\mcp-remote"
+                  },
+                  {
+                      "id":  "skills-tools",
+                      "path":  "E:\\LeeWay-Work\\agent-skills-benchmark\\tools"
+                  },
+                  {
+                      "id":  "fabric-tools",
+                      "path":  "E:\\Leeway-Ecosystem v2.1.4\\Leeway Runtime Fabric\\tools"
+                  },
+                  {
+                      "id":  "fabric-gateway",
+                      "path":  "E:\\Leeway-Ecosystem v2.1.4\\Leeway Runtime Fabric\\skills-gateway"
+                  },
+                  {
+                      "id":  "fabric-orchestrator",
+                      "path":  "E:\\Leeway-Ecosystem v2.1.4\\Leeway Runtime Fabric\\orchestrator"
+                  },
+                  {
+                      "id":  "vscode-src",
+                      "path":  "E:\\leeway-vs-code-edge-mcp-app-forge\\src"
+                  },
+                  {
+                      "id":  "vscode-core",
+                      "path":  "E:\\leeway-vs-code-edge-mcp-app-forge\\core"
+                  },
+                  {
+                      "id":  "legacy-mcp",
+                      "path":  "E:\\Leeway-Ecosystem v2.1.4\\agent-lee-coding-mode\\mcp"
+                  },
+                  {
+                      "id":  "ide-src",
+                      "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src"
+                  }
+              ],
+    "entries":  [
+                    {
+                        "source":  "skills-mcp",
+                        "path":  "E:\\LeeWay-Work\\agent-skills-benchmark\\mcp-server\\src\\communications-tools.test.ts",
+                        "sha256":  "4CF18E6EAB8DCFB30D73AD8623652A2CF2F3EF6BC633CAFFE11539F1BBDF3E2F",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "skills-mcp",
+                        "path":  "E:\\LeeWay-Work\\agent-skills-benchmark\\mcp-server\\src\\communications-tools.ts",
+                        "sha256":  "05F935E0C75D2E222EAFD5E0AC7C0DD9833EA39E11BFAB1B9B7D3ED8807161EF",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "skills-mcp",
+                        "path":  "E:\\LeeWay-Work\\agent-skills-benchmark\\mcp-server\\src\\device-capability-tools.test.ts",
+                        "sha256":  "BB75B0E8B7C68F152E4A9725054D07EA470341F9F6529661CC78DB040A87259C",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "skills-mcp",
+                        "path":  "E:\\LeeWay-Work\\agent-skills-benchmark\\mcp-server\\src\\device-capability-tools.ts",
+                        "sha256":  "E673A1BC8150EB772B32611F207B45ACE21533FC48D9CE5F489327896C8CBF5F",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "skills-mcp",
+                        "path":  "E:\\LeeWay-Work\\agent-skills-benchmark\\mcp-server\\src\\game-development-tools.test.ts",
+                        "sha256":  "5B09D7FE17751D094D8F5EE6A927FB74EDC142766BDF3A5A7646602C6EC6FED9",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "skills-mcp",
+                        "path":  "E:\\LeeWay-Work\\agent-skills-benchmark\\mcp-server\\src\\game-development-tools.ts",
+                        "sha256":  "FF48B7BDC8DDCCC37111356213952B08B631F1026D68D29FE7988626A809BF0A",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "skills-mcp",
+                        "path":  "E:\\LeeWay-Work\\agent-skills-benchmark\\mcp-server\\src\\visual-capability-tools.test.ts",
+                        "sha256":  "16C590EC75413836BC52AB8B65E7F10C1806F38447382F5959B847E442D9C3A4",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "skills-mcp",
+                        "path":  "E:\\LeeWay-Work\\agent-skills-benchmark\\mcp-server\\src\\visual-capability-tools.ts",
+                        "sha256":  "101AAA786A817260F786EE1E9D23A90D2BE1CB2328EC7C7B2E5BF832B5349930",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "fabric-tools",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\Leeway Runtime Fabric\\tools\\generate-adapter-manifests.ps1",
+                        "sha256":  "D485A8A049A5D65D6DE8DC5CC804BD102BAA47A99C23C1945FFE536DABA4AFDE",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "fabric-tools",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\Leeway Runtime Fabric\\tools\\normalize-adapter-package-scripts.ps1",
+                        "sha256":  "2E419B2824EC66375B5682D650CF6B049F6C2B244DF231099C8C3245E0B8D7E4",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "fabric-tools",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\Leeway Runtime Fabric\\tools\\governance\\02-Analyze-LeeWay-Adapter-Binding-No-Execution.ps1",
+                        "sha256":  "3D7CE9E2DA6D8E2EBD209AFBF7DDFBB6AFB72364FE1F1A490EC3BF14948C85D7",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "fabric-tools",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\Leeway Runtime Fabric\\tools\\governance\\02R1-Repair-LeeWay-Adapter-Binding-Analysis-Parser.ps1",
+                        "sha256":  "9BC4C925C9A44BA4D482DB6526E1296361B530EEECA0A08FF3D5C77F62BC3C03",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "fabric-gateway",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\Leeway Runtime Fabric\\skills-gateway\\agent-lee-capability-entry.mjs",
+                        "sha256":  "5AE64D543B1FF35E77013EA56851AC4275B9D29B4A11E78858051A39A58F9628",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "fabric-gateway",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\Leeway Runtime Fabric\\skills-gateway\\gateway.manifest.json",
+                        "sha256":  "72480EA6E3D43E40E6CB85FB77CB86A705A968C24DDBB829AEA375D49D7EAB67",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "fabric-gateway",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\Leeway Runtime Fabric\\skills-gateway\\gateway.mjs",
+                        "sha256":  "BFF6056CA4F8D4CB5237ACDD7CDF0919C5E580124A33BCE6EFB288693366A6F5",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "fabric-orchestrator",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\Leeway Runtime Fabric\\orchestrator\\orchestrator-policy.json",
+                        "sha256":  "C74741C219BF3B33219EB516F2E509477AB194649724E786591494BD06144F06",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "fabric-orchestrator",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\Leeway Runtime Fabric\\orchestrator\\orchestrator.manifest.json",
+                        "sha256":  "360EB81D5BC9FA3F0DE4B4B7E8A7FE221519A3D062C716D20711A0F043FA7B61",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "fabric-orchestrator",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\Leeway Runtime Fabric\\orchestrator\\adapters\\langgraph-adapter.mjs",
+                        "sha256":  "3A66CAF17527D408E098060637AFB964DB4826849D650343CCED6D503B9D6B1B",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "fabric-orchestrator",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\Leeway Runtime Fabric\\orchestrator\\adapters\\semantic-kernel-adapter.mjs",
+                        "sha256":  "15C2B04DF47DC8A6288E07CF4A7ADDDE59F9643D0028E58DBFFC3C36203C1107",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "vscode-src",
+                        "path":  "E:\\leeway-vs-code-edge-mcp-app-forge\\src\\agent-lee\\language\\leewayAgentLeeStyleAdapter.ts",
+                        "sha256":  "A8D0E5CDFE351C92C28BA1D92F483BF74A205A39808D2D60459D96D24B9734FA",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "vscode-core",
+                        "path":  "E:\\leeway-vs-code-edge-mcp-app-forge\\core\\fabric\\LeewayFabricChannelRegistry.ts",
+                        "sha256":  "FEB124042066E6C96B664651704A6CB8DAB5C6B8AC1B721E80C3DBFBDD209C88",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "vscode-core",
+                        "path":  "E:\\leeway-vs-code-edge-mcp-app-forge\\core\\fabric\\LeewayRuntimeObjectRegistry.ts",
+                        "sha256":  "22E3D3D2228F15383FF97B13F1D6CE381C6698ED7EC8E72A46B7548B2DAC4920",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "legacy-mcp",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\agent-lee-coding-mode\\mcp\\manifest.leeway-mcp.json",
+                        "sha256":  "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\agents\\registry\\agent-registry.json",
+                        "sha256":  "B53ED8BCEF30477B733B46317A77CD730FB927F2F13C3421BB762D092E7423B3",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\Agent_Lee_Persona_System\\agentlee_persona_manifest.json",
+                        "sha256":  "D4E5C37FFEC1D3A06A0714C39BC1A40EEFEE9674C0EDFDEA9996B6C135F931EB",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\Agent_Lee_Persona_System\\05_MANIFEST\\agentlee_persona_manifest.json",
+                        "sha256":  "D85204F7C1E50175324667D24C0C40770107E8E48069A2E063096F2C6CE47400",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\github\\github-registry.json",
+                        "sha256":  "C1ABF007788324DB2A7B6DD2B774D402D2E8A33ED734EB391C6BDAC14EDD1FCA",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\mcp\\generated-capability-catalog.json",
+                        "sha256":  "3D4FA734F81F4B6CCA78A55319006D49344D6C9B13E74F3F9C5772F256399E8A",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\mcp\\leeway-mcp-registry.json",
+                        "sha256":  "89045C39183F23954872E84E6114A56CA65A016CEB5A4FB7ABDA74700ABC13CD",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\mcp\\mcp-registry.json",
+                        "sha256":  "47B86CDDD0E4B475AD3D9AF13148E769D060D26921208D8993B937222BA21259",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\mcp\\adapters\\vscode-mcp-settings-snippet.json",
+                        "sha256":  "88DA1D42D55428232602A4D79B0758ADA697032B85A0101775C6FADFDA6449D1",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\mcp\\adapters\\src\\tool.js",
+                        "sha256":  "9654D8748B22AC885A4D1C15DF03D588420F0A3C96F0F77628808DC5F50C7372",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\mcp\\adapters\\vscode-mcp-tooling\\vscode-mcp-settings-snippet.json",
+                        "sha256":  "88DA1D42D55428232602A4D79B0758ADA697032B85A0101775C6FADFDA6449D1",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\mcp\\adapters\\vscode-mcp-tooling\\src\\tool.js",
+                        "sha256":  "9654D8748B22AC885A4D1C15DF03D588420F0A3C96F0F77628808DC5F50C7372",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\persona\\assets\\05_MANIFEST\\agentlee_persona_manifest.json",
+                        "sha256":  "D85204F7C1E50175324667D24C0C40770107E8E48069A2E063096F2C6CE47400",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\reports\\packaged-validation-2026-05-04T05-55-45\\chat-memory\\ok-so-what-are-your-capabilities.json",
+                        "sha256":  "458975468BAEAF4F66CC5A636EF4D38E9C53FC9B4A27BD8D9FDB04E54F8499A9",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\reports\\packaged-validation-2026-05-04T05-56-36\\chat-memory\\ok-so-what-are-your-capabilities.json",
+                        "sha256":  "458975468BAEAF4F66CC5A636EF4D38E9C53FC9B4A27BD8D9FDB04E54F8499A9",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\sdk\\leeway-sdk\\manifest.json",
+                        "sha256":  "79C33C3604FAB7B75C1F143D4B5FB87D9265B1D99B319FCAD36126ED1BAA6CCB",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\sdk\\schemas\\mcp\\agent-registry.schema.json",
+                        "sha256":  "6E7FAF61A86816F60CA01F94FF78937A18FD78B1FD35E391C82F6964C94D4B88",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\sdk\\schemas\\schemas\\mcp\\agent-registry.schema.json",
+                        "sha256":  "6E7FAF61A86816F60CA01F94FF78937A18FD78B1FD35E391C82F6964C94D4B88",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\sdk\\validators\\generate-mcps.mjs",
+                        "sha256":  "AFC854C2D053D9D726F1EFDAFF29A89646BDB0C1375136EE7D2624E9B3ACCE4B",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\tools\\image-tool.js",
+                        "sha256":  "8E39F0635CECF06EF14647188A3D706CF87E0945F4949199A9D3CDB80D81D82C",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\tools\\image-tool.ts",
+                        "sha256":  "6BBD7BAD77F10F6A9EDC44C335F0AED7BE6122DAB15EA3E7BA760062F1D7C4B3",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\visual-intelligence\\system\\LVIS.manifest.json",
+                        "sha256":  "017A546461B7F2AD1E35F8E4E585F4699C204FAA662AE4556B73B478EF51D061",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\visual-intelligence\\workers\\worker-registry.json",
+                        "sha256":  "8CD7AD9EF9FE90EC3B9BABF7653C46DE5D1E445179D23EF992A4DA6EBD20057C",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\voice\\leeway-live-voice-manifest.json",
+                        "sha256":  "A2FAF979272B76C7FC94ECA1D580146F93DB2744502DD914D25D175C22E63A68",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\voice\\voice-cloning-env\\Lib\\site-packages\\uvicorn\\protocols\\http\\httptools_impl.py",
+                        "sha256":  "1171AE1237061AFAB40E0C299CB9B86237CC1831E87C8F34E2A6DFC35E2768B3",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\voice\\voice-cloning-env\\Lib\\site-packages\\wandb\\apis\\public\\registries\\registry.py",
+                        "sha256":  "7E3F0F5E58A6A46CE8F8B55E394B76DED985A9ACDA0C40D83516810803816420",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\voice\\voice-cloning-env\\Lib\\site-packages\\wandb\\sdk\\artifacts\\artifact_manifest.py",
+                        "sha256":  "9C81E28907F537E17F676361FB1C3E51B27AB83C1E1A9DCCAE1E155330F790B9",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\voice\\voice-cloning-env\\Lib\\site-packages\\wandb\\sdk\\artifacts\\artifact_manifest_entry.py",
+                        "sha256":  "72B721BE736D517872E9E8F8ADACA752D3B040AE374F8FB464BB24E340F26400",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\voice\\voice-cloning-env\\Lib\\site-packages\\wandb\\sdk\\artifacts\\artifact_manifests\\artifact_manifest_v1.py",
+                        "sha256":  "0B0C1D6E3B4B4021278D6AB76FE910D7218BDF68DB5D93B8F806B63C6E908787",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\voice\\voice-cloning-env\\Lib\\site-packages\\wandb\\sdk\\artifacts\\_generated\\create_registry_members.py",
+                        "sha256":  "96E172E0503D50638C790CE6BB1711774C950F21F44B6F9446A1A01F414D3E0B",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\voice\\voice-cloning-env\\Lib\\site-packages\\wandb\\sdk\\artifacts\\_generated\\delete_registry.py",
+                        "sha256":  "2AE524477ECE18FDDC5B44E44C9EE2714E37A677DA168F83E44F98C0E727BF51",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\voice\\voice-cloning-env\\Lib\\site-packages\\wandb\\sdk\\artifacts\\_generated\\delete_registry_members.py",
+                        "sha256":  "A35D3685BB2E02DE93F77566995493FABF34CA23D0CCB35720099BF0501CFBFB",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\voice\\voice-cloning-env\\Lib\\site-packages\\wandb\\sdk\\artifacts\\_generated\\fetch_artifact_manifest.py",
+                        "sha256":  "DDF568CBD86B306FAE70CDB0B61DCC27163B4077BC1B40825703A22E9B847012",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\voice\\voice-cloning-env\\Lib\\site-packages\\wandb\\sdk\\artifacts\\_generated\\fetch_registry.py",
+                        "sha256":  "AEE09A6146E06E56AA2D622541FF44009E33C3AD8DABA549C4698AF153ECC47F",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\voice\\voice-cloning-env\\Lib\\site-packages\\wandb\\sdk\\artifacts\\_generated\\registry_collections.py",
+                        "sha256":  "DEEF566CAD3DA009D6704E71D182BFB460842EAE8BC6E597244140CD224D5003",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\voice\\voice-cloning-env\\Lib\\site-packages\\wandb\\sdk\\artifacts\\_generated\\registry_team_members.py",
+                        "sha256":  "A2E8FAEA1E84B7F1EC532394A0F9268D63221A8236C1DBE40B910BAAAB123FC9",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\voice\\voice-cloning-env\\Lib\\site-packages\\wandb\\sdk\\artifacts\\_generated\\registry_user_members.py",
+                        "sha256":  "AF343A7F87E4EA3A1368739A6E78D58D8963A729A5A2115A2582B55D1491B9D1",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\voice\\voice-cloning-env\\Lib\\site-packages\\wandb\\sdk\\artifacts\\_generated\\registry_versions.py",
+                        "sha256":  "9E0BA3D51DD9989F7731EDFBAE96913CB0B2D2FD3D524C608746F62CE16B5EAE",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\voice\\voice-cloning-env\\Lib\\site-packages\\wandb\\sdk\\artifacts\\_generated\\rename_registry.py",
+                        "sha256":  "F147E255B8225DE32C7870EA79F84D478823EDC1486A19924DC3B0D5E9FAACE0",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\voice\\voice-cloning-env\\Lib\\site-packages\\wandb\\sdk\\artifacts\\_generated\\update_team_registry_role.py",
+                        "sha256":  "3E82B3D69BC5B063C39959378BB76E227B131E8A6B0D42C55EC16370CCA37A27",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\voice\\voice-cloning-env\\Lib\\site-packages\\wandb\\sdk\\artifacts\\_generated\\update_user_registry_role.py",
+                        "sha256":  "AA0C9AB912F50CA1AD30FF29742EDA8C5E58BFCF82BE25F772B863D2161E7C36",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\voice\\voice-cloning-env\\Lib\\site-packages\\wandb\\sdk\\artifacts\\_generated\\upsert_registry.py",
+                        "sha256":  "BD56FF0B2460CA08AD5FD85251F092C7C6450CC85E0EE2D1A43F8B3CDCD733C1",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\voice\\voice-cloning-env\\Lib\\site-packages\\wandb\\sdk\\artifacts\\_models\\manifest.py",
+                        "sha256":  "0E74A733D54EAC6F0EF45F577531E0F7105A3E55B033119D3502ED127D117614",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\voice\\voice-cloning-env\\Lib\\site-packages\\wandb\\sdk\\artifacts\\_models\\registry.py",
+                        "sha256":  "0AE496EB4FCB5E043DD1A42B09FB6F04DA128DB64BA2FF835603B375D7871F4A",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\voice\\voice-cloning-env\\Lib\\site-packages\\wandb\\sdk\\launch\\registry\\azure_container_registry.py",
+                        "sha256":  "5EB2EB1282F042BA23FB80FBC5A54ADC9E5ACB0353291CB6B2EF462C818F73FA",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\voice\\voice-cloning-env\\Lib\\site-packages\\wandb\\sdk\\launch\\registry\\elastic_container_registry.py",
+                        "sha256":  "053D066B3722DB2D4CE9474146A912AD214A8AC75EDCA6177A68D54603FEC11E",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\voice\\voice-cloning-env\\Lib\\site-packages\\wandb\\sdk\\launch\\registry\\google_artifact_registry.py",
+                        "sha256":  "D7CD0C5A90160B717CA167467EE49C61AF063CF19F33A5705798AFF43F3D961D",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\voice\\voice-cloning-env\\Lib\\site-packages\\wandb\\sdk\\launch\\registry\\local_registry.py",
+                        "sha256":  "63D9CE649AEAE200C2025F5C26DEDEE08AC8266F650E2F124DED3343B577911B",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\vscode-extension\\out\\agentic\\agenticWorkerOrchestrator.js",
+                        "sha256":  "38D09B9AD59053DB3C61771B23CF756724F4E4B04362B47D7A572AE49884EEBA",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\vscode-extension\\out\\bridge-runtime\\bridgeRuntimeManifestRegistry.js",
+                        "sha256":  "AEE75C0D33BFE440F9F35CECEE14E8FDDF1014E694EDCC06E8D6665ECD62D8CD",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\vscode-extension\\out\\core\\capability-registry.js",
+                        "sha256":  "5D350A116C3199F9072019A0539C27751588E1E7573CE71CD07F35D599822CC0",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\vscode-extension\\out\\core\\orchestrator.js",
+                        "sha256":  "3A73A5550D93BEB64673871C8B4D31D125615A5BA6371AF47063BCB1D84D130A",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\vscode-extension\\out\\core\\voice-adapter.js",
+                        "sha256":  "78D325DF8A6F5A52BEE13599AB868641BE82AC9F7FA529B246C36A2B57F3447E",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\vscode-extension\\out\\core\\branding\\leewayAssetRegistry.js",
+                        "sha256":  "9ED593770DA190239DFD4236F73AF5ADAED46EA2D56FBD9DDF7FA14AB08A6F30",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\vscode-extension\\out\\execution\\leewayExecutionRegistryClient.js",
+                        "sha256":  "EFDFDF50DECFA3B4DC0335AEFA8BC53B9763DD2CFEC980D12737FEBE9229DD66",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\vscode-extension\\out\\execution-brain\\executionBrain.orchestrator.js",
+                        "sha256":  "BCF267F98DD3DD6EB6FABA6951F6B125EF0BE70FDAA07BAB273105C6036E8A2E",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\vscode-extension\\out\\execution-brain\\executionToEditBuffer.adapter.js",
+                        "sha256":  "AC8E8E9868440E36C8FE62E8F8295DED32EF59DA096633B72DED2A6C6C106A17",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\vscode-extension\\out\\execution-brain\\verificationRepairToEditBuffer.adapter.js",
+                        "sha256":  "8433584FFBDD59364B207213D64AEAA9EDDBD9813757258D8B19F11D30EA5780",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\vscode-extension\\out\\indexing\\indexToDependencyGraph.adapter.js",
+                        "sha256":  "A4A92F0ED66EADBDDCD8A387D4BC8D25250183B4D7C07170F4794BB240D04282",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\vscode-extension\\out\\lifecycle\\updateRegistry.js",
+                        "sha256":  "AF4F3CF0375DF43359844E7ED7A514DA3A07EE667263E286DC9EFC4828F54F52",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\vscode-extension\\out\\performance\\lazyServiceRegistry.js",
+                        "sha256":  "821E117CD5BB1CE9D5430B2CF91E995BE26EB2B1EBA4AC9B0BDAF9B923BAEF75",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\vscode-extension\\out\\plugins\\plugin.adapters.js",
+                        "sha256":  "38B7F5568AE3F440B089499DCE0D0C54FE57A7596139DD175F3CC7394E0C8021",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\vscode-extension\\out\\plugins\\plugin.registry.js",
+                        "sha256":  "4C35690FF0FAD042C2A00EC95489095127FB05B82F0E457D69E3497BDF31B545",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\vscode-extension\\out\\plugins\\adapters\\base.adapter.js",
+                        "sha256":  "C5B45FC7525B5A697E3B917938D42E8A4BAFAF2B37589137B25A86FA7D6ED5B2",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\vscode-extension\\out\\plugins\\adapters\\bridge.adapter.js",
+                        "sha256":  "A92C128D4C73E7D8D8DA2DC42C33FABB31FABB99ABD26EF94FFE11E1A4E32E3D",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\vscode-extension\\out\\plugins\\adapters\\github.adapter.js",
+                        "sha256":  "3F8AF39EB1777141FA136A6C08D49895B66A7DCD7DEBBA79E1B60B433BF39627",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\vscode-extension\\out\\plugins\\adapters\\gmail.adapter.js",
+                        "sha256":  "4A7D778B0CE0F872DBDF4335D71ADE533FAF1EB0CC789953AEDCA5E1BBF202B1",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\vscode-extension\\out\\plugins\\adapters\\vercel.adapter.js",
+                        "sha256":  "17EF4ECFC95C1B31B2D0D3B8F4C67DF518864B177B948ED3D34954E49F08C1B3",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\vscode-extension\\out\\session-orchestrator\\codingSession.orchestrator.js",
+                        "sha256":  "96D9C7F0F2705FECB47B39A30B50C71C8A8761359BCB0863482BC796288E5B55",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\vscode-extension\\out\\skills\\leewaySkillRegistryClient.js",
+                        "sha256":  "C5DA81165B919EDA6B3C7284B08759429398DA1C6CF799E09F1E259F9E1CF854",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\vscode-extension\\out\\tools\\image-tool.js",
+                        "sha256":  "FB55353362066B679FCEFAC43370C1EF0A8786C87D1B38E92277ED04AFEA5AFE",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\vscode-extension\\out\\tools\\leewayToolRegistryClient.js",
+                        "sha256":  "FA9A000B7DCDDB8B53E689A371CC057069B6529CFC88683975A8AE93CC867E2D",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\vscode-extension\\out\\visual-intelligence\\agents\\visual-orchestrator\\visualOrchestrator.agent.js",
+                        "sha256":  "7063E386DA14D027659DBBB9716B958CD968CE05E0252134CB7AD917910626A5",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\vscode-extension\\out\\visual-intelligence\\agents\\visual-orchestrator\\visualOrchestrator.tools.js",
+                        "sha256":  "AB6E90F9708BE178F80021EF6E4833291884A0A9A2AE0E478AEA033446740A65",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\vscode-extension\\out\\visual-intelligence\\workers\\asset-repair\\assetRepair.tools.js",
+                        "sha256":  "A4FB8E029DDFCB47652DA913685952B0038B44041563D8D2D408A5E47C869C3A",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\vscode-extension\\out\\visual-intelligence\\workers\\depth-synthesis\\depthSynthesis.tools.js",
+                        "sha256":  "973AA69C1B7575A58F6557AD821DBA23B02263E4384F96C37F325A37B9249C37",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\vscode-extension\\out\\visual-intelligence\\workers\\manifest-export\\manifestExport.schema.js",
+                        "sha256":  "872C9428708536274BE3A596AFE466652A0471E89BF8047C563A46CF65A5C0C4",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\vscode-extension\\out\\visual-intelligence\\workers\\manifest-export\\manifestExport.tools.js",
+                        "sha256":  "1D21CD9E9BD9B8C2FE5A75962EFA70CEE7F1D7710E1191BA5A9F602E3E668371",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\vscode-extension\\out\\visual-intelligence\\workers\\manifest-export\\manifestExport.worker.js",
+                        "sha256":  "AE1D928330136A040611182D4B84F9537B2CC13CF84C2AD100DF3DE93442F287",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\vscode-extension\\out\\visual-intelligence\\workers\\project-integration\\projectIntegration.tools.js",
+                        "sha256":  "D382685EAB9D291312A9FC8520829D396D825C113D3F2ED3AB16288D126B20A9",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\vscode-extension\\out\\visual-intelligence\\workers\\scene-reconstruction\\sceneReconstruction.tools.js",
+                        "sha256":  "E301E4B9275DCCF536B83FDA033AE08C36601AB98171045502F1B1DE817E6F9A",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\vscode-extension\\out\\visual-intelligence\\workers\\structural-fidelity\\structuralFidelity.tools.js",
+                        "sha256":  "284778B77E970D94DAA79DEB87981A892FD28871EBC3A63338FBD09B15D62DC5",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\vscode-extension\\out\\visual-intelligence\\workers\\vector-reconstruction\\vectorReconstruction.tools.js",
+                        "sha256":  "A80657103F2B14D0EC6B7C9F85F185A051BC2BE6CA05D6EFCD99FA2883121CB0",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\vscode-extension\\out\\visual-intelligence\\workers\\visual-memory\\visualMemory.tools.js",
+                        "sha256":  "C1D99E149CED730D3ED1D8B39190649688EDB012B5B646D4B38E67803F034158",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\vscode-extension\\out\\visual-intelligence\\workers\\voxel-reconstruction\\voxelReconstruction.tools.js",
+                        "sha256":  "F70940F6BA195A4C9C9867A24F3604EC853277576F5F0960893A416083E7B618",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\vscode-extension\\receipts\\model-registry-four-coder-proof.receipt.json",
+                        "sha256":  "E3F5F303AC7D53540473CF689DDF6025BE4CFCDF198D78BDC89AB10EB44FB616",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\vscode-extension\\scripts\\Invoke-LeeWayAssetRegistryCheck.ps1",
+                        "sha256":  "7B04B7C67DF77C8867C75570F1FB9D659D5496A7EC7CAE6D36A4CD6E0BF985C3",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\vscode-extension\\src\\agentic\\agenticWorkerOrchestrator.ts",
+                        "sha256":  "7C56049E282FDCD80F3D28BE6C49A33B2796F51CDBB0F4F4F0E11A7444784454",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\vscode-extension\\src\\core\\capability-registry.ts",
+                        "sha256":  "6D39716E29E93FF65A1C53D38FBCBE00E76FC07AA3CF1C7998885099768028A7",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\vscode-extension\\src\\core\\orchestrator.ts",
+                        "sha256":  "1E8DC5558BEF34474BF156EB2E594CFC493AC0A763A88612E2D56873980742E6",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\vscode-extension\\src\\core\\voice-adapter.ts",
+                        "sha256":  "3EF60397318E033B7E5A6F0818FB4845E7DB7F62DF3C589D08D8AE4A3C772D30",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\vscode-extension\\src\\core\\branding\\leewayAssetRegistry.ts",
+                        "sha256":  "BBA5DA437B1D7591077839D2A65E9C40A11AD9E15C7F7F5ECA125D77320BB83B",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\vscode-extension\\src\\execution\\leewayExecutionRegistryClient.ts",
+                        "sha256":  "43435927F3B081B70E3716AE0F3ADBD26AD08B188CBA5BE58E49D0F208AAD275",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\vscode-extension\\src\\execution-brain\\executionBrain.orchestrator.ts",
+                        "sha256":  "16FE2337B4E967D204C68326AD55A6863A3E31CB9B9056C0F746E674489FEE46",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\vscode-extension\\src\\execution-brain\\executionToEditBuffer.adapter.ts",
+                        "sha256":  "197C12565E3DF4172C7376CA735B4DB1F79CF925404DF6C671910C70FB7E74EF",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\vscode-extension\\src\\execution-brain\\verificationRepairToEditBuffer.adapter.ts",
+                        "sha256":  "5E4955C951B54DA347F2C7661B4654972166B8264362CE122588F5B209D31EB8",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\vscode-extension\\src\\indexing\\indexToDependencyGraph.adapter.ts",
+                        "sha256":  "76578C419B41B0FE17CF4E2A8C3B7ED8520DB819B31B0EB9953FD20E1C3A3525",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\vscode-extension\\src\\performance\\lazyServiceRegistry.ts",
+                        "sha256":  "812BFAD3BD67AAE1C67D246E0313D73556C05D10DC843C19CAC4B1F3F395F717",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\vscode-extension\\src\\plugins\\plugin.adapters.ts",
+                        "sha256":  "9B60F57DDC9A6BC53E2D47AF1D879CA7E870E67E4175A416F947983F769F9C67",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\vscode-extension\\src\\plugins\\plugin.registry.ts",
+                        "sha256":  "F287E4DD91BE5BACF88421BB6E83E9C524B4E2ECA5749C9697C980B8EAF938A2",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\vscode-extension\\src\\plugins\\adapters\\base.adapter.ts",
+                        "sha256":  "DE2299A642A3A2FC483FB0C78A36CBD14BC1620A5F05D5232186A0C22F7AE827",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\vscode-extension\\src\\plugins\\adapters\\bridge.adapter.ts",
+                        "sha256":  "09610DFF92B842428B0AB209E4E640120AFAF1618F5A4718928405F0493CB836",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\vscode-extension\\src\\plugins\\adapters\\github.adapter.ts",
+                        "sha256":  "B3C21A23892C70E338BAEEAC4900A4393A83F15319A2D27F39BDD42855EB40A8",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\vscode-extension\\src\\plugins\\adapters\\gmail.adapter.ts",
+                        "sha256":  "5D1F72D6622D9EFA410CD06345526E70BD7C1F15E522EE5AF97E3F3C1EF5C170",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\vscode-extension\\src\\plugins\\adapters\\vercel.adapter.ts",
+                        "sha256":  "405D246736CA1FCD2FF4AC73E7F761786FA672420CD1B229CDCD2487E7842F99",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\vscode-extension\\src\\session-orchestrator\\codingSession.orchestrator.ts",
+                        "sha256":  "D2DDEC1434A4A5C492D2289F2083B202F1D1D8DED0ABE36AE2CE087289C5280C",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\vscode-extension\\src\\skills\\leewaySkillRegistryClient.ts",
+                        "sha256":  "F2BAF507BC2A33FF385D93911EBAA287B5C0E9C6D3317F0F10914D1A5C2BBA19",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\vscode-extension\\src\\tools\\image-tool.ts",
+                        "sha256":  "36138F2994FF7CF93CE1E859461361D20E93978D79599A8E413430CEAF276288",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\vscode-extension\\src\\tools\\leewayToolRegistryClient.ts",
+                        "sha256":  "B2C6F62AF06DD6F029B928C86CCBC5B78260B59C45B79E9AE2E9CD8E51E84FC1",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\vscode-extension\\src\\visual-intelligence\\agents\\visual-orchestrator\\visualOrchestrator.agent.ts",
+                        "sha256":  "D828E83A37D4F490986CE883B09A0EF84D661CBA350E48441DBD2D707DF687B6",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\vscode-extension\\src\\visual-intelligence\\agents\\visual-orchestrator\\visualOrchestrator.tools.ts",
+                        "sha256":  "85B4A2F8B053F4581302EB816AF2AD5BB83B9E3976DE3AE952840646D1E82C71",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\vscode-extension\\src\\visual-intelligence\\system\\LVIS.manifest.json",
+                        "sha256":  "45ED18BA84DC2AED4050FC5218BC567F2D630554C36DF59BDA0ECFD5937763DC",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\vscode-extension\\src\\visual-intelligence\\workers\\asset-repair\\assetRepair.tools.ts",
+                        "sha256":  "BBC8E24B176093E0B99FCA3830F30005F5D2AC0FCC8BBC9091632AC226008E54",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\vscode-extension\\src\\visual-intelligence\\workers\\depth-synthesis\\depthSynthesis.tools.ts",
+                        "sha256":  "0898156D4173B4DC1B4A47BC1A2015AE8ABAAE89CC2F5C9993C6992050CD1D4B",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\vscode-extension\\src\\visual-intelligence\\workers\\manifest-export\\manifestExport.schema.ts",
+                        "sha256":  "82B283EC1F2D85A5C42487BA641EC52F914E7A7EB4169A54B8F16B48FCDB0F0F",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\vscode-extension\\src\\visual-intelligence\\workers\\manifest-export\\manifestExport.tools.ts",
+                        "sha256":  "5F103973FC65FC463275BCAB93F0E0B54556B45C8531FD252436DB4323E2F1F3",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\vscode-extension\\src\\visual-intelligence\\workers\\manifest-export\\manifestExport.worker.ts",
+                        "sha256":  "672C8A623184CD63BB9AA9BE22A20D6EE15BF86F0155DD6B55B4ABE67664B70B",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\vscode-extension\\src\\visual-intelligence\\workers\\project-integration\\projectIntegration.tools.ts",
+                        "sha256":  "6477AD19F29251550A577823B4E3F98F1836E6FDF644310634FDF219C3F5BB6F",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\vscode-extension\\src\\visual-intelligence\\workers\\scene-reconstruction\\sceneReconstruction.tools.ts",
+                        "sha256":  "301CE25F9B53575D86B8D3BDEF8FC0C6671B05F487D5193A0849E54CCAF3AFE0",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\vscode-extension\\src\\visual-intelligence\\workers\\structural-fidelity\\structuralFidelity.tools.ts",
+                        "sha256":  "3881A99C4E39E014F266F29E8B874CE47E891070D9F9626A971FEE4D0D6145B1",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\vscode-extension\\src\\visual-intelligence\\workers\\vector-reconstruction\\vectorReconstruction.tools.ts",
+                        "sha256":  "DEC5A36903D05026ABAC3683ED1CF7769296D83149B34AD6EC254D9ABEB5D5FB",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\vscode-extension\\src\\visual-intelligence\\workers\\visual-memory\\visualMemory.tools.ts",
+                        "sha256":  "78BAB2ADB92E65D5B792D254C69F787C4CE4C17C534D235F6F11B98D1DD87C55",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\agent-lee\\vscode-extension\\src\\visual-intelligence\\workers\\voxel-reconstruction\\voxelReconstruction.tools.ts",
+                        "sha256":  "958272A4376078D033E2267BBDA5485804A826AF2E2CED8CD19BA6170B80461F",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\core\\code-engine\\code-engine-registry.ts",
+                        "sha256":  "2486ACC4EBB685CF12A200EBC6103A3B459D47F521E8FC8A37F53CA8C46647F6",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\core\\code-engine\\opencode-adapter.ts",
+                        "sha256":  "EFE2C96F62580E9A326ED57CB72A39E917632F5DEA01DC624AA1FBD07F8A3CC0",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\core\\modules\\module-registry.ts",
+                        "sha256":  "F896FB8B11750774C604F3CC92A6C4CEA2979C845F3242CEEC08312370348CD7",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\core\\workflow-engine\\n8n-adapter.ts",
+                        "sha256":  "D1C71BF183AA68A577A904C09087FA0C2BF6D03247BD38A283C095803F6D2974",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\core\\workflow-engine\\workflow-engine-registry.ts",
+                        "sha256":  "F411A78AD00DDCC4B4D248FC24D5E8634086BA38F6745D582FFB40280D1B03AB",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\memory\\chats\\ok-so-what-are-your-capabilities.json",
+                        "sha256":  "458975468BAEAF4F66CC5A636EF4D38E9C53FC9B4A27BD8D9FDB04E54F8499A9",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\services\\liveAdapters.ts",
+                        "sha256":  "5905A1302DCF3E1FD16069BF42A4A158DB0F31A81E1A1764AE36DD7863E36BBB",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\services\\tooling\\skillRegistry.ts",
+                        "sha256":  "6A423D2B18C9DBDDEFBF537D96CCE01F2A70AFAAE61517CD0746F6C6A4D2CB04",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    },
+                    {
+                        "source":  "ide-src",
+                        "path":  "E:\\Leeway-Ecosystem v2.1.4\\leeway-ide-single-canvas\\src\\services\\tooling\\toolingRegistry.ts",
+                        "sha256":  "A291CACEB3A198BE9EB0C230B94EBAE0C1DDFCF36FBEA80566970DAE5471B81F",
+                        "kind":  "SOURCE_CANDIDATE_UNVERIFIED",
+                        "runtimeTest":  "NOT_RUN"
+                    }
+                ]
+}
