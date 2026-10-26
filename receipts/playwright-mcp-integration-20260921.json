@@ -2,9 +2,9 @@
   "schema": "leeway.playwright-mcp.integration-receipt.v1",
   "receipt_id": "LEEWAY-PLAYWRIGHT-MCP-INTEGRATION-20260921",
   "status": "VERIFIED",
-  "issued_at": "2026-09-21T05:19:50.100Z",
+  "issued_at": "2026-09-28T20:15:34.852Z",
   "authority": "Creator/Human Authority > LeeWay Standards > Agent Skills > Tool Gateway",
-  "pre_commit_sha": "66c976bb0e79e24503c847ef90929c6fb9d5d818",
+  "pre_commit_sha": "881a36235a8216056383b5a25e1846983117d20a",
   "runtime": {
     "upstream": "microsoft/playwright-mcp",
     "package": "@playwright/mcp@0.0.82",
@@ -19,12 +19,12 @@
   },
   "proof": {
     "playwright_mcp_tool_count": 25,
-    "leeway_skills_tool_count": 144,
+    "leeway_skills_tool_count": 573,
     "playwright_skill_present": true,
     "snapshot_contains_proof": true,
     "screenshot_sha256": "2af03b8aae4c392a4cbc9c360c79e419f5a977c52ccbbf0574d5ef826ec84460",
-    "navigation_sha256": "b007c4457a299d86c558f88a2eb5f3b5cdfab8acd24341579a0b5d3f71429dec",
-    "snapshot_sha256": "d6804960bb750b196f874bc75c224588c2d0be39697fb907f3e0659896d9096d"
+    "navigation_sha256": "0a2c836b2bef5459a82a59b53ca5b55431882c30de59d91460827b6ad786cb08",
+    "snapshot_sha256": "17f441fddeed78da5183a1cbf570fc477790f48d25137bec14c8b6742d35fb23"
   },
   "security": {
     "root_npm_vulnerabilities": {
@@ -48,17 +48,17 @@
     "browser_run_code_unsafe_default_authorized": false
   },
   "governed_file_sha256": {
-    "agent-config.yaml": "255401c304942eccb3af0a4e432c7bf80e54d955bd700ff7ba58356254508a38",
-    "config/mcp-runtime-registry.json": "2ae2f2368d49929336b37ffc37f1bce9f6aa2043e58419dc38b66286aa6e6b70",
-    "skills/external/playwright/SKILL.md": "367bc8733be70406ac0437cda07a5385dd0197557b175e653b8756a3d9342c24",
-    "bin/leeway-playwright-mcp.js": "f789311ac8a8779569eeedcd51e7061eafe874821d0c25b5e3bd8ff7a7ebf511",
-    "scripts/verify-playwright-mcp.mjs": "1d3f31fa0ee2ee122cb64222679e9fd5007f8de5dddc8b345451774257030405",
-    "scripts/verify-playwright-agent-skills-binding.mjs": "917c05476f672ae87f25957951893ef6e42913937a7676e56b530f72c47968fb",
-    "scripts/issue-playwright-mcp-receipt.mjs": "b20047c647fc6000321bff8d0304a08a8925f2b4ef2b6297624e50bdc8dbbc1c",
-    "package.json": "7df0b4196fc49206b0511025942019b76c2cdf0f45a7ea53d623b9b7fb986b9a",
-    "package-lock.json": "943d92abe10b7f3f8e60b5b46c63c854ca62298d302a21e6fd238d6d22cbbf19",
-    "mcp-server/package.json": "c12ebc4ddf7b32e771e0d2aaf150ee470461fb344f4f00531de6f98fe9c4ec6b",
-    "mcp-server/package-lock.json": "81bf9c6673b17fb279d037ac8b334e6c51f2d2840b2747d318556e65880e4bc0"
+    "agent-config.yaml": "9e53b443749d8f274db49574d7204cd89445b00777b73dce59837c4659dbd3c9",
+    "config/mcp-runtime-registry.json": "db54a9df46d8b89715f42f6fd906efd5d6daba96cf496e181186aaf237f13ef8",
+    "skills/external/playwright/SKILL.md": "7e301b281260b2c17bb7952bdffcaa8ef079f79e9ce02fac36ee5398f03a5959",
+    "bin/leeway-playwright-mcp.js": "b0f66f27b53d5219fbcad95f45b79f47900777d9f8f2cab9c975a0943ba6bb31",
+    "scripts/verify-playwright-mcp.mjs": "65abd3d77a693f00c1514ab16a19cdd0621842c15a4623ef867fb81f1b824af1",
+    "scripts/verify-playwright-agent-skills-binding.mjs": "4c5600ee7d029116e7d4340389a7eb24821ce57c4284faeaa247fbd86fa2bb8e",
+    "scripts/issue-playwright-mcp-receipt.mjs": "cbc604305acaa678c22d60eabe6af338ef74b9c473b89b2f441c3dfef23a4274",
+    "package.json": "12bb661ddeb7a661597fbfa1b48675c6d3a7458aa9747a3201a28c98c4b96f32",
+    "package-lock.json": "4065544b0236097a65b0d48ef5a86a35d94c92e908cf21b5d0b22ddb5aca7b94",
+    "mcp-server/package.json": "2987bcc0c26123be22224a20f882c52390138bdcd0197ee0bc02192fba7c472d",
+    "mcp-server/package-lock.json": "50dbb8fcc176f63b84e4ab6653c4f786c161ebf6033bd7a126988ce0c2b12bb9"
   },
   "evidence": {
     "browser_verification": ".leeway/playwright-evidence/playwright-mcp-verification.json",
