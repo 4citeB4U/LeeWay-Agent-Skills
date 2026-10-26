@@ -1,0 +1,29 @@
+{
+  "receiptType": "github-publication-checkpoint",
+  "recordedAt": "2026-10-26",
+  "authority": "Creator-authorized GitHub publication",
+  "policy": "Publish portable source, tests, contracts, and inspectable evidence; exclude secrets, encrypted vaults, caches, generated host state, and compiled machine artifacts.",
+  "published": [
+    {"repository": "4citeB4U/LEEWAY-DEVICE-BRIDGE", "branch": "codex/desktop-commander-parity", "commit": "d51a175a7b9f9ab7ba0e293b1e6f09b3b6d5f7d8", "verification": "Device Bridge MCP 39/39"},
+    {"repository": "4citeB4U/LEEWAY-DEVICE-BRIDGE", "branch": "codex/pr56-sync-main-20261024", "commit": "972e74de0336ed38ba68b805661ff6623d33614a", "verification": "Device Bridge PR56 MCP 49/49"},
+    {"repository": "4citeB4U/LEEWAY-DEVICE-BRIDGE", "branch": "feature/voice-auth-https-only-20261024", "commit": "3bcc1ac14b59636e09f2be422a7d6326bdb77ff7", "verification": "Voice Auth 6/6"},
+    {"repository": "4citeB4U/LeeWay-Voice-Fabric", "branch": "codex/voice-duplex-lock-v1-20261024", "commit": "ac11f105098ecd027ee948bc5fccb1d8dfaab717", "verification": "Voice Fabric 180/180"},
+    {"repository": "4citeB4U/LeeWay-Edge-GPU", "branch": "codex/pc-latest-leeway-gpu-20261026", "commit": "2fd61ef02372fd54fdc58e06f4be2623fd1a5393", "verification": "GPU portable core 245/245"},
+    {"repository": "4citeB4U/Leeway-formula-live", "branch": "feature/per-person-continuum-qualification", "commit": "d70e6b4da603f8a90d4c4ca2c68106276ed54f05", "verification": "Formula H08/H09 5/5"},
+    {"repository": "4citeB4U/LeeWay-Agent-Skills", "branch": "codex/pc-latest-agent-skills-20261026", "commit": "113254845488d3fb00b7a3142e8ebb4e13fe4867", "verification": "secret scan clean; diff check clean"},
+    {"repository": "4citeB4U/Leeway-Runtime-Fabric", "branch": "codex/portable-inference-owner-composition", "commit": "7886c4788cb3fd64bf14f4a09e686e6ceeaefdab", "verification": "clean worktree; ref matched"},
+    {"repository": "4citeB4U/LEEWAY-DEVICE-BRIDGE", "branch": "codex/pc-controller-lockfile-20261026", "commit": "119baee686bd7655970c31e1003a524bf9316d4c", "verification": "lockfile commit; ref matched"},
+    {"repository": "4citeB4U/LEEWAY-INTELLECTUAL-ESTATE", "branch": "codex/pc-latest-intellectual-estate-20261026", "commit": "81f0d26a90fa5563ebe79b8bad8db968366f2ddc", "verification": "918 source/evidence files; secret scan clean"}
+  ],
+  "alreadyPublished": [
+    {"repository": "4citeB4U/LEEWAY-DEVICE-BRIDGE", "branch": "feature/voice-passwordless-approval-20261024", "commit": "3b6ad766a935c83f7ccba12dc369a00033ceae6e"},
+    {"repository": "4citeB4U/LEEWAY-DEVICE-BRIDGE", "branch": "codex/voice-duplex-device-bridge-v1-20261024", "commit": "88e511569c4d1f2e746c71eb35e5ed5221f6b518"}
+  ],
+  "excluded": [
+    "GPU compiled .pyd/.obj/.pyc build artifacts",
+    "Formula browser profile, cache, and log state",
+    "Intellectual Estate encrypted evidence vault",
+    "29 GB ecosystem snapshot containing models, runtime state, caches, audio, secrets, and quarantine data",
+    "Older CRM/Standards/triposr scratch worktrees without current substantive source deltas"
+  ]
+}
