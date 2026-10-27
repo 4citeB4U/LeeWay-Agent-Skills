@@ -23,7 +23,8 @@ Before every substantive user message apply `leeway-message-ingress-authority`.
 3. `leeway-message-ingress-authority`
 4. `leeway-context-engineering`
 5. `leeway-formula-governance`
-6. `leeway-universal-capability-kernel`
+6. `leeway-agent-operating-loop`
+7. `leeway-universal-capability-kernel`
 7. `leeway-skill-lifecycle-governance`
 8. `leeway-reference-authority`
 9. `leeway-tool-gateway` when an authorized operational adapter exists
@@ -34,7 +35,7 @@ Before every substantive user message apply `leeway-message-ingress-authority`.
 Use `leeway-quantum-readiness` when quantum/hybrid computing, simulation, post-quantum security, or quantum-ready architecture is materially relevant.
 
 ## Governed path
-`Bootstrap → Continuity → Ingress → Context/Phi-C64 → Formula/Phi-D → Universal Capability Kernel → capability weave → Tool Gateway when available → focal runtime execution → Veritas → receipt → Conversation Vault when available → governed learning/reference memory → LeeWay delivery`
+`Bootstrap → Continuity → Ingress → Context/Phi-C64 → Formula/Phi-D → Agent Operating Loop → Universal Capability Kernel → capability weave → Tool Gateway when available → focal runtime execution → Veritas → receipt → Conversation Vault when available → governed learning/reference memory → LeeWay delivery`
 
 ## Formula evaluator law
 Use `config/leeway-formula-evaluator-contract.yaml`.
