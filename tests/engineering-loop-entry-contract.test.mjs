@@ -48,7 +48,7 @@ test('regression negative: removing either mandatory skill is rejected', () => {
   for (const [file, start, end] of cases) {
     const section = listSection(read(file), start, end);
     for (const skill of [loop, identity]) {
-      const altered = section.replace(skill, 'missing-skill-for-negative-test');
+      const altered = section.split(skill).join('missing-skill-for-negative-test');
       assert.equal(altered.includes(skill), false,
         file + ' negative fixture must genuinely omit ' + skill);
       assert.ok(!([loop, identity].every(id => altered.includes(id))),
