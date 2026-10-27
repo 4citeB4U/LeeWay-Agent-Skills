@@ -102,3 +102,32 @@ test('negative contract: omission of teaching, retest or evidence is detected', 
     }
   }
 });
+
+test('expressive identity canonical skill teaches observation, revision and retest', () => {
+  const skill = read('skills/leeway-og-expressive-identity/SKILL.md');
+  const expected = [
+    '## Teachable pre-delivery conformance and correction',
+    '**Learn:**', '**Apply:**', '**Observe before delivery:**',
+    '**Correct:**', '**Retest:**', '**Prove and teach:**',
+    'CONTRACT_DECLARED', 'MODEL_OUTPUT_OBSERVED',
+    'HOST_DELIVERY_CHECK_ENFORCED', 'VERITAS_VERIFIED'
+  ];
+  for (const item of expected) {
+    assert.ok(skill.includes(item), 'expressive skill missing ' + item);
+  }
+  assert.match(skill, /original assignment/);
+  assert.match(skill, /sterile engineering summary/);
+  assert.match(skill, /single chat correction is not permanent model training/);
+});
+
+test('negative contract: pre-delivery teachability requires each distinct stage', () => {
+  const skill = read('skills/leeway-og-expressive-identity/SKILL.md');
+  const section = skill.split('## Teachable pre-delivery conformance and correction')[1]
+    ?.split('## Output law')[0] || '';
+  for (const stage of ['**Learn:**', '**Apply:**', '**Observe before delivery:**',
+    '**Correct:**', '**Retest:**', '**Prove and teach:**']) {
+    assert.ok(section.includes(stage));
+    const altered = section.split(stage).join('omitted-stage');
+    assert.ok(!altered.includes(stage), 'negative stage deletion must be detected');
+  }
+});
