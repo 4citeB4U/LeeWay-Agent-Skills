@@ -131,3 +131,15 @@ test('negative contract: pre-delivery teachability requires each distinct stage'
     assert.ok(!altered.includes(stage), 'negative stage deletion must be detected');
   }
 });
+
+test('engineering experience-based replay is routed to existing skills without invented proof',()=>{
+ const source=read('.github/copilot-instructions.md');
+ assert.match(source,/Experience-based engineering corrections/);
+ assert.match(source,/CASE-001-PREMATURE-STOP-AND-EVIDENCE-CONTINUITY/);
+ assert.match(source,/CASE-001-WORK-CHECKLIST/);
+ assert.match(source,/historical-evidence erasure/);
+ assert.match(source,/done\/pending To-Do list/);
+ assert.match(source,/host-observed replay and independent Veritas promotion remain separate/);
+ const corrupted=source.replace('CASE-001-WORK-CHECKLIST','MISSING-EXPERIENCE-CHECKLIST');
+ assert.ok(!corrupted.includes('CASE-001-WORK-CHECKLIST'));
+});
