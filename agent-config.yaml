@@ -59,6 +59,7 @@ skills:
     - leeway-message-ingress-authority
     - leeway-context-engineering
     - leeway-formula-governance
+    - leeway-agent-operating-loop
     - leeway-universal-capability-kernel
     - leeway-skill-lifecycle-governance
     - leeway-reference-authority
