@@ -47,4 +47,20 @@ For every consequential production or learning qualification:
 5. On incomplete evidence, return a scoped BLOCKED decision containing exact missing gate, owner, smallest bounded investigation/repair, acceptance criterion and automatic-recheck trigger where a registered durable workplane supports it. Never silently waive policy, substitute a synthetic provider or claim a production pass.
 6. Verify signed result independently with qualified source identity, valid role/key separation, revocation/replay and same-operation evidence. The task executor may not certify itself; mere evidence manifest presence is not a credential.
 
+## Mandatory continuous evidence journal and completion preflight
+
+For each consequential engineering mission, use the **existing owning GitHub issue/PR** as the running evidence/handoff thread from BEGIN to END (or a protected receipt authority for private payloads). Do not reconstruct an undocumented ten-stage completion from an LLM summary at the end.
+
+Use the proposed `LeeWay-Standards/Docs/governance/ENGINEERING-LOOP-EVIDENCE-ADMISSION-V1.md` source contract in Standards PR #54 when accepted by its owner. Its read-only `scripts/check-engineering-loop-evidence.mjs` preflight checks the record schema `leeway.engineering.loop-evidence.v1` for:
+
+- Exact work ID, last checkpoint, owning role, GitHub repository/commit and source artifact hash
+- Original acceptance criteria, human authorization evidence, rollback instructions
+- Each of Investigate / Diagnose / Plan / Implement / Test / Validate / Repair / Retest / Verify / Evidence with an observed result, reason, immutable source/receipt link and a precise blocker where applicable
+- Formula evaluator identity and actual execution state; actual test and negative-case results
+- Clear original-task outcome and subsequent independent Veritas/Receipt/Learning states
+
+Do not mark a phase executed when it was only planned. Repair/Retest can be documented `NOT_APPLICABLE` only with a specific authorized exception, never silently omitted. A complete journal of a **BLOCKED** or failed attempt is valid diagnostic work for separate independent review, but it must not be promoted as a PASS, production authority or Learning Ledger admission. A structurally complete journal of a claimed PASS is only `SOURCE_EVIDENCE_READY_FOR_INDEPENDENT_REVIEW`: the actual independent Veritas provider must authenticate every relevant original observation and receipt.
+
+If missing documentation is the only proven blocker, report the **exact missing stage and source reference** and repair the same existing mission record. Do not restart the task, repeat proven experiments, reject an unrelated qualified action, or waive the original acceptance gate.
+
 Release claims remain separate: SOURCE_IMPLEMENTED, TESTED, CI_PASS, DEPLOYED, LIVE_OBSERVED, VERITAS_VERIFIED, QUALIFIED. Until canonical Standards LAW 15 is merged, treat that addition as a proposed control and continue enforcing already-effective R10/R25.
