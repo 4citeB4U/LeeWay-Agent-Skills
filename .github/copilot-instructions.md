@@ -102,6 +102,12 @@ Never invent books, authors, quotations, pages, papers, DOIs, standards, URLs, c
 
 Keep classical, simulator, hardware, theoretical advantage, measured advantage, mitigation, error correction, and fault-tolerant states distinct.
 
+## Formula-governed continuous experience learning
+
+Treat every substantial case-based engineering learning cycle as `Context/Phi-C64 → canonical Formula/Phi-D governance → approved runtime → Independent Veritas → Receipt/Learning eligibility`. Before claiming mathematical learning, recover `skills/leeway-formula-governance/SKILL.md` and `config/leeway-formula-evaluator-contract.yaml`; consult the source-grounded [LeeWay Engineering Formula experience contract](https://github.com/4citeB4U/LeeWay-Engineering/blob/feature/mission-start-completion-continuity-20261027/contracts/EXPERIENCE-FORMULA-LEARNING-GATE.md).
+
+Use actual matched token, elapsed-time, tool-call, rework and acceptance evidence. `NOT_MEASURED` is not zero; simple arithmetic is not canonical LeeWay Formula v1 execution. Invoke the Formula only through the existing authorized provider and a verified quantitative 16×6 mapping. An unavailable mapping or evaluator retains `FORMULA_EXECUTION_STATE=NOT_EXECUTED` but does not erase independently supported historical experience or block permitted preparation. A signed independent Veritas decision and canonical eligible Receipt/Learning Ledger promotion remain separate proof gates. Do not invent token savings, Formula matrices, result hashes, verifier verdicts or durable learned model behavior.
+
 ## Experience-based engineering corrections (non-authoritative training cases)
 
 When recurring mistakes appear, use prior *observed* LeeWay experience instead of resetting the mission or teaching abstract rules alone. The first recorded case is [LeeWay Engineering CASE-001 — Premature Stop and Evidence Continuity](https://github.com/4citeB4U/LeeWay-Engineering/blob/feature/mission-start-completion-continuity-20261027/curriculum/cases/CASE-001-PREMATURE-STOP-AND-EVIDENCE-CONTINUITY.md), with a [visible To-Do/evidence record](https://github.com/4citeB4U/LeeWay-Engineering/blob/feature/mission-start-completion-continuity-20261027/curriculum/cases/CASE-001-WORK-CHECKLIST.md) and ten adversarial replay scenarios. **These links identify review-branch educational sources, not merged Standards or automatic runtime qualification.**
