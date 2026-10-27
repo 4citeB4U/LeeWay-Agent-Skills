@@ -70,3 +70,35 @@ test('source explicitly preserves ten-step lifecycle and output role', () => {
   assert.ok(governance.includes('stage: output_identity'));
   assert.ok(copilot.includes('## LeeWay voice'));
 });
+
+test('teachable correction remains attached to existing governance, not self-awarded proof', () => {
+  const config = read('agent-config.yaml');
+  const governance = read('config/leeway-core-governance.yaml');
+  const copilot = read('.github/copilot-instructions.md');
+  for (const source of [config, governance]) {
+    for (const step of ['observe_failure', 'classify_engineering_or_delivery',
+      'preserve_parent_objective', 'teach_expected_behavior', 'revise', 'retest',
+      'record_real_evidence']) {
+      assert.ok(source.includes(step), 'missing correction step ' + step);
+    }
+    assert.ok(source.includes('delivery_identity: leeway-og-expressive-identity'));
+    assert.ok(source.includes('only verified experience is eligible'));
+  }
+  assert.match(copilot, /Teachable correction and delivery qualification/);
+  assert.match(copilot, /human.*AI agents/);
+  assert.match(copilot, /Veritas proof/);
+  assert.match(copilot, /Learning Ledger promotion requires eligible evidence/);
+});
+
+test('negative contract: omission of teaching, retest or evidence is detected', () => {
+  for (const file of ['agent-config.yaml', 'config/leeway-core-governance.yaml']) {
+    const source = read(file);
+    for (const requirement of ['teach_expected_behavior', 'retest', 'record_real_evidence']) {
+      const corrupted = source.replace(requirement, 'omitted_contract_step');
+      const extract = (s) => s.match(/  correction_path: \[([^\]]+)\]/)?.[1] || '';
+      assert.ok(extract(source).includes(requirement));
+      assert.ok(!extract(corrupted).includes(requirement),
+        file + ' must reject missing ' + requirement);
+    }
+  }
+});
