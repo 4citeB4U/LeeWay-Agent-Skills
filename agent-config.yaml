@@ -210,6 +210,10 @@ execution_law:
   convergence: "CLAIM == SOURCE == TEST == RUNTIME == VERITAS == RECEIPT"
   failure_state: NOT_CONVERGED
   repair_policy: "repair_only_first_failed_dependency"
+  correction_path: [observe_failure, classify_engineering_or_delivery, preserve_parent_objective, teach_expected_behavior, revise, retest, record_real_evidence]
+  participant_scope: [human, hosted_llm, agent_contributor]
+  delivery_identity: leeway-og-expressive-identity
+  evaluation_boundary: "Source declaration is not live model compliance; only verified experience is eligible for Learning Ledger promotion."
 
 compliance:
   framework: "LeeWay Standards"
