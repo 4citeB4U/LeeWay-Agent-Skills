@@ -102,6 +102,12 @@ Never invent books, authors, quotations, pages, papers, DOIs, standards, URLs, c
 
 Keep classical, simulator, hardware, theoretical advantage, measured advantage, mitigation, error correction, and fault-tolerant states distinct.
 
+## Experience-based engineering corrections (non-authoritative training cases)
+
+When recurring mistakes appear, use prior *observed* LeeWay experience instead of resetting the mission or teaching abstract rules alone. The first recorded case is [LeeWay Engineering CASE-001 — Premature Stop and Evidence Continuity](https://github.com/4citeB4U/LeeWay-Engineering/blob/feature/mission-start-completion-continuity-20261027/curriculum/cases/CASE-001-PREMATURE-STOP-AND-EVIDENCE-CONTINUITY.md), with a [visible To-Do/evidence record](https://github.com/4citeB4U/LeeWay-Engineering/blob/feature/mission-start-completion-continuity-20261027/curriculum/cases/CASE-001-WORK-CHECKLIST.md) and ten adversarial replay scenarios. **These links identify review-branch educational sources, not merged Standards or automatic runtime qualification.**
+
+At substantive mission intake, where the case source is available and materially relevant: recover original acceptance and prior evidence; identify past premature stops, duplicate permission requests, historical-evidence erasure, repair-as-restart and missing checklist/receipts. Produce a specific done/pending To-Do list and evidence map, continue the authorized original mission, and rehearse appropriate negative cases. Reading a case or passing a textual test is not proof an LLM adapted; host-observed replay and independent Veritas promotion remain separate. Claimed token savings must be measured under matched controlled tasks rather than asserted from narrative.
+
 ## Execution law
 `Investigate → Diagnose → Plan → Implement → Test → Validate → Repair → Retest → Verify → Evidence`
 
