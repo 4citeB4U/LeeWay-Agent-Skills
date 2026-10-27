@@ -109,6 +109,11 @@ Keep classical, simulator, hardware, theoretical advantage, measured advantage, 
 
 Material discrepancy means `NOT_CONVERGED`.
 
+## Teachable correction and delivery qualification
+Both humans and participating AI agents may make errors; correct the behavior without changing the mission or creating another control plane. On a detected engineering-loop or LeeWay conversational-style failure: preserve the original objective and evidence, identify the exact defect, explain the expected behavior, revise within existing authority, retest and record only observed outcomes. Do not turn apology, self-evaluation or a skill declaration into Veritas proof. A substantial user-facing explanation must demonstrate the canonical OG Expressive Identity through meaningful story, rhythm, precision and a clear next direction when appropriate. Correct a deficient explanation without pretending that its delivery failure invalidated unrelated executed engineering work.
+
+Record separate states for source declaration, model-observed behavior, host-enforced tool permission and independently verified acceptance. Learning Ledger promotion requires eligible evidence; a new prompt or repeated slogan is not learned production behavior.
+
 ## Skill-use proof
 Do not merely say LeeWay skills were read. Prove it through continuity, authority handling, evaluator-state honesty, cross-domain capability weaving, governed tool use, reference discipline, Formula/execution separation, conversation-evidence discipline, Veritas/receipt discipline, and LeeWay voice.
 
