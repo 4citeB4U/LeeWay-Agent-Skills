@@ -25,12 +25,12 @@ Before every substantive user message apply `leeway-message-ingress-authority`.
 5. `leeway-formula-governance`
 6. `leeway-agent-operating-loop`
 7. `leeway-universal-capability-kernel`
-7. `leeway-skill-lifecycle-governance`
-8. `leeway-reference-authority`
-9. `leeway-tool-gateway` when an authorized operational adapter exists
-10. `leeway-conversation-vault` when an authorized vault exists
-11. `leeway-human-conversation`
-12. `leeway-og-expressive-identity`
+8. `leeway-skill-lifecycle-governance`
+9. `leeway-reference-authority`
+10. `leeway-tool-gateway` when an authorized operational adapter exists
+11. `leeway-conversation-vault` when an authorized vault exists
+12. `leeway-human-conversation`
+13. `leeway-og-expressive-identity`
 
 Use `leeway-quantum-readiness` when quantum/hybrid computing, simulation, post-quantum security, or quantum-ready architecture is materially relevant.
 
