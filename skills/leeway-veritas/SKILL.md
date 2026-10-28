@@ -63,4 +63,19 @@ Do not mark a phase executed when it was only planned. Repair/Retest can be docu
 
 If missing documentation is the only proven blocker, report the **exact missing stage and source reference** and repair the same existing mission record. Do not restart the task, repeat proven experiments, reject an unrelated qualified action, or waive the original acceptance gate.
 
+## Veritas submission and review-delivery authority (C3 source correction)
+
+A proposed review in a GitHub PR, issue, workflow artifact, checklist or model-generated message is **not delivered to Veritas**. A source green check is evidence to be reviewed, not the reviewer. In the existing Runtime Fabric workplane, Veritas must distinguish the following non-interchangeable lifecycle states:
+
+1. `REVIEW_PACKET_PREPARED`: original workId/checkpoint, source SHA, Formula execution state, scoped acceptance and ten-stage positive/negative evidence recorded.
+2. `PROVIDER_BOUND_AND_AUTHENTICATED`: host-side approved source, reachable independently governed role/service, correct permission scope, revocation and replay conditions inspected. A plugin or source path does **not** itself establish this state.
+3. `SUBMITTED_TO_VERITAS`: actual provider submission attempted, with idempotent request identity; keep original workplane job until durable admission.
+4. `REVIEW_INTAKE_READBACK_CONFIRMED`: actual provider acknowledges same review ID, candidate ID, workId, evidence digest and acceptance scope. Submission/readback proves only intake, not the independent verdict.
+5. `INDEPENDENT_VERITAS_DECISION`: separate appropriately enrolled reviewer authenticates **original source and physical observations where applicable**, verifies the full engineering loop and issues its own scope-bound, independently readable signed decision. Classify source review separately from production PRE/POST.
+6. `RECEIPT_AND_ELIGIBLE_LEARNING`: only genuinely qualified action outcomes advance through canonical Receipt Authority and eligible Learning Ledger readback; verified failures remain useful diagnostic candidates, never false task PASS.
+
+**Mandatory repair behavior:** When a workplane exposes a review callback, the supervisor must actually supply a qualified review transport instead of merely attaching a GitHub review request. If absent, report exact `REVIEW_PROVIDER_UNBOUND`, owning provider, missing capability, last verified checkpoint and a scoped next binding action. Do not repeatedly request a PR review as a substitute for provider enrollment. A source-pinned adapter loading, `ACCEPTED_FOR_REVIEW` or `HOLD_APPROVAL` can never self-promote to independently verified status. Retain existing `ownerClose` and `receiptReadback` gates for real mission closure and keep unrelated qualified work running.
+
+Cross-reference original Runtime Fabric mission [C3 #21](https://github.com/4citeB4U/Leeway-Runtime-Fabric/issues/21), [Formula candidate PR #96](https://github.com/4citeB4U/Leeway-Runtime-Fabric/pull/96), [mission PR #93](https://github.com/4citeB4U/Leeway-Runtime-Fabric/pull/93), and [ten-stage PR #98](https://github.com/4citeB4U/Leeway-Runtime-Fabric/pull/98). These are separate producer stages using the same existing independent Veritas authority and must not spawn duplicate reviewer control planes.
+
 Release claims remain separate: SOURCE_IMPLEMENTED, TESTED, CI_PASS, DEPLOYED, LIVE_OBSERVED, VERITAS_VERIFIED, QUALIFIED. Until canonical Standards LAW 15 is merged, treat that addition as a proposed control and continue enforcing already-effective R10/R25.
