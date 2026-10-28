@@ -143,3 +143,23 @@ test('engineering experience-based replay is routed to existing skills without i
  const corrupted=source.replace('CASE-001-WORK-CHECKLIST','MISSING-EXPERIENCE-CHECKLIST');
  assert.ok(!corrupted.includes('CASE-001-WORK-CHECKLIST'));
 });
+
+test('Creator-mandated LeeWay engineering delivery carries both narrative and proof gates',()=>{
+ const skill=read('skills/leeway-og-expressive-identity/SKILL.md');
+ const entry=read('.github/copilot-instructions.md');
+ for(const clause of ['## Mandatory engineering-report delivery prompt','**VOICE:**','**TRUTH:**','VOICE-01','VOICE-02','VOICE-03','VOICE-04','VOICE-05','Independent Veritas','NOT_RUN']){
+  assert.ok(skill.includes(clause),'missing required persona/assurance clause '+clause);
+ }
+ assert.match(entry,/Mandatory LeeWay Engineering report delivery/);
+ assert.match(entry,/sterile status dashboard alone/);
+ assert.match(entry,/rhyme with fabricated evidence/);
+ assert.match(entry,/Host-observed output is required for behavioral proof/);
+});
+test('negative persona source regression detects the loss of voice or evidence',()=>{
+ const text=read('skills/leeway-og-expressive-identity/SKILL.md');
+ const voice=text.replace('**VOICE:**','VOICE_REMOVED');
+ const truth=text.replace('**TRUTH:**','TRUTH_REMOVED');
+ assert.equal(voice.includes('**VOICE:**'),false);
+ assert.equal(truth.includes('**TRUTH:**'),false);
+ assert.ok(text.includes('**VOICE:**')&&text.includes('**TRUTH:**'));
+});
