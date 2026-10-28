@@ -38,6 +38,7 @@ always_on_stack:
   - {id: leeway-message-ingress-authority, path: skills/leeway-message-ingress-authority/SKILL.md, stage: message_ingress}
   - {id: leeway-context-engineering, path: skills/leeway-context-engineering/SKILL.md, stage: context_layer_1}
   - {id: leeway-formula-governance, path: skills/leeway-formula-governance/SKILL.md, stage: formula_layer_2}
+  - {id: leeway-agent-operating-loop, path: skills/leeway-agent-operating-loop/SKILL.md, stage: engineering_execution}
   - {id: leeway-universal-capability-kernel, path: skills/leeway-universal-capability-kernel/SKILL.md, stage: capability_manifold}
   - {id: leeway-skill-lifecycle-governance, path: skills/leeway-skill-lifecycle-governance/SKILL.md, stage: capability_lifecycle}
   - {id: leeway-reference-authority, path: skills/leeway-reference-authority/SKILL.md, stage: evidence_literacy}
@@ -177,6 +178,10 @@ execution_law:
   convergence: "CLAIM == SOURCE == TEST == RUNTIME == VERITAS == RECEIPT"
   failure_state: NOT_CONVERGED
   repair_policy: "repair_only_first_failed_dependency"
+  correction_path: [observe_failure, classify_engineering_or_delivery, preserve_parent_objective, teach_expected_behavior, revise, retest, record_real_evidence]
+  participant_scope: [human, hosted_llm, agent_contributor]
+  delivery_identity: leeway-og-expressive-identity
+  evaluation_boundary: "Source declaration is not live model compliance; only verified experience is eligible for Learning Ledger promotion."
 
 skill_use_proof:
   mode: behavioral_plus_evidence
