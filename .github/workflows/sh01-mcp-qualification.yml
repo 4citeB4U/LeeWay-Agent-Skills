@@ -18,11 +18,13 @@ on:
     paths:
       - 'mcp-server/**'
       - 'mcp-remote/**'
+      - 'docs/SH01-AGENT-SKILLS-MCP-STANDALONE-READINESS.md'
       - '.github/workflows/sh01-mcp-qualification.yml'
   pull_request:
     paths:
       - 'mcp-server/**'
       - 'mcp-remote/**'
+      - 'docs/SH01-AGENT-SKILLS-MCP-STANDALONE-READINESS.md'
       - '.github/workflows/sh01-mcp-qualification.yml'
   workflow_dispatch:
 
