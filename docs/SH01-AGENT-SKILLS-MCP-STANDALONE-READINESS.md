@@ -2,6 +2,7 @@
 LEEWAY HEADER — DO NOT REMOVE
 REGION: LEEWAY.SKILLS.MCP.SH01
 TAG: LEEWAY.SKILLS.MCP.SH01.STANDALONE_READINESS
+DISCOVERY_PIPELINE: Voice -> Intent -> Location -> Vertical -> Ranking -> Render
 5WH:
 WHAT = Define full standalone Agent Skills/MCP acceptance and evidence-backed outstanding work.
 WHY = Prevent a 595-tool listing or green isolated protocol CI from being confused with a working governed capability fabric.
