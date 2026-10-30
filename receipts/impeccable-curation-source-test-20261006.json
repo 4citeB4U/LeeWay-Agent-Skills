@@ -1,0 +1,109 @@
+{
+  "receiptType": "leeway-impeccable-curation-source-test",
+  "createdUtc": "2026-10-06T13:36:24.220315+00:00",
+  "repository": "4citeB4U/LeeWay-Agent-Skills",
+  "baselineCommit": "fe33c00cb2a466728d996fc2a9145107ca308ab5",
+  "scope": "Curated skill, HyperFrames design profile and supplied-measurement helper; isolated source candidate",
+  "authorization": "Creator requested selective Impeccable implementation in existing skill library and HyperFrames use",
+  "sourceGate": "PASS",
+  "tests": {
+    "command": "node --test skills/external/impeccable/tests/*.test.mjs",
+    "runtime": "v22.16.0",
+    "environment": "Linux x64 conversation sandbox; NOT Creator Windows host",
+    "passed": 34,
+    "failed": 0,
+    "behavioralUnitTests": 29,
+    "sourceContractTests": 5,
+    "inputOrigin": "Explicitly synthetic unit fixtures; not browser or video measurements",
+    "logSha256": "d90fd72413bd24dc0d3b43f1edaf2ba86c7ebbb6d4ee8b3c19d8f3ba29a08958"
+  },
+  "preservation": {
+    "manifestEntriesOtherThanImpeccable": 18,
+    "unchanged": true,
+    "bulkSyncScriptExecuted": false,
+    "baselineBlobChecks": [
+      "scripts/external-design-skills.json",
+      "skills/external/hyperframes/SKILL.md"
+    ]
+  },
+  "repairHistory": [
+    {
+      "stage": "sandbox build script parse",
+      "observed": "Missing closing list bracket",
+      "repair": "Corrected syntax before generating candidate",
+      "state": "REPAIRED"
+    },
+    {
+      "stage": "license byte comparison",
+      "observed": "Local Apache standard-text copy differed from upstream license blob",
+      "repair": "Stopped claiming exact license bytes; included full standard license and original copyright notice; upstream NOTICE byte match verified",
+      "state": "REPAIRED"
+    }
+  ],
+  "files": [
+    {
+      "path": "scripts/external-design-skills.json",
+      "sha256": "abaf0bb71df56694efc0ab765cda1c2544bc1d73045d636dda93801de50f42ad",
+      "bytes": 3793
+    },
+    {
+      "path": "skills/external/hyperframes/SKILL.md",
+      "sha256": "9ed87aa81790b7fa8f8fbb50b6cbd849a0b51ca109af6a3159e869fcb367e6da",
+      "bytes": 3030
+    },
+    {
+      "path": "skills/external/hyperframes/references/leeway-design-profile.md",
+      "sha256": "d37d04619b7efff7941c3fba015ec78f4c12fc379b7f950a4dc8f8727c0d8edb",
+      "bytes": 8127
+    },
+    {
+      "path": "skills/external/impeccable/SKILL.md",
+      "sha256": "f15b3c955d80394ad40c46fe50ac9142229aee305dcaeaca70788228a5e9d6fe",
+      "bytes": 8446
+    },
+    {
+      "path": "skills/external/impeccable/SOURCE.json",
+      "sha256": "7e9121c62e60af7156d9c2e9395e07f9aa5f09262b4a876ca30b91195b4e0f14",
+      "bytes": 3579
+    },
+    {
+      "path": "skills/external/impeccable/provenance/LEEWAY-CURATION.md",
+      "sha256": "27490b3b9122a6ee444472cbcad45a7c99befed59e2c281ceeddd1a4d98cdbb9",
+      "bytes": 2029
+    },
+    {
+      "path": "skills/external/impeccable/provenance/LICENSE",
+      "sha256": "33afbf42c93ac0530c70b96c12fbc72e208e15378f29249fcf583b1654646db6",
+      "bytes": 10757
+    },
+    {
+      "path": "skills/external/impeccable/provenance/NOTICE.md",
+      "sha256": "c60a093c2845fd9fb82f9c6f742ece31f379f8190b535309d32d66c45ccffdcb",
+      "bytes": 503
+    },
+    {
+      "path": "skills/external/impeccable/scripts/audit-measurements.mjs",
+      "sha256": "5d06ac61a2d6063ab4351309a6e6a8c12c4262e23e94e6e7a4061239366248b4",
+      "bytes": 5779
+    },
+    {
+      "path": "skills/external/impeccable/tests/audit-measurements.test.mjs",
+      "sha256": "3411647daf7a8cb039a63f6bb5bf0c728eee5c892bd3d24752b53147a602d0d3",
+      "bytes": 5220
+    },
+    {
+      "path": "skills/external/impeccable/tests/curation-contract.test.mjs",
+      "sha256": "cbf498312f45d953895d65782cf366dfc6173198c49784aa5924e180193e98bf",
+      "bytes": 3061
+    }
+  ],
+  "publication": "NOT_YET_EXECUTED_AT_RECEIPT_CREATION",
+  "nativeEditor": "NOT_EXECUTED",
+  "render": "NOT_EXECUTED",
+  "formula": "NOT_EXECUTED",
+  "liveCesiumContinuumLdwmdGpuBindings": "UNVERIFIED",
+  "c3": "NOT_ADVANCED",
+  "veritasRuntimeGate": "NOT_EXECUTED",
+  "learningLedger": "NOT_UPDATED",
+  "rollback": "Before main promotion, close the candidate PR and retain or delete only its explicitly identified branch; after promotion, revert the scoped commit without resetting unrelated work."
+}

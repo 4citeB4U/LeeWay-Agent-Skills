@@ -1,0 +1,85 @@
+{
+  "id": "impeccable",
+  "mode": "CURATED_LOCAL",
+  "repository": "https://github.com/pbakaus/impeccable",
+  "commit": "cf3d2fa07d3ad1814ac5fbbbb5b2043b795eaef1",
+  "license": "Apache-2.0",
+  "curated_utc_date": "2026-10-06",
+  "prior_binding_blob": "2ec2fea139f7a43f28596224de2322ec2df31ce9",
+  "skills_repository_baseline": "fe33c00cb2a466728d996fc2a9145107ca308ab5",
+  "full_upstream_imported": false,
+  "upstream_runtime_executed": false,
+  "review_scope": "Full main skill and notices; selected command reference headings and introductory excerpts. Hashes cover complete retrieved bytes, not a claim every reference line was manually reviewed.",
+  "retained_operations": [
+    "critique",
+    "audit",
+    "layout",
+    "typeset",
+    "adapt",
+    "clarify",
+    "animate",
+    "polish"
+  ],
+  "references": [
+    {
+      "path": "skill/reference/critique.md",
+      "git_blob_sha": "ad0831694497d99e455fe02d02ce526867b2eea0",
+      "sha256": "8d2cdf4f583a0caf7685620069069354b4fb81582fb63c349783298454140a0e",
+      "observation": "retrieved-and-hashed; headings/introductory excerpt inspected"
+    },
+    {
+      "path": "skill/reference/audit.md",
+      "git_blob_sha": "cb3483b736cfc21e670f62cc5778267e7864a6b0",
+      "sha256": "51acdbb8b7093f4cd394b2d7a17f0410f45387bf96926b37ca21402485bc5785",
+      "observation": "retrieved-and-hashed; headings/introductory excerpt inspected"
+    },
+    {
+      "path": "skill/reference/layout.md",
+      "git_blob_sha": "4b9eadcb10bbcf3e4d8de84ebd0d86d90e804d4b",
+      "sha256": "14ba132b6168bf0a7498f8c3fbbb41b73ff704da5dc3688fd842807446e54a05",
+      "observation": "retrieved-and-hashed; headings/introductory excerpt inspected"
+    },
+    {
+      "path": "skill/reference/typeset.md",
+      "git_blob_sha": "a315599ca7ec821ba513b3181ad1bf9043b9218e",
+      "sha256": "bf0259f5b8363d09591885ca6b27ac97bbdf754c130fb2799b949d783a97186b",
+      "observation": "retrieved-and-hashed; headings/introductory excerpt inspected"
+    },
+    {
+      "path": "skill/reference/adapt.md",
+      "git_blob_sha": "25a95fcf6f15093d904da416d18a9f795b9e757a",
+      "sha256": "fe0f1e0a642575737711ad93f22482b8469c021ffd587f94910893683cb8f316",
+      "observation": "retrieved-and-hashed; headings/introductory excerpt inspected"
+    },
+    {
+      "path": "skill/reference/clarify.md",
+      "git_blob_sha": "309a056793ff912ff7b412f797a5ecc643d36cc9",
+      "sha256": "4738e125835bd6c166aec2622977c9bc59bada52aaeb186585ed38b3900860b5",
+      "observation": "retrieved-and-hashed; headings/introductory excerpt inspected"
+    },
+    {
+      "path": "skill/reference/animate.md",
+      "git_blob_sha": "f80ebd154cd0b51ac713f3a535ca9640a30ab966",
+      "sha256": "59f38d50c799aa47ecd7288c69dce0245d8c3e3e2368b29499d583996b5030b3",
+      "observation": "retrieved-and-hashed; headings/introductory excerpt inspected"
+    },
+    {
+      "path": "skill/reference/polish.md",
+      "git_blob_sha": "f2146990505863574e3c8298613a37d4c31ee73c",
+      "sha256": "c504e12ea076fd1a57b8c9ece79fbb532c54226b2b6298c5c62fa889ae1dd34d",
+      "observation": "retrieved-and-hashed; headings/introductory excerpt inspected"
+    }
+  ],
+  "license_artifacts": [
+    {
+      "path": "provenance/LICENSE",
+      "git_blob_sha": "ab31ae342876ae635fdb05ad59f4f9589db59869",
+      "sha256": "33afbf42c93ac0530c70b96c12fbc72e208e15378f29249fcf583b1654646db6"
+    },
+    {
+      "path": "provenance/NOTICE.md",
+      "git_blob_sha": "0468271c904ae334cfaf27da6f8df3d5f419a1f0",
+      "sha256": "c60a093c2845fd9fb82f9c6f742ece31f379f8190b535309d32d66c45ccffdcb"
+    }
+  ]
+}

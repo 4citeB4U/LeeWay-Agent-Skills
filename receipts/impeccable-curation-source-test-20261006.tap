@@ -1,0 +1,214 @@
+TAP version 13
+# Subtest: valid measurements meet exactly the declared limits without granting authority
+ok 1 - valid measurements meet exactly the declared limits without granting authority
+  ---
+  duration_ms: 3.004551
+  type: 'test'
+  ...
+# Subtest: low contrast
+ok 2 - low contrast
+  ---
+  duration_ms: 0.511849
+  type: 'test'
+  ...
+# Subtest: horizontal text overflow
+ok 3 - horizontal text overflow
+  ---
+  duration_ms: 0.342347
+  type: 'test'
+  ...
+# Subtest: vertical text overflow
+ok 4 - vertical text overflow
+  ---
+  duration_ms: 0.213756
+  type: 'test'
+  ...
+# Subtest: unsafe left edge
+ok 5 - unsafe left edge
+  ---
+  duration_ms: 0.244632
+  type: 'test'
+  ...
+# Subtest: unsafe right edge
+ok 6 - unsafe right edge
+  ---
+  duration_ms: 0.203441
+  type: 'test'
+  ...
+# Subtest: undersized control
+ok 7 - undersized control
+  ---
+  duration_ms: 0.226366
+  type: 'test'
+  ...
+# Subtest: frame budget exceeded
+ok 8 - frame budget exceeded
+  ---
+  duration_ms: 0.14152
+  type: 'test'
+  ...
+# Subtest: artifact mismatch cannot pass
+ok 9 - artifact mismatch cannot pass
+  ---
+  duration_ms: 22.338779
+  type: 'test'
+  ...
+# Subtest: evidence mismatch cannot pass
+ok 10 - evidence mismatch cannot pass
+  ---
+  duration_ms: 0.478239
+  type: 'test'
+  ...
+# Subtest: missing evidence cannot pass
+ok 11 - missing evidence cannot pass
+  ---
+  duration_ms: 1.613956
+  type: 'test'
+  ...
+# Subtest: empty requirements cannot pass
+ok 12 - empty requirements cannot pass
+  ---
+  duration_ms: 0.216741
+  type: 'test'
+  ...
+# Subtest: empty measurements cannot pass
+ok 13 - empty measurements cannot pass
+  ---
+  duration_ms: 0.164474
+  type: 'test'
+  ...
+# Subtest: every required item must be present, not only its kind
+ok 14 - every required item must be present, not only its kind
+  ---
+  duration_ms: 4.211849
+  type: 'test'
+  ...
+# Subtest: duplicate measurement cannot cover a missing ID
+ok 15 - duplicate measurement cannot cover a missing ID
+  ---
+  duration_ms: 0.292163
+  type: 'test'
+  ...
+# Subtest: unknown kinds cannot pass
+ok 16 - unknown kinds cannot pass
+  ---
+  duration_ms: 0.148621
+  type: 'test'
+  ...
+# Subtest: wrong measured kind cannot pass
+ok 17 - wrong measured kind cannot pass
+  ---
+  duration_ms: 0.136252
+  type: 'test'
+  ...
+# Subtest: undeclared measurements cannot silently change coverage
+ok 18 - undeclared measurements cannot silently change coverage
+  ---
+  duration_ms: 0.126668
+  type: 'test'
+  ...
+# Subtest: requirements own limits; a measured limit does not override them
+ok 19 - requirements own limits; a measured limit does not override them
+  ---
+  duration_ms: 0.190161
+  type: 'test'
+  ...
+# Subtest: invalid value NaN
+ok 20 - invalid value NaN
+  ---
+  duration_ms: 0.149962
+  type: 'test'
+  ...
+# Subtest: invalid value Infinity
+ok 21 - invalid value Infinity
+  ---
+  duration_ms: 0.325552
+  type: 'test'
+  ...
+# Subtest: invalid value -1
+ok 22 - invalid value -1
+  ---
+  duration_ms: 0.393533
+  type: 'test'
+  ...
+# Subtest: invalid value 7
+ok 23 - invalid value 7
+  ---
+  duration_ms: 0.630324
+  type: 'test'
+  ...
+# Subtest: invalid value null
+ok 24 - invalid value null
+  ---
+  duration_ms: 0.146006
+  type: 'test'
+  ...
+# Subtest: limits are mandatory
+ok 25 - limits are mandatory
+  ---
+  duration_ms: 0.295758
+  type: 'test'
+  ...
+# Subtest: overflow in coordinate arithmetic is rejected
+ok 26 - overflow in coordinate arithmetic is rejected
+  ---
+  duration_ms: 0.232784
+  type: 'test'
+  ...
+# Subtest: does not mutate either input
+ok 27 - does not mutate either input
+  ---
+  duration_ms: 2.290513
+  type: 'test'
+  ...
+# Subtest: malformed envelopes are rejected
+ok 28 - malformed envelopes are rejected
+  ---
+  duration_ms: 0.133067
+  type: 'test'
+  ...
+# Subtest: duplicate requirements are rejected
+ok 29 - duplicate requirements are rejected
+  ---
+  duration_ms: 0.294977
+  type: 'test'
+  ...
+# Subtest: existing skill identity preserved with exactly eight curated operations
+ok 30 - existing skill identity preserved with exactly eight curated operations
+  ---
+  duration_ms: 3.306649
+  type: 'test'
+  ...
+# Subtest: bulk importer cannot select impeccable through sources
+ok 31 - bulk importer cannot select impeccable through sources
+  ---
+  duration_ms: 0.283961
+  type: 'test'
+  ...
+# Subtest: HyperFrames uses the curated skill and resolvable profile link
+ok 32 - HyperFrames uses the curated skill and resolvable profile link
+  ---
+  duration_ms: 0.888115
+  type: 'test'
+  ...
+# Subtest: existing creative engineering and all requested shared roles remain present
+ok 33 - existing creative engineering and all requested shared roles remain present
+  ---
+  duration_ms: 0.316098
+  type: 'test'
+  ...
+# Subtest: upstream source hashes and notices remain explicit without import claims
+ok 34 - upstream source hashes and notices remain explicit without import claims
+  ---
+  duration_ms: 1.553611
+  type: 'test'
+  ...
+1..34
+# tests 34
+# suites 0
+# pass 34
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 237.699385

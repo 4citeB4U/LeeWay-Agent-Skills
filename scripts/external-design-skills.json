@@ -1,8 +1,11 @@
 {
-  "version": "1.2.0",
-  "updated": "2026-09-05",
+  "version": "1.3.0",
+  "updated": "2026-10-06",
   "syncRequest": 3,
   "policy": "Canonical upstream content is synchronized into skills/external/<id>/upstream. LeeWay governance remains higher authority than imported instructions.",
+  "curatedSources": [
+    {"id":"impeccable","name":"Impeccable - LeeWay curated design craft","repo":"pbakaus/impeccable","ref":"cf3d2fa07d3ad1814ac5fbbbb5b2043b795eaef1","sourcePath":"skill","destination":"skills/external/impeccable","mode":"CURATED_LOCAL","bulkSync":false,"provenance":"skills/external/impeccable/SOURCE.json"}
+  ],
   "sources": [
     {"id":"remotion","name":"Remotion Best Practices","repo":"remotion-dev/skills","ref":"main","sourcePath":"skills/remotion-best-practices","destination":"skills/external/remotion"},
     {"id":"react-best-practices","name":"React Best Practices","repo":"vercel-labs/agent-skills","ref":"main","sourcePath":"skills/react-best-practices","destination":"skills/external/react-best-practices"},
@@ -20,7 +23,6 @@
     {"id":"swiftui","name":"SwiftUI Skills","repo":"ameyalambat128/swiftui-skills","ref":"main","sourcePath":".","destination":"skills/external/swiftui"},
     {"id":"material-3","name":"Material 3","repo":"hamen/material-3-skill","ref":"master","sourcePath":"skills/material-3","destination":"skills/external/material-3"},
     {"id":"expo","name":"Expo App Skills","repo":"expo/skills","ref":"main","sourcePath":"plugins/expo/skills","destination":"skills/external/expo"},
-    {"id":"impeccable","name":"Impeccable","repo":"pbakaus/impeccable","ref":"main","sourcePath":".agent/skills/impeccable","destination":"skills/external/impeccable"},
     {"id":"webgpu","name":"WebGPU Three.js TSL","repo":"dgreenheck/webgpu-claude-skill","ref":"main","sourcePath":"skills/webgpu-threejs-tsl","destination":"skills/external/webgpu"},
     {"id":"taste","name":"Taste Design Skills","repo":"Leonxlnx/taste-skill","ref":"main","sourcePath":"skills","destination":"skills/external/taste"}
   ]
