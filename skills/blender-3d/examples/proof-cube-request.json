@@ -1,0 +1,18 @@
+{
+  "protocol_version": "LEEWAY-BLENDER-WORKER-v1",
+  "task_id": "blender-proof-cube-001",
+  "operation": "object.create",
+  "project": "LeeWay Blender MCP Proof",
+  "parameters": {
+    "primitive": "cube",
+    "name": "LEEWAY_MCP_PROOF_CUBE",
+    "location": [0, 0, 0],
+    "scale": [1, 1, 1]
+  },
+  "expected_artifacts": ["proof-cube.glb", "proof-cube-preview.png"],
+  "acceptance_tests": [
+    "scene.inspect reports LEEWAY_MCP_PROOF_CUBE",
+    "preview render is produced",
+    "GLB exists and is non-empty"
+  ]
+}
