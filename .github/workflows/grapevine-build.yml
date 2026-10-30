@@ -39,4 +39,4 @@ jobs:
           test -f grapevine-app/dist/index.html
           grep -q "Grapevine 3D Registry" grapevine-app/dist/index.html
           test -f grapevine-app/dist/grapevine-state.json
-          node -e "const x=require('./grapevine-app/dist/grapevine-state.json'); if(x.counts.canonicalSkillMd!==499||x.schemaVersion!=='leeway.grapevine.registry.v2') process.exit(2)"
+          node -e "const fs=require('fs'); const x=require('./grapevine-app/dist/grapevine-state.json'); const walk=d=>fs.readdirSync(d,{withFileTypes:true}).reduce((n,e)=>n+(e.isDirectory()?walk(d+'/'+e.name):(e.isFile()&&e.name.toLowerCase()==='skill.md'?1:0)),0); if(x.counts.canonicalSkillMd!==walk('skills')||x.counts.canonicalSkillMd<1||x.schemaVersion!=='leeway.grapevine.registry.v2') process.exit(2)"

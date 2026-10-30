@@ -51,7 +51,7 @@ button,input{font:inherit}button{cursor:pointer}canvas{display:block}
 </div>
 <div class="stats" id="stats"></div>
 <div class="chrome left">
-  <div class="panel"><input class="search" id="search" placeholder="Search 499 canonical skills…"></div>
+  <div class="panel"><input class="search" id="search" placeholder="Search canonical skills…"></div>
   <div class="panel branch-list" id="branches"></div>
 </div>
 <aside class="chrome panel truth" id="truth"><h2>Live Truth Surface</h2><div id="truthItems"></div></aside>
@@ -66,7 +66,7 @@ button,input{font:inherit}button{cursor:pointer}canvas{display:block}
   <div class="basket-slots" id="basketSlots"><span class="empty">No grapes harvested.</span></div>
   <div class="basket-actions"><button class="btn" id="copyBtn">COPY IDS</button><button class="btn" id="clearBtn">CLEAR</button></div>
 </div>
-<div class="legend">DRAG TO ORBIT · WHEEL TO ZOOM · CLICK A GRAPE TO INSPECT · 499 GRAPES = 499 SKILL.md FILES</div>
+<div class="legend">DRAG TO ORBIT · WHEEL TO ZOOM · CLICK A GRAPE TO INSPECT · COUNTS ARE SOURCE-DERIVED</div>
 <div class="notice" id="notice"></div>
 <div id="fallback"><div class="fallback-card"><h1>3D engine unavailable</h1><p>The canonical skill registry still loaded, but the external Three.js module did not. Reload when network access is available. No skill execution claim is made.</p></div></div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -76,7 +76,7 @@ const data=await fetch('./grapevine-state.json',{cache:'no-store'}).then(r=>{if(
 const $=s=>document.querySelector(s), esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 $('#commitLabel').textContent=data.commit.slice(0,12)+' · '+data.counts.canonicalSkillMd+' canonical SKILL.md';
 $('#stats').innerHTML=[
- ['499','SKILL.md'],[data.counts.mcpProtocolListedTools,'MCP TOOLS'],[data.counts.boundedCapabilityTools,'BOUNDED'],['7','VINE FAMILIES']
+ [data.counts.canonicalSkillMd,'SKILL.md'],[data.counts.mcpProtocolListedTools,'MCP TOOLS'],[data.counts.boundedCapabilityTools,'BOUNDED'],['7','VINE FAMILIES']
 ].map(([v,l])=>'<div class="stat"><b>'+v+'</b><small>'+l+'</small></div>').join('');
 const branchOrder=['CORE','PERCEPTION','WINDOWS','ANDROID','MACOS','LINUX','WEB'];
 const branchCounts=Object.fromEntries(branchOrder.map(k=>[k,data.skills.filter(s=>s.branchKey===k).length]));

@@ -23,12 +23,19 @@ MIT
 
 [CmdletBinding()]
 param(
-    [string]$RepositoryRoot = (Resolve-Path (Join-Path $PSScriptRoot '..')).Path,
-    [string]$ManifestPath = (Join-Path $PSScriptRoot 'external-design-skills.json')
+    [string]$RepositoryRoot,
+    [string]$ManifestPath
 )
 
 Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
+
+if ([string]::IsNullOrWhiteSpace($RepositoryRoot)) {
+    $RepositoryRoot = (Resolve-Path (Join-Path $PSScriptRoot '..')).Path
+}
+if ([string]::IsNullOrWhiteSpace($ManifestPath)) {
+    $ManifestPath = Join-Path $PSScriptRoot 'external-design-skills.json'
+}
 
 function Write-Step([string]$Message) {
     Write-Host "[LeeWay Skill Sync] $Message"
@@ -59,9 +66,34 @@ try {
         $ref = [string]$source.ref
         $sourcePath = [string]$source.sourcePath
         $destinationRelative = [string]$source.destination
+        $materialization = if ($source.PSObject.Properties.Name -contains 'materialization') { [string]$source.materialization } else { [string]$manifest.defaultMaterialization }
 
         if ([string]::IsNullOrWhiteSpace($id) -or [string]::IsNullOrWhiteSpace($repo) -or [string]::IsNullOrWhiteSpace($destinationRelative)) {
             throw 'BLOCKED: manifest source is missing id, repo, or destination.'
+        }
+
+        if ($materialization -eq 'REMOTE_CANONICAL_WRAPPER') {
+            $wrapper = Join-Path $RepositoryRoot (Join-Path $destinationRelative 'SKILL.md')
+            if (-not (Test-Path -LiteralPath $wrapper -PathType Leaf)) {
+                throw "FAILED: REMOTE_CANONICAL_WRAPPER requires local wrapper SKILL.md: $id"
+            }
+            $results.Add([pscustomobject][ordered]@{
+                id = $id
+                name = [string]$source.name
+                repository = "https://github.com/$repo"
+                ref = $ref
+                source_path = $sourcePath
+                destination = $destinationRelative
+                materialization = $materialization
+                synchronized_utc = [DateTime]::UtcNow.ToString('o')
+                skill_files = 1
+                status = 'REMOTE_CANONICAL_WRAPPER'
+            })
+            Write-Step "PASS: $id uses explicit REMOTE_CANONICAL_WRAPPER; no vendored payload copied."
+            continue
+        }
+        if ($materialization -ne 'SYNCHRONIZED_UPSTREAM') {
+            throw "BLOCKED: unsupported materialization mode for ${id}: $materialization"
         }
 
         Write-Step "Syncing $id from $repo@$ref"
@@ -122,6 +154,7 @@ try {
             commit = $commit
             source_path = $sourcePath
             destination = $destinationRelative
+            materialization = $materialization
             synchronized_utc = [DateTime]::UtcNow.ToString('o')
             skill_files = $skillFiles.Count
         }

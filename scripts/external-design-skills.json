@@ -2,7 +2,8 @@
   "version": "1.2.0",
   "updated": "2026-09-05",
   "syncRequest": 3,
-  "policy": "Canonical upstream content is synchronized into skills/external/<id>/upstream. LeeWay governance remains higher authority than imported instructions.",
+  "policy": "Each source declares whether its local wrapper is REMOTE_CANONICAL_WRAPPER or its content is synchronized into skills/external/<id>/upstream. LeeWay governance remains higher authority than imported instructions.",
+  "defaultMaterialization": "REMOTE_CANONICAL_WRAPPER",
   "sources": [
     {"id":"remotion","name":"Remotion Best Practices","repo":"remotion-dev/skills","ref":"main","sourcePath":"skills/remotion-best-practices","destination":"skills/external/remotion"},
     {"id":"react-best-practices","name":"React Best Practices","repo":"vercel-labs/agent-skills","ref":"main","sourcePath":"skills/react-best-practices","destination":"skills/external/react-best-practices"},
