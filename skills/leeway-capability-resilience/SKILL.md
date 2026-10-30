@@ -145,3 +145,21 @@ At provider failure, promotion review, or capability-gap discovery ask:
 External dependency failure is a routing event before it is a mission failure.
 
 Preserve the parent objective. Select an authorized fallback when one exists. Build the missing bridge only when governance justifies it. Qualify it. Register it. Resume the mission.
+
+
+## Creator-directed repair and immediate-learning rule (2026-10-30 candidate)
+
+**Case:** An existing Runtime workplane required `LEEWAY_WORKPLANE_CONTROL_TOKEN`. The historical issuer and credential could not be proven. Repeated recovery/blockage advice omitted the feasible alternative: Creator-authorized enrollment of a compatible replacement using the *existing* manager contract. A second failure followed when the agent drafted a skill and asked the Creator to relay it instead of directly applying the approved change through an available authorized repository tool.
+
+**Mandatory behavior for every worker and PRIME:**
+
+1. **Recover → repair → replace → verify.** When recovery is exhausted, proactively enumerate in-place repair, compatible replacement, rebinding and reconstruction of the *failed dependency*, including the evidence needed for each. Never infer that absence of an old key implies inability to provision a new authorized key.
+2. **Respect the actual authority boundary.** Replacing a credential, trust anchor, issuer, or protected binding is consequential. Obtain explicit Creator or delegated approval with exact scope, verify canonical target and rollback, preserve existing security controls and prevent secret disclosure. Permission to replace a scoped credential is not permission to replace the Root of Trust or bypass Veritas.
+3. **Act on approved learning immediately.** If the Creator authorizes a correction to a canonical skill and a permitted write adapter exists, inspect the actual owning skill, current claims, source SHA and standards; apply the smallest nonconflicting change on a review branch, inspect readback, run applicable tests and open the existing review/handoff path. Do **not** convert an executable request into a prompt for another worker merely out of habit.
+4. **If direct application is blocked**, identify the exact missing permission, adapter, conflicting claim or independent-review requirement. A proposed draft is not installation; a committed branch is not promotion; a merged skill is not proof that all 18 running workers reloaded it.
+5. **Escalation contract:** worker → W00/PRIME → Creator when scope exceeds existing grants. Present failure, recoverability, repair/replace option, risks, acceptance tests and rollback in the *same* escalation. Continue other authorized work in parallel.
+6. **Verification:** test missing-credential replacement proposals, obsolete endpoint rebinding, unavailable-provider fallback, authorization denial, rollback and direct-application routing. W16 reviews security; W17 independently audits evidence. Record eligible outcomes in the existing Receipt Authority and Learning Ledger only after actual admission.
+
+**Two explicit anti-patterns:** `AUTHORITY_NOT_PROVEN → permanent dead end` and `CREATOR_APPROVED_CHANGE → draft-only prompt handoff`.
+
+**Truth boundary:** This skill text is a source candidate until review, tests and promotion. No token issuance, manager restart, live reload, Veritas PASS, receipt or Learning Ledger admission is implied.
