@@ -1,0 +1,82 @@
+# LEEWAY HEADER — DO NOT REMOVE
+# REGION: LEEWAY.SKILLS.SH01.MCP
+# TAG: LEEWAY.SKILLS.SH01.MCP.ACTUAL_PROTOCOL_PROOF
+# 5WH:
+# WHAT = Build and exercise real local stdio and authenticated remote MCP server/client calls.
+# WHY = Distinguish Skills reference, authorized operational adapters, and mere HTTP health.
+# WHO = LeeWay Agent Skills CI under Standards and Runtime Fabric governance.
+# WHERE = .github/workflows/sh01-mcp-qualification.yml
+# WHEN = 2026-10-28
+# HOW = Isolated Node SDK protocol calls, negative tests, evidence artifacts and no secrets.
+# LICENSE: MIT
+# AUTHORITY: SOURCE_CI_ONLY; does not deploy or mint Veritas/Receipt/Learning.
+name: SH-01 MCP Protocol Qualification
+
+on:
+  push:
+    branches: [sh01-mcp-qualification]
+    paths:
+      - 'mcp-server/**'
+      - 'mcp-remote/**'
+      - 'docs/SH01-AGENT-SKILLS-MCP-STANDALONE-READINESS.md'
+      - '.github/workflows/sh01-mcp-qualification.yml'
+  pull_request:
+    paths:
+      - 'mcp-server/**'
+      - 'mcp-remote/**'
+      - 'docs/SH01-AGENT-SKILLS-MCP-STANDALONE-READINESS.md'
+      - '.github/workflows/sh01-mcp-qualification.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  mcp-source-protocol:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check source-level SH-01 script
+        run: node --check mcp-server/scripts/sh01-mcp-readiness-smoke.mjs
+      - name: Install pinned stdio MCP dependencies
+        working-directory: mcp-server
+        run: npm ci --no-audit --no-fund
+      - name: Install pinned remote MCP dependencies
+        working-directory: mcp-remote
+        run: npm ci --no-audit --no-fund
+      - name: Build local stdio MCP
+        working-directory: mcp-server
+        run: npm run build
+      - name: Build authenticated read-only remote MCP
+        working-directory: mcp-remote
+        run: npm run build
+      - name: Existing bounded MCP regression tests
+        working-directory: mcp-server
+        run: npm test
+      - name: Real stdio protocol smoke
+        working-directory: mcp-server
+        run: npm run test:protocol | tee ../sh01-mcp-protocol.jsonl
+      - name: Portable skill and source-root MCP smoke
+        working-directory: mcp-server
+        run: node scripts/portability-smoke.mjs | tee ../sh01-mcp-portability.jsonl
+      - name: Source-bound skill composition and negative traversal
+        working-directory: mcp-server
+        run: node scripts/composition-protocol-smoke.mjs | tee ../sh01-mcp-composition.jsonl
+      - name: SH-01 authorization and execution-truth MCP smoke
+        working-directory: mcp-server
+        run: node scripts/sh01-mcp-readiness-smoke.mjs | tee ../sh01-mcp-readiness.jsonl
+      - name: Real authenticated HTTP MCP roundtrip
+        working-directory: mcp-server
+        run: node scripts/remote-portability-smoke.mjs | tee ../sh01-mcp-remote.jsonl
+      - name: Preserve actual source-protocol evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sh01-mcp-source-protocol-evidence
+          path: sh01-mcp-*.jsonl
+          if-no-files-found: warn
+          retention-days: 30
