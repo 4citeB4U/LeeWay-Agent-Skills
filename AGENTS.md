@@ -1,3 +1,15 @@
+<!--
+LEEWAY HEADER — DO NOT REMOVE
+REGION: LEEWAY.AGENT_SKILLS.ENTRYPOINT
+TAG: DOC.GOVERNANCE.ECOSYSTEM_SEARCH_ORDER_20261031
+WHAT = Document the Creator-named LeeWay ecosystem and account-wide evidence search order
+WHY = Prevent omitted internal evidence, repeated discovery and accidental authority promotion
+WHO = Creator/Human Authority; LeeWay Agent Skills contributors
+WHERE = AGENTS.md in the existing Agent Skills canonical entrypoint
+WHEN = 2026-10-31
+HOW = Add a pointer-free explicit list to the existing onboarding instructions, preserving existing guidance
+LICENSE = Existing repository/file terms unchanged
+-->
 > **MANDATORY FIRST READ — Creator/LeeWay Engineering Laws:** https://github.com/4citeB4U/LeeWay-Standards/blob/main/Docs/governance/LEEWAY-CANONICAL-ENGINEERING-LAWS.md . Read before this file, any contributor hub entry, source, planning or testing. The Standards repo is law authority; the hub only coordinates teams.
 
 # LeeWay Agent Skills — Agent Runtime Map
@@ -309,3 +321,44 @@ Do not substitute the generic multimodal skill for production real-time media en
 ## Governed Floating Widget routing — Creator-approved LFW-v1.0
 
 For Agent VT, Continuum, Vision, Agent Skills, Digital Brain, or any request to build/repair a true floating widget, read and apply `skills/ui/leeway-governed-floating-widget/SKILL.md` as the focal UI architecture skill. Distinguish independent floating widget versus hamburger menu pop-up, fixed edge tag, attached control rail, and internal capability panel. Preserve original capability/UI assets and backend, implement proportional mouse-wheel and touch scaling of the *whole* widget with its visible curved perimeter, independently qualify native Windows and Android surfaces, and do not call iframe/browser-only rendering a native widget. The Creator approved the architecture; implementation and cross-device Veritas require their own evidence.
+
+
+## Creator-defined ecosystem and evidence-discovery order
+
+**Creator instruction (2026-10-31):** For every LLM, Agent Lee, worker, digital employee and other contributor serving LeeWay, use this evidence and implementation discovery order:
+
+1. **FIRST — the Creator-defined LeeWay ecosystem** below. Recover its current source, branches, pull requests, change requests, CI, test evidence, immutable receipts, ledger records, previous completed work and the owning acceptance case before repeating research or tests.
+2. **SECOND — all repositories accessible under [4citeB4U](https://github.com/4citeB4U)** (83 in the Creator's referenced account snapshot), including repositories not named below, for shared components, legacy evidence, prior proofs, PRs, CRs and receipts. The number is a snapshot, not a permanent repository count; enumerate current account repos when necessary.
+3. **THIRD — external public and third-party sources**, only for gaps not resolved using permitted internal evidence; external material is evidence, not constitutional authority.
+
+**Creator-defined named ecosystem (27 distinct entries in the supplied list; Machine-Consciousness was repeated once):**
+
+1. [4citeB4U/Leonard-Lee-Resume](https://github.com/4citeB4U/Leonard-Lee-Resume)
+2. [4citeB4U/RapidWebDev](https://github.com/4citeB4U/RapidWebDev)
+3. [4citeB4U/Leeway-Federate-Web](https://github.com/4citeB4U/Leeway-Federate-Web)
+4. [4citeB4U/LeeWay-VRAM-Database](https://github.com/4citeB4U/LeeWay-VRAM-Database)
+5. [4citeB4U/LeeWay-Continuum](https://github.com/4citeB4U/LeeWay-Continuum)
+6. [4citeB4U/Leeway-Runtime-Fabric](https://github.com/4citeB4U/Leeway-Runtime-Fabric)
+7. [4citeB4U/Leeway-formula-live](https://github.com/4citeB4U/Leeway-formula-live)
+8. [4citeB4U/Leeway-Tailscale](https://github.com/4citeB4U/Leeway-Tailscale)
+9. [4citeB4U/Leeway-Pocket-ID](https://github.com/4citeB4U/Leeway-Pocket-ID)
+10. [4citeB4U/LEEWAY-DEVICE-BRIDGE](https://github.com/4citeB4U/LEEWAY-DEVICE-BRIDGE)
+11. [4citeB4U/LeeWay-Pocket-Agent](https://github.com/4citeB4U/LeeWay-Pocket-Agent)
+12. [4citeB4U/LeeWay-Voice-Fabric](https://github.com/4citeB4U/LeeWay-Voice-Fabric)
+13. [4citeB4U/LeeWay-Edge-GPU](https://github.com/4citeB4U/LeeWay-Edge-GPU)
+14. [4citeB4U/LeeWay-Agent-Skills](https://github.com/4citeB4U/LeeWay-Agent-Skills)
+15. [4citeB4U/LeeWay-Agent-Workstation-Open-Notebook](https://github.com/4citeB4U/LeeWay-Agent-Workstation-Open-Notebook)
+16. [4citeB4U/Leeway-Digital-Employment-Center](https://github.com/4citeB4U/Leeway-Digital-Employment-Center)
+17. [4citeB4U/LeeWay-Model-Hub](https://github.com/4citeB4U/LeeWay-Model-Hub)
+18. [4citeB4U/LeeWay-Edge-RTC](https://github.com/4citeB4U/LeeWay-Edge-RTC)
+19. [4citeB4U/LEEWAY-LOGISTICS-](https://github.com/4citeB4U/LEEWAY-LOGISTICS-)
+20. [4citeB4U/Leeway-live](https://github.com/4citeB4U/Leeway-live)
+21. [4citeB4U/LeeWay-Standards](https://github.com/4citeB4U/LeeWay-Standards)
+22. [4citeB4U/Machine-Consciousness](https://github.com/4citeB4U/Machine-Consciousness)
+23. [4citeB4U/LeeWay-Learning-Ledger](https://github.com/4citeB4U/LeeWay-Learning-Ledger)
+24. [4citeB4U/Receipt-Authority](https://github.com/4citeB4U/Receipt-Authority)
+25. [4citeB4U/LEEWAY-VERITAS](https://github.com/4citeB4U/LEEWAY-VERITAS)
+26. [4citeB4U/LeeWay-Engineering](https://github.com/4citeB4U/LeeWay-Engineering)
+27. [4citeB4U/LeeWay-Production-Final-Execution-Layer](https://github.com/4citeB4U/LeeWay-Production-Final-Execution-Layer)
+
+The supplied ecosystem list is a **discovery-scope designation**, not an assertion that every repository is deployed, healthy, authoritative, or the current implementation owner. In particular, the existing Agent VT implementation in [LeeWay-Digital-Workforce](https://github.com/4citeB4U/LeeWay-Digital-Workforce) remains discoverable in the second tier, without redefining the Creator's named first tier. A verified historical PASS must be reused and linked, not pointlessly rerun; qualify its originally measured behavior without fabricating current production execution, Formula, independent Veritas, receipt admission, or Learning Ledger effects. Publish the exact supporting evidence where the owning mission already lives. Use the current LeeWay Standards (especially canonical Engineering Laws 01, 03, 05–07, 11–12, 14) and Contributor Handoff Protocol; no independent register, new control plane, bulk merge or cleanup is authorized solely by this discovery list.
