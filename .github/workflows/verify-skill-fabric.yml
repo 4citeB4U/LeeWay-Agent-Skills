@@ -83,9 +83,16 @@ jobs:
           $missing = @()
           $manifest = Get-Content ./scripts/external-design-skills.json -Raw | ConvertFrom-Json
           foreach ($source in $manifest.sources) {
+            $mode = if ($source.PSObject.Properties.Name -contains 'materialization') { [string]$source.materialization } else { [string]$manifest.defaultMaterialization }
+            if ($mode -eq 'REMOTE_CANONICAL_WRAPPER') {
+              $wrapper = Join-Path $source.destination 'SKILL.md'
+              if (-not (Test-Path $wrapper -PathType Leaf)) { $missing += "$($source.id) (wrapper missing)" }
+              continue
+            }
+            if ($mode -ne 'SYNCHRONIZED_UPSTREAM') { $missing += "$($source.id) (unknown materialization $mode)"; continue }
             $root = Join-Path $source.destination 'upstream'
-            if (-not (Test-Path $root)) { $missing += $source.id; continue }
-            if (@(Get-ChildItem $root -Filter SKILL.md -File -Recurse).Count -lt 1) { $missing += $source.id }
+            if (-not (Test-Path $root)) { $missing += "$($source.id) (upstream missing)"; continue }
+            if (@(Get-ChildItem $root -Filter SKILL.md -File -Recurse).Count -lt 1) { $missing += "$($source.id) (SKILL.md missing)" }
           }
           if ($missing.Count) { throw "Missing usable SKILL.md payloads for: $($missing -join ', ')" }
           Write-Host "External portable skills discovered: $($skillFiles.Count)"
