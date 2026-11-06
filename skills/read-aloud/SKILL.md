@@ -1,13 +1,13 @@
 ---
 name: read-aloud
-description: Read assistant replies aloud using a qualified local host renderer when requested or enabled by a persistent accessibility preference. For LeeWay-owned Agent Lee Android surfaces, route prepared text and streaming phrases to canonical Agent Lee Voice One through LeeWay Voice Fabric, with cancellation, mute/resume, and evidence-bound host routing.
+description: Read assistant replies through the selected LeeWay Voice Fabric binding on Windows and the qualified Agent Lee Voice One bridge on Android.
 ---
 
 # Read Aloud
 
-Use a qualified local speech renderer to make assistant messages accessible. On Windows use the bundled System.Speech helper. On a qualified Android secondary workstation use the LeeWay Read Aloud Bridge with Samsung TTS. Prepared-text accessibility renderers are not Agent Lee Voice One and must never be labeled as such.
+Use the creator-selected LeeWay Voice Fabric binding through the existing Runtime Fabric carrier on Windows. Do not select a provider or voice in this helper and do not fall back to System.Speech, Microsoft Zira, browser speech, or another provider. On a qualified Android secondary workstation, use the LeeWay Read Aloud Bridge and canonical Agent Lee Voice One. Windows prepared-text playback is not full-duplex conversation and must not be labeled as live microphone conversation.
 
-Use local Windows speech to make assistant messages accessible. The user wants to hear the reply, including important progress updates and questions. Once requested, continue for subsequent replies in this conversation until the user disables it. A skill is not an app-wide streaming hook: do not promise automatic activation in every chat or reading every token as it appears.
+Use the selected LeeWay Voice Fabric voice to make Windows-hosted assistant replies accessible. The user wants to hear the reply, including important progress updates and questions. Once requested, continue for subsequent replies in this conversation until the user disables it. A skill is not an app-wide streaming hook: do not promise automatic activation in every chat or reading every token as it appears.
 
 Honor a persistent host accessibility preference at the start of new chats without making the user ask again. This workstation's global AGENTS.md enables that preference. Other hosts must load an equivalent user-authorized preference and have a working local audio provider. Repository presence alone does not activate speech.
 
@@ -19,7 +19,7 @@ Write the prepared speech as UTF-8 to a file in the current workspace's work dir
 powershell.exe -NoProfile -File "ABSOLUTE_SKILL_DIRECTORY/scripts/speak.ps1" -TextPath "ABSOLUTE_PATH_TO_TEXT"
 ```
 
-Use tool calls that yield promptly for lengthy playback, allowing new user input. Speak a progress update before lengthy work and the final answer before ending the turn. Use short sections so spoken questions reach the user promptly. Keep the written version accessible too.
+On Windows, the helper accepts up to 9,000 characters and splits normalized text at word boundaries into requests of at most 900 characters, under the carrier's 1,500-character request limit. It synthesizes and validates all WAV segments for the same selected voice before sequential playback; a render or voice-binding failure rejects playback. Use tool calls that yield promptly for lengthy synthesis/playback, allowing new user input. Speak a progress update before lengthy work and the final answer before ending the turn. Use short sections so spoken questions reach the user promptly. Keep the written version accessible too.
 
 ## Android secondary-workstation route
 
@@ -64,7 +64,7 @@ Before the first playback, explain: **Press Control+Alt+Shift+M to silence this 
 
 Respect the latch across messages and chats. Do not clear it to deliver progress or a final answer. After an explicit resume request, call `speak.ps1 -Resume`, optionally with `-TextPath`. `-Stop` also mutes subsequent playback. A helper result saying muted means no speaker playback occurred. This shortcut controls only the Windows helper, not native ChatGPT voice or separately played WAV files. Voice barge-in is not implemented: microphone input must reach chat before the assistant can act on spoken requests. Do not claim continuous listening or that a key press was physically tested merely from an injected message test.
 
-Resolve ABSOLUTE_SKILL_DIRECTORY from this skill's actual location. The helper defaults to Microsoft Zira Desktop when installed, otherwise the Windows default voice, at rate -1. Optional parameters: `-Rate` (-10 to 10), `-Voice` (installed name), and `-WavePath` (absolute output WAV path, generates audio instead of speaker playback). To list voices, use `-ListVoices`. To cancel this helper's current speech on this host, call it with `-Stop`. Stop requests disable further speech in the current conversation; an explicit request to disable the persistent preference also updates its host instruction. Do not change system volume or the user's screen reader settings.
+Resolve ABSOLUTE_SKILL_DIRECTORY from this skill's actual location. On Windows, `-ListVoices` reports the current LeeWay selection; it does not choose a new provider or package. `-Stop` mutes further playback and `-Resume` clears that latch only after explicit user request. A stop is observed between prepared audio segments; this helper does not provide microphone barge-in or full-duplex conversation. Stop requests disable further speech in the current conversation; an explicit request to disable the persistent preference also updates its host instruction. Do not change system volume or the user's screen reader settings.
 
 If speaker playback fails, report the error without claiming the user heard anything. Offer or create a WAV under the workspace outputs directory and embed it as audio. A completed playback call confirms software completion, not audible sound at the user's device. Ask once whether the initial test was audible. No cloud service, API key, microphone, or screen capture is needed.
 
