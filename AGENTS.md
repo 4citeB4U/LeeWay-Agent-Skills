@@ -20,6 +20,12 @@ Canonical authority: `4citeB4U/LeeWay-Agent-Skills`.
 
 Apply `config/portability-contract.md` to all skill selection, tool execution and ecosystem integrations. LeeWay core contracts are path-, operating-system-, device- and model-agnostic. Discover logical capabilities and configure host adapters; never require a particular drive, user directory, device, browser or model for universal operation. Historical machine paths are provenance, not runtime instructions. Distinguish CONTRACT_PORTABLE, ADAPTER_IMPLEMENTED and PLATFORM_TESTED; do not claim untested device support.
 
+## GATE P — source authoring without developer-drive assumptions
+
+**Before generating or changing executable LeeWay code**, load `config/portability-contract.md` and the existing Standards R10/R25 and LAW 12 portability gate. Do not put hardcoded `C:`, `E:`, a prior Windows profile, a private absolute home or any remembered workstation path into universal imports, defaults, bootstraps, model/Formula paths, executable configuration, caches, credentials, Runtime bindings or receipt destinations. Resolve canonical repository/version/hash and logical capability/resource first; bind a real filesystem path only inside a qualified and authorized host-specific adapter if necessary. Do not replace one guessed drive with another or pretend `<LEEWAY_ROOT>` is already resolved.
+
+During review, scan changed executable/config paths; classify historical evidence, user paths, fixtures, legitimate platform bindings and unapproved dependencies separately. Block only unresolved new executable-drive dependencies. Test an alternate install root, missing drive and relevant device poststate. Report `CONTRACT_PORTABLE / ADAPTER_IMPLEMENTED / PLATFORM_TESTED` independently. A discovery response listing only `pc-primary` with unverified identity is NOT proof that the current PC is the real runtime authority or that Samsung/iPhone are absent.
+
 ## Authority chain
 Creator/Human Authority > LeeWay Standards > Root of Trust > Runtime Fabric > Agent Lee > Harness > Formula > models/skills/MCPs/tools > execution > Veritas > receipt > Learning Ledger.
 
