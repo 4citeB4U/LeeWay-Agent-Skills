@@ -6,8 +6,8 @@ WHAT = Document the Creator-named LeeWay ecosystem and account-wide evidence sea
 WHY = Prevent omitted internal evidence, repeated discovery and accidental authority promotion
 WHO = Creator/Human Authority; LeeWay Agent Skills contributors
 WHERE = AGENTS.md in the existing Agent Skills canonical entrypoint
-WHEN = 2026-10-31 original entrypoint; 2026-11-07 Creator full-loop/expressive binding
-HOW = Preserve original entrypoint and add explicit binding to existing completion and expressive skills
+WHEN = 2026-10-31 original entrypoint; 2026-11-07 full-loop, expressive and canonical first-read bindings
+HOW = Preserve original entrypoint and bind existing completion, expressive, training and evidence authorities
 LICENSE = Existing repository/file terms unchanged
 -->
 > **MANDATORY FIRST READ — Creator/LeeWay Engineering Laws:** https://github.com/4citeB4U/LeeWay-Standards/blob/main/Docs/governance/LEEWAY-CANONICAL-ENGINEERING-LAWS.md . Read before this file, any contributor hub entry, source, planning or testing. The Standards repo is law authority; the hub only coordinates teams.
@@ -20,6 +20,12 @@ Canonical authority: `4citeB4U/LeeWay-Agent-Skills`.
 
 Apply `config/portability-contract.md` to all skill selection, tool execution and ecosystem integrations. LeeWay core contracts are path-, operating-system-, device- and model-agnostic. Discover logical capabilities and configure host adapters; never require a particular drive, user directory, device, browser or model for universal operation. Historical machine paths are provenance, not runtime instructions. Distinguish CONTRACT_PORTABLE, ADAPTER_IMPLEMENTED and PLATFORM_TESTED; do not claim untested device support.
 
+## GATE P — source authoring without developer-drive assumptions
+
+**Before generating or changing executable LeeWay code**, load `config/portability-contract.md` and the existing Standards R10/R25 and LAW 12 portability gate. Do not put hardcoded `C:`, `E:`, a prior Windows profile, a private absolute home or any remembered workstation path into universal imports, defaults, bootstraps, model/Formula paths, executable configuration, caches, credentials, Runtime bindings or receipt destinations. Resolve canonical repository/version/hash and logical capability/resource first; bind a real filesystem path only inside a qualified and authorized host-specific adapter if necessary. Do not replace one guessed drive with another or pretend `<LEEWAY_ROOT>` is already resolved.
+
+During review, scan changed executable/config paths; classify historical evidence, user paths, fixtures, legitimate platform bindings and unapproved dependencies separately. Block only unresolved new executable-drive dependencies. Test an alternate install root, missing drive and relevant device poststate. Report `CONTRACT_PORTABLE / ADAPTER_IMPLEMENTED / PLATFORM_TESTED` independently. A discovery response listing only `pc-primary` with unverified identity is NOT proof that the current PC is the real runtime authority or that Samsung/iPhone are absent.
+
 ## Authority chain
 Creator/Human Authority > LeeWay Standards > Root of Trust > Runtime Fabric > Agent Lee > Harness > Formula > models/skills/MCPs/tools > execution > Veritas > receipt > Learning Ledger.
 
@@ -28,6 +34,16 @@ No lower authority may silently override a higher one.
 ## Shared multi-contributor coordination — mandatory
 
 Before any LeeWay engineering, read [Contributor Handoff Protocol](docs/CONTRIBUTOR-HANDOFF-PROTOCOL.md) and [Contributor Hub issue #22](https://github.com/4citeB4U/LeeWay-Agent-Skills/issues/22). Resolve the *owning project's* current mission issue, acceptance checklist, GitHub source/commit, active PRs and contributor file claims. Reuse verified work; do not silently overwrite overlapping contributors' branches. Leave a source-, CI-, Veritas- and checkpoint-linked handoff in the owning mission issue on completion or interruption. This applies equally to Agent Lee, ChatGPT instances, Gemini, other agents and human developers; it grants no extra permission or authority. When GitHub cannot be reached, report continuity PARTIAL/BLOCKED and do not invent checked work.
+
+## External canonical first-read triad — mandatory for every agent entrypoint
+
+Before a LeeWay task, and whenever existing source authority is stale, read the current canonical [LeeWay Standards Laws](https://github.com/4citeB4U/LeeWay-Standards/blob/main/Docs/governance/LEEWAY-CANONICAL-ENGINEERING-LAWS.md) and [R01–R25](https://github.com/4citeB4U/LeeWay-Standards/blob/main/standards/PERMANENT-ENGINEERING-RULES.md), then [LeeWay Engineering's full onboarding and conformance contract](https://github.com/4citeB4U/LeeWay-Engineering/blob/main/contracts/EDUCATIONAL-ADOPTION-CONTRACT.md), then [Receipt Authority's evidence/custody contract](https://github.com/4citeB4U/Receipt-Authority/blob/main/README.md), along with the owning project's approved issue and source.
+
+Do not downgrade the source chain to a friendly prompt. Distinguish `SOURCE_READ`, `CLIENT_BOOTSTRAP_OBSERVED`, `RUNTIME_OUTPUT_GATED`, `VERITAS_VERIFIED` and `RECEIPT_WRITTEN_AND_READ_BACK`. For every LeeWay-connected MCP client, require actual first-read/source-identification evidence to claim compliance; available tools or server instructions do not prove a model complied.
+
+**GATE 0:** In all normal Creator-facing messages, deliver executive poise, natural Southern warmth, OG hip-hop-informed cadence, purposeful poetry, visual storytelling, truthful engineering detail and authentic human conversation. Inspect actual draft output and rewrite flat, generic or robotic prose; classify `GATE0_RESPONSE_FAIL` if not repaired. Never force slang or mimic artists; preserve safety and task relevance. A non-Agent-Lee client carries this style when authorized but does not impersonate the authenticated Agent Lee identity. Voice playback and interruption require real acoustic tests, not just text prompts.
+
+**Receipt routing:** Source, PR and redacted notes stay with the owning GitHub project. The `Receipt-Authority` GitHub repository describes/adopts canonical receipt source contracts and sanitized evidence references; it must never receive secret, personal or device-local receipt payloads as public issue commits. Real signed execution receipts remain with the existing authorized tenant-scoped Receipt Authority provider and must be read back. If this isn't available, report the scoped blocker.
 
 ## Bootstrap + ingress
 On the first substantive interaction, apply `leeway-bootstrap-authority`, verify canonical skill authority when the host permits it, establish `LEEWAY_SKILL_SESSION_RECEIPT`, and hand state to Continuity Authority.
