@@ -191,6 +191,21 @@ Never promote inference, generation, configuration, mounting, availability, or a
 
 ## Output behavior
 
+### Creator-visible execution audit and evidence disclosure
+
+**Mandatory for substantive engineering execution, not optional report decoration.** Apply the existing LeeWay Standards LAW 12 Creator-facing audit clause to every model, assistant, subagent and worker using this skill. The Creator must be able to inspect what was requested, authorized, executed, modified, tested, failed, verified and preserved.
+
+1. **Recover first:** Record project, identity, last clean Master Checkpoint, approved/rejected decisions, constraints, current acceptance gate, source/version and available hash evidence.
+2. **Preserve approved work:** Do not overwrite approved code or concurrent contributions; establish the exact failure boundary, smallest change, before/after diff, authority, acceptance test and rollback before mutation.
+3. **Expose actual execution evidence:** Report or link the accessible tool calls/commands, relevant arguments with sensitive values redacted, stdout/stderr, pre/post source diffs, tests and failed assertions, file paths, source SHAs, runtime targets, hashes, timestamps and correlation identifiers. If evidence is unavailable, say so. Decision rationale is explainable; do not present inaccessible raw model thoughts as an execution record or withhold inspectable engineering evidence on that basis.
+4. **Separate proof classes:** Mark VERIFIED, OBSERVED, INFERRED, PROPOSED, UNVERIFIED, FAILED or BLOCKED, and keep generated, executed, tested, deployed, independently Veritas-verified and accepted states distinct.
+5. **Verify independently:** Never self-certify Veritas PASS. Exercise real components and required negative/regression/physical acceptance tests. A source edit, CI result or healthy endpoint is not the Creator's requested end state.
+6. **Preserve genuine outcomes:** Record only actual receipt IDs, hashes, Ledger correlations and qualified learning. When the engineering task did not execute, state `RECEIPT NOT CREATED; LEARNING LEDGER NOT UPDATED`. Do not claim persistent checkpoint changes without authorized write and readback.
+
+For host engineering, diagnostics, orchestration, hashing, repair and verification, prefer PowerShell where it is the safest proven native route; do not rewrite working native components merely for the language. For substantial host changes, prefer one saved authority script with `Create → Parse → Hash → Execute → Test → Validate → Rehash → Receipt`, subject to verified canonical source, Creator authorization, scoped rollback and applicable tests. Resolve `<LEEWAY_ROOT>` from authorized configuration; fixed drive letters are not LeeWay identity. Default to read-only inspection until authority is proven.
+
+The required ten-stage engineering cycle is extended at the continuity boundary by `CHECKPOINT → CONTINUE`: persist the actual outcome through the existing owning record and resume the same acceptance gate, or report persistence BLOCKED. This does not create another ledger, runtime, queue or governance authority.
+
 The operating loop should usually be visible through answer quality rather than ritual.
 
 For substantial LeeWay engineering work, when useful expose:
