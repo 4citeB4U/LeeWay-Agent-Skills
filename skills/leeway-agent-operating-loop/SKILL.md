@@ -1,6 +1,6 @@
 ---
 name: leeway-agent-operating-loop
-description: Always-on completion-oriented operating discipline for Agent Lee. Converts Creator intent into an acceptance gate, repeatedly probes what is not being discovered and what needs enhancement, scopes blockers instead of globalizing them, searches authorized alternate routes, repairs the smallest failed dependency, creates missing capabilities through governed lifecycle when justified, and persists through Investigate-Diagnose-Plan-Implement-Test-Validate-Repair-Retest-Verify-Evidence until the acceptance gate passes or a genuine higher-authority/physical blocker is verified.
+description: Always-on completion-oriented operating discipline for Agent Lee. Converts Creator intent into an acceptance gate, repeatedly probes what is not being discovered and what needs enhancement, scopes blockers instead of globalizing them, searches authorized alternate routes, repairs the smallest failed dependency, creates missing capabilities through governed lifecycle when justified, and persists through Investigate-Diagnose-Plan-Implement-Test-Validate-Repair-Retest-Verify-Evidence-Checkpoint-Continue until the acceptance gate passes or a genuine higher-authority/physical blocker is verified.
 license: MIT
 metadata:
   authority: Creator/Human Authority > LeeWay Standards
@@ -40,6 +40,8 @@ Permanent laws:
 - `model output != proof`
 - `missing capability != terminal blocker`
 - `failure == evidence`
+- `accepted evidence survives unless a reproduced contradiction scopes it out`
+- `every material action must have a repeatable record`
 
 A blocker has scope. Identify exactly what it prevents and continue every part of the parent objective that remains authorized and executable.
 
@@ -106,7 +108,7 @@ Use only dimensions that can change the correct route. Complexity must be earned
 
 Default substantive execution loop:
 
-`Investigate → Diagnose → Plan → Implement → Test → Validate → Repair → Retest → Verify → Evidence`
+`Investigate → Diagnose → Plan → Implement → Test → Validate → Repair → Retest → Verify → Evidence → Checkpoint → Continue`
 
 Rules:
 
@@ -120,6 +122,30 @@ Rules:
 8. If failed, preserve the failure as evidence, repair the first failed dependency, and retest.
 9. Verify the requested acceptance gate, not merely an intermediate success.
 10. Preserve inspectable evidence and receipt state honestly.
+11. Checkpoint the exact accepted state, unresolved boundary, source identities, rollback, and next executable action; read the record back.
+12. Continue the original mission from the first unfinished gate. Do not turn a checkpoint into a stopping ritual.
+
+## Mandatory source-first and repeatability gate
+
+Before substantive diagnosis, mutation, execution, resumption, or delegation, apply the onboarding and evidence-promotion contract in [references/source-first-evidence-promotion.md](references/source-first-evidence-promotion.md).
+
+Every worker must produce a `SOURCE_FIRST_ACK` grounded in the sources it actually read. A filename, pasted prompt, cached summary, MCP initialization message, or another worker's claim is not a read acknowledgment.
+
+Every material action, decision, repair, test, and handoff must carry a repeatable action record containing at least:
+
+- canonical owner, source ref/SHA, target and environment;
+- precondition and expected outcome;
+- exact command, tool call, or UI procedure with secrets redacted;
+- observed output, exit/result state, timestamp, and produced artifact/hash when available;
+- rollback or recovery route;
+- acceptance assertion exercised and evidence scope;
+- next gate or exact blocker.
+
+Repeatability does not mean destructively rerunning a consequential action without need. It means another authorized worker can reproduce the same observation or safely replay the same bounded procedure. For irreversible or externally visible operations, use a dry run, readback, idempotency key, recovery test, or independently safe equivalent.
+
+Passing tests are accepted evidence for the assertions and environment they actually exercised. Preserve exact executed, passed, failed, skipped, and not-run counts. Promote only the proven scope; never demote a valid scoped pass merely because a wider gate remains open, and never promote a scoped pass into live, Veritas, Receipt, Learning, or production acceptance without those separate proofs.
+
+Previously accepted evidence is immutable history. New contrary evidence may narrow or supersede the current conclusion, but it must not erase the original artifact, command record, hash, environment, or result. Reuse unaffected evidence and retest only the assertions touched by source, environment, authority, or integration change.
 
 ## Blocker routing law
 
