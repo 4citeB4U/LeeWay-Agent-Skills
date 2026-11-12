@@ -1,5 +1,7 @@
 <!--
 LEEWAY HEADER — DO NOT REMOVE
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+5WH:
 REGION: LEEWAY.AGENT_SKILLS.ENTRYPOINT
 TAG: DOC.GOVERNANCE.ECOSYSTEM_SEARCH_ORDER_20261031
 WHAT = Document the Creator-named LeeWay ecosystem and account-wide evidence search order
@@ -8,7 +10,7 @@ WHO = Creator/Human Authority; LeeWay Agent Skills contributors
 WHERE = AGENTS.md in the existing Agent Skills canonical entrypoint
 WHEN = 2026-10-31 original entrypoint; 2026-11-07 full-loop, expressive and canonical first-read bindings
 HOW = Preserve original entrypoint and bind existing completion, expressive, training and evidence authorities
-LICENSE = Existing repository/file terms unchanged
+LICENSE: Existing repository/file terms unchanged
 -->
 > **MANDATORY FIRST READ — Creator/LeeWay Engineering Laws:** https://github.com/4citeB4U/LeeWay-Standards/blob/main/Docs/governance/LEEWAY-CANONICAL-ENGINEERING-LAWS.md . Read before this file, any contributor hub entry, source, planning or testing. The Standards repo is law authority; the hub only coordinates teams.
 
@@ -398,3 +400,17 @@ For Agent VT, Continuum, Vision, Agent Skills, Digital Brain, or any request to 
 27. [4citeB4U/LeeWay-Production-Final-Execution-Layer](https://github.com/4citeB4U/LeeWay-Production-Final-Execution-Layer)
 
 The supplied ecosystem list is a **discovery-scope designation**, not an assertion that every repository is deployed, healthy, authoritative, or the current implementation owner. In particular, the existing Agent VT implementation in [LeeWay-Digital-Workforce](https://github.com/4citeB4U/LeeWay-Digital-Workforce) remains discoverable in the second tier, without redefining the Creator's named first tier. A verified historical PASS must be reused and linked, not pointlessly rerun; qualify its originally measured behavior without fabricating current production execution, Formula, independent Veritas, receipt admission, or Learning Ledger effects. Publish the exact supporting evidence where the owning mission already lives. Use the current LeeWay Standards (especially canonical Engineering Laws 01, 03, 05–07, 11–12, 14) and Contributor Handoff Protocol; no independent register, new control plane, bulk merge or cleanup is authorized solely by this discovery list.
+
+## Ecosystem-wide per-operation admission contract — Creator directive 2026-11-12
+
+Before any **consequential operation**, every employee, agent, LLM, outside helper or automation must bind the approved [LeeWay Standards Laws](https://github.com/4citeB4U/LeeWay-Standards/blob/main/Docs/governance/LEEWAY-CANONICAL-ENGINEERING-LAWS.md), [R01–R25](https://github.com/4citeB4U/LeeWay-Standards/blob/main/standards/PERMANENT-ENGINEERING-RULES.md), Engineering, Agent Skills, Receipt and applicable original owner mission/role. The [Standards reconciliation PR #71](https://github.com/4citeB4U/LeeWay-Standards/pull/71) is under review, not yet active law. Preserve the existing local AGENTS instructions and stricter domain contracts.
+
+Each action needs: governing laws and verified applicable regulations/jurisdiction; policies and work scope; authorized principal/grant and target; original mission/work/correlation IDs and source revision; prior evidence and references; real inputs/outputs, baseline and measurements; decision/rationale, notes, correction/rollback/retest; eligible learning, instruction, bounded practice/independent teach-back and qualification criteria; authentic verifier/receipt/Continuum/production outcome when required. Absent fields are explicit N/A with reason or BLOCKED for dependent actions, not fabricated values.
+
+Use the original deterministic Machine Consciousness, existing Skill Orchestrator capability weave and bounded focal tool execution. Concurrent skills/tools require actual permissions, nonoverlapping mutations and dependency control. External models BUILD, TEACH and ASSESS; permanent employees independently reproduce admitted skills. Grade and merit via original Workforce/Formula/authorized issuers; grades and badges do not grant privilege. Preserve device-owned Brain and Diagnostics exclusively on their physical host.
+
+Engineering cycle: Investigate → Diagnose → Plan → Implement → Test → Validate → Repair → Retest → Verify → Evidence → Checkpoint → Continue. Runtime custody transfers require distinct offer, authenticated acceptance, result review and durable readback; assignment does not convey access. Maintain honest separate SOURCE_IMPLEMENTED, TESTED, CI_PASS, DEPLOYED, LIVE_OBSERVED, VERITAS_VERIFIED, QUALIFIED states. **Published source does not prove an arbitrary model host loaded these instructions or that runtime admission is enforced.**
+
+## Final boundary — effective canonical law and operation handoff
+
+**Approved authority:** [LeeWay Standards main merge 2e5e98bdc49cfe0bf180de394db054eaf2f8e3d3](https://github.com/4citeB4U/LeeWay-Standards/commit/2e5e98bdc49cfe0bf180de394db054eaf2f8e3d3). References above to Standards PR #71 as pending are historical and superseded by the merged law. On exit, the worker must record original mission/work/correlation, applicable law revision, real identity/grants, commands/measurements/evidence FOR and AGAINST, decisions/corrections, practice/learning eligibility, independent verification status, and the accepting next owner or bounded blocker. Successful source review is **not** Runtime or production admission.
