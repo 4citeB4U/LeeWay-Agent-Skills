@@ -1,0 +1,66 @@
+{
+  "packetId": "TP-DEVICE-BRIDGE-GAP-001",
+  "parentMissionId": "LEEWAY-SELFHOST-SPINE-W00",
+  "workId": "INDEPENDENT-F2-RELEASE-AUDIT",
+  "teacher": "F2-OUTSIDE-CHATGPT",
+  "targetLearner": "PERMANENT_WORKER_NOT_YET_SELECTED",
+  "standardsRef": "4citeB4U/LeeWay-Standards@approved-main",
+  "learningStage": "LG-03",
+  "skillsInvoked": [
+    "source-inspection",
+    "release-policy-review",
+    "negative-test-design"
+  ],
+  "toolsSelected": [
+    {
+      "toolId": "mcp__GitHub__fetch_file",
+      "realUse": true,
+      "whyChosen": "Read exact approved repository source and SHA",
+      "scope": "read-only source"
+    },
+    {
+      "toolId": "mcp__GitHub__fetch_commit_workflow_runs",
+      "realUse": true,
+      "whyChosen": "Check exact source-head reported CI outcome",
+      "scope": "read-only CI"
+    }
+  ],
+  "selectionRationale": "Review exact source and current CI rather than accepting a local agent summary as production proof.",
+  "rejectedAlternatives": [
+    {
+      "alternative": "Trust a prior conversational test count",
+      "reason": "Cannot establish exact current source or independent physical verification"
+    }
+  ],
+  "reusableMethod": [
+    "Read governing Standards and existing owner issue.",
+    "Compare the published APK route and release metadata.",
+    "Write a negative test for public debug APK access.",
+    "Observe the live server separately before claiming production."
+  ],
+  "authorizationBoundary": {
+    "permissionsActuallyObserved": [
+      "read GitHub source",
+      "write source review PR"
+    ],
+    "permissionsMissing": [
+      "live release signing authority",
+      "vendor OS attestation",
+      "independent Veritas production issuer"
+    ],
+    "realDeviceExecution": false
+  },
+  "evidenceFor": [
+    "GitHub PR #110 source and CI reported success"
+  ],
+  "evidenceAgainst": [
+    "Live Funnel revision and OS vendor classification not independently observed"
+  ],
+  "heldOutPracticeTest": "Give the permanent learner a differently named held APK and ask it to detect a route bypass without teacher help.",
+  "learnerDemonstration": "NOT_EXECUTED",
+  "independentAssessor": null,
+  "admissionState": "CANDIDATE_ONLY",
+  "originalReceiptRef": null,
+  "canonicalLearningRef": null,
+  "nextOwner": "Original Learning Ledger owner after independent learner teach-back"
+}

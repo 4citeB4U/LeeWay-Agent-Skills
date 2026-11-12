@@ -1,0 +1,225 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/4citeB4U/LeeWay-Agent-Skills/blob/main/skills/leeway-learning-ledger/references/teaching-transfer-packet.schema.json",
+  "title": "LeeWay Teaching and Tool Transfer Packet — candidate source-only, not learning admission",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "packetId",
+    "parentMissionId",
+    "workId",
+    "teacher",
+    "targetLearner",
+    "standardsRef",
+    "learningStage",
+    "skillsInvoked",
+    "toolsSelected",
+    "selectionRationale",
+    "rejectedAlternatives",
+    "reusableMethod",
+    "authorizationBoundary",
+    "evidenceFor",
+    "evidenceAgainst",
+    "heldOutPracticeTest",
+    "learnerDemonstration",
+    "independentAssessor",
+    "admissionState"
+  ],
+  "properties": {
+    "packetId": {
+      "type": "string",
+      "pattern": "^TP-[A-Za-z0-9-]+$"
+    },
+    "parentMissionId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "workId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "teacher": {
+      "type": "string",
+      "minLength": 1
+    },
+    "targetLearner": {
+      "type": "string",
+      "minLength": 1
+    },
+    "standardsRef": {
+      "type": "string",
+      "minLength": 1
+    },
+    "learningStage": {
+      "type": "string",
+      "enum": [
+        "LG-00",
+        "LG-01",
+        "LG-02",
+        "LG-03",
+        "LG-04",
+        "LG-05",
+        "LG-06",
+        "LG-07",
+        "LG-08",
+        "LG-09",
+        "LG-10"
+      ]
+    },
+    "skillsInvoked": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "toolsSelected": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "toolId",
+          "realUse",
+          "whyChosen",
+          "scope"
+        ],
+        "properties": {
+          "toolId": {
+            "type": "string",
+            "minLength": 1
+          },
+          "realUse": {
+            "type": "boolean"
+          },
+          "whyChosen": {
+            "type": "string",
+            "minLength": 4
+          },
+          "scope": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "selectionRationale": {
+      "type": "string",
+      "minLength": 8
+    },
+    "rejectedAlternatives": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "alternative",
+          "reason"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "alternative": {
+            "type": "string",
+            "minLength": 1
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 4
+          }
+        }
+      }
+    },
+    "reusableMethod": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 5
+      }
+    },
+    "authorizationBoundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "permissionsActuallyObserved",
+        "permissionsMissing",
+        "realDeviceExecution"
+      ],
+      "properties": {
+        "permissionsActuallyObserved": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "permissionsMissing": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "realDeviceExecution": {
+          "type": "boolean"
+        }
+      }
+    },
+    "evidenceFor": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "evidenceAgainst": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "heldOutPracticeTest": {
+      "type": "string",
+      "minLength": 8
+    },
+    "learnerDemonstration": {
+      "type": "string",
+      "enum": [
+        "NOT_EXECUTED",
+        "ATTEMPTED_FAILED",
+        "DEMONSTRATED_REVIEW_PENDING",
+        "INDEPENDENTLY_QUALIFIED"
+      ]
+    },
+    "independentAssessor": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "admissionState": {
+      "type": "string",
+      "enum": [
+        "CANDIDATE_ONLY",
+        "INDEPENDENT_VERIFICATION_PENDING",
+        "CANONICAL_ADMITTED_READBACK"
+      ]
+    },
+    "originalReceiptRef": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "canonicalLearningRef": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "nextOwner": {
+      "type": "string"
+    }
+  }
+}
