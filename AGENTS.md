@@ -1,6 +1,7 @@
 <!--
 LEEWAY HEADER — DO NOT REMOVE
 DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+5WH:
 REGION: LEEWAY.AGENT_SKILLS.ENTRYPOINT
 TAG: DOC.GOVERNANCE.ECOSYSTEM_SEARCH_ORDER_20261031
 WHAT = Document the Creator-named LeeWay ecosystem and account-wide evidence search order
