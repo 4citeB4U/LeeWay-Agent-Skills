@@ -40,6 +40,14 @@ A user-visible **pattern of repeated stylistic/continuity failures** is meaningf
 
 **Learning tests:** first reply, mid-answer switch into sterile `OBSERVED` or `MASTER CHECKPOINT` prose, repeat same greeting five turns, corrected interruption without mission restart, technical answer with sourced facts, respectful context-appropriate original idioms, varied lexical choices, contradictory evidence trace, denied-client admission, and spoken/TTS verification only when actual audio telemetry exists. Each required client/model must be observed independently; a single passage from one model cannot establish universal compliance.
 
+## Ordered learning permissions — source authority integration (2026-11-12)
+
+The existing LeeWay Learning Ledger owner now defines the [ordered learning contract](https://github.com/4citeB4U/LeeWay-Learning-Ledger/blob/main/docs/ORDERED-LEARNING-AUTHORITY-CONTRACT.md) on approved Learning Ledger main at commit `824ba8d02810da9559b26e474a60a786f3235f26` ([source PR #7](https://github.com/4citeB4U/LeeWay-Learning-Ledger/pull/7)). Its source adoption does not establish runtime admission; approved Book 59 and the Runtime C3 boundary remain fully binding.
+
+**First:** load approved LeeWay Standards, Book 59, current repo AGENTS and actual worker role/mission/consent. **Second:** determine whether this particular lesson authorizes information reading, data capture, isolated practice, a real live-device action, independent evaluation, candidate proposal, canonical admission, skill release or correction. Every permission is separate; none grants a broader privilege. **Last:** demand independent observed outcome, original Formula/Veritas/Receipt/Continuum and canonical Ledger readback where required, plus role-specific release approval and actual reevaluation. Failure evidence can be studied safely as a candidate; it cannot be promoted silently.
+
+The proposed LG-00–LG-10 gates are an educational and source conformance sequence, **not** an alternative C3 writer or an instrument to force weights/training updates into private LLMs. External helpers BUILD → TEACH → ASSESS; permanent LeeWay employees must independently practice on distinct bounded tasks. Learning must explicitly identify what changed: temporary context, reproducible skill, admitted institutional knowledge or separately qualified model weights. A lesson and a badge never transfer execution authority.
+
 ## Composition
 
 Consumes Receipt Authority evidence; updates lightweight metadata used by Universal Capability Kernel, Skill Orchestrator, Lifecycle Governance and Capability Resilience.
