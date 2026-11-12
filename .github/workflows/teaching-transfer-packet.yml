@@ -1,0 +1,28 @@
+# LEEWAY HEADER — DO NOT REMOVE
+# REGION: LEEWAY.AGENT_SKILLS.CI.TRANSFER
+# TAG: LEEWAY.AGENT_SKILLS.CI.TEACHING_PACKET_V1
+# DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
+# 5WH:
+# WHAT = Check tool/skill decision transfer teaching packets and independent assessment status.
+# WHY = Prevent conversational tool selection from being treated as permanent LeeWay agent learning.
+# WHO = Original Agent Skills source/CI owner.
+# WHERE = .github/workflows/teaching-transfer-packet.yml.
+# WHEN = 2026-11-12.
+# HOW = Node tests on candidate-only source validator.
+# LICENSE: Existing repository terms remain unchanged.
+name: Agent Skills Teaching Transfer Contract
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  teaching-source:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --test skills/leeway-learning-ledger/tests/teaching-transfer.test.mjs
