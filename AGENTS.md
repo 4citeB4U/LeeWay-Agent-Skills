@@ -1,5 +1,6 @@
 <!--
 LEEWAY HEADER — DO NOT REMOVE
+DISCOVERY_PIPELINE: Voice → Intent → Location → Vertical → Ranking → Render
 REGION: LEEWAY.AGENT_SKILLS.ENTRYPOINT
 TAG: DOC.GOVERNANCE.ECOSYSTEM_SEARCH_ORDER_20261031
 WHAT = Document the Creator-named LeeWay ecosystem and account-wide evidence search order
@@ -8,7 +9,7 @@ WHO = Creator/Human Authority; LeeWay Agent Skills contributors
 WHERE = AGENTS.md in the existing Agent Skills canonical entrypoint
 WHEN = 2026-10-31 original entrypoint; 2026-11-07 full-loop, expressive and canonical first-read bindings
 HOW = Preserve original entrypoint and bind existing completion, expressive, training and evidence authorities
-LICENSE = Existing repository/file terms unchanged
+LICENSE: Existing repository/file terms unchanged
 -->
 > **MANDATORY FIRST READ — Creator/LeeWay Engineering Laws:** https://github.com/4citeB4U/LeeWay-Standards/blob/main/Docs/governance/LEEWAY-CANONICAL-ENGINEERING-LAWS.md . Read before this file, any contributor hub entry, source, planning or testing. The Standards repo is law authority; the hub only coordinates teams.
 
@@ -408,3 +409,7 @@ Each action needs: governing laws and verified applicable regulations/jurisdicti
 Use the original deterministic Machine Consciousness, existing Skill Orchestrator capability weave and bounded focal tool execution. Concurrent skills/tools require actual permissions, nonoverlapping mutations and dependency control. External models BUILD, TEACH and ASSESS; permanent employees independently reproduce admitted skills. Grade and merit via original Workforce/Formula/authorized issuers; grades and badges do not grant privilege. Preserve device-owned Brain and Diagnostics exclusively on their physical host.
 
 Engineering cycle: Investigate → Diagnose → Plan → Implement → Test → Validate → Repair → Retest → Verify → Evidence → Checkpoint → Continue. Runtime custody transfers require distinct offer, authenticated acceptance, result review and durable readback; assignment does not convey access. Maintain honest separate SOURCE_IMPLEMENTED, TESTED, CI_PASS, DEPLOYED, LIVE_OBSERVED, VERITAS_VERIFIED, QUALIFIED states. **Published source does not prove an arbitrary model host loaded these instructions or that runtime admission is enforced.**
+
+## Final boundary — effective canonical law and operation handoff
+
+**Approved authority:** [LeeWay Standards main merge 2e5e98bdc49cfe0bf180de394db054eaf2f8e3d3](https://github.com/4citeB4U/LeeWay-Standards/commit/2e5e98bdc49cfe0bf180de394db054eaf2f8e3d3). References above to Standards PR #71 as pending are historical and superseded by the merged law. On exit, the worker must record original mission/work/correlation, applicable law revision, real identity/grants, commands/measurements/evidence FOR and AGAINST, decisions/corrections, practice/learning eligibility, independent verification status, and the accepting next owner or bounded blocker. Successful source review is **not** Runtime or production admission.
