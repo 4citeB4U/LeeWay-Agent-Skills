@@ -42,7 +42,7 @@ A user-visible **pattern of repeated stylistic/continuity failures** is meaningf
 
 ## Ordered learning permissions — source authority integration (2026-11-12)
 
-The existing LeeWay Learning Ledger owner now defines the [ordered learning contract](https://github.com/4citeB4U/LeeWay-Learning-Ledger/blob/main/docs/ORDERED-LEARNING-AUTHORITY-CONTRACT.md) in a source review PR ([Learning Ledger PR #7](https://github.com/4citeB4U/LeeWay-Learning-Ledger/pull/7)). Until merged, that ordering remains review-stage; the currently approved Book 59 and Runtime C3 boundaries remain fully binding.
+The existing LeeWay Learning Ledger owner now defines the [ordered learning contract](https://github.com/4citeB4U/LeeWay-Learning-Ledger/blob/main/docs/ORDERED-LEARNING-AUTHORITY-CONTRACT.md) on approved Learning Ledger main at commit `824ba8d02810da9559b26e474a60a786f3235f26` ([source PR #7](https://github.com/4citeB4U/LeeWay-Learning-Ledger/pull/7)). Its source adoption does not establish runtime admission; approved Book 59 and the Runtime C3 boundary remain fully binding.
 
 **First:** load approved LeeWay Standards, Book 59, current repo AGENTS and actual worker role/mission/consent. **Second:** determine whether this particular lesson authorizes information reading, data capture, isolated practice, a real live-device action, independent evaluation, candidate proposal, canonical admission, skill release or correction. Every permission is separate; none grants a broader privilege. **Last:** demand independent observed outcome, original Formula/Veritas/Receipt/Continuum and canonical Ledger readback where required, plus role-specific release approval and actual reevaluation. Failure evidence can be studied safely as a candidate; it cannot be promoted silently.
 
