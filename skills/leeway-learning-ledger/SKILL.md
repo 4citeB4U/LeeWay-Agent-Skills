@@ -48,6 +48,14 @@ The existing LeeWay Learning Ledger owner now defines the [ordered learning cont
 
 The proposed LG-00–LG-10 gates are an educational and source conformance sequence, **not** an alternative C3 writer or an instrument to force weights/training updates into private LLMs. External helpers BUILD → TEACH → ASSESS; permanent LeeWay employees must independently practice on distinct bounded tasks. Learning must explicitly identify what changed: temporary context, reproducible skill, admitted institutional knowledge or separately qualified model weights. A lesson and a badge never transfer execution authority.
 
+## Mandatory Skill & Tool Transfer Packet (research to independently assessed mastery)
+
+For every **reusable method taught** by an outside helper or permanent worker, produce a [source-candidate teaching packet](references/teaching-transfer-packet.schema.json) (synthetic [example](references/teaching-transfer-example.json)) and validate with the [source-only checker](scripts/validate-teaching-transfer.mjs). This is an interface to the existing ordered Learning Ledger contract, not a second store or an independent learning issuer.
+
+A teaching packet must record the actual skills invoked, tools used versus merely available, why the selected tools were chosen, the alternatives considered and why rejected, source revisions and actual authorization boundaries, repeatable method, evidence FOR and AGAINST, a **different held-out exercise**, learner and independent assessor, and real status `CANDIDATE_ONLY` until original qualification. Do not fabricate unavailable tools, grants, scores, receipts, training runs, or hidden model reasoning. A concise external decision rationale is enough; no private chain-of-thought or model weights need be disclosed.
+
+**LG-00 to LG-03:** authorized research, knowledge source and teacher intent. **LG-04 to LG-06:** real sandbox or separately consented live practice and independent teach-back. **LG-07 to LG-08:** only original Formula/Veritas/Receipt/Continuum and Runtime C3 authenticated Learning Ledger writer/readback can qualify and admit. **LG-09 to LG-10:** separately authorized versioned skill release, role/OS grant and repeatability/decay evaluation. A passing packet validator returns `SOURCE_CANDIDATE_VALID`, **never** `LEARNING_ADMITTED`, production authority or model-weight change.
+
 ## Composition
 
 Consumes Receipt Authority evidence; updates lightweight metadata used by Universal Capability Kernel, Skill Orchestrator, Lifecycle Governance and Capability Resilience.
