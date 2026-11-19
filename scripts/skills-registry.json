@@ -1,10 +1,35 @@
 {
   "version": "2.0.0",
-  "lastUpdated": "2026-03-15T12:00:00Z",
-  "totalSkills": 44,
+  "lastUpdated": "2026-09-28T00:00:00Z",
+  "totalSkills": 45,
   "totalCategories": 24,
   "description": "Comprehensive AI Agent and Full-Stack Development Skills Library with Agentic Patterns, Orchestration, and Production Systems",
   "skills": [
+    {
+      "name": "LeeWay Browser Agent",
+      "category": "web-development",
+      "path": "skills/leeway-browser-agent",
+      "version": "0.1.0",
+      "tags": [
+        "leeway",
+        "github-pages",
+        "browser-inference",
+        "voice",
+        "barge-in",
+        "candidate"
+      ],
+      "description": "Build and qualify free browser agents with selectable voices and canonical Skills/Formula source provenance.",
+      "capabilities": [
+        "Browser-local reasoning and voice integration",
+        "Interrupt-safe conversation lifecycle",
+        "Pinned source guidance and draft downloads",
+        "Evidence-bound performance qualification"
+      ],
+      "dependency": "skills/leeway-real-time-voice-multimodal-infrastructure",
+      "enabled": true,
+      "source": "internal",
+      "lifecycleState": "CANDIDATE"
+    },
     {
       "name": "TypeScript Code Generation",
       "category": "code-generation",
