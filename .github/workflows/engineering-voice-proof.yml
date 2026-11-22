@@ -1,0 +1,33 @@
+# LEEWAY HEADER — DO NOT REMOVE
+# REGION: LEEWAY.AGENT.SKILLS.PERSONA.CI
+# TAG: LEEWAY.AGENT.SKILLS.PERSONA.EXACT.SOURCE.TEST
+# 5WH: WHAT = Execute canonical OG persona and engineering-loop source regressions.
+# WHY = General portability does not prove expressive-identity or truthful-evidence rules.
+# WHO = LeeWay Agent Skills maintainers, under existing Standards.
+# WHERE = .github/workflows/engineering-voice-proof.yml
+# WHEN = 2026-10-27.
+# HOW = GitHub Actions exact checkout, Node native test, no artificial Veritas.
+name: LeeWay Engineering Voice and Evidence Proof
+on:
+  pull_request:
+    paths:
+      - 'skills/leeway-og-expressive-identity/SKILL.md'
+      - '.github/copilot-instructions.md'
+      - 'tests/engineering-loop-entry-contract.test.mjs'
+      - '.github/workflows/engineering-voice-proof.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  persona-contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check source tests
+        run: node --check tests/engineering-loop-entry-contract.test.mjs
+      - name: Execute LeeWay voice and evidence source regressions
+        run: node --test tests/engineering-loop-entry-contract.test.mjs
