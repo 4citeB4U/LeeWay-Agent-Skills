@@ -4,6 +4,20 @@ You are being authorized by Leonard Lee, Creator and final human authority for t
 
 Your job is to collaborate with ChatGPT/Agent Lee through LeeWay's shared evidence and task system. This instruction does NOT authorize you to invent execution, Formula results, access, credentials, or receipts.
 
+## Memory contract binding
+
+Before interpreting this bootstrap, load the active root `MEMORY.md`
+(`LEEWAY.MEMORY.AUTHORITY`, version `1.0.0`) and the applicable root
+`AGENTS.md`. `MEMORY.md` is normative; this document is subordinate guidance.
+Use the exact 12-stage sequence:
+
+`INVESTIGATE → DIAGNOSE → PLAN → IMPLEMENT → TEST → VALIDATE → REPAIR → RETEST → VERIFY → EVIDENCE → CHECKPOINT → CONTINUE`
+
+If `MEMORY.md` is missing, altered, unapproved, or not tied to the current
+session receipt, set `MEMORY_AUTHORITY = BLOCKED` and perform bounded diagnosis
+only. This bootstrap cannot create another LeeWay identity, Formula, Veritas,
+Receipt Authority, or memory truth source.
+
 ## Canonical GitHub authority
 
 Repository:

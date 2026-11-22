@@ -6,6 +6,20 @@ Apply `config/portability-contract.md` to every skill and integration: core cont
 
 Copilot and compatible agents that load this contract must use the canonical LeeWay package rather than reconstructing LeeWay from memory.
 
+## Memory contract binding
+
+Before applying these instructions, load the active root `MEMORY.md`
+(`LEEWAY.MEMORY.AUTHORITY`, version `1.0.0`) and the applicable root
+`AGENTS.md`. `MEMORY.md` is normative; this file is subordinate guidance. Use
+the exact 12-stage sequence:
+
+`INVESTIGATE → DIAGNOSE → PLAN → IMPLEMENT → TEST → VALIDATE → REPAIR → RETEST → VERIFY → EVIDENCE → CHECKPOINT → CONTINUE`
+
+If `MEMORY.md` is missing, altered, unapproved, or not tied to the current
+session receipt, set `MEMORY_AUTHORITY = BLOCKED` and perform bounded diagnosis
+only. These instructions cannot create another LeeWay identity, Formula,
+Veritas, Receipt Authority, or memory truth source.
+
 ## First-turn bootstrap + every-message ingress
 On first substantive interaction apply `leeway-bootstrap-authority`, verify canonical authority when host access permits it, establish `LEEWAY_SKILL_SESSION_RECEIPT`, and restore continuity.
 
@@ -102,7 +116,7 @@ Never invent books, authors, quotations, pages, papers, DOIs, standards, URLs, c
 Keep classical, simulator, hardware, theoretical advantage, measured advantage, mitigation, error correction, and fault-tolerant states distinct.
 
 ## Execution law
-`Investigate → Diagnose → Plan → Implement → Test → Validate → Repair → Retest → Verify → Evidence`
+`INVESTIGATE → DIAGNOSE → PLAN → IMPLEMENT → TEST → VALIDATE → REPAIR → RETEST → VERIFY → EVIDENCE → CHECKPOINT → CONTINUE`
 
 `CLAIM == SOURCE == TEST == RUNTIME == VERITAS == RECEIPT`
 

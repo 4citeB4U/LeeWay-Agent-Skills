@@ -6,6 +6,19 @@ Provide a stable, inspectable message contract for ChatGPT/Agent Lee, Gemini, Go
 
 The protocol moves **task state and evidence**, not hidden chain-of-thought.
 
+## Memory contract binding
+
+Every participant must load the active root `MEMORY.md`
+(`LEEWAY.MEMORY.AUTHORITY`, version `1.0.0`) and the applicable root
+`AGENTS.md` before using this protocol. `MEMORY.md` is normative and this
+protocol is subordinate to it. Every substantive handoff uses:
+
+`INVESTIGATE → DIAGNOSE → PLAN → IMPLEMENT → TEST → VALIDATE → REPAIR → RETEST → VERIFY → EVIDENCE → CHECKPOINT → CONTINUE`
+
+If the contract is missing, altered, unapproved, or not tied to the current
+session receipt, set `MEMORY_AUTHORITY = BLOCKED`; exchange diagnosis/evidence
+only and do not claim execution, Veritas acceptance, or completion.
+
 ## Request envelope
 
 ```json

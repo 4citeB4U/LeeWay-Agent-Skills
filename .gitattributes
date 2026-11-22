@@ -1,0 +1,2 @@
+# The memory contract is hashed as an authority artifact; keep its bytes portable across hosts.
+MEMORY.md text eol=lf

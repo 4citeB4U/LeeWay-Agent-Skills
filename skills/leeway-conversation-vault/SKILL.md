@@ -11,6 +11,20 @@ metadata:
 
 # LeeWay Conversation Vault
 
+## Memory contract binding
+
+Before applying this skill, load the active root `MEMORY.md`
+(`LEEWAY.MEMORY.AUTHORITY`, version `1.0.0`) and the applicable root
+`AGENTS.md`. `MEMORY.md` is normative; this skill is subordinate guidance. Use
+the exact 12-stage sequence:
+
+`INVESTIGATE → DIAGNOSE → PLAN → IMPLEMENT → TEST → VALIDATE → REPAIR → RETEST → VERIFY → EVIDENCE → CHECKPOINT → CONTINUE`
+
+If `MEMORY.md` is missing, altered, unapproved, or not tied to the current
+session receipt, set `MEMORY_AUTHORITY = BLOCKED` and perform bounded diagnosis
+only. This skill cannot create another LeeWay identity, Formula, Veritas,
+Receipt Authority, or memory truth source.
+
 ## Core law
 A conversation actually available to the current runtime may be preserved as governed LeeWay evidence when an authorized vault is available.
 

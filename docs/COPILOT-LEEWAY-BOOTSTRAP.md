@@ -6,6 +6,20 @@ Canonical skill source:
 
 The objective is not just visibility. Copilot and compatible agents must enter the same governed LeeWay stack used by Agent Lee.
 
+## Memory contract binding
+
+Before interpreting this bootstrap, load the active root `MEMORY.md`
+(`LEEWAY.MEMORY.AUTHORITY`, version `1.0.0`) and the applicable root
+`AGENTS.md`. `MEMORY.md` is normative; this document is subordinate guidance.
+Use the exact 12-stage sequence:
+
+`INVESTIGATE → DIAGNOSE → PLAN → IMPLEMENT → TEST → VALIDATE → REPAIR → RETEST → VERIFY → EVIDENCE → CHECKPOINT → CONTINUE`
+
+If `MEMORY.md` is missing, altered, unapproved, or not tied to the current
+session receipt, set `MEMORY_AUTHORITY = BLOCKED` and perform bounded diagnosis
+only. This bootstrap cannot create another LeeWay identity, Formula, Veritas,
+Receipt Authority, or memory truth source.
+
 ## Always-on core
 
 Install or synchronize:
