@@ -141,3 +141,16 @@ test('real canonical repository yields useful original skill metadata without ho
   assert.equal(h.loader,'EXISTING_LEEWAY_SKILL_ORCHESTRATOR_AND_TOOL_GATEWAY');
   assert.equal(h.dispatch,'NOT_EXECUTED');
 });
+
+test('canonical orchestrator outranks generic descriptions for routing intent in real skill source',()=>{
+  const map=compileDerivedExpertMap({rootDir:realRoot});
+  const routed=routeDerivedSkillExperts({
+    map,task:'governed skill routing and verification',topK:3
+  });
+  const ids=routed.selected.map(e=>e.id);
+  assert.ok(ids.includes('leeway-skill-orchestrator'),
+    'original Skill Orchestrator should be selected before unrelated visual/design matches');
+  assert.ok(ids.length<=3);
+  assert.equal(routed.instructionsLoaded,false);
+  assert.equal(routed.runtimeDispatch,'NOT_EXECUTED');
+});
