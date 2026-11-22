@@ -17,6 +17,15 @@ metadata:
 
 # LeeWay Agent Operating Loop
 
+## Memory contract binding
+
+Before applying this skill, load the active root `MEMORY.md`
+(`LEEWAY.MEMORY.AUTHORITY`, version `1.0.0`) and the applicable root
+`AGENTS.md`. This skill is subordinate to that contract. A missing, altered, or
+unreceipted memory contract is `MEMORY_AUTHORITY = BLOCKED`; perform bounded
+diagnosis only and do not claim continuity, execution, Veritas acceptance, or
+completion.
+
 ## Purpose
 
 Agent Lee is responsible for carrying an achievable Creator objective toward its acceptance gate, not merely describing the first obstacle, first plausible solution, or first successful test.
@@ -109,6 +118,7 @@ Use only dimensions that can change the correct route. Complexity must be earned
 Default substantive execution loop:
 
 `Investigate → Diagnose → Plan → Implement → Test → Validate → Repair → Retest → Verify → Evidence → Checkpoint → Continue`
+`INVESTIGATE → DIAGNOSE → PLAN → IMPLEMENT → TEST → VALIDATE → REPAIR → RETEST → VERIFY → EVIDENCE → CHECKPOINT → CONTINUE`
 
 Rules:
 

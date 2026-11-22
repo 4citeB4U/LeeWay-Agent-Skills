@@ -1,0 +1,28 @@
+{
+  "contractId": "LEEWAY.MODEL.MARKDOWN.ALIGNMENT",
+  "version": "1.0.0",
+  "memoryContract": "MEMORY.md",
+  "bindingDocument": "docs/LEEWAY-MODEL-MARKDOWN-BINDING.md",
+  "activeDocuments": [
+    "AGENTS.md",
+    ".github/copilot-instructions.md",
+    "docs/GEMINI-LEEWAY-LIVE-BOOTSTRAP.md",
+    "docs/COPILOT-LEEWAY-BOOTSTRAP.md",
+    "skills/leeway-google-ecosystem-bridge/SKILL.md",
+    "skills/leeway-google-ecosystem-bridge/GEMINI-BOOTSTRAP.md",
+    "skills/leeway-google-ecosystem-bridge/INTERMODEL-PROTOCOL.md",
+    "skills/leeway-bootstrap-authority/SKILL.md",
+    "skills/leeway-continuity-authority/SKILL.md",
+    "skills/leeway-message-ingress-authority/SKILL.md",
+    "skills/leeway-context-engineering/SKILL.md",
+    "skills/leeway-formula-governance/SKILL.md",
+    "skills/leeway-agent-operating-loop/SKILL.md",
+    "skills/leeway-universal-capability-kernel/SKILL.md",
+    "skills/leeway-tool-gateway/SKILL.md",
+    "skills/leeway-conversation-vault/SKILL.md",
+    "skills/leeway-veritas/SKILL.md",
+    "skills/leeway-receipt-authority/SKILL.md",
+    "skills/leeway-human-conversation/SKILL.md",
+    "skills/leeway-og-expressive-identity/SKILL.md"
+  ]
+}
