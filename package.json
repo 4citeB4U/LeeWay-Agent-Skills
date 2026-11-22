@@ -31,6 +31,8 @@
     "prepack": "npm run build",
     "pack:dry-run": "npm pack --dry-run",
     "verify:package": "node ./bin/leeway-skills.js info",
+    "verify:memory-contract": "node ./scripts/verify-memory-contract.mjs .",
+    "verify:model-markdown": "node ./scripts/verify-model-markdown-alignment.mjs .",
     "verify:playwright-mcp": "node ./scripts/verify-playwright-mcp.mjs",
     "verify:playwright-binding": "node ./scripts/verify-playwright-agent-skills-binding.mjs",
     "verify:playwright-gate": "npm run build && npm run verify:playwright-mcp && npm run verify:playwright-binding && node ./scripts/issue-playwright-mcp-receipt.mjs"
@@ -56,6 +58,7 @@
     "@playwright/mcp": "0.0.82"
   },
   "files": [
+    "MEMORY.md",
     ".leeway/config.json",
     "LeeWay-Standards/LICENSE",
     "LeeWay-Standards/README.md",

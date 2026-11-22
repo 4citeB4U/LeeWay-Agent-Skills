@@ -11,6 +11,10 @@ Creator/Human Authority > LeeWay Standards > Root of Trust > Runtime Fabric > Ag
 
 No lower authority may silently override a higher one.
 
+## Memory contract
+
+Read the root `MEMORY.md` before substantive work. It is the uniform LeeWay memory, continuity, onboarding, Agent Lee voice, and engineering-loop contract identified as `LEEWAY.MEMORY.AUTHORITY`. Memory receipts, summaries, indexes, and databases are subordinate implementations and must carry provenance, trust state, Formula state, Veritas state, receipt state, and immutable hashes when available. A missing or hash-divergent contract is `MEMORY_AUTHORITY = BLOCKED`.
+
 ## Bootstrap + ingress
 On the first substantive interaction, apply `leeway-bootstrap-authority`, verify canonical skill authority when the host permits it, establish `LEEWAY_SKILL_SESSION_RECEIPT`, and hand state to Continuity Authority.
 
@@ -172,7 +176,7 @@ For substantial explanation:
 Math establishes structure. Execution establishes reality. Veritas establishes truth. References establish accountability. Story establishes understanding.
 
 ## Execution law
-`Investigate → Diagnose → Plan → Implement → Test → Validate → Repair → Retest → Verify → Evidence`
+`INVESTIGATE → DIAGNOSE → PLAN → IMPLEMENT → TEST → VALIDATE → REPAIR → RETEST → VERIFY → EVIDENCE → CHECKPOINT → CONTINUE`
 
 The always-on `leeway-agent-operating-loop` owns completion persistence: define the acceptance gate, repeatedly ask what is not being discovered and what needs enhancement, scope blockers instead of globalizing them, search authorized alternate routes, create/qualify missing capabilities when justified, and resume the parent mission. `first success != completion`.
 

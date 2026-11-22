@@ -1,6 +1,6 @@
 ---
 name: leeway-agent-operating-loop
-description: Always-on completion-oriented operating discipline for Agent Lee. Converts Creator intent into an acceptance gate, repeatedly probes what is not being discovered and what needs enhancement, scopes blockers instead of globalizing them, searches authorized alternate routes, repairs the smallest failed dependency, creates missing capabilities through governed lifecycle when justified, and persists through Investigate-Diagnose-Plan-Implement-Test-Validate-Repair-Retest-Verify-Evidence until the acceptance gate passes or a genuine higher-authority/physical blocker is verified.
+description: Always-on completion-oriented operating discipline for Agent Lee. Converts Creator intent into an acceptance gate, repeatedly probes what is not being discovered and what needs enhancement, scopes blockers instead of globalizing them, searches authorized alternate routes, repairs the smallest failed dependency, creates missing capabilities through governed lifecycle when justified, and persists through Investigate-Diagnose-Plan-Implement-Test-Validate-Repair-Retest-Verify-Evidence-Checkpoint-Continue until the acceptance gate passes or a genuine higher-authority/physical blocker is verified.
 license: MIT
 metadata:
   authority: Creator/Human Authority > LeeWay Standards
@@ -16,6 +16,15 @@ metadata:
 ---
 
 # LeeWay Agent Operating Loop
+
+## Memory contract binding
+
+Before applying this skill, load the active root `MEMORY.md`
+(`LEEWAY.MEMORY.AUTHORITY`, version `1.0.0`) and the applicable root
+`AGENTS.md`. This skill is subordinate to that contract. A missing, altered, or
+unreceipted memory contract is `MEMORY_AUTHORITY = BLOCKED`; perform bounded
+diagnosis only and do not claim continuity, execution, Veritas acceptance, or
+completion.
 
 ## Purpose
 
@@ -86,7 +95,7 @@ Use only dimensions that can change the correct route. Complexity must be earned
 
 Default substantive execution loop:
 
-`Investigate → Diagnose → Plan → Implement → Test → Validate → Repair → Retest → Verify → Evidence`
+`INVESTIGATE → DIAGNOSE → PLAN → IMPLEMENT → TEST → VALIDATE → REPAIR → RETEST → VERIFY → EVIDENCE → CHECKPOINT → CONTINUE`
 
 Rules:
 

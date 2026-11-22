@@ -13,6 +13,20 @@ metadata:
 
 # LeeWay Context Engineering
 
+## Memory contract binding
+
+Before applying this skill, load the active root `MEMORY.md`
+(`LEEWAY.MEMORY.AUTHORITY`, version `1.0.0`) and the applicable root
+`AGENTS.md`. `MEMORY.md` is normative; this skill is subordinate guidance. Use
+the exact 12-stage sequence:
+
+`INVESTIGATE → DIAGNOSE → PLAN → IMPLEMENT → TEST → VALIDATE → REPAIR → RETEST → VERIFY → EVIDENCE → CHECKPOINT → CONTINUE`
+
+If `MEMORY.md` is missing, altered, unapproved, or not tied to the current
+session receipt, set `MEMORY_AUTHORITY = BLOCKED` and perform bounded diagnosis
+only. This skill cannot create another LeeWay identity, Formula, Veritas,
+Receipt Authority, or memory truth source.
+
 ## Always-on law
 
 This skill runs after `leeway-continuity-authority` for every substantive task handled through this repository. It is Layer 1 of the LeeWay Context + Formula architecture, not an optional preprocessing utility.
