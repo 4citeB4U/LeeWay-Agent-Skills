@@ -16,6 +16,9 @@ on:
       - 'sdk/derived-skill-expert-routing.js'
       - 'scripts/compile-derived-skill-experts.mjs'
       - 'tests/derived-skill-expert-routing.test.mjs'
+      - 'tests/engineering-loop-stage-handoff.test.mjs'
+      - 'sdk/engineering-loop-stage-check.js'
+      - 'skills/leeway-agent-operating-loop/references/engineering-loop-invocation-handoff.md'
       - 'skills/**/SKILL.md'
       - '.github/workflows/derived-skill-expert-routing.yml'
   workflow_dispatch:
@@ -39,8 +42,10 @@ jobs:
           node --check sdk/derived-skill-expert-routing.js
           node --check scripts/compile-derived-skill-experts.mjs
           node --check tests/derived-skill-expert-routing.test.mjs
+          node --check sdk/engineering-loop-stage-check.js
+          node --check tests/engineering-loop-stage-handoff.test.mjs
       - name: Source-only expert ranking and denied privilege tests
-        run: node --test tests/derived-skill-expert-routing.test.mjs
+        run: node --test tests/derived-skill-expert-routing.test.mjs tests/engineering-loop-stage-handoff.test.mjs
       - name: Compile disposable actual-repository skill map
         run: node scripts/compile-derived-skill-experts.mjs --output .ci/experts-map.generated.json --query "governed skill routing and verification" --top-k 3
       - name: Verify derived artifact is not a new skill authority
