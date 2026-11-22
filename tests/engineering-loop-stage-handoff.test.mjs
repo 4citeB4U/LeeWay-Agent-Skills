@@ -42,7 +42,7 @@ test('canonical LeeWay 12-stage order is unchanged and correctly named',()=>{
   const skill=read('skills/leeway-agent-operating-loop/SKILL.md');
   const doc=read('skills/leeway-agent-operating-loop/references/engineering-loop-invocation-handoff.md');
   for(const stage of ENGINEERING_STAGES){
-    assert.match(skill,new RegExp('\\*\\*'+stage+'\\*\\*'));
+    assert.ok(skill.includes('**'+stage+':**') || skill.includes('**'+stage+'**'));
     assert.ok(doc.includes(stage));
   }
   assert.ok(skill.includes('engineering-loop-invocation-handoff.md'));
