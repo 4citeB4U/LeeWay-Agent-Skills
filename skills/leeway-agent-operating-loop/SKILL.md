@@ -247,6 +247,14 @@ For host engineering, diagnostics, orchestration, hashing, repair and verificati
 
 The required ten-stage engineering cycle is extended at the continuity boundary by `CHECKPOINT → CONTINUE`: persist the actual outcome through the existing owning record and resume the same acceptance gate, or report persistence BLOCKED. This does not create another ledger, runtime, queue or governance authority.
 
+## Explicit Creator invocation: "Follow the Engineering Loop" (2026-11-22 source amendment)
+
+When the Creator says **"follow the LeeWay Engineering Loop"**, or a worker receives a continuation of that existing mission, use **all 12 original stages below**, recovering the last accepted task/checkpoint rather than producing another generic prompt. For a phase-level source/role/approval/readback contract, consult [references/engineering-loop-invocation-handoff.md](references/engineering-loop-invocation-handoff.md). It is a subordinate work instruction, not a replacement for this skill, Standards or Formula.
+
+**Memory integrity clarification:** the uniform `MEMORY.md` file is the **fixed, integrity-pinned operating contract**, not a per-step writable progress notebook. Use `SESSION.md`, an existing authorized issue checkpoint, qualifying Receipt Authority and Continuum for evolving milestones and read back the saved state. Never modify a hash-pinned `MEMORY.md` on each stage to imitate the video’s mutable notebook design. Mark unobserved local hashes and unavailable persistence `NOT_VERIFIED` / `NOT_READ_BACK` rather than inventing them.
+
+**Specialist routing:** the original Skill Orchestrator and Universal Capability Kernel may consult an optional source-derived Top-K expert map; models merely suggest candidates, and Machine Consciousness retains task ownership. Actual instruction hydration, execution, independent Veritas and receipt admission retain their separate gates. For target-inspection tools such as Craft Anything, preserve read-only/clean-room default, target authorization, separate Deep-mode approval and genuine host CLI readback.
+
 ## Full Creator-directed Engineering Loop — mandatory completion, not a ten-word slogan (2026-11-07)
 
 The **original** engineering loop remains `Investigate → Diagnose → Plan → Implement → Test → Validate → Repair → Retest → Verify → Evidence`. The Creator continuity directive **extends its operating lifecycle**, without replacing those ten stages, to `INVESTIGATE → DIAGNOSE → PLAN → IMPLEMENT → TEST → VALIDATE → REPAIR → RETEST → VERIFY → EVIDENCE → CHECKPOINT → CONTINUE`. Every stage below is required when applicable to actual engineering work; preserve `NOT_APPLICABLE` only with a defensible justification. An unsuccessful or unavailable action is evidence, not a fabricated PASS.
