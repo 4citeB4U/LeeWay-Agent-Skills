@@ -16,7 +16,7 @@ import { readdirSync, readFileSync, realpathSync, statSync } from 'node:fs';
 import path from 'node:path';
 
 const SKILLS_DIR = 'skills';
-const stopWords = new Set(['a','an','and','any','are','as','at','be','by','can','for','from','in','into','is','it','its','leeway','of','on','or','the','this','to','use','using','with','when','your','skill','skills']);
+const stopWords = new Set(['a','an','and','any','are','as','at','be','by','can','for','from','in','into','is','it','its','leeway','of','on','or','the','this','to','use','using','with','when','your','skills','governed']);
 const maxSourceFileBytes = 512000;
 const safeName = v => typeof v === 'string' && /^[a-z0-9][a-z0-9-/]{0,160}$/.test(v) && !v.split('/').some(s => s === '.' || s === '..');
 const safeHash = value => typeof value === 'string' && /^[a-f0-9]{64}$/.test(value);
@@ -151,12 +151,33 @@ export function routeDerivedSkillExperts({map, task, topK=3}={}) {
   if (typeof task !== 'string' || task.length > 1024 || !task.trim() ||
       !Number.isInteger(topK) || topK < 1 || topK > 8) throw Error('EXPERT_ROUTING_INPUT_INVALID');
   const queryTokens = tokenize(task);
+  // Bounded lexical bridges clarify common names from the original Skill
+  // Orchestrator and Veritas. These are not inferred confidence or Formula.
+  const aliases = {
+    routing: ['orchestrator','orchestration','route','selection'],
+    orchestration: ['orchestrator','routing','weave'],
+    verification: ['veritas','verify','validation'],
+    verify: ['veritas','verification','validation'],
+    workers: ['workplane','worker','agent'],
+    visual: ['image','infographic','media'],
+    infographic: ['chart','visual','graphics']
+  };
   const ranked = map.experts.map(e => {
     const lexical = new Set(e.keywordTokens);
     const explicit = new Set(e.triggerTokens);
     const idTokens = new Set(tokenize(e.id));
-    const matches = queryTokens.filter(t => lexical.has(t) || explicit.has(t));
-    const score = matches.reduce((n,t)=>n+(explicit.has(t)?6:idTokens.has(t)?4:2),0) + (matches.length>0?e.priority:0);
+    const matches=[];
+    let score=0;
+    for (const token of queryTokens) {
+      const related=aliases[token] || [];
+      const exactPoints=idTokens.has(token) ? 8 : explicit.has(token) ? 7 : lexical.has(token) ? 3 : 0;
+      const aliasPoints=related.reduce((max,relatedToken)=>Math.max(max,
+        idTokens.has(relatedToken) ? 6 : explicit.has(relatedToken) ? 5 : lexical.has(relatedToken) ? 2 : 0),0);
+      const points=Math.max(exactPoints,aliasPoints);
+      if (points>0) {matches.push(token);score+=points;}
+    }
+    if(matches.length>=2)score+=8;
+    if(matches.length>0)score+=e.priority;
     return {id:e.id,score,matches,sourcePath:e.sourcePath,sourceSha256:e.sourceSha256,sourceBytes:e.sourceBytes,
       dependencies:e.dependencies,conflicts:e.conflicts};
   }).filter(r => r.score>0).sort((a,b)=>b.score-a.score || a.id.localeCompare(b.id,'en'));
