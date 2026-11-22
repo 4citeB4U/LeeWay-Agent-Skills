@@ -1,0 +1,47 @@
+# LEEWAY HEADER — DO NOT REMOVE
+# REGION: LEEWAY.AGENT_SKILLS.DERIVED_EXPERT_ROUTING_CI
+# TAG: LEEWAY.AGENT_SKILLS.DERIVED_EXPERT_ROUTING.CI.V1
+# 5WH:
+# WHAT = Test the original SKILL.md expert routing projection and bounded hydration plan.
+# WHY = Ensure no alternate registry, model execution, or unverified skill grants.
+# WHO = Original LeeWay Agent Skills source owner; GPT-6 outside support contributor.
+# WHERE = .github/workflows/derived-skill-expert-routing.yml.
+# WHEN = 2026-11-22.
+# HOW = Node 22 on Linux, Windows and Apple macOS, source checks and ephemeral compile.
+# LICENSE = Existing repository terms unchanged.
+name: Derived Skill Expert Routing Source
+on:
+  pull_request:
+    paths:
+      - 'sdk/derived-skill-expert-routing.js'
+      - 'scripts/compile-derived-skill-experts.mjs'
+      - 'tests/derived-skill-expert-routing.test.mjs'
+      - 'skills/**/SKILL.md'
+      - '.github/workflows/derived-skill-expert-routing.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-routing:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 9
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Source syntax
+        run: |
+          node --check sdk/derived-skill-expert-routing.js
+          node --check scripts/compile-derived-skill-experts.mjs
+          node --check tests/derived-skill-expert-routing.test.mjs
+      - name: Source-only expert ranking and denied privilege tests
+        run: node --test tests/derived-skill-expert-routing.test.mjs
+      - name: Compile disposable actual-repository skill map
+        run: node scripts/compile-derived-skill-experts.mjs --output .ci/experts-map.generated.json --query "governed skill routing and verification" --top-k 3
+      - name: Verify derived artifact is not a new skill authority
+        run: node --input-type=module -e "import fs from 'node:fs';const m=JSON.parse(fs.readFileSync('.ci/experts-map.generated.json','utf8'));if(m.expertCount<75||m.runtimeExecution!=='NOT_EXECUTED'||m.sourceState!=='DERIVED_FROM_PRESENT_SKILL_FILES_NOT_RUNTIME_ADMITTED')process.exit(1);console.log('sourceOnlyExpertCount='+m.expertCount);"
