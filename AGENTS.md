@@ -382,7 +382,6 @@ For Agent VT, Continuum, Vision, Agent Skills, Digital Brain, or any request to 
 6. [4citeB4U/Leeway-Runtime-Fabric](https://github.com/4citeB4U/Leeway-Runtime-Fabric)
 7. [4citeB4U/Leeway-formula-live](https://github.com/4citeB4U/Leeway-formula-live)
 8. [4citeB4U/Leeway-Tailscale](https://github.com/4citeB4U/Leeway-Tailscale)
-9. [4citeB4U/Leeway-Pocket-ID](https://github.com/4citeB4U/Leeway-Pocket-ID)
 10. [4citeB4U/LEEWAY-DEVICE-BRIDGE](https://github.com/4citeB4U/LEEWAY-DEVICE-BRIDGE)
 11. [4citeB4U/LeeWay-Pocket-Agent](https://github.com/4citeB4U/LeeWay-Pocket-Agent)
 12. [4citeB4U/LeeWay-Voice-Fabric](https://github.com/4citeB4U/LeeWay-Voice-Fabric)
