@@ -91,6 +91,24 @@ Evidence levels are scoped, not interchangeable:
 
 A lower-level pass remains accepted for its scope while higher gates remain open. It must not be mislabeled as a higher-level pass.
 
+## Immediate evidence capture and canonical custody handoff (Creator amendment, 2026-11-11)
+
+**A passing test is not disposable scratch output.** At the moment a test returns, preserve its authentic source-scope outcome before starting an unrelated repair, merging, or reporting completion. This is the existing evidence-promotion law made operational; it does not create a new verifier, receipt ledger, Runtime, or private evidence store.
+
+For **every executed test** (positive, negative, skipped, timed-out or blocked):
+
+1. Capture the original immutable source head SHA and actual tested checkout SHA (for GitHub `pull_request`, a generated merge SHA may differ), test command, original job/run ID, time, OS/runner class, executed/passed/failed/skipped counts, exit status, observable assertions, and real logs/artifacts. Include **evidence FOR and AGAINST** and the last accepted checkpoint. Never infer results from commit messages, workflow titles, fixtures, or assistant claims.
+2. Calculate SHA-256 over actual test result bytes; record which encoding/container was hashed. Generate a bounded machine-readable candidate packet and preserve the original log/artifact under the governing repo's qualified CI or host evidence route. Validate the persisted bytes via independent readback where possible, not merely upload acknowledgment. Do **not** include secrets, raw personal data, device file contents, or private host telemetry in public GitHub evidence.
+3. On each CI test execution, run artifact capture automatically using `if: always()` or equivalent so **failures also survive**. Treat artifact omission, expiration, denied GitHub-token writes, corrupted hashes, or missing readback as `EVIDENCE_CUSTODY_INCOMPLETE`; repair and retest the custody adapter at the original gate without discarding the already proven source test.
+4. Register **sanitized references** to the source commit, job/run ID, evidence artifact SHA-256, and current scope in the owning mission PR/issue and the existing Receipt Authority source/evidence inventory through an authorized route. Such a source reference is not private Receipt Authority custody, and an ordinary artifact retention period is not perpetual storage.
+5. Prepare the existing independent **LEEWAY-VERITAS** review handoff using the original test evidence, exact source pins, and the owning mission. Real review-intake acceptance requires authenticated submit and readback through the authorized independent provider. **Independent signed evaluation is separate from intake and from a passing CI job.**
+6. Only an independently eligible, owner-scoped result can pass through the **existing Receipt Authority runtime append/readback** and subsequently the Learning Ledger eligible delivery/readback. Preserve original tenant isolation, independent PRE/POST for real native execution, replay protection, and rollback. A GitHub comment, JSON file, unsigned hash, or successful test run must **never** be labeled a production receipt, Veritas verdict, or learning admission.
+7. If historical tests still have reliable original logs/artifacts, recover and hash those first instead of reflexively rerunning completed work. A recovered historical result retains its original source scope. If artifacts have expired, preserve the remaining GitHub run/job references and explicitly record the loss; a future fresh test is **new evidence**, not a retroactive original receipt.
+
+**Promotion state ledger:** `TEST_EXECUTED -> SOURCE_EVIDENCE_CAPTURED -> ARTIFACT_HASH_VERIFIED -> SANITIZED_CUSTODY_INDEXED -> VERITAS_INTAKE_READBACK -> INDEPENDENT_VERITAS_DECISION -> CANONICAL_RECEIPT_APPEND_READBACK -> LEARNING_ADMISSION_READBACK`. Every state is independently gated, may remain `NOT_EXECUTED / BLOCKED`, and cannot be inferred from the previous one. A worker may move to another authorized independent task but must leave the unfinished gate and original work ID discoverable.
+
+**Demonstrated regression reference:** The [Digital Brain evidence-capture repair](https://github.com/4citeB4U/Leeway-Digital-Brain-Diagnostincs-pkg/pull/1) preserved six historical 14/14 source tests per job, detected a hidden-folder artifact upload omission and denied issue-write token (403), then passed three-OS source CI with independently hashed ZIP and internal manifest readbacks. The [Receipt Authority source-index proposal](https://github.com/4citeB4U/Receipt-Authority/pull/5) contains sanitized original references; it is expressly **not** a canonical Receipt append. The installed Veritas/Receipt/Production acceptance still must be evidenced by their actual owners.
+
 ## Preserve, classify, and reuse
 
 Classify each discovered defect as one of:
