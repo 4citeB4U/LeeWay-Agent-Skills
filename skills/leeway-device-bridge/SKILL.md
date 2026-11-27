@@ -51,3 +51,58 @@ The canonical Skills MCP server exposes device-agnostic tool identities:
 - `device_files_write`
 
 They delegate only through `LEEWAY_DEVICE_MCP_GATEWAY_URL` plus `LEEWAY_DEVICE_MCP_BEARER_TOKEN`. A listed tool is a portable contract, not proof that a particular device granted or executed that capability. UI actions use a bounded action type and target plus a mandatory postcondition. Mutations require tool-specific evidence and a receipt; UI control additionally requires the bridge to report that the requested postcondition was observed. Veritas still controls final acceptance.
+
+<!-- LEEWAY UNIVERSAL FORMULA GOVERNANCE BEGIN -->
+
+# LeeWay Universal Formula Governance
+
+Authority: Creator and LeeWay Standards.
+Formula identity: LEEWAY-FORMULA-v1.0.
+
+The canonical LeeWay Formula is mandatory throughout
+the entire LeeWay ecosystem.
+
+Every current and future application, capability,
+agent, worker, employee, model, provider, adapter,
+automation and integration inherits this requirement.
+
+All applicable interactions, responses, decisions,
+actions, revisions, executions, computations, model
+inferences, resource allocations, information transfers,
+memory operations, storage operations and deployments
+must consume the canonical Formula through their
+authorized and qualified domain contracts.
+
+Formula availability, documentation, configuration,
+health and historical results do not constitute actual
+Formula consumption for a new operation.
+
+Recover relevant authorized memory before substantive
+work. Preserve identity, provenance, Formula integrity,
+authorization, original receipts and verified learning.
+
+Never invent observations, adapter mappings, mathematical
+results, execution evidence or independent verification.
+
+No application may bypass applicable Formula governance
+by dispatching directly to a provider.
+
+Every new application and capability must demonstrate
+applicable Formula consumption before production admission.
+
+Preserve the existing authority hierarchy:
+
+Creator > Standards > Root of Trust > Runtime Fabric >
+Agent Lee > Harness > Formula > skills/models/tools >
+execution > Veritas > Receipt Authority > Learning Ledger.
+
+Execute the complete engineering loop:
+
+INVESTIGATE > DIAGNOSE > PLAN > IMPLEMENT > TEST >
+VALIDATE > REPAIR > RETEST > VERIFY > EVIDENCE >
+CHECKPOINT > CONTINUE.
+
+Documentation compliance does not establish executable
+enforcement or production admission.
+
+<!-- LEEWAY UNIVERSAL FORMULA GOVERNANCE END -->

@@ -176,3 +176,58 @@ print(f"Confidently labeled: {len(confident)}, needs manual review: {len(needs_r
 - **Labeling function conflicts in weak supervision:** When multiple labeling functions disagree on the same sample, the label model may produce low-confidence predictions. Increase labeling function coverage by writing more specific functions, or route conflicting samples to manual annotation.
 - **Annotator fatigue on large batches:** Quality degrades after 2-3 hours of continuous labeling. Break work into sessions of 100-200 items, randomize task order, and track per-session accuracy against gold standards to detect quality drops.
 - **Schema evolution mid-project:** If new label categories are added after annotation has started, all previously labeled data must be reviewed for the new categories. Use versioned schemas and re-annotation queues rather than retroactively editing existing annotations.
+
+<!-- LEEWAY UNIVERSAL FORMULA GOVERNANCE BEGIN -->
+
+# LeeWay Universal Formula Governance
+
+Authority: Creator and LeeWay Standards.
+Formula identity: LEEWAY-FORMULA-v1.0.
+
+The canonical LeeWay Formula is mandatory throughout
+the entire LeeWay ecosystem.
+
+Every current and future application, capability,
+agent, worker, employee, model, provider, adapter,
+automation and integration inherits this requirement.
+
+All applicable interactions, responses, decisions,
+actions, revisions, executions, computations, model
+inferences, resource allocations, information transfers,
+memory operations, storage operations and deployments
+must consume the canonical Formula through their
+authorized and qualified domain contracts.
+
+Formula availability, documentation, configuration,
+health and historical results do not constitute actual
+Formula consumption for a new operation.
+
+Recover relevant authorized memory before substantive
+work. Preserve identity, provenance, Formula integrity,
+authorization, original receipts and verified learning.
+
+Never invent observations, adapter mappings, mathematical
+results, execution evidence or independent verification.
+
+No application may bypass applicable Formula governance
+by dispatching directly to a provider.
+
+Every new application and capability must demonstrate
+applicable Formula consumption before production admission.
+
+Preserve the existing authority hierarchy:
+
+Creator > Standards > Root of Trust > Runtime Fabric >
+Agent Lee > Harness > Formula > skills/models/tools >
+execution > Veritas > Receipt Authority > Learning Ledger.
+
+Execute the complete engineering loop:
+
+INVESTIGATE > DIAGNOSE > PLAN > IMPLEMENT > TEST >
+VALIDATE > REPAIR > RETEST > VERIFY > EVIDENCE >
+CHECKPOINT > CONTINUE.
+
+Documentation compliance does not establish executable
+enforcement or production admission.
+
+<!-- LEEWAY UNIVERSAL FORMULA GOVERNANCE END -->
