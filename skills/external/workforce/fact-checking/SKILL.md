@@ -106,3 +106,58 @@ and it was created by James Gosling at Sun Microsystems in 1991."
 - **Satirical or hyperbolic content:** If the source material is clearly satirical or uses deliberate exaggeration for rhetorical effect, note this context rather than issuing a literal "False" verdict.
 - **Claims with no authoritative source:** Some niche or proprietary claims (e.g., internal company metrics) may have no publicly verifiable source. Label these "Unverifiable — no public source" and recommend the user request documentation from the claimant.
 - **Ambiguous wording:** When a claim can be interpreted multiple ways (e.g., "most popular" could mean by usage, by survey, or by downloads), evaluate the most reasonable interpretation and note the ambiguity.
+
+<!-- LEEWAY UNIVERSAL FORMULA GOVERNANCE BEGIN -->
+
+# LeeWay Universal Formula Governance
+
+Authority: Creator and LeeWay Standards.
+Formula identity: LEEWAY-FORMULA-v1.0.
+
+The canonical LeeWay Formula is mandatory throughout
+the entire LeeWay ecosystem.
+
+Every current and future application, capability,
+agent, worker, employee, model, provider, adapter,
+automation and integration inherits this requirement.
+
+All applicable interactions, responses, decisions,
+actions, revisions, executions, computations, model
+inferences, resource allocations, information transfers,
+memory operations, storage operations and deployments
+must consume the canonical Formula through their
+authorized and qualified domain contracts.
+
+Formula availability, documentation, configuration,
+health and historical results do not constitute actual
+Formula consumption for a new operation.
+
+Recover relevant authorized memory before substantive
+work. Preserve identity, provenance, Formula integrity,
+authorization, original receipts and verified learning.
+
+Never invent observations, adapter mappings, mathematical
+results, execution evidence or independent verification.
+
+No application may bypass applicable Formula governance
+by dispatching directly to a provider.
+
+Every new application and capability must demonstrate
+applicable Formula consumption before production admission.
+
+Preserve the existing authority hierarchy:
+
+Creator > Standards > Root of Trust > Runtime Fabric >
+Agent Lee > Harness > Formula > skills/models/tools >
+execution > Veritas > Receipt Authority > Learning Ledger.
+
+Execute the complete engineering loop:
+
+INVESTIGATE > DIAGNOSE > PLAN > IMPLEMENT > TEST >
+VALIDATE > REPAIR > RETEST > VERIFY > EVIDENCE >
+CHECKPOINT > CONTINUE.
+
+Documentation compliance does not establish executable
+enforcement or production admission.
+
+<!-- LEEWAY UNIVERSAL FORMULA GOVERNANCE END -->
